@@ -1,0 +1,69 @@
+footer {
+    width: 100%;
+    height: 100px;
+}
+
+footer .conteudo{
+    width: 75%;
+    margin: 0 auto;
+    display: flex;
+    padding: 45px;
+}
+
+footer .conteudo .newsletter{
+    width: 40%;
+}
+
+footer .conteudo .input-wrapper{
+    background-color: #ffffff;
+    width: 400px;
+    border: 2px solid var(--cor-secundaria);
+    margin-top: 20px;
+}
+
+footer .conteudo input{
+    padding: 10px;
+    border: none;
+    width: 80%;
+    color: var(--cor-texto-secundaria)
+}
+
+footer .conteudo input:focus{
+    outline: none;
+}
+
+footer .conteudo button{
+    width: 18%;
+    border: none;
+    background-color: #ffffff;
+    font-family: var(--font-paragrafo);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+footer .conteudo button:hover{
+    opacity: 0.8;
+}
+
+footer .conteudo h3{
+    font-family: var(--font-titulo);
+    font-size: 30px;
+}
+
+footer .conteudo .newsletter p{
+    font-family: var(--font-paragrafo);
+    margin-top: 10px;
+}
+
+footer .copyright{
+    background-color: var(--cor-secundaria);
+    text-align: center;
+    padding: 10px;
+}
+
+footer .copyright p{
+    color: var(--cor-texto-primaria);
+    font-family: var(--font-paragrafo);
+    font-size: 12px;
+    font-weight: bold;
+}
