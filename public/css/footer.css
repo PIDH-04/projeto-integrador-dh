@@ -7,17 +7,19 @@ footer .conteudo{
     width: 75%;
     margin: 0 auto;
     display: flex;
-    padding: 45px;
+    padding: 45px 45px 100px;
+
 }
 
 footer .conteudo .newsletter{
-    width: 40%;
+    width: 35%;
+    max-width: 500px;
     margin-right: 30px;
 }
 
 footer .conteudo .input-wrapper{
     background-color: #ffffff;
-    width: 400px;
+    max-width: 400px;
     border: 2px solid var(--cor-secundaria);
     margin-top: 20px;
 }
@@ -48,7 +50,7 @@ footer .conteudo button:hover{
 
 footer .conteudo h3{
     font-family: var(--font-titulo);
-    font-size: 30px;
+    font-size: 28px;
 }
 
 footer .conteudo .newsletter p{
