@@ -12,6 +12,7 @@ footer .conteudo{
 
 footer .conteudo .newsletter{
     width: 40%;
+    margin-right: 30px;
 }
 
 footer .conteudo .input-wrapper{
@@ -54,6 +55,39 @@ footer .conteudo .newsletter p{
     font-family: var(--font-paragrafo);
     margin-top: 10px;
 }
+
+
+footer nav{
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+    font-family: var(--font-paragrafo);
+    font-size: 15px;
+}
+
+footer nav li {
+    list-style: none;
+    margin-bottom: 15px;
+    color: var(--cor-texto-secundaria);
+}
+
+footer nav li a{
+    text-decoration: none;
+    color: var(--cor-texto-secundaria);
+}
+
+
+footer nav li.categoria-principal, 
+footer nav li.categoria-principal a{
+    color: var(--cor-texto-primaria);
+    margin-bottom: 20px;
+    
+}
+
+footer nav li a:hover{
+    color: var(--cor-secundaria);
+}
+
 
 footer .copyright{
     background-color: var(--cor-secundaria);
