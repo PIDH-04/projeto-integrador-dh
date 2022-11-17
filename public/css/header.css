@@ -27,7 +27,7 @@ li {
     padding-left: 2rem;
 }
 .superior{
-    background-color: #979797;
+    background-color: var(--cor-secundaria);
     color: black;
     list-style-type: none;
     cursor: pointer;
@@ -39,7 +39,7 @@ padding-left: 10px;
 #esquerda{
     margin-left: auto;
 }
-#meio{
+.class{
     padding-left: 100px;
     display: flex;
     margin-left: auto;
