@@ -1,0 +1,46 @@
+header{
+    background-color: #979797;
+    height: 10vh;
+    display: felx;
+    justify-content: space-between;
+    margin-bottom: auto;
+}
+.esquerda {
+    background-color: #979797;
+    color: #979797;
+}
+.direita{
+    background-color: #979797;
+    color: #979797;
+}
+.meio {
+    background-color: #979797;
+    color: #979797;
+    justify-content: center;
+}
+ul {
+    display: flex;  
+}
+li {
+    list-style-type: none;
+    cursor: pointer;
+    padding-left: 2rem;
+}
+.superior{
+    background-color: #979797;
+    color: black;
+    list-style-type: none;
+    cursor: pointer;
+    padding: 2rem;
+}
+#direita {
+padding-left: 10px;
+}
+#esquerda{
+    margin-left: auto;
+}
+#meio{
+    padding-left: 100px;
+    display: flex;
+    margin-left: auto;
+}
