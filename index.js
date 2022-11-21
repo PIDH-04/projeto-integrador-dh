@@ -7,8 +7,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 // Definir rotas
-
-
+app.get("/header", (req, res) => {
+    return res.sendFile(__dirname + "/views/header.html")
+})
 
 // Servidor rodando
 app.listen(3000, () => {
