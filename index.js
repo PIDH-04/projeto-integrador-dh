@@ -13,8 +13,8 @@ return res.sendFile(__dirname + '/views/login.html' )
 
 });
 
-app.get('/ChekoutPagamento', (req , res)=>{
-    return res.sendFile(__dirname + '/views/chekoutPagamento.html' )
+app.get('/checkout-pagamento', (req , res)=>{
+    return res.sendFile(__dirname + '/views/checkoutPagamento.html' )
     
     });
 
