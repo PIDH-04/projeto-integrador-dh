@@ -35,6 +35,7 @@ input[type="checkbox"]{
     margin-right: 5px;
     width: 18px;
     height: 18px;
+    cursor: pointer;
 }
 
 h2, h3, h4, h5, h6, label, p{
@@ -65,4 +66,36 @@ h2, h3, h4, h5, h6, label, p{
     font-family: var(--font-paragrafo);
     font-size: 15px;
     cursor: pointer;
+}
+
+.menu-selecao select:focus{
+    outline: none;
+}
+
+
+
+/* Botôes */
+
+button.botao-secundario{
+    background-color: var(--cor-secundaria);
+    padding: 15px 20px;
+    border: none;
+    color: var(--cor-texto-primaria);
+    font-weight: bold;
+    font-family: var(--font-paragrafo);
+    cursor: pointer;
+}
+
+
+button.botao-primario{
+    padding: 15px 30px;
+    border: 2px solid var(--cor-secundaria);
+    background-color: transparent;
+    color: var(--cor-texto-primaria);
+    cursor: pointer;
+}
+
+button.botao-secundario:hover,
+button.botao-primario:hover{
+    opacity: 0.8;
 }
