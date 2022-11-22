@@ -7,10 +7,6 @@
     align-items: center;
 }
 
-.banner-categoria .titulo-container{
-    font-family: var(--font-paragrafo);
-}
-
 .banner-categoria h2{
     font-size: 36px;
     margin-bottom: 15px;
@@ -34,4 +30,37 @@
 
 .banner-categoria .icone-container img{
     width: 70%;
+}
+
+.filtros-container{
+    width: 180px;
+}
+
+.filtros-container .header{
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.filtros-container p{
+    color: var(--cor-texto-secundaria);
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: underline;
+    margin-left: 20px;
+}
+
+.filtros-container form span{
+    display: block;
+    margin-bottom: 10px;
+}
+
+.filtros-container h4{
+    font-size: 20px;
+}
+
+.filtros-container form input{
+    margin-right: 5px;
+    width: 18px;
+    height: 18px;
 }

@@ -15,7 +15,27 @@
     box-sizing: border-box;
 }
 
+/* Estilos para todas as páginas */
+
 main{
     width: 70%;
     margin: 0 auto;
+    margin-top: 50px;
+}
+
+
+section h2{
+    margin-bottom: 20px;
+}
+
+/* Componentes */
+
+input[type="checkbox"]{
+    margin-right: 5px;
+    width: 18px;
+    height: 18px;
+}
+
+h2, h3, h4, h5, h6, label, p{
+    font-family: var(--font-paragrafo);
 }
