@@ -38,7 +38,7 @@ main{
 }
 
 .filtros-container{
-    width: 180px;
+    width: 250px;
 }
 
 .filtros-container .header{
@@ -71,7 +71,7 @@ main{
 }
 
 .produtos-container{
-    width: 90%;
+    width: 100%;
 }
 
 .produtos-container .ordenacao-container{
@@ -85,4 +85,62 @@ main{
 .produtos-container .ordenacao-container .quantidade-produtos{
     font-size: 14px;
     margin-top: 10px;
+}
+
+.produtos-container .produtos > div{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 5%;
+}
+
+.produtos-container .produto{
+    width: 100%;
+    min-height: 480px;
+    position: relative;
+}
+
+.produtos-container .produto a{
+    color: var(--cor-texto-primaria);
+    text-decoration: none;
+}
+
+.produtos-container .produto .img-container{
+    height: 350px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.produtos-container .produto img{
+    width: 100%;
+    max-height: 100%;
+}
+
+.produtos-container .produto h3{
+    color: var(--cor-texto-secundaria)
+}
+
+.produtos-container .produto p{
+    font-size: 22px;
+    margin-top: 8px;
+    font-weight: bold;
+}
+
+.produtos-container .produto button{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.produtos-container .botao-container{
+    width: 100%;
+    text-align: center;
+    margin: 80px 0;
+}
+
+.produtos-container button.botao-primario{
+    width: 300px;
 }
