@@ -26,6 +26,7 @@ main{
 
 section h2{
     margin-bottom: 20px;
+    margin-top: 50px;
 }
 
 /* Componentes */
@@ -38,4 +39,29 @@ input[type="checkbox"]{
 
 h2, h3, h4, h5, h6, label, p{
     font-family: var(--font-paragrafo);
+}
+
+/* Menu de seleção */
+
+.menu-selecao{
+    display: flex;
+    border: 1px solid var(--cor-principal);
+    padding: 10px 10px;
+    width: 230px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.menu-selecao p{
+    margin-right: 10px;
+    color: var(--cor-texto-secundaria);
+    font-size: 14px;
+}
+
+.menu-selecao select{
+    background-color: transparent;
+    border: none;
+    font-weight: bold;
+    font-family: var(--font-paragrafo);
+    font-size: 15px;
 }
