@@ -4,32 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/css/chekoutPagamento.css">
     <title>Checkout Pagamento</title>
     
 </head>
 <body>
    <h1>Checkout</h1>
-   <h4> Endereço ---- Envio ----Pagamento</h4>
-   <img src="../public/img/paypal.jpg" alt="logo paypal"> <img src="../public/img/apple.png" alt="logo applepay">
+   <h4> Endereço ---- Envio ----Pagamento</h4> 
+   <img>
+        <img src="../public/img/ApplePaypng.png" alt="logo pagamento"
+        width="100px"heigth="">
+
+        <img src="../public/img/paypal.jpg" alt="logo pagamento"
+        width="100px"heigth="">
+    </img>    
    <h4> Detalhes de pagamento </h4>
 
     <form>
          <div>
-            <input class="nome" type="text" name="nome" id="nome" placeholder="Nome que está no cartão">
+            <input class="nome" type="text" size="50" name="nome" id="nome" placeholder="Nome que está no cartão">
          </div>
          <br>
          <div>
-            <input placeholder="Numero do Cartao"/>
+            <input size="50 "placeholder="Numero do Cartao"/>
         </div> 
         <br>    
         <div>
-            <input class="vencimento" type="number" id="mes" maxlength="2" minlength="2" min="1"  max="12" placeholder="Mes">
-            <input class="vencimento" type="number" id="ano" maxlength="2" minlength="2" min="1"  max="99" placeholder="Ano">
-            <input class="cvv" type="number" name="cvv" id="cvv" maxlength="3" placeholder="cvv">
+            <input class="vencimento" size="10" type="number" id="mes" maxlength="2" minlength="2" min="1"  max="12" placeholder="Mes">
+            <input class="vencimento" size="10" type="number" id="ano" maxlength="2" minlength="2" min="1"  max="99" placeholder="Ano">
+            <input class="cvv" size="10" type="number" name="cvv" id="cvv" maxlength="3" placeholder="cvv">
         </div>
          <br>
         <div>
-            <button>Pagar com Cartao </button> 
+            <button>Pagar com Cartao </button
+            width="70px"    
         </div>
                
     </form>

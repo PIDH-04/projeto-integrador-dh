@@ -13,6 +13,10 @@ return res.sendFile(__dirname + '/views/login.html' )
 
 });
 
+app.get('/ChekoutPagamento', (req , res)=>{
+    return res.sendFile(__dirname + '/views/chekoutPagamento.html' )
+    
+    });
 
 
 // Servidor rodando
