@@ -1,3 +1,4 @@
+
 .banner-categoria{
     background-color:var(--cor-principal);
     padding: 60px 15%;
@@ -32,6 +33,10 @@
     width: 70%;
 }
 
+main{
+    display: flex;
+}
+
 .filtros-container{
     width: 180px;
 }
@@ -63,4 +68,21 @@
     margin-right: 5px;
     width: 18px;
     height: 18px;
+}
+
+.produtos-container{
+    width: 90%;
+}
+
+.produtos-container .ordenacao-container{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+
+.produtos-container .ordenacao-container .quantidade-produtos{
+    font-size: 14px;
+    margin-top: 10px;
 }
