@@ -18,6 +18,9 @@ app.get('/checkout-pagamento', (req , res)=>{
     
     });
 
+app.get('/categorias/:categoria', (req, res) => {
+    return res.sendFile(__dirname + '/views/listagemProdutos.html')
+})
 
 // Servidor rodando
 app.listen(3000, () => {
