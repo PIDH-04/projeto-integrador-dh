@@ -1,0 +1,37 @@
+.banner-categoria{
+    background-color:var(--cor-principal);
+    padding: 60px 15%;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.banner-categoria .titulo-container{
+    font-family: var(--font-paragrafo);
+}
+
+.banner-categoria h2{
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.banner-categoria p {
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.banner-categoria .icone-container{
+    background-color: white;
+    width: 112px;
+    height: 112px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    border: 4px solid var(--cor-secundaria);
+}
+
+.banner-categoria .icone-container img{
+    width: 70%;
+}
