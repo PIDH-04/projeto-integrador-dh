@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/cadastro.css">
+
+</head>
+
+
+<body>
+
+  <div>
+    <h1>Criar Conta</h1>
+  </div>
+
+  <div class="py-2 text-center col-12 col-lg-6  flex-column justify-content-center align-items-center">
+    <form id="formulario" name="formulario" method="post" action="">
+
+      <div class="row my-3">
+
+        <div class="col-6  d-flex">
+          <input type="text" placeholder="First Name" name="First Name" id="First Name" class="form-control" required>
+        </div>
+        <div class="col-6 d-flex ">
+          <input type="text" placeholder="Last Name" name="Last Name" id="Last Name" class="form-control" required>
+        </div>
+
+
+
+        <div>
+
+          <input type="text" placeholder="Adress" name="Adress" id="Adress" class="form-control" required>
+        </div>
+
+        <div>
+          <input type="text" placeholder="Apartment , Suíte etc(opcional)" name="Apartment , Suíte etc(opcional)"
+            id="Apartment , Suíte etc(opcional)" class="form-control" required>
+
+        </div>
+
+
+
+
+        <div>
+          <input type="text" placeholder="City" name="City" id="City" class="form-control" required>
+
+
+        </div>
+
+
+        <div class="col-md-6 position-relative">
+          <label for="validationTooltip03" class="form-label">Country</label>
+          <input type="text" class="form-control" id="validationTooltip03" required>
+          <div class="invalid-tooltip">
+            Please provide a valid city.
+          </div>
+        </div>
+        <div class="col-md-3 position-relative">
+          <label for="validationTooltip04" class="form-label">City</label>
+          <select class="form-select" id="validationTooltip04" required>
+            <option selected disabled value="">Choose...</option>
+            <option>...</option>
+          </select>
+          <div class="invalid-tooltip">
+            Please select a valid state.
+          </div>
+        </div>
+        <div class="col-md-3 position-relative">
+          <label for="validationTooltip05" class="form-label">Zipcode</label>
+          <input type="text" class="form-control" id="validationTooltip05" required>
+          <div class="invalid-tooltip">
+            Please provide a valid zip.
+          </div>
+        </div>
+
+        <div>
+          <input type="text" placeholder="opcional" name="opcional" id="opcional" class="form-control" required>
+        </div>
+
+        <div>
+
+          <input type="text" placeholder="E-mail" name="E-mail" id="E-mail" class="form-control" required>
+        </div>
+
+        <div>
+
+          <input type="text" placeholder="Password" name="Password" id="Password" class="form-control" required>
+        </div>
+
+        <div>
+          <input type="submit" value="Criar Conta" class="btn btn-success col-4 me-2 p-2 ">
+        </div>
+
+        <div>
+          <h1>Ou acesse sua conta</h1>
+        </div>
+
+
+      </div>
+
+
+
+
+
+  </div>
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>

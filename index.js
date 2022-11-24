@@ -13,6 +13,16 @@ return res.sendFile(__dirname + '/views/login.html' )
 
 });
 
+app.get('/loginEmail', (req , res)=>{
+return res.sendFile(__dirname + '/views/loginEmail.html')
+});
+
+app.get('/banana', (req , res)=>{ //isso é o que tem estar na url
+    return res.sendFile(__dirname + '/views/cadastro.html')
+    });
+
+
+
 
 
 // Servidor rodando
