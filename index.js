@@ -8,13 +8,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 // Definir rotas
-app.get('/login', (req , res)=>{
-return res.sendFile(__dirname + '/views/login.html' )
+//app.get('/login', (req , res)=>{
+//return res.sendFile(__dirname + '/views/login.html' )
 
-});
+//});
 
-app.get('/checkout-pagamento', (req , res)=>{
-    return res.sendFile(__dirname + '/views/checkoutPagamento.html' )
+app.get('/header', (req , res)=>{
+    return res.sendFile(__dirname + '/views/header.html')
     
     });
 

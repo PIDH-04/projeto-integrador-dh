@@ -1,30 +1,5 @@
-header .superior .superior2{
-    background-color: yellow;
-    display: flex;
+.superior{
     list-style: none;
+    display: flex;
     flex-wrap: wrap;
-}  
-.inferior{
-    display: flex;
-
-    list-style: none;
-    background-color: #fff;
-    padding: 20px;
-    color: var(--cor-texto-primaria);
-}
-.busca{
-    opacity: 1;
-    color: black;
-    border: none;
-    
-}
-.lupa{
-    width: 10px;
-    height: 10px;
-}
-.ecommerce{
-    align-self: flex-start;
-}
-.interna{
-    padding-left: 10px;
 }
