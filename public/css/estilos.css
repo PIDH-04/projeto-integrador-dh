@@ -29,6 +29,10 @@ section h2{
     margin-top: 50px;
 }
 
+.ordenacao-section{
+    width: 270px;
+}
+
 /* Componentes */
 
 input[type="checkbox"]{
@@ -48,7 +52,6 @@ h2, h3, h4, h5, h6, label, p{
     display: flex;
     border: 1px solid var(--cor-principal);
     padding: 10px 10px;
-    width: 230px;
     justify-content: space-around;
     align-items: center;
 }
@@ -98,6 +101,16 @@ button.botao-primario{
 button.botao-secundario:hover,
 button.botao-primario:hover{
     opacity: 0.8;
+}
+
+
+
+/* Seletor de quantidade */
+
+.seletor-quantidade{
+    border: 1px solid var(--cor-texto-primaria);
+    padding: 10px 10px;
+    text-align: center;
 }
 
 
