@@ -18,6 +18,13 @@ app.get('/header', (req , res)=>{
     
     });
 
+app.get('/categorias/:categoria', (req, res) => {
+    return res.sendFile(__dirname + '/views/listagemProdutos.html')
+})
+
+app.get('/master', (req, res) => {
+    return res.sendFile(__dirname + '/views/master.html')
+})
 
 // Servidor rodando
 app.listen(3000, () => {
