@@ -99,3 +99,10 @@ button.botao-secundario:hover,
 button.botao-primario:hover{
     opacity: 0.8;
 }
+
+
+@media (max-width: 1250px){
+    main{
+        width: 85%;
+    }
+}
