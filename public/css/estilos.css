@@ -69,6 +69,8 @@ h2, h3, h4, h5, h6, label, p{
     font-family: var(--font-paragrafo);
     font-size: 15px;
     cursor: pointer;
+    width: 100%;
+    text-align: center;
 }
 
 .menu-selecao select:focus{
@@ -111,6 +113,8 @@ button.botao-primario:hover{
     border: 1px solid var(--cor-texto-primaria);
     padding: 10px 10px;
     text-align: center;
+    font-size: 16px;
+    font-family: var(--font-paragrafo);
 }
 
 

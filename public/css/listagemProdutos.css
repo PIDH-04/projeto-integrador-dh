@@ -99,6 +99,14 @@ main{
     position: relative;
 }
 
+.produtos-container .menu-selecao{
+    width: 270px;
+}
+
+.produtos-container .menu-selecao select{
+    width: auto;
+}
+
 .produtos-container .produto a{
     color: var(--cor-texto-primaria);
     text-decoration: none;
