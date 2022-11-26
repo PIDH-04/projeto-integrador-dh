@@ -1,0 +1,36 @@
+main.produto-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.produto-container .img-container{
+    width: 40%;
+    position: relative;
+}
+
+.produto-container .img-container img{
+    width: 100%;
+    max-height: 100%;
+}
+
+.produto-container .img-container span{
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    background-color: rgba(0,0,0, 0.6);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    color: white;
+    font-size: 30px;
+    cursor:pointer;
+}
+
+
+.produto-container .info-container{
+    width: 55%;
+}
+
