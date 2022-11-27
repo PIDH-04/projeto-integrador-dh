@@ -19,7 +19,14 @@
     <main class="produto-container">
         <section class="img-container">
             <img src="/img/mesa-monaco.png" alt="Mesa de Jantar Mônaco" >
-            <span class="proxima-img">></span>
+            <span class="proxima-img">
+                <img src="/img/arrow-right.svg" alt="proxima foto">
+            </span>
+            <div class="produto-images">
+                <img src="/img/mesa-monaco.png" alt="Mesa de Jantar Mônaco" >
+                <img src="/img/mesa-monaco.png" alt="Mesa de Jantar Mônaco" >
+               
+            </div>
         </section>
 
         <section class="info-container">
@@ -31,7 +38,11 @@
             <p class="medidas">Medidas: 90 x 90 x 90cm</p>
 
             <form>
-                <input type="number" inputmode="numeric" value="1" min="1" class="seletor-quantidade">
+                <div class="seletor-quantidade">
+                    <span id="btn-subtrai">-</span>
+                    <input id="quantidade" type="number" inputmode="numeric" value="1" min="1">
+                    <span id="btn-adiciona">+</span>
+                </div>
                 <div class="ordenacao-container">
                     <div class="menu-selecao">
                         <select name="ordenacao">
@@ -53,5 +64,7 @@
     <footer>
         <p>Aqui vai o footer</p>
     </footer>
+
+    <script src="/scripts/scripts.js"></script>
 </body>
 </html>

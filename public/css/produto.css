@@ -29,9 +29,14 @@ main.produto-container{
     cursor:pointer;
 }
 
+.produto-container .img-container span img{
+    width: 60%;
+}
+
 
 .produto-container .info-container{
     width: 45%;
+    padding: 50px 0;
 }
 
 
@@ -78,4 +83,16 @@ main.produto-container{
 
 .produto-container .info-container button{
     width: 100%;
+}
+
+
+.produto-container .img-container .produto-images{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.produto-container .img-container .produto-images img{
+    width: 85px;
+    cursor: pointer;
 }

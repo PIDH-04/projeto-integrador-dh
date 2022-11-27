@@ -29,7 +29,7 @@ section h2{
     margin-top: 50px;
 }
 
-.ordenacao-section{
+.master-section{
     width: 270px;
 }
 
@@ -111,12 +111,47 @@ button.botao-primario:hover{
 
 .seletor-quantidade{
     border: 1px solid var(--cor-texto-primaria);
-    padding: 10px 10px;
     text-align: center;
-    font-size: 16px;
-    font-family: var(--font-paragrafo);
+    color: var(--cor-texto-secundaria);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
+.seletor-quantidade input{
+    font-size: 16px;
+    font-family: var(--font-paragrafo);
+    border:none;
+    padding: 10px 10px;
+    text-align: center;
+    width: 70%;
+}
+
+.seletor-quantidade input:focus{
+    outline: none;
+}
+
+.seletor-quantidade span{
+    font-size: 28px;
+    width: 20%;
+    display: block;
+    cursor: pointer;
+    user-select:none;
+}
+
+
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
+  opacity: 1;
+  appearance: none;
+  margin: 0; 
+}
+
+input[type=number] {
+    appearance: textfield;
+    /* Firefox */
+  }
 
 @media (max-width: 1250px){
     main{
