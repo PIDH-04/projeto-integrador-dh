@@ -21,7 +21,7 @@
         </section>
 
 
-        <section class="ordenacao-section">
+        <section class="master-section">
             <h2>menu seleção</h2>
     
                 <div class="menu-selecao">
@@ -45,13 +45,21 @@
             <button class="carregar-mais botao-primario">Ver mais produtos</button>
         </section>
 
-        <section>
+        <!-- Necessário importar o arquivo de scripts para funcionar -->
+        <section class="master-section">
             <h2>seletor de quantidade</h2>
-            <input type="number" inputmode="numeric" value="1" min="1" class="seletor-quantidade">
+            <div class="seletor-quantidade">
+                <span id="btn-subtrai">-</span>
+                <input id="quantidade" type="number" inputmode="numeric" value="1" min="1">
+                <span id="btn-adiciona">+</span>
+            </div>
         </section>
 
 
 
     </main>
+
+
+    <script src="/scripts/scripts.js" ></script>
 </body>
 </html>
