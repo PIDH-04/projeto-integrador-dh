@@ -96,3 +96,30 @@ main.produto-container{
     width: 85px;
     cursor: pointer;
 }
+
+
+@media (max-width: 950px){
+    .produto-container .info-container form{
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .produto-container .info-container .seletor-quantidade,
+    .produto-container .info-container .ordenacao-container{
+        width: 100%;
+    }
+        
+    
+}
+
+
+@media (max-width: 700px){
+    main.produto-container{
+        flex-direction: column;
+    }
+
+    .produto-container .img-container,
+    .produto-container .info-container{
+        width: 100%;
+    }
+}
