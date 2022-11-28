@@ -29,6 +29,10 @@ section h2{
     margin-top: 50px;
 }
 
+.master-section{
+    width: 270px;
+}
+
 /* Componentes */
 
 input[type="checkbox"]{
@@ -48,7 +52,6 @@ h2, h3, h4, h5, h6, label, p{
     display: flex;
     border: 1px solid var(--cor-principal);
     padding: 10px 10px;
-    width: 230px;
     justify-content: space-around;
     align-items: center;
 }
@@ -66,6 +69,8 @@ h2, h3, h4, h5, h6, label, p{
     font-family: var(--font-paragrafo);
     font-size: 15px;
     cursor: pointer;
+    width: 100%;
+    text-align: center;
 }
 
 .menu-selecao select:focus{
@@ -100,6 +105,53 @@ button.botao-primario:hover{
     opacity: 0.8;
 }
 
+
+
+/* Seletor de quantidade */
+
+.seletor-quantidade{
+    border: 1px solid var(--cor-texto-primaria);
+    text-align: center;
+    color: var(--cor-texto-secundaria);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.seletor-quantidade input{
+    font-size: 16px;
+    font-family: var(--font-paragrafo);
+    border:none;
+    padding: 10px 10px;
+    text-align: center;
+    width: 70%;
+}
+
+.seletor-quantidade input:focus{
+    outline: none;
+}
+
+.seletor-quantidade span{
+    font-size: 28px;
+    width: 20%;
+    display: block;
+    cursor: pointer;
+    user-select:none;
+}
+
+
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
+  opacity: 1;
+  appearance: none;
+  margin: 0; 
+}
+
+input[type=number] {
+    appearance: textfield;
+    /* Firefox */
+  }
 
 @media (max-width: 1250px){
     main{

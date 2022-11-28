@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap" rel="stylesheet"> 
     <title>Página Mestre</title>
 </head>
 <body>
@@ -18,18 +21,15 @@
         </section>
 
 
-        <section>
+        <section class="master-section">
             <h2>menu seleção</h2>
     
-            <div class="ordenacao-container">
-                <form class="menu-selecao">
-                    <p>Ordenar por: </p>
+                <div class="menu-selecao">
                     <select name="ordenacao">
                         <option value="">Menor preço</option>
                         <option value="maior-preco">Maior preço</option>
                         <option value="novidades">Novidades</option>
                     </select>
-                </form>
             </div>
         </section>
         
@@ -45,8 +45,21 @@
             <button class="carregar-mais botao-primario">Ver mais produtos</button>
         </section>
 
+        <!-- Necessário importar o arquivo de scripts para funcionar -->
+        <section class="master-section">
+            <h2>seletor de quantidade</h2>
+            <div class="seletor-quantidade">
+                <span id="btn-subtrai">-</span>
+                <input id="quantidade" type="number" inputmode="numeric" value="1" min="1">
+                <span id="btn-adiciona">+</span>
+            </div>
+        </section>
+
 
 
     </main>
+
+
+    <script src="/scripts/scripts.js" ></script>
 </body>
 </html>
