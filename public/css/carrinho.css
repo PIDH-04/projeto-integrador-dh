@@ -1,3 +1,7 @@
+.carrinho-container{
+    padding-bottom: 50px;
+}
+
 .carrinho-container h1{
     font-family: var(--font-paragrafo);
     font-size: 36px;
@@ -45,6 +49,15 @@
     justify-content: space-evenly;
 }
 
+.carrinho-container .produto .produto-info a{
+    color: inherit;
+    text-decoration: none;
+}
+
+.carrinho-container .produto .produto-info a:hover{
+    opacity: 0.5;
+}
+
 .carrinho-container .produto h2{
     font-size: 1.4rem;
 }
@@ -55,6 +68,7 @@
 
 .carrinho-container .produto .preco{
     font-size: 1.3rem;
+    font-weight: bold;
 }
 
 .carrinho-container .produto span{
@@ -68,5 +82,29 @@
 }
 
 .carrinho-container .outras-infos{
-    margin-top: 50px;
+    margin-top: 80px;
+}
+
+.carrinho-container .outras-infos h3{
+    font-size: 1.4rem;
+    display: block;
+    width: 100%;
+    border-bottom: 2px solid var(--cor-texto-secundaria);
+    padding-bottom: 20px;
+}
+
+.carrinho-container .outras-infos p, 
+.carrinho-container .outras-infos h4{
+    color: var(--cor-texto-secundaria);
+}
+
+.carrinho-container .outras-infos h4{
+    margin-top: 30px;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.carrinho-container .outras-infos section{
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
 }
