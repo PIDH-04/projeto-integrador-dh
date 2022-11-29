@@ -31,6 +31,11 @@ app.get('/produto', (req, res) => {
 })
 
 
+app.get('/carrinho', (req, res) => {
+    return res.sendFile(__dirname + '/views/carrinho.html')
+})
+
+
 // Servidor rodando
 app.listen(3000, () => {
     console.log('Servidor rodando')
