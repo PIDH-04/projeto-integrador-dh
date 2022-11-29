@@ -1,10 +1,25 @@
 .carrinho-container{
     padding-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .carrinho-container h1{
     font-family: var(--font-paragrafo);
     font-size: 36px;
+}
+
+.carrinho-container h3{
+    font-size: 1.4rem;
+    display: block;
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+.carrinho-container .duas-colunas{
+    display: flex;
+    justify-content: space-between;
+
 }
 
 .carrinho-container .produtos-container{
@@ -13,7 +28,16 @@
 }
 
 .carrinho-container .produtos-container > p{
-    margin-bottom: 50px;
+    margin: 15px 0 50px;
+}
+
+.carrinho-container .produtos-container > p > a{
+    color:var(--cor-texto-secundaria);
+}
+
+.carrinho-container .produtos-container > p > a:hover{
+    color:var(--cor-texto-secundaria);
+    opacity: 0.8;
 }
 
 .carrinho-container .produto{
@@ -85,12 +109,10 @@
     margin-top: 80px;
 }
 
+
+
 .carrinho-container .outras-infos h3{
-    font-size: 1.4rem;
-    display: block;
-    width: 100%;
     border-bottom: 2px solid var(--cor-texto-secundaria);
-    padding-bottom: 20px;
 }
 
 .carrinho-container .outras-infos p, 
@@ -98,7 +120,7 @@
     color: var(--cor-texto-secundaria);
 }
 
-.carrinho-container .outras-infos h4{
+.carrinho-container h4{
     margin-top: 30px;
     font-size: 1.2rem;
     margin-bottom: 15px;
@@ -107,4 +129,43 @@
 .carrinho-container .outras-infos section{
     padding-bottom: 20px;
     border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+.carrinho-container .resumo{
+    width: 30%;
+    margin-top: 50px;
+}
+
+.carrinho-container .resumo label{
+    font-size:0.8rem;
+}
+
+.carrinho-container .resumo input{
+    width: 100%;
+    margin-top: 15px;
+}
+
+.carrinho-container .resumo .valores{
+    margin-top: 50px;
+}
+
+.carrinho-container .resumo .valores > div{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.carrinho-container .resumo .valores h5{
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.carrinho-container .resumo .total{
+    border-top: 1px solid var(--cor-principal);
+    padding-top: 20px;
+}
+
+.carrinho-container .resumo a{
+    width: 100%;
+    margin-top: 50px;
 }
