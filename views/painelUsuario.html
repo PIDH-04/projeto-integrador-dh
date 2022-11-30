@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Painel de usuário</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/90a414e190.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <link rel="stylesheet" href="/css/form-usuario.css">
+	<form id="form-usuario" method="POST" action="" enctype="multipart/form-data">
+        <img class ="imglogin"src="/img/img.jpg" alt="">
+        <br>
+		<label class="input-file-container">
+			Alterar foto
+			<input type="file" name="img" id="img">
+		</label>
+		
+		<div class="campos">
+			<label>
+				Nome:
+				<input type="text" name="nome" id="nome" placeholder="Digite o nome do usuário" value="Marcos Antonio de Araujo">
+			</label>
+
+            <label>
+				Endereço:
+				<input type="text" name="nome" id="nome" placeholder="Digite o nome do usuário" value="Rua Itú 299 São Paulo/sp">
+			</label>
+		
+			<label>
+				E-mail:
+				<input type="email" name="email" id="email" placeholder="Digite e-mail do usuário" value="Marcos@terra.com.br">
+			</label>
+		
+			<label>
+				Senha:
+				<input type="password" name="senha" id="senha" placeholder="Digite a senha">
+			</label>
+		
+			<label>
+				Confirme a Senha:
+				<input type="password" name="conf" id="conf" placeholder="Confirme a senha do usuário">
+			</label>
+            <button type="submit">Alterar dados</button><br><button type="submit">Salvar</button>
+			
+            <div class="campos">
+                <label>
+                    <h1>Status de Pedidos</h1>
+                    <select class="form-select" id="validationTooltip04" required="">
+                        <option selected="" disabled="" value="">últimos Pedidos...</option>
+                        <option>...</option>
+                        <label>
+                            <input type="text" poduto="produto" id="produto" placeholder="digite aqui o produto" value="Mesa com 6 cadeiras">
+                        </label>
+                      </select>
+                    
+                    <button type="submit">Alterar Pedido</button>
+                </label>
+                <br>
+                    <button type="submit">Excluir Pedido</button>
+                </label>
+                <br>
+                    <button type="submit">Incluir Novo produto</button>
+                </label>
+		</div>
+	</form>
+</body>
+</html>

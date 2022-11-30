@@ -7,7 +7,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 // Definir rotas
-
+app.get("/painelUsuario", (req, res) => {
+    return res.sendFile(__dirname + "/views/painelUsuario.html")
+})
 
 
 // Servidor rodando
