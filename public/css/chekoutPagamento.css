@@ -1,3 +1,124 @@
+
+html{
+    height: 100%;
+}
+
+
+header{
+    /* retangulo */
+
+position: absolute;
+width: 1400px;
+height: 60px;
+left: 0px;
+top: 0px;
+
+/* primaria*/
+background: #565656;
+
+}
+
+
+
+header h1{
+
+    /* Logo */
+
+width: 112px;
+height: 24px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 24px;
+letter-spacing: -0.6px;
+left: 10px;
+
+color: #FFFFFF;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+}
+
+
+
 body{
-    size ="50";
+    display: flex;
+    justify-content:flex-start ;
+    align-items: center;
+    height: 100%;
+}
+
+#Form-Cartao{
+    background-color:;
+    width: 600px;
+    padding: 20px;
+
+}
+
+#Form-Cartao .campos{
+    display: flex;
+    flex-direction: column;
+
+}
+
+#Form-cartao imput{
+    
+    display: block;
+    width: 100%;
+    
+  
+
+}
+
+body h4 {
+
+    position: absolute;
+    left: 10.07%;
+    right: 79.07%;
+    top: 12.33%;
+    bottom: 82.78%;
+
+
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 44px;
+
+    letter-spacing: -1.5px;
+
+    color: #000000;
+
+
+}
+
+
+
+button{
+
+    background-color: rgba(86, 86, 86, 1);
+    height: 50px;
+    width: 397px;
+    left: 0px;
+    top: 0px;
+    border-radius: 0px;
+    color: #FFFFFF;
+
+    
+}
+    
+input {
+
+    height: 40px;
+    width: 398px;
+    left: 0px;
+    top: 0px;
+    border-radius: 0px;
+    
 }

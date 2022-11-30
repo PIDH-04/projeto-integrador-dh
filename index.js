@@ -13,7 +13,7 @@ return res.sendFile(__dirname + '/views/login.html' )
 
 });
 
-app.get('/checkout-pagamento', (req , res)=>{
+app.get('/checkoutpagamento', (req , res)=>{
     return res.sendFile(__dirname + '/views/checkoutPagamento.html' )
     
     });
