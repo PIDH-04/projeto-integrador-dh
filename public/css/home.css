@@ -71,7 +71,12 @@ main .product-card img{
     align-items: center;
 }
 
-main .product-card h3 {
+main .product-card button2{
     color: #101010;
     padding-top: 10px;
+    display: flex;
+    margin: 0%;
+    align-items: stretch;
+    text-align: center;
+    text-size-adjust: 100%;
 }
