@@ -40,6 +40,7 @@ button1{
 main .vitrine {
     padding: 50px;
     display:flex;
+    flex-wrap: wrap;
 }
 
 main .vitrine h2{
@@ -57,7 +58,8 @@ main .product-container{
 
 main .product-card{
     align-items: stretch;
-    display: inline-flexbox;
+    display: flex;
+    flex-wrap: wrap;
     width: 100px;
     height: 200px;
     border: 3px solid #FFB612;
