@@ -169,3 +169,40 @@
     width: 100%;
     margin-top: 50px;
 }
+
+
+@media (max-width: 1000px){
+    main.carrinho-container{
+        flex-direction: column;
+    }
+
+    .carrinho-container .produtos-container{
+        width: 100%;
+    }
+    
+    .carrinho-container .resumo{
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 680px){
+    .carrinho-container .produtos-container .img-container{
+        width: 100px;
+    }
+
+    .carrinho-container .produto{
+        height: 150px;
+    }
+    .produtos-container .produto-info{
+        height: auto;
+    }
+
+    .carrinho-container .produto h2{
+        font-size: 1rem;
+    }
+    
+    .carrinho-container .produto p{
+        font-size: 0.8rem;
+    }
+}
