@@ -1,5 +1,43 @@
-.superior{
-    list-style: none;
+
+
+
+.superior3 {
+    background-color: var(--cor-secundaria);
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+    padding: 20px;
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+.inferior2 {
+    background-color: #ffffff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+    padding: 20px;
+    padding-left: 200px;
+    padding-right: 200px;
+
+}
+
+.ecommerce {
+    font-style: var(--font-paragrafo);
+}
+
+.lupa {
+    width: 20px;
+    height: 20px;
+}
+
+.sacola {
+    width: 20px;
+    height: 20px;
+}
+
+.busca {
+    border: none;
 }
