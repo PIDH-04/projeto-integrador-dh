@@ -1,70 +1,79 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mesa de Jantar Mônaco | E-Commerce</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="/css/estilos.css">
-    <link rel="stylesheet" href="/css/produto.css">
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/estilos.css" />
+    <link rel="stylesheet" href="/css/produto.css" />
+  </head>
+  <body>
     <header>
-        <p>Aqui vai o header</p>
+      <p>Aqui vai o header</p>
     </header>
 
     <main class="produto-container">
-        <section class="img-container">
-            <img src="/img/mesa-monaco.png" alt="Mesa de Jantar Mônaco" >
-            <span class="proxima-img">
-                <img src="/img/arrow-right.svg" alt="proxima foto">
-            </span>
-            <div class="produto-images">
-                <img src="/img/mesa-monaco.png" alt="Mesa de Jantar Mônaco" >
-                <img src="/img/mesa-monaco.png" alt="Mesa de Jantar Mônaco" >
-               
+      <section class="img-container">
+        <img src="/img/mesa-monaco.png" alt="Mesa de Jantar Mônaco" />
+        <span class="proxima-img">
+          <img src="/img/arrow-right.svg" alt="proxima foto" />
+        </span>
+        <div class="produto-images">
+          <img src="/img/mesa-monaco.png" alt="Mesa de Jantar Mônaco" />
+          <img src="/img/mesa-monaco.png" alt="Mesa de Jantar Mônaco" />
+        </div>
+      </section>
+
+      <section class="info-container">
+        <h1>Mesa de Jantar Mônaco</h1>
+        <h3>R$ 800,00</h3>
+
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aperiam
+          minima necessitatibus, quis blanditiis exercitationem veniam earum
+          error quam cupiditate iste vitae accusamus voluptatem corporis ullam?
+          Eos sit nisi vero.
+        </p>
+
+        <p class="medidas">Medidas: 90 x 90 x 90cm</p>
+
+        <form>
+          <div class="seletor-quantidade">
+            <span id="btn-subtrai">-</span>
+            <input
+              id="quantidade"
+              type="number"
+              inputmode="numeric"
+              value="1"
+              min="1"
+            />
+            <span id="btn-adiciona">+</span>
+          </div>
+          <div class="ordenacao-container">
+            <div class="menu-selecao">
+              <select name="ordenacao">
+                <option value="">Tampo Madeira</option>
+                <option value="vidro">Tampo Vidro</option>
+              </select>
             </div>
-        </section>
+          </div>
+        </form>
 
-        <section class="info-container">
-            <h1>Mesa de Jantar Mônaco</h1>
-            <h3>R$ 800,00</h3>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aperiam minima necessitatibus, quis blanditiis exercitationem veniam earum error quam cupiditate iste vitae accusamus voluptatem corporis ullam? Eos sit nisi vero.</p>
-
-            <p class="medidas">Medidas: 90 x 90 x 90cm</p>
-
-            <form>
-                <div class="seletor-quantidade">
-                    <span id="btn-subtrai">-</span>
-                    <input id="quantidade" type="number" inputmode="numeric" value="1" min="1">
-                    <span id="btn-adiciona">+</span>
-                </div>
-                <div class="ordenacao-container">
-                    <div class="menu-selecao">
-                        <select name="ordenacao">
-                            <option value="">Tampo Madeira</option>
-                            <option value="vidro">Tampo Vidro</option>
-                        </select>
-                    </div>
-                </div>
-            </form>
-            
-
-            <button class="comprar botao-secundario">
-                Adicionar ao carrinho
-            </button>
-        </section>
+        <button class="comprar botao-secundario">Adicionar ao carrinho</button>
+      </section>
     </main>
 
-
     <footer>
-        <p>Aqui vai o footer</p>
+      <p>Aqui vai o footer</p>
     </footer>
 
     <script src="/scripts/scripts.js"></script>
-</body>
+  </body>
 </html>
