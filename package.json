@@ -1,7 +1,7 @@
 {
   "name": "projeto-integrador-dh",
   "version": "1.0.0",
-  "description": "",
+  "description": "Projeto integrador da Digital House",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",
@@ -15,5 +15,13 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PIDH-04/projeto-integrador-dh.git"
+  },
+  "bugs": {
+    "url": "https://github.com/PIDH-04/projeto-integrador-dh/issues"
+  },
+  "homepage": "https://github.com/PIDH-04/projeto-integrador-dh#readme"
 }
