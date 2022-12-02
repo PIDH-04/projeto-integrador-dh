@@ -1,6 +1,6 @@
 main.finalizacao-pg-container{
     display: flex;
-    padding-top: 100px;
+    padding: 100px 0;
     flex-direction: column;
     align-items: center;
 }
@@ -45,4 +45,16 @@ main.finalizacao-pg-container{
 
 .finalizacao-pg-container .botoes-container a{
     width: 20rem;
+}
+
+@media (max-width:580px){
+    .finalizacao-pg-container .botoes-container{
+        flex-direction: column;
+        margin-top: 60px;
+        gap: 20px;
+    }
+
+    .finalizacao-pg-container .botoes-container a{
+        width: 100%;
+    }
 }
