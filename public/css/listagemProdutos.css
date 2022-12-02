@@ -149,6 +149,7 @@ main {
 
 .produtos-container button.botao-primario {
   width: 300px;
+  margin: 0 auto;
 }
 
 /* MEDIA QUERIES */

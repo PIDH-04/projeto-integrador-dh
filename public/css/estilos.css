@@ -3,6 +3,7 @@
   --cor-secundaria: #ffb612;
   --cor-texto-primaria: #101010;
   --cor-texto-secundaria: #979797;
+  --cor-sucesso: #4BB543;
   --font-paragrafo: "Public Sans", sans-serif;
   --font-titulo: "Merriweather", serif;
 }
@@ -104,6 +105,10 @@ a.botao-primario {
   background-color: transparent;
   color: var(--cor-texto-primaria);
   cursor: pointer;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  font-family: var(--font-paragrafo);
 }
 
 button.botao-secundario:hover,
