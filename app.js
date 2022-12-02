@@ -36,6 +36,10 @@ app.get("/painelUsuario", (req, res) => {
   return res.sendFile(__dirname + "/views/painelUsuario.html")
 });
 
+app.get('/finalizacao-compra', (req, res) => {
+  return res.sendFile(__dirname + '/views/finalizacaoCompra.html')
+})
+
 // Servidor rodando
 app.listen(3000, () => {
   console.log("Servidor rodando");
