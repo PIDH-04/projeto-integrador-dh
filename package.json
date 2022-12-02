@@ -2,9 +2,9 @@
   "name": "projeto-integrador-dh",
   "version": "1.0.0",
   "description": "Projeto integrador da Digital House",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "dev": "nodemon index.js",
+    "dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
