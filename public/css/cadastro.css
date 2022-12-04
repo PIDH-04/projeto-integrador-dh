@@ -1,16 +1,130 @@
-* {
-    margin: 0 ;
-    padding:  10;
-    box-sizing: border-box;
-    padding: 10px;
-} 
 
-h1{
-    font-size:small;
+
+
+.display-flex{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 5%;
+
+   
+    
+}
+
+
+
+.container{
+
+    /* padding:    10px; */
+	width: 550px;
+    
+    height: 500px;
+    margin: 30px;
+    padding:  20px ;
+	border: 1px solid #ccc;
+
+    
+    
+
+	/* tirar display volta ficar em coluna */
+	/* display:inline-block; */
 
 }
-form-control{
-    display: flex;
-    flex-direction: row;
-} 
+
+.container1{
+    width: 400px;
+    height: 350px;
+    margin: 30px;
+    padding: 20px;
+	border: 1px solid #ccc;
+
+}
+h1{
+    
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: -0.4px;
+    color: #252525;
+    padding: 15px;
+    text-align: center;
+    
+    
+}
+
+.botom{
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: left; 
+    letter-spacing: -0.4px;
+    width: 510px;
+    text-align: center;
+    padding: 5px;
+}
+
+.clique{
+    /* margin: 5px;
+    background: #e3e3e8;
+   text-align: center;
+   font-size: 1.5em;
+   padding: 10px;  */
+
+   /* background-color:rgb(115, 110, 110);  */
+    /* color: #fff; 
+   border: none;
+   padding: 10 10 5px;
+   display: inline-block;
+   text-align: center;
+   cursor: pointer; */
+   
+   font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: left; 
+    letter-spacing: -0.4px;
+    width: 360px;
+    text-align: center;
+    
+
+}
+
+h3{
+    text-align: center;
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+    
+.clique{
+  
+    
+    color: rgb(205, 195, 195); 
+
+   text-align: center;
+   cursor: pointer;
+  
+
+}    
+
+
+.opcao{
+    padding: 10px;
+}
+.apto{
+    padding: 10px;
+}
+.endereco{
+    padding: 10px;
+}
 
