@@ -40,6 +40,11 @@ app.get('/finalizacao-compra', (req, res) => {
   return res.sendFile(__dirname + '/views/finalizacaoCompra.html')
 })
 
+app.get('/cadastro', (req, res) => {
+  return res.sendFile(__dirname + '/views/cadastro.html')
+})
+
+
 // Servidor rodando
 app.listen(3000, () => {
   console.log("Servidor rodando");
