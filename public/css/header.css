@@ -1,26 +1,43 @@
-.cabecalho {
+
+
+
+.superior3 {
     background-color: var(--cor-secundaria);
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    padding: 10px 20px;
-}
-.segundaParte {
-    background-color: #979797;
-}
-#bloco-2{
-    text-align: center;
+    list-style: none;
+    padding: 20px;
+    padding-left: 200px;
+    padding-right: 200px;
 }
 
-#imgLupa {
-    width: 30px;
-    height: 30px;
+.inferior2 {
+    background-color: #ffffff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+    padding: 20px;
+    padding-left: 200px;
+    padding-right: 200px;
+
 }
 
-#imgCarrinho {
+.ecommerce {
+    font-style: var(--font-paragrafo);
+}
+
+.lupa {
     width: 20px;
     height: 20px;
 }
 
-.segundaParte {
-    border-left: 50px;
+.sacola {
+    width: 20px;
+    height: 20px;
+}
+
+.busca {
+    border: none;
 }
