@@ -50,7 +50,12 @@ app.get('/finalizacao-compra', (req, res) => {
   return res.sendFile(__dirname + '/views/finalizacaoCompra.html')
 })
 
+app.get('/checkoutpagamento', (req , res)=>{
+  return res.sendFile(__dirname + '/views/checkoutPagamento.html' )
+})
+
 // Servidor rodando
 app.listen(3000, () => {
   console.log("Servidor rodando");
 });
+
