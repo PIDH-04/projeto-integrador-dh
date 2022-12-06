@@ -7,46 +7,58 @@
     <title>Painel de Usuario</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/estilos.css">
+        <link rel="stylesheet" href="/css/estilos.css">
+        <link rel="stylesheet" href="/css/painelUsuario.css">
 </head>
 
 <body>
+    <main>
+        <div id="container-a">
+            <h1>Painel do Usuario</h1>
+            <img class="imglogin" src="/img/img.jpg" alt="">
+            <form class="botao-primario">
+                <label class="alterar-img">
+                    Alterar
+                    <input type="file"name="foto">
 
-    <div id="container-a">
-        <h2>Painel do Usuario</h2>
-        <img class="imglogin" src="/img/img.jpg" alt="">
-        <br>
-        <label class="input-file-container">
-            Alterar foto
-            <input type="file" name="img" id="img">
-            <br>
-            <label>
-                <input type="text" placeholder="Marcos dos santos" name="Nome" id="Nome" class="form-control" required>
-                <br>
-                <input type="text" placeholder="Marcos@uol.com" name="E-mail" id="E-mail" class="form-control" required>
-                <br>
-                <input type="text" placeholder="Password" name="Password" id="Password" class="form-control" required>
-                Cliente desde 18 de janeiro de 2019
-                <br>
-                <button>Alterar<button>
-    </div>
-    <div id="container-b">
-        <h2>Endereço de entrega</h2>
-        <input type="text" placeholder="Rua itú São paulo SP" name="Endereço" id="Endereço" class="form-control"
-            required>
-        <button>Alterar</button>
-        <h2>Status de Pedidos</h2>
-        Pedidos
-        <select class="form-select" id="validationTooltip04" required>
-            <option selected disabled value="">Em Andamento...</option>
-            <option>...</option>
-        </select>
+                </label>
+                    <label for="Nome">
+                        Seu Nome
+                        <input type="text" placeholder="Marcos dos santos" name="Nome" id="Nome" class="form-control"
+                            required>
+                    </label>
+                    <label for="E-mail">
+                        E-mail
+                        <input type="text" placeholder="Marcos@uol.com" name="E-mail" id="E-mail" class="form-control"
+                            required>
+                    </label>
+                    <label for="Digite sua Senha">
+                        Senha
+                        <input type="text" placeholder="Senha" name="Password" id="Password" class="form-control"
+                            required>
+                    </label>
 
-        <select class="form-select" id="validationTooltip04" required>
-            <option selected disabled value="">Finalizados...</option>
-            <select class="form-select" id="validationTooltip04" required>
-                <option selected disabled value="">...</option>
+                    <button class="botao-secundario">Alterar dados</button>
+
+            </form>
+        </div>
+        <div id="container-b">
+            <h2>Endereço de Entrega</h2>
+            <input type="text" placeholder="Rua itú São paulo SP" name="Endereço" id="Endereço" class="form-control"
+                required>
+            <button class="botao-secundario">Alterar</button>
+            <h2>Status de Pedidos</h2>
+            Pedidos
+            <select name="ordenacao">
+                <option value="">Entregues..</option>
+                <option value="concluidos">Finalizados..</option>
+                <option value="a-caminho">Em andamento</option>
             </select>
-            <input type="submit" value="Novo Pedido" class="btn btn-success col-4 me-2 p-2 ">
-    </div>
+            <button class="botao-primario">Novo Pedido</button>
+        </div>
+
+    </main>
+
+</body>
+
+</html>
