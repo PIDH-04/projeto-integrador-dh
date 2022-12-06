@@ -1,0 +1,20 @@
+main .master-section{
+    border-color: var(--cor-texto-primaria);
+    border-radius: 2px;
+}
+
+main .master-section .menu-selecao{
+    margin-bottom: 20px;
+}
+
+main .master-section a{
+    background-color: var(--cor-texto-primaria);
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    size: 200px 50px;
+    text-size-adjust: 40px;
+    width: 270px;
+    height: 50px;
+    padding: 10px;
+}
