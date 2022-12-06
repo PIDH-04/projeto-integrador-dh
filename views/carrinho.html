@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meu carrinho | E-commerce</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/estilos.css" />
+    <link rel="stylesheet" href="/css/carrinho.css" />
+  </head>
+  <body>
+    <header>
+      <p>Aqui vai o header</p>
+    </header>
+
+    <main class="carrinho-container">
+      <div class="produtos-container">
+        <h1>Seu carrinho</h1>
+        <p>Não se decidiu? <a href="/">Continue comprando</a></p>
+
+        <div class="produtos">
+          <div class="produto">
+            <div class="img-container">
+              <a href="/produto">
+                <img
+                  src="/img/mesa-monaco.png"
+                  alt="Foto Mesa de jantar Mônaco"
+                />
+              </a>
+            </div>
+            <div class="produto-info">
+              <a href="/produto">
+                <h2>Mesa de Jantar Mônaco</h2>
+              </a>
+              <p class="variacao">Tampo madeira</p>
+              <p class="quantidade">Quantidade: 1</p>
+              <p class="preco">R$ 800,00</p>
+            </div>
+            <span>Remover</span>
+          </div>
+
+          <div class="produto">
+            <div class="img-container">
+              <a href="/produto">
+                <img src="/img/mesa-dora.png" alt="Foto Mesa de jantar Dora" />
+              </a>
+            </div>
+            <div class="produto-info">
+              <a href="/produto">
+                <h2>Mesa de Jantar Dora</h2>
+              </a>
+              <p class="variacao">Tampo madeira</p>
+              <p class="quantidade">Quantidade: 1</p>
+              <p class="preco">R$ 800,00</p>
+            </div>
+            <span>Remover</span>
+          </div>
+
+          <div class="produto">
+            <div class="img-container">
+              <a href="/produto">
+                <img
+                  src="/img/mesa-plana.png"
+                  alt="Foto Mesa de jantar Plana"
+                />
+              </a>
+            </div>
+            <div class="produto-info">
+              <a href="/produto">
+                <h2>Mesa de Jantar Plana</h2>
+              </a>
+              <p class="variacao">Tampo madeira</p>
+              <p class="quantidade">Quantidade: 1</p>
+              <p class="preco">R$ 800,00</p>
+            </div>
+            <span>Remover</span>
+          </div>
+        </div>
+
+        <div class="outras-infos">
+          <h3>Outras informações</h3>
+          <section>
+            <h4>Política de devolução</h4>
+            <p>Cancelamento da compra em até 4h depois da efetivação.</p>
+            <p>
+              Para devoluções depois de entregue, entre em contato com o nosso
+              setor de vendas
+            </p>
+          </section>
+        </div>
+      </div>
+
+      <div class="resumo">
+        <h3>Resumo do pedido</h3>
+
+        <form action="">
+          <label>
+            Adicione seu código de desconto
+            <input type="text" placeholder="código de desconto" />
+          </label>
+        </form>
+
+        <div class="valores">
+          <div class="subtotal">
+            <h5>Subtotal</h5>
+            <p>R$ 2.400,00</p>
+          </div>
+
+          <div class="frete">
+            <h5>Frete</h5>
+            <p>R$ 350,00</p>
+          </div>
+
+          <div class="total">
+            <h5>Total</h5>
+            <p>R$ 2.750,00</p>
+          </div>
+
+          <a href="/checkout" class="botao-secundario">Opções de entrega</a>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>Aqui vai o footer</p>
+    </footer>
+
+    <script src="/scripts/scripts.js"></script>
+  </body>
+</html>

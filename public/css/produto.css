@@ -1,0 +1,114 @@
+main.produto-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.produto-container .img-container {
+  width: 40%;
+  position: relative;
+}
+
+.produto-container .img-container img {
+  width: 100%;
+  max-height: 100%;
+}
+
+.produto-container .img-container span {
+  position: absolute;
+  top: 50%;
+  right: -20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.produto-container .img-container span img {
+  width: 60%;
+}
+
+.produto-container .info-container {
+  width: 45%;
+  padding: 50px 0;
+}
+
+.produto-container .info-container h1 {
+  font-size: 36px;
+  font-family: var(--font-paragrafo);
+}
+
+.produto-container .info-container h3 {
+  margin-bottom: 20px;
+  margin-top: 10px;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.produto-container .info-container p {
+  line-height: 24px;
+  text-align: justify;
+}
+
+.produto-container .info-container .medidas {
+  margin: 20px 0 50px;
+  font-style: italic;
+}
+
+.produto-container .info-container form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.produto-container .info-container .seletor-quantidade {
+  width: 45%;
+}
+
+.produto-container .info-container .ordenacao-container {
+  width: 45%;
+}
+
+.produto-container .info-container button {
+  width: 100%;
+}
+
+.produto-container .img-container .produto-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.produto-container .img-container .produto-images img {
+  width: 85px;
+  cursor: pointer;
+}
+
+@media (max-width: 950px) {
+  .produto-container .info-container form {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .produto-container .info-container .seletor-quantidade,
+  .produto-container .info-container .ordenacao-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  main.produto-container {
+    flex-direction: column;
+  }
+
+  .produto-container .img-container,
+  .produto-container .info-container {
+    width: 100%;
+  }
+}
