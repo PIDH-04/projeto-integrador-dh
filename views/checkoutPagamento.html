@@ -7,8 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>checkoutPagamento</title>
+    <link rel="stylesheet" href="/css/estilos.css">
     <link rel="stylesheet" href="/css/chekoutPagamento.css">
-    <link rel="stylesheet" href="/pucss/estilos.css">
+
 </head>
 
 
@@ -18,47 +19,55 @@
         <h1>
             Ecommerce
         </h1>
-        
+
     </header>
-    <h4>
-        Checkout - Forma de Pagamento
-    </h4>
-    
-    <form id="Form-Cartao" method="POST" action="" enctype="">
-        <div class="campos">
-            <h3>
-                Pagar com Pix
-            </h3>
-          
-            <button>Ver dados para pagamento com pix </button>
-            
-            <h3>
-                Pagar com Cartão de Crédito
-            </h3>
-            
-            <input class="nome" type="text" name="nome" id="nome" placeholder="Nome que está no cartão">
-            <br>
-            <input class="Cartao" type="number" name="Numero" id="Numero" placeholder="Numero que está no cartão">
-            <br>
-            <div class="junto">
-                <input class="vencimento" type="number" id="mes" placeholder="Mes">
-                <input class="vencimento" type="number" id="ano" placeholder="Ano">
-                <input class="cvv" type="number" id="cvv" placeholder="cvv">
+    <main>
+        <h4>
+            Checkout - Forma de Pagamento
+        </h4>
+        <div class="flex">
+            <div class="coluna1">
+                <form id="Form-Cartao" method="POST" action="" enctype="">
+                    <div class="campos">
+                        <h3>
+                            Pagar com Pix
+                        </h3>
+
+                        <button class="botao-primario">Ver dados para pagamento com pix </button>
+
+                        <h3>
+                            Pagar com Cartão de Crédito
+                        </h3>
+
+                        <input class="nome" type="text" name="nome" id="nome" placeholder="Nome que está no cartão">
+
+                        <input class="Cartao" type="number" name="Numero" id="Numero"
+                            placeholder="Numero que está no cartão">
+
+                        <div class="junto">
+                            <input class="vencimento" type="number" id="mes" placeholder="Mes">
+                            <input class="vencimento" type="number" id="ano" placeholder="Ano">
+                            <input class="cvv" type="number" id="cvv" placeholder="cvv">
+                        </div>
+
+                        <div class="texto-form">
+                            <h5>
+                                Salvar dados para uma compra futura
+                            </h5>
+                        </div>
+
+                        <button class="botao-secundario">Pagar com Cartao </button>
+
+                    </div>
+                </form>
             </div>
-            <br>
-            <div class="texto-form">
-                <h5>
-                    Salvar dados para uma compra futura
-                </h5>
+            <div class="coluna2">
+
+                <p>CARRINHO</p>
+
             </div>
-            <br>
-            <button>Pagar com Cartao </button>
-           
-            
-                
         </div>
-    </form>
-   
+    </main>
 </body>
 
 </html>

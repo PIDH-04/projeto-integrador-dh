@@ -44,16 +44,16 @@ header h1 {
 
 body {
 
-    display: flex;
+    /* display: flex;
     justify-content: flex-start;
     align-items: center;
-    height: 100%;
+    height: 100%; */
 }
 
 #Form-Cartao {
 
-    width: 220px;
-    padding: 200px;
+    width: 100%;
+    /* padding: 200px; */
     display: flex;
 
 
@@ -62,7 +62,12 @@ body {
 #Form-Cartao .campos {
     display: flex;
     flex-direction: column;
+    width: 100%;
 
+}
+
+#Form-Cartao .campos .nome{
+    border: 1px solid var(--cor-principal);
 }
 
 #Form-cartao imput {
@@ -74,13 +79,13 @@ body {
 
 body h4 {
 
-    position: absolute;
+    /* position: absolute; */
     left: 10.07%;
     right: 54.14%;
     top: 12.33%;
     bottom: 82.78%;
 
-    font-family: 'Public Sans';
+    font-family: var(--font-paragrafo);
     font-style: normal;
     font-weight: 600;
     font-size: 36px;
@@ -95,7 +100,6 @@ body h4 {
 body h5 {
 
     height: 16px;
-    width: 234px;
     left: 143px;
     top: 586.5px;
     border-radius: nullpx;
@@ -104,19 +108,21 @@ body h5 {
 
 body h3 {
 
+    font-family: var(--font-paragrafo);
     height: 32px;
     width: 303px;
     left: 142px;
     top: 371px;
     border-radius: nullpx;
 
-  
+
+
 }
 
 button {
-
+    margin-bottom: 50px;
     height: 50px;
-    width: 397px;
+    /* width: 397px; */
     left: 0px;
     top: 0px;
     border-radius: 0px;
@@ -128,11 +134,44 @@ button {
     border: 1px solid rgba(13, 13, 13, 1)
 }
 
-input {
-
+#Form-Cartao input {
+    margin-bottom: 20px;
     height: 40px;
-    width: 390px;
+    width: 100%;
     left: 0px;
     top: 0px;
-    border-radius: 0px;
+    border: 1px solid var(--cor-principal);
+}
+
+#Form-Cartao .campos .junto {
+
+    display: flex;
+    gap: 5%;
+    width: 100%;
+
+}
+
+.coluna1 {
+
+    width: 60%;
+
+}
+
+.coluna2 {
+
+    width: 40%;
+}
+
+.flex {
+
+    display: flex;
+    justify-content: space-between;
+    gap: 15%;
+    margin-top: 50px;
+}
+
+
+#Form-Cartao .campos button:last-child {
+    margin-top: 20px;
+
 }
