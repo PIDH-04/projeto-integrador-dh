@@ -1,5 +1,7 @@
 
-
+body{
+    padding: 10px;
+}
 
 .display-flex{
     display: flex;
@@ -17,57 +19,57 @@
     /* padding:    10px; */
 	width: 550px;
     
-    height: 570px;
+    height: 590px;
     margin: 30px;
     padding:  20px ;
-	border: 1px solid #ccc;
-
-    
-    border: 1px solid var(--cor-secundaria);
+	border: 1px solid #ccc; 
+    border: 1px solid var(--cor-principal);
     background-color: transparent;
-
+    border-radius: 10px;
 	
     
 
 }
 
 .container1{
+
+    border-radius: 10px;
     width: 600px;
-    height: 330px;
+    height: 350px;
     margin: 30px;
     padding:  20px;
 	border: 1px solid #ccc;
 
-    border: 1px solid var(--cor-secundaria);
+    border: 1px solid var(--cor-principal);
     background-color: transparent;
 
-}
-h1{
     
-    font-family: 'Public Sans';
+}
+
+
+
+section.container1 h2 , section.container h2 {
+    
+    font-family:var(--font-paragrafo);
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
     line-height: 28px;
     letter-spacing: -0.4px;
     color: #252525;
-    padding: 15px;
+    /* padding: 15px; */
     text-align: center;
+    margin-top: 20px;
     
-    
+   
 }
 
+
+
 .botom{
-    font-family: 'Public Sans';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 12px;
-    text-align: left; 
-    letter-spacing: -0.4px;
-    width: 510px;
-    text-align: center;
-    padding: 5px;
+   width: 100%;
+   margin-top: 20px;
+     
 }
 
 .clique{
@@ -85,9 +87,10 @@ h1{
 
 }
 
-h3{
+.container1 h3{
+    
     text-align: center;
-    font-family: 'Public Sans';
+    font-family:var(--font-paragrafo);
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
@@ -111,6 +114,7 @@ h3{
 }    
 
 
+
 .opcao{
     padding: 10px;
 }
@@ -126,11 +130,12 @@ h3{
 }
 
 .email1{
-    padding: 10px;  
+    padding: 10px 0 ;
 }
 
 .senha{
-    padding: 10px; 
+    padding: 10px 0; 
+
 }
 
 .email{
