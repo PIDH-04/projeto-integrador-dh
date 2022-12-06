@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="/css/header.css" />
     <link rel="stylesheet" href="/css/footer.css" />
     <link rel="stylesheet" href="/css/checkoutEndereco.css" />
-    <title>checkoutDeEndereco</title>
+    <title>Checkout - Endereço | E-móvel</title>
   </head>
 
   <body>
@@ -34,7 +34,7 @@
         <nav>
           <ul class="inferior2">
             <li class="ecommerce">
-              <b> <a href="">Ecommerce</a></b>
+              <b> <a href="/">E-móvel</a></b>
             </li>
             <li class="interna"><a href="">Área Interna</a></li>
             <li class="externa"><a href="">Área Externa</a></li>
@@ -48,49 +48,132 @@
         </nav>
       </div>
     </header>
-    <main>
-      <section class="master-section">
-        <h2>Checkout - Endereço</h2>
-        <h3>Selecione um endereço</h3>
-        <div class="menu-selecao">
-          <select name="ordenacao">
-            <option value="Endereço1">Endereço</option>
-            <option value="Endereço2">Endereço residencial</option>
-            <option value="Endereço3">Endereço comercial</option>
-            <option value="Endereço4">Endereço alternativo</option>
-          </select>
-        </div>
-        <a href="link de forma de pagamento" class="botao-secundario"
-          >Escolher forma de pagamento</a
-        >
-      </section>
+    <main class="checkout-endereco-container">
+      <section class="enderecos-container">
+        <section class="master-section">
+          <h2>Checkout - Endereço</h2>
+          <h3>Selecione um endereço</h3>
+          <div class="menu-selecao">
+            <select name="ordenacao">
+              <option value="Endereço1">Endereço</option>
+              <option value="Endereço2">Endereço residencial</option>
+              <option value="Endereço3">Endereço comercial</option>
+              <option value="Endereço4">Endereço alternativo</option>
+            </select>
+          </div>
+          <a href="link de forma de pagamento" class="botao-secundario"
+            >Escolher forma de pagamento</a
+          >
+        </section>
 
-      <section class="master-section-novo">
-        <h3>Novo endereço</h3>
-        <input type="text" placeholder="Nome do Destinatário" />
-        <input type="number" placeholder="CEP" />
-        <input type="text" placeholder="Endereço" />
-        <input type="number" placeholder="Número" />
-        <input type="number" placeholder="Apartamento, suíte, etc (opcional)" />
-        <input type="text" placeholder="Apelido do endereço" />
-        <div class="CidadeEstado">
-          <select name="Cidade">
-            <option value="Cidade1">Cidade</option>
-            <option value="Cidade2">São Paulo(capital)</option>
-            <option value="Cidade3">Porto Alegre</option>
-            <option value="Cidade4">Salvador</option>
-          </select>
-          <select name="Estado">
-            <option value="Estado1">Estado</option>
-            <option value="Estado2">SP</option>
-            <option value="Estado3">RS</option>
-            <option value="Estado4">BA</option>
-          </select>
+        <section class="master-section-novo">
+          <h3>Novo endereço</h3>
+          <input type="text" placeholder="Nome do Destinatário" />
+          <input type="number" placeholder="CEP" />
+          <input type="text" placeholder="Endereço" />
+          <input type="number" placeholder="Número" />
+          <input
+            type="number"
+            placeholder="Apartamento, suíte, etc (opcional)"
+          />
+          <input type="text" placeholder="Apelido do endereço" />
+          <div class="CidadeEstado">
+            <select name="Cidade">
+              <option value="Cidade1">Cidade</option>
+              <option value="Cidade2">São Paulo(capital)</option>
+              <option value="Cidade3">Porto Alegre</option>
+              <option value="Cidade4">Salvador</option>
+            </select>
+            <select name="Estado">
+              <option value="Estado1">Estado</option>
+              <option value="Estado2">SP</option>
+              <option value="Estado3">RS</option>
+              <option value="Estado4">BA</option>
+            </select>
+          </div>
+          <input type="text" placeholder="Observações" />
+          <a href="link de forma de pagamento" class="botao-secundario"
+            >Escolher forma de pagamento</a
+          >
+        </section>
+      </section>
+      <section class="carrinho-container">
+        <h3>Resumo da compra</h3>
+        <div class="resumo-compra">
+            <form action="">
+              <label>
+                Adicione seu código de desconto
+                <input type="text" placeholder="código de desconto" />
+              </label>
+            </form>
+            <div class="resumo">
+              <p>Subtotal</p>
+              <p class="valor">R$ 2.400,00</p>
+            </div>
+            <div class="resumo">
+              <p>Frete</p>
+              <p class="valor">Calculado na próxima página</p>
+            </div>
+            <div class="resumo">
+              <p>Total</p>
+              <p class="valor">R$ 2.400,00</p>
+            </div>
+          </div>
+
+
+        <h3>Seu carrinho</h3>
+        <div class="card-produto-carrinho">
+          <div class="img-container">
+            <a href="/produto">
+              <img
+                src="/img/mesa-monaco.png"
+                alt="Foto Mesa de jantar Mônaco"
+              />
+            </a>
+          </div>
+          <div class="produto-info">
+            <a href="/produto">
+              <h5>Mesa de Jantar Mônaco</h5>
+            </a>
+            <p class="variacao">Tampo madeira</p>
+            <p class="quantidade">Quantidade: 1</p>
+            <p class="preco">R$ 800,00</p>
+          </div>
+          <span>Remover</span>
         </div>
-        <input type="text" placeholder="Observações" />
-        <a href="link de forma de pagamento" class="botao-secundario"
-          >Escolher forma de pagamento</a
-        >
+        <div class="card-produto-carrinho">
+          <div class="img-container">
+            <a href="/produto">
+              <img src="/img/mesa-dora.png" alt="Foto Mesa de jantar Dora" />
+            </a>
+          </div>
+          <div class="produto-info">
+            <a href="/produto">
+              <h5>Mesa de Jantar Dora</h5>
+            </a>
+            <p class="variacao">Tampo madeira</p>
+            <p class="quantidade">Quantidade: 1</p>
+            <p class="preco">R$ 800,00</p>
+          </div>
+          <span>Remover</span>
+        </div>
+        <div class="card-produto-carrinho">
+          <div class="img-container">
+            <a href="/produto">
+              <img src="/img/mesa-plana.png" alt="Foto Mesa de jantar Plana" />
+            </a>
+          </div>
+          <div class="produto-info">
+            <a href="/produto">
+              <h5>Mesa de Jantar Plana</h5>
+            </a>
+            <p class="variacao">Tampo madeira</p>
+            <p class="quantidade">Quantidade: 1</p>
+            <p class="preco">R$ 800,00</p>
+          </div>
+          <span>Remover</span>
+        </div>
+        
       </section>
     </main>
     <footer>
@@ -153,7 +236,7 @@
         </nav>
       </div>
       <div class="copyright">
-        <p>E-Commerce 2022-2022</p>
+        <p>E-móvel 2022-2022</p>
       </div>
     </footer>
   </body>
