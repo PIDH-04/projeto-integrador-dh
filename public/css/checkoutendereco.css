@@ -1,53 +1,55 @@
-main{
-    margin-top: 0px;
+main {
+  margin-top: 0px;
+  margin-bottom: 60px;
 }
-main .master-section{
-    border-color: var(--cor-texto-primaria);
-    border-radius: 2px;
-    height: 180px;
-    width: 400px;
-}
-
-main .master-section .menu-selecao{
-    margin-bottom: 20px;
-    width: 260px;
+main .master-section {
+  border-color: var(--cor-texto-primaria);
+  border-radius: 2px;
+  width: 40%;
 }
 
-main .master-section a{
-    background-color: var(--cor-texto-primaria);
-    color: #fff;
-    text-align: center;
-    text-decoration: none;
-    text-size-adjust: 40px;
-    width: 300px;
-    height: 50px;
-    padding: 10px;
+main .master-section h2{
+    font-size:36px;
+    margin-bottom: 30px;
 }
 
-main .master-section-novo{
-    border-color: var(--cor-texto-primaria);
+main .master-section .menu-selecao {
+  margin: 20px 0 5px;
 }
 
-main .master-section-novo input{
-    border-color: var(--cor-texto-primaria);
-    border-width: 2px;
-    display: flex;
-    padding: 5px;
-    margin-bottom: 3px;
+main .master-section-novo {
+  border-color: var(--cor-texto-primaria);
+  width: 40%;
 }
 
-main .master-section-novo .CidadeEstado{
-    margin-bottom: 3px;
+main .master-section-novo h3{
+    margin: 60px 0 20px;
 }
 
-main .master-section-novo a{
-    background-color: var(--cor-texto-primaria);
-    color: #fff;
-    text-align: center;
-    text-decoration: none;
-    size: 200px 50px;
-    text-size-adjust: 40px;
-    width: 270px;
-    height: 50px;
-    padding: 10px;
+main .master-section-novo input {
+  border: 1px solid var(--cor-texto-secundaria);
+  display: flex;
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  font-family: var(--font-paragrafo);
+  font-size: 14px;
+}
+
+main .master-section-novo .CidadeEstado {
+  margin-bottom: 10px;
+  display: flex;
+  gap: 3%;
+}
+
+main .master-section-novo select {
+  background-color: transparent;
+  padding: 10px;
+  font-family: var(--font-paragrafo);
+  border: 1px solid var(--cor-texto-secundaria);
+  width: 100%;
+}
+
+main .master-section-novo select:last-child {
+  width: 30%;
 }
