@@ -13,10 +13,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //});
 
-app.get('/checkoutpagamento', (req , res)=>{
-    return res.sendFile(__dirname + '/views/checkoutPagamento.html' )
-})
-
 app.get('/header', (req , res)=>{
     return res.sendFile(__dirname + '/views/header.html')
     
