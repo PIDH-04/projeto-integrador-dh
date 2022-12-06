@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>checkoutPagamento</title>
     <link rel="stylesheet" href="/css/chekoutPagamento.css">
-    <link rel="stylesheet" href="/css/estilos.css">
+    <link rel="stylesheet" href="/pucss/estilos.css">
 </head>
 
 
@@ -18,49 +18,30 @@
         <h1>
             Ecommerce
         </h1>
-        <a>
-            <img src="/public/img/pesquisar.png" alt="lupa">
-        </a>
-    </header>
-        <h4>
-            Chekout
-         </h4>
         
-   
-   
-   
-   
+    </header>
+    <h4>
+        Checkout - Forma de Pagamento
+    </h4>
+    
     <form id="Form-Cartao" method="POST" action="" enctype="">
         <div class="campos">
+            <button>Ver dados para pagamento com pix </button>
+            <br>
             <input class="nome" type="text" name="nome" id="nome" placeholder="Nome que está no cartão">
             <br>
             <input class="Cartao" type="number" name="Numero" id="Numero" placeholder="Numero que está no cartão">
             <br>
-                <div>
-                    <input class="vencimento" type="number" id="mes" placeholder="Mes" >
-                    <input class="vencimento" type="number" id="ano" placeholder="Ano">
-                    <input class="cvv" type="number" name="cvv" id="cvv" placeholder="cvv">
-                 </div>
-                 <br>
+            <div>
+                <input class="vencimento" type="number" id="mes" placeholder="Mes">
+                <input class="vencimento" type="number" id="ano" placeholder="Ano">
+                <input class="cvv" type="number" id="cvv" placeholder="cvv">
+            </div>
+            <br>
             <button>Pagar com Cartao </button>
         </div>
     </form>
-    <main>
-        <a>
-            <img src="/public/img/mesa.png" alt="mesa">
-        </a>
-        <b>
-            <img src="/public/img/mesa.png" alt="mesa">
-        </b>
-        <h3>
-            Seu Carrinho
-        </h3>
-        <p>
-            Cor: Madeira Natural
-        </p>
-
-       
-    </main>
+   
 </body>
 
 </html>

@@ -1,10 +1,4 @@
-html {
-    height: 100%;
-}
-
-
 header {
-    /* retangulo */
 
     position: absolute;
     width: 1400px;
@@ -12,33 +6,23 @@ header {
     left: 0px;
     top: 0px;
 
-    /* primaria*/
-    background: #565656;
+
+    background: #0D0D0D;
 
 }
 
-header a{
-    /* lupa */
+body p {
 
-position: absolute;
-left: 64%;
-right: 28.96%;
-top: 18.75%;
-bottom: 14.58%;
-display: flex;
+    height: 28px;
+    width: 72px;
+    left: 0px;
+    top: 0px;
+    border-radius: nullpx;
 
-height: 16px;
-width: 15.848501205444336px;
-left: 144px;
-top: 4.5px;
-border-radius: 0px;
 
 }
-
 
 header h1 {
-
-    /* Logo */
 
     width: 112px;
     height: 24px;
@@ -49,21 +33,17 @@ header h1 {
     font-size: 20px;
     line-height: 24px;
     letter-spacing: -0.6px;
-    left: 10px;
 
     color: #FFFFFF;
 
-
-    /* Inside auto layout */
     flex: none;
     order: 0;
     flex-grow: 0;
 
 }
 
-
-
 body {
+
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -71,9 +51,11 @@ body {
 }
 
 #Form-Cartao {
-    
-    width: 600px;
-    padding: 20px;
+
+    width: 220px;
+    padding: 200px;
+    display: flex;
+
 
 }
 
@@ -88,18 +70,15 @@ body {
     display: block;
     width: 100%;
 
-
-
 }
 
 body h4 {
 
     position: absolute;
     left: 10.07%;
-    right: 79.07%;
+    right: 54.14%;
     top: 12.33%;
     bottom: 82.78%;
-
 
     font-family: 'Public Sans';
     font-style: normal;
@@ -111,105 +90,28 @@ body h4 {
 
     color: #000000;
 
-
 }
-
-
 
 button {
 
-    background-color: rgba(86, 86, 86, 1);
     height: 50px;
     width: 397px;
     left: 0px;
     top: 0px;
     border-radius: 0px;
-    color: #FFFFFF;
 
+    color: white;
 
+    background: rgba(13, 13, 13, 1);
+
+    border: 1px solid rgba(13, 13, 13, 1)
 }
 
-input{
+input {
 
     height: 40px;
     width: 398px;
     left: 0px;
     top: 0px;
     border-radius: 0px;
-
 }
-
-
-
-main a{
-    height: 130px;
-width: 130px;
-left: 0px;
-top: 0px;
-border-radius: 0px;
-
-}
- main h3{
-
-height: 33px;
-width: 203px;
-left: 794px;
-top: 206px;
-border-radius: nullpx;
-
-
-/* detalhes do pagamento  */
-
-position: absolute;
-left: 56.71%;
-right: 28.79%;
-top: 22.89%;
-bottom: 73.44%;
-
-/* paragrafo 01 */
-font-family: 'Public Sans';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 28px;
-/* or 140% */
-letter-spacing: -0.4px;
-
-color: #252525;
-
- }
-
- main p{
-
-
-    height: 20px;
-    width: 357px;
-    left: 5px;
-    top: 43px;
-    border-radius: nullpx;
-
-
-/* Cor: Madeira Natural */
-
-width: 357px;
-height: 20px;
-
-/* Paragraph 04 */
-font-family: 'Public Sans';
-font-style: normal;
-font-weight: 400;
-font-size: 14px;
-line-height: 20px;
-/* identical to box height, or 143% */
-letter-spacing: -0.4px;
-
-color: #000000;
-
-
-/* Inside auto layout */
-flex: none;
-order: 1;
-flex-grow: 0;
-
- }
-
