@@ -8,36 +8,38 @@
     margin-right: 10%;
     margin-top: 5%;
 
-   
     
+  
 }
 
 
-
 .container{
-
     /* padding:    10px; */
 	width: 550px;
     
     height: 570px;
     margin: 30px;
     padding:  20px ;
-	border: 1px solid #ccc
+	border: 1px solid #ccc;
 
     
-    
+    border: 1px solid var(--cor-secundaria);
+    background-color: transparent;
 
-	/* tirar display volta ficar em coluna */
-	/* display:inline-block; */
+	
+    
 
 }
 
 .container1{
-    width: 550px;
-    height: 350px;
+    width: 600px;
+    height: 330px;
     margin: 30px;
-    padding: 20px;
+    padding:  20px;
 	border: 1px solid #ccc;
+
+    border: 1px solid var(--cor-secundaria);
+    background-color: transparent;
 
 }
 h1{
@@ -60,7 +62,7 @@ h1{
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
-    line-height: 22px;
+    line-height: 12px;
     text-align: left; 
     letter-spacing: -0.4px;
     width: 510px;
@@ -69,19 +71,6 @@ h1{
 }
 
 .clique{
-    /* margin: 5px;
-    background: #e3e3e8;
-   text-align: center;
-   font-size: 1.5em;
-   padding: 10px;  */
-
-   /* background-color:rgb(115, 110, 110);  */
-    /* color: #fff; 
-   border: none;
-   padding: 10 10 5px;
-   display: inline-block;
-   text-align: center;
-   cursor: pointer; */
    
    font-family: 'Public Sans';
     font-style: normal;
@@ -108,12 +97,6 @@ h3{
     
 .clique{
   
-    
-    /* color: rgb(205, 195, 195); 
-
-   text-align: center;
-   cursor: pointer;
-   */
    background-color: var(--cor-secundaria);
    padding: 15px 20px;
    border: none;
@@ -142,14 +125,24 @@ h3{
     padding: 10px;
 }
 
+.email1{
+    padding: 10px;  
+}
+
+.senha{
+    padding: 10px; 
+}
+
 .email{
-    /* padding: 15px 30px;
-    border: 2px solid var(--cor-secundaria);
-    background-color: transparent;
-    color: var(--cor-texto-primaria);
-    cursor: pointer;
-    display: block;
-    text-align:left;
-    text-decoration: none;
-    font-family: var(--font-paragrafo);
-} */
+   
+    
+  border: 2px solid var(--cor-secundaria);
+  background-color: transparent;
+  color: var(--cor-texto-primaria);
+  cursor: pointer;
+  display: block;
+  text-align: left;
+  text-decoration: none;
+  font-family: var(--font-paragrafo);
+
+}
