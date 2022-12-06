@@ -113,15 +113,18 @@ section.container1 h2 , section.container h2 {
 
 }    
 
-
-
-.opcao{
+.container input{
     padding: 10px;
 }
-.apto{
+
+
+div.opcao{
     padding: 10px;
 }
-.endereco{
+div.apto{
+    padding: 10px;
+}
+div.endereco{
     padding: 10px;
 }
 
