@@ -92,6 +92,27 @@ body h4 {
 
 }
 
+body h5 {
+
+    height: 16px;
+    width: 234px;
+    left: 143px;
+    top: 586.5px;
+    border-radius: nullpx;
+
+}
+
+body h3 {
+
+    height: 32px;
+    width: 303px;
+    left: 142px;
+    top: 371px;
+    border-radius: nullpx;
+
+  
+}
+
 button {
 
     height: 50px;
@@ -110,7 +131,7 @@ button {
 input {
 
     height: 40px;
-    width: 398px;
+    width: 390px;
     left: 0px;
     top: 0px;
     border-radius: 0px;
