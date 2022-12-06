@@ -1,6 +1,3 @@
-
-
-
 .superior3 {
     background-color: var(--cor-secundaria);
     display: flex;
@@ -10,18 +7,22 @@
     padding: 20px;
     padding-left: 200px;
     padding-right: 200px;
+    font-family: var(--font-paragrafo);
+    text-decoration: none;
 }
 
 .inferior2 {
     background-color: #ffffff;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+   justify-content: space-between;
     list-style: none;
     padding: 20px;
     padding-left: 200px;
     padding-right: 200px;
-
+    align-items: center;
+    font-family: var(--font-paragrafo);
+    font-style: none;
 }
 
 .ecommerce {
@@ -29,8 +30,8 @@
 }
 
 .lupa {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
 }
 
 .sacola {
@@ -38,6 +39,24 @@
     height: 20px;
 }
 
-.busca {
+.inferior2 .busca {
     border: none;
+    flex-grow: 1;
+    margin-right: 50px;
+    border-bottom: 1px solid var(--cor-principal);
+}
+.inferior2 li a {
+    text-decoration: none;
+    color: var(--cor-texto-primaria);
+}  
+.inferior2 li{
+    margin-right: 50px;
+}
+.inferior2 li:last-child{
+    margin-right: 0;
+    margin-left: 50px;
+}
+.superior3 li a{
+    text-decoration: none;
+    color: var(--cor-texto-primaria);
 }

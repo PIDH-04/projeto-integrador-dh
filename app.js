@@ -12,6 +12,10 @@ app.use(express.static(path.join(__dirname, "public")));
 
 //});
 
+app.get("/", (req, res) => {
+  return res.sendFile(__dirname + "/views/home.html");
+});
+
 app.get("/header", (req, res) => {
   return res.sendFile(__dirname + "/views/header.html");
 });
