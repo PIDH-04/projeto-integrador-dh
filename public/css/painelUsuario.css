@@ -1,0 +1,81 @@
+.imglogin {
+    border-radius: 10px;
+    width: 100px;
+}
+
+/* div {
+    width: 1000px;
+    height: 100px;
+    display: inline-block;
+    
+} */
+    
+main{
+    background: white;
+    margin: 150px;
+    padding: 50px;
+    font-size: 0.9rem;
+    font-size: 16px;
+    font-family: var(--font-paragrafo);
+    display: flex;
+    gap: 8%;
+
+    font-weight: 600;
+}
+
+#container-a .alterar-img input {
+    display: none;
+}
+#container-a .alterar-img {
+    background-color: aqua;
+    padding: 10px;
+    width: 200px;
+}
+
+#container-a {
+    width: 100%;
+}
+
+#container-b {
+    width: 500px;
+    height: 100px;
+}
+
+
+#container-b .botao-secundario{
+    width: 100%;
+    margin-bottom: 50px;
+    margin-top: 20px;
+}
+
+#container-a .botao-secundario{
+    width: 100%;
+    margin-bottom: 50px;
+    margin-top: 20px;
+}
+
+#container-a input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#container-b h2{
+    font-size: 25px;
+
+}
+
+#container-a h1{
+    font-size: 36px;
+    font-family: var(--font-paragrafo)
+}
+
+#container-b .botao-primario {
+    width: 100%;
+    margin-top: 50px;
+}
+
+#container-a label {
+    width: 100%;
+}
+
+  

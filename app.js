@@ -7,8 +7,14 @@ const app = express();
 app.use(express.static(path.join(__dirname, "public")));
 
 // Definir rotas
-//app.get('/login', (req , res)=>{
-//return res.sendFile(__dirname + '/views/login.html' )
+app.get("/painelUsuario", (req, res) => {
+  return res.sendFile(__dirname + "/views/painelUsuario.html")
+})
+
+// Definir rotas
+app.get('/login', (req , res)=>{
+return res.sendFile(__dirname + '/views/login.html' )
+})
 
 //});
 
