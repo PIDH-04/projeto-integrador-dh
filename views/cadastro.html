@@ -4,17 +4,49 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cadastro </title>
+
+  <title>Login | E-móvel </title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
   <link rel="stylesheet" href="/css/estilos.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/footer.css">
   <link rel="stylesheet" href="/css/cadastro.css">
+  
 
 
 </head>
 
 
 <body>
+
+  <header>
+    <div class="superior">
+        <nav class="superior2">
+            <ul class="superior3">
+                <li>BRL</li>
+                <li>FRETE GRÁTIS PARA TODO BRASIL</li>
+                <li> <a href="">F.A.Q.</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="inferior">
+        <nav>
+            <ul class="inferior2">
+                <li class="ecommerce"> <b> <a href="">Ecommerce</a></b></li>
+                <li class="interna"> <a href="">Área Interna</a></li>
+                <li class="externa"> <a href="">Área Externa</a> </li>
+                <li class="sobre"> <a href="">Sobre</a></li>
+                <img class="lupa" src="/img/lupa.png" alt="">
+                <input class="busca" type="text" placeholder="buscar....">
+                <img class="sacola" src="/img/sacola.png" alt="">
+                <span>0</span>
+                <li> <a href="">Login</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
 
   <div class="display-flex">
@@ -162,7 +194,7 @@
 
 
       <div>
-        <button type="submit" class="botom botao-secundario ">Entrar</button>
+        <a href="/checkoutDeEndereco" type="submit" class="botom botao-secundario ">Entrar</a>
       </div>
 
 
@@ -177,7 +209,69 @@
 
   </div>
 
+  <footer>
+    <div class="conteudo">
+      <div class="newsletter">
+        <h3>Cadastre-se na nossa newsletter</h3>
+        <p>Receba no seu e-mail novidades e as melhores promoções.</p>
+        <div class="input-wrapper">
+          <input type="text" placeholder="seu e-mail" />
+          <button>Cadastrar</button>
+        </div>
+      </div>
 
+      <nav class="menu">
+        <ul>
+          <li class="categoria-principal">
+            <a href="/area-interna"> Área Interna </a>
+          </li>
+          <li>
+            <a href="/area-interna/mesas"> Mesas </a>
+          </li>
+          <li>
+            <a href="/area-interna/cadeiras"> Cadeiras </a>
+          </li>
+          <li>
+            <a href="/area-interna/sofas"> Sofás </a>
+          </li>
+          <li>
+            <a href="/area-interna/escritório"> Escritório </a>
+          </li>
+        </ul>
+
+        <ul>
+          <li class="categoria-principal">
+            <a href="/area-externa"> Área Externa </a>
+          </li>
+          <li>
+            <a href="/area-externa/mesas"> Mesas </a>
+          </li>
+          <li>
+            <a href="/area-externa/cadeiras"> Cadeiras </a>
+          </li>
+          <li>
+            <a href="/area-externa/sofas"> Sofás </a>
+          </li>
+          <li>
+            <a href="/area-externa/balancos"> Balanços </a>
+          </li>
+        </ul>
+
+        <ul>
+          <li class="categoria-principal">Sobre</li>
+          <li>
+            <a href="/quem-somos"> Quem somos </a>
+          </li>
+          <li>
+            <a href="/faq"> F.A.Q </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="copyright">
+      <p>E-Commerce 2022-2022</p>
+    </div>
+  </footer>
 
 
 
