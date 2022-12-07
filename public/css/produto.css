@@ -1,6 +1,7 @@
 main.produto-container {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 60px;
 }
 
 .produto-container .img-container {
