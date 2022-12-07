@@ -25,6 +25,10 @@
     font-style: none;
 }
 
+.inferior2 input{
+    padding: 10px 0;
+}
+
 .ecommerce {
     font-style: var(--font-paragrafo);
 }
