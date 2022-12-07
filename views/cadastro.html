@@ -1,152 +1,191 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login | E-móvel</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <title>Login | E-móvel </title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/estilos.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/cadastro.css" />
+  </head>
 
-  <link rel="stylesheet" href="/css/estilos.css">
-  <link rel="stylesheet" href="/css/header.css">
-  <link rel="stylesheet" href="/css/footer.css">
-  <link rel="stylesheet" href="/css/cadastro.css">
-  
-
-
-</head>
-
-
-<body>
-
-  <header>
-    <div class="superior">
+  <body>
+    <header>
+      <div class="superior">
         <nav class="superior2">
-            <ul class="superior3">
-                <li>BRL</li>
-                <li>FRETE GRÁTIS PARA TODO BRASIL</li>
-                <li> <a href="">F.A.Q.</a></li>
-            </ul>
+          <ul class="superior3">
+            <li>BRL</li>
+            <li>FRETE GRÁTIS PARA TODO BRASIL</li>
+            <li><a href="">F.A.Q.</a></li>
+          </ul>
         </nav>
-    </div>
-    <div class="inferior">
+      </div>
+      <div class="inferior">
         <nav>
-            <ul class="inferior2">
-                <li class="ecommerce"> <b> <a href="">Ecommerce</a></b></li>
-                <li class="interna"> <a href="">Área Interna</a></li>
-                <li class="externa"> <a href="">Área Externa</a> </li>
-                <li class="sobre"> <a href="">Sobre</a></li>
-                <img class="lupa" src="/img/lupa.png" alt="">
-                <input class="busca" type="text" placeholder="buscar....">
-                <img class="sacola" src="/img/sacola.png" alt="">
-                <span>0</span>
-                <li> <a href="">Login</a></li>
-            </ul>
+          <ul class="inferior2">
+            <li class="ecommerce">
+              <b> <a href="/">E-móvel</a></b>
+            </li>
+            <li class="interna"><a href="/categorias/mesa">Área Interna</a></li>
+            <li class="externa"><a href="/categorias/mesa">Área Externa</a></li>
+            <li class="sobre"><a href="/categorias/mesa">Sobre</a></li>
+            <img class="lupa" src="/img/lupa.png" alt="" />
+            <input class="busca" type="text" placeholder="buscar...." />
+            <a href="/carrinho">
+              <img class="sacola" src="/img/sacola-gray.svg" alt="" />
+              <span>3</span>
+            </a>
+            <li><a href="/painelUsuario">Minha conta</a></li>
+          </ul>
         </nav>
-    </div>
-</header>
+      </div>
+    </header>
 
+    <div class="display-flex">
+      <section class="container">
+        <h2>Cadastro</h2>
 
-  <div class="display-flex">
-
-    <section class="container">
-
-
-      <h2>Cadastro</h2>
-
-
-      <div class="py-2 text-center col-12 col-lg-6  flex-column justify-content-center align-items-center">
+        <!-- <div class="py-2 text-center col-12 col-lg-6  flex-column justify-content-center align-items-center">
         <form id="formulario" name="formulario" method="post" action="">
-      </div>
-      <div class="row my-3">
-
-        <div class="col-6  d-flex">
-          <input type="text" placeholder="Primeiro Nome" name="First Name" id="First Name" class="form-control"
-            required>
-        </div>
-        <div class="col-6 d-flex ">
-          <input type="text" placeholder="Segundo Nome" name="Last Name" id="Last Name" class="form-control" required>
-        </div>
-
-
-
-        <div class="endereco">
-
-          <input type="text" placeholder="Endereço" name="Adress" id="Adress" class="form-control" required>
-        </div>
-
-        <div class="apto">
-          <input type="text" placeholder="Apartamento , Casa etc(opcional)" name="Apartment , Suíte etc(opcional)"
-            id="Apartment , Suíte etc(opcional)" class="form-control" required>
-        </div>
-
-        <div>
-          <input type="text" placeholder="Cidade" name="City" id="City" class="form-control" required>
-        </div>
-
-
-        <div class="col-md-6 position-relative">
-          <label for="validationTooltip03" class="form-label"></label>
-          <input type="text" placeholder="País" class="form-control" id="validationTooltip03" required>
-          <div class="invalid-tooltip">
-            Please provide a valid city.
+      </div> -->
+        <div class="row my-3">
+          <div class="col-6 d-flex">
+            <input
+              type="text"
+              placeholder="Primeiro Nome"
+              name="First Name"
+              id="First Name"
+              class="form-control"
+              required
+            />
           </div>
-        </div>
-
-
-
-
-        <div class="col-md-3 position-relative">
-          <label for="validationTooltip05" class="form-label"></label>
-          <input type="text" placeholder="Estado" class="form-control" id="validationTooltip05" required>
-          <div class="invalid-tooltip">
-            Please provide a valid zip.
+          <div class="col-6 d-flex">
+            <input
+              type="text"
+              placeholder="Segundo Nome"
+              name="Last Name"
+              id="Last Name"
+              class="form-control"
+              required
+            />
           </div>
-        </div>
 
-        <div class="col-md-3 position-relative">
-          <label for="validationTooltip05" class="form-label"></label>
-          <input type="text" placeholder="Cep" class="form-control" id="validationTooltip05" required>
-          <div class="invalid-tooltip">
-            Please provide a valid zip.
+          <div class="endereco">
+            <input
+              type="text"
+              placeholder="Endereço"
+              name="Adress"
+              id="Adress"
+              class="form-control"
+              required
+            />
           </div>
-        </div>
 
-        <div class="opcao">
-          <input type="text" placeholder="Observações" name="opcional" id="opcional" class="form-control" required>
-        </div>
+          <div class="apto">
+            <input
+              type="text"
+              placeholder="Apartamento , Casa etc(opcional)"
+              name="Apartment , Suíte etc(opcional)"
+              id="Apartment , Suíte etc(opcional)"
+              class="form-control"
+              required
+            />
+          </div>
 
-
-
-
-        <div class="salvar">
-          <input type="checkbox" class="checkbox" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Salvar informações de contato</label>
           <div>
-
-
-            <div class="enviar">
-              <button type="submit" class="botom botao-secundario ">Enviar</button>
-            </div>
-
+            <input
+              type="text"
+              placeholder="Cidade"
+              name="City"
+              id="City"
+              class="form-control"
+              required
+            />
           </div>
 
+          <div class="col-md-6 position-relative">
+            <label for="validationTooltip03" class="form-label"></label>
+            <input
+              type="text"
+              placeholder="País"
+              class="form-control"
+              id="validationTooltip03"
+              required
+            />
+            <div class="invalid-tooltip">Please provide a valid city.</div>
+          </div>
+
+          <div class="col-md-3 position-relative">
+            <label for="validationTooltip05" class="form-label"></label>
+            <input
+              type="text"
+              placeholder="Estado"
+              class="form-control"
+              id="validationTooltip05"
+              required
+            />
+            <div class="invalid-tooltip">Please provide a valid zip.</div>
+          </div>
+
+          <div class="col-md-3 position-relative">
+            <label for="validationTooltip05" class="form-label"></label>
+            <input
+              type="text"
+              placeholder="Cep"
+              class="form-control"
+              id="validationTooltip05"
+              required
+            />
+            <div class="invalid-tooltip">Please provide a valid zip.</div>
+          </div>
+
+          <div class="opcao">
+            <input
+              type="text"
+              placeholder="Observações"
+              name="opcional"
+              id="opcional"
+              class="form-control"
+              required
+            />
+          </div>
+
+          <div class="salvar">
+            <input type="checkbox" class="checkbox" id="exampleCheck1" />
+            <label class="form-check-label" for="exampleCheck1"
+              >Salvar informações de contato</label
+            >
+            <div>
+              <div class="enviar">
+                <button type="submit" class="botom botao-secundario">
+                  Enviar
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
+      </section>
 
-      </div>
+      <section class="container1">
+        <!-- <h1 >  Bem vindo de volta </h1> -->
+        <h2>Login por Email</h2>
 
-    </section>
-
-    <section class="container1">
-
-      <!-- <h1 >  Bem vindo de volta </h1> -->
-      <h2>Login por Email </h2>
-
-
-
-      <!--      
+        <!--      
      <div class="row mb-3">
       <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
       <div class="col-sm-10">
@@ -154,24 +193,36 @@
       </div>
     </div> -->
 
+        <div class="email1">
+          <input
+            type="text"
+            placeholder="Email"
+            name="Adress"
+            id="Adress"
+            class="form-control"
+            required
+          />
+        </div>
 
-      <div class="email1">
-        <input type="text" placeholder="Email" name="Adress" id="Adress" class="form-control" required>
-      </div>
+        <div class="senha">
+          <input
+            type="text"
+            placeholder="Senha"
+            name="Adress"
+            id="Adress"
+            class="form-control"
+            required
+          />
+        </div>
 
-      <div class="senha">
-
-        <input type="text" placeholder="Senha" name="Adress" id="Adress" class="form-control" required>
-      </div>
-
-      <!-- <div class="row mb-3">
+        <!-- <div class="row mb-3">
       <label for="inputPassword3" class="col-sm-2 col-form-label" >Senha</label>
       <div class="col-sm-10">
         <input type="Email" class="form-control" id="inputPassword3">
       </div>
     </div> -->
 
-      <!-- <div class="email">
+        <!-- <div class="email">
      <label for="exampleInputEmail1" class="form-label">email</label>
      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
   </div>
@@ -181,105 +232,92 @@
      <input type="password" class="form-control" id="exampleInputPassword1">
   </div> -->
 
-
-
-      <div class="lembrar">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Lembrar-me</label>
-
-      </div>
-
-
-
-
-
-      <div>
-        <a href="/checkoutDeEndereco" type="submit" class="botom botao-secundario ">Entrar</a>
-      </div>
-
-
-      <h3>esqueceu sua senha?</h3>
-
-    </section>
-
-
-
-
-
-
-  </div>
-
-  <footer>
-    <div class="conteudo">
-      <div class="newsletter">
-        <h3>Cadastre-se na nossa newsletter</h3>
-        <p>Receba no seu e-mail novidades e as melhores promoções.</p>
-        <div class="input-wrapper">
-          <input type="text" placeholder="seu e-mail" />
-          <button>Cadastrar</button>
+        <div class="lembrar">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+          <label class="form-check-label" for="exampleCheck1">Lembrar-me</label>
         </div>
+
+        <div>
+          <a
+            href="/checkoutDeEndereco"
+            type="submit"
+            class="botom botao-secundario"
+            >Entrar</a
+          >
+        </div>
+
+        <h3>esqueceu sua senha?</h3>
+      </section>
+    </div>
+
+    <footer>
+      <div class="conteudo">
+        <div class="newsletter">
+          <h3>Cadastre-se na nossa newsletter</h3>
+          <p>Receba no seu e-mail novidades e as melhores promoções.</p>
+          <div class="input-wrapper">
+            <input type="text" placeholder="seu e-mail" />
+            <button>Cadastrar</button>
+          </div>
+        </div>
+
+        <nav class="menu">
+          <ul>
+            <li class="categoria-principal">
+              <a href="/categorias/area"> Área Interna </a>
+            </li>
+            <li>
+              <a href="/categorias/mesas"> Mesas </a>
+            </li>
+            <li>
+              <a href="/categorias/cadeiras"> Cadeiras </a>
+            </li>
+            <li>
+              <a href="/categorias/sofas"> Sofás </a>
+            </li>
+            <li>
+              <a href="/categorias/escritório"> Escritório </a>
+            </li>
+          </ul>
+
+          <ul>
+            <li class="categoria-principal">
+              <a href="/categorias/externa"> Área Externa </a>
+            </li>
+            <li>
+              <a href="/categorias/mesas"> Mesas </a>
+            </li>
+            <li>
+              <a href="/categorias/cadeiras"> Cadeiras </a>
+            </li>
+            <li>
+              <a href="/categorias/sofas"> Sofás </a>
+            </li>
+            <li>
+              <a href="/categorias/balancos"> Balanços </a>
+            </li>
+          </ul>
+
+          <ul>
+            <li class="categoria-principal">Sobre</li>
+            <li>
+              <a href="/quem-somos"> Quem somos </a>
+            </li>
+            <li>
+              <a href="/faq"> F.A.Q </a>
+            </li>
+          </ul>
+        </nav>
       </div>
+      <div class="copyright">
+        <p>E-móvel 2022-2022</p>
+      </div>
+    </footer>
 
-      <nav class="menu">
-        <ul>
-          <li class="categoria-principal">
-            <a href="/area-interna"> Área Interna </a>
-          </li>
-          <li>
-            <a href="/area-interna/mesas"> Mesas </a>
-          </li>
-          <li>
-            <a href="/area-interna/cadeiras"> Cadeiras </a>
-          </li>
-          <li>
-            <a href="/area-interna/sofas"> Sofás </a>
-          </li>
-          <li>
-            <a href="/area-interna/escritório"> Escritório </a>
-          </li>
-        </ul>
-
-        <ul>
-          <li class="categoria-principal">
-            <a href="/area-externa"> Área Externa </a>
-          </li>
-          <li>
-            <a href="/area-externa/mesas"> Mesas </a>
-          </li>
-          <li>
-            <a href="/area-externa/cadeiras"> Cadeiras </a>
-          </li>
-          <li>
-            <a href="/area-externa/sofas"> Sofás </a>
-          </li>
-          <li>
-            <a href="/area-externa/balancos"> Balanços </a>
-          </li>
-        </ul>
-
-        <ul>
-          <li class="categoria-principal">Sobre</li>
-          <li>
-            <a href="/quem-somos"> Quem somos </a>
-          </li>
-          <li>
-            <a href="/faq"> F.A.Q </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-    <div class="copyright">
-      <p>E-Commerce 2022-2022</p>
-    </div>
-  </footer>
-
-
-
-
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
-  </script>
-</body>
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

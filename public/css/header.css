@@ -25,6 +25,16 @@
     font-style: none;
 }
 
+.inferior2 input{
+    padding: 10px 0;
+}
+
+.inferior2 a{
+    display: flex;
+    text-decoration: none;
+    color: var(--cor-texto-primaria);
+}
+
 .ecommerce {
     font-style: var(--font-paragrafo);
 }

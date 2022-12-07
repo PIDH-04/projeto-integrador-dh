@@ -8,12 +8,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>checkoutPagamento</title>
   <link rel="stylesheet" href="/css/estilos.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/footer.css">
   <link rel="stylesheet" href="/css/chekoutPagamento.css">
 
 </head>
 
 
 <body>
+  <header>
+    <div class="superior">
+      <nav class="superior2">
+        <ul class="superior3">
+          <li>BRL</li>
+          <li>FRETE GRÁTIS PARA TODO BRASIL</li>
+          <li><a href="">F.A.Q.</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="inferior">
+      <nav>
+        <ul class="inferior2">
+          <li class="ecommerce">
+            <b> <a href="/">E-móvel</a></b>
+          </li>
+          <li class="interna"><a href="/categorias/mesa">Área Interna</a></li>
+          <li class="externa"><a href="/categorias/mesa">Área Externa</a></li>
+          <li class="sobre"><a href="/categorias/mesa">Sobre</a></li>
+          <img class="lupa" src="/img/lupa.png" alt="" />
+          <input class="busca" type="text" placeholder="buscar...." />
+          <a href="/carrinho">
+            <img class="sacola" src="/img/sacola-gray.svg" alt="" />
+            <span>3</span>
+          </a>
+          <li><a href="/painelUsuario">Minha conta</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
   <main>
     <h4>
       Checkout - Forma de Pagamento
@@ -42,7 +74,7 @@
                 <input type="checkbox">
               </label>
             </div>
-            <button class="botao-secundario">Pagar com Cartao </button>
+            <a href="/finalizacao-compra" class="botao-secundario">Pagar com Cartao </a>
           </div>
         </form>
       </div>
@@ -120,6 +152,69 @@
       </div>
     </div>
   </main>
+  <footer>
+    <div class="conteudo">
+      <div class="newsletter">
+        <h3>Cadastre-se na nossa newsletter</h3>
+        <p>Receba no seu e-mail novidades e as melhores promoções.</p>
+        <div class="input-wrapper">
+          <input type="text" placeholder="seu e-mail" />
+          <button>Cadastrar</button>
+        </div>
+      </div>
+
+      <nav class="menu">
+        <ul>
+          <li class="categoria-principal">
+            <a href="/categorias/area"> Área Interna </a>
+          </li>
+          <li>
+            <a href="/categorias/mesas"> Mesas </a>
+          </li>
+          <li>
+            <a href="/categorias/cadeiras"> Cadeiras </a>
+          </li>
+          <li>
+            <a href="/categorias/sofas"> Sofás </a>
+          </li>
+          <li>
+            <a href="/categorias/escritório"> Escritório </a>
+          </li>
+        </ul>
+
+        <ul>
+          <li class="categoria-principal">
+            <a href="/categorias/externa"> Área Externa </a>
+          </li>
+          <li>
+            <a href="/categorias/mesas"> Mesas </a>
+          </li>
+          <li>
+            <a href="/categorias/cadeiras"> Cadeiras </a>
+          </li>
+          <li>
+            <a href="/categorias/sofas"> Sofás </a>
+          </li>
+          <li>
+            <a href="/categorias/balancos"> Balanços </a>
+          </li>
+        </ul>
+
+        <ul>
+          <li class="categoria-principal">Sobre</li>
+          <li>
+            <a href="/quem-somos"> Quem somos </a>
+          </li>
+          <li>
+            <a href="/faq"> F.A.Q </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="copyright">
+      <p>E-móvel 2022-2022</p>
+    </div>
+  </footer>
 </body>
 
 </html>
