@@ -54,6 +54,15 @@ app.get('/checkoutpagamento', (req , res)=>{
   return res.sendFile(__dirname + '/views/checkoutPagamento.html' )
 })
 
+app.get("/checkoutDeEndereco", (req, res) => {
+  return res.sendFile(__dirname + "/views/checkoutEndereco.html");
+});
+
+app.get('/cadastro', (req, res) => {
+  return res.sendFile(__dirname + '/views/cadastro.html')
+})
+
+
 // Servidor rodando
 app.listen(3000, () => {
   console.log("Servidor rodando");
