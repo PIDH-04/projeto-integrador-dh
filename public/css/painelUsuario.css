@@ -13,7 +13,7 @@
     
 main{
     background: white;
-    margin: 130px;
+    /* margin: 130px; */
     padding: 50px;
     font-size: 0.6rem;
     font-size: 16px;
@@ -26,6 +26,7 @@ main{
 #container-a .alterar-img input {
     display: none;
 }
+
 #container-a .alterar-img {
     padding: 10px;
     width: 100px;
@@ -35,16 +36,17 @@ main{
     cursor: pointer;
     color: #fff;
     font-size: 13px;
-    
 }
 
 #container-a {
-    width: 100%;
+    width: 50%;
+
 }
 
 #container-b {
-    width: 500px;
-    height: 100px;
+    width: 38%;
+    height: 200px;
+    margin-top: 100px
 }
 
 
@@ -66,18 +68,19 @@ main{
 }
 
 #container-b h2{
-    font-size: 25px;
-
+    font-size: 1.4rem;
+    font-weight: bold;
 }
 
 #container-a h1{
-    font-size: 36px;
-    font-family: var(--font-paragrafo)
+    font-size: 36px; 
+    font-weight: bold;
 }
 
 #container-b .botao-primario {
     width: 100%;
     margin-top: 50px;
+    font-weight: bold;
 }
 
 #container-a label {
