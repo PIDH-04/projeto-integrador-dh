@@ -11,17 +11,6 @@ header {
 
 }
 
-body p {
-
-    height: 28px;
-    width: 72px;
-    left: 0px;
-    top: 0px;
-    border-radius: nullpx;
-
-
-}
-
 header h1 {
 
     width: 112px;
@@ -42,14 +31,6 @@ header h1 {
 
 }
 
-body {
-
-    /* display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    height: 100%; */
-}
-
 #Form-Cartao {
 
     width: 100%;
@@ -66,7 +47,7 @@ body {
 
 }
 
-#Form-Cartao .campos .nome{
+#Form-Cartao .campos .nome {
     border: 1px solid var(--cor-principal);
 }
 
@@ -79,7 +60,7 @@ body {
 
 body h4 {
 
-    /* position: absolute; */
+
     left: 10.07%;
     right: 54.14%;
     top: 12.33%;
@@ -103,6 +84,22 @@ body h5 {
     left: 143px;
     top: 586.5px;
     border-radius: nullpx;
+
+}
+
+#Form-Cartao .texto-form label {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+#Form-Cartao .texto-form label input {
+
+    width: 22px;
+    height: 22px;
+    margin-top: 5px;
 
 }
 
@@ -153,25 +150,53 @@ button {
 
 .coluna1 {
 
-    width: 60%;
+    width: 50%;
 
 }
 
 .coluna2 {
 
-    width: 40%;
+    width: 38%;
+
 }
 
 .flex {
 
     display: flex;
     justify-content: space-between;
-    gap: 15%;
+
     margin-top: 50px;
 }
-
 
 #Form-Cartao .campos button:last-child {
     margin-top: 20px;
 
+}
+
+main .coluna2 .resumo-compra {
+    position: relative;
+    margin-bottom: 80px;
+}
+
+main .coluna2 label {
+    font-size: 14px;
+}
+
+main .coluna2 input {
+    display: block;
+    width: 100%;
+    margin: 10px 0 40px;
+}
+
+main .coluna2 .resumo-compra div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+main .coluna2 .resumo-compra div:last-child {
+    border-top: 1px solid var(--cor-texto-secundaria);
+    padding-top: 20px;
+    font-weight: bold;
 }
