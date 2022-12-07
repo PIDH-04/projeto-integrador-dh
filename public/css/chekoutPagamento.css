@@ -1,3 +1,202 @@
-body{
-    size ="50";
+header {
+
+    position: absolute;
+    width: 1400px;
+    height: 60px;
+    left: 0px;
+    top: 0px;
+
+
+    background: #0D0D0D;
+
+}
+
+header h1 {
+
+    width: 112px;
+    height: 24px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.6px;
+
+    color: #FFFFFF;
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
+}
+
+#Form-Cartao {
+
+    width: 100%;
+    /* padding: 200px; */
+    display: flex;
+
+
+}
+
+#Form-Cartao .campos {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+}
+
+#Form-Cartao .campos .nome {
+    border: 1px solid var(--cor-principal);
+}
+
+#Form-cartao imput {
+
+    display: block;
+    width: 100%;
+
+}
+
+body h4 {
+
+
+    left: 10.07%;
+    right: 54.14%;
+    top: 12.33%;
+    bottom: 82.78%;
+
+    font-family: var(--font-paragrafo);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 44px;
+
+    letter-spacing: -1.5px;
+
+    color: #000000;
+
+}
+
+body h5 {
+
+    height: 16px;
+    left: 143px;
+    top: 586.5px;
+    border-radius: nullpx;
+
+}
+
+#Form-Cartao .texto-form label {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+#Form-Cartao .texto-form label input {
+
+    width: 22px;
+    height: 22px;
+    margin-top: 5px;
+
+}
+
+body h3 {
+
+    font-family: var(--font-paragrafo);
+    height: 32px;
+    width: 303px;
+    left: 142px;
+    top: 371px;
+    border-radius: nullpx;
+
+
+
+}
+
+button {
+    margin-bottom: 50px;
+    height: 50px;
+    /* width: 397px; */
+    left: 0px;
+    top: 0px;
+    border-radius: 0px;
+
+    color: white;
+
+    background: rgba(13, 13, 13, 1);
+
+    border: 1px solid rgba(13, 13, 13, 1)
+}
+
+#Form-Cartao input {
+    margin-bottom: 20px;
+    height: 40px;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    border: 1px solid var(--cor-principal);
+}
+
+#Form-Cartao .campos .junto {
+
+    display: flex;
+    gap: 5%;
+    width: 100%;
+
+}
+
+.coluna1 {
+
+    width: 50%;
+
+}
+
+.coluna2 {
+
+    width: 38%;
+
+}
+
+.flex {
+
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 50px;
+}
+
+#Form-Cartao .campos button:last-child {
+    margin-top: 20px;
+
+}
+
+main .coluna2 .resumo-compra {
+    position: relative;
+    margin-bottom: 80px;
+}
+
+main .coluna2 label {
+    font-size: 14px;
+}
+
+main .coluna2 input {
+    display: block;
+    width: 100%;
+    margin: 10px 0 40px;
+}
+
+main .coluna2 .resumo-compra div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+main .coluna2 .resumo-compra div:last-child {
+    border-top: 1px solid var(--cor-texto-secundaria);
+    padding-top: 20px;
+    font-weight: bold;
 }
