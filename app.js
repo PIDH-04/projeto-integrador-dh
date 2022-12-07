@@ -50,6 +50,10 @@ app.get('/finalizacao-compra', (req, res) => {
   return res.sendFile(__dirname + '/views/finalizacaoCompra.html')
 })
 
+app.get("/checkoutDeEndereco", (req, res) => {
+  return res.sendFile(__dirname + "/views/checkoutEndereco.html");
+});
+
 app.get('/cadastro', (req, res) => {
   return res.sendFile(__dirname + '/views/cadastro.html')
 })

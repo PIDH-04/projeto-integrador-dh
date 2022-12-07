@@ -14,7 +14,7 @@
     <title>Página Mestre</title>
   </head>
   <body>
-    <main>
+    <main class="master-pg-container">
       <section>
         <h2>checkbox</h2>
 
@@ -64,6 +64,30 @@
         <h2>Input de texto</h2>
         <input type="text" placeholder="placeholder" />
       </section>
+
+      <section class="master-section card">
+        <h2>card de produtos do carrinho</h2>
+        <div class="card-produto-carrinho">
+          <div class="img-container">
+            <a href="/produto">
+              <img
+                src="/img/mesa-monaco.png"
+                alt="Foto Mesa de jantar Mônaco"
+              />
+            </a>
+          </div>
+          <div class="produto-info">
+            <a href="/produto">
+              <h5>Mesa de Jantar Mônaco</h5>
+            </a>
+            <p class="variacao">Tampo madeira</p>
+            <p class="quantidade">Quantidade: 1</p>
+            <p class="preco">R$ 800,00</p>
+          </div>
+          <span>Remover</span>
+        </div>
+      </section>
+
     </main>
 
     <script src="/scripts/scripts.js"></script>
