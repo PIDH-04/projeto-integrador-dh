@@ -5,12 +5,173 @@
     padding: 10px;
 } 
 
+ .container{
+   
+    
+/*     
+    padding: 50px ;
+    display: block;
+    border: 2px solid black;
+    margin: auto;
+    text-align: center;
+    width: 1450px;
+    height: 700px;  */
+     } 
+
+     
 h1{
-    font-size:small;
+    align-items: center;
+    position: absolute;
+    width: 147px;
+    height: 30px;
+    left: 30.46px;
+    top: 30px;
+    
+    /* Heading 04 */
+    
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 30px;
+    /* identical to box height, or 136% */
+    
+    letter-spacing: -0.55px;
+    
+    /* Colors / Base / Color 6 */
+    
+    color: #111111;
+    
+   
+    
+}
+
+.font1{
+
+    position: absolute;
+    width: 126px;
+    height: 26px;
+    left: 30.46px;
+    top: 68px;
+    
+    /* Paragraph 03 */
+    
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+    /* identical to box height, or 162% */
+    
+    letter-spacing: -0.2px;
+    
+    /* Colors / Grey / Grey 2 */
+    
+    color: #A9ABBD;
+    
+}
+
+
+
+.facebook{
+    box-sizing: border-box;
+
+/* Auto layout */
+
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 12px 10px;
+gap: 10px;
+
+position: absolute;
+height: 48px;
+left: 30px;
+right: 38px;
+top: 117px;
+
+/* Colors / Grey / White */
+
+background: #FFFFFF;
+/* Colors / Grey / Grey 4 */
+
+border: 1px solid #E1E4EB;
+border-radius: 5px;
+}
+
+.google{
+    box-sizing: border-box;
+
+    /* Auto layout */
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 10px;
+    gap: 10px;
+    
+    position: absolute;
+    height: 48px;
+    left: 30px;
+    right: 38px;
+    top: 171px;
+    
+    /* Colors / Grey / White */
+    
+    background: #FFFFFF;
+    /* Colors / Grey / Grey 4 */
+    
+    border: 1px solid #E1E4EB;
+    border-radius: 5px;
+    
+}
+
+.email{
+    box-sizing: border-box;
+
+/* Auto layout */
+
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 12px 10px;
+gap: 10px;
+
+position: absolute;
+height: 48px;
+left: 30px;
+right: 38px;
+top: 229px;
+
+/* Colors / Grey / White */
+
+background: #FFFFFF;
+/* Colors / Grey / Grey 4 */
+
+border: 1px solid #E1E4EB;
+border-radius: 5px;
+}
+
+.conta{
+position: absolute;
+width: 147px;
+height: 21px;
+left: calc(50% - 147px/2 + 4.5px);
+top: 352px;
+
+/* Buttons / Small */
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 21px;
+/* identical to box height */
+
+letter-spacing: -0.3px;
+
+/* Colors / Grey / Grey 2 */
+
+color: #A9ABBD;
 
 }
-form-control{
-    display: flex;
-    flex-direction: row;
-} 
-
