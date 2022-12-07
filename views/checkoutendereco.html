@@ -43,7 +43,7 @@
             <input class="busca" type="buscar" placeholder="buscar...." />
             <img class="sacola" src="/img/sacola.png" alt="" />
             <span>0</span>
-            <li><a href="">Login</a></li>
+            <li><a href="/login">Login</a></li>
           </ul>
         </nav>
       </div>
@@ -61,7 +61,7 @@
               <option value="Endereço4">Endereço alternativo</option>
             </select>
           </div>
-          <a href="link de forma de pagamento" class="botao-secundario"
+          <a href="/checkoutpagamento" class="botao-secundario"
             >Escolher forma de pagamento</a
           >
         </section>
@@ -92,7 +92,7 @@
             </select>
           </div>
           <input type="text" placeholder="Observações" />
-          <a href="link de forma de pagamento" class="botao-secundario"
+          <a href="/checkoutpagamento" class="botao-secundario"
             >Escolher forma de pagamento</a
           >
         </section>
@@ -100,26 +100,25 @@
       <section class="carrinho-container">
         <h3>Resumo da compra</h3>
         <div class="resumo-compra">
-            <form action="">
-              <label>
-                Adicione seu código de desconto
-                <input type="text" placeholder="código de desconto" />
-              </label>
-            </form>
-            <div class="resumo">
-              <p>Subtotal</p>
-              <p class="valor">R$ 2.400,00</p>
-            </div>
-            <div class="resumo">
-              <p>Frete</p>
-              <p class="valor">Calculado na próxima página</p>
-            </div>
-            <div class="resumo">
-              <p>Total</p>
-              <p class="valor">R$ 2.400,00</p>
-            </div>
+          <form action="">
+            <label>
+              Adicione seu código de desconto
+              <input type="text" placeholder="código de desconto" />
+            </label>
+          </form>
+          <div class="resumo">
+            <p>Subtotal</p>
+            <p class="valor">R$ 2.400,00</p>
           </div>
-
+          <div class="resumo">
+            <p>Frete</p>
+            <p class="valor">Calculado na próxima página</p>
+          </div>
+          <div class="resumo">
+            <p>Total</p>
+            <p class="valor">R$ 2.400,00</p>
+          </div>
+        </div>
 
         <h3>Seu carrinho</h3>
         <div class="card-produto-carrinho">
@@ -173,7 +172,6 @@
           </div>
           <span>Remover</span>
         </div>
-        
       </section>
     </main>
     <footer>
