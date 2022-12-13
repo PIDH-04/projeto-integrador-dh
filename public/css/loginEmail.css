@@ -1,0 +1,31 @@
+
+* {
+    margin: 0 ;
+    padding:  10;
+    box-sizing: border-box;
+    padding: 10px;
+} 
+
+.container{
+background-color:rgb(192, 185, 185);    
+}
+.inline-block{
+    display: inline-block;
+    border: 1px solid black;
+    width: 250px;
+    height: 100px;
+    padding: 10px;
+    
+}
+.login{
+
+display: block;
+border: 2px solid black;
+margin: 10px;
+text-align: center;
+width: 1450px;
+height: 600px;
+/* padding: 30px; */
+
+
+}
