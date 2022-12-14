@@ -3,39 +3,38 @@ body {
 }
 
 main {
-    padding: 0%;
-    width: 100%;
+    margin-bottom: 80px;
 }
 
-main .banner {
+.banner {
     background-image: url("/img/banner.jpg");
     background-size: 100%;
     width: 100%;
-    height: 100%;
+    height: 500px;
     padding-bottom: 20px;
     margin: 0;
 }
 
-main .banner-text {
+.banner-text {
     color: #fff;
     text-shadow:
         -1px -1px 0px #101010,
         -1px 1px 0px #101010,
         1px -1px 0px #101010,
         1px 0px 0px #101010;
-    padding: 50px 70px;
+    padding: 250px 70px 0;
     font-family: var(--font-titulo);
     font-size: 50px;
     font-style: normal;
 }
 
-main .banner a {
+.banner a {
     width: 200px;
-    margin-left: 10px;
+    margin-left: 70px;
 }
 
 main .vitrine {
-    padding: 30px;
+    /* padding: 30px; */
     display: flex;
     flex-wrap: wrap;
 }
@@ -52,7 +51,7 @@ main .vitrine h2 {
 
 main .products-container {
     justify-content: center;
-    justify-content: space-around;
+    justify-content: space-between;
     display: flex;
     flex-wrap: wrap;
     padding-top: 40px;

@@ -1,5 +1,5 @@
 .carrinho-container {
-  padding-bottom: 50px;
+  padding-bottom: 100px;
   display: flex;
   justify-content: space-between;
 }
@@ -128,7 +128,7 @@
 }
 
 .carrinho-container .resumo {
-  width: 30%;
+  width: 38%;
   margin-top: 50px;
 }
 

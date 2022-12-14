@@ -1,0 +1,96 @@
+main {
+  /* margin-top: 0px; */
+  margin-bottom: 120px;
+  display: flex;
+  justify-content: space-between;
+}
+
+main .enderecos-container{
+    width: 45%;
+}
+
+main .carrinho-container{
+    margin-top: 100px;
+    width: 38%;
+}
+
+main .master-section {
+  border-color: var(--cor-texto-primaria);
+  border-radius: 2px;
+  width: 100%;
+}
+
+main .master-section h2{
+    font-size:36px;
+    margin-bottom: 30px;
+}
+
+main .master-section .menu-selecao {
+  margin: 20px 0 10px;
+}
+
+main .master-section-novo {
+  border-color: var(--cor-texto-primaria);
+  width: 100%;
+}
+
+main.checkout-endereco-container h3{
+    margin: 60px 0 20px;
+    font-size: 22px;
+}
+
+main .master-section-novo input {
+  border: 1px solid var(--cor-texto-secundaria);
+  display: flex;
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  font-family: var(--font-paragrafo);
+  font-size: 14px;
+}
+
+main .master-section-novo .CidadeEstado {
+  margin-bottom: 10px;
+  display: flex;
+  gap: 3%;
+}
+
+main .master-section-novo select {
+  background-color: transparent;
+  padding: 10px;
+  font-family: var(--font-paragrafo);
+  border: 1px solid var(--cor-texto-secundaria);
+  width: 100%;
+}
+
+main .master-section-novo select:last-child {
+  width: 30%;
+}
+
+main .carrinho-container .resumo-compra{
+    position: relative;
+    margin-bottom: 80px;
+}
+
+main .carrinho-container label{
+    font-size: 14px;
+}
+
+main .carrinho-container input{
+    display: block;
+    width: 100%;
+    margin: 10px 0 40px;
+}
+
+main .carrinho-container .resumo-compra div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+main .carrinho-container .resumo-compra div:last-child{
+    border-top: 1px solid var(--cor-texto-secundaria);
+    padding-top: 20px;
+    font-weight: bold;
+}
