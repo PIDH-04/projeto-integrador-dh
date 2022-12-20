@@ -43,6 +43,7 @@ main .vitrine {
 main .vitrine h2 {
     padding-top: 30px;
     color: var(--cor-texto-primaria);
+    font-family: var(--font-paragrafo);
     width: 500px;
     height: 50px;
     margin: 1px;
@@ -60,7 +61,6 @@ main .products-container {
 
 main .product-card {
     width: 30%;
-    border: 3px solid var(--cor-secundaria);
     padding: 10px 20px;
     margin: 10px;
 }
@@ -73,11 +73,12 @@ main .product-card img {
 
 main .product-card a {
     color: var(--cor-texto-primaria);
+    font-family: var(--font-paragrafo);
     padding-bottom: 10px;
     display: block;
     width: 100%;
     margin: 0%;
     align-items: stretch;
     text-align: center;
-    font-size: 26px;
+    font-size: 20px;
 }
