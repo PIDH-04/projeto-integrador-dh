@@ -32,8 +32,9 @@ body {
 }
 
 .bannerSlide .slides .slide a {
-    width: 200px;
-    margin-left: 70px;
+    width: 15%;
+    margin-right: 450px;
+    margin-left: 55px;
     margin-top: 20px;
     align-self: left;
 }
@@ -96,7 +97,6 @@ main {
 }
 
 main .vitrine {
-    /* padding: 30px; */
     display: flex;
     flex-wrap: wrap;
 }
