@@ -1,37 +1,98 @@
 body {
+    margin: 0;
+    padding: 0;
     background-color: #fff;
 }
 
-main {
-    margin-bottom: 80px;
+.bannerSlide{
+    position:relative;
 }
 
-.banner {
-    background-image: url("/img/banner.jpg");
-    background-size: 100%;
-    width: 100%;
-    height: 500px;
-    padding-bottom: 20px;
-    margin: 0;
+.bannerSlide .slides .slide{
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:15px;
+    padding: 20px 9px;
+    padding-bottom: 70px;
+    flex: 1 1 350px;
 }
-
-.banner-text {
+.bannerSlide .slides .slide h3 {
     color: #fff;
     text-shadow:
-        -1px -1px 0px #101010,
-        -1px 1px 0px #101010,
-        1px -1px 0px #101010,
-        1px 0px 0px #101010;
+        0px 0px 1px #101010,
+        0px 2px 1px #101010,
+        2px 0px 1px #101010,
+        2px 1px 1px #101010;
     padding: 250px 70px 0;
     font-family: var(--font-titulo);
     font-size: 50px;
     font-style: normal;
 }
 
-.banner a {
+.bannerSlide .slides .slide a {
     width: 200px;
     margin-left: 70px;
     margin-top: 20px;
+    align-self: left;
+}
+
+.bannerSlide .slides .slide a:hover{
+    background-color: #ffd678;
+}
+
+.bannerSlide .slides{
+    display:none;
+}
+
+.bannerSlide .slides.active{
+    display: block;
+}
+
+.bannerSlide .slides:nth-child(1) .slide{
+    background: url('/img/banner1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.bannerSlide .slides:nth-child(2) .slide{
+    background: url('/img/banner2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.bannerSlide .slides:nth-child(3) .slide{
+    background: url('/img/banner3.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.bannerSlide #prev:hover, .bannerSlide #next:hover{
+    position: absolute;
+    top: 50%;
+    color: var(--cor-texto-primaria);
+    background: var(--cor-secundaria);
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    font-size: 25px;
+    text-align: center;
+    cursor:pointer;
+    font-weight: bolder;
+    border-radius: 50px;
+}
+
+.bannerSlide #prev{
+    left: 20px;
+}
+
+.bannerSlide #next{
+    right:20px;
+}
+
+main {
+    margin-bottom: 80px;
 }
 
 main .vitrine {
