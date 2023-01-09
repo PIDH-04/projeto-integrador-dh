@@ -40,6 +40,7 @@ header .inferior2 input{
     background-color: transparent;
     
 
+    /* border-radius: 0%; */
 	
     
 
@@ -57,14 +58,20 @@ header .inferior2 input{
     border: 1px solid var(--cor-principal);
     background-color: transparent;
 
+
     
     
 }
 
 section.container input{
-    box-sizing: border-box;
+    border-radius: 0%;
+
     
-    
+}
+
+section.container1 input{
+    border-radius: 0%;
+
     
 }
 
@@ -160,10 +167,12 @@ div.endereco{
 
 .email1{
     padding: 10px 0 ;
+    
 }
 
 .senha{
     padding: 10px 0; 
+    
 
 }
 
