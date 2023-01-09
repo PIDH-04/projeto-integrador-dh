@@ -4,20 +4,21 @@ body {
     background-color: #fff;
 }
 
-.bannerSlide{
-    position:relative;
+.bannerSlide {
+    position: relative;
 }
 
-.bannerSlide .slides .slide{
+.bannerSlide .slides .slide {
     min-height: 100px;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap:15px;
+    gap: 15px;
     padding: 20px 9px;
     padding-bottom: 70px;
     flex: 1 1 350px;
 }
+
 .bannerSlide .slides .slide h3 {
     color: #fff;
     text-shadow:
@@ -39,57 +40,60 @@ body {
     align-self: left;
 }
 
-.bannerSlide .slides .slide a:hover{
+.bannerSlide .slides .slide a:hover {
     background-color: #ffd678;
 }
 
-.bannerSlide .slides{
-    display:none;
+.bannerSlide .slides {
+    display: none;
 }
 
-.bannerSlide .slides.active{
+.bannerSlide .slides.active {
     display: block;
 }
 
-.bannerSlide .slides:nth-child(1) .slide{
+.bannerSlide .slides:nth-child(1) .slide {
     background: url('/img/banner1.jpg');
     background-size: cover;
     background-repeat: no-repeat;
 }
 
-.bannerSlide .slides:nth-child(2) .slide{
+.bannerSlide .slides:nth-child(2) .slide {
     background: url('/img/banner2.jpg');
     background-size: cover;
     background-repeat: no-repeat;
 }
 
-.bannerSlide .slides:nth-child(3) .slide{
+.bannerSlide .slides:nth-child(3) .slide {
     background: url('/img/banner3.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
 
-.bannerSlide #prev:hover, .bannerSlide #next:hover{
+.bannerSlide .btn {
     position: absolute;
     top: 50%;
     color: var(--cor-texto-primaria);
-    background: var(--cor-secundaria);
     height: 50px;
     width: 50px;
     line-height: 50px;
     font-size: 25px;
     text-align: center;
-    cursor:pointer;
+    cursor: pointer;
     font-weight: bolder;
+}
+
+.bannerSlide .btn:hover {
+    background: var(--cor-secundaria);
     border-radius: 50px;
 }
 
-.bannerSlide #prev{
-    left: 20px;
+.bannerSlide #prev {
+    left: 25px;
 }
 
-.bannerSlide #next{
-    right:20px;
+.bannerSlide #next {
+    right: 25px;
 }
 
 main {
