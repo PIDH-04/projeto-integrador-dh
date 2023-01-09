@@ -35,10 +35,11 @@ header .inferior2 input{
     height: 590px;
     margin: 30px;
     padding:  20px ;
-	border: 1px solid #ccc; 
+	/* border: 1px solid #ccc;  */
     border: 1px solid var(--cor-principal);
     background-color: transparent;
-    /* border-radius: 10px; */
+    
+
 	
     
 
@@ -60,7 +61,12 @@ header .inferior2 input{
     
 }
 
-
+section.container input{
+    box-sizing: border-box;
+    
+    
+    
+}
 
 section.container1 h2 , section.container h2 {
     
