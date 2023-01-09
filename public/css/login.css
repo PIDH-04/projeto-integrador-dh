@@ -175,3 +175,7 @@ letter-spacing: -0.3px;
 color: #A9ABBD;
 
 }
+
+footer{
+    background: var(--cor-secundaria);
+  }

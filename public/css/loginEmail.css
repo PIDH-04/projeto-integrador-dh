@@ -29,3 +29,7 @@ height: 600px;
 
 
 }
+
+footer{
+    background: var(--cor-secundaria);
+  }

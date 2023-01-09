@@ -200,3 +200,7 @@
     font-size: 0.8rem;
   }
 }
+
+footer{
+  background: var(--cor-secundaria);
+}

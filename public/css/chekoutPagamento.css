@@ -163,3 +163,7 @@ main .coluna2 .resumo-compra div:last-child {
     padding-top: 20px;
     font-weight: bold;
 }
+
+footer{
+    background: var(--cor-secundaria);
+  }

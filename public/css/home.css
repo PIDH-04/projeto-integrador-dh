@@ -148,11 +148,13 @@ main .product-card a {
     font-size: 20px;
 }
 
-main .categorias{
+.categorias{
     background: var(--cor-secundaria); 
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     height: 360px;
     width: 100%;
+    position: relative;
+    margin: 0%;
 }

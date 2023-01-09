@@ -202,3 +202,7 @@ main {
     width: 100%;
   }
 }
+
+footer{
+  background: var(--cor-secundaria);
+}

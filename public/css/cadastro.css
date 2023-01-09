@@ -167,6 +167,7 @@ div.endereco{
 }
 
 footer{
+    background: var(--cor-secundaria);
     line-height: initial
 }
 

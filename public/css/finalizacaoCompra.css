@@ -58,3 +58,7 @@ main.finalizacao-pg-container {
     width: 100%;
   }
 }
+
+footer{
+  background: var(--cor-secundaria);
+}
