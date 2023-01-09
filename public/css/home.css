@@ -153,8 +153,63 @@ main .product-card a {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    height: 360px;
+    justify-content: space-between;
+    height: 400px;
     width: 100%;
     position: relative;
-    margin: 0%;
 }
+
+.categorias h3{
+    text-align: center;
+    font-family: var(--font-titulo);
+    font-size: 40px;
+    color: var(--cor-texto-primaria);
+    margin-left: 650px;
+    margin-right: 510px;
+    margin-top: 20px;
+    padding-bottom: 0%;
+}
+
+.categorias h2{
+    text-align: center;
+    font-family: var(--font-paragrafo);
+    font-size: 20px;
+    margin-left: 300px;
+    margin-right: 300px;
+    margin-top: 0%;
+}
+
+.categorias h1{
+    text-align: center;
+    font-family: var(--font-paragrafo);
+    font-size: 15px;
+    margin-top: 2px;
+}
+
+.categorias .icone-container{
+    margin: 30px;
+}
+
+.categorias .icone-container a{
+    text-align: center;
+    align-items:stretch;
+    justify-content: center;
+    padding: 0%;
+    width: 74px;
+}
+ .categorias .icone-container a img{
+    background: #fff;
+    border-radius: 50px;
+ }
+
+ .categorias .botao-secundario{
+    background: #fff;
+    justify-content: center;
+    text-align: center;
+    text-decoration-color: var(--cor-texto-primaria);
+    font-size: 20px;
+    font-family: var(--font-titulo);
+    margin-left: 650px;
+    margin-bottom: 20px;
+    padding: 5px;
+ }
