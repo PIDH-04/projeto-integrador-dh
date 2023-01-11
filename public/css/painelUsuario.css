@@ -79,11 +79,19 @@ main{
 #container-a input{
     width: 100%;
     margin-bottom: 20px;
+    border-radius: 0%;
+}
+
+#container-b input{
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 0%;
 }
 
 #container-b h2{
     font-size: 1.4rem;
     font-weight: bold;
+
 }
 
 #container-a h1{
@@ -109,3 +117,31 @@ footer .copyright p{
     margin-bottom: 0;
 }
   
+.imagem {
+    border-radius: 20px;
+    width: 130px;
+    margin-top: 30px;
+}
+
+@media (max-width: 1120px) {
+    .main {
+      width: 95%;
+    }
+  }
+  
+  @media (max-width: 880px) {
+    #container-a {
+      flex-direction: column;
+      align-items: center;
+      width: 99%;
+      padding: 45px 20px 60px;
+    }
+  }
+    @media (max-width: 880px) {
+        #container-b {
+          flex-direction: column;
+          align-items: center;
+          width: 99%;
+          padding: 45px 20px 60px;
+        }   
+}
