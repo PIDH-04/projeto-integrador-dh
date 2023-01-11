@@ -70,6 +70,17 @@ main{
     margin-top: 20px;
 }
 
+#container-b .botao-secundario2{
+    background-color: var(--cor-secundaria);
+    padding: 15px 20px;
+    border: none;
+    width: 100%;
+    margin-bottom: 50px;
+    margin-top: 20px;
+    
+    
+}
+
 #container-a .botao-secundario{
     width: 100%;
     margin-bottom: 50px;
