@@ -10,8 +10,9 @@ body{
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8) ;
   z-index: 1;
-  /* display: none; */
+  display: none;
 }
+
 
 .modal span{
   margin: 50px;
@@ -23,6 +24,23 @@ body{
   font-family: var(--font-paragrafo);
 }
 
+.modal div{
+  width: 30%;
+  background-color: white;
+  transform: translateX(-50%);
+  margin-left: 50%;
+  margin-top: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.modal div img{
+  width: 100%;
+  max-height: 80vh;
+}
+
 main.produto-container {
   display: flex;
   justify-content: space-between;
@@ -32,6 +50,7 @@ main.produto-container {
 .produto-container .img-container {
   width: 40%;
   position: relative;
+  cursor: pointer;
 }
 
 .produto-container .img-container img {
@@ -41,11 +60,9 @@ main.produto-container {
 
 .produto-container .img-container span {
   position: absolute;
-  top: 50%;
-  right: -20px;
   background-color: rgba(0, 0, 0, 0.6);
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -53,6 +70,18 @@ main.produto-container {
   color: white;
   font-size: 30px;
   cursor: pointer;
+}
+
+.produto-container .img-container .proxima-img{
+  bottom: 20%;
+  right: 40%;
+}
+
+.produto-container .img-container .anterior-img{
+  bottom: 20%;
+  left: 40%;
+  color: white;
+  display: none;
 }
 
 .produto-container .img-container span img {
@@ -116,6 +145,13 @@ main.produto-container {
   cursor: pointer;
 }
 
+
+@media (max-width: 1100px){
+  .modal div{
+    width: 50%;
+  }
+}
+
 @media (max-width: 950px) {
   .produto-container .info-container form {
     flex-direction: column;
@@ -136,5 +172,11 @@ main.produto-container {
   .produto-container .img-container,
   .produto-container .info-container {
     width: 100%;
+  }
+}
+
+@media (max-width: 600px){
+  .modal div{
+    width: 80%;
   }
 }
