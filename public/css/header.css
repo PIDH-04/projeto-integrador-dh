@@ -44,6 +44,8 @@
     flex-grow: 1;
     margin-right: 50px;
     border-bottom: 1px solid var(--cor-texto-primaria);
+    outline: none;
+    
 }
 
 .inferior2 li a {
