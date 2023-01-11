@@ -26,6 +26,3 @@ window.addEventListener('load', function () {
         nextAtual()
     })
 })
-
-
-

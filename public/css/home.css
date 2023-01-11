@@ -4,75 +4,82 @@ body {
     background-color: #fff;
 }
 
-.bannerSlide {
-    position: relative;
+.bannerSlide{
+    position:relative;
 }
 
-.bannerSlide .slides .slide {
+.bannerSlide .slides .slide{
     min-height: 100px;
     display: flex;
-    align-items: center;
+    align-items: stretch;
     flex-wrap: wrap;
-    gap: 15px;
-    padding: 20px 9px;
-    padding-bottom: 70px;
-    flex: 1 1 350px;
+    flex-direction: column;
 }
-
-.bannerSlide .slides .slide h3 {
+.bannerSlide h3 {
     color: #fff;
     text-shadow:
         0px 0px 1px #101010,
         0px 2px 1px #101010,
         2px 0px 1px #101010,
         2px 1px 1px #101010;
-    padding: 250px 70px 0;
+    padding-bottom: 100px;
+    margin-left: 50px;
+    margin-top: 80px;
     font-family: var(--font-titulo);
     font-size: 50px;
     font-style: normal;
 }
 
 .bannerSlide .slides .slide a {
-    width: 15%;
-    margin-right: 450px;
-    margin-left: 55px;
-    margin-top: 20px;
-    align-self: left;
+    width: 200px;
+    height: 50px;
+    margin-left: 50px;
+    margin-bottom: 30px;
+    justify-items: flex-start;
 }
 
-.bannerSlide .slides .slide a:hover {
-    background-color: #f4c24f;
+.bannerSlide .slides .slide a:hover{
+    background-color: #ffd678;
 }
 
-.bannerSlide .slides {
-    display: none;
+.bannerSlide .slides{
+    display:none;
 }
 
-.bannerSlide .slides.active {
+.bannerSlide .slides.active{
     display: block;
 }
 
-.bannerSlide .slides:nth-child(1) .slide {
+.bannerSlide .slides:nth-child(1) .slide{
     background: url('/img/banner1.jpg');
     background-size: cover;
+    max-width: 1800px;
+    height: 350px;
+    object-fit: cover;
     background-repeat: no-repeat;
 }
 
-.bannerSlide .slides:nth-child(2) .slide {
+.bannerSlide .slides:nth-child(2) .slide{
     background: url('/img/banner2.jpg');
     background-size: cover;
+    max-width: 1800px;
+    height: 350px;
+    object-fit: cover;
     background-repeat: no-repeat;
 }
 
-.bannerSlide .slides:nth-child(3) .slide {
+.bannerSlide .slides:nth-child(3) .slide{
     background: url('/img/banner3.png');
     background-size: cover;
+    max-width: 1800px;
+    height: 350px;
+    object-fit: cover;
     background-repeat: no-repeat;
 }
 
-.bannerSlide .btn {
+.bannerSlide .btn{
     position: absolute;
-    top: 50%;
+    top:50%;
     color: var(--cor-texto-primaria);
     height: 50px;
     width: 50px;
@@ -83,17 +90,17 @@ body {
     font-weight: bolder;
 }
 
-.bannerSlide .btn:hover {
+.bannerSlide .btn:hover{
     background: var(--cor-secundaria);
     border-radius: 50px;
 }
 
-.bannerSlide #prev {
-    left: 25px;
+.bannerSlide #prev{
+    left: 0px;
 }
 
-.bannerSlide #next {
-    right: 25px;
+.bannerSlide #next{
+    right:0px;
 }
 
 main {
@@ -153,10 +160,9 @@ main .product-card a {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    justify-content: space-between;
-    height: 400px;
     width: 100%;
-    position: relative;
+    padding-left: 15%;
+    padding-right: 15%;
 }
 
 .categorias h3{
@@ -164,8 +170,6 @@ main .product-card a {
     font-family: var(--font-titulo);
     font-size: 40px;
     color: var(--cor-texto-primaria);
-    margin-left: 650px;
-    margin-right: 510px;
     margin-top: 20px;
     padding-bottom: 0%;
 }
@@ -174,9 +178,7 @@ main .product-card a {
     text-align: center;
     font-family: var(--font-paragrafo);
     font-size: 20px;
-    margin-left: 300px;
-    margin-right: 300px;
-    margin-top: 0%;
+    margin-top: 2px;
 }
 
 .categorias h1{
@@ -187,7 +189,10 @@ main .product-card a {
 }
 
 .categorias .icone-container{
-    margin: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .categorias .icone-container a{
@@ -196,6 +201,8 @@ main .product-card a {
     justify-content: center;
     padding: 0%;
     width: 74px;
+    padding-left: 76px;
+    padding-right: 76px;
 }
  .categorias .icone-container a img{
     background: #fff;
@@ -209,7 +216,7 @@ main .product-card a {
     text-decoration-color: var(--cor-texto-primaria);
     font-size: 20px;
     font-family: var(--font-titulo);
-    margin-left: 650px;
+    margin-left: 50px;
     margin-bottom: 20px;
     padding: 5px;
  }
