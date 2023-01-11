@@ -23,6 +23,8 @@ header .inferior2 input{
     margin-bottom: 60px;
 
    border: 0px;
+
+   
     
   
 }
@@ -32,7 +34,7 @@ header .inferior2 input{
     /* padding:    10px; */
 	width: 550px;
     
-    height: 590px;
+    height: 610px;
     margin: 30px;
     padding:  20px ;
 	/* border: 1px solid #ccc;  */
@@ -47,8 +49,6 @@ header .inferior2 input{
 }
 
 .container1{
-
-    /* border-radius: 10px; */
     width: 600px;
     height: 350px;
     margin: 30px;
@@ -66,6 +66,8 @@ header .inferior2 input{
 section.container input{
     border-radius: 0%;
 
+    padding: 10px  ;
+   
     
 }
 
@@ -141,10 +143,11 @@ section.container1 h2 , section.container h2 {
 }    
 
 .container input{
-    padding: 10px;
+    padding: 10px ;
     /* border: 1px solid; */
     /* border-style:solid 1px; */
     /* max-width: 550px; */
+
 
     
     
@@ -154,8 +157,9 @@ section.container1 h2 , section.container h2 {
 div.opcao{
     padding: 10px;
 }
-div.apto{
+.apto{
     padding: 10px;
+    width: 530px;
 }
 div.endereco{
     padding: 10px;
@@ -169,6 +173,12 @@ div.endereco{
     padding: 10px 0 ;
     
 }
+
+
+
+
+
+
 
 .senha{
     padding: 10px 0; 
@@ -197,3 +207,9 @@ footer{
 footer .copyright p{
     margin-bottom: 0;
 }
+
+.cidade{
+    padding: 10px ; 
+}
+
+
