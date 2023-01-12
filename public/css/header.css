@@ -19,12 +19,47 @@
     list-style: none;
     padding: 20px;
     padding-left: 200px;
-    padding-right: 200px;
+    padding-right: 120px;
     align-items: center;
     font-family: var(--font-paragrafo);
     font-style: none;
 }
 
+.inferior2 ul {
+    list-style: none;
+    position: relative;
+}
+
+.inferior ul ul {
+    position: absolute;
+    visibility: hidden;
+}
+
+.inferior ul li:hover ul {
+    visibility: visible;
+    padding-top: 10px;
+}
+
+
+.inferior2 a {
+    display: block;
+    text-align: center;
+}
+
+.superior3 :last-child {
+    text-decoration: none;
+    color: var(--cor-texto-primaria);
+}
+
+.inferior2 .parteInterna a {
+    padding: 5px;
+    position: relative;
+}
+.inferior2 .parteExterna a {
+    padding: 5px;
+    position: relative;
+    
+}
 .ecommerce {
     font-style: var(--font-paragrafo);
 }
@@ -45,7 +80,7 @@
     margin-right: 50px;
     border-bottom: 1px solid var(--cor-texto-primaria);
     outline: none;
-    
+
 }
 
 .inferior2 li a {
@@ -57,51 +92,7 @@
     margin-right: 50px;
 }
 
-.inferior2 li:last-child {
-    margin-right: 0;
-    margin-left: 50px;
+.painelusuario {
+    width: 15%;
+    padding-left: 50px;
 }
-
-.superior3 li a {
-    text-decoration: none;
-    color: var(--cor-texto-primaria);
-}
-
-#subInterno #interno li {
-    display: flex;
-    background-color: chocolate;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    font-family: var(--font-paragrafo);
-    margin-left: 310px;
-    justify-content: flex-start ;
-    width:fit-content;
-    
-}
-
-#subExterno #externo li {
-    background-color: brown;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    font-family: var(--font-paragrafo);
-    margin-left: 50px;
-    width:fit-content;
-    position: relative;
-}
-.pai{
-    display: flex;
-    flex-wrap: wrap;
-    background-color: aqua;
-   /* display: none;*/
-}
-#interno li a{
-    text-decoration: none;
-    color:  var(--cor-texto-primaria) ;
-}
-#externo li a{
-    text-decoration: none;
-    color:  var(--cor-texto-primaria) ;
-}
-
