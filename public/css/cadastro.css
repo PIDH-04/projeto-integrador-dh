@@ -148,6 +148,7 @@ section.container1 h2 , section.container h2 {
     /* border-style:solid 1px; */
     /* max-width: 550px; */
 
+    
 
     
     
@@ -213,3 +214,17 @@ footer .copyright p{
 }
 
 
+@media (max-width: 1120px) {
+    .container , .container1{
+      width: 95%;
+    }
+  }
+
+  @media (max-width: 880px) {
+     .container , .container1 {
+      flex-direction: column;
+      align-items: center;
+      width: 99%;
+      padding: 45px 20px 60px;
+    }
+}
