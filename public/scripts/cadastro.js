@@ -64,21 +64,25 @@
 
 
 // })
+window.addEventListener('load', () =>{
+
+
 
 document.querySelector('form').addEventListener('submit', function(e){
 
     e.preventDefault();
 
-    const campos = [
-        document.querySelector('#nome'),
-        document.querySelector('#adress'),
-        document.querySelector('#apartant'),
-        document.querySelector('#city'),
-        document.querySelector('#opcional'),
-        document.querySelector('#validationtooltip03'),
-        document.querySelector('#validationtooltip05'),
-        
-    ];
+    const nomeInput = document.getElementById('#Nome')
+    const adressIntpu = document.getElementById('#Adress')
+    const apartmentInput = document.getElementById('#Apartment')
+    const cityInput = document.getElementById('#City')
+    const cityOpcional = document.getElementById('#Opcional')
+    const paisCadastro = document.getElementById('#validationtooltip03')
+    const estadoCadastro = document.getElementById('#validationtooltip05')
+
+       
+    
+
 
     const errosCadastro = document.getElementById('errors')
 
@@ -87,16 +91,29 @@ document.querySelector('form').addEventListener('submit', function(e){
       
       
 
-      campos.addEventListener('submit', function () {
-          if (campos.value.length < 1) {
+      // campos.addEventListener('submit', function () {
+      
+
+   
+          if (nomeInput < 5 ) {
                erros.push('nome input vazio')
+
+              //  console.log('erro')
             }
 
+
+          
            
             
         
-          })
+          // })
+
+          console.log('projeto')
 
         this.reset(); 
 
 })
+
+})
+
+// })

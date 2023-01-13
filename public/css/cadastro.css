@@ -63,7 +63,7 @@ header .inferior2 input{
     
 }
 
-section.container input{
+ section.container input{
     border-radius: 0%;
 
     padding: 10px  ;
@@ -187,6 +187,15 @@ div.endereco{
 
 }
 
+.form #validationTooltip03 , #validationTooltip05{
+    display: flex;
+    justify-content: space-between;
+    
+
+}
+
+
+
 .email{
    
     
@@ -212,7 +221,6 @@ footer .copyright p{
 .cidade{
     padding: 10px ; 
 }
-
 
 
 
