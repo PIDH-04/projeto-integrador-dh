@@ -204,3 +204,8 @@
 footer{
   background: var(--cor-secundaria);
 }
+
+footer nav li a {
+  text-decoration: none;
+  color: var(--cor-texto-primaria);
+}
