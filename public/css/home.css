@@ -163,6 +163,7 @@ main .product-card a {
     width: 100%;
     padding-left: 15%;
     padding-right: 15%;
+    align-items: center;
 }
 
 .categorias h3{
@@ -199,8 +200,7 @@ main .product-card a {
     text-align: center;
     align-items:stretch;
     justify-content: center;
-    padding: 0%;
-    width: 74px;
+    max-width: 74px;
     padding-left: 76px;
     padding-right: 76px;
 }
@@ -216,7 +216,18 @@ main .product-card a {
     text-decoration-color: var(--cor-texto-primaria);
     font-size: 20px;
     font-family: var(--font-titulo);
-    margin-left: 50px;
     margin-bottom: 20px;
     padding: 5px;
+ }
+
+ div{
+    display: flex;
+ }
+
+ .break{
+    flex-basis: 100%;
+ }
+
+ a.botao-primario{
+    display: flex;
  }
