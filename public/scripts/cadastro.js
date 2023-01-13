@@ -84,10 +84,16 @@ document.querySelector('form').addEventListener('submit', function(e){
 
       const erros = []
 
+      
+      
+
       campos.addEventListener('submit', function () {
           if (campos.value.length < 1) {
                erros.push('nome input vazio')
             }
+
+           
+            
         
           })
 
