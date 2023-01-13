@@ -28,16 +28,20 @@
 .inferior2 ul {
     list-style: none;
     position: relative;
+
 }
 
 .inferior ul ul {
     position: absolute;
     visibility: hidden;
+    padding-top: 10px;
+
 }
 
 .inferior ul li:hover ul {
     visibility: visible;
     padding-top: 10px;
+    transition: all 0.5s;
 }
 
 
@@ -52,14 +56,17 @@
 }
 
 .inferior2 .parteInterna a {
-    padding: 5px;
+    padding: 2px;
     position: relative;
+
 }
+
 .inferior2 .parteExterna a {
     padding: 5px;
     position: relative;
-    
+
 }
+
 .ecommerce {
     font-style: var(--font-paragrafo);
 }
@@ -92,7 +99,60 @@
     margin-right: 50px;
 }
 
+.inferior2 span {
+    text-decoration: none;
+    color: var(--cor-texto-primaria);
+}
+
 .painelusuario {
     width: 15%;
     padding-left: 50px;
+}
+
+label[for="bt_menu"] {
+    padding: 5px;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto-primaria);
+    font-family: var(--font-paragrafo);
+    text-align: center;
+    font-size: 30px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+}
+#bt_menu{
+    display: none;
+}
+    label[for="bt_menu"]{
+        display: none;
+    }
+@media(max-width: 800px) {
+    label[for="bt_menu"]{
+        display: block;
+    }
+    #bt_menu:checked ~ .superior{
+        margin-left: 0;
+    }
+    .superior{
+        margin-top: 5px;
+        margin-left: -63%;
+        transition: all .5s;
+    }
+    .superior ul li a,
+    .inferior ul li a {
+        width: 100%;
+       float: none;
+    }
+
+    .superior ul li,{
+        position: static;
+        overflow: hidden;
+        max-height: 0;
+        transition: all .5s;
+    }
+    .inferior ul:hover .parteInterna, .inferior ul:hover .parteExterna{
+        height: auto;
+        max-height: 200px;
+    }
+
 }
