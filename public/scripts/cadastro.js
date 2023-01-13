@@ -75,9 +75,9 @@ document.querySelector('form').addEventListener('submit', function(e){
         document.querySelector('#apartant'),
         document.querySelector('#city'),
         document.querySelector('#opcional'),
-        document.querySelector('##validationtooltip03'),
-        document.querySelector('##validationtooltip05'),
-        document.querySelector('#city')
+        document.querySelector('#validationtooltip03'),
+        document.querySelector('#validationtooltip05'),
+        
     ];
 
     const errosCadastro = document.getElementById('errors')
