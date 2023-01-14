@@ -64,56 +64,86 @@
 
 
 // })
-window.addEventListener('load', () =>{
+window.addEventListener('load', () => {
 
 
 
-document.querySelector('form').addEventListener('submit', function(e){
+  document.querySelector('form').addEventListener('submit', function (e) {
 
     e.preventDefault();
 
     const nomeInput = document.getElementById('#Nome')
-    const adressIntpu = document.getElementById('#Adress')
+    const adressInput = document.getElementById('#Adress')
     const apartmentInput = document.getElementById('#Apartment')
     const cityInput = document.getElementById('#City')
-    const cityOpcional = document.getElementById('#Opcional')
-    const paisCadastro = document.getElementById('#validationtooltip03')
-    const estadoCadastro = document.getElementById('#validationtooltip05')
+    const estadoInput = document.getElementById('#Estado')
+    const cepInput = document.getElementById('#Cep')
 
-       
-    
+
+
+
 
 
     const errosCadastro = document.getElementById('errors')
 
-      const erros = []
-
-      
-      
-
-      // campos.addEventListener('submit', function () {
-      
-
-   
-          if (nomeInput < 5 ) {
-               erros.push('nome input vazio')
-
-              //  console.log('erro')
-            }
+    const erros = []
 
 
-          
-           
-            
-        
-          // })
 
-          console.log('projeto')
 
-        this.reset(); 
+    
+
+
+
+    if (nomeInput < 5) {
+      erros.push('nome input vazio')
+
+
+    }
+
+    if (nomeInput < 5) {
+      erros.push('nome input vazio')
+
+    }
+
+    if (adressInput < 1) {
+      erros.push('endereço input vazio')
+
+    }
+
+    if (apartmentInput < 1) {
+      erros.push('opcional')
+
+    }
+
+    if (cityInput < 15) {
+      erros.push('cidade input vazio')
+
+    }
+
+    if (estadoInput < 2) {
+      erros.push('estado input vazio')
+
+    }
+
+    if (cepInput < 8) {
+      erros.push('cep input vazio')
+
+
+    }
+
+
+
+
+
+
+    
+
+    console.log('projeto')
+
+    this.reset();
+
+  })
 
 })
 
-})
-
-// })
