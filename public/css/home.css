@@ -1,4 +1,5 @@
-.bodyHome {
+@media (min-width: 769px){
+    .bodyHome {
     margin: 0;
     padding: 0;
     background-color: #fff;
@@ -12,7 +13,7 @@
 }
 
 .bannerSlide .slides .slide{
-    min-height: 100px;
+    min-height: 150px;
     display: flex;
     align-items: stretch;
     flex-wrap: wrap;
@@ -25,9 +26,10 @@
         0px 2px 1px #101010,
         2px 0px 1px #101010,
         2px 1px 1px #101010;
-    padding-bottom: 100px;
+    padding-bottom: 50px;
     margin-left: 50px;
     margin-top: 80px;
+    width: 90%;
     font-family: var(--font-titulo);
     font-size: 50px;
     font-style: normal;
@@ -37,6 +39,7 @@
     width: 200px;
     height: 50px;
     margin-left: 50px;
+    margin-right: 569px;
     margin-bottom: 30px;
     justify-items: flex-start;
 }
@@ -56,7 +59,7 @@
 .bannerSlide .slides:nth-child(1) .slide{
     background: url('/img/banner1.jpg');
     background-size: cover;
-    max-width: 1800px;
+    max-width: 1920px;
     height: 350px;
     object-fit: cover;
     background-repeat: no-repeat;
@@ -65,7 +68,7 @@
 .bannerSlide .slides:nth-child(2) .slide{
     background: url('/img/banner2.jpg');
     background-size: cover;
-    max-width: 1800px;
+    max-width: 1920px;
     height: 350px;
     object-fit: cover;
     background-repeat: no-repeat;
@@ -74,7 +77,7 @@
 .bannerSlide .slides:nth-child(3) .slide{
     background: url('/img/banner3.png');
     background-size: cover;
-    max-width: 1800px;
+    max-width: 1920px;
     height: 350px;
     object-fit: cover;
     background-repeat: no-repeat;
@@ -98,11 +101,21 @@
 }
 
 .bannerSlide #prev{
-    left: 0px;
+    left: 20px;
+    text-shadow:
+    0px 0px 1px #fff,
+    0px 2px 1px #fff,
+    2px 0px 1px #fff,
+    2px 1px 1px #fff;
 }
 
 .bannerSlide #next{
-    right:-21px;
+    right:5px;
+    text-shadow:
+        0px 0px 1px #fff,
+        0px 2px 1px #fff,
+        2px 0px 1px #fff,
+        2px 1px 1px #fff;
 }
 
 main {
@@ -232,3 +245,5 @@ main .product-card a {
     width: 76px;
     height: 76px;
  }
+
+}
