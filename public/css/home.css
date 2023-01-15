@@ -19,7 +19,7 @@
     flex-wrap: wrap;
     flex-direction: column;
 }
-.bannerSlide h3 {
+.bannerSlide h1 {
     color: #fff;
     text-shadow:
         0px 0px 1px #101010,
@@ -127,7 +127,7 @@ main .vitrine {
     flex-wrap: wrap;
 }
 
-main .vitrine h2 {
+main .vitrine h1 {
     padding-top: 30px;
     color: var(--cor-texto-primaria);
     font-family: var(--font-paragrafo);
@@ -168,6 +168,14 @@ main .product-card a {
     align-items: stretch;
     text-align: center;
     font-size: 20px;
+}
+
+main .product-card .ver{
+    border: solid 2px var(--cor-secundaria);
+    background-color: var(--cor-secundaria);
+    font-size: 15px;
+    justify-content: center;
+    margin-top: 9px;
 }
 
 .categorias{
