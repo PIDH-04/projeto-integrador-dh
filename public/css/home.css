@@ -1,4 +1,9 @@
 @media (min-width: 769px){
+    header .superior{
+        background-color: var(--cor-secundaria);
+        width:100%;
+    }
+
     .bodyHome {
     margin: 0;
     padding: 0;
@@ -254,5 +259,14 @@ main .product-card .ver{
     width: 76px;
     height: 76px;
  }
+
+ footer .copyright {
+    background-color: var(--cor-secundaria);
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
 
 }
