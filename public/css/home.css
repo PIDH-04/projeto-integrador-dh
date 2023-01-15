@@ -190,7 +190,7 @@ main .product-card .ver{
     gap: 10px;
 }
 
-.categorias h3{
+.categorias h1{
     text-align: center;
     font-family: var(--font-titulo);
     font-size: 40px;
@@ -199,14 +199,14 @@ main .product-card .ver{
     padding-bottom: 0%;
 }
 
-.categorias h2{
+.categorias p{
     text-align: center;
     font-family: var(--font-paragrafo);
     font-size: 20px;
     margin-top: 2px;
 }
 
-.categorias h1{
+.categorias h2{
     text-align: center;
     font-family: var(--font-paragrafo);
     font-size: 15px;
@@ -233,6 +233,7 @@ main .product-card .ver{
 
  div{
     display: flex;
+    flex-wrap: wrap;
  }
 
  .break{
