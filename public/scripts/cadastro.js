@@ -72,12 +72,12 @@ window.addEventListener('load', () => {
 
     e.preventDefault();
 
-    const nomeInput = document.getElementById('#Nome')
-    const adressInput = document.getElementById('#Adress')
-    const apartmentInput = document.getElementById('#Apartment')
-    const cityInput = document.getElementById('#City')
-    const estadoInput = document.getElementById('#Estado')
-    const cepInput = document.getElementById('#Cep')
+    const nomeInput = document.getElementById('Nome')
+    const adressInput = document.getElementById('Adress')
+    const apartmentInput = document.getElementById('Apartment')
+    const cityInput = document.getElementById('City')
+    const estadoInput = document.getElementById('Estado')
+    const cepInput = document.getElementById('Cep')
 
 
 
@@ -92,45 +92,45 @@ window.addEventListener('load', () => {
 
 
     
+    
 
 
+    if (nomeInput.value.length < 5) {
+      erros.push('nome não pode estar vazio')
 
-    if (nomeInput < 5) {
-      erros.push('nome input vazio')
-
-
+      
     }
 
-    if (nomeInput < 5) {
-      erros.push('nome input vazio')
+    // if (nomeInput < 5) {
+    //   erros.push('nome input vazio')
 
-    }
+    // }
 
-    if (adressInput < 1) {
-      erros.push('endereço input vazio')
+    // if (adressInput < 1) {
+    //   erros.push('endereço input vazio')
 
-    }
+    // }
 
-    if (apartmentInput < 1) {
-      erros.push('opcional')
+    // if (apartmentInput < 1) {
+    //   erros.push('opcional')
 
-    }
+    // }
 
-    if (cityInput < 15) {
-      erros.push('cidade input vazio')
+    // if (cityInput < 15) {
+    //   erros.push('cidade input vazio')
 
-    }
+    // }
 
-    if (estadoInput < 2) {
-      erros.push('estado input vazio')
+    // if (estadoInput < 2) {
+    //   erros.push('estado input vazio')
 
-    }
+    // }
 
-    if (cepInput < 8) {
-      erros.push('cep input vazio')
+    // if (cepInput < 8) {
+    //   erros.push('cep input vazio')
 
 
-    }
+    // }
 
 
 
