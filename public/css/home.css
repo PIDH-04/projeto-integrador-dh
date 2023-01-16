@@ -103,10 +103,13 @@
 .bannerSlide .btn:hover{
     background: var(--cor-secundaria);
     border-radius: 50px;
+    height:20px;
+    width:20px;
 }
 
-.bannerSlide #prev{
+.bannerSlide #prev{ 
     left: 20px;
+    font-size: 20px;
     text-shadow:
     0px 0px 1px #fff,
     0px 2px 1px #fff,
