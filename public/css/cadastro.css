@@ -23,7 +23,7 @@ header .inferior2 input{
     margin-bottom: 60px;
 
    border: 0px;
-
+    align-items: flex-start;
    
     
   
@@ -31,13 +31,13 @@ header .inferior2 input{
 
 
 .container{
-    /* padding:    10px; */
+    
 	width: 550px;
     
-    height: 610px;
+    
     margin: 30px;
     padding:  20px ;
-	/* border: 1px solid #ccc;  */
+	
     border: 1px solid var(--cor-principal);
     background-color: transparent;
     
@@ -50,10 +50,10 @@ header .inferior2 input{
 
 .container1{
     width: 600px;
-    height: 350px;
+
     margin: 30px;
     padding:  20px;
-	border: 1px solid #ccc;
+	
 
     border: 1px solid var(--cor-principal);
     background-color: transparent;
@@ -237,13 +237,25 @@ footer .copyright p{
   }
   
   @media (max-width: 880px) {
-    .display-flex.container1 .container {
+    .display-flex.container1 .container  {
       flex-direction: column;
       align-items: center;
       width: 50%;
       padding: 45px 20px 60px;
      
+
     }
+
+    .display-flex{
+        flex-direction: column;
+
+
+    }
+
+    .container , .container1 {
+        width: 100%;
+    }
+    
   
 } 
     
