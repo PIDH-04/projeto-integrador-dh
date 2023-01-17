@@ -92,45 +92,47 @@ window.addEventListener('load', () => {
 
 
     
-    
-
-
-    if (nomeInput.value.length < 5) {
-      erros.push('nome não pode estar vazio')
-
+    if (nomeInput.value == ' ') {
+      alert('o campo nome não pode estar vazio')
       
+      
+    } else if(nomeInput.value.length < 5){
+      alert('o campo nome deve ter mais de 5 caracterer')
     }
 
-    // if (nomeInput < 5) {
-    //   erros.push('nome input vazio')
 
-    // }
+    if (adressInput.value =='') {
+       alert('o campo endereço nao pode estar vazio')
 
-    // if (adressInput < 1) {
-    //   erros.push('endereço input vazio')
-
-    // }
-
-    // if (apartmentInput < 1) {
-    //   erros.push('opcional')
-
-    // }
-
-    // if (cityInput < 15) {
-    //   erros.push('cidade input vazio')
-
-    // }
-
-    // if (estadoInput < 2) {
-    //   erros.push('estado input vazio')
-
-    // }
-
-    // if (cepInput < 8) {
-    //   erros.push('cep input vazio')
+     } else if(adressInput.value.length < 3){
+      alert('o campo endereço deve ter mais de 5 caracterer')
+    }
 
 
-    // }
+     if (apartmentInput.value == '') {
+       erros.push('opcional')
+
+      }
+
+    
+      if (cityInput.value.length < 5) {
+        alert('cidade incorreta! verifique o campo Cidade ')
+
+     }
+
+     if (estadoInput.value.length < 2 ) {
+       alert('Estado incorreto! Verifique campo Estado')
+
+     } 
+     
+
+
+     if (cepInput.value.length < 8  ) {
+        alert('Cep incorreto')
+
+
+      }
+     
 
 
 
