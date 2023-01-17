@@ -8,20 +8,29 @@ window.addEventListener("load", () => {
   const anteriorImg = document.querySelector(".anterior-img");
   let posicaoImgVitrine = 0;
 
-  function lidaComSetas() {
-    switch (posicaoImgVitrine) {
-      case 0:
-        anteriorImg.style.display = "none";
-        proximaImg.style.display = "flex";
-        break;
-      case imgsProduto.length - 1:
-        anteriorImg.style.display = "flex";
-        proximaImg.style.display = "none";
-        break;
-      default:
-        anteriorImg.style.display = "flex";
-        proximaImg.style.display = "flex";
+  function avancaImagem() {
+    if (posicaoImgVitrine < imgsProduto.length - 1) {
+      imgVitrine.src = imgsProduto[posicaoImgVitrine + 1].src;
+      posicaoImgVitrine++;
+    } else {
+      imgVitrine.src = imgsProduto[0].src;
+      posicaoImgVitrine = 0;
     }
+  }
+
+  function retrocedeImagem() {
+    if (posicaoImgVitrine > 0) {
+      imgVitrine.src = imgsProduto[posicaoImgVitrine - 1].src;
+      posicaoImgVitrine--;
+    } else {
+      imgVitrine.src = imgsProduto[imgsProduto.length - 1].src;
+      posicaoImgVitrine = imgsProduto.length - 1;
+    }
+  }
+
+  if (imgsProduto.length == 1) {
+    proximaImg.style.display = "none";
+    anteriorImg.style.display = "none";
   }
 
   // Adiciona um escutador em todos as imagens do produto
@@ -30,26 +39,13 @@ window.addEventListener("load", () => {
     imgsProduto[i].addEventListener("click", () => {
       imgVitrine.src = imgsProduto[i].src;
       posicaoImgVitrine = i;
-      lidaComSetas();
     });
   }
 
   // Adiciona o escutador no botão de próxima foto
-  proximaImg.addEventListener("click", () => {
-    if (posicaoImgVitrine < imgsProduto.length - 1) {
-      imgVitrine.src = imgsProduto[posicaoImgVitrine + 1].src;
-      posicaoImgVitrine++;
-      lidaComSetas();
-    }
-  });
+  proximaImg.addEventListener("click", avancaImagem);
 
-  anteriorImg.addEventListener("click", () => {
-    if (posicaoImgVitrine > 0) {
-      imgVitrine.src = imgsProduto[posicaoImgVitrine - 1].src;
-      posicaoImgVitrine--;
-      lidaComSetas();
-    }
-  });
+  anteriorImg.addEventListener("click", retrocedeImagem);
 
   // Altera o estilo do modal para block quando clica na imagem em destaque
   imgVitrine.addEventListener("click", (e) => {
