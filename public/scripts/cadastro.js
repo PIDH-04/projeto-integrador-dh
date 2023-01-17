@@ -110,7 +110,7 @@ window.addEventListener('load', () => {
 
 
      if (apartmentInput.value == '') {
-       erros.push('opcional')
+       alert('opcional')
 
       }
 
@@ -133,7 +133,8 @@ window.addEventListener('load', () => {
 
       }
      
-
+      
+      
 
 
 
