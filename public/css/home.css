@@ -88,41 +88,54 @@
     background-repeat: no-repeat;
 }
 
-.bannerSlide .btn{
+.bannerSlide .btn#next {
+    /* criar um botão com um circulo e uma seta dentro*/
+    border: solid rgb(243, 240, 240);
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 10px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
     position: absolute;
-    top:50%;
-    color: var(--cor-texto-primaria);
-    height: 50px;
-    width: 50px;
-    font-size: 25px;
+    top: 50%;
     cursor: pointer;
-    font-weight: bolder;
+    right: 10px;
 }
 
-.bannerSlide .btn:hover{
-    background: var(--cor-secundaria);
-    border-radius: 50px;
-    height:30px;
-    width:30px;
+.bannerSlide .btn#prev {
+    /* criar um botão com um circulo e uma seta dentro*/
+    border: solid rgb(243, 240, 240);
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 10px;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+    left: 10px;;
 }
 
-.bannerSlide #prev{ 
-    left: 20px;
-    font-size: 20px;
-    text-shadow:
-    0px 0px 1px #fff,
-    0px 2px 1px #fff,
-    2px 0px 1px #fff,
-    2px 1px 1px #fff;
+
+
+.bannerSlide .btn#prev:hover {
+    /* mudar cor da seta para amarelo */
+    border: solid var(--cor-secundaria);
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 15px;
+    position: absolute;
+    top: 50%;
 }
 
-.bannerSlide #next{
-    right:5px;
-    text-shadow:
-        0px 0px 1px #fff,
-        0px 2px 1px #fff,
-        2px 0px 1px #fff,
-        2px 1px 1px #fff;
+.bannerSlide .btn#next:hover {
+    /* mudar cor da seta para amarelo */
+    border: solid var(--cor-secundaria);
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 15px;
+    position: absolute;
+    top: 50%;
 }
 
 main {
