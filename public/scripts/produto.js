@@ -2,33 +2,47 @@ window.addEventListener("load", () => {
   const imgVitrine = document.querySelector(".img-vitrine");
   const imgsProduto = document.querySelectorAll(".img-produto");
   const modal = document.querySelector(".modal");
-  const closeModalButton = modal.querySelector("span");
-  const imgModal = modal.querySelector("div img");
-  const proximaImg = document.querySelector(".proxima-img");
-  const anteriorImg = document.querySelector(".anterior-img");
+  const botoesContainer = document.querySelector(".botoes-container")
+  const closeModalButton = modal.querySelector(".fecha-modal");
+  const imgModal = modal.querySelector("div > img");
+  const proximaImg = botoesContainer.querySelector(".proxima-img");
+  const anteriorImg = botoesContainer.querySelector(".anterior-img");
+  const proximaImgModal = modal.querySelector(".proxima-img");
+  const anteriorImgModal = modal.querySelector(".anterior-img");
   let posicaoImgVitrine = 0;
   let touchStart = 0;
   let touchEnd = 0;
 
-  // Adiciona suporte a swipe da foto
+  // Adiciona suporte a swipe da foto caso exista mais de uma foto.
+  // Caso contrário remove as setas para troca de fotos
 
-  function lidaComSwipe() {
-    if (touchStart > touchEnd) {
-      retrocedeImagem();
-    } else {
-      avancaImagem();
+  if (imgsProduto.length < 2) {
+    botoesContainer.style.display = "none";
+    proximaImgModal.style.display = "none";
+    anteriorImgModal.style.display = "none";
+  }else{
+    
+    function lidaComSwipe() {
+      if (touchStart > touchEnd) {
+        retrocedeImagem();
+      } else {
+        avancaImagem();
+      }
     }
+  
+    imgVitrine.addEventListener("touchstart", (event) => {
+      touchStart = event.changedTouches[0].screenX;
+    });
+  
+    imgVitrine.addEventListener("touchend", (event) => {
+      touchEnd = event.changedTouches[0].screenX;
+      lidaComSwipe();
+    });
   }
 
-  imgVitrine.addEventListener("touchstart", (event) => {
-    touchStart = event.changedTouches[0].screenX;
-  });
 
-  imgVitrine.addEventListener("touchend", () => {
-    touchEnd = event.changedTouches[0].screenX;
-    lidaComSwipe();
-  });
 
+  // Funções que lidam com avançar e retroceder imagens
   function avancaImagem() {
     if (posicaoImgVitrine < imgsProduto.length - 1) {
       imgVitrine.src = imgsProduto[posicaoImgVitrine + 1].src;
@@ -49,10 +63,9 @@ window.addEventListener("load", () => {
     }
   }
 
-  if (imgsProduto.length == 1) {
-    proximaImg.style.display = "none";
-    anteriorImg.style.display = "none";
-  }
+  //Tira setas quando não tem mais de um produto
+
+  
 
   // Adiciona um escutador em todos as imagens do produto
 
@@ -68,19 +81,30 @@ window.addEventListener("load", () => {
 
   anteriorImg.addEventListener("click", retrocedeImagem);
 
+  
   // Altera o estilo do modal para block quando clica na imagem em destaque
   imgVitrine.addEventListener("click", (e) => {
     e.preventDefault();
-    modal.style.display = "block";
+    if(window.innerWidth > 670){
+      modal.style.display = "block";
+      imgModal.src = imgVitrine.src;
+    }
+  });
+  
+  proximaImgModal.addEventListener("click", () => {
+      avancaImagem();
+      imgModal.src = imgVitrine.src;
+  });
+
+  anteriorImgModal.addEventListener("click", () => {
+    retrocedeImagem();
     imgModal.src = imgVitrine.src;
   });
 
-  //Funções para fechar o modal
+
+  //Função para fechar o modal
   closeModalButton.addEventListener("click", () => {
     modal.style.display = "none";
   });
 
-  modal.addEventListener("click", () => {
-    modal.style.display = "none";
-  });
 });
