@@ -51,6 +51,7 @@ main.produto-container {
   width: 40%;
   position: relative;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .produto-container .img-container img {

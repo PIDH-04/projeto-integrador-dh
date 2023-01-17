@@ -7,6 +7,27 @@ window.addEventListener("load", () => {
   const proximaImg = document.querySelector(".proxima-img");
   const anteriorImg = document.querySelector(".anterior-img");
   let posicaoImgVitrine = 0;
+  let touchStart = 0;
+  let touchEnd = 0;
+
+  // Adiciona suporte a swipe da foto
+
+  function lidaComSwipe() {
+    if (touchStart > touchEnd) {
+      retrocedeImagem();
+    } else {
+      avancaImagem();
+    }
+  }
+
+  imgVitrine.addEventListener("touchstart", (event) => {
+    touchStart = event.changedTouches[0].screenX;
+  });
+
+  imgVitrine.addEventListener("touchend", () => {
+    touchEnd = event.changedTouches[0].screenX;
+    lidaComSwipe();
+  });
 
   function avancaImagem() {
     if (posicaoImgVitrine < imgsProduto.length - 1) {
