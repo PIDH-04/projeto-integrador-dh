@@ -12,11 +12,12 @@
     padding-right: 200px;
     font-family: var(--font-paragrafo);
     text-decoration: none;
+    z-index: 99;
 }
 
 .inferior2 {
     position: fixed;
-    top: 60px;
+    top: 55px;
     width: 100%;
     background-color: #ffffff;
     display: flex;
@@ -30,6 +31,7 @@
     font-family: var(--font-paragrafo);
     font-style: none;
     text-decoration: none;
+    z-index: 99;
 }
 
 .inferior ul li a:hover {
@@ -49,10 +51,12 @@ ul.inferior2 a {
 
 .parteExterna ul {
     padding-left: 800px;
+
 }
 
 #Externa {
     padding-left: 450px;
+
 }
 
 .inferior ul ul {
