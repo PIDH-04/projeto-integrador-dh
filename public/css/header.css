@@ -32,6 +32,15 @@
     text-decoration: none;
 }
 
+.inferior ul li a:hover {
+    background-color: aqua;
+    transition: all 0.5s;
+}
+
+ul.inferior2 a {
+    text-decoration: none;
+}
+
 .inferior2 ul {
     list-style: none;
     position: relative;
@@ -61,8 +70,7 @@
     transition: all 0.5s;
     width: 100%;
     background-color: aqua;
-    margin-top: 15px;
-
+    columns: 3;
 }
 
 
@@ -136,6 +144,7 @@
 
 label[for="bt_menu"] {
     padding: 5px;
+    margin-top: 41px;
     background-color: var(--cor-secundaria);
     color: var(--cor-texto-primaria);
     font-family: var(--font-paragrafo);
@@ -161,25 +170,34 @@ label[for="bt_menu"] {
 
     #bt_menu:checked~.superior {
         margin-left: 0;
+        top: 150px;
     }
 
-    .superior {
-        margin-top: 5px;
-        margin-left: -63%;
-        transition: all .5s;
-    }
 
-    .superior ul li a,
-    .inferior ul li a {
-        width: 100%;
+    ul.inferior2 {
+        position: static;
+        max-height: 0;
         float: none;
+    }
+    ul.inferior2{
+        margin-left: -100%;
+    }
+
+    ul.inferior2 span,
+    ul.inferior2 .busca,
+    ul.inferior .lupa,
+    ul.inferior2 img,
+    ul.inferior2 .sacola,
+    ul.inferior2 .painelusuario,
+    ul.inferior .sacola {
+        visibility: hidden;
     }
 
     .superior ul li {
         position: static;
         overflow: hidden;
         max-height: 0;
-        transition: all .5s;
+
     }
 
     .inferior ul:hover .parteInterna,
@@ -188,4 +206,11 @@ label[for="bt_menu"] {
         max-height: 200px;
     }
 
+    ul.inferior2 a {
+        text-decoration: none;
+    }
+
+    #bt_menu:checked ~ ul.inferior2{
+        margin: left 0;
+    }
 }
