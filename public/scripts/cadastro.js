@@ -91,21 +91,27 @@ window.addEventListener('load', () => {
 
 
 
+          
+  
+    
     
     if (nomeInput.value == ' ') {
-      alert('o campo nome não pode estar vazio')
+      erros.push('o campo nome não pode estar vazio')
       
       
     } else if(nomeInput.value.length < 5){
-      alert('o campo nome deve ter mais de 5 caracterer')
+      erros.push('o campo nome deve ter mais de 5 caracterer')
     }
 
 
+  
+
+
     if (adressInput.value =='') {
-       alert('o campo endereço nao pode estar vazio')
+      erros.push('o campo endereço nao pode estar vazio')
 
      } else if(adressInput.value.length < 3){
-      alert('o campo endereço deve ter mais de 5 caracterer')
+      erros.push('o campo endereço deve ter mais de 5 caracterer')
     }
 
 
@@ -116,28 +122,26 @@ window.addEventListener('load', () => {
 
     
       if (cityInput.value.length < 5) {
-        alert('cidade incorreta! verifique o campo Cidade ')
+        erros.push('cidade incorreta! verifique o campo Cidade ')
 
      }
 
      if (estadoInput.value.length < 2 ) {
-       alert('Estado incorreto! Verifique campo Estado')
+      erros.push('Estado incorreto! Verifique campo Estado')
 
      } 
      
 
 
      if (cepInput.value.length < 8  ) {
-        alert('Cep incorreto')
-
+        erros.push('Cep incorreto')
+        
 
       }
      
       
       
-
-
-
+      
 
 
     
