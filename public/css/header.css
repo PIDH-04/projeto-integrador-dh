@@ -1,4 +1,7 @@
 .superior3 {
+    position: fixed;
+    top: 0;
+    width: 100%;
     background-color: var(--cor-secundaria);
     display: flex;
     flex-wrap: wrap;
@@ -12,6 +15,9 @@
 }
 
 .inferior2 {
+    position: fixed;
+    top: 60px;
+    width: 100%;
     background-color: #ffffff;
     display: flex;
     flex-wrap: wrap;
@@ -19,20 +25,31 @@
     list-style: none;
     padding: 20px;
     padding-left: 200px;
-    padding-right: 120px;
+    padding-right: 100px;
     align-items: center;
     font-family: var(--font-paragrafo);
     font-style: none;
+    text-decoration: none;
 }
 
 .inferior2 ul {
     list-style: none;
     position: relative;
+    padding-left: 310px;
+}
 
+.parteExterna ul {
+    padding-left: 800px;
+}
+
+#Externa {
+    padding-left: 450px;
 }
 
 .inferior ul ul {
     position: absolute;
+    left: 0;
+    right: 0;
     visibility: hidden;
     padding-top: 10px;
 
@@ -42,12 +59,16 @@
     visibility: visible;
     padding-top: 10px;
     transition: all 0.5s;
+    width: 100%;
+    background-color: aqua;
+    margin-top: 15px;
+
 }
 
 
 .inferior2 a {
     display: block;
-    text-align: center;
+    text-align: left;
 }
 
 .superior3 :last-child {
@@ -56,16 +77,20 @@
 }
 
 .inferior2 .parteInterna a {
-    padding: 2px;
+    padding: 5px;
     position: relative;
+    margin: 0%;
+
 
 }
+
 
 .inferior2 .parteExterna a {
     padding: 5px;
     position: relative;
 
 }
+
 
 .ecommerce {
     font-style: var(--font-paragrafo);
@@ -100,7 +125,7 @@
 }
 
 .inferior2 span {
-    text-decoration: none;
+    text-decoration-line: none;
     color: var(--cor-texto-primaria);
 }
 
@@ -120,37 +145,45 @@ label[for="bt_menu"] {
     width: 50px;
     height: 50px;
 }
-#bt_menu{
+
+#bt_menu {
     display: none;
 }
-    label[for="bt_menu"]{
-        display: none;
-    }
+
+label[for="bt_menu"] {
+    display: none;
+}
+
 @media(max-width: 800px) {
-    label[for="bt_menu"]{
+    label[for="bt_menu"] {
         display: block;
     }
-    #bt_menu:checked ~ .superior{
+
+    #bt_menu:checked~.superior {
         margin-left: 0;
     }
-    .superior{
+
+    .superior {
         margin-top: 5px;
         margin-left: -63%;
         transition: all .5s;
     }
+
     .superior ul li a,
     .inferior ul li a {
         width: 100%;
-       float: none;
+        float: none;
     }
 
-    .superior ul li,{
+    .superior ul li {
         position: static;
         overflow: hidden;
         max-height: 0;
         transition: all .5s;
     }
-    .inferior ul:hover .parteInterna, .inferior ul:hover .parteExterna{
+
+    .inferior ul:hover .parteInterna,
+    .inferior ul:hover .parteExterna {
         height: auto;
         max-height: 200px;
     }
