@@ -1,5 +1,5 @@
 window.addEventListener("load", () => {
-  const imgVitrine = document.querySelector(".img-vitrine");
+  const imgVitrine = document.querySelector(".img-vitrine-container > .img-vitrine");
   const imgsProduto = document.querySelectorAll(".img-produto");
   const modal = document.querySelector(".modal");
   const botoesContainer = document.querySelector(".botoes-container");
@@ -78,7 +78,7 @@ window.addEventListener("load", () => {
   // Altera o estilo do modal para block quando clica na imagem em destaque
   imgVitrine.addEventListener("click", (e) => {
     e.preventDefault();
-    if (window.innerWidth > 670) {
+    if (window.innerWidth > 700) {
       modal.style.display = "block";
       imgModal.src = imgVitrine.src;
     }
