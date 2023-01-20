@@ -139,11 +139,13 @@ window.addEventListener('load', () => {
 
       }
      
-      
+      if(erros.length  >  0 ){
+          
+      }
       
       
 
-
+      console.log(erros);
     
 
     console.log('projeto')
