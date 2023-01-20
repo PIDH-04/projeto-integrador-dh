@@ -126,18 +126,18 @@ window.addEventListener('load', () => {
 
      }
 
-     if (estadoInput.value.length < 2 ) {
-      erros.push('Estado incorreto! Verifique campo Estado')
+    //  if (estadoInput.value.length < 2 ) {
+    //   erros.push('Estado incorreto! Verifique campo Estado')
 
-     } 
+    //  } 
      
 
 
-     if (cepInput.value.length < 8  ) {
-        erros.push('Cep incorreto')
+    //  if (cepInput.value.length < 8  ) {
+    //     erros.push('Cep incorreto')
         
 
-      }
+    //   }
      
       if(erros.length  >  0 ){
           
