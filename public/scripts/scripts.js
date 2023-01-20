@@ -1,3 +1,5 @@
+const e = require("express");
+
 // Botões para acrescer e decrescer quantidade do produto
 const btnSubtrai = document.getElementById("btn-subtrai");
 const btnAdiciona = document.getElementById("btn-adiciona");
@@ -12,3 +14,4 @@ btnSubtrai.addEventListener("click", (e) => {
 btnAdiciona.addEventListener("click", (e) => {
   quantidade.value = parseInt(quantidade.value) + 1;
 });
+
