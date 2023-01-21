@@ -105,7 +105,7 @@ window.addEventListener('load', () => {
 
 
     } else if (nomeInput.value.length < 5) {
-      erros.push('o campo nome deve ter mais de 5 caracterer')
+      erros.push('o campo nome deve ter mais de 5 caractereres')
     }
 
 
