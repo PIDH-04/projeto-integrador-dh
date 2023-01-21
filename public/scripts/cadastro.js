@@ -72,12 +72,18 @@ window.addEventListener('load', () => {
 
     e.preventDefault();
 
-    const nomeInput = document.getElementById('Nome')
+    const nomeInput = document.getElementById('nome')
     const emailInput = document.getElementById('email')
     const senhaInput = document.getElementById('senha')
     const confirmarSenhaInput = document.getElementById('confirmarSenha')
-    
-    
+
+
+    const email2Input = document.getElementById('Adress');
+    const senha2Input = document.getElementById('Adress1');
+
+
+
+
 
 
 
@@ -90,76 +96,95 @@ window.addEventListener('load', () => {
 
 
 
-          
-  
-    
-    
+
+
+
+
     if (nomeInput.value == ' ') {
       erros.push('o campo nome não pode estar vazio')
-      
-      
-    } else if(nomeInput.value.length < 5){
+
+
+    } else if (nomeInput.value.length < 5) {
       erros.push('o campo nome deve ter mais de 5 caracterer')
     }
 
 
-  
 
 
-    if (emailInput.value =='') {
+
+    if (emailInput.value == '') {
       erros.push('digite um email valido')
 
-     } else if(emailInput.value.length < 3){
+    } else if (emailInput.value.length < 5) {
       erros.push('Ex maria@gmail.com')
     }
 
 
-     if (senhaInput.value =='') {
-       erros.push('Senha com minimo de 8 caracteres')
 
-      }
-       else if(senhaInput.value.length  >8){
-         erros.push('Senha com minimo de 8 caracteres')
-       }
+    if (senhaInput.value == '') {
+      erros.push('campo não pode estar vazio')
 
-    
-      if (confirmarSenhaInput.value =='')  {
-        erros.push('senha incorreta , digite novamente')
-
-     }
-     else if(confirmarSenhaInput.value != senhaInput.value){
-        erros.push('senha nao conferi, digite novamente')
-     }
-     
-    
-     
-     
-      if(erros.length  >  0 ){
-          e.preventDefault();
-
-          let divErrors = document.getElementById('div-errors')
-            divErrors.classList.remove('no-errors');
+    } else if (senhaInput.value.length < 8) {
+      erros.push('Senha com minimo de 8 caracteres')
+    }
 
 
-          let ulErros = document.querySelector('div.errors ul');
-      for(let i = 0 ; i < erros.length ; i++){
-        ulErros.innerHTML += '<li>' + erros[i] + '</li>'
-      }
-      
+    if (confirmarSenhaInput.value.length == '') {
+      erros.push('campo não pode estar vazio')
 
-      }
+    } else if (confirmarSenhaInput.value.length != senhaInput.value.length) {
+      erros.push('senha nao confere, digite novamente')
+    }
 
-      
-      
 
-    //   console.log(erros);
-    
 
-    // console.log('projeto')
+    // if (email2Input.value.length == '') {
+    //   erros.push('o campo nao pode estar vazio')
+    // } 
+    // else if (emailInput.value.length < 3) {
+    //   erros.push('Ex maria@gmail.com')
+    // }
+
+
+
+    // if (senha2Input.value.length == '') {
+    //   erros.push('o campo nao pode estar vazio')
+    // } 
+    // else if (senhaInput.value.length >= 8) {
+    //   erros.push('Senha com minimo de 8 caracteres')
+    // }
+
+
+
+
+    if (erros.length > 0) {
+      e.preventDefault();
+
+    }
+
+    let divErrors = document.getElementById('div-errors');
+    divErrors.classList.remove('no-errors');
+    divErrors.classList.add('errors')
+
+
+    let ulErros = document.querySelector('div.errors ul');
+    for (let i = 0; i < erros.length; i++) {
+      ulErros.innerHTML += '<li>' + erros[i] + '</li>';
+    }
+
+
+
+
+
+
+
+    // console.log(erros);
+
+
+    console.log('projeto')
 
     this.reset();
 
   })
 
 })
-
