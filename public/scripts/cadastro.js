@@ -73,12 +73,11 @@ window.addEventListener('load', () => {
     e.preventDefault();
 
     const nomeInput = document.getElementById('Nome')
-    const adressInput = document.getElementById('Adress')
-    const apartmentInput = document.getElementById('Apartment')
-    const cityInput = document.getElementById('City')
-    const estadoInput = document.getElementById('Estado')
-    const cepInput = document.getElementById('Cep')
-
+    const emailInput = document.getElementById('email')
+    const senhaInput = document.getElementById('senha')
+    const confirmarSenhaInput = document.getElementById('confirmarSenha')
+    
+    
 
 
 
@@ -107,48 +106,56 @@ window.addEventListener('load', () => {
   
 
 
-    if (adressInput.value =='') {
-      erros.push('o campo endereço nao pode estar vazio')
+    if (emailInput.value =='') {
+      erros.push('digite um email valido')
 
-     } else if(adressInput.value.length < 3){
-      erros.push('o campo endereço deve ter mais de 5 caracterer')
+     } else if(emailInput.value.length < 3){
+      erros.push('Ex maria@gmail.com')
     }
 
 
-     if (apartmentInput.value == '') {
-       alert('opcional')
+     if (senhaInput.value =='') {
+       erros.push('Senha com minimo de 8 caracteres')
 
       }
+       else if(senhaInput.value.length  >8){
+         erros.push('Senha com minimo de 8 caracteres')
+       }
 
     
-      if (cityInput.value.length < 5) {
-        erros.push('cidade incorreta! verifique o campo Cidade ')
+      if (confirmarSenhaInput.value =='')  {
+        erros.push('senha incorreta , digite novamente')
 
      }
-
-    //  if (estadoInput.value.length < 2 ) {
-    //   erros.push('Estado incorreto! Verifique campo Estado')
-
-    //  } 
+     else if(confirmarSenhaInput.value != senhaInput.value){
+        erros.push('senha nao conferi, digite novamente')
+     }
      
-
-
-    //  if (cepInput.value.length < 8  ) {
-    //     erros.push('Cep incorreto')
-        
-
-    //   }
+    
+     
      
       if(erros.length  >  0 ){
-          
+          e.preventDefault();
+
+          let divErrors = document.getElementById('div-errors')
+            divErrors.classList.remove('no-errors');
+
+
+          let ulErros = document.querySelector('div.errors ul');
+      for(let i = 0 ; i < erros.length ; i++){
+        ulErros.innerHTML += '<li>' + erros[i] + '</li>'
       }
       
+
+      }
+
+      
       
 
-      console.log(erros);
+    //   console.log(erros);
     
 
-    console.log('projeto')
+    // console.log('projeto')
 
     this.reset();
 

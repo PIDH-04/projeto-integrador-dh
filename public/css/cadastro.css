@@ -272,4 +272,11 @@ footer .copyright p{
 }
   
 
-  
+  /* .errors{
+    margin-bottom: 10px;
+    /* border: solid 2px red; */
+    
+.no-errors{
+    display: none;
+} 
+
