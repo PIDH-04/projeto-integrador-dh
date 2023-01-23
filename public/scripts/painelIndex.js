@@ -1,5 +1,5 @@
 //formulario painel 
-    const formulario = document.getElementById('formulario')
+    const formulario = document.getElementById('form')
     const nameInput = document.getElementById('nome')
     const emailInput = document.getElementById('email')
     const senhaInput = document.getElementById('password')
@@ -7,28 +7,28 @@
     formulario.addEventListener('submit', function(event){
         event.preventDefault();
 
-        let dadosFormulario = document.getElementById('formulario')
-        if (dadosFormulario[i].value == ""){
+        let Formulario = document.getElementById('form')
+        if (Formulario[0].value == ""){
            erros.push('o campo não podem estar vazio');
-        } else if(dadosFrom.value.lenght < 3){
+        } else if(From.value.lenght < 3){
             erros.push('o campo tem que ser maior que 3')
         };
         let nameInput = document.getElementById('nome')
         if (nameInput.value == ""){
            erros.push('o campo nome não podem estar vazio');
         }
-        let dadosEmail = document.getElementById('email')
-        if (dadosEmail.value == ""){
+        let emailInput = document.getElementById('email')
+        if (emailInput.value == ""){
            erros.push('o campo e-mail não podem estar vazio');
         }
-        let dadosSenha = document.getElementById('password')
-        if (dadosSenha.value == ""){
+        let senhaInput= document.getElementById('password')
+        if (senhaInput.value == ""){
            erros.push('o campo senha não podem estar vazio');
         }
     
     })
 
-    console.log("agora vai")
+    //console.log("agora vai")
 
 
 
