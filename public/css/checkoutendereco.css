@@ -9,6 +9,10 @@ main .enderecos-container{
     width: 45%;
 }
 
+main .enderecos-container button{
+  width: 100%;
+}
+
 main .carrinho-container{
     margin-top: 100px;
     width: 38%;
@@ -39,6 +43,12 @@ main.checkout-endereco-container h3{
     font-size: 22px;
 }
 
+main .master-section-novo > form label{
+  margin-bottom: 5px;
+  margin-top: 15px;
+  display: block;
+}
+
 main .master-section-novo input {
   border: 1px solid var(--cor-texto-secundaria);
   display: flex;
@@ -51,8 +61,17 @@ main .master-section-novo input {
 
 main .master-section-novo .CidadeEstado {
   margin-bottom: 10px;
+  margin-top: -10px;
   display: flex;
   gap: 3%;
+}
+
+main .master-section-novo .CidadeEstado div:first-child{
+  width: 100%;
+}
+
+main .master-section-novo form button{
+  width: 100%;
 }
 
 main .master-section-novo select {

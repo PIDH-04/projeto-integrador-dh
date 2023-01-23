@@ -63,40 +63,68 @@
               <option value="Endereço4">Endereço alternativo</option>
             </select>
           </div>
-          <a href="/checkoutpagamento" class="botao-secundario"
-            >Escolher forma de pagamento</a
+          <button href="/checkoutpagamento" class="botao-secundario"
+            >Escolher forma de pagamento</button
           >
         </section>
 
         <section class="master-section-novo">
           <h3>Novo endereço</h3>
-          <input type="text" placeholder="Nome do Destinatário" />
-          <input type="number" placeholder="CEP" />
-          <input type="text" placeholder="Endereço" />
-          <input type="number" placeholder="Número" />
-          <input
-            type="number"
-            placeholder="Apartamento, suíte, etc (opcional)"
-          />
-          <input type="text" placeholder="Apelido do endereço" />
-          <div class="CidadeEstado">
-            <select name="Cidade">
-              <option value="Cidade1">Cidade</option>
-              <option value="Cidade2">São Paulo(capital)</option>
-              <option value="Cidade3">Porto Alegre</option>
-              <option value="Cidade4">Salvador</option>
-            </select>
-            <select name="Estado">
-              <option value="Estado1">Estado</option>
-              <option value="Estado2">SP</option>
-              <option value="Estado3">RS</option>
-              <option value="Estado4">BA</option>
-            </select>
-          </div>
-          <input type="text" placeholder="Observações" />
-          <a href="/checkoutpagamento" class="botao-secundario"
-            >Escolher forma de pagamento</a
-          >
+          <form action="" method="post">
+            <div>
+              <label for="nome-endereco">Nome do endereço:</label>
+              <input
+                type="text"
+                id="nome-endereco"
+                name="nome-endereco"
+                placeholder="Nome do Destinatário"
+              />
+            </div>
+            <div>
+              <label for="cep">CEP:</label>
+              <input type="number" id="CEP" name="cep" placeholder="CEP" />
+            </div>
+            <div>
+              <label for="endereco">Endereço:</label>
+              <input
+                type="text"
+                id="endereco"
+                name="endereco"
+                placeholder="Endereço"
+              />
+            </div>
+            <div>
+              <label for="numero">Número: </label>
+              <input
+                type="number"
+                id="numero"
+                name="numero"
+                placeholder="Número"
+              />
+            </div>
+            <div>
+              <label for="complemento">Complemento:</label>
+              <input
+                type="text"
+                placeholder="Apartamento, suíte, etc (opcional)"
+                id="complemento"
+                name="complemento"
+              />
+            </div>
+            <div class="CidadeEstado">
+              <div>
+                <label for="cidade">Cidade:</label>
+                <input type="text" name="cidade" id="cidade" placeholder="Cidade" />
+              </div>
+              <div>
+                <label for="estado">Estado:</label>
+                <input type="text" name="estado" id="estado" placeholder="Estado"/>
+              </div>
+            </div>
+            <button type="submit" class="botao-secundario">
+              Salvar e escolher forma de pagamento
+            </button>
+          </form>
         </section>
       </section>
       <section class="carrinho-container">
@@ -140,7 +168,6 @@
             <p class="quantidade">Quantidade: 1</p>
             <p class="preco">R$ 800,00</p>
           </div>
-          <span>Remover</span>
         </div>
         <div class="card-produto-carrinho">
           <div class="img-container">
@@ -156,7 +183,6 @@
             <p class="quantidade">Quantidade: 1</p>
             <p class="preco">R$ 800,00</p>
           </div>
-          <span>Remover</span>
         </div>
         <div class="card-produto-carrinho">
           <div class="img-container">
@@ -172,7 +198,6 @@
             <p class="quantidade">Quantidade: 1</p>
             <p class="preco">R$ 800,00</p>
           </div>
-          <span>Remover</span>
         </div>
       </section>
     </main>
