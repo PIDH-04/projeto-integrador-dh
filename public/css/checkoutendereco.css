@@ -24,7 +24,7 @@ main .master-section {
   width: 100%;
 }
 
-main .master-section h2{
+main .enderecos-container h2{
     font-size:36px;
     margin-bottom: 30px;
 }
@@ -112,4 +112,28 @@ main .carrinho-container .resumo-compra div:last-child{
     border-top: 1px solid var(--cor-texto-secundaria);
     padding-top: 20px;
     font-weight: bold;
+}
+
+
+@media (max-width:800px){
+  main .enderecos-container{
+    width: 48%;
+}
+  main .carrinho-container{
+    width: 42%;
+  }
+}
+
+@media(max-width: 750px){
+  main{
+    flex-direction: column;
+  }
+
+  main .enderecos-container{
+    width: 100%;
+}
+  main .carrinho-container{
+    width: 100%;
+    margin-top: 50px;
+  }
 }

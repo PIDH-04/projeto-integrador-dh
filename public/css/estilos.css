@@ -250,3 +250,14 @@ div.card-produto-carrinho span{
     width: 85%;
   }
 }
+
+
+@media (max-width:900px){
+  div.card-produto-carrinho h5{
+    font-size: 18px;
+  }
+
+  div.card-produto-carrinho .preco{
+    font-size: 14px;
+  }
+}
