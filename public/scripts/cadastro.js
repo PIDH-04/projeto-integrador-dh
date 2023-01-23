@@ -72,6 +72,9 @@ window.addEventListener('load', () => {
 
     e.preventDefault();
 
+    let divErrors = document.getElementById('div-errors');
+    let ulErros = document.querySelector('div.errors ul');
+
     const nomeInput = document.getElementById('nome')
     const emailInput = document.getElementById('email')
     const senhaInput = document.getElementById('senha')
@@ -84,20 +87,12 @@ window.addEventListener('load', () => {
 
 
 
-
-
-
-
-
     const errosCadastro = document.getElementById('errors')
 
     const erros = []
+    erros.length = 0;
 
-
-
-
-
-
+    ulErros.innerHTML= '' ;
 
 
     if (nomeInput.value == ' ') {
@@ -107,9 +102,6 @@ window.addEventListener('load', () => {
     } else if (nomeInput.value.length < 5) {
       erros.push('o campo nome deve ter mais de 5 caracteres')
     }
-
-
-
 
 
     if (emailInput.value == '') {
@@ -132,7 +124,7 @@ window.addEventListener('load', () => {
     if (confirmarSenhaInput.value.length == '') {
       erros.push('campo não pode estar vazio')
 
-    } else if (confirmarSenhaInput.value.length != senhaInput.value.length) {
+    } else if (confirmarSenhaInput.value != senhaInput.value) {
       erros.push('senha nao confere, digite novamente')
     }
 
@@ -160,30 +152,34 @@ window.addEventListener('load', () => {
     if (erros.length > 0) {
       e.preventDefault();
 
+      
+      divErrors.classList.remove('no-errors');
+      divErrors.classList.add('errors'); 
+  
+  
+     
+      for (let i = 0; i < erros.length; i++) {
+        ulErros.innerHTML += '<li>' + erros[i] + '</li>';
+          
+  
+      }
+  
+
     }
 
-    let divErrors = document.getElementById('div-errors');
-    divErrors.classList.remove('no-errors');
-    divErrors.classList.add('errors')
-
-
-    let ulErros = document.querySelector('div.errors ul');
-    for (let i = 0; i < erros.length; i++) {
-      ulErros.innerHTML += '<li>' + erros[i] + '</li>';
-    }
+    
 
 
 
 
 
 
-
-    // console.log(erros);
+    console.log(erros);
 
 
     console.log('projeto')
 
-    this.reset();
+    // this.reset();
 
   })
 
