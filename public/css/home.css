@@ -96,6 +96,9 @@ main {
 main .vitrine {
     display: flex;
     flex-wrap: wrap;
+    padding-top: 10px;
+    flex-direction: column;
+    align-content: center;
 }
 
 main .vitrine h1 {
@@ -107,50 +110,61 @@ main .vitrine h1 {
 }
 
 main .products-container {
-    justify-content: space-between;
     display: flex;
     flex-wrap: wrap;
     padding-top: 10px;
+    flex-direction: column;
 }
 
 main .product-card {
-    width: 30%;
+    width: 100%;
     padding: 2px 5px;
     margin: 2px;
 }
 
+main .product-card .card {
+    height: 180px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+}
+
+
 main .product-card img {
-    width: 98%;
-    height: fit-content;
-    align-items: center;
+    width: 180px;
+    height: 180px;
+}
+
+main .product-card h2 {
+    align-self: flex-start;
+    margin-left: 20px;
+    margin-top: 30px;
+    margin-bottom: 0;
+    color: var(--cor-texto-secundaria);
+    font-size: 20px;
 }
 
 main .product-card a {
-    text-align: left;
-    font-size: 1.17em;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: bold;
-    color: var(--cor-texto-secundaria);
-    font-family: var(--font-paragrafo);
     padding: 0px;
-    display: block;
+    display: flex;
     width: 100%;
-    margin: 0%;
+    margin: 10px;
 }
 
 main .product-card p {
-    font-size: 5px;
+    font-size: 18px;
     margin-top: 2px;
     font-weight: bold;
     color: var(--cor-texto-primaria);
+    align-self: center;
 }
 
 main .product-card .ver{
     background-color: var(--cor-secundaria);
-    font-size: 4px;
+    font-size: 20px;
+    height: 30px;
+    width: 100%;
     margin-top: 3px;
     padding: 4px 5px;
     border: none;
@@ -422,12 +436,20 @@ main .products-container {
     display: flex;
     flex-wrap: wrap;
     padding-top: 40px;
+    flex-direction: row;
 }
 
 main .product-card {
     width: 30%;
     padding: 10px 20px;
     margin: 10px;
+}
+
+main .product-card .card {
+    height: 160px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
 }
 
 main .product-card img {
@@ -440,7 +462,7 @@ main .product-card a {
     display: flex;
     width: 200px;
     margin: 0%;
-    height: 366px;
+    height: 350px;
     flex-wrap: wrap;
     align-content: stretch;
     justify-content: flex-start;
@@ -453,6 +475,7 @@ main .product-card h2 {
     margin: 0;
     font-weight: bold;
     padding-left: 10px;
+    height: 44px;
 }
 
 main .product-card p {
@@ -462,6 +485,7 @@ main .product-card p {
     font-weight: bold;
     color: var(--cor-texto-primaria);
     text-align: start;
+    align-self: flex-start;
 }
 
 main .product-card .ver{
@@ -476,7 +500,7 @@ main .product-card .ver{
     cursor: pointer;
     text-decoration: none;
     text-align: center;
-    width: 204px;
+    width: 200px;
     height: 46px;
 }
 
