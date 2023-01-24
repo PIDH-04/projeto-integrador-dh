@@ -168,12 +168,6 @@ window.addEventListener('load', () => {
     }
 
     
-
-
-
-
-
-
     console.log(erros);
 
 
