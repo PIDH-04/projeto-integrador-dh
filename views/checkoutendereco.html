@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="/css/header.css" />
     <link rel="stylesheet" href="/css/footer.css" />
     <link rel="stylesheet" href="/css/checkoutEndereco.css" />
+    <script src="/scripts/checkoutEndereco.js" defer></script>
     <title>Checkout - Endereço | E-móvel</title>
   </head>
 
@@ -63,14 +64,14 @@
               <option value="Endereço4">Endereço alternativo</option>
             </select>
           </div>
-          <button href="/checkoutpagamento" class="botao-secundario"
-            >Escolher forma de pagamento</button
-          >
+          <button href="/checkoutpagamento" class="botao-secundario">
+            Escolher forma de pagamento
+          </button>
         </section>
 
         <section class="master-section-novo">
           <h3>Novo endereço</h3>
-          <form action="" method="post">
+          <form action="" method="post" id="form-novo-endereco">
             <div>
               <label for="nome-endereco">Nome do endereço:</label>
               <input
@@ -82,7 +83,7 @@
             </div>
             <div>
               <label for="cep">CEP:</label>
-              <input type="number" id="CEP" name="cep" placeholder="CEP" />
+              <input type="number" id="cep" name="cep" placeholder="CEP" />
             </div>
             <div>
               <label for="endereco">Endereço:</label>
@@ -111,14 +112,33 @@
                 name="complemento"
               />
             </div>
+            <div>
+              <label for="bairro">Bairro:</label>
+              <input
+                type="text"
+                placeholder="Seu bairro"
+                id="bairro"
+                name="bairro"
+              />
+            </div>
             <div class="CidadeEstado">
               <div>
                 <label for="cidade">Cidade:</label>
-                <input type="text" name="cidade" id="cidade" placeholder="Cidade" />
+                <input
+                  type="text"
+                  name="cidade"
+                  id="cidade"
+                  placeholder="Cidade"
+                />
               </div>
               <div>
                 <label for="estado">Estado:</label>
-                <input type="text" name="estado" id="estado" placeholder="Estado"/>
+                <input
+                  type="text"
+                  name="estado"
+                  id="estado"
+                  placeholder="Estado"
+                />
               </div>
             </div>
             <button type="submit" class="botao-secundario">
