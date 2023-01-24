@@ -53,30 +53,29 @@
       <h1>Painel do Usuario</h1>
       <img class="imglogin" src="/img/img.jpg" alt="" />
       <br>
-      <form class="botao-primario">
+      <form id="form" class="botao-primario">
         <label class="alterar-img">
           Alterar
           <input type="file" name="foto" />
         </label>
-        <form id="form">
-          <label for="Nome">
-            Seu Nome
-            <input type="text" placeholder="nome" name="nome" id="nome" class="form-control" required />
-          </label>
-          <label for="E-mail">
-            E-mail
-            <input type="text" placeholder="Email" name="Email" id="Email" class="form-control" required />
-          </label>
-          <label for="Digite sua Senha">
-            Senha
-            <input type="text" placeholder="Senha" name="Password" id="Password" class="form-control" required />
-          </label>
-          <label for="Digite sua Senha">
-            Confirmar Senha
-            <input type="text" placeholder="Senha" name="Password" id="Password" class="form-control" required />
-          </label>
-          <button class="botao-secundario">Alterar dados</button>
-        </form>
+        <label for="Nome">
+          Seu Nome
+          <input type="text" placeholder="nome" name="nome" id="nome" class="form-control" required />
+        </label>
+        <label for="E-mail">
+          E-mail
+          <input type="text" placeholder="Email" name="Email" id="email" class="form-control" required />
+        </label>
+        <label for="Digite sua Senha">
+          Senha
+          <input type='password' placeholder="Senha" name="senha" id="password" class="form-control" required />
+        </label>
+        <label for="Digite sua Senha">
+          Confirmar Senha
+          <input type='password' placeholder="Senha" name="senha2" id="password2" class="form-control" required />
+        </label>
+        <button class="botao-secundario">Alterar dados</button>
+      </form>
     </div>
     <div id="container-b">
       <h2>Endereço de Entrega</h2>

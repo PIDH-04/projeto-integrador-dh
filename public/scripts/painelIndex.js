@@ -1,38 +1,34 @@
 //formulario painel 
-    const formulario = document.getElementById('form')
-    const nameInput = document.getElementById('nome')
-    const emailInput = document.getElementById('email')
-    const senhaInput = document.getElementById('password')
-  
-    formulario.addEventListener('submit', function(event){
-        event.preventDefault();
+const formulario = document.getElementById('form')
+const nameInput = document.getElementById('nome')
+const emailInput = document.getElementById('email')
+const senhaInput = document.getElementById('password')
 
-        let Formulario = document.getElementById('form')
-        if (Formulario[0].value == ""){
-           erros.push('o campo não podem estar vazio');
-        } else if(From.value.lenght < 3){
-            erros.push('o campo tem que ser maior que 3')
-        };
-        let nameInput = document.getElementById('nome')
-        if (nameInput.value == ""){
-           erros.push('o campo nome não podem estar vazio');
-        }
-        let emailInput = document.getElementById('email')
-        if (emailInput.value == ""){
-           erros.push('o campo e-mail não podem estar vazio');
-        }
-        let senhaInput= document.getElementById('password')
-        if (senhaInput.value == ""){
-           erros.push('o campo senha não podem estar vazio');
-        }
-    
-    })
+
+formulario.addEventListener('submit', function (event) {
+   event.preventDefault();
+
+   let erros = []
+   let nameInput = document.getElementById('nome')
+   if (nameInput.value == "") {
+      erros.push('o campo nome não podem estar vazio');
+   }
+   if (nameInput.value.length < 3) {
+      erros.push('o campo name tem que ser maior que 3')
+   }
+   let emailInput = document.getElementById('email')
+   if (emailInput.value.length < 3) {
+      erros.push('o campo e-mail tem que ser maior que 3');
+   }
+   let senhaInput = document.getElementById('password')
+   if (senhaInput.value.length < 3) {
+      erros.push('o campo senha tem que ser maior que 3');
+   }
+   console.log(erros)
+
+})
 
     //console.log("agora vai")
-
-
-
-
     //<script>
     // const form = document.getElementById('form');
     // const campos = document.querySelectorAll('.required')
