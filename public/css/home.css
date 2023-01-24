@@ -178,7 +178,7 @@ main .product-card .ver{
 }
 
 .categorias{
-    background: var(--cor-secundaria); 
+    background: var(--cor-secundaria);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -203,22 +203,26 @@ main .product-card .ver{
     margin-top: 1px;
 }
 
+.categorias .icone-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
 .categorias h2{
     text-align: center;
     font-family: var(--font-paragrafo);
-    font-size: 4px;
+    font-size: 15px;
     margin-top: 1px;
+    margin-left: 10px;
     color: var(--cor-texto-primaria);
+    align-self: flex-end;
 }
-
-.categorias .icone-container{
-    width: 100%;
-}
-
  .categorias .icone-container a img{
     background: #fff;
     border-radius: 50px;
-    width: 98%;
+    width: 70px;
+    height: 70px;
  }
 
  .categorias .botao-secundario{
@@ -229,6 +233,9 @@ main .product-card .ver{
  .categorias div{
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
  }
 
  .break{
@@ -237,17 +244,18 @@ main .product-card .ver{
 
  a.botao-icone{
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;    
+    flex-direction: row;
+    justify-content: flex-start;
     text-align: center;
     text-decoration: none;
-    width: 25%;
-    align-items: center;
+    width: 50%;
+    margin-top: 10px;
+    margin-bottom: 10px
  }
 
  a .icone{
-    width: 19px;
-    height: 19px;
+    width: 74px;
+    height: 74px;
  }
 
  footer .copyright {
@@ -537,6 +545,7 @@ main .product-card .ver{
     font-size: 15px;
     margin-top: 2px;
     color: var(--cor-texto-primaria);
+    align-self: center;
 }
 
  .categorias .icone-container a img{
@@ -553,6 +562,7 @@ main .product-card .ver{
  .categorias div{
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
  }
 
  .break{
@@ -560,6 +570,7 @@ main .product-card .ver{
  }
 
  a.botao-icone{
+    margin: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;    
