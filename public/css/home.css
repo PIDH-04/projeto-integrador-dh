@@ -488,7 +488,7 @@ main .product-card .ver{
     margin-top: 1px;
     margin-left: 10px;
     color: var(--cor-texto-primaria);
-    align-self: flex-end;
+    align-self: center;
 }
  .categorias .icone-container a img{
     background: #fff;
@@ -514,15 +514,15 @@ main .product-card .ver{
     flex-basis: 100%;
  }
 
- a.botao-icone{
+ a.botao-icone {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
+    flex-direction: column;
     text-align: center;
     text-decoration: none;
     width: 50%;
     margin-top: 10px;
-    margin-bottom: 10px
+    margin-bottom: 10px;
+    align-items: center;
  }
 
  a .icone{
