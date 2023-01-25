@@ -1,4 +1,4 @@
-header .superior3 {
+ header .superior3 {
     margin-bottom: 0;
     line-height: initial;
 }
@@ -17,14 +17,6 @@ header .inferior2 input {
     width: 100px;
     margin-top: 20px;
 }
-
-/* div {
-    width: 1000px;
-    height: 100px;
-    display: inline-block;
-    
-} */
-
 main {
     background: white;
     margin-bottom: 80px;
