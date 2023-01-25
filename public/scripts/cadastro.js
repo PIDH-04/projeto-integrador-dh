@@ -1,71 +1,4 @@
-// window.addEventListener('load', () => {
-//     const nomeInput = document.getElementById('#nome')
-//     const adressIntpu = document.getElementById('#adress')
-//     const apartmentInput = document.getElementById('#apartment')
-//     const cityInput = document.getElementById('#city')
-//     const cityOpcional = document.getElementById('#opcional')
-//     const paisCadastro = document.getElementById('#validationtooltip03')
-//     const estadoCadastro = document.getElementById('#validationtooltip05')
-
-//     const errosCadastro = document.getElementById('errors')
-
-//     const erros = []
-
-
-//     nome.addEventListener('submit', function () {
-//         if (nomeInput.value.length < 1) {
-//             erros.push('nome input vazio')
-//         }
-
-//     })
-
-//     adress.addEventListener('submit', function () {
-//         if (adressInput.value.length < 1) {
-//             erros.push('adress input vazio')
-//         }
-
-//     })
-
-//     apartmentInput.addEventListener('submit', function () {
-//         if (apartmentInput.value.length < 1) {
-//             erros.push('apartament input vazio')
-//         }
-
-//     })
-
-//     cityInput.addEventListener('submit', function () {
-//         if (cityInput.value.length < 1) {
-//             erros.push('city input vazio')
-//         }
-
-//     })
-
-//     cityOpcional.addEventListener('submit', function () {
-//         if (cityOpcionalInput.value.length < 1) {
-//             erros.push('cityOpcioanl input vazio')
-//         }
-
-//     })
-
-//     paisCadastro.addEventListener('submit', function () {
-//         if (paisCadastroInput.value.length < 1) {
-//             erros.push('paisCadastro input vazio')
-//         }
-
-//     })
-
-
-
-
-//     btnEnviar.addEventListener("click", (e) => {
-//         quantidade.value = parseInt(quantidade.value) + 1;
-//       });
-
-
-
-// })
 window.addEventListener('load', () => {
-
 
 
   document.querySelector('form').addEventListener('submit', function (e) {
@@ -80,11 +13,7 @@ window.addEventListener('load', () => {
     const senhaInput = document.getElementById('senha')
     const confirmarSenhaInput = document.getElementById('confirmarSenha')
 
-
-    const email2Input = document.getElementById('Adress');
-    const senha2Input = document.getElementById('Adress1');
-
-
+    divErrors.style.display = 'none';
 
 
     const errosCadastro = document.getElementById('errors')
@@ -92,7 +21,7 @@ window.addEventListener('load', () => {
     const erros = []
     erros.length = 0;
 
-    ulErros.innerHTML= '' ;
+    ulErros.innerHTML = '';
 
 
     if (nomeInput.value == ' ') {
@@ -130,44 +59,24 @@ window.addEventListener('load', () => {
 
 
 
-    // if (email2Input.value.length == '') {
-    //   erros.push('o campo nao pode estar vazio')
-    // } 
-    // else if (emailInput.value.length < 3) {
-    //   erros.push('Ex maria@gmail.com')
-    // }
-
-
-
-    // if (senha2Input.value.length == '') {
-    //   erros.push('o campo nao pode estar vazio')
-    // } 
-    // else if (senhaInput.value.length >= 8) {
-    //   erros.push('Senha com minimo de 8 caracteres')
-    // }
-
-
-
-
     if (erros.length > 0) {
       e.preventDefault();
 
-      
+
       divErrors.classList.remove('no-errors');
-      divErrors.classList.add('errors'); 
-  
-  
-     
+      divErrors.classList.add('errors');
+      divErrors.style.display = 'block';
+
+
+
       for (let i = 0; i < erros.length; i++) {
         ulErros.innerHTML += '<li>' + erros[i] + '</li>';
-          
-  
+
       }
-  
 
     }
 
-    
+
     console.log(erros);
 
 
@@ -175,6 +84,40 @@ window.addEventListener('load', () => {
 
     // this.reset();
 
+
   })
+
+
+  document.querySelector('.formLogin').addEventListener('submit', function (e) {
+
+    e.preventDefault();
+
+    let ulErros = document.querySelector('div.errors2 ul');
+
+    const email2Input = document.getElementById('Adress');
+    const senha2Input = document.getElementById('Adress1');
+
+    const errosCadastro = document.getElementById('errors2')
+
+    const erros1 = []
+    erros1.length = 0;
+
+    ulErros.innerHTML = '';
+
+    if (email2Input.value == ' ') {
+      erros1.push('o campo nome não pode estar vazio')
+
+    } else if (email2Input.value.length < 5) {
+      erros1.push('Ex maria@gmail.com')
+    }
+
+    if (senha2Input.value == '') {
+      erros1.push('o campo nome não pode estar vazio')
+    }
+
+
+
+  })
+
 
 })
