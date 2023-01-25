@@ -19,62 +19,41 @@ header .inferior2 input{
     margin-left: 10%;
     margin-right: 10%;
     margin-top: 30px;
-
     margin-bottom: 60px;
-
-   border: 0px;
+    border: 0px;
     align-items: flex-start;
-   
-    
-  
+
 }
 
 
 .container{
     
 	width: 550px;
-    
-    
     margin: 30px;
     padding:  20px ;
-	
     border: 1px solid var(--cor-principal);
     background-color: transparent;
     
-
-    /* border-radius: 0%; */
-	
-    
-
 }
 
 .container1{
     width: 600px;
-
     margin: 30px;
     padding:  20px;
-	
-
     border: 1px solid var(--cor-principal);
     background-color: transparent;
 
-
-    
-    
 }
 
  section.container input{
     border-radius: 0%;
-
     padding: 10px  ;
-   
-    
+       
 }
 
 section.container1 input{
     border-radius: 0%;
-
-    
+   
 }
 
 section.container1 h2 , section.container h2 {
@@ -103,7 +82,7 @@ section.container1 h2 , section.container h2 {
 
 .clique{
    
-   font-family: 'Public Sans';
+    font-family: 'Public Sans';
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
@@ -144,27 +123,11 @@ section.container1 h2 , section.container h2 {
 
 .container input{
     padding: 10px ;
-    /* border: 1px solid; */
-    /* border-style:solid 1px; */
-    /* max-width: 550px; */
-
-    
-
-    
-    
+      
 }
 
 
-div.opcao{
-    padding: 10px;
-}
-.apto{
-    padding: 10px;
-    width: 530px;
-}
-div.endereco{
-    padding: 10px;
-}
+
 
 .salvar{
     padding: 10px;
@@ -176,29 +139,21 @@ div.endereco{
 }
 
 
-
-
-
-
-
 .senha{
     padding: 10px 0; 
     
-
 }
 
 .form #validationTooltip03 , #validationTooltip05{
     display: flex;
     justify-content: space-between;
     
-
 }
 
 
 
 .email{
    
-    
   border: 2px solid var(--cor-secundaria);
   background-color: transparent;
   color: var(--cor-texto-primaria);
@@ -224,10 +179,6 @@ footer .copyright p{
 }
 
 
-
-
-
-  
   @media (max-width: 1120px) {
     .display-flex.container1 .container {
       width: 50%;
@@ -255,7 +206,7 @@ footer .copyright p{
 
     .container , .container1 {
         width: 100%;
-        /* justify-content: center; */
+    
     }
     
   
@@ -272,14 +223,36 @@ footer .copyright p{
 }
   
 
-  /* .errors{
+   .errors{
     margin-bottom: 10px;
-    /* border: solid 2px red; */
-/*     
-.no-errors{
+     border: solid 2px red; 
+     display: none;
+
+     background-color: var(--cor-erro);
+     padding: 20px;
+    
+     
+   }
+
+   .errors #div-errors ul{
+    list-style: none;
+    line-height: 2rem;
+   }
+    
+
+/* main .enderecos-container #erros{
+    background-color: var(--cor-erro);
+    padding: 20px;
+    font-family: var(--font-paragrafo);
+    color: #fff;
+    font-size: 0.8rem;
     display: none;
+  }
+  
+  main .enderecos-container #erros li{
+    list-style: none;
+    line-height: 2rem;
+  } */
 
-} 
-
- */
+ 
 
