@@ -9,7 +9,6 @@ window.addEventListener("load", () => {
         return resposta.json();
       }
     );
-
     return dadosCep;
   }
 
@@ -58,6 +57,7 @@ window.addEventListener("load", () => {
   }
 
   function mostraErrosNaTela(erros) {
+    campoErros.style.display = "block";
     for (let erro of erros) {
       const elementoErro = document.createElement("li");
       elementoErro.innerHTML = erro;
@@ -66,12 +66,15 @@ window.addEventListener("load", () => {
   }
 
   function onFormSubmit(evento) {
-    evento.preventDefault();
-    campoErros.innerHTML = "";
-    const camposInvalidos = validaCampos(this.elements);
-
-    if (camposInvalidos.length > 0) {
+      evento.preventDefault();    
+      campoErros.innerHTML = "";
+      campoErros.style.display = "none";
+      const camposInvalidos = validaCampos(this.elements);
+      
+      if (camposInvalidos.length > 0) {
       mostraErrosNaTela(camposInvalidos);
+    } else{
+        window.location.href = "/checkoutPagamento"
     }
   }
 
