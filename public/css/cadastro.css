@@ -223,21 +223,23 @@ footer .copyright p{
 }
   
 
-   .errors{
+   .errors {
     margin-bottom: 10px;
      border: solid 2px red; 
      display: none;
 
      background-color: var(--cor-erro);
-     padding: 20px;
+     padding: 10px;
     
+     
      
    }
 
-   .errors #div-errors ul{
+   /* .errors #div-errors li{
+    
     list-style: none;
     line-height: 2rem;
-   }
+   } */
     
 
 /* main .enderecos-container #erros{
