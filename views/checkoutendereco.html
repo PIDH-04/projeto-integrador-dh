@@ -71,19 +71,21 @@
 
         <section class="master-section-novo">
           <h3>Novo endereço</h3>
-          <form action="" method="post" id="form-novo-endereco">
+          <ul id="erros"></ul>
+          <form action="/checkoutpagamento" method="post" id="form-novo-endereco">
             <div>
-              <label for="nome-endereco">Nome do endereço:</label>
+              <label for="nome">Nome:</label>
               <input
                 type="text"
                 id="nome-endereco"
-                name="nome-endereco"
-                placeholder="Nome do Destinatário"
+                name="nome"
+                placeholder="Endereço casa"
+                
               />
             </div>
             <div>
               <label for="cep">CEP:</label>
-              <input type="number" id="cep" name="cep" placeholder="CEP" />
+              <input type="number" id="cep" name="cep" placeholder="CEP" required/>
             </div>
             <div>
               <label for="endereco">Endereço:</label>
@@ -92,6 +94,7 @@
                 id="endereco"
                 name="endereco"
                 placeholder="Endereço"
+                required
               />
             </div>
             <div>
@@ -101,6 +104,7 @@
                 id="numero"
                 name="numero"
                 placeholder="Número"
+                required
               />
             </div>
             <div>
@@ -119,6 +123,7 @@
                 placeholder="Seu bairro"
                 id="bairro"
                 name="bairro"
+                required
               />
             </div>
             <div class="CidadeEstado">
@@ -129,6 +134,7 @@
                   name="cidade"
                   id="cidade"
                   placeholder="Cidade"
+                  required
                 />
               </div>
               <div>
@@ -138,6 +144,8 @@
                   name="estado"
                   id="estado"
                   placeholder="Estado"
+                  required
+                  maxlength="2"
                 />
               </div>
             </div>

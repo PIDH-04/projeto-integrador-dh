@@ -1,6 +1,7 @@
 window.addEventListener("load", () => {
   const formNovoEndereco = document.getElementById("form-novo-endereco");
   const cepInput = document.getElementById("cep");
+  const campoErros = document.getElementById("erros");
 
   async function buscaCep(cep) {
     const dadosCep = await fetch(`https://viacep.com.br/ws/${cep}/json/`).then(
@@ -16,7 +17,7 @@ window.addEventListener("load", () => {
     if (cepInput.value.length < 8) return;
     const dadosDoCep = await buscaCep(cepInput.value);
 
-    if (dadosDoCep.erros != true) {
+    if (dadosDoCep.erro != true) {
       preencheCamposEndereco(dadosDoCep);
     }
   }
@@ -28,9 +29,52 @@ window.addEventListener("load", () => {
     document.getElementById("cidade").value = localidade;
     document.getElementById("estado").value = uf;
   }
-  formNovoEndereco.addEventListener("submit", (event) => {
-    event.preventDefault();
-  });
 
+  function validaCampos(dados) {
+    const erros = [];
+    for (let i = 0; i < dados.length - 1; i++) {
+      // Deixa o nome do campo com primeira letra maiuscula
+      const nomeCampoFormatado =
+        dados[i].name[0].toUpperCase() + dados[i].name.substr(1);
+
+      const valorCampo = dados[i].value;
+      const nomeCampo = dados[i].name;
+
+      if (dados[i].value == "" && dados[i].name !== "complemento") {
+        erros.push(`O campo ${nomeCampoFormatado} deve ser preenchido`);
+      } else {
+        // Caso os campos obrigatórios estejam preenchidos, faz uma checagem mais fina
+
+        if (valorCampo.length !== 8 && nomeCampo == "cep") {
+          erros.push("O Cpf deve conter 8 dígitos");
+        }
+
+        if (valorCampo.length !== 2 && nomeCampo == "estado") {
+          erros.push("Digite um estado válido");
+        }
+      }
+    }
+    return erros;
+  }
+
+  function mostraErrosNaTela(erros) {
+    for (let erro of erros) {
+      const elementoErro = document.createElement("li");
+      elementoErro.innerHTML = erro;
+      campoErros.appendChild(elementoErro);
+    }
+  }
+
+  function onFormSubmit(evento) {
+    evento.preventDefault();
+    campoErros.innerHTML = "";
+    const camposInvalidos = validaCampos(this.elements);
+
+    if (camposInvalidos.length > 0) {
+      mostraErrosNaTela(camposInvalidos);
+    }
+  }
+
+  formNovoEndereco.addEventListener("submit", onFormSubmit);
   cepInput.addEventListener("blur", onPreenchimentoCep);
 });
