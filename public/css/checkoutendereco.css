@@ -94,3 +94,12 @@ main .carrinho-container .resumo-compra div:last-child{
     padding-top: 20px;
     font-weight: bold;
 }
+
+footer{
+  background: var(--cor-secundaria);
+}
+
+footer nav li a {
+  text-decoration: none;
+  color: var(--cor-texto-primaria);
+}
