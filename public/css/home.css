@@ -18,7 +18,7 @@
 }
 
 .bannerSlide .slides .slide{
-    max-height: 150px;
+    max-height: 300px;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -34,21 +34,22 @@
         text-align: center;
     padding-bottom: 12px;
     margin-left: 30px;
-    margin-top: 20px;
+    margin-top: 40px;
     width: 90%;
     font-family: var(--font-titulo);
     font-style: normal;
-    height: 73px;
+    height: 50%;
+    font-size: 2em;
 }
 
 .bannerSlide .slides .slide a {
-    width: 300px;
-    height: 28px;
+    width: 80%;
+    height: 40px;
     display: flex;
     text-align: center;
     flex-direction: column;
     padding:0;
-    padding-top: 4px;
+    padding-top: 10px;
 }
 
 .bannerSlide .slides{
@@ -62,8 +63,8 @@
 .bannerSlide .slides:nth-child(1) .slide{
     background: url('/img/banner1.jpg');
     background-size: cover;
-    max-width: 480px;
-    height: 150px;
+    max-width: 768px;
+    height: 300px;
     object-fit: cover;
     background-repeat: no-repeat;
     margin-top: 35px;
@@ -72,8 +73,8 @@
 .bannerSlide .slides:nth-child(2) .slide{
     background: url('/img/banner2.jpg');
     background-size: cover;
-    max-width: 480px;
-    height: 150px;
+    max-width: 768px;
+    height: 300px;
     object-fit: cover;
     background-repeat: no-repeat;
     margin-top: 35px;
@@ -82,8 +83,8 @@
 .bannerSlide .slides:nth-child(3) .slide{
     background: url('/img/banner3.png');
     background-size: cover;
-    max-width: 480px;
-    height: 150px;
+    max-width: 768px;
+    height: 300px;
     object-fit: cover;
     background-repeat: no-repeat;
     margin-top: 35px;
@@ -105,7 +106,7 @@ main .vitrine h1 {
     padding-top: 7px;
     color: var(--cor-texto-primaria);
     font-family: var(--font-paragrafo);
-    margin: 1px;
+    margin-left: 25px;
     text-size-adjust: 90%;
 }
 
@@ -132,8 +133,8 @@ main .product-card .card {
 
 
 main .product-card img {
-    width: 180px;
-    height: 180px;
+    width: 100%;
+    height: 100%;
 }
 
 main .product-card h2 {
@@ -142,7 +143,7 @@ main .product-card h2 {
     margin-top: 30px;
     margin-bottom: 0;
     color: var(--cor-texto-secundaria);
-    font-size: 20px;
+    font-size: 24px;
 }
 
 main .product-card a {
@@ -150,23 +151,24 @@ main .product-card a {
     display: flex;
     width: 100%;
     margin: 10px;
+    flex-direction: column;
 }
 
 main .product-card p {
-    font-size: 18px;
-    margin-top: 2px;
+    font-size: 24px;
+    margin-left: 20px;
     font-weight: bold;
     color: var(--cor-texto-primaria);
-    align-self: center;
+    align-self: start;
 }
 
 main .product-card .ver{
     background-color: var(--cor-secundaria);
-    font-size: 20px;
-    height: 30px;
+    font-size: 24px;
+    height: 50px;
     width: 100%;
     margin-top: 3px;
-    padding: 4px 5px;
+    padding: 10px 5px;
     border: none;
     color: var(--cor-texto-primaria);
     font-weight: bold;
@@ -187,6 +189,7 @@ main .product-card .ver{
     padding-right: 15%;
     align-items: center;
     gap: 2px;
+    padding: 30px;
 }
 
 .categorias h1{
@@ -194,13 +197,13 @@ main .product-card .ver{
     font-family: var(--font-titulo);
     color: var(--cor-texto-primaria);
     margin-top: 5px;
-    padding-bottom: 0%;
+    padding-bottom: 10px;
 }
 
 .categorias p{
     text-align: center;
     font-family: var(--font-paragrafo);
-    margin-top: 1px;
+    margin-bottom: 10px;
 }
 
 .categorias .icone-container{
@@ -213,16 +216,13 @@ main .product-card .ver{
     text-align: center;
     font-family: var(--font-paragrafo);
     font-size: 15px;
-    margin-top: 1px;
+    margin-top: 10px;
     margin-left: 10px;
     color: var(--cor-texto-primaria);
     align-self: center;
 }
  .categorias .icone-container a img{
-    background: #fff;
-    border-radius: 50px;
-    width: 70px;
-    height: 70px;
+    width: 80%
  }
 
  .categorias .botao-secundario{
@@ -241,8 +241,8 @@ main .product-card .ver{
  .break{
     flex-basis: 100%;
  }
- 
-a.botao-icone {
+
+ a.botao-icone {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -250,13 +250,14 @@ a.botao-icone {
     width: 50%;
     margin-top: 10px;
     margin-bottom: 10px;
-    flex-wrap: nowrap;
     align-items: center;
-}
+ }
 
  a .icone{
-    width: 74px;
-    height: 74px;
+    width: 88px;
+    height: 88px;
+    background: #fff;
+    border-radius: 50px;
  }
 
  footer .copyright {
@@ -289,7 +290,7 @@ a.botao-icone {
 }
 
 .bannerSlide .slides .slide{
-    max-height: 150px;
+    max-height: 300px;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -305,22 +306,22 @@ a.botao-icone {
         text-align: center;
     padding-bottom: 12px;
     margin-left: 30px;
-    margin-top: 20px;
+    margin-top: 40px;
     width: 90%;
     font-family: var(--font-titulo);
     font-style: normal;
-    height: 90px;
+    height: 50%;
     font-size: 2em;
 }
 
 .bannerSlide .slides .slide a {
-    width: 440px;
-    height: 28px;
+    width: 80%;
+    height: 40px;
     display: flex;
     text-align: center;
     flex-direction: column;
     padding:0;
-    padding-top: 4px;
+    padding-top: 10px;
 }
 
 .bannerSlide .slides{
@@ -335,7 +336,7 @@ a.botao-icone {
     background: url('/img/banner1.jpg');
     background-size: cover;
     max-width: 768px;
-    height: 150px;
+    height: 300px;
     object-fit: cover;
     background-repeat: no-repeat;
     margin-top: 35px;
@@ -345,7 +346,7 @@ a.botao-icone {
     background: url('/img/banner2.jpg');
     background-size: cover;
     max-width: 768px;
-    height: 150px;
+    height: 300px;
     object-fit: cover;
     background-repeat: no-repeat;
     margin-top: 35px;
@@ -355,7 +356,7 @@ a.botao-icone {
     background: url('/img/banner3.png');
     background-size: cover;
     max-width: 768px;
-    height: 150px;
+    height: 300px;
     object-fit: cover;
     background-repeat: no-repeat;
     margin-top: 35px;
@@ -395,7 +396,7 @@ main .product-card {
 }
 
 main .product-card .card {
-    height: 180px;
+    height: 220px;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -404,8 +405,8 @@ main .product-card .card {
 
 
 main .product-card img {
-    width: 180px;
-    height: 180px;
+    width: 350px;
+    height: 350px;
 }
 
 main .product-card h2 {
@@ -414,7 +415,7 @@ main .product-card h2 {
     margin-top: 30px;
     margin-bottom: 0;
     color: var(--cor-texto-secundaria);
-    font-size: 20px;
+    font-size: 30px;
 }
 
 main .product-card a {
@@ -422,23 +423,24 @@ main .product-card a {
     display: flex;
     width: 100%;
     margin: 10px;
+    flex-direction: column;
 }
 
 main .product-card p {
-    font-size: 18px;
-    margin-top: 2px;
+    font-size: 30px;
+    margin-left: 20px;
     font-weight: bold;
     color: var(--cor-texto-primaria);
-    align-self: center;
+    align-self: start;
 }
 
 main .product-card .ver{
     background-color: var(--cor-secundaria);
-    font-size: 20px;
-    height: 30px;
+    font-size: 25px;
+    height: 50px;
     width: 100%;
     margin-top: 3px;
-    padding: 4px 5px;
+    padding: 10px 5px;
     border: none;
     color: var(--cor-texto-primaria);
     font-weight: bold;
@@ -459,6 +461,7 @@ main .product-card .ver{
     padding-right: 15%;
     align-items: center;
     gap: 2px;
+    padding: 30px;
 }
 
 .categorias h1{
@@ -466,13 +469,13 @@ main .product-card .ver{
     font-family: var(--font-titulo);
     color: var(--cor-texto-primaria);
     margin-top: 5px;
-    padding-bottom: 0%;
+    padding-bottom: 10px;
 }
 
 .categorias p{
     text-align: center;
     font-family: var(--font-paragrafo);
-    margin-top: 1px;
+    margin-bottom: 10px;
 }
 
 .categorias .icone-container{
@@ -485,16 +488,13 @@ main .product-card .ver{
     text-align: center;
     font-family: var(--font-paragrafo);
     font-size: 15px;
-    margin-top: 1px;
+    margin-top: 10px;
     margin-left: 10px;
     color: var(--cor-texto-primaria);
     align-self: center;
 }
  .categorias .icone-container a img{
-    background: #fff;
-    border-radius: 50px;
-    width: 70px;
-    height: 70px;
+    width: 80%
  }
 
  .categorias .botao-secundario{
@@ -526,8 +526,10 @@ main .product-card .ver{
  }
 
  a .icone{
-    width: 74px;
-    height: 74px;
+    width: 88px;
+    height: 88px;
+    background: #fff;
+    border-radius: 50px;
  }
 
  footer .copyright {
@@ -586,15 +588,16 @@ main .product-card .ver{
 }
 
 .bannerSlide .slides .slide a {
-    width: 200px;
-    height: 50px;
+    width: 30%;
+    height: 20%;
     margin-left: 50px;
     margin-right: 569px;
     margin-bottom: 30px;
     justify-items: flex-start;
     display: block;
     text-align: center;
-    padding: 15px 20px;
+    padding: 20px;
+    font-size: 25px;
 }
 
 .bannerSlide .slides .slide a:hover{
@@ -712,24 +715,18 @@ main .vitrine h1 {
 }
 
 main .products-container {
-    justify-content: space-between;
     display: flex;
-    flex-wrap: wrap;
     padding-top: 40px;
     flex-direction: row;
+    justify-content: space-between;
 }
 
 main .product-card {
     width: 30%;
-    padding: 10px 20px;
-    margin: 10px;
 }
 
 main .product-card .card {
     height: 160px;
-    display: flex;
-    justify-content: flex-end;
-    flex-direction: column;
 }
 
 main .product-card img {
@@ -739,52 +736,39 @@ main .product-card img {
 }
 
 main .product-card a {
-    display: flex;
-    width: 200px;
-    margin: 0%;
-    height: 350px;
     flex-wrap: wrap;
     align-content: stretch;
     justify-content: flex-start;
     align-items: stretch;
+    width: 100%;
+    height: auto;
+    margin: 0;
 }
 
 main .product-card h2 {
-    text-align: start;
-    font-size: 1.17em;
+    font-size: 1.3em;
     margin: 0;
-    font-weight: bold;
     padding-left: 10px;
     height: 44px;
+    text-align: start;
 }
 
 main .product-card p {
     padding-left: 10px;
-    font-size: 22px;
-    margin-top: 8px;
-    font-weight: bold;
-    color: var(--cor-texto-primaria);
-    text-align: start;
+    font-size: 24px;
+    margin-top: 15px;
     align-self: flex-start;
 }
 
 main .product-card .ver{
-    background-color: var(--cor-secundaria);
-    font-size: 15px;
-    margin-top: 36px;
+    margin-top: 22px;
     padding: 15px 20px;
-    border: none;
-    color: var(--cor-texto-primaria);
-    font-weight: bold;
-    font-family: var(--font-paragrafo);
-    cursor: pointer;
-    text-decoration: none;
-    text-align: center;
-    width: 200px;
-    height: 46px;
+    width: 100%;
+    height: 50px;
 }
 
 .categorias{
+    padding: 30px;
     background: var(--cor-secundaria); 
     display: flex;
     flex-wrap: wrap;
@@ -811,25 +795,7 @@ main .product-card .ver{
     margin-top: 2px;
 }
 
-.categorias h2{
-    text-align: center;
-    font-family: var(--font-paragrafo);
-    font-size: 15px;
-    margin-top: 2px;
-    color: var(--cor-texto-primaria);
-    align-self: center;
-}
 
- .categorias .icone-container a img{
-    background: #fff;
-    border-radius: 50px;
-    width: 98%;
- }
-
- .categorias .botao-secundario{
-    background: #fff;
-    margin-bottom: 20px;
- }
 
  .categorias div{
     display: flex;
@@ -839,6 +805,10 @@ main .product-card .ver{
 
  .break{
     flex-basis: 100%;
+ }
+
+ .categorias .icone-container a img{
+    width: 80%;
  }
 
  a.botao-icone{
@@ -853,8 +823,24 @@ main .product-card .ver{
  }
 
  a .icone{
-    width: 76px;
-    height: 76px;
+    width: 88px;
+    height: 88px;
+    background: #fff;
+    border-radius: 50px;
+ }
+ 
+ .categorias h2{
+    text-align: center;
+    font-family: var(--font-paragrafo);
+    font-size: 15px;
+    margin-top: 2px;
+    color: var(--cor-texto-primaria);
+    align-self: center;
+}
+
+ .categorias .botao-secundario{
+    background: #fff;
+    margin-bottom: 20px;
  }
 
  footer .copyright {
