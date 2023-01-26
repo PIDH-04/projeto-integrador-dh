@@ -23,6 +23,8 @@ header .inferior2 input{
     border: 0px;
     align-items: flex-start;
 
+    margin-top: 160px;
+
 }
 
 
@@ -231,20 +233,20 @@ footer .copyright p{
 
    .errors  {
 
-        background-color: red;
-     /* background-color: var(--cor-erro); */
+        /* background-color: red; */
+     background-color: var(--cor-erro);
      padding: 10px;
      font-family: var(--font-paragrafo);
-     /* color: #fff; */
+     color: #fff;
      font-size: 0.8rem;
      display: none;
-    
+
      
    }
 
 
 
-     #div-errors li{
+     #div-errors li {
     list-style: none;
     line-height: 2rem;
     
