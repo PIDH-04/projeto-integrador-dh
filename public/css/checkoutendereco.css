@@ -171,3 +171,18 @@ footer nav li a {
   text-decoration: none;
   color: var(--cor-texto-primaria);
 }
+
+main .carrinho-container .resumo-compra div:last-child{
+    border-top: 1px solid var(--cor-texto-secundaria);
+    padding-top: 20px;
+    font-weight: bold;
+}
+
+footer{
+  background: var(--cor-secundaria);
+}
+
+footer nav li a {
+  text-decoration: none;
+  color: var(--cor-texto-primaria);
+}
