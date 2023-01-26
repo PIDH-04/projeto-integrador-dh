@@ -51,7 +51,7 @@ window.addEventListener("load", () => {
         // Caso os campos obrigatórios estejam preenchidos, faz uma checagem mais fina
 
         if (valorCampo.length !== 9 && nomeCampo == "cep") {
-          erros.push("O Cpf deve conter 8 dígitos");
+          erros.push("O Cep deve conter 8 dígitos");
         }
 
         if (valorCampo.length !== 2 && nomeCampo == "estado") {
