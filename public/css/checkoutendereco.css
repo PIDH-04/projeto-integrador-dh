@@ -38,9 +38,10 @@ main .master-section {
   width: 100%;
 }
 
-main .enderecos-container h2{
+main .enderecos-container h1{
     font-size:36px;
     margin-bottom: 30px;
+    font-family: var(--font-paragrafo);
 }
 
 main .master-section .menu-selecao {
@@ -128,7 +129,6 @@ main .carrinho-container .resumo-compra div:last-child{
     font-weight: bold;
 }
 
-<<<<<<< HEAD
 
 @media (max-width:800px){
   main .enderecos-container{
@@ -152,7 +152,6 @@ main .carrinho-container .resumo-compra div:last-child{
     margin-top: 50px;
   }
 }
-=======
 footer{
   background: var(--cor-secundaria);
 }
@@ -161,4 +160,3 @@ footer nav li a {
   text-decoration: none;
   color: var(--cor-texto-primaria);
 }
->>>>>>> 74e73572e3af986ca24962c6721b5588d150454a

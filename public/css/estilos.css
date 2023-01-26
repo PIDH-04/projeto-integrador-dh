@@ -22,7 +22,7 @@ main {
   width: 70%;
   max-width: 1400px;
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 180px;
 }
 
 section h2 {
@@ -260,5 +260,11 @@ div.card-produto-carrinho span{
 
   div.card-produto-carrinho .preco{
     font-size: 14px;
+  }
+}
+
+@media (max-width: 800px){
+  main{
+    margin-top: 30px;
   }
 }
