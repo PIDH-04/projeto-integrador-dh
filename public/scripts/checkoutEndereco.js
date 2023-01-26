@@ -1,7 +1,12 @@
 window.addEventListener("load", () => {
   const formNovoEndereco = document.getElementById("form-novo-endereco");
+  const formSelectEndereco = document.getElementById("form-select-endereco");
+  const selectEndereco = formSelectEndereco.querySelector("select");
   const cepInput = document.getElementById("cep");
-  const campoErros = document.getElementById("erros");
+  const campoErrosNovoEndereco = document.getElementById("erros-novo-endereco");
+  const campoErroSelecioneEndereco = document.getElementById(
+    "erro-selecione-endereco"
+  );
   let cepFormatado = "";
 
   async function buscaCep(cep) {
@@ -58,22 +63,32 @@ window.addEventListener("load", () => {
   }
 
   function mostraErrosNaTela(erros) {
-    campoErros.style.display = "block";
+    campoErrosNovoEndereco.style.display = "block";
     for (let erro of erros) {
       const elementoErro = document.createElement("li");
       elementoErro.innerHTML = erro;
-      campoErros.appendChild(elementoErro);
+      campoErrosNovoEndereco.appendChild(elementoErro);
     }
   }
 
   function onFormSubmit(evento) {
     evento.preventDefault();
-    campoErros.innerHTML = "";
-    campoErros.style.display = "none";
+    campoErrosNovoEndereco.innerHTML = "";
+    campoErrosNovoEndereco.style.display = "none";
     const camposInvalidos = validaCampos(this.elements);
 
     if (camposInvalidos.length > 0) {
       mostraErrosNaTela(camposInvalidos);
+    } else {
+      window.location.href = "/checkoutPagamento";
+    }
+  }
+
+  function onSelectEnderecoSubmit(evento) {
+    evento.preventDefault();
+    if (selectEndereco.value == "") {
+      campoErroSelecioneEndereco.style.display = "block";
+      campoErroSelecioneEndereco.innerHTML = `<li>Selecione um endereço para continuar</li>`;
     } else {
       window.location.href = "/checkoutPagamento";
     }
@@ -86,7 +101,17 @@ window.addEventListener("load", () => {
     cepInput.value = cepFormatado;
   }
 
+  function onClickSelectEndereco() {
+    // Remove erro de endereço quando usuário clica em um válido
+    if (selectEndereco.value !== "") {
+      campoErroSelecioneEndereco.style.display = "none";
+      campoErroSelecioneEndereco.innerHTML = "";
+    }
+  }
+
   formNovoEndereco.addEventListener("submit", onFormSubmit);
+  selectEndereco.addEventListener("click", onClickSelectEndereco);
+  formSelectEndereco.addEventListener("submit", onSelectEnderecoSubmit);
   cepInput.addEventListener("blur", onPreenchimentoCep);
   cepInput.addEventListener("keyup", onCepKeyup);
 });

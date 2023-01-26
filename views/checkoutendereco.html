@@ -56,16 +56,17 @@
         <h1>Checkout - Endereço</h1>
         <section class="master-section">
           <h3>Selecione um endereço</h3>
-          <form action="" method="post">
+          <ul class="erros" id="erro-selecione-endereco"></ul>
+          <form action="" id="form-select-endereco" method="post">
             <div class="menu-selecao">
               <select name="ordenacao">
-                <option value="Endereço1" disabled selected>Selecione um endereço salvo</option>
-                <option value="Endereço2">Endereço residencial</option>
-                <option value="Endereço3">Endereço comercial</option>
-                <option value="Endereço4">Endereço alternativo</option>
+                <option value="" disabled selected>Selecione um endereço salvo</option>
+                <option value="residencial">Endereço residencial</option>
+                <option value="comercial">Endereço comercial</option>
+                <option value="alternativo">Endereço alternativo</option>
               </select>
             </div>
-            <button href="/checkoutpagamento" class="botao-secundario">
+            <button type="submit" href="/checkoutpagamento" class="botao-secundario">
               Escolher forma de pagamento
             </button>
           </form>
@@ -73,7 +74,7 @@
 
         <section class="master-section-novo">
           <h3>Novo endereço</h3>
-          <ul id="erros"></ul>
+          <ul class="erros" id="erros-novo-endereco"></ul>
           <form action="" method="post" id="form-novo-endereco">
             <div>
               <label for="nome">Nome:</label>
