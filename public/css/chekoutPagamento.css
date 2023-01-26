@@ -4,7 +4,7 @@ main{
 
 #Form-Cartao {
     width: 100%;
-    /* padding: 200px; */
+
     display: flex;
 }
 
@@ -113,11 +113,8 @@ main button {
 
 }
 
-.coluna2 {
 
-    width: 38%;
 
-}
 
 .flex {
 
@@ -163,3 +160,6 @@ main .coluna2 .resumo-compra div:last-child {
     padding-top: 20px;
     font-weight: bold;
 }
+
+
+
