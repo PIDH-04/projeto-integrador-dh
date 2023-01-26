@@ -18,7 +18,7 @@ main .enderecos-container #erros{
   padding: 20px;
   font-family: var(--font-paragrafo);
   color: #fff;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   display: none;
 }
 

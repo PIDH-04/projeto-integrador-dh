@@ -56,17 +56,19 @@
         <h2>Checkout - Endereço</h2>
         <section class="master-section">
           <h3>Selecione um endereço</h3>
-          <div class="menu-selecao">
-            <select name="ordenacao">
-              <option value="Endereço1">Endereço</option>
-              <option value="Endereço2">Endereço residencial</option>
-              <option value="Endereço3">Endereço comercial</option>
-              <option value="Endereço4">Endereço alternativo</option>
-            </select>
-          </div>
-          <button href="/checkoutpagamento" class="botao-secundario">
-            Escolher forma de pagamento
-          </button>
+          <form action="" method="post">
+            <div class="menu-selecao">
+              <select name="ordenacao">
+                <option value="Endereço1" disabled selected>Selecione um endereço salvo</option>
+                <option value="Endereço2">Endereço residencial</option>
+                <option value="Endereço3">Endereço comercial</option>
+                <option value="Endereço4">Endereço alternativo</option>
+              </select>
+            </div>
+            <button href="/checkoutpagamento" class="botao-secundario">
+              Escolher forma de pagamento
+            </button>
+          </form>
         </section>
 
         <section class="master-section-novo">
@@ -77,7 +79,7 @@
               <label for="nome">Nome:</label>
               <input
                 type="text"
-                id="nome-endereco"
+                id="nome"
                 name="nome"
                 placeholder="Endereço casa"
                 
@@ -85,7 +87,7 @@
             </div>
             <div>
               <label for="cep">CEP:</label>
-              <input type="number" id="cep" name="cep" placeholder="CEP" required/>
+              <input type="text" id="cep" name="cep" placeholder="CEP" maxlength="9" required/>
             </div>
             <div>
               <label for="endereco">Endereço:</label>
@@ -100,7 +102,7 @@
             <div>
               <label for="numero">Número: </label>
               <input
-                type="number"
+                type="text"
                 id="numero"
                 name="numero"
                 placeholder="Número"

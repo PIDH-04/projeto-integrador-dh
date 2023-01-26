@@ -2,6 +2,7 @@ window.addEventListener("load", () => {
   const formNovoEndereco = document.getElementById("form-novo-endereco");
   const cepInput = document.getElementById("cep");
   const campoErros = document.getElementById("erros");
+  let cepFormatado = "";
 
   async function buscaCep(cep) {
     const dadosCep = await fetch(`https://viacep.com.br/ws/${cep}/json/`).then(
@@ -44,7 +45,7 @@ window.addEventListener("load", () => {
       } else {
         // Caso os campos obrigatórios estejam preenchidos, faz uma checagem mais fina
 
-        if (valorCampo.length !== 8 && nomeCampo == "cep") {
+        if (valorCampo.length !== 9 && nomeCampo == "cep") {
           erros.push("O Cpf deve conter 8 dígitos");
         }
 
@@ -66,18 +67,26 @@ window.addEventListener("load", () => {
   }
 
   function onFormSubmit(evento) {
-      evento.preventDefault();    
-      campoErros.innerHTML = "";
-      campoErros.style.display = "none";
-      const camposInvalidos = validaCampos(this.elements);
-      
-      if (camposInvalidos.length > 0) {
+    evento.preventDefault();
+    campoErros.innerHTML = "";
+    campoErros.style.display = "none";
+    const camposInvalidos = validaCampos(this.elements);
+
+    if (camposInvalidos.length > 0) {
       mostraErrosNaTela(camposInvalidos);
-    } else{
-        window.location.href = "/checkoutPagamento"
+    } else {
+      window.location.href = "/checkoutPagamento";
     }
+  }
+
+  function onCepKeyup(evento) {
+    // Adiciona mascara de input
+    cepInput.value = cepInput.value.replace(/\D/g, "");
+    cepFormatado = cepInput.value.replace(/^(\d{5})(\d)/, "$1-$2");
+    cepInput.value = cepFormatado;
   }
 
   formNovoEndereco.addEventListener("submit", onFormSubmit);
   cepInput.addEventListener("blur", onPreenchimentoCep);
+  cepInput.addEventListener("keyup", onCepKeyup);
 });
