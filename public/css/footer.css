@@ -83,7 +83,7 @@ footer nav li.categoria-principal a {
 }
 
 footer nav li a:hover {
-  color: var(--cor-secundaria);
+  opacity: 0.6;
 }
 
 footer .copyright {
