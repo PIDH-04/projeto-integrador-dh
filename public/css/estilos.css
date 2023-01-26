@@ -4,6 +4,7 @@
   --cor-texto-primaria: #101010;
   --cor-texto-secundaria: #979797;
   --cor-sucesso: #4BB543;
+  --cor-erro:#ff3333;
   --font-paragrafo: "Public Sans", sans-serif;
   --font-titulo: "Merriweather", serif;
 }
@@ -21,7 +22,7 @@ main {
   width: 70%;
   max-width: 1400px;
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 180px;
 }
 
 section h2 {
@@ -248,5 +249,22 @@ div.card-produto-carrinho span{
 @media (max-width: 1250px) {
   main {
     width: 85%;
+  }
+}
+
+
+@media (max-width:900px){
+  div.card-produto-carrinho h5{
+    font-size: 18px;
+  }
+
+  div.card-produto-carrinho .preco{
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 800px){
+  main{
+    margin-top: 30px;
   }
 }

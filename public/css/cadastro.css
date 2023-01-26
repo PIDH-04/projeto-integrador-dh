@@ -166,7 +166,13 @@ section.container1 h2 , section.container h2 {
 }
 
 footer{
+    background: var(--cor-secundaria);
     line-height: initial
+}
+
+footer nav li a {
+    text-decoration: none;
+    color: var(--cor-texto-primaria);
 }
 
 footer .copyright p{
