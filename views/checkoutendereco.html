@@ -54,19 +54,26 @@
     <main class="checkout-endereco-container">
       <section class="enderecos-container">
         <h1>Checkout - Endereço</h1>
+        <a href="/carrinho">Voltar para carrinho</a>
         <section class="master-section">
           <h3>Selecione um endereço</h3>
           <ul class="erros" id="erro-selecione-endereco"></ul>
           <form action="" id="form-select-endereco" method="post">
             <div class="menu-selecao">
               <select name="ordenacao">
-                <option value="" disabled selected>Selecione um endereço salvo</option>
+                <option value="" disabled selected>
+                  Selecione um endereço salvo
+                </option>
                 <option value="residencial">Endereço residencial</option>
                 <option value="comercial">Endereço comercial</option>
                 <option value="alternativo">Endereço alternativo</option>
               </select>
             </div>
-            <button type="submit" href="/checkoutpagamento" class="botao-secundario">
+            <button
+              type="submit"
+              href="/checkoutpagamento"
+              class="botao-secundario"
+            >
               Escolher forma de pagamento
             </button>
           </form>
@@ -83,12 +90,18 @@
                 id="nome"
                 name="nome"
                 placeholder="Endereço casa"
-                
               />
             </div>
             <div>
               <label for="cep">CEP:</label>
-              <input type="text" id="cep" name="cep" placeholder="CEP" maxlength="9" required/>
+              <input
+                type="text"
+                id="cep"
+                name="cep"
+                placeholder="CEP"
+                maxlength="9"
+                required
+              />
             </div>
             <div>
               <label for="endereco">Endereço:</label>
