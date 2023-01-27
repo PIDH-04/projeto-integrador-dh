@@ -1,12 +1,12 @@
 window.addEventListener("load", () => {
   const formNovoEndereco = document.getElementById("form-novo-endereco");
-  const formSelectEndereco = document.getElementById("form-select-endereco");
-  const selectEndereco = formSelectEndereco.querySelector("select");
+  // const formSelectEndereco = document.getElementById("form-select-endereco");
+  // const selectEndereco = formSelectEndereco.querySelector("select");
   const cepInput = document.getElementById("cep");
   const campoErrosNovoEndereco = document.getElementById("erros-novo-endereco");
-  const campoErroSelecioneEndereco = document.getElementById(
-    "erro-selecione-endereco"
-  );
+  // const campoErroSelecioneEndereco = document.getElementById(
+  //   "erro-selecione-endereco"
+  // );
   let cepFormatado = "";
 
   async function buscaCep(cep) {
@@ -84,15 +84,15 @@ window.addEventListener("load", () => {
     }
   }
 
-  function onSelectEnderecoSubmit(evento) {
-    evento.preventDefault();
-    if (selectEndereco.value == "") {
-      campoErroSelecioneEndereco.style.display = "block";
-      campoErroSelecioneEndereco.innerHTML = `<li>Selecione um endereço para continuar</li>`;
-    } else {
-      window.location.href = "/checkoutPagamento";
-    }
-  }
+  // function onSelectEnderecoSubmit(evento) {
+  //   evento.preventDefault();
+  //   if (selectEndereco.value == "") {
+  //     campoErroSelecioneEndereco.style.display = "block";
+  //     campoErroSelecioneEndereco.innerHTML = `<li>Selecione um endereço para continuar</li>`;
+  //   } else {
+  //     window.location.href = "/checkoutPagamento";
+  //   }
+  // }
 
   function onCepKeyup(evento) {
     // Adiciona mascara de input
@@ -101,17 +101,17 @@ window.addEventListener("load", () => {
     cepInput.value = cepFormatado;
   }
 
-  function onClickSelectEndereco() {
-    // Remove erro de endereço quando usuário clica em um válido
-    if (selectEndereco.value !== "") {
-      campoErroSelecioneEndereco.style.display = "none";
-      campoErroSelecioneEndereco.innerHTML = "";
-    }
-  }
+  // function onClickSelectEndereco() {
+  //   // Remove erro de endereço quando usuário clica em um válido
+  //   if (selectEndereco.value !== "") {
+  //     campoErroSelecioneEndereco.style.display = "none";
+  //     campoErroSelecioneEndereco.innerHTML = "";
+  //   }
+  // }
 
   formNovoEndereco.addEventListener("submit", onFormSubmit);
-  selectEndereco.addEventListener("click", onClickSelectEndereco);
-  formSelectEndereco.addEventListener("submit", onSelectEnderecoSubmit);
+  // selectEndereco.addEventListener("click", onClickSelectEndereco);
+  // formSelectEndereco.addEventListener("submit", onSelectEnderecoSubmit);
   cepInput.addEventListener("blur", onPreenchimentoCep);
   cepInput.addEventListener("keyup", onCepKeyup);
 });
