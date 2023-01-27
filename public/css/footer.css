@@ -21,6 +21,7 @@ footer .conteudo .input-wrapper {
   max-width: 400px;
   border: 2px solid var(--cor-secundaria);
   margin-top: 20px;
+  border-radius: 8px;
 }
 
 footer .conteudo input {

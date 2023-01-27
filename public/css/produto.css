@@ -54,6 +54,7 @@ html {
 .modal div > span {
   width: 50px;
   height: 50px;
+  border-radius: 5px;
   display: block;
   position: absolute;
   cursor: pointer;
