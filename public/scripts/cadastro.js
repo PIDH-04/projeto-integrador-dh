@@ -5,15 +5,17 @@ window.addEventListener('load', () => {
 
     e.preventDefault();
 
-    let divErrors = document.getElementById('div-errors');
-    let ulErros = document.querySelector('div.errors ul');
+    // let divErrors = document.getElementById('div-errors');
+    // let ulErros = document.querySelector('div.errors ul');
+
+    const ulErros = document.getElementById('ulErros')
 
     const nomeInput = document.getElementById('nome')
     const emailInput = document.getElementById('email')
     const senhaInput = document.getElementById('senha')
     const confirmarSenhaInput = document.getElementById('confirmarSenha')
 
-    divErrors.style.display = 'none';
+    ulErros.style.display = 'none';
 
 
     const errosCadastro = document.getElementById('errors')
@@ -63,9 +65,9 @@ window.addEventListener('load', () => {
       e.preventDefault();
 
 
-      divErrors.classList.remove('no-errors');
-      divErrors.classList.add('errors');
-      divErrors.style.display = 'block';
+      // divErrors.classList.remove('no-errors');
+      // divErrors.classList.add('errors');
+      ulErros.style.display = 'block';
 
 
 
