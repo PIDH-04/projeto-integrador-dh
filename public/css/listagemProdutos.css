@@ -1,7 +1,7 @@
 .banner-categoria {
   background-color: var(--cor-principal);
-  padding: 60px 15%;
-  margin-top: 130px;
+  padding: 25px 15%;
+  margin-top: 150px;
   color: white;
   display: flex;
   justify-content: space-between;
@@ -13,19 +13,19 @@ main{
 }
 
 .banner-categoria h2 {
-  font-size: 36px;
+  font-size: 1.8rem;
   margin-bottom: 15px;
 }
 
 .banner-categoria p {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 28px;
 }
 
 .banner-categoria .icone-container {
   background-color: white;
-  width: 112px;
-  height: 112px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -166,7 +166,7 @@ main {
 
   .banner-categoria {
     flex-direction: column-reverse;
-    padding: 50px 5%;
+    padding: 30px 5%;
   }
 
   .banner-categoria .titulo-container {
@@ -175,8 +175,8 @@ main {
   }
 
   .banner-categoria .icone-container {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
   }
 
   .filtros-container form {
@@ -202,6 +202,15 @@ main {
 @media (max-width: 800px){
   .banner-categoria{
     margin-top: 0;
+    padding: 15px;
+  }
+
+  .banner-categoria p{
+    display: none;
+  }
+  
+  .banner-categoria .icone-container{
+    display: none;
   }
 }
 
