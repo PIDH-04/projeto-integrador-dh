@@ -8,7 +8,7 @@
   align-items: center;
 }
 
-main{
+main {
   margin-top: 50px;
 }
 
@@ -43,7 +43,27 @@ main {
 
 .filtros-container {
   width: 250px;
+  position: relative;
+  -webkit-box-shadow: 0px 0px 17px 14px rgba(0, 0, 0, 0.03);
+  -moz-box-shadow: 0px 0px 17px 14px rgba(0, 0, 0, 0.03);
+  box-shadow: 0px 0px 17px 14px rgba(0, 0, 0, 0.03);
+  margin-right: 20px;
+  padding: 20px 20px 10px;
+  border-radius: 8px;
+  margin-bottom: 50px;
+
 }
+
+/* .filtros-container::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0.5px;
+  height: 120px;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.3);
+  top: 20px;
+} */
 
 .filtros-container .header {
   display: flex;
@@ -76,6 +96,12 @@ main {
 
 .produtos-container {
   width: 100%;
+  -webkit-box-shadow: 0px 0px 17px 14px rgba(0, 0, 0, 0.03);
+  -moz-box-shadow: 0px 0px 17px 14px rgba(0, 0, 0, 0.03);
+  box-shadow: 0px 0px 17px 14px rgba(0, 0, 0, 0.03);
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 50px;
 }
 
 .produtos-container .ordenacao-container {
@@ -94,6 +120,7 @@ main {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   column-gap: 5%;
+
 }
 
 .produtos-container .produto {
@@ -162,6 +189,7 @@ main {
 @media (max-width: 950px) {
   main {
     flex-direction: column;
+    margin-top: 10px;
   }
 
   .banner-categoria {
@@ -177,6 +205,12 @@ main {
   .banner-categoria .icone-container {
     width: 60px;
     height: 60px;
+  }
+
+  .filtros-container{
+    width: 100%;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
   }
 
   .filtros-container form {
@@ -198,18 +232,17 @@ main {
   }
 }
 
-
-@media (max-width: 800px){
-  .banner-categoria{
+@media (max-width: 800px) {
+  .banner-categoria {
     margin-top: 0;
     padding: 15px;
   }
 
-  .banner-categoria p{
+  .banner-categoria p {
     display: none;
   }
-  
-  .banner-categoria .icone-container{
+
+  .banner-categoria .icone-container {
     display: none;
   }
 }
@@ -224,7 +257,7 @@ main {
   }
 }
 
-footer{
+footer {
   background: var(--cor-secundaria);
 }
 
