@@ -1,4 +1,4 @@
-main{
+main {
     margin-bottom: 80px;
 }
 
@@ -23,6 +23,7 @@ main{
 
     display: block;
     width: 100%;
+    border-radius: 10px;
 
 }
 
@@ -55,7 +56,7 @@ body h5 {
 
 }
 
-#Form-Cartao h3{
+#Form-Cartao h3 {
     margin-bottom: 10px;
 }
 
@@ -81,7 +82,7 @@ main button {
     height: 50px;
     left: 0px;
     top: 0px;
-    border-radius: 0px;
+    border-radius: 10px;
 
     color: white;
 
@@ -91,12 +92,17 @@ main button {
 }
 
 #Form-Cartao input {
+    position: relative;
     margin-bottom: 20px;
     height: 40px;
     width: 100%;
-    left: 0px;
+    left: 1px;
     top: 0px;
     border: 1px solid var(--cor-principal);
+    border-radius: 10px;
+    text-align: justify;
+    
+    
 }
 
 #Form-Cartao .campos .junto {
@@ -120,12 +126,13 @@ main button {
 
     display: flex;
     justify-content: space-between;
-
     margin-top: 50px;
 }
 
 #Form-Cartao .campos button:last-child {
     margin-top: 20px;
+    border-radius: 10px;
+    
 
 }
 
@@ -135,9 +142,10 @@ main .coluna2 .resumo-compra {
 }
 
 
-main .coluna2 h3{
+main .coluna2 h3 {
     margin-bottom: 20px;
 }
+
 main .coluna2 label {
     font-size: 14px;
 }
@@ -153,6 +161,7 @@ main .coluna2 .resumo-compra div {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+
 }
 
 main .coluna2 .resumo-compra div:last-child {
@@ -161,5 +170,17 @@ main .coluna2 .resumo-compra div:last-child {
     font-weight: bold;
 }
 
+.errors {
 
+    margin-bottom: 10px;
+    border: solid 2px red;
+   
+}
+.no-errors{
+    display: none;
+}
 
+#codigo{
+ 
+    border-radius: 10px;
+}

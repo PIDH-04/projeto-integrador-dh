@@ -50,23 +50,29 @@
     <h4>
       Checkout - Forma de Pagamento
     </h4>
+    </div>
+
     <div class="flex">
       <div class="coluna1">
         <form class="reservada" id="Form-Cartao" method="POST" action="" enctype="">
           <div class="campos">
+            <div class="no-errors" id="div-errors">
+              <ul>
+            </ul>
+          </div>
             <h3>
               Pagar com Pix
             </h3>
-            <button class="botao-primario" type="submit" >Ver dados para pagamento com pix </button>
+            <button class="botao-primario" type="submit">Ver dados para pagamento com pix </button>
             <h3>
               Pagar com Cartão de Crédito
             </h3>
-            <input class="nome" type="text" name="nome" id="nome" placeholder="Nome que está no cartão">
-            <input class="Cartao" type="number" name="Numero" id="Numero" placeholder="Numero que está no cartão">
+            <input class="nome" type="text" name="nome" id="nome" placeholder="Nome que está no cartão" min="3">
+            <input class="Cartao" type="number" name="Numero" id="Numero" placeholder="  Numero que está no cartão" max="16" min="13">
             <div class="junto">
-              <input class="vencimento" type="number" id="mes" placeholder="Mes">
-              <input class="vencimento" type="number" id="ano" placeholder="Ano">
-              <input class="cvv" type="number" id="cvv" placeholder="cvv">
+              <input class="vencimento" type="number" id="mes" placeholder= "  Mês" max="5" min="5">
+              <input class="vencimento" type="number" id="ano" placeholder= "  Ano" max="2" min="2">
+              <input class="cvv" type="number" id="cvv" placeholder= "  CVV" min="3" max="3">
             </div>
             <div class="texto-form">
               <label for="">
@@ -84,7 +90,7 @@
           <form action="">
             <label>
               Adicione seu código de desconto
-              <input type="text" placeholder="código de desconto" />
+              <input type="text" id="codigo" placeholder="código de desconto" />
             </label>
           </form>
           <div class="resumo">
@@ -115,7 +121,7 @@
             <p class="quantidade">Quantidade: 1</p>
             <p class="preco">R$ 800,00</p>
           </div>
-        
+
         </div>
         <div class="card-produto-carrinho">
           <div class="img-container">
@@ -131,7 +137,7 @@
             <p class="quantidade">Quantidade: 1</p>
             <p class="preco">R$ 800,00</p>
           </div>
-          
+
         </div>
         <div class="card-produto-carrinho">
           <div class="img-container">
@@ -147,7 +153,7 @@
             <p class="quantidade">Quantidade: 1</p>
             <p class="preco">R$ 800,00</p>
           </div>
-         
+
         </div>
       </div>
     </div>
