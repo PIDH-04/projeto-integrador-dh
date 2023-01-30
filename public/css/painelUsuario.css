@@ -20,7 +20,6 @@ header .inferior2 input {
 main {
     background: white;
     margin-bottom: 80px;
-    /* padding: 50px; */
     font-size: 0.6rem;
     font-size: 16px;
     font-family: var(--font-paragrafo);
@@ -60,6 +59,7 @@ main {
     width: 100%;
     margin-bottom: 50px;
     margin-top: 20px;
+    border-radius: 10px;
 }
 
 #container-b .botao-secundario2 {
@@ -70,6 +70,7 @@ main {
     margin-bottom: 50px;
     margin-top: 20px;
     font-weight: bold;
+    border-radius: 10px;
 
 }
 
@@ -77,24 +78,26 @@ main {
     width: 100%;
     margin-bottom: 50px;
     margin-top: 20px;
+    border-radius: 10px;
 }
 
 #container-a input {
     width: 100%;
     margin-bottom: 20px;
-    border-radius: 0%;
+    border-radius: 10px;
+    
+   
 }
 
 #container-b input {
     width: 100%;
     margin-bottom: 20px;
-    border-radius: 0%;
+    border-radius: 10px;
 }
 
 #container-b h2 {
     font-size: 1.4rem;
     font-weight: bold;
-
 
 }
 
@@ -124,6 +127,24 @@ footer .copyright p {
 .imagem {
     width: 130px;
 }
+
+.errors {
+    margin-bottom: 10px;
+    padding: 20px;
+    font-family: var(--font-paragrafo);
+    color: #fff; 
+    font-size: 0.9rem;
+    background-color: var(--cor-erro); 
+}
+.no-errors{
+    display: none;
+}
+
+.errors li{
+ list-style: none;
+ line-height: 2rem;
+}
+  
 
 @media (max-width: 450px) {
     main {
