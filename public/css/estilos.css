@@ -4,6 +4,7 @@
   --cor-texto-primaria: #101010;
   --cor-texto-secundaria: #979797;
   --cor-sucesso: #4BB543;
+  --cor-erro:#ff3333;
   --font-paragrafo: "Public Sans", sans-serif;
   --font-titulo: "Merriweather", serif;
 }
@@ -19,8 +20,9 @@
 
 main {
   width: 70%;
+  max-width: 1400px;
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 180px;
 }
 
 section h2 {
@@ -41,6 +43,9 @@ section h2 {
 }
 
 /* Componentes */
+input{
+  border-radius: 8px;
+}
 
 input[type="checkbox"] {
   margin-right: 5px;
@@ -64,9 +69,10 @@ p {
 .menu-selecao {
   display: flex;
   border: 1px solid var(--cor-principal);
-  padding: 10px 10px;
+  padding: 11px 10px;
   justify-content: space-around;
   align-items: center;
+  border-radius: 5px;
 }
 
 .menu-selecao p {
@@ -84,6 +90,7 @@ p {
   cursor: pointer;
   width: 100%;
   text-align: center;
+  border-radius: 8px;
 }
 
 .menu-selecao select:focus {
@@ -104,6 +111,7 @@ a.botao-secundario {
   text-decoration: none;
   display: block;
   text-align: center;
+  border-radius: 8px;
 }
 
 button.botao-primario,
@@ -117,6 +125,7 @@ a.botao-primario {
   text-align: center;
   text-decoration: none;
   font-family: var(--font-paragrafo);
+  border-radius: 8px;
 }
 
 button.botao-secundario:hover,
@@ -135,6 +144,7 @@ a.botao-primario:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-radius: 5px;
 }
 
 .seletor-quantidade input {
@@ -175,6 +185,7 @@ input[type="text"] {
   padding: 10px;
   font-size: 0.9rem;
   border: 1px solid var(--cor-secundaria);
+  border-radius: 8px;
 }
 
 
@@ -247,5 +258,22 @@ div.card-produto-carrinho span{
 @media (max-width: 1250px) {
   main {
     width: 85%;
+  }
+}
+
+
+@media (max-width:900px){
+  div.card-produto-carrinho h5{
+    font-size: 18px;
+  }
+
+  div.card-produto-carrinho .preco{
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 800px){
+  main{
+    margin-top: 30px;
   }
 }

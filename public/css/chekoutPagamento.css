@@ -170,6 +170,16 @@ main .coluna2 .resumo-compra div:last-child {
     font-weight: bold;
 }
 
+footer{
+    background: var(--cor-secundaria);
+  }
+
+  footer nav li a {
+    text-decoration: none;
+    color: var(--cor-texto-primaria);
+  }
+  
+
 .errors {
 
     margin-bottom: 10px;

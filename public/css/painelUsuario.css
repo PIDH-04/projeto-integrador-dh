@@ -102,9 +102,15 @@ main{
 }
 
 footer{
+    background: var(--cor-secundaria);
     line-height: initial
 }
 
+footer nav li a {
+    text-decoration: none;
+    color: var(--cor-texto-primaria);
+  }
+  
 footer .copyright p{
     margin-bottom: 0;
 }
