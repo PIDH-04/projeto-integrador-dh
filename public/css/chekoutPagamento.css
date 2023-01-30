@@ -119,6 +119,10 @@ main button {
 
 }
 
+.coluna2{
+    width: 48%;
+}
+
 
 
 
@@ -127,6 +131,7 @@ main button {
     display: flex;
     justify-content: space-between;
     margin-top: 50px;
+    gap: 5%;
 }
 
 #Form-Cartao .campos button:last-child {
