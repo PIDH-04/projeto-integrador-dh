@@ -99,7 +99,7 @@ main button {
     left: 1px;
     top: 0px;
     border: 1px solid var(--cor-principal);
-    border-radius: 10px;
+    
     text-align: justify;
     
     
@@ -183,14 +183,34 @@ footer{
 .errors {
 
     margin-bottom: 10px;
-    border: solid 2px red;
+    padding: 20px;
+    font-family: var(--font-paragrafo);
+    color:#fff;
+    font-size: 0.9rem;
+    background-color: var(--cor-erro);
+
    
 }
 .no-errors{
     display: none;
 }
 
-#codigo{
- 
-    border-radius: 10px;
+.errors li {
+    list-style: none;
+    line-height: 2rem;
+}
+
+
+@media (max-width:600px){
+    .flex {
+        flex-direction: column;
+
+
+    }
+
+.coluna1,.coluna2{
+
+    width: 100%;
+}
+
 }

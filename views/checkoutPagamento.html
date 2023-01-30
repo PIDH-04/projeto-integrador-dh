@@ -52,14 +52,11 @@
     </h4>
     </div>
 
-    <div class="flex">
+    <div class="flex" id="container 1"> /
       <div class="coluna1">
         <form class="reservada" id="Form-Cartao" method="POST" action="" enctype="">
           <div class="campos">
-            <div class="no-errors" id="div-errors">
-              <ul>
-            </ul>
-          </div>
+
             <h3>
               Pagar com Pix
             </h3>
@@ -67,12 +64,16 @@
             <h3>
               Pagar com Cartão de Crédito
             </h3>
-            <input class="nome" type="text" name="nome" id="nome" placeholder="Nome que está no cartão" min="3">
-            <input class="Cartao" type="number" name="Numero" id="Numero" placeholder="  Numero que está no cartão" max="16" min="13">
+            <div class="no-errors" id="div-errors">
+              <ul>
+            </ul>
+            </div>
+            <input class="nome" type="text" name="nome" id="nome" placeholder="Nome que está no cartão"  >
+            <input class="Cartao" type="number" name="Numero" id="Numero" placeholder="  Numero que está no cartão">
             <div class="junto">
-              <input class="vencimento" type="number" id="mes" placeholder= "  Mês" max="5" min="5">
-              <input class="vencimento" type="number" id="ano" placeholder= "  Ano" max="2" min="2">
-              <input class="cvv" type="number" id="cvv" placeholder= "  CVV" min="3" max="3">
+              <input class="vencimento" type="number" id="mes" placeholder= "  Mês"  >
+              <input class="vencimento" type="number" id="ano" placeholder= "  Ano" >
+              <input class="cvv" type="number" id="cvv" placeholder= "  CVV"  >
             </div>
             <div class="texto-form">
               <label for="">
@@ -84,7 +85,7 @@
           </div>
         </form>
       </div>
-      <div class="coluna2">
+      <div class="coluna2" id="container 2">
         <h3>Resumo da compra</h3>
         <div class="resumo-compra">
           <form action="">

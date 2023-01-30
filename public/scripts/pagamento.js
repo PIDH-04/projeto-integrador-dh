@@ -1,11 +1,18 @@
 window.addEventListener('load', function () {
 
     let reservationform = document.querySelector('form.reservada')
+    let divErrors = document.getElementById('div-errors');
+    let ulErrors = document.querySelector('#div-errors ul');
+
 
     reservationform.addEventListener('submit', function (event) {
         event.preventDefault();
-       
+
+        divErrors.classList.add('no-errors');
+        ulErrors.innerHTML = '' 
+
         let errorsMessagens = [];
+        errorsMessagens.length = 0
 
 
         let fieldName = document.getElementById("nome")
@@ -38,18 +45,19 @@ window.addEventListener('load', function () {
             errorsMessagens.push('Campo cvv esta vazio ')
         }
 
-        if (errorsMessagens > 0) {
-           
+        if (errorsMessagens.length > 0) {
+
             event.preventDefault();
 
-            let divErrors = document.getElementById('div-errors');
+
             divErrors.classList.remove('no-errors');
             divErrors.classList.add('errors');
 
-            let ulErrors = document.querySelector('div.errors ul');
             for (let i = 0; i < errorsMessagens.length; i++) {
                 ulErrors.innerHTML += '<li>' + errorsMessagens[i] + '</li>'
             }
+        } else{
+            window.location.href = "/finalizacao-compra";
         }
     })
 })
