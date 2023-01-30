@@ -53,6 +53,7 @@ body h5 {
     left: 143px;
     top: 586.5px;
     border-radius: nullpx;
+    
 
 }
 
@@ -207,15 +208,18 @@ footer{
 
 
 @media (max-width:600px){
+
     .flex {
         flex-direction: column;
-
 
     }
 
 .coluna1,.coluna2{
 
     width: 100%;
+    
+    
 }
+
 
 }

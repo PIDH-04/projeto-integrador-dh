@@ -26,8 +26,7 @@ window.addEventListener('load', function () {
         let fieldNumero = document.getElementById('Numero')
         if (fieldNumero.value == '') {
             errorsMessagens.push('Campo cartao esta vazio')
-
-        }
+         }
 
         let fieldMes = document.getElementById('mes')
         if (fieldMes.value == '') {
