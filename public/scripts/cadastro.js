@@ -76,6 +76,8 @@ window.addEventListener('load', () => {
 
       }
 
+    } else{
+      window.location.href = "/checkoutDeEndereco";
     }
 
 
