@@ -147,7 +147,7 @@ a.botao-primario:hover {
   border-radius: 5px;
 }
 
-.seletor-quantidade input {
+.seletor-quantidade input#quantidade {
   font-size: 16px;
   font-family: var(--font-paragrafo);
   border: none;
