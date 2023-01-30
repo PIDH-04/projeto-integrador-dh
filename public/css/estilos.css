@@ -147,7 +147,7 @@ a.botao-primario:hover {
   border-radius: 5px;
 }
 
-.seletor-quantidade input {
+.seletor-quantidade input#quantidade {
   font-size: 16px;
   font-family: var(--font-paragrafo);
   border: none;
@@ -181,7 +181,7 @@ input[type="number"] {
 
 /* Input text */
 
-input[type="text"] , input[type="password"], input[type = "email"] {
+input[type="text"] , input[type="password"], input[type = "email"], input[type="number"] {
   padding: 10px;
   font-size: 0.9rem;
   border: 1px solid var(--cor-secundaria);

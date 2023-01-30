@@ -48,13 +48,13 @@ header .inferior2 input{
 }
 
  section.container input{
-    border-radius: 0%;
+    /* border-radius: 0%; */
     padding: 10px  ;
        
 }
 
 section.container1 input{
-    border-radius: 0%;
+    /* border-radius: 0%; */
    
 }
 

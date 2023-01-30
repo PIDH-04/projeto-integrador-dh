@@ -8,9 +8,11 @@ const endereco = document.getElementById('Endereço')
 window.addEventListener('load', function () {
    let divErrors = document.getElementById('div-errors');
    let ulErrors = document.querySelector('#div-errors ul');
+   const mensagemSucesso = document.querySelector('span.success');
    formulario.addEventListener('submit', function (event) {
       event.preventDefault();
-      divErrors.classList.add("no-erros");
+      mensagemSucesso.style.display = 'none';
+      divErrors.classList.add("no-errors");
       ulErrors.innerHTML = ""
 
 
@@ -50,6 +52,8 @@ window.addEventListener('load', function () {
          for (let i = 0; i < erros.length; i++) {
             ulErrors.innerHTML += '<li>' + erros[i] + '</li>'
          }
+      }else{
+         mensagemSucesso.style.display = 'block'
       }
 
 
