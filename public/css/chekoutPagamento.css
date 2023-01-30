@@ -98,6 +98,10 @@ main button {
     border: 1px solid rgba(13, 13, 13, 1)
 }
 
+.label-nome{
+    margin-top: 20px;
+}
+
 #Form-Cartao input {
     position: relative;
     margin-bottom: 20px;
