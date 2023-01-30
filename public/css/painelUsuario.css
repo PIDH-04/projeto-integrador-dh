@@ -154,6 +154,17 @@
  }
 
 
+ span.success{
+    display: none;
+    background-color: var(--cor-sucesso);
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 0.9rem;
+ }
+
+
  @media (max-width: 600px) {
      main {
          flex-direction: column;
