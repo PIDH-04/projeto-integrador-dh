@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="/css/header.css" />
     <link rel="stylesheet" href="/css/footer.css" />
     <link rel="stylesheet" href="/css/checkoutEndereco.css" />
+    <script src="/scripts/checkoutEndereco.js" defer></script>
     <title>Checkout - Endereço | E-móvel</title>
   </head>
 
@@ -52,51 +53,122 @@
     </header>
     <main class="checkout-endereco-container">
       <section class="enderecos-container">
-        <section class="master-section">
-          <h2>Checkout - Endereço</h2>
+        <h1>Checkout - Endereço</h1>
+        <a href="/carrinho">Voltar para carrinho</a>
+        <!-- <section class="master-section">
           <h3>Selecione um endereço</h3>
-          <div class="menu-selecao">
-            <select name="ordenacao">
-              <option value="Endereço1">Endereço</option>
-              <option value="Endereço2">Endereço residencial</option>
-              <option value="Endereço3">Endereço comercial</option>
-              <option value="Endereço4">Endereço alternativo</option>
-            </select>
-          </div>
-          <a href="/checkoutpagamento" class="botao-secundario"
-            >Escolher forma de pagamento</a
-          >
-        </section>
+          <ul class="erros" id="erro-selecione-endereco"></ul>
+          <form action="" id="form-select-endereco" method="post">
+            <div class="menu-selecao">
+              <select name="ordenacao">
+                <option value="" disabled selected>
+                  Selecione um endereço salvo
+                </option>
+                <option value="residencial">Endereço residencial</option>
+                <option value="comercial">Endereço comercial</option>
+                <option value="alternativo">Endereço alternativo</option>
+              </select>
+            </div>
+            <button
+              type="submit"
+              href="/checkoutpagamento"
+              class="botao-secundario"
+            >
+              Escolher forma de pagamento
+            </button>
+          </form>
+        </section> -->
 
         <section class="master-section-novo">
-          <h3>Novo endereço</h3>
-          <input type="text" placeholder="Nome do Destinatário" />
-          <input type="number" placeholder="CEP" />
-          <input type="text" placeholder="Endereço" />
-          <input type="number" placeholder="Número" />
-          <input
-            type="number"
-            placeholder="Apartamento, suíte, etc (opcional)"
-          />
-          <input type="text" placeholder="Apelido do endereço" />
-          <div class="CidadeEstado">
-            <select name="Cidade">
-              <option value="Cidade1">Cidade</option>
-              <option value="Cidade2">São Paulo(capital)</option>
-              <option value="Cidade3">Porto Alegre</option>
-              <option value="Cidade4">Salvador</option>
-            </select>
-            <select name="Estado">
-              <option value="Estado1">Estado</option>
-              <option value="Estado2">SP</option>
-              <option value="Estado3">RS</option>
-              <option value="Estado4">BA</option>
-            </select>
-          </div>
-          <input type="text" placeholder="Observações" />
-          <a href="/checkoutpagamento" class="botao-secundario"
-            >Escolher forma de pagamento</a
-          >
+          <h3>Adicione seu endereço</h3>
+          <ul class="erros" id="erros-novo-endereco"></ul>
+          <form action="" method="post" id="form-novo-endereco">
+            <!-- <div>
+              <label for="nome">Nome:</label>
+              <input
+                type="text"
+                id="nome"
+                name="nome"
+                placeholder="Endereço casa"
+              />
+            </div> -->
+            <div>
+              <label for="cep">CEP:</label>
+              <input
+                type="text"
+                id="cep"
+                name="cep"
+                placeholder="CEP"
+                maxlength="9"
+                required
+              />
+            </div>
+            <div>
+              <label for="endereco">Endereço:</label>
+              <input
+                type="text"
+                id="endereco"
+                name="endereco"
+                placeholder="Endereço"
+                required
+              />
+            </div>
+            <div>
+              <label for="numero">Número: </label>
+              <input
+                type="text"
+                id="numero"
+                name="numero"
+                placeholder="Número"
+                required
+              />
+            </div>
+            <div>
+              <label for="complemento">Complemento:</label>
+              <input
+                type="text"
+                placeholder="Apartamento, suíte, etc (opcional)"
+                id="complemento"
+                name="complemento"
+              />
+            </div>
+            <div>
+              <label for="bairro">Bairro:</label>
+              <input
+                type="text"
+                placeholder="Seu bairro"
+                id="bairro"
+                name="bairro"
+                required
+              />
+            </div>
+            <div class="CidadeEstado">
+              <div>
+                <label for="cidade">Cidade:</label>
+                <input
+                  type="text"
+                  name="cidade"
+                  id="cidade"
+                  placeholder="Cidade"
+                  required
+                />
+              </div>
+              <div>
+                <label for="estado">Estado:</label>
+                <input
+                  type="text"
+                  name="estado"
+                  id="estado"
+                  placeholder="Estado"
+                  required
+                  maxlength="2"
+                />
+              </div>
+            </div>
+            <button type="submit" class="botao-secundario">
+              Salvar e escolher forma de pagamento
+            </button>
+          </form>
         </section>
       </section>
       <section class="carrinho-container">
@@ -140,7 +212,6 @@
             <p class="quantidade">Quantidade: 1</p>
             <p class="preco">R$ 800,00</p>
           </div>
-          <span>Remover</span>
         </div>
         <div class="card-produto-carrinho">
           <div class="img-container">
@@ -156,7 +227,6 @@
             <p class="quantidade">Quantidade: 1</p>
             <p class="preco">R$ 800,00</p>
           </div>
-          <span>Remover</span>
         </div>
         <div class="card-produto-carrinho">
           <div class="img-container">
@@ -172,7 +242,6 @@
             <p class="quantidade">Quantidade: 1</p>
             <p class="preco">R$ 800,00</p>
           </div>
-          <span>Remover</span>
         </div>
       </section>
     </main>
@@ -236,7 +305,7 @@
         </nav>
       </div>
       <div class="copyright">
-        <p>E-móvel 2022-2022</p>
+        <p>E-móvel 2022-2023</p>
       </div>
     </footer>
   </body>

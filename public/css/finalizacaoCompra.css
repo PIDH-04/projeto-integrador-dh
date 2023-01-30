@@ -58,3 +58,12 @@ main.finalizacao-pg-container {
     width: 100%;
   }
 }
+
+footer{
+  background: var(--cor-secundaria);
+}
+
+footer nav li a {
+  text-decoration: none;
+  color: var(--cor-texto-primaria);
+}
