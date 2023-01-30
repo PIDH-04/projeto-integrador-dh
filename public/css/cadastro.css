@@ -104,9 +104,9 @@ section.container1 h2 , section.container h2 {
 
 
 
-.salvar{
+/* .salvar{
     padding: 10px;
-}
+} */
 
 .email1{
     padding: 10px 0 ;
@@ -155,7 +155,8 @@ footer .copyright p{
 }
 
 .cidade{
-    padding: 10px ; 
+    /* padding: 10px ;  */
+    margin-bottom: 20px;
 
 }
 
@@ -178,6 +179,8 @@ footer .copyright p{
 
     }
 
+
+
     .display-flex{
         flex-direction: column;
         align-items: center;
@@ -189,9 +192,18 @@ footer .copyright p{
         width: 100%;
     
     }
+
+    
     
   
 } 
+
+@media (max-width: 800px){
+        .display-flex {
+            margin-top: 30px;
+        }
+
+}
     
   
     @media (max-width: 450px) {
@@ -204,18 +216,18 @@ footer .copyright p{
 }
   
 
-   .errors  {
+   /* .errors  {
 
         /* background-color: red; */
-     background-color: var(--cor-erro);
+     /* background-color: var(--cor-erro);
      padding: 10px;
      font-family: var(--font-paragrafo);
      color: #fff;
      font-size: 0.8rem;
-     display: none;
+     display: none; */ 
 
      
-   }
+   /* } */
 /* 
    .ulErroDiv{
   padding: 10px; 
