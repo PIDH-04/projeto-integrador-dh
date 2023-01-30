@@ -3,13 +3,16 @@ const formulario = document.getElementById('form')
 const nameInput = document.getElementById('nome')
 const emailInput = document.getElementById('email')
 const senhaInput = document.getElementById('password')
+const endereco = document.getElementById('Endereço')
 
 window.addEventListener('load', function () {
-
+   let divErrors = document.getElementById('div-errors');
+   let ulErrors = document.querySelector('#div-errors ul');
    formulario.addEventListener('submit', function (event) {
       event.preventDefault();
+      divErrors.classList.add("no-erros");
+      ulErrors.innerHTML = ""
 
-      console.log("enviado")
 
       let erros = []
       let nameInput = document.getElementById('nome')
@@ -33,19 +36,17 @@ window.addEventListener('load', function () {
 
 
       }
-      console.log(erros)
+
 
 
       if (erros.length > 0) {
 
          event.preventDefault();
 
-         let divErrors = document.getElementById('div-errors');
          // divErrors.style.display = "none"
          divErrors.classList.remove('no-errors');
          divErrors.classList.add('errors');
 
-         let ulErrors = document.querySelector('div.errors ul');
          for (let i = 0; i < erros.length; i++) {
             ulErrors.innerHTML += '<li>' + erros[i] + '</li>'
          }
