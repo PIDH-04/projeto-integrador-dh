@@ -6,9 +6,14 @@ const app = express();
 // Define a pasta public como pasta de arquivos estáticos
 app.use(express.static(path.join(__dirname, "public")));
 
+
 // Definir rotas
 app.get("/painelUsuario", (req, res) => {
   return res.sendFile(__dirname + "/views/painelUsuario.html")
+})
+// Definir rotas
+app.get("/statusDePedidos", (req, res) => {
+  return res.sendFile(__dirname + "/views/statusDePedidos.html")
 })
 
 // Definir rotas
