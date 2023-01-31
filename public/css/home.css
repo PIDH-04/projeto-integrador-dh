@@ -13,10 +13,6 @@
     align-items: stretch;
 }
 
-.bannerSlide{
-    position:relative;
-}
-
 .bannerSlide .slides .slide{
     max-height: 300px;
     display: flex;
@@ -286,10 +282,6 @@ main .product-card .ver{
     align-items: stretch;
 }
 
-.bannerSlide{
-    position:relative;
-}
-
 .bannerSlide .slides .slide{
     max-height: 300px;
     display: flex;
@@ -556,10 +548,6 @@ main .product-card .ver{
     display: flex;
     flex-direction: column;
     align-items: stretch;
-}
-
-.bannerSlide{
-    position:relative;
 }
 
 .bannerSlide .slides .slide{

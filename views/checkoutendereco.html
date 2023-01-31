@@ -21,36 +21,55 @@
   </head>
 
   <body>
-    <header>
-      <div class="superior">
-        <nav class="superior2">
-          <ul class="superior3">
-            <li>BRL</li>
-            <li>FRETE GRÁTIS PARA TODO BRASIL</li>
-            <li><a href="">F.A.Q.</a></li>
-          </ul>
-        </nav>
-      </div>
-      <div class="inferior">
-        <nav>
-          <ul class="inferior2">
-            <li class="ecommerce">
-              <b> <a href="/">E-móvel</a></b>
-            </li>
-            <li class="interna"><a href="/categorias/mesa">Área Interna</a></li>
-            <li class="externa"><a href="/categorias/mesa">Área Externa</a></li>
-            <li class="sobre"><a href="/categorias/mesa">Sobre</a></li>
-            <img class="lupa" src="/img/lupa.png" alt="" />
-            <input class="busca" type="text" placeholder="buscar...." />
-            <a href="/carrinho">
-              <img class="sacola" src="/img/sacola-gray.svg" alt="" />
-              <span>3</span>
-            </a>
-            <li><a href="/painelUsuario">Minha conta</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+    <input type="checkbox" id="bt_menu">
+  <label for="bt_menu">&#9776;</label>
+  <header>
+    <div class="superior">
+      <nav class="superior2">
+        <ul class="superior3">
+          <li id="brl">BRL</li>
+          <li id="frete">FRETE GRÁTIS PARA TODO BRASIL</li>
+          <li id="faq"><a href="">F.A.Q.</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="inferior">
+      <nav>
+        <ul class="inferior2">
+          <li class="ecommerce"> <img src="/img/logovertical.svg"></img></li>
+          <li class="interna"><a href="/categorias/mesa">Área Interna</a>
+            <ul class="parteInterna">
+              <li><a href="/categorias/mesa">Cadeiras</li></a>
+              <li><a href="/categorias/mesa">Mesa de Jantar</li></a>
+              <li><a href="/categorias/mesa">Mesa de centro</li></a>
+              <li><a href="/categorias/mesa">Sofás</li></a>
+              <li><a href="/categorias/mesa">Cômodas</li></a>
+              <li><a href="/categorias/mesa">Mesa Laterais</li></a>
+              <li><a href="/categorias/mesa">Escritório</li></a>
+              <li><a href="/categorias/mesa">Camas</li></a>
+            </ul>
+          </li>
+          <li class="externa"><a href="/categorias/mesa">Área Externa</a>
+            <ul class="parteExterna" id="Externa">
+              <li><a href="/categorias/mesa">Cadeiras</li></a>
+              <li><a href="/categorias/mesa">Mesa de Jantar</li></a>
+              <li><a href="/categorias/mesa">Mesa de centro</li></a>
+              <li><a href="/categorias/mesa">Sofás</li></a>
+              <li><a href="/categorias/mesa">Cômodas</li></a>
+              <li><a href="/categorias/mesa">Mesa Laterais</li></a>
+            </ul>
+          </li>
+          <li class="sobre"><a href="/categorias/mesa">Sobre</a></li>
+          <img class="lupa" src="/img/lupa.png" alt="" />
+          <input class="busca" type="text" placeholder="buscar...." />
+          <a href="/carrinho">
+            <img class="sacola" src="/img/sacola-gray.svg" alt="" />
+            <span id="span">3</span>
+          </a>
+        </ul>
+      </nav>
+    </div>
+  </header>
     <main class="checkout-endereco-container">
       <section class="enderecos-container">
         <h1>Checkout - Endereço</h1>
