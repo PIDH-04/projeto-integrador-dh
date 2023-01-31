@@ -17,55 +17,76 @@
     <link rel="stylesheet" href="/css/carrinho.css" />
   </head>
   <body>
-    <input type="checkbox" id="bt_menu">
-  <label for="bt_menu">&#9776;</label>
-  <header>
-    <div class="superior">
-      <nav class="superior2">
-        <ul class="superior3">
-          <li id="brl">BRL</li>
-          <li id="frete">FRETE GRÁTIS PARA TODO BRASIL</li>
-          <li id="faq"><a href="">F.A.Q.</a></li>
-        </ul>
-      </nav>
-    </div>
-    <div class="inferior">
-      <nav>
-        <ul class="inferior2">
-          <li class="ecommerce"> <img src="/img/logovertical.svg"></img></li>
-          <li class="interna"><a href="/categorias/mesa">Área Interna</a>
-            <ul class="parteInterna">
-              <li><a href="/categorias/mesa">Cadeiras</li></a>
-              <li><a href="/categorias/mesa">Mesa de Jantar</li></a>
-              <li><a href="/categorias/mesa">Mesa de centro</li></a>
-              <li><a href="/categorias/mesa">Sofás</li></a>
-              <li><a href="/categorias/mesa">Cômodas</li></a>
-              <li><a href="/categorias/mesa">Mesa Laterais</li></a>
-              <li><a href="/categorias/mesa">Escritório</li></a>
-              <li><a href="/categorias/mesa">Camas</li></a>
-            </ul>
-          </li>
-          <li class="externa"><a href="/categorias/mesa">Área Externa</a>
-            <ul class="parteExterna" id="Externa">
-              <li><a href="/categorias/mesa">Cadeiras</li></a>
-              <li><a href="/categorias/mesa">Mesa de Jantar</li></a>
-              <li><a href="/categorias/mesa">Mesa de centro</li></a>
-              <li><a href="/categorias/mesa">Sofás</li></a>
-              <li><a href="/categorias/mesa">Cômodas</li></a>
-              <li><a href="/categorias/mesa">Mesa Laterais</li></a>
-            </ul>
-          </li>
-          <li class="sobre"><a href="/categorias/mesa">Sobre</a></li>
-          <img class="lupa" src="/img/lupa.png" alt="" />
-          <input class="busca" type="text" placeholder="buscar...." />
-          <a href="/carrinho">
-            <img class="sacola" src="/img/sacola-gray.svg" alt="" />
-            <span id="span">3</span>
+    <header>
+      <div class="superior">
+        <nav class="superior2">
+          <ul class="superior3">
+            <li id="brl">BRL</li>
+            <li id="frete">FRETE GRÁTIS PARA TODO BRASIL</li>
+            <li id="faq"><a href="">F.A.Q.</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="menu-mobile">
+        <div class="mobile-logo">
+          <a href="/">
+            <img src="/img/logo.svg" />
           </a>
-        </ul>
-      </nav>
-    </div>
-  </header>
+        </div>
+        <input type="checkbox" id="bt_menu" />
+        <label for="bt_menu">&#9776;</label>
+      </div>
+      <div class="inferior">
+        <nav>
+          <ul class="inferior2">
+            <li class="logo-wrapper">
+              <a href="/">
+                <img src="/img/logo.svg" />
+              </a>
+            </li>
+            <li class="interna">
+              <a href="/categorias/mesa">Área Interna</a>
+              <ul class="parteInterna">
+                <li><a href="/categorias/mesa">Cadeiras</a></li>
+                <li><a href="/categorias/mesa">Mesa de Jantar</a></li>
+                <li><a href="/categorias/mesa">Mesa de centro</a></li>
+                <li><a href="/categorias/mesa">Sofás</a></li>
+                <li><a href="/categorias/mesa">Cômodas</a></li>
+                <li><a href="/categorias/mesa">Mesa Laterais</a></li>
+                <li><a href="/categorias/mesa">Escritório</a></li>
+                <li><a href="/categorias/mesa">Camas</a></li>
+              </ul>
+            </li>
+            <li class="externa">
+              <a href="/categorias/mesa">Área Externa</a>
+              <ul class="parteExterna" id="Externa">
+                <li><a href="/categorias/mesa">Cadeiras</a></li>
+                <li><a href="/categorias/mesa">Mesa de Jantar</a></li>
+                <li><a href="/categorias/mesa">Mesa de centro</a></li>
+                <li><a href="/categorias/mesa">Sofás</a></li>
+                <li><a href="/categorias/mesa">Cômodas</a></li>
+                <li><a href="/categorias/mesa">Mesa Laterais</a></li>
+              </ul>
+            </li>
+            <li class="sobre">
+              <a href="/categorias/mesa">Sobre</a>
+            </li>
+            <img class="lupa" src="/img/lupa.png" alt="" />
+            <input class="busca" type="text" placeholder="buscar...." />
+
+            <li>
+              <a href="/carrinho">
+                <img class="sacola" src="/img/sacola-gray.svg" alt="" />
+                <span id="span">3</span>
+              </a>
+            </li>
+            <li>
+              <a href="/painelUsuario">Minha conta</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
     <main class="carrinho-container">
       <div class="produtos-container">

@@ -52,6 +52,7 @@ main.finalizacao-pg-container {
     flex-direction: column;
     margin-top: 60px;
     gap: 20px;
+    padding: 50px 0;
   }
 
   .finalizacao-pg-container .botoes-container a {
@@ -59,7 +60,7 @@ main.finalizacao-pg-container {
   }
 }
 
-footer{
+footer {
   background: var(--cor-secundaria);
 }
 

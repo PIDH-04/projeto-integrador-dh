@@ -1,232 +1,335 @@
 .superior3 {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: var(--cor-secundaria);
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    list-style: none;
-    padding: 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: var(--cor-secundaria);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  /* padding: 20px;
     padding-left: 200px;
-    padding-right: 200px;
-    font-family: var(--font-paragrafo);
-    text-decoration: none;
-    z-index: 99;
+    padding-right: 200px; */
+  padding: 20px 10%;
+  font-family: var(--font-paragrafo);
+  text-decoration: none;
+  z-index: 99;
 }
 
 .inferior2 {
-    position: fixed;
-    top: 55px;
-    width: 100%;
-    background-color: #ffffff;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    list-style: none;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 200px;
-    padding-right: 100px;
-    align-items: center;
-    font-family: var(--font-paragrafo);
-    font-style: none;
-    text-decoration: none;
-    z-index: 99;
+  position: fixed;
+  top: 55px;
+  width: 100%;
+  background-color: #ffffff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  padding-top: 20px;
+  /* padding-left: 200px; */
+  /* padding-right: 100px; */
+  padding: 20px 10% 0;
+  align-items: center;
+  font-family: var(--font-paragrafo);
+  font-style: none;
+  text-decoration: none;
+  z-index: 99;
+}
+/* 
+.inferior ul li a{
+    padding-bottom: 15px;
+    display: block;
+} */
+
+.inferior ul li:last-child {
+  margin-right: 0;
 }
 
 .inferior ul li a:hover {
-    color: var(--cor-secundaria);
-
+  color: var(--cor-secundaria);
 }
 
 ul.inferior2 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .inferior2 ul {
-    list-style: none;
-    position: relative;
-    padding-left: 200px;
+  list-style: none;
+  position: relative;
+  padding-left: 200px;
 }
 
-
-
 #Externa {
-    padding-left: 200px;
-    padding-bottom: 10px;
-
+  padding-left: 200px;
+  padding-bottom: 10px;
 }
 
 .inferior ul ul {
-    position: absolute;
-    left: 0;
-    right: 0;
-    visibility: hidden;
-    padding-top: 10px;
-
+  position: absolute;
+  left: 0;
+  right: 0;
+  visibility: hidden;
+  padding-top: 10px;
 }
 
 .inferior ul li:hover ul {
-    visibility: visible;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    width: 100%;
-    background-color: #f4f4f4;
-    columns: 3;
+  visibility: visible;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+  background-color: #f4f4f4;
+  columns: 3;
 }
 
-
 .inferior2 a {
-    display: block;
-    text-align: left;
-    padding-bottom: 10px;
+  display: block;
+  text-align: left;
+  padding-bottom: 10px;
 }
 
 .superior3 :last-child {
-    text-decoration: none;
-    color: var(--cor-texto-primaria);
+  text-decoration: none;
+  color: var(--cor-texto-primaria);
 }
 
 .inferior2 .parteInterna a {
-    padding: 5px;
-    position: relative;
-
-
+  padding: 5px;
+  position: relative;
 }
-
 
 .inferior2 .parteExterna a {
-    padding: 5px;
-    position: relative;
-
+  padding: 5px;
+  position: relative;
 }
 
+.logo-wrapper {
+  width: 60px;
+}
+
+.logo-wrapper > a > img {
+  width: 100%;
+}
 
 .ecommerce {
-    font-style: var(--font-paragrafo);
+  font-style: var(--font-paragrafo);
 }
 
 .lupa {
-    width: 30px;
-    height: 30px;
+  width: 30px;
+  height: 30px;
 }
 
 .sacola {
-    width: 20px;
-    height: 20px;
+  width: 20px;
+  height: 20px;
 }
 
 .inferior2 .busca {
-    border: none;
-    flex-grow: 1;
-    margin-right: 50px;
-    border-bottom: 1px solid var(--cor-texto-primaria);
-    outline: none;
-
+  border: none;
+  flex-grow: 1;
+  margin-right: 50px;
+  border-bottom: 1px solid var(--cor-texto-primaria);
+  outline: none;
+  border-radius: 0;
 }
 
 .inferior2 li a {
-    text-decoration: none;
-    color: var(--cor-texto-primaria);
+  text-decoration: none;
+  color: var(--cor-texto-primaria);
 }
 
 .inferior2 li {
-    margin-right: 50px;
+  margin-right: 50px;
 }
 
 .inferior2 span {
-    text-decoration-line: none;
-    color: var(--cor-texto-primaria);
+  text-decoration-line: none;
+  color: var(--cor-texto-primaria);
 }
 
 .painelusuario {
-    width: 15%;
-    padding-left: 50px;
+  width: 15%;
+  padding-left: 50px;
+}
+.menu-mobile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+  padding: 20px 50px;
+  width: 100%;
+}
+
+.menu-mobile .mobile-logo {
+  width: 80px;
+}
+
+.menu-mobile .mobile-logo img {
+  width: 100%;
 }
 
 label[for="bt_menu"] {
-    padding: 5px;
-    margin-top: 41px;
-    background-color: var(--cor-secundaria);
-    color: var(--cor-texto-primaria);
-    font-family: var(--font-paragrafo);
-    text-align: center;
-    font-size: 30px;
-    cursor: pointer;
-    width: 50px;
-    height: 50px;
+  padding: 5px;
+  /* margin-top: 41px; */
+  /* background-color: var(--cor-secundaria); */
+  color: var(--cor-texto-primaria);
+  font-family: var(--font-paragrafo);
+  text-align: center;
+  font-size: 30px;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
 }
 
 #bt_menu {
-    display: none;
+  display: none;
 }
 
 label[for="bt_menu"] {
-    display: none;
-    width: 50px;
-    height: 50px;
+  display: none;
+  width: 50px;
+  height: 50px;
 }
 
-@media(max-width: 360px) {
-    label[for="bt_menu"] {
-        display: block;
-    }
+@media (max-width: 1200px) {
+  .superior3 {
+    padding: 20px 5%;
+  }
 
-    #bt_menu:checked~.superior {
-        margin-left: 0;
-        top: 350px;
-    }
+  .inferior2 {
+    padding: 20px 5% 0;
+  }
+}
 
+@media (max-width: 1060px) {
+  .inferior2 li {
+    margin-right: 0;
+  }
 
-    ul.inferior2 {
-        position: static;
-        max-height: 50px;
-        float: none;
-        background-color: cadetblue;
-        padding-left: 10px;
-        columns: 4;
-        width: 100%;
-        grid-column: 4;
-    }
+  .inferior2 .busca {
+    flex-grow: 0;
+    margin-right: 0;
+    margin-left: -30px;
+    background-color: transparent;
+  }
+}
 
-    /*ul.inferior2 {
+@media (max-width: 880px) {
+  .inferior2 {
+    display: none;
+  }
+
+  label[for="bt_menu"] {
+    display: block;
+  }
+
+  #bt_menu:checked ~ .superior {
+    margin-left: 0;
+    top: 350px;
+  }
+
+  ul.inferior2 {
+    position: static;
+    max-height: 50px;
+    float: none;
+    background-color: cadetblue;
+    padding-left: 10px;
+    columns: 4;
+    width: 100%;
+    grid-column: 4;
+  }
+
+  /*ul.inferior2 {
         margin-left: -100%;
     }*/
 
-    ul.inferior2 span,
-    ul.inferior2 .busca,
-    ul.inferior .lupa,
-    ul.inferior2 img,
-    ul.inferior2 .sacola,
-    ul.inferior2 .painelusuario,
-    ul.inferior .sacola {
-        visibility: hidden;
-        display: none;
-    }
+  ul.inferior2 span,
+  ul.inferior2 .busca,
+  ul.inferior .lupa,
+  ul.inferior2 img,
+  ul.inferior2 .sacola,
+  ul.inferior2 .painelusuario,
+  ul.inferior .sacola {
+    visibility: hidden;
+    display: none;
+  }
 
+  .superior ul li {
+    position: relative;
+  }
 
-    .superior ul li {
-        position: relative;
+  .inferior ul:hover .parteInterna,
+  .inferior ul:hover .parteExterna {
+    height: auto;
+    max-height: 200px;
+  }
 
+  ul.inferior2 a {
+    text-decoration: none;
+  }
 
-    }
+  ul.superior3 {
+    padding: 15px;
+  }
+}
 
-    .inferior ul:hover .parteInterna,
-    .inferior ul:hover .parteExterna {
-        height: auto;
-        max-height: 200px;
-    }
+@media (max-width: 500px) {
+  .superior3 li {
+    font-size: 0.8rem;
+  }
+}
 
-    ul.inferior2 a {
-        text-decoration: none;
-    }
+@media (max-width: 360px) {
+  label[for="bt_menu"] {
+    display: block;
+  }
 
+  #bt_menu:checked ~ .superior {
+    margin-left: 0;
+    top: 350px;
+  }
 
+  ul.inferior2 {
+    position: static;
+    max-height: 50px;
+    float: none;
+    background-color: cadetblue;
+    padding-left: 10px;
+    columns: 4;
+    width: 100%;
+    grid-column: 4;
+  }
 
+  /*ul.inferior2 {
+        margin-left: -100%;
+    }*/
 
-    ul.superior3 {
-        padding: 15px;
-    }
+  ul.inferior2 span,
+  ul.inferior2 .busca,
+  ul.inferior .lupa,
+  ul.inferior2 img,
+  ul.inferior2 .sacola,
+  ul.inferior2 .painelusuario,
+  ul.inferior .sacola {
+    visibility: hidden;
+    display: none;
+  }
 
+  .superior ul li {
+    position: relative;
+  }
+
+  .inferior ul:hover .parteInterna,
+  .inferior ul:hover .parteExterna {
+    height: auto;
+    max-height: 200px;
+  }
+
+  ul.inferior2 a {
+    text-decoration: none;
+  }
+
+  ul.superior3 {
+    padding: 15px;
+  }
 }

@@ -1,223 +1,272 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login | E-móvel</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <title>Login | E-móvel</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/estilos.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/cadastro.css" />
+  </head>
 
-  <link rel="stylesheet" href="/css/estilos.css" />
-  <link rel="stylesheet" href="/css/header.css" />
-  <link rel="stylesheet" href="/css/footer.css" />
-  <link rel="stylesheet" href="/css/cadastro.css" />
-</head>
-
-<body>
-  <input type="checkbox" id="bt_menu">
-  <label for="bt_menu">&#9776;</label>
-  <header>
-    <div class="superior">
-      <nav class="superior2">
-        <ul class="superior3">
-          <li id="brl">BRL</li>
-          <li id="frete">FRETE GRÁTIS PARA TODO BRASIL</li>
-          <li id="faq"><a href="">F.A.Q.</a></li>
-        </ul>
-      </nav>
-    </div>
-    <div class="inferior">
-      <nav>
-        <ul class="inferior2">
-          <li class="ecommerce"> <img src="/img/logovertical.svg"></img></li>
-          <li class="interna"><a href="/categorias/mesa">Área Interna</a>
-            <ul class="parteInterna">
-              <li><a href="/categorias/mesa">Cadeiras</li></a>
-              <li><a href="/categorias/mesa">Mesa de Jantar</li></a>
-              <li><a href="/categorias/mesa">Mesa de centro</li></a>
-              <li><a href="/categorias/mesa">Sofás</li></a>
-              <li><a href="/categorias/mesa">Cômodas</li></a>
-              <li><a href="/categorias/mesa">Mesa Laterais</li></a>
-              <li><a href="/categorias/mesa">Escritório</li></a>
-              <li><a href="/categorias/mesa">Camas</li></a>
-            </ul>
-          </li>
-          <li class="externa"><a href="/categorias/mesa">Área Externa</a>
-            <ul class="parteExterna" id="Externa">
-              <li><a href="/categorias/mesa">Cadeiras</li></a>
-              <li><a href="/categorias/mesa">Mesa de Jantar</li></a>
-              <li><a href="/categorias/mesa">Mesa de centro</li></a>
-              <li><a href="/categorias/mesa">Sofás</li></a>
-              <li><a href="/categorias/mesa">Cômodas</li></a>
-              <li><a href="/categorias/mesa">Mesa Laterais</li></a>
-            </ul>
-          </li>
-          <li class="sobre"><a href="/categorias/mesa">Sobre</a></li>
-          <img class="lupa" src="/img/lupa.png" alt="" />
-          <input class="busca" type="text" placeholder="buscar...." />
-          <a href="/carrinho">
-            <img class="sacola" src="/img/sacola-gray.svg" alt="" />
-            <span id="span">3</span>
+  <body>
+    <header>
+      <div class="superior">
+        <nav class="superior2">
+          <ul class="superior3">
+            <li id="brl">BRL</li>
+            <li id="frete">FRETE GRÁTIS PARA TODO BRASIL</li>
+            <li id="faq"><a href="">F.A.Q.</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="menu-mobile">
+        <div class="mobile-logo">
+          <a href="/">
+            <img src="/img/logo.svg" />
           </a>
-        </ul>
-      </nav>
-    </div>
-  </header>
+        </div>
+        <input type="checkbox" id="bt_menu" />
+        <label for="bt_menu">&#9776;</label>
+      </div>
+      <div class="inferior">
+        <nav>
+          <ul class="inferior2">
+            <li class="logo-wrapper">
+              <a href="/">
+                <img src="/img/logo.svg" />
+              </a>
+            </li>
+            <li class="interna">
+              <a href="/categorias/mesa">Área Interna</a>
+              <ul class="parteInterna">
+                <li><a href="/categorias/mesa">Cadeiras</a></li>
+                <li><a href="/categorias/mesa">Mesa de Jantar</a></li>
+                <li><a href="/categorias/mesa">Mesa de centro</a></li>
+                <li><a href="/categorias/mesa">Sofás</a></li>
+                <li><a href="/categorias/mesa">Cômodas</a></li>
+                <li><a href="/categorias/mesa">Mesa Laterais</a></li>
+                <li><a href="/categorias/mesa">Escritório</a></li>
+                <li><a href="/categorias/mesa">Camas</a></li>
+              </ul>
+            </li>
+            <li class="externa">
+              <a href="/categorias/mesa">Área Externa</a>
+              <ul class="parteExterna" id="Externa">
+                <li><a href="/categorias/mesa">Cadeiras</a></li>
+                <li><a href="/categorias/mesa">Mesa de Jantar</a></li>
+                <li><a href="/categorias/mesa">Mesa de centro</a></li>
+                <li><a href="/categorias/mesa">Sofás</a></li>
+                <li><a href="/categorias/mesa">Cômodas</a></li>
+                <li><a href="/categorias/mesa">Mesa Laterais</a></li>
+              </ul>
+            </li>
+            <li class="sobre">
+              <a href="/categorias/mesa">Sobre</a>
+            </li>
+            <img class="lupa" src="/img/lupa.png" alt="" />
+            <input class="busca" type="text" placeholder="buscar...." />
 
-  <div class="display-flex">
-    <section class="container ">
-      <h2>Cadastro</h2>
+            <li>
+              <a href="/carrinho">
+                <img class="sacola" src="/img/sacola-gray.svg" alt="" />
+                <span id="span">3</span>
+              </a>
+            </li>
+            <li>
+              <a href="/painelUsuario">Minha conta</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
+    <div class="display-flex">
+      <section class="container">
+        <h2>Cadastro</h2>
 
-
-
-      <div class="row my-3 padding-bottom ">
-
-       
-
-        <form class="reservation" method="post">
-
-          <!-- <div class="errors" id="div-errors"> -->
+        <div class="row my-3 padding-bottom">
+          <form class="reservation" method="post">
+            <!-- <div class="errors" id="div-errors"> -->
             <!-- <ul class="ulErroDiv"></ul> -->
-          <!-- </div> -->
-          <ul class="erros" id="ulErros">
-            <!-- <li>teste</li>
+            <!-- </div> -->
+            <ul class="erros" id="ulErros">
+              <!-- <li>teste</li>
             <li>teste1</li>
             <li>teste<2/li> -->
-          </ul>
+            </ul>
 
-          <div class="cidade">
-            <input type="text" placeholder="Nome" name="nome" id="nome" class="form-control" required />
-          </div>
+            <div class="cidade">
+              <input
+                type="text"
+                placeholder="Nome"
+                name="nome"
+                id="nome"
+                class="form-control"
+                required
+              />
+            </div>
 
-          <div class="cidade">
-            <input type="email" placeholder="Email" name="email" id="email" class="form-control" required />
-          </div>
+            <div class="cidade">
+              <input
+                type="email"
+                placeholder="Email"
+                name="email"
+                id="email"
+                class="form-control"
+                required
+              />
+            </div>
 
-          <div class="cidade">
-            <input type="password" placeholder="Senha" name="senha" id="senha" class="form-control" required />
-          </div>
+            <div class="cidade">
+              <input
+                type="password"
+                placeholder="Senha"
+                name="senha"
+                id="senha"
+                class="form-control"
+                required
+              />
+            </div>
 
-          <div class="cidade">
-            <input type="password" placeholder="Confirmar Senha" name="confirmarSenhay" id="confirmarSenha"
-              class="form-control" required />
-          </div>
+            <div class="cidade">
+              <input
+                type="password"
+                placeholder="Confirmar Senha"
+                name="confirmarSenhay"
+                id="confirmarSenha"
+                class="form-control"
+                required
+              />
+            </div>
 
-
-
-
-
-          <div class="salvar">
-                 <div>
-
-
-              <div class="enviar">
-                <button type="submit" class="botom botao-secundario">
-                  Cadastrar
-                </button>
+            <div class="salvar">
+              <div>
+                <div class="enviar">
+                  <button type="submit" class="botom botao-secundario">
+                    Cadastrar
+                  </button>
+                </div>
               </div>
             </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="container1">
+        <!-- <h1 >  Bem vindo de volta </h1> -->
+        <h2>Login por Email</h2>
+
+        <div class="errors2" id="div-errors2">
+          <ul></ul>
+        </div>
+
+        <form class="formLogin" method="post">
+          <div></div>
+          <div class="email1">
+            <input
+              type="email"
+              placeholder="Email"
+              name="Adress"
+              id="Adress"
+              class="form-control"
+              required
+            />
           </div>
 
+          <div class="senha">
+            <input
+              type="password"
+              placeholder="Senha"
+              name="Adress"
+              id="Adress1"
+              class="form-control"
+              required
+            />
+          </div>
 
-      </div>
-      </form>
+          <div class="lembrar">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              id="exampleCheck1"
+            />
+            <label class="form-check-label" for="exampleCheck1"
+              >Lembrar-me</label
+            >
+          </div>
 
-    </section>
+          <div>
+            <button type="submit" class="botom botao-secundario">Entrar</button>
+          </div>
+        </form>
 
+        <h3>esqueceu sua senha?</h3>
+      </section>
+    </div>
 
-
-    <section class="container1">
-      <!-- <h1 >  Bem vindo de volta </h1> -->
-      <h2>Login por Email</h2>
-
-
-      <div class="errors2" id="div-errors2">
-        <ul></ul>
-      </div>
-
-      <form class="formLogin" method="post">
-        <div></div>
-        <div class="email1 ">
-          <input type="email" placeholder="Email" name="Adress" id="Adress" class="form-control" required />
+    <footer>
+      <div class="conteudo">
+        <div class="newsletter">
+          <h3>Cadastre-se na nossa newsletter</h3>
+          <p>Receba no seu e-mail novidades e as melhores promoções.</p>
+          <div class="input-wrapper">
+            <input type="text" placeholder="seu e-mail" />
+            <button>Cadastrar</button>
+          </div>
         </div>
 
-        <div class="senha">
-          <input type="password" placeholder="Senha" name="Adress" id="Adress1" class="form-control" required />
-        </div>
+        <nav class="menu">
+          <ul>
+            <li class="categoria-principal">
+              <a href="/categorias/area"> Área Interna </a>
+            </li>
+            <li>
+              <a href="/categorias/mesas"> Mesas </a>
+            </li>
+            <li>
+              <a href="/categorias/cadeiras"> Cadeiras </a>
+            </li>
+            <li>
+              <a href="/categorias/sofas"> Sofás </a>
+            </li>
+            <li>
+              <a href="/categorias/escritório"> Escritório </a>
+            </li>
+          </ul>
 
-
-
-        <div class="lembrar">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-          <label class="form-check-label" for="exampleCheck1">Lembrar-me</label>
-        </div>
-
-        <div>
-
-          <button type="submit" class="botom botao-secundario">Entrar</button>
-
-        </div>
-
-
-      </form>
-
-      <h3>esqueceu sua senha?</h3>
-    </section>
-  </div>
-
-  <footer>
-    <div class="conteudo">
-      <div class="newsletter">
-        <h3>Cadastre-se na nossa newsletter</h3>
-        <p>Receba no seu e-mail novidades e as melhores promoções.</p>
-        <div class="input-wrapper">
-          <input type="text" placeholder="seu e-mail" />
-          <button>Cadastrar</button>
-        </div>
-      </div>
-
-      <nav class="menu">
-        <ul>
-          <li class="categoria-principal">
-            <a href="/categorias/area"> Área Interna </a>
-          </li>
-          <li>
-            <a href="/categorias/mesas"> Mesas </a>
-          </li>
-          <li>
-            <a href="/categorias/cadeiras"> Cadeiras </a>
-          </li>
-          <li>
-            <a href="/categorias/sofas"> Sofás </a>
-          </li>
-          <li>
-            <a href="/categorias/escritório"> Escritório </a>
-          </li>
-        </ul>
-
-        <ul>
-          <li class="categoria-principal">
-            <a href="/categorias/externa"> Área Externa </a>
-          </li>
-          <li>
-            <a href="/categorias/mesas"> Mesas </a>
-          </li>
-          <li>
-            <a href="/categorias/cadeiras"> Cadeiras </a>
-          </li>
-          <li>
-            <a href="/categorias/sofas"> Sofás </a>
-          </li>
-          <li>
-            <a href="/categorias/balancos"> Balanços </a>
-          </li>
-        </ul>
+          <ul>
+            <li class="categoria-principal">
+              <a href="/categorias/externa"> Área Externa </a>
+            </li>
+            <li>
+              <a href="/categorias/mesas"> Mesas </a>
+            </li>
+            <li>
+              <a href="/categorias/cadeiras"> Cadeiras </a>
+            </li>
+            <li>
+              <a href="/categorias/sofas"> Sofás </a>
+            </li>
+            <li>
+              <a href="/categorias/balancos"> Balanços </a>
+            </li>
+          </ul>
 
           <ul>
             <li class="categoria-principal">Sobre</li>
@@ -235,11 +284,12 @@
       </div>
     </footer>
 
-  <script src="/scripts/cadastro.js"></script>
+    <script src="/scripts/cadastro.js"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
-  </script>
-</body>
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
