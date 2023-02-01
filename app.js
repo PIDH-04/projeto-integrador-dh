@@ -5,7 +5,7 @@ const app = express();
 
 // Define a pasta public como pasta de arquivos estáticos
 app.use(express.static(path.join(__dirname, "public")));
-
+app.set('view engine', 'ejs');
 
 // Definir rotas
 app.get("/painelUsuario", (req, res) => {
