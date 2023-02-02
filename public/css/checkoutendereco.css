@@ -1,6 +1,10 @@
 main {
   /* margin-top: 0px; */
+}
+
+div.flex-container {
   margin-bottom: 120px;
+  margin-top: 50px;
   display: flex;
   justify-content: space-between;
 }
@@ -14,8 +18,11 @@ main .enderecos-container button {
 }
 
 main .carrinho-container {
-  margin-top: 100px;
-  width: 38%;
+  width: 42%;
+}
+
+main .carrinho-container h3 {
+  margin: 0 0 20px;
 }
 
 main .master-section {
@@ -24,13 +31,13 @@ main .master-section {
   width: 100%;
 }
 
-main .enderecos-container h1 {
+main h1 {
   font-size: 36px;
   font-family: var(--font-paragrafo);
   margin-bottom: 15px;
 }
 
-main .enderecos-container a {
+main a {
   font-size: 1rem;
   color: var(--cor-texto-secundaria);
   text-decoration: none;
@@ -38,7 +45,7 @@ main .enderecos-container a {
   margin-bottom: 30px;
 }
 
-main .enderecos-container a:hover {
+main a:hover {
   opacity: 0.8;
 }
 
@@ -52,8 +59,12 @@ main .master-section-novo {
 }
 
 main.checkout-endereco-container h3 {
-  margin: 60px 0 20px;
+  margin: 0 0 20px;
   font-size: 22px;
+}
+
+main .carrinho-container h3 {
+  margin: 0 0 20px;
 }
 
 main .master-section-novo > form label {
@@ -136,15 +147,15 @@ main .carrinho-container .resumo-compra div:last-child {
   }
 }
 
-@media (max-width: 750px) {
-  main {
+@media (max-width: 880px) {
+  div.flex-container {
     flex-direction: column;
   }
 
-  main .enderecos-container {
+  div.flex-container .enderecos-container {
     width: 100%;
   }
-  main .carrinho-container {
+  div.flex-container .carrinho-container {
     width: 100%;
     margin-top: 50px;
   }
@@ -158,13 +169,13 @@ footer nav li a {
   color: var(--cor-texto-primaria);
 }
 
-main .carrinho-container .resumo-compra div:last-child{
-    border-top: 1px solid var(--cor-texto-secundaria);
-    padding-top: 20px;
-    font-weight: bold;
+main .carrinho-container .resumo-compra div:last-child {
+  border-top: 1px solid var(--cor-texto-secundaria);
+  padding-top: 20px;
+  font-weight: bold;
 }
 
-footer{
+footer {
   background: var(--cor-secundaria);
 }
 

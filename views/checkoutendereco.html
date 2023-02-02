@@ -92,10 +92,11 @@
       </div>
     </header>
     <main class="checkout-endereco-container">
-      <section class="enderecos-container">
-        <h1>Checkout - Endereço</h1>
-        <a href="/carrinho">Voltar para carrinho</a>
-        <!-- <section class="master-section">
+      <h1>Checkout - Endereço</h1>
+      <a href="/carrinho">Voltar para carrinho</a>
+      <div class="flex-container">
+        <section class="enderecos-container">
+          <!-- <section class="master-section">
           <h3>Selecione um endereço</h3>
           <ul class="erros" id="erro-selecione-endereco"></ul>
           <form action="" id="form-select-endereco" method="post">
@@ -118,173 +119,171 @@
             </button>
           </form>
         </section> -->
-
-        <section class="master-section-novo">
-          <h3>Adicione seu endereço</h3>
-          <ul class="erros" id="erros-novo-endereco"></ul>
-          <form action="" method="post" id="form-novo-endereco">
-            <!-- <div>
-              <label for="nome">Nome:</label>
-              <input
-                type="text"
-                id="nome"
-                name="nome"
-                placeholder="Endereço casa"
-              />
-            </div> -->
-            <div>
-              <label for="cep">CEP:</label>
-              <input
-                type="text"
-                id="cep"
-                name="cep"
-                placeholder="CEP"
-                maxlength="9"
-                required
-              />
-            </div>
-            <div>
-              <label for="endereco">Endereço:</label>
-              <input
-                type="text"
-                id="endereco"
-                name="endereco"
-                placeholder="Endereço"
-                required
-              />
-            </div>
-            <div>
-              <label for="numero">Número: </label>
-              <input
-                type="text"
-                id="numero"
-                name="numero"
-                placeholder="Número"
-                required
-              />
-            </div>
-            <div>
-              <label for="complemento">Complemento:</label>
-              <input
-                type="text"
-                placeholder="Apartamento, suíte, etc (opcional)"
-                id="complemento"
-                name="complemento"
-              />
-            </div>
-            <div>
-              <label for="bairro">Bairro:</label>
-              <input
-                type="text"
-                placeholder="Seu bairro"
-                id="bairro"
-                name="bairro"
-                required
-              />
-            </div>
-            <div class="CidadeEstado">
-              <div>
-                <label for="cidade">Cidade:</label>
+          <section class="master-section-novo">
+            <h3>Adicione seu endereço</h3>
+            <ul class="erros" id="erros-novo-endereco"></ul>
+            <form action="" method="post" id="form-novo-endereco">
+              <!-- <div>
+                <label for="nome">Nome:</label>
                 <input
                   type="text"
-                  name="cidade"
-                  id="cidade"
-                  placeholder="Cidade"
+                  id="nome"
+                  name="nome"
+                  placeholder="Endereço casa"
+                />
+              </div> -->
+              <div>
+                <label for="cep">CEP:</label>
+                <input
+                  type="text"
+                  id="cep"
+                  name="cep"
+                  placeholder="CEP"
+                  maxlength="9"
                   required
                 />
               </div>
               <div>
-                <label for="estado">Estado:</label>
+                <label for="endereco">Endereço:</label>
                 <input
                   type="text"
-                  name="estado"
-                  id="estado"
-                  placeholder="Estado"
+                  id="endereco"
+                  name="endereco"
+                  placeholder="Endereço"
                   required
-                  maxlength="2"
                 />
               </div>
-            </div>
-            <button type="submit" class="botao-secundario">
-              Salvar e escolher forma de pagamento
-            </button>
-          </form>
+              <div>
+                <label for="numero">Número: </label>
+                <input
+                  type="text"
+                  id="numero"
+                  name="numero"
+                  placeholder="Número"
+                  required
+                />
+              </div>
+              <div>
+                <label for="complemento">Complemento:</label>
+                <input
+                  type="text"
+                  placeholder="Apartamento, suíte, etc (opcional)"
+                  id="complemento"
+                  name="complemento"
+                />
+              </div>
+              <div>
+                <label for="bairro">Bairro:</label>
+                <input
+                  type="text"
+                  placeholder="Seu bairro"
+                  id="bairro"
+                  name="bairro"
+                  required
+                />
+              </div>
+              <div class="CidadeEstado">
+                <div>
+                  <label for="cidade">Cidade:</label>
+                  <input
+                    type="text"
+                    name="cidade"
+                    id="cidade"
+                    placeholder="Cidade"
+                    required
+                  />
+                </div>
+                <div>
+                  <label for="estado">Estado:</label>
+                  <input
+                    type="text"
+                    name="estado"
+                    id="estado"
+                    placeholder="Estado"
+                    required
+                    maxlength="2"
+                  />
+                </div>
+              </div>
+              <button type="submit" class="botao-secundario">
+                Salvar e escolher forma de pagamento
+              </button>
+            </form>
+          </section>
         </section>
-      </section>
-      <section class="carrinho-container">
-        <h3>Resumo da compra</h3>
-        <div class="resumo-compra">
-          <form action="">
-            <label>
-              Adicione seu código de desconto
-              <input type="text" placeholder="código de desconto" />
-            </label>
-          </form>
-          <div class="resumo">
-            <p>Subtotal</p>
-            <p class="valor">R$ 2.400,00</p>
+        <section class="carrinho-container container-dropshadow">
+          <h3>Resumo da compra</h3>
+          <div class="resumo-compra">
+            <div class="resumo">
+              <p>Subtotal</p>
+              <p class="valor">R$ 2.400,00</p>
+            </div>
+            <div class="resumo">
+              <p>Frete</p>
+              <p class="valor">Calculado na próxima página</p>
+            </div>
+            <div class="resumo">
+              <p>Total</p>
+              <p class="valor">R$ 2.400,00</p>
+            </div>
           </div>
-          <div class="resumo">
-            <p>Frete</p>
-            <p class="valor">Calculado na próxima página</p>
-          </div>
-          <div class="resumo">
-            <p>Total</p>
-            <p class="valor">R$ 2.400,00</p>
-          </div>
-        </div>
 
-        <h3>Seu carrinho</h3>
-        <div class="card-produto-carrinho">
-          <div class="img-container">
-            <a href="/produto">
-              <img
-                src="/img/mesa-monaco.png"
-                alt="Foto Mesa de jantar Mônaco"
-              />
-            </a>
+          <h3>Seu carrinho</h3>
+          <div class="card-produto-carrinho">
+            <div class="img-container">
+              <a href="/produto">
+                <img
+                  src="/img/mesa-monaco.png"
+                  alt="Foto Mesa de jantar Mônaco"
+                />
+              </a>
+            </div>
+            <div class="produto-info">
+              <a href="/produto">
+                <h5>Mesa de Jantar Mônaco</h5>
+              </a>
+              <p class="variacao">Tampo madeira</p>
+              <p class="quantidade">Quantidade: 1</p>
+              <p class="preco">R$ 800,00</p>
+            </div>
           </div>
-          <div class="produto-info">
-            <a href="/produto">
-              <h5>Mesa de Jantar Mônaco</h5>
-            </a>
-            <p class="variacao">Tampo madeira</p>
-            <p class="quantidade">Quantidade: 1</p>
-            <p class="preco">R$ 800,00</p>
+          <div class="card-produto-carrinho">
+            <div class="img-container">
+              <a href="/produto">
+                <img src="/img/mesa-dora.png" alt="Foto Mesa de jantar Dora" />
+              </a>
+            </div>
+            <div class="produto-info">
+              <a href="/produto">
+                <h5>Mesa de Jantar Dora</h5>
+              </a>
+              <p class="variacao">Tampo madeira</p>
+              <p class="quantidade">Quantidade: 1</p>
+              <p class="preco">R$ 800,00</p>
+            </div>
           </div>
-        </div>
-        <div class="card-produto-carrinho">
-          <div class="img-container">
-            <a href="/produto">
-              <img src="/img/mesa-dora.png" alt="Foto Mesa de jantar Dora" />
-            </a>
+          <div class="card-produto-carrinho">
+            <div class="img-container">
+              <a href="/produto">
+                <img
+                  src="/img/mesa-plana.png"
+                  alt="Foto Mesa de jantar Plana"
+                />
+              </a>
+            </div>
+            <div class="produto-info">
+              <a href="/produto">
+                <h5>Mesa de Jantar Plana</h5>
+              </a>
+              <p class="variacao">Tampo madeira</p>
+              <p class="quantidade">Quantidade: 1</p>
+              <p class="preco">R$ 800,00</p>
+            </div>
           </div>
-          <div class="produto-info">
-            <a href="/produto">
-              <h5>Mesa de Jantar Dora</h5>
-            </a>
-            <p class="variacao">Tampo madeira</p>
-            <p class="quantidade">Quantidade: 1</p>
-            <p class="preco">R$ 800,00</p>
-          </div>
-        </div>
-        <div class="card-produto-carrinho">
-          <div class="img-container">
-            <a href="/produto">
-              <img src="/img/mesa-plana.png" alt="Foto Mesa de jantar Plana" />
-            </a>
-          </div>
-          <div class="produto-info">
-            <a href="/produto">
-              <h5>Mesa de Jantar Plana</h5>
-            </a>
-            <p class="variacao">Tampo madeira</p>
-            <p class="quantidade">Quantidade: 1</p>
-            <p class="preco">R$ 800,00</p>
-          </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </main>
+
     <footer>
       <div class="conteudo">
         <div class="newsletter">
