@@ -1,6 +1,7 @@
 const path = require("path");
 const express = require("express");
 const { dirname } = require("path");
+const ProdutosControllers = require("./controllers/ProdutosController");
 const app = express();
 
 // Define a pasta public como pasta de arquivos estáticos
@@ -39,9 +40,7 @@ app.get("/master", (req, res) => {
   return res.sendFile(__dirname + "/views/master.html");
 });
 
-app.get("/produto", (req, res) => {
-  return res.sendFile(__dirname + "/views/produto.html");
-});
+app.get("/produto", ProdutosControllers.show);
 
 app.get("/carrinho", (req, res) => {
   return res.sendFile(__dirname + "/views/carrinho.html");
