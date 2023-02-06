@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const ProdutosController = require("./controllers/ProdutosController");
+const UsuarioController = require("./controllers/UsuarioController");
 
 router.get("/painelUsuario", (req, res) => {
     return res.sendFile(__dirname + "/views/painelUsuario.html")
@@ -55,8 +56,6 @@ router.get("/checkoutDeEndereco", (req, res) => {
     return res.sendFile(__dirname + "/views/checkoutEndereco.html");
 });
 
-router.get('/cadastro', (req, res) => {
-    return res.sendFile(__dirname + '/views/cadastro.html')
-})
+router.get("/cadastro", UsuarioController.showCadastro);
 
 module.exports = router;
