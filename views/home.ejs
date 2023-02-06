@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("partials/head.ejs") %>
+    
+    <title>E-móvel</title>
+
+  <body><link rel="stylesheet" href="/css/home.css" />
+    <%- include("partials/header.ejs") %>
+
+    <div class="bodyHome">
+      <section class="bannerSlide">
+        <div class="slides active">
+          <div class="slide">
+            <h1 class="banner-text">PROMOÇÃO CLIENTES E-MÓVEL</h1>
+            <a class="botao-secundario" href="/categorias/mesas">Veja mais</a>
+          </div>
+        </div>
+        <div class="slides">
+          <div class="slide">
+            <h1 class="banner-text">ARMÁRIOS DE COZINHA SOB MEDIDA</h1>
+            <a class="botao-secundario" href="/categorias/mesas">Veja mais</a>
+          </div>
+        </div>
+        <div class="slides">
+          <div class="slide">
+            <h1 class="banner-text">ÁREA EXCLUSIVA PARA ARQUITETOS</h1>
+            <a class="botao-secundario" href="/categorias/mesas">Veja mais</a>
+          </div>
+        </div>
+        <div class="btn" id="prev"></div>
+        <div class="btn" id="next"></div>
+      </section>
+
+      <main>
+        <section class="vitrine">
+          <h1>Produtos em destaque</h1>
+          <div class="products-container">
+            <div class="product-card">
+              <a class="botao-primario" href="/produto">
+                <img
+                  src="/img/mesa-monaco.png"
+                  alt="Foto Mesa de jantar Mônaco"
+                />
+                <div class="card">
+                  <h2>Mesa de Jantar Mônaco</h2>
+                  <p>R$ 800,00</p>
+                  <div class="ver" href="/produto">Veja mais</div>
+                </div>
+              </a>
+            </div>
+            <div class="product-card">
+              <a class="botao-primario" href="/produto">
+                <img src="/img/cadeira.jpg" alt="Foto Cadeira" />
+                <div class="card">
+                  <h2>Cadeira Preta Saarinen</h2>
+                  <p>R$ 800,00</p>
+                  <div class="ver" href="/produto">Veja mais</div>
+                </div>
+              </a>
+            </div>
+            <div class="product-card">
+              <a class="botao-primario" href="/produto">
+                <img src="/img/sofa.jpg" alt="Foto Sofa Descanso Pleno" />
+                <div class="card">
+                  <h2>Sofá Descanso Pleno</h2>
+                  <p>R$ 800,00</p>
+                  <div class="ver" href="/produto">Veja mais</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <section class="categorias">
+        <h1>Categorias</h1>
+        <p>
+          Escolha a categoria de móveis que deseja visualizar ou acesse todos os
+          produtos disponíveis no site no botão "todos os produtos" no final da
+          sessão
+        </p>
+        <div class="break"></div>
+        <div class="icone-container">
+          <a class="botao-icone" href="/categorias/mesas">
+            <div class="icone">
+              <img src="/img/mesa-icone.svg" alt="Ícone mesa internas" />
+            </div>
+            <h2>Mesas Internas</h2>
+          </a>
+          <a class="botao-icone" href="/categorias/mesas">
+            <div class="icone">
+              <img src="/img/mesa-icone.svg" alt="Ícone cadeiras internas" />
+            </div>
+            <h2>Cadeiras Internas</h2>
+          </a>
+          <a class="botao-icone" href="/categorias/mesas">
+            <div class="icone">
+              <img src="/img/mesa-icone.svg" alt="Ícone Sofás Internos" />
+            </div>
+            <h2>Sofás Internos</h2>
+          </a>
+          <a class="botao-icone" href="/categorias/mesas">
+            <div class="icone">
+              <img src="/img/mesa-icone.svg" alt="Ícone Escritório" />
+            </div>
+            <h2>Escritório</h2>
+          </a>
+          <a class="botao-icone" href="/categorias/mesas">
+            <div class="icone">
+              <img src="/img/mesa-icone.svg" alt="Ícone mesa externas" />
+            </div>
+            <h2>Mesas Externas</h2>
+          </a>
+          <a class="botao-icone" href="/categorias/mesas">
+            <div class="icone">
+              <img src="/img/mesa-icone.svg" alt="Ícone cadeiras externas" />
+            </div>
+            <h2>Cadeiras Externas</h2>
+          </a>
+          <a class="botao-icone" href="/categorias/mesas">
+            <div class="icone">
+              <img src="/img/mesa-icone.svg" alt="Ícone Sofás Externos" />
+            </div>
+            <h2>Sofás Externos</h2>
+          </a>
+          <a class="botao-icone" href="/categorias/mesas">
+            <div class="icone">
+              <img src="/img/mesa-icone.svg" alt="Ícone Balanços" />
+            </div>
+            <h2>Balanços</h2>
+          </a>
+        </div>
+        <div class="break"></div>
+        <div>
+          <a class="botao-secundario" href="/categorias/mesas"
+            >Todos os produtos</a
+          >
+        </div>
+      </section>
+    </div>
+
+    <%- include("partials/footer.ejs") %>
+    <script src="/scripts/home.js"></script>
+  </body>
+</html>
