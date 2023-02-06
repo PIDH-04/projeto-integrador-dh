@@ -1,71 +1,14 @@
 const path = require("path");
 const express = require("express");
-const { dirname } = require("path");
-const ProdutosControllers = require("./controllers/ProdutosController");
+
 const app = express();
+const router = require('./router');
 
 // Define a pasta public como pasta de arquivos estáticos
 app.use(express.static(path.join(__dirname, "public")));
 app.set('view engine', 'ejs');
 
-// Definir rotas
-app.get("/painelUsuario", (req, res) => {
-  return res.sendFile(__dirname + "/views/painelUsuario.html")
-})
-// Definir rotas
-app.get("/statusDePedidos", (req, res) => {
-  return res.sendFile(__dirname + "/views/statusDePedidos.html")
-})
-
-// Definir rotas
-app.get('/login', (req , res)=>{
-return res.sendFile(__dirname + '/views/login.html' )
-})
-
-//});
-
-app.get("/", (req, res) => {
-  return res.sendFile(__dirname + "/views/home.html");
-});
-
-app.get("/header", (req, res) => {
-  return res.sendFile(__dirname + "/views/header.html");
-});
-
-app.get("/categorias/:categoria", (req, res) => {
-  return res.sendFile(__dirname + "/views/listagemProdutos.html");
-});
-
-app.get("/master", (req, res) => {
-  return res.sendFile(__dirname + "/views/master.html");
-});
-
-app.get("/produto", ProdutosControllers.show);
-
-app.get("/carrinho", (req, res) => {
-  return res.sendFile(__dirname + "/views/carrinho.html");
-});
-
-app.get("/painelUsuario", (req, res) => {
-  return res.sendFile(__dirname + "/views/painelUsuario.html")
-});
-
-app.get('/finalizacao-compra', (req, res) => {
-  return res.sendFile(__dirname + '/views/finalizacaoCompra.html')
-})
-
-app.get('/checkoutpagamento', (req , res)=>{
-  return res.sendFile(__dirname + '/views/checkoutPagamento.html' )
-})
-
-app.get("/checkoutDeEndereco", (req, res) => {
-  return res.sendFile(__dirname + "/views/checkoutEndereco.html");
-});
-
-app.get('/cadastro', (req, res) => {
-  return res.sendFile(__dirname + '/views/cadastro.html')
-})
-
+app.use(router);
 
 // Servidor rodando
 app.listen(3000, () => {
