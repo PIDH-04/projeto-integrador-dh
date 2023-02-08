@@ -1,84 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <%- include("partials/head", {css: ["produto.css"], titulo: "Mesa de Jantar Mônaco | E-móvel"}) %>
+
   <body>
-    <header>
-      <div class="cabeçalho">
-        <ul id="elementos-cabeçalho">
-        <li id="note">BRL</li>
-        <li id="note">FRETE GRÁTIS PARA TODO BRASIL</li>
-        <li id="note"><a href="">F.A.Q.</a></li>
-      </ul>
-        <div class="logoAmarelo" src="" href="/">E-móvel
-    </div>
-    <button id="menu-toggle">&#9776;</button>
-  <nav id="menuMobile">
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li>
-        <a id="areaInterna">Área Interna</a>
-        <ul id="categoriasInternas">
-          <li><a href="/categorias/mesa">Cadeiras</a></li>
-                <li><a href="/categorias/mesa">Mesa de Jantar</a></li>
-                <li><a href="/categorias/mesa">Mesa de centro</a></li>
-                <li><a href="/categorias/mesa">Sofás</a></li>
-                <li><a href="/categorias/mesa">Cômodas</a></li>
-                <li><a href="/categorias/mesa">Mesa Laterais</a></li>
-                <li><a href="/categorias/mesa">Escritório</a></li>
-                <li><a href="/categorias/mesa">Camas</a></li>
-        </ul>
-      </li>
-      <li>
-        <a id="areaExterna">Área Externa</a>
-        <ul id="categoriasExternas">
-          <li><a href="/categorias/mesa">Cadeiras</a></li>
-          <li><a href="/categorias/mesa">Mesa de Jantar</a></li>
-          <li><a href="/categorias/mesa">Mesa de centro</a></li>
-          <li><a href="/categorias/mesa">Sofás</a></li>
-          <li><a href="/categorias/mesa">Cômodas</a></li>
-          <li><a href="/categorias/mesa">Mesa Laterais</a></li>
-        </ul>
-      </li>
-      <li><a href="/categorias/mesa">Área do arquiteto</a></li>
-      <li><a href="/categorias/mesa">Contato</a></li>
-    </ul>
-  </nav>
-  </div>
-  <nav id="branco">
-    <div id="elementos-branco">
-    <div class="logoBranco" src="" href="/">E-móvel
-    </div>
-    <a id="areaInternaBranco" href="/categorias/mesa">Área Interna</a>
-     <ul id="categoriasInternasBranco">
-      <li><a href="/categorias/mesa">Cadeiras</a></li>
-            <li><a href="/categorias/mesa">Mesa de Jantar</a></li>
-            <li><a href="/categorias/mesa">Mesa de centro</a></li>
-            <li><a href="/categorias/mesa">Sofás</a></li>
-            <li><a href="/categorias/mesa">Cômodas</a></li>
-            <li><a href="/categorias/mesa">Mesa Laterais</a></li>
-            <li><a href="/categorias/mesa">Escritório</a></li>
-            <li><a href="/categorias/mesa">Camas</a></li>
-    </ul>
-    <a id="areaExternaBranco" href="/categorias/mesa">Área Externa</a>
-    <ul id="categoriasExternasBranco">
-      <li><a href="/categorias/mesa">Cadeiras</a></li>
-      <li><a href="/categorias/mesa">Mesa de Jantar</a></li>
-      <li><a href="/categorias/mesa">Mesa de centro</a></li>
-      <li><a href="/categorias/mesa">Sofás</a></li>
-      <li><a href="/categorias/mesa">Cômodas</a></li>
-      <li><a href="/categorias/mesa">Mesa Laterais</a></li>
-    </ul>
-    <li class="sobre"><a href="/categorias/mesa">Sobre</a></li>
-            <img class="lupa" src="/img/lupa.png" alt="" />
-            <input class="busca" type="text" placeholder="buscar...." />
-            <a href="/carrinho">
-              <img class="sacola" src="/img/sacola-gray.svg" alt="" />
-              <span id="span">3</span>
-            </a>
-            <li class="painelusuario"><a href="/painelUsuario">Minha conta</a></li>
-  </nav>
-  </div>
-    </header>
+    <%- include("partials/header") %>
+
     <div class="modal">
       <div>
         <span class="fecha-modal">x</span>
@@ -97,9 +23,9 @@
       <section class="img-container">
         <div class="img-vitrine-container">
           <img
-          src="/img/mesa-monaco.png"
-          class="img-vitrine"
-          alt="Mesa de Jantar Mônaco"
+            src="/img/mesa-monaco.png"
+            class="img-vitrine"
+            alt="Mesa de Jantar Mônaco"
           />
         </div>
         <div class="botoes-container">
@@ -112,45 +38,45 @@
         </div>
         <div class="produto-images">
           <img
-          src="/img/mesa-monaco.png"
-          class="img-produto"
-          alt="Mesa de Jantar Mônaco"
+            src="/img/mesa-monaco.png"
+            class="img-produto"
+            alt="Mesa de Jantar Mônaco"
           />
           <img
-          src="/img/mesa-plana.png"
-          class="img-produto"
-          alt="Mesa de Jantar Mônaco"
+            src="/img/mesa-plana.png"
+            class="img-produto"
+            alt="Mesa de Jantar Mônaco"
           />
           <img
-          src="/img/mesa-dora.png"
-          class="img-produto"
-          alt="Mesa de Jantar Mônaco"
+            src="/img/mesa-dora.png"
+            class="img-produto"
+            alt="Mesa de Jantar Mônaco"
           />
         </div>
       </section>
-      
+
       <section class="info-container">
         <h1>Mesa de Jantar Mônaco</h1>
         <h3>R$ 800,00</h3>
-        
+
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aperiam
           minima necessitatibus, quis blanditiis exercitationem veniam earum
           error quam cupiditate iste vitae accusamus voluptatem corporis ullam?
           Eos sit nisi vero.
         </p>
-        
+
         <p class="medidas">Medidas: 90 x 90 x 90cm</p>
-        
+
         <form>
           <div class="seletor-quantidade">
             <span id="btn-subtrai">-</span>
             <input
-            id="quantidade"
-            type="number"
-            inputmode="numeric"
-            value="1"
-            min="1"
+              id="quantidade"
+              type="number"
+              inputmode="numeric"
+              value="1"
+              min="1"
             />
             <span id="btn-adiciona">+</span>
           </div>
@@ -163,15 +89,14 @@
             </div>
           </div>
         </form>
-        
+
         <a href="/carrinho" class="comprar botao-secundario"
-        >Adicionar ao carrinho</a
+          >Adicionar ao carrinho</a
         >
       </section>
     </main>
-    
+
     <%- include("partials/footer") %>
     <script src="/scripts/produto.js"></script>
   </body>
-  </html>
-  
+</html>
