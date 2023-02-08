@@ -1,11 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
-  <%- include("partials/head.ejs", {css: ['geral.css', 'header.css', 'home.css', 'footer.css']}) %>
-    
-    <title>E-móvel</title>
-
+  <html lang="en">
+  <%- include("partials/head", {css: ["home.css"], titulo: "E-móvel"}) %>
   <body>
-    <%- include("partials/header.ejs") %>
+    <%- include("partials/header") %>
     <div class="bodyHome">
       <section class="bannerSlide">
         <div class="slides active">
