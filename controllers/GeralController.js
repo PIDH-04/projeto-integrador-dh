@@ -4,6 +4,9 @@ const GeralController = {
       },
       master: (req, res) => {
         return res.render("master")
+      },
+      header: (req, res) => {
+        return res.render("header")
       }
 };
 

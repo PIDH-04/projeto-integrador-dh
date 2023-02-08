@@ -17,6 +17,8 @@ router.get('/login', (req, res) => {
 
 router.get("/", GeralController.home);
 
+router.get("/header", GeralController.header);
+
 router.get("/categorias/:categoria", (req, res) => {
     return res.sendFile(__dirname + "/views/listagemProdutos.html");
 });
