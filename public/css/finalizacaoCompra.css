@@ -52,9 +52,19 @@ main.finalizacao-pg-container {
     flex-direction: column;
     margin-top: 60px;
     gap: 20px;
+    padding: 50px 0;
   }
 
   .finalizacao-pg-container .botoes-container a {
     width: 100%;
   }
+}
+
+footer {
+  background: var(--cor-secundaria);
+}
+
+footer nav li a {
+  text-decoration: none;
+  color: var(--cor-texto-primaria);
 }

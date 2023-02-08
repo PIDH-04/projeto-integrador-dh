@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Meu carrinho | E-móvel</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Status de Pedidos | E-móveis</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,8 +19,10 @@
     <link rel="stylesheet" href="/css/estilos.css" />
     <link rel="stylesheet" href="/css/header.css" />
     <link rel="stylesheet" href="/css/footer.css" />
-    <link rel="stylesheet" href="/css/carrinho.css" />
+    <link rel="stylesheet" href="/css/painelUsuario.css" />
+    <link rel="stylesheet" href="/css/statusDePedido.css" />
   </head>
+
   <body>
     <header>
       <div class="superior">
@@ -87,115 +94,26 @@
         </nav>
       </div>
     </header>
-
-    <main class="carrinho-container">
-      <div class="produtos-container">
-        <h1>Seu carrinho</h1>
-        <p>Não se decidiu? <a href="/">Continue comprando</a></p>
-
-        <div class="produtos">
-          <div class="produto">
-            <div class="img-container">
-              <a href="/produto">
-                <img
-                  src="/img/mesa-monaco.png"
-                  alt="Foto Mesa de jantar Mônaco"
-                />
-              </a>
-            </div>
-            <div class="produto-info">
-              <a href="/produto">
-                <h2>Mesa de Jantar Mônaco</h2>
-              </a>
-              <p class="variacao">Tampo madeira</p>
-              <p class="quantidade">Quantidade: 1</p>
-              <p class="preco">R$ 800,00</p>
-            </div>
-            <span>Remover</span>
-          </div>
-
-          <div class="produto">
-            <div class="img-container">
-              <a href="/produto">
-                <img src="/img/mesa-dora.png" alt="Foto Mesa de jantar Dora" />
-              </a>
-            </div>
-            <div class="produto-info">
-              <a href="/produto">
-                <h2>Mesa de Jantar Dora</h2>
-              </a>
-              <p class="variacao">Tampo madeira</p>
-              <p class="quantidade">Quantidade: 1</p>
-              <p class="preco">R$ 800,00</p>
-            </div>
-            <span>Remover</span>
-          </div>
-
-          <div class="produto">
-            <div class="img-container">
-              <a href="/produto">
-                <img
-                  src="/img/mesa-plana.png"
-                  alt="Foto Mesa de jantar Plana"
-                />
-              </a>
-            </div>
-            <div class="produto-info">
-              <a href="/produto">
-                <h2>Mesa de Jantar Plana</h2>
-              </a>
-              <p class="variacao">Tampo madeira</p>
-              <p class="quantidade">Quantidade: 1</p>
-              <p class="preco">R$ 800,00</p>
-            </div>
-            <span>Remover</span>
-          </div>
+    <main>
+      <body>
+        <div id="div1">
+          <h1>Status de Pedidos</h1>
+          Filtrar por:
+          <select name="ordenacao">
+            <option value="">Entregues...</option>
+            <option value="a-caminho">Em andamento...</option>
+            <option value="compras">Todos...</option>
+          </select>
+          <p></p>
+          <p>Entregue dia 28 de dezembro 2022.</p>
         </div>
-
-        <div class="outras-infos">
-          <h3>Outras informações</h3>
-          <section>
-            <h4>Política de devolução</h4>
-            <p>Cancelamento da compra em até 4h depois da efetivação.</p>
-            <p>
-              Para devoluções depois de entregue, entre em contato com o nosso
-              setor de vendas
-            </p>
-          </section>
+        <div id="div2">
+          <img class="imagem" src="/img/mesa-monaco.png" alt="" />
+          <p>Mesa de Jantar Mônaco Tampo madeira.</p>
+          <p>Quantidade: 1</p>
         </div>
-      </div>
-
-      <div class="resumo container-dropshadow">
-        <h3>Resumo do pedido</h3>
-
-        <form action="">
-          <label>
-            Adicione seu código de desconto
-            <input type="text" placeholder="código de desconto" />
-          </label>
-        </form>
-
-        <div class="valores">
-          <div class="subtotal">
-            <h5>Subtotal</h5>
-            <p>R$ 2.400,00</p>
-          </div>
-
-          <div class="frete">
-            <h5>Frete</h5>
-            <p>Calculado após endereço selecionado</p>
-          </div>
-
-          <div class="total">
-            <h5>Total</h5>
-            <p>R$ 2.400,00</p>
-          </div>
-
-          <a href="/cadastro" class="botao-secundario">Continuar</a>
-        </div>
-      </div>
+      </body>
     </main>
-
     <footer>
       <div class="conteudo">
         <div class="newsletter">
@@ -206,7 +124,6 @@
             <button>Cadastrar</button>
           </div>
         </div>
-
         <nav class="menu">
           <ul>
             <li class="categoria-principal">
@@ -256,10 +173,8 @@
         </nav>
       </div>
       <div class="copyright">
-        <p>E-móvel 2022-2023</p>
+        <p>E-móvel 2022-2022</p>
       </div>
     </footer>
-
-    <script src="/scripts/scripts.js"></script>
   </body>
 </html>

@@ -105,17 +105,17 @@ ul.inferior2 a {
 
 
 .ecommerce {
-    font-style: var(--font-paragrafo);
+  font-style: var(--font-paragrafo);
 }
 
 .lupa {
-    width: 30px;
-    height: 30px;
+  width: 30px;
+  height: 30px;
 }
 
 .sacola {
-    width: 20px;
-    height: 20px;
+  width: 20px;
+  height: 20px;
 }
 
 .inferior2 .busca {

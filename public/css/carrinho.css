@@ -128,8 +128,9 @@
 }
 
 .carrinho-container .resumo {
-  width: 38%;
+  width: 42%;
   margin-top: 50px;
+
 }
 
 .carrinho-container .resumo label {
@@ -199,4 +200,13 @@
   .carrinho-container .produto p {
     font-size: 0.8rem;
   }
+}
+
+footer{
+  background: var(--cor-secundaria);
+}
+
+footer nav li a {
+  text-decoration: none;
+  color: var(--cor-texto-primaria);
 }

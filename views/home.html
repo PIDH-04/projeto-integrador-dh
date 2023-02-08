@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Public+Sans:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/estilos.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/home.css" />
+    <title>E-móvel</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="superior">
+        <nav class="superior2">
+          <ul class="superior3">
+            <li id="brl">BRL</li>
+            <li id="frete">FRETE GRÁTIS PARA TODO BRASIL</li>
+            <li id="faq"><a href="">F.A.Q.</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="menu-mobile">
+        <div class="mobile-logo">
+          <a href="/">
+            <img src="/img/logo.svg" />
+          </a>
+        </div>
+        <input type="checkbox" id="bt_menu" />
+        <label for="bt_menu">&#9776;</label>
+      </div>
+      <div class="inferior">
+        <nav>
+          <ul class="inferior2">
+            <li class="logo-wrapper">
+              <a href="/">
+                <img src="/img/logo.svg" />
+              </a>
+            </li>
+            <li class="interna">
+              <a href="/categorias/mesa">Área Interna</a>
+              <ul class="parteInterna">
+                <li><a href="/categorias/mesa">Cadeiras</a></li>
+                <li><a href="/categorias/mesa">Mesa de Jantar</a></li>
+                <li><a href="/categorias/mesa">Mesa de centro</a></li>
+                <li><a href="/categorias/mesa">Sofás</a></li>
+                <li><a href="/categorias/mesa">Cômodas</a></li>
+                <li><a href="/categorias/mesa">Mesa Laterais</a></li>
+                <li><a href="/categorias/mesa">Escritório</a></li>
+                <li><a href="/categorias/mesa">Camas</a></li>
+              </ul>
+            </li>
+            <li class="externa">
+              <a href="/categorias/mesa">Área Externa</a>
+              <ul class="parteExterna" id="Externa">
+                <li><a href="/categorias/mesa">Cadeiras</a></li>
+                <li><a href="/categorias/mesa">Mesa de Jantar</a></li>
+                <li><a href="/categorias/mesa">Mesa de centro</a></li>
+                <li><a href="/categorias/mesa">Sofás</a></li>
+                <li><a href="/categorias/mesa">Cômodas</a></li>
+                <li><a href="/categorias/mesa">Mesa Laterais</a></li>
+              </ul>
+            </li>
+            <li class="sobre">
+              <a href="/categorias/mesa">Sobre</a>
+            </li>
+            <img class="lupa" src="/img/lupa.png" alt="" />
+            <input class="busca" type="text" placeholder="buscar...." />
+
+            <li>
+              <a href="/carrinho">
+                <img class="sacola" src="/img/sacola-gray.svg" alt="" />
+                <span id="span">3</span>
+              </a>
+            </li>
+            <li>
+              <a href="/painelUsuario">Minha conta</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="bodyHome">
+      <section class="bannerSlide">
+        <div class="slides active">
+          <div class="slide">
+            <h1 class="banner-text">PROMOÇÃO CLIENTES E-MÓVEL</h1>
+            <a class="botao-secundario" href="/categorias/mesas">Veja mais</a>
+          </div>
+        </div>
+        <div class="slides">
+          <div class="slide">
+            <h1 class="banner-text">ARMÁRIOS DE COZINHA SOB MEDIDA</h1>
+            <a class="botao-secundario" href="/categorias/mesas">Veja mais</a>
+          </div>
+        </div>
+        <div class="slides">
+          <div class="slide">
+            <h1 class="banner-text">ÁREA EXCLUSIVA PARA ARQUITETOS</h1>
+            <a class="botao-secundario" href="/categorias/mesas">Veja mais</a>
+          </div>
+        </div>
+        <div class="btn" id="prev"></div>
+        <div class="btn" id="next"></div>
+      </section>
+
+      <main>
+        <section class="vitrine">
+          <h1>Produtos em destaque</h1>
+          <div class="products-container">
+            <div class="product-card">
+              <a class="botao-primario" href="/produto">
+                <img
+                  src="/img/mesa-monaco.png"
+                  alt="Foto Mesa de jantar Mônaco"
+                />
+                <div class="card">
+                  <h2>Mesa de Jantar Mônaco</h2>
+                  <p>R$ 800,00</p>
+                  <div class="ver" href="/produto">Veja mais</div>
+                </div>
+              </a>
+            </div>
+            <div class="product-card">
+              <a class="botao-primario" href="/produto">
+                <img src="/img/cadeira.jpg" alt="Foto Cadeira" />
+                <div class="card">
+                  <h2>Cadeira Preta Saarinen</h2>
+                  <p>R$ 800,00</p>
+                  <div class="ver" href="/produto">Veja mais</div>
+                </div>
+              </a>
+            </div>
+            <div class="product-card">
+              <a class="botao-primario" href="/produto">
+                <img src="/img/sofa.jpg" alt="Foto Sofa Descanso Pleno" />
+                <div class="card">
+                  <h2>Sofá Descanso Pleno</h2>
+                  <p>R$ 800,00</p>
+                  <div class="ver" href="/produto">Veja mais</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <section class="categorias">
+        <h1>Categorias</h1>
+        <p>
+          Escolha a categoria de móveis que deseja visualizar ou acesse todos os
+          produtos disponíveis no site no botão "todos os produtos" no final da
+          sessão
+        </p>
+        <div class="break"></div>
+        <div class="icone-container">
+          <a class="botao-icone" href="/categorias/mesas">
+            <div class="icone">
+              <img src="/img/mesa-icone.svg" alt="Ícone mesa internas" />
+            </div>
+            <h2>Mesas Internas</h2>
+          </a>
+          <a class="botao-icone" href="/categorias/mesas">
+            <div class="icone">
+              <img src="/img/mesa-icone.svg" alt="Ícone cadeiras internas" />
+            </div>
+            <h2>Cadeiras Internas</h2>
+          </a>
+          <a class="botao-icone" href="/categorias/mesas">
+            <div class="icone">
+              <img src="/img/mesa-icone.svg" alt="Ícone Sofás Internos" />
+            </div>
+            <h2>Sofás Internos</h2>
+          </a>
+          <a class="botao-icone" href="/categorias/mesas">
+            <div class="icone">
+              <img src="/img/mesa-icone.svg" alt="Ícone Escritório" />
+            </div>
+            <h2>Escritório</h2>
+          </a>
+          <a class="botao-icone" href="/categorias/mesas">
+            <div class="icone">
+              <img src="/img/mesa-icone.svg" alt="Ícone mesa externas" />
+            </div>
+            <h2>Mesas Externas</h2>
+          </a>
+          <a class="botao-icone" href="/categorias/mesas">
+            <div class="icone">
+              <img src="/img/mesa-icone.svg" alt="Ícone cadeiras externas" />
+            </div>
+            <h2>Cadeiras Externas</h2>
+          </a>
+          <a class="botao-icone" href="/categorias/mesas">
+            <div class="icone">
+              <img src="/img/mesa-icone.svg" alt="Ícone Sofás Externos" />
+            </div>
+            <h2>Sofás Externos</h2>
+          </a>
+          <a class="botao-icone" href="/categorias/mesas">
+            <div class="icone">
+              <img src="/img/mesa-icone.svg" alt="Ícone Balanços" />
+            </div>
+            <h2>Balanços</h2>
+          </a>
+        </div>
+        <div class="break"></div>
+        <div>
+          <a class="botao-secundario" href="/categorias/mesas"
+            >Todos os produtos</a
+          >
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <div class="conteudo">
+        <div class="newsletter">
+          <h3>Cadastre-se na nossa newsletter</h3>
+          <p>Receba no seu e-mail novidades e as melhores promoções.</p>
+          <div class="input-wrapper">
+            <input type="text" placeholder="seu e-mail" />
+            <button>Cadastrar</button>
+          </div>
+        </div>
+
+        <nav class="menu">
+          <ul>
+            <li class="categoria-principal">
+              <a href="/area-interna"> Área Interna </a>
+            </li>
+            <li>
+              <a href="/area-interna/mesas"> Mesas </a>
+            </li>
+            <li>
+              <a href="/area-interna/cadeiras"> Cadeiras </a>
+            </li>
+            <li>
+              <a href="/area-interna/sofas"> Sofás </a>
+            </li>
+            <li>
+              <a href="/area-interna/escritório"> Escritório </a>
+            </li>
+          </ul>
+
+          <ul>
+            <li class="categoria-principal">
+              <a href="/area-externa"> Área Externa </a>
+            </li>
+            <li>
+              <a href="/area-externa/mesas"> Mesas </a>
+            </li>
+            <li>
+              <a href="/area-externa/cadeiras"> Cadeiras </a>
+            </li>
+            <li>
+              <a href="/area-externa/sofas"> Sofás </a>
+            </li>
+            <li>
+              <a href="/area-externa/balancos"> Balanços </a>
+            </li>
+          </ul>
+
+          <ul>
+            <li class="categoria-principal">Sobre</li>
+            <li>
+              <a href="/quem-somos"> Quem somos </a>
+            </li>
+            <li>
+              <a href="/faq"> F.A.Q </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="copyright">
+        <p>E-Commerce 2022-2023</p>
+      </div>
+    </footer>
+    <script src="/scripts/home.js"></script>
+  </body>
+</html>
