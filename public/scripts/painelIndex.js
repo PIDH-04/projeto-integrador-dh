@@ -14,6 +14,7 @@ window.addEventListener('load', function () {
       mensagemSucesso.style.display = 'none';
       divErrors.classList.add("no-errors");
       ulErrors.innerHTML = ""
+      
 
 
       let erros = []

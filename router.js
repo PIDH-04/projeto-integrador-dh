@@ -2,9 +2,8 @@ const express = require('express');
 const router = express.Router();
 const ProdutosController = require("./controllers/ProdutosController");
 
-router.get("/painelUsuario", (req, res) => {
-    return res.sendFile(__dirname + "/views/painelUsuario.html")
-})
+const painelUsuario = require("./controllers/PainelUsuario");
+
 
 router.get("/statusDePedidos", (req, res) => {
     return res.sendFile(__dirname + "/views/statusDePedidos.html")
@@ -39,9 +38,6 @@ router.get("/carrinho", (req, res) => {
     return res.sendFile(__dirname + "/views/carrinho.html");
 });
 
-router.get("/painelUsuario", (req, res) => {
-    return res.sendFile(__dirname + "/views/painelUsuario.html")
-});
 
 router.get('/finalizacao-compra', (req, res) => {
     return res.sendFile(__dirname + '/views/finalizacaoCompra.html')
@@ -58,5 +54,7 @@ router.get("/checkoutDeEndereco", (req, res) => {
 router.get('/cadastro', (req, res) => {
     return res.sendFile(__dirname + '/views/cadastro.html')
 })
+
+router.get("/painelUsuario", painelUsuario.show);
 
 module.exports = router;
