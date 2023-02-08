@@ -4,12 +4,15 @@ window.addEventListener("load", () => {
    */
   const produtos = document.querySelectorAll(".produto");
   const addCarrinhoBtn = document.querySelectorAll(".add-cart");
+  const seletorQuantidade = document.querySelector(".seletor-quantidade input");
 
   function formataProduto(produto) {
     const produtoFormatado = {
-      nome: produto.querySelector("h3").innerText,
-      img: produto.querySelector(".img-container img").src,
-      preco: produto.querySelector(".informacoes-container p").innerText,
+      nome: produto.querySelector(".titulo-produto").innerText,
+      img: produto.querySelector(".imagem-produto").src,
+      preco: produto.querySelector(".preco-produto").innerText,
+      quantidade:
+        seletorQuantidade !== null ? parseInt(seletorQuantidade.value) : 1,
     };
 
     return produtoFormatado;
