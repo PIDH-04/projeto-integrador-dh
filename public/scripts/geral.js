@@ -17,7 +17,19 @@ window.addEventListener("load", () => {
 
   function onClickAddCarrinho(index) {
     const produto = formataProduto(produtos[index]);
-    console.log(produto);
+    const produtosNoCarrinho = JSON.parse(localStorage.getItem("produtos"));
+
+    if (produtosNoCarrinho === null) {
+      const produtos = [];
+      produtos.push(produto);
+      return localStorage.setItem("produtos", JSON.stringify(produtos));
+    } else {
+      produtosNoCarrinho.push(produto);
+      return localStorage.setItem(
+        "produtos",
+        JSON.stringify(produtosNoCarrinho)
+      );
+    }
   }
 
   for (let i = 0; i < addCarrinhoBtn.length; i++) {
