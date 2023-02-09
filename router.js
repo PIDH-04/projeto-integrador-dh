@@ -2,7 +2,6 @@
 const express = require('express');
 const GeralController = require("./controllers/GeralController");
 const ProdutosController = require("./controllers/ProdutosController");
-const UsuariosController = require("./controllers/UsuariosController");
 
 // Criar o roteador
 const router = express.Router();

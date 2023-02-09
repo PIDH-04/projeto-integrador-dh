@@ -1,124 +1,318 @@
-.superior3 {
+@media (min-width: 360px){
+    .cabeçalho {
+    background-color: var(--cor-secundaria);
     position: fixed;
-    top: 0;
     width: 100%;
+    height: 70px;
+}
+
+#elementos-cabeçalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+#note {
+    display: none;
+}
+
+* {
+    text-decoration: none;
+    color: var(--cor-texto-primaria)
+}
+
+.logoAmarelo {
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+}
+  
+  #menu-toggle {
+    position: relative;
+    background-color: var(--cor-secundaria);
+    width:50px;
+    height: 50px;
+    padding: 5px;
+    display: flex;
+    font-size: 30px;
+    justify-content: center;
+    align-items: center;
+    border: none;
+  }
+
+#menuMobile {
+    position: absolute;
+    left: 0;
+    bottom: -190px;
+    display: none;
+    margin-top: 215px;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 1px 1px 1px 1px var(--cor-texto-secundaria)
+  }
+  
+  #menuMobile ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+  
+  #menuMobile li {
+    display: block;
+    position: relative;
+    padding: 10px;
+    box-shadow: 1px 1px var(--cor-texto-secundaria);
+}
+  
+  #menuMobile ul #categoriasExternas {
+    display: none;
+    position: absolute;
+    top: 100%;
+    background-color: antiquewhite;
+    z-index: 99;
+  }
+
+  #menuMobile ul #categoriasInternas {
+    display: none;
+    position: absolute;
+    top: 100%;
+    background-color: antiquewhite;
+    z-index: 99;
+  }
+
+  #branco {
+    display: none;
+  }
+}
+
+@media (min-width: 481px){
+    .cabeçalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--cor-secundaria);
+    position: fixed;
+    width: 100%;
+    height: 70px;
+}
+
+#note {
+    display: none;
+}
+
+* {
+    text-decoration: none;
+    color: var(--cor-texto-primaria)
+}
+  
+  #menu-toggle {
+    position: relative;
+    background-color: var(--cor-secundaria);
+    width:50px;
+    height: 50px;
+    padding: 5px;
+    display: flex;
+    font-size: 30px;
+    justify-content: center;
+    align-items: center;
+    border: none;
+  }
+
+#menuMobile {
+    position: absolute;
+    left: 0;
+    bottom: -195px;
+    display: none;
+    margin-top: 215px;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 1px 1px 1px 1px var(--cor-texto-secundaria)
+  }
+  
+  #menuMobile ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+  
+  #menuMobile li {
+    display: block;
+    position: relative;
+    padding: 10px;
+    box-shadow: 1px 1px var(--cor-texto-secundaria);
+}
+  
+  #menuMobile ul #categorias {
+    display: none;
+    position: absolute;
+    top: 100%;
+    background-color: antiquewhite;
+    z-index: 99;
+  }
+  
+  #branco {
+    display: none;
+  }
+}
+@media (min-width: 769px){
+    .cabeçalho {
+        display: flex;
+        justify-content: center;
+        padding: 0;
+        background-color: var(--cor-secundaria);
+        position: fixed;
+        width: 100%;
+        height: 70px;
+    }
+
+    #elementos-cabeçalho {
+    width: 80%;
     background-color: var(--cor-secundaria);
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     list-style: none;
     padding: 20px;
-    padding-left: 200px;
-    padding-right: 200px;
     font-family: var(--font-paragrafo);
     text-decoration: none;
     z-index: 99;
+    position: fixed;
+    top: 0;
+    height: 60px;
 }
 
-.inferior2 {
+#note {
+display:block;
+}
+
+.logoAmarelo {
+    display: none;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+#branco {
+    display: block;
     position: fixed;
+    width: 100%;
+}
+
+#elementos-branco {
     top: 55px;
     width: 100%;
     background-color: #ffffff;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
     list-style: none;
     padding: 20px;
-    padding-left: 200px;
-    padding-right: 100px;
     align-items: center;
     font-family: var(--font-paragrafo);
-    font-style: none;
     text-decoration: none;
-    z-index: 99;
-}
-
-.inferior ul li a:hover {
-    color: orange;
-
-}
-
-ul.inferior2 a {
-    text-decoration: none;
-}
-
-.inferior2 ul {
-    list-style: none;
     position: relative;
-    padding-left: 310px;
+    display: flex;
+    justify-content: space-between;
 }
 
-.parteExterna ul {
-    padding-left: 800px;
-
-}
-
-#Externa {
-    padding-left: 450px;
-
-}
-
-.inferior ul ul {
-    position: absolute;
-    left: 0;
-    right: 0;
-    visibility: hidden;
-    padding-top: 10px;
-
-}
-
-.inferior ul li:hover ul {
-    visibility: visible;
-    padding-top: 10px;
-    transition: all 0.5s;
-    width: 100%;
-    background-color:aliceblue;
-    columns: 3;
-}
-
-
-.inferior2 a {
+.logoBranco {
     display: block;
-    text-align: left;
+    width: 80px;
+    height: 50px;
+    padding-right: 10px;
 }
 
-.superior3 :last-child {
-    text-decoration: none;
+#elementos-branco a {
+    padding: 10px;
+    display: block;
+}
+
+#elementos-branco a:hover {
+    color: orange;
+}
+
+.buttonAreaInterna {
+    position: relative;
+  display: inline-block;
+}
+
+.buttonAreaInterna:hover {
+    color: orange;
+}
+
+.buttonAreaInterna #categoriasInternasBranco {
+  color: var(--cor-texto-primaria);
+  font-size: 16px;
+  border: none;
+  display: none;
+  position: absolute;
+  background-color: aliceblue;
+  min-width: 45rem;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  columns: 3;
+  transition: all 0.5s;
+  padding-top: 10px;
+}
+
+.buttonAreaInterna #categoriasInternasBranco li {
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+}
+
+.buttonAreaInterna:hover #categoriasInternasBranco {
+    display: block;
+}
+
+.buttonAreaExterna {
+    position: relative;
+  display: inline-block;
+}
+
+.buttonAreaExterna:hover {
+    color: orange;
+}
+
+.buttonAreaExterna #categoriasExternasBranco {
     color: var(--cor-texto-primaria);
+  font-size: 16px;
+  border: none;
+  display: none;
+  position: absolute;
+  background-color: aliceblue;
+  min-width: 45rem;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  columns: 3;
+  transition: all 0.5s;
+  padding-top: 10px;
 }
 
-.inferior2 .parteInterna a {
-    padding: 5px;
-    position: relative;
-    margin: 0%;
-
-
+.buttonAreaExterna #categoriasExternasBranco li {
+  text-decoration: none;
+  display: block;
+  padding: 10px;
 }
 
-
-.inferior2 .parteExterna a {
-    padding: 5px;
-    position: relative;
-
-}
-
-
-.ecommerce {
-  font-style: var(--font-paragrafo);
+.buttonAreaExterna:hover #categoriasExternasBranco {
+    display: block;
 }
 
 .lupa {
-  width: 30px;
-  height: 30px;
+    width: 30px;
+    height: 30px;
 }
 
 .sacola {
-  width: 20px;
-  height: 20px;
+    width: 20px;
+    height: 20px;
 }
 
-.inferior2 .busca {
+#elementos-branco .busca {
     border: none;
     flex-grow: 1;
     margin-right: 50px;
@@ -127,94 +321,14 @@ ul.inferior2 a {
 
 }
 
-.inferior2 li a {
+#elementos-branco li a {
     text-decoration: none;
     color: var(--cor-texto-primaria);
 }
 
-.inferior2 li {
-    margin-right: 50px;
-}
-
-.inferior2 span {
+#elementos-branco span {
     text-decoration-line: none;
     color: var(--cor-texto-primaria);
 }
 
-.painelusuario {
-    width: 15%;
-    padding-left: 50px;
-}
-
-label[for="bt_menu"] {
-    padding: 5px;
-    margin-top: 41px;
-    background-color: var(--cor-secundaria);
-    color: var(--cor-texto-primaria);
-    font-family: var(--font-paragrafo);
-    text-align: center;
-    font-size: 30px;
-    cursor: pointer;
-    width: 50px;
-    height: 50px;
-}
-
-#bt_menu {
-    display: none;
-}
-
-label[for="bt_menu"] {
-    display: none;
-}
-
-@media(max-width: 800px) {
-    label[for="bt_menu"] {
-        display: block;
-    }
-
-    #bt_menu:checked~.superior {
-        margin-left: 0;
-        top: 150px;
-    }
-
-
-    ul.inferior2 {
-        position: static;
-        max-height: 0;
-        float: none;
-    }
-    ul.inferior2{
-        margin-left: -100%;
-    }
-
-    ul.inferior2 span,
-    ul.inferior2 .busca,
-    ul.inferior .lupa,
-    ul.inferior2 img,
-    ul.inferior2 .sacola,
-    ul.inferior2 .painelusuario,
-    ul.inferior .sacola {
-        visibility: hidden;
-    }
-
-    .superior ul li {
-        position: static;
-        overflow: hidden;
-        max-height: 0;
-
-    }
-
-    .inferior ul:hover .parteInterna,
-    .inferior ul:hover .parteExterna {
-        height: auto;
-        max-height: 200px;
-    }
-
-    ul.inferior2 a {
-        text-decoration: none;
-    }
-
-    #bt_menu:checked ~ ul.inferior2{
-        margin: left 0;
-    }
 }
