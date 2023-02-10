@@ -1,335 +1,413 @@
-.superior3 {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: var(--cor-secundaria);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  list-style: none;
-  /* padding: 20px;
-    padding-left: 200px;
-    padding-right: 200px; */
-  padding: 20px 10%;
-  font-family: var(--font-paragrafo);
-  text-decoration: none;
-  z-index: 99;
+@media (min-width: 360px) {
+    .cabeçalho {
+        background-color: var(--cor-secundaria);
+        position: fixed;
+        width: 100%;
+        height: 13vh;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #elementos-cabeçalho {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        width: 90%;
+        height: 100%;
+    }
+
+    #note {
+        display: none;
+    }
+
+    .logoMobile {
+        width: 150px;
+        height: 50px;
+        padding: 5px;
+    }
+
+    #menu-toggle {
+        position: relative;
+        background-color: var(--cor-secundaria);
+        width: 50px;
+        height: 50px;
+        padding: 5px;
+        display: flex;
+        font-size: 30px;
+        justify-content: center;
+        align-items: center;
+        border: none;
+    }
+
+    #menuMobile {
+        position: absolute;
+        left: 0;
+        bottom: -230px;
+        display: none;
+        margin-top: 215px;
+        width: 100%;
+        background-color: #ffffff;
+        box-shadow: 1px 1px 1px 1px var(--cor-texto-secundaria)
+    }
+
+    #menuMobile ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    #menuMobile li {
+        position: relative;
+        padding: 10px;
+        box-shadow: 1px 1px var(--cor-texto-secundaria);
+    }
+
+    #menuMobile li a {
+        text-decoration: none;
+        color: var(--cor-texto-primaria);
+    }
+
+    #menuMobile #categoriasExternasMobile {
+        display: none;
+        position: absolute;
+        top: 100%;
+        background-color: #f4f4f4;
+        z-index: 99;
+    }
+
+    #menuMobile #categoriasInternasMobile {
+        display: none;
+        position: absolute;
+        top: 100%;
+        background-color: #f4f4f4;
+        z-index: 99;
+    }
+
+    #branco {
+        display: none;
+    }
 }
 
-.inferior2 {
-  position: fixed;
-  top: 55px;
-  width: 100%;
-  background-color: #ffffff;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  list-style: none;
-  padding-top: 20px;
-  /* padding-left: 200px; */
-  /* padding-right: 100px; */
-  padding: 20px 10% 0;
-  align-items: center;
-  font-family: var(--font-paragrafo);
-  font-style: none;
-  text-decoration: none;
-  z-index: 99;
-}
-/* 
-.inferior ul li a{
-    padding-bottom: 15px;
-    display: block;
-} */
+@media (min-width: 481px) {
+    .cabeçalho {
+        background-color: var(--cor-secundaria);
+        position: fixed;
+        width: 100%;
+        height: 13vh;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
-.inferior ul li:last-child {
-  margin-right: 0;
-}
+    #elementos-cabeçalho {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        width: 90%;
+        height: 100%;
+    }
 
-.inferior ul li a:hover {
-  color: var(--cor-secundaria);
-}
+    #note {
+        display: none;
+    }
 
-ul.inferior2 a {
-  text-decoration: none;
-}
+    .logoMobile {
+        width: 150px;
+        height: 50px;
+        padding: 5px;
+    }
 
-.inferior2 ul {
-  list-style: none;
-  position: relative;
-  padding-left: 200px;
-}
+    #menu-toggle {
+        position: relative;
+        background-color: var(--cor-secundaria);
+        width: 50px;
+        height: 50px;
+        padding: 5px;
+        display: flex;
+        font-size: 30px;
+        justify-content: center;
+        align-items: center;
+        border: none;
+    }
 
-#Externa {
-  padding-left: 200px;
-  padding-bottom: 10px;
-}
+    #menuMobile {
+        position: absolute;
+        left: 0;
+        bottom: -230px;
+        display: none;
+        margin-top: 215px;
+        width: 100%;
+        background-color: #ffffff;
+        box-shadow: 1px 1px 1px 1px var(--cor-texto-secundaria)
+    }
 
-.inferior ul ul {
-  position: absolute;
-  left: 0;
-  right: 0;
-  visibility: hidden;
-  padding-top: 10px;
-}
+    #menuMobile ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
 
-.inferior ul li:hover ul {
-  visibility: visible;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  width: 100%;
-  background-color: #f4f4f4;
-  columns: 3;
-}
+    #menuMobile li {
+        position: relative;
+        padding: 10px;
+        box-shadow: 1px 1px var(--cor-texto-secundaria);
+    }
 
-.inferior2 a {
-  display: block;
-  text-align: left;
-  padding-bottom: 10px;
-}
+    #menuMobile li a {
+        text-decoration: none;
+        color: var(--cor-texto-primaria);
+    }
 
-.superior3 :last-child {
-  text-decoration: none;
-  color: var(--cor-texto-primaria);
-}
+    #menuMobile #categoriasExternasMobile {
+        display: none;
+        position: absolute;
+        top: 100%;
+        background-color: #f4f4f4;
+        z-index: 99;
+    }
 
-.inferior2 .parteInterna a {
-  padding: 5px;
-  position: relative;
-}
+    #menuMobile #categoriasInternasMobile {
+        display: none;
+        position: absolute;
+        top: 100%;
+        background-color: #f4f4f4;
+        z-index: 99;
+    }
 
-.inferior2 .parteExterna a {
-  padding: 5px;
-  position: relative;
-}
-
-.logo-wrapper {
-  width: 60px;
-}
-
-.logo-wrapper > a > img {
-  width: 100%;
-}
-
-.ecommerce {
-  font-style: var(--font-paragrafo);
+    #branco {
+        display: none;
+    }
 }
 
-.lupa {
-  width: 30px;
-  height: 30px;
-}
+@media (min-width: 769px) {
+    .cabeçalho {
+        top: 0;
+        display: flex;
+        justify-content: center;
+        padding: 0;
+        background-color: var(--cor-secundaria);
+        position: fixed;
+        width: 100%;
+        height: 10vh;
+        z-index: 1;
+    }
 
-.sacola {
-  width: 20px;
-  height: 20px;
-}
+    #elementos-cabeçalho {
+        font-size: 1.5vw;
+        width: 80%;
+        background-color: var(--cor-secundaria);
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+        padding: 20px;
+        font-family: var(--font-paragrafo);
+        text-decoration: none;
+        z-index: 99;
+        position: fixed;
+        top: 0;
+        height: 60px;
+    }
 
-.inferior2 .busca {
-  border: none;
-  flex-grow: 1;
-  margin-right: 50px;
-  border-bottom: 1px solid var(--cor-texto-primaria);
-  outline: none;
-  border-radius: 0;
-}
+    #note {
+        display: block;
+    }
 
-.inferior2 li a {
-  text-decoration: none;
-  color: var(--cor-texto-primaria);
-}
+    #note a {
+        text-decoration: none;
+        color: var(--cor-texto-primaria);
+    }
 
-.inferior2 li {
-  margin-right: 50px;
-}
+    .logoMobile {
+        display: none;
+    }
 
-.inferior2 span {
-  text-decoration-line: none;
-  color: var(--cor-texto-primaria);
-}
+    #menu-toggle {
+        display: none;
+    }
 
-.painelusuario {
-  width: 15%;
-  padding-left: 50px;
-}
-.menu-mobile {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 50px;
-  padding: 20px 50px;
-  width: 100%;
-}
+    #branco {
+        top: 0;
+        margin-top: 60px;
+        display: block;
+        position: fixed;
+        width: 100%;
+        height: 15vh;
+        z-index: 1;
+    }
 
-.menu-mobile .mobile-logo {
-  width: 80px;
-}
+    #elementos-branco {
+        width: 100%;
+        height: 13vh;
+        background-color: #ffffff;
+        list-style: none;
+        padding: 20px;
+        align-items: center;
+        font-family: var(--font-paragrafo);
+        text-decoration: none;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+    }
 
-.menu-mobile .mobile-logo img {
-  width: 100%;
-}
+    .logo {
+        display: block;
+        max-width: 300px;
+        min-width: 150px;
+        max-height: 80px;
+        min-height: 50px;
+        padding-right: 10px;
+    }
 
-label[for="bt_menu"] {
-  padding: 5px;
-  /* margin-top: 41px; */
-  /* background-color: var(--cor-secundaria); */
-  color: var(--cor-texto-primaria);
-  font-family: var(--font-paragrafo);
-  text-align: center;
-  font-size: 30px;
-  cursor: pointer;
-  width: 50px;
-  height: 50px;
-}
+    img{
+        max-width: 300px;
+    }
 
-#bt_menu {
-  display: none;
-}
+    #elementos-branco a {
+        text-decoration: none;
+        color: var(--cor-texto-primaria);
+        font-size: 1.5vw;
+        min-width: fit-content;
+        max-height: 100px;
+        min-height: 50px;
+        padding: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+    }
 
-label[for="bt_menu"] {
-  display: none;
-  width: 50px;
-  height: 50px;
-}
+    #elementos-branco a:hover {
+        color: orange;
+    }
 
-@media (max-width: 1200px) {
-  .superior3 {
-    padding: 20px 5%;
-  }
+    .AreaInterna {
+        font-size: 1.5vw;
+        width: 235px;
+        min-width: 110px;
+        height: 50px;
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+    }
 
-  .inferior2 {
-    padding: 20px 5% 0;
-  }
-}
+    .AreaInterna:hover {
+        color: orange;
+    }
 
-@media (max-width: 1060px) {
-  .inferior2 li {
-    margin-right: 0;
-  }
+    .AreaInterna #categoriasInternas {
+        border: none;
+        display: none;
+        position: absolute;
+        background-color: aliceblue;
+        min-width: 45rem;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        columns: 3;
+        transition: all 0.5s;
+        margin-top: 40px;
+    }
 
-  .inferior2 .busca {
-    flex-grow: 0;
-    margin-right: 0;
-    margin-left: -30px;
-    background-color: transparent;
-  }
-}
+    .AreaInterna #categoriasInternas li {
+        display: block;
+        padding: 10px;
+    }
 
-@media (max-width: 880px) {
-  .inferior2 {
-    display: none;
-  }
+    .AreaInterna:hover #categoriasInternas {
+        display: block;
+    }
 
-  label[for="bt_menu"] {
-    display: block;
-  }
+    .AreaExterna {
+        font-size: 1.5vw;
+        width: 235px;
+        min-width: 110px;
+        height: 50px;
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+    }
 
-  #bt_menu:checked ~ .superior {
-    margin-left: 0;
-    top: 350px;
-  }
+    .AreaExterna:hover {
+        color: orange;
+    }
 
-  ul.inferior2 {
-    position: static;
-    max-height: 50px;
-    float: none;
-    background-color: cadetblue;
-    padding-left: 10px;
-    columns: 4;
-    width: 100%;
-    grid-column: 4;
-  }
+    .AreaExterna #categoriasExternas {
+        border: none;
+        display: none;
+        position: absolute;
+        background-color: aliceblue;
+        min-width: 45rem;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        columns: 3;
+        transition: all 0.5s;
+        margin-top: 40px;
+    }
 
-  /*ul.inferior2 {
-        margin-left: -100%;
-    }*/
+    .AreaExterna #categoriasExternas li {
+        display: block;
+        padding: 10px;
+    }
 
-  ul.inferior2 span,
-  ul.inferior2 .busca,
-  ul.inferior .lupa,
-  ul.inferior2 img,
-  ul.inferior2 .sacola,
-  ul.inferior2 .painelusuario,
-  ul.inferior .sacola {
-    visibility: hidden;
-    display: none;
-  }
+    .AreaExterna:hover #categoriasExternas {
+        display: block;
+    }
 
-  .superior ul li {
-    position: relative;
-  }
+    .sobre {
+        width: 60px;
+        height: 50px;
+    }
 
-  .inferior ul:hover .parteInterna,
-  .inferior ul:hover .parteExterna {
-    height: auto;
-    max-height: 200px;
-  }
+    .lupa {
+        max-width: 60px;
+        min-width: 30px;
+        max-height: 60px;
+        min-height: 30px;
+    }
 
-  ul.inferior2 a {
-    text-decoration: none;
-  }
+    #elementos-branco #busca {
+        font-size: 1.5vw;
+        max-width: 460px;
+        min-width: 58px;
+        max-height: 50px;
+        min-height: 20px;
+        border: none;
+        flex-grow: 1;
+        margin-right: 30px;
+        border-bottom: 1px solid var(--cor-texto-primaria);
+        outline: none;
 
-  ul.superior3 {
-    padding: 15px;
-  }
-}
+    }
 
-@media (max-width: 500px) {
-  .superior3 li {
-    font-size: 0.8rem;
-  }
-}
+    .sacola {
+        max-width: 40px;
+        min-width: 20px;
+        max-height: 40px;
+        min-height: 20px;
+    }
 
-@media (max-width: 360px) {
-  label[for="bt_menu"] {
-    display: block;
-  }
+    .sacola img {
+        max-width: 40px;
+        min-width: 20px;
+        max-height: 40px;
+        min-height: 20px;
+    }
 
-  #bt_menu:checked ~ .superior {
-    margin-left: 0;
-    top: 350px;
-  }
+    #elementos-branco span {
+        text-decoration-line: none;
+        color: var(--cor-texto-primaria);
+        font-size: 1vw;
+    }
 
-  ul.inferior2 {
-    position: static;
-    max-height: 50px;
-    float: none;
-    background-color: cadetblue;
-    padding-left: 10px;
-    columns: 4;
-    width: 100%;
-    grid-column: 4;
-  }
+    .painelusuario {
+        min-width: 111px;
+        width: 255px;
+        height: 50px;
+    }
 
-  /*ul.inferior2 {
-        margin-left: -100%;
-    }*/
-
-  ul.inferior2 span,
-  ul.inferior2 .busca,
-  ul.inferior .lupa,
-  ul.inferior2 img,
-  ul.inferior2 .sacola,
-  ul.inferior2 .painelusuario,
-  ul.inferior .sacola {
-    visibility: hidden;
-    display: none;
-  }
-
-  .superior ul li {
-    position: relative;
-  }
-
-  .inferior ul:hover .parteInterna,
-  .inferior ul:hover .parteExterna {
-    height: auto;
-    max-height: 200px;
-  }
-
-  ul.inferior2 a {
-    text-decoration: none;
-  }
-
-  ul.superior3 {
-    padding: 15px;
-  }
 }
