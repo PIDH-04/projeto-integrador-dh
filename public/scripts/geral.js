@@ -21,6 +21,9 @@ window.addEventListener("load", () => {
 
   function onClickAddCarrinho(index) {
     const produtosNoCarrinho = JSON.parse(localStorage.getItem("produtos"));
+    addCarrinhoBtn[index].style.backgroundColor = "gray";
+    addCarrinhoBtn[index].style.color = "white";
+    addCarrinhoBtn[index].innerText = "Produto no carrinho";
     const produto = formataProduto(produtos[index], index);
 
     if (produtosNoCarrinho === null) {
@@ -39,6 +42,6 @@ window.addEventListener("load", () => {
   for (let i = 0; i < addCarrinhoBtn.length; i++) {
     addCarrinhoBtn[i].addEventListener("click", () => {
       onClickAddCarrinho(i);
-    });
+    }, {once:true});
   }
 });
