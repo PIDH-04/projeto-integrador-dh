@@ -6,21 +6,22 @@ window.addEventListener("load", () => {
   const addCarrinhoBtn = document.querySelectorAll(".add-cart");
   const seletorQuantidade = document.querySelector(".seletor-quantidade input");
 
-  function formataProduto(produto) {
+  function formataProduto(produto, index) {
     const produtoFormatado = {
       nome: produto.querySelector(".titulo-produto").innerText,
       img: produto.querySelector(".imagem-produto").src,
       preco: produto.querySelector(".preco-produto").innerText,
       quantidade:
         seletorQuantidade !== null ? parseInt(seletorQuantidade.value) : 1,
+      id: index
     };
 
     return produtoFormatado;
   }
 
   function onClickAddCarrinho(index) {
-    const produto = formataProduto(produtos[index]);
     const produtosNoCarrinho = JSON.parse(localStorage.getItem("produtos"));
+    const produto = formataProduto(produtos[index], index);
 
     if (produtosNoCarrinho === null) {
       const produtos = [];
