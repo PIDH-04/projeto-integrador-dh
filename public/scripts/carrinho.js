@@ -5,7 +5,7 @@ window.addEventListener("load", () => {
   const totalContainer = document.querySelector(".total p");
   const valorProdutos = [];
 
-  function addProdutoNaPagina(produto) {
+  function criaProduto(produto) {
     let valorFormatado = produto.preco.replace("R$", "");
     valorFormatado = valorFormatado.replace(",", ".");
     valorProdutos.push(valorFormatado);
@@ -42,21 +42,36 @@ window.addEventListener("load", () => {
       style: "currency",
       currency: "BRL",
     });
-    subtotalContainer.innerText = somaFormatada;
-    totalContainer.innerText = somaFormatada;
+    subtotalContainer.innerText = `R$ ${somaFormatada}`;
+    totalContainer.innerText = `R$ ${somaFormatada}`;
   }
 
-  if (produtosNoCarrinho === null) {
-    produtosContainer.innerHTML = `<p>Você ainda não adicionou nenhum produto no seu carrinho </p>`;
-  } else {
-    produtosContainer.innerHTML = ``;
-    for (let produto of produtosNoCarrinho) {
-      console.log(produto.nome);
-      addProdutoNaPagina(produto);
+  function addProdutos(arrayDeProdutos) {
+    valorProdutos.length = 0;
+    if (arrayDeProdutos === null || arrayDeProdutos.length == 0) {
+      produtosContainer.innerHTML = `<p>Você ainda não adicionou nenhum produto no seu carrinho </p>`;
+      subtotalContainer.innerText = ''
+      totalContainer.innerText = ''
+    } else {
+      produtosContainer.innerHTML = ``;
+      for (let produto of arrayDeProdutos) {
+        criaProduto(produto);
+      }
+      addInfosDePreco(valorProdutos);
+      const removerBtn = document.querySelectorAll(".removeBtn");
+
+      removerBtn.forEach((btn, index) => {
+        btn.addEventListener("click", () => removeProduto(index, removerBtn));
+      });
     }
-    addInfosDePreco(valorProdutos);
-
-    const removerBtn = document.querySelectorAll(".removeBtn");
-
   }
+
+  function removeProduto(index) {
+    produtosNoCarrinho.splice(index, 1);
+    localStorage.setItem("produtos", JSON.stringify(produtosNoCarrinho));
+    addProdutos(produtosNoCarrinho);
+  }
+
+  // Executa a função de adicionar os produtos do carrinho assim que a página carrega
+  addProdutos(produtosNoCarrinho);
 });
