@@ -7,22 +7,29 @@ document.getElementById("menu-toggle").addEventListener("click", function() {
     }
   });
 
-document.getElementById('areaInterna').addEventListener('click', () => {
-    const submenuCategorias = document.getElementById('categoriasInternas');
-
-    if (submenuCategorias.style.display === 'none'){
-      submenuCategorias.style.display = "block";
-    } else {
-      submenuCategorias.style.display = "none";
-    }
-  });
-
-  document.getElementById('areaExterna').addEventListener('click', () => {
-    const submenuCategorias = document.getElementById('categoriasExternas');
-
-    if (submenuCategorias.style.display === 'none'){
-      submenuCategorias.style.display = "block";
-    } else {
-      submenuCategorias.style.display = "none";
-    }
-  });
+  window.onload = function() {
+    document.getElementById('areaInterna').addEventListener('click', () => {
+      const submenuCategorias = document.getElementById('categoriasInternas');
+  
+      if (submenuCategorias.style.display === 'none'){
+        submenuCategorias.style.display = "block";
+      } else {
+        submenuCategorias.style.display = "none";
+      }
+    });
+  
+    document.getElementById('areaExterna').addEventListener('click', () => {
+      const submenuCategorias = document.getElementById('categoriasExternas');
+  
+      if (submenuCategorias.style.display === 'none'){
+        submenuCategorias.style.display = "block";
+      } else {
+        submenuCategorias.style.display = "none";
+      }
+    });
+  }
+  
+  
+  
+  
+  
