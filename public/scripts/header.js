@@ -8,8 +8,8 @@ document.getElementById("menu-toggle").addEventListener("click", function() {
   });
 
   window.onload = function() {
-    document.getElementById('areaInterna').addEventListener('click', () => {
-      const submenuCategorias = document.getElementById('categoriasInternas');
+    document.getElementById('areaInternaMobile').addEventListener('click', () => {
+      const submenuCategorias = document.getElementById('categoriasInternasMobile');
   
       if (submenuCategorias.style.display === 'none'){
         submenuCategorias.style.display = "block";
@@ -18,8 +18,8 @@ document.getElementById("menu-toggle").addEventListener("click", function() {
       }
     });
   
-    document.getElementById('areaExterna').addEventListener('click', () => {
-      const submenuCategorias = document.getElementById('categoriasExternas');
+    document.getElementById('areaExternaMobile').addEventListener('click', () => {
+      const submenuCategorias = document.getElementById('categoriasExternasMobile');
   
       if (submenuCategorias.style.display === 'none'){
         submenuCategorias.style.display = "block";
