@@ -9,6 +9,12 @@ const GeralController = {
       },
       header: (req, res) => {
         return res.render("header");
+      },
+      finalizacaoCompra: (req, res) => {
+        return res.render("finalizacaoCompra");
+      },
+      carrinho: (req, res) => {
+        return res.render("carrinho");
       }
 };
 
