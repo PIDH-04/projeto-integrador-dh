@@ -19,9 +19,9 @@ router.get('/finalizacao-compra', GeralController.finalizacaoCompra);
 
 router.get("/carrinho", GeralController.carrinho);
 
-router.get("/categorias/:categoria", (req, res) => {
-    return res.sendFile(__dirname + "/views/listagemProdutos.html");
-});
+router.get("/categorias/:categoria", ProdutosController.listagem);
+
+router.get('/login', GeralController.login);
 
 router.get('/cadastro', (req, res) => {
     return res.sendFile(__dirname + '/views/cadastro.html')
@@ -35,9 +35,6 @@ router.get("/statusDePedidos", (req, res) => {
     return res.sendFile(__dirname + "/views/statusDePedidos.html")
 });
 
-router.get('/login', (req, res) => {
-    return res.sendFile(__dirname + '/views/login.html')
-});
 
 router.get("/painelUsuario", (req, res) => {
     return res.sendFile(__dirname + "/views/painelUsuario.html")

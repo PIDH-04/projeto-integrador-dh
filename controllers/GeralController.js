@@ -15,6 +15,9 @@ const GeralController = {
       },
       carrinho: (req, res) => {
         return res.render("carrinho");
+      },
+      login: (req, res) => {
+        return res.render("login")
       }
 };
 
