@@ -2,6 +2,7 @@
 const express = require('express');
 const GeralController = require("./controllers/GeralController");
 const ProdutosController = require("./controllers/ProdutosController");
+const UsuarioController = require("./controllers/UsuarioController");
 
 // Criar o roteador
 const router = express.Router();
@@ -33,9 +34,7 @@ router.get("/statusDePedidos", (req, res) => {
     return res.sendFile(__dirname + "/views/statusDePedidos.html")
 });
 
-router.get('/cadastro', (req, res) => {
-    return res.sendFile(__dirname + '/views/cadastro.html')
-});
+router.get("/cadastro", UsuarioController.showCadastro);
 
 router.get("/painelUsuario", (req, res) => {
     return res.sendFile(__dirname + "/views/painelUsuario.html")
