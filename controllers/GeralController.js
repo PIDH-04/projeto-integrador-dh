@@ -4,12 +4,6 @@ const GeralController = {
     home: (req, res) => {
         return res.render("home");
       },
-      master: (req, res) => {
-        return res.render("master");
-      },
-      header: (req, res) => {
-        return res.render("header");
-      },
       finalizacaoCompra: (req, res) => {
         return res.render("finalizacaoCompra");
       },
@@ -17,7 +11,16 @@ const GeralController = {
         return res.render("carrinho");
       },
       login: (req, res) => {
-        return res.render("login")
+        return res.render("login");
+      },
+      loginEmail: (req, res) => {
+        return res.render("loginEmail");
+      },
+      checkoutEndereco: (req, res) => {
+        return res.render("checkoutEndereco");
+      },
+      checkoutPagamento: (req, res) => {
+        return res.render("checkoutPagamento");
       }
 };
 

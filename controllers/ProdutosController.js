@@ -5,7 +5,7 @@ const ProdutosControllers = {
         return res.render("produto");
       },
       listagem: (req, res) => {
-        return res.render("listagemProdutos")
+        return res.render("listagemProdutos");
       }
 }
 
