@@ -1,5 +1,3 @@
-const e = require("express");
-
 // Botões para acrescer e decrescer quantidade do produto
 const btnSubtrai = document.getElementById("btn-subtrai");
 const btnAdiciona = document.getElementById("btn-adiciona");
