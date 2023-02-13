@@ -13,12 +13,17 @@
     align-items: stretch;
   }
 
+  .bannerSlide {
+    padding-top: 40px;
+  }
+
   .bannerSlide .slides .slide {
     max-height: 300px;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     flex-direction: column;
+    padding-top: 20px;
   }
   .bannerSlide h1 {
     color: #fff;
