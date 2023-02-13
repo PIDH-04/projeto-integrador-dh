@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <%- include("partials/head", {css: ["finalizacaoCompra.css"], titulo: "finalização-compra_E-móvel"}) %>
+  <body>
+    <%- include("partials/header") %>
+
+    <main class="finalizacao-pg-container">
+      <span class="aprovado">
+        <img src="/img/check.svg" alt="Aprovada" />
+      </span>
+
+      <h1>Compra aprovada</h1>
+      <p>
+        Recebemos o seu pedido e em breve ele será separado. Você receberá todas
+        as alterações de status diretamente no seu e-mail.
+      </p>
+      <p>Muito obrigado por contar com a gente!</p>
+      <div class="botoes-container">
+        <a class="botao-primario" href="/">Minhas compras</a>
+        <a class="botao-secundario" href="/">Continuar navegando</a>
+      </div>
+    </main>
+
+    <%- include("partials/footer.ejs") %>
