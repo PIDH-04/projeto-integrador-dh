@@ -3,14 +3,7 @@ const express = require('express');
 const GeralController = require("./controllers/GeralController");
 const ProdutosController = require("./controllers/ProdutosController");
 
-<<<<<<< HEAD
 const painelUsuario = require("./controllers/PainelUsuario");
-
-=======
-// Criar o roteador
-const router = express.Router();
->>>>>>> 2f53ed2cb2dd8c11570ae07491ded6bead31959f
-
 // Definir rotas
 router.get("/master", GeralController.master);
 
@@ -28,9 +21,6 @@ router.get('/cadastro', (req, res) => {
     return res.sendFile(__dirname + '/views/cadastro.html')
 });
 
-router.get("/painelUsuario", (req, res) => {
-    return res.sendFile(__dirname + "/views/painelUsuario.html")
-});
 
 router.get("/statusDePedidos", (req, res) => {
     return res.sendFile(__dirname + "/views/statusDePedidos.html")
@@ -57,14 +47,10 @@ router.get("/checkoutDeEndereco", (req, res) => {
     return res.sendFile(__dirname + "/views/checkoutEndereco.html");
 });
 
-<<<<<<< HEAD
 router.get('/cadastro', (req, res) => {
     return res.sendFile(__dirname + '/views/cadastro.html')
 })
 
 router.get("/painelUsuario", painelUsuario.show);
 
-=======
-// Exportar o roteador
->>>>>>> 2f53ed2cb2dd8c11570ae07491ded6bead31959f
 module.exports = router;
