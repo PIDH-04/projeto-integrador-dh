@@ -14,17 +14,17 @@ router.get("/master", (req, res) => {
 
 router.get("/", GeralController.home);
 
-router.get('/finalizacao-compra', GeralController.finalizacaoCompra);
+router.get('/finalizacao-compra', UsuarioController.finalizacaoCompra);
 
-router.get("/carrinho", GeralController.carrinho);
+router.get("/carrinho", UsuarioController.carrinho);
 
-router.get('/login', GeralController.login);
+router.get('/login', UsuarioController.login);
 
-router.get('/login/email', GeralController.loginEmail);
+router.get('/login/email', UsuarioController.loginEmail);
 
-router.get('/checkoutpagamento', GeralController.checkoutPagamento);
+router.get('/checkoutpagamento', UsuarioController.checkoutPagamento);
 
-router.get("/checkoutDeEndereco", GeralController.checkoutEndereco);
+router.get("/checkoutDeEndereco", UsuarioController.checkoutEndereco);
 
 router.get("/produto", ProdutosController.show);
 
