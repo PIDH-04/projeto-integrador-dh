@@ -16,7 +16,7 @@ router.get("/", GeralController.home);
 
 router.get('/finalizacao-compra', GeralController.finalizacaoCompra);
 
-router.get("/carrinho", GeralController.carrinho);
+router.get("/carrinho", ProdutosController.showCarrinho);
 
 router.get('/login', GeralController.login);
 

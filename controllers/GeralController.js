@@ -7,9 +7,6 @@ const GeralController = {
       finalizacaoCompra: (req, res) => {
         return res.render("finalizacaoCompra");
       },
-      carrinho: (req, res) => {
-        return res.render("carrinho");
-      },
       login: (req, res) => {
         return res.render("login");
       },
