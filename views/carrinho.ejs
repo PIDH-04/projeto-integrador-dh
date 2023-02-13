@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <%- include("partials/head", {css: ["carrinho.css"], titulo: "Carrinho_E-móvel"}) %>
+  <%- include("partials/head", {css: ["carrinho.css"], titulo:
+  "Carrinho_E-móvel"}) %>
   <body>
     <%- include("partials/header") %>
 
@@ -9,64 +10,7 @@
         <h1>Seu carrinho</h1>
         <p>Não se decidiu? <a href="/">Continue comprando</a></p>
 
-        <div class="produtos">
-          <div class="produto">
-            <div class="img-container">
-              <a href="/produto">
-                <img
-                  src="/img/mesa-monaco.png"
-                  alt="Foto Mesa de jantar Mônaco"
-                />
-              </a>
-            </div>
-            <div class="produto-info">
-              <a href="/produto">
-                <h2>Mesa de Jantar Mônaco</h2>
-              </a>
-              <p class="variacao">Tampo madeira</p>
-              <p class="quantidade">Quantidade: 1</p>
-              <p class="preco">R$ 800,00</p>
-            </div>
-            <span>Remover</span>
-          </div>
-
-          <div class="produto">
-            <div class="img-container">
-              <a href="/produto">
-                <img src="/img/mesa-dora.png" alt="Foto Mesa de jantar Dora" />
-              </a>
-            </div>
-            <div class="produto-info">
-              <a href="/produto">
-                <h2>Mesa de Jantar Dora</h2>
-              </a>
-              <p class="variacao">Tampo madeira</p>
-              <p class="quantidade">Quantidade: 1</p>
-              <p class="preco">R$ 800,00</p>
-            </div>
-            <span>Remover</span>
-          </div>
-
-          <div class="produto">
-            <div class="img-container">
-              <a href="/produto">
-                <img
-                  src="/img/mesa-plana.png"
-                  alt="Foto Mesa de jantar Plana"
-                />
-              </a>
-            </div>
-            <div class="produto-info">
-              <a href="/produto">
-                <h2>Mesa de Jantar Plana</h2>
-              </a>
-              <p class="variacao">Tampo madeira</p>
-              <p class="quantidade">Quantidade: 1</p>
-              <p class="preco">R$ 800,00</p>
-            </div>
-            <span>Remover</span>
-          </div>
-        </div>
+        <div class="produtos"></div>
 
         <div class="outras-infos">
           <h3>Outras informações</h3>
@@ -94,7 +38,7 @@
         <div class="valores">
           <div class="subtotal">
             <h5>Subtotal</h5>
-            <p>R$ 2.400,00</p>
+            <p></p>
           </div>
 
           <div class="frete">
@@ -104,7 +48,7 @@
 
           <div class="total">
             <h5>Total</h5>
-            <p>R$ 2.400,00</p>
+            <p></p>
           </div>
 
           <a href="/cadastro" class="botao-secundario">Continuar</a>
@@ -114,6 +58,6 @@
 
     <%- include("partials/footer.ejs") %>
 
-    <script src="/scripts/scripts.js"></script>
+    <script src="/scripts/carrinho.js"></script>
   </body>
 </html>
