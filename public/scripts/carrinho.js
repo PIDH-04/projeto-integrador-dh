@@ -1,14 +1,18 @@
 window.addEventListener("load", () => {
-  const produtosNoCarrinho = JSON.parse(localStorage.getItem("produtos"));
+  const produtosNoCarrinho =
+    JSON.parse(localStorage.getItem("produtos")) != null
+      ? JSON.parse(localStorage.getItem("produtos"))
+      : [];
   const produtosContainer = document.querySelector(".produtos");
   const subtotalContainer = document.querySelector(".subtotal p");
   const totalContainer = document.querySelector(".total p");
-  const valorProdutos = [];
+  let valorProdutos = 0;
 
   function criaProduto(produto) {
+    // Soma o produto ao valor final do carrinho
     let valorFormatado = produto.preco.replace("R$", "");
     valorFormatado = valorFormatado.replace(",", ".");
-    valorProdutos.push(valorFormatado);
+    valorProdutos = valorProdutos + (valorFormatado * produto.quantidade)
 
     const produtoContainer = document.createElement("div");
     produtoContainer.classList.add("produto");
@@ -34,11 +38,8 @@ window.addEventListener("load", () => {
     produtosContainer.appendChild(produtoContainer);
   }
 
-  function addInfosDePreco(arrayComvalores) {
-    const soma = arrayComvalores.reduce(
-      (anterior, atual) => parseFloat(anterior) + parseFloat(atual)
-    );
-    const somaFormatada = soma.toLocaleString("pt-br", {
+  function addInfosDePreco(valorFinal) {
+    const somaFormatada = valorFinal.toLocaleString("pt-br", {
       style: "currency",
       currency: "BRL",
     });
@@ -46,12 +47,17 @@ window.addEventListener("load", () => {
     totalContainer.innerText = `R$ ${somaFormatada}`;
   }
 
+  function atualizaQuantidadeHeader() {
+    const quantidadeDeProdutos = document.getElementById("span");
+    quantidadeDeProdutos.innerText = produtosNoCarrinho.length;
+  }
+
   function addProdutos(arrayDeProdutos) {
-    valorProdutos.length = 0;
+    valorProdutos = 0;
     if (arrayDeProdutos === null || arrayDeProdutos.length == 0) {
       produtosContainer.innerHTML = `<p>Você ainda não adicionou nenhum produto no seu carrinho </p>`;
-      subtotalContainer.innerText = ''
-      totalContainer.innerText = ''
+      subtotalContainer.innerText = "";
+      totalContainer.innerText = "";
     } else {
       produtosContainer.innerHTML = ``;
       for (let produto of arrayDeProdutos) {
@@ -70,6 +76,7 @@ window.addEventListener("load", () => {
     produtosNoCarrinho.splice(index, 1);
     localStorage.setItem("produtos", JSON.stringify(produtosNoCarrinho));
     addProdutos(produtosNoCarrinho);
+    atualizaQuantidadeHeader()
   }
 
   // Executa a função de adicionar os produtos do carrinho assim que a página carrega
