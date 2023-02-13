@@ -107,6 +107,7 @@
     font-family: var(--font-paragrafo);
     margin-left: 25px;
     text-size-adjust: 90%;
+    font-size: 20px;
   }
 
   main .products-container {
@@ -141,7 +142,7 @@
     margin-top: 30px;
     margin-bottom: 0;
     color: var(--cor-texto-secundaria);
-    font-size: 24px;
+    font-size: 18px;
   }
 
   main .product-card a {
@@ -153,7 +154,7 @@
   }
 
   main .product-card p {
-    font-size: 24px;
+    font-size: 20px;
     margin-left: 20px;
     font-weight: bold;
     color: var(--cor-texto-primaria);
@@ -162,7 +163,7 @@
 
   main .product-card .ver {
     background-color: var(--cor-secundaria);
-    font-size: 24px;
+    font-size: 20px;
     height: 50px;
     width: 100%;
     margin-top: 3px;
@@ -196,12 +197,14 @@
     color: var(--cor-texto-primaria);
     margin-top: 5px;
     padding-bottom: 10px;
+    font-size: 25px;
   }
 
   .categorias p {
     text-align: center;
     font-family: var(--font-paragrafo);
     margin-bottom: 10px;
+    font-size: 20px;
   }
 
   .categorias .icone-container {
@@ -213,7 +216,7 @@
   .categorias h2 {
     text-align: center;
     font-family: var(--font-paragrafo);
-    font-size: 15px;
+    font-size: 20px;
     margin-top: 10px;
     margin-left: 10px;
     color: var(--cor-texto-primaria);
@@ -226,6 +229,7 @@
   .categorias .botao-secundario {
     background: #fff;
     margin-bottom: 5px;
+    font-size: 18px;
   }
 
   .categorias div {
@@ -283,12 +287,17 @@
     align-items: stretch;
   }
 
+  .bannerSlide {
+    padding-top: 40px;
+  }
+
   .bannerSlide .slides .slide {
     max-height: 300px;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     flex-direction: column;
+    padding-top: 20px;
   }
   .bannerSlide h1 {
     color: #fff;
@@ -355,6 +364,7 @@
 
   main {
     margin-bottom: 20px;
+    margin-top: 20px;
   }
 
   main .vitrine {
@@ -369,7 +379,7 @@
     padding-top: 7px;
     color: var(--cor-texto-primaria);
     font-family: var(--font-paragrafo);
-    margin: 1px;
+    margin-left: 25px;
     text-size-adjust: 90%;
   }
 
@@ -387,7 +397,7 @@
   }
 
   main .product-card .card {
-    height: 220px;
+    height: 180px;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -395,8 +405,8 @@
   }
 
   main .product-card img {
-    width: 350px;
-    height: 350px;
+    width: 100%;
+    height: 100%;
   }
 
   main .product-card h2 {
@@ -405,7 +415,7 @@
     margin-top: 30px;
     margin-bottom: 0;
     color: var(--cor-texto-secundaria);
-    font-size: 30px;
+    font-size: 20px;
   }
 
   main .product-card a {
@@ -417,7 +427,7 @@
   }
 
   main .product-card p {
-    font-size: 30px;
+    font-size: 20px;
     margin-left: 20px;
     font-weight: bold;
     color: var(--cor-texto-primaria);
@@ -426,7 +436,7 @@
 
   main .product-card .ver {
     background-color: var(--cor-secundaria);
-    font-size: 25px;
+    font-size: 20px;
     height: 50px;
     width: 100%;
     margin-top: 3px;
@@ -460,12 +470,14 @@
     color: var(--cor-texto-primaria);
     margin-top: 5px;
     padding-bottom: 10px;
+    font-size: 25px;
   }
 
   .categorias p {
     text-align: center;
     font-family: var(--font-paragrafo);
     margin-bottom: 10px;
+    font-size: 20px;
   }
 
   .categorias .icone-container {
@@ -477,7 +489,7 @@
   .categorias h2 {
     text-align: center;
     font-family: var(--font-paragrafo);
-    font-size: 15px;
+    font-size: 20px;
     margin-top: 10px;
     margin-left: 10px;
     color: var(--cor-texto-primaria);
@@ -530,7 +542,6 @@
     justify-content: center;
     width: 100%;
   }
-}
 
 @media (min-width: 769px) {
   header .superior {
@@ -580,7 +591,7 @@
     display: block;
     text-align: center;
     padding: 20px;
-    font-size: 25px;
+    font-size: 20px;
   }
 
   .bannerSlide .slides .slide a:hover {
@@ -602,7 +613,6 @@
     height: 350px;
     object-fit: cover;
     background-repeat: no-repeat;
-    /* margin-top: 170px; */
   }
 
   .bannerSlide .slides:nth-child(2) .slide {
@@ -612,7 +622,6 @@
     height: 350px;
     object-fit: cover;
     background-repeat: no-repeat;
-    /* margin-top: 170px; */
   }
 
   .bannerSlide .slides:nth-child(3) .slide {
@@ -622,11 +631,9 @@
     height: 350px;
     object-fit: cover;
     background-repeat: no-repeat;
-    /* margin-top: 170px; */
   }
 
   .bannerSlide .btn#next {
-    /* criar um botão com um circulo e uma seta dentro*/
     border: solid var(--cor-principal);
     border-width: 0 3px 3px 0;
     display: inline-block;
@@ -634,14 +641,12 @@
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
     position: absolute;
-    /* top: 50%; */
-    top: 40%;
+    top: 30%;
     cursor: pointer;
     right: 10px;
   }
 
   .bannerSlide .btn#prev {
-    /* criar um botão com um circulo e uma seta dentro*/
     border: solid var(--cor-principal);
     border-width: 0 3px 3px 0;
     display: inline-block;
@@ -649,32 +654,27 @@
     transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
     position: absolute;
-    /* top: 50%; */
-    top: 40%;
+    top: 30%;
     cursor: pointer;
     left: 10px;
   }
 
   .bannerSlide .btn#prev:hover {
-    /* mudar cor da seta para amarelo */
     border: solid var(--cor-secundaria);
     border-width: 0 3px 3px 0;
     display: inline-block;
     padding: 15px;
     position: absolute;
-    /* top: 50%; */
-    top: 40%;
+    top: 30%;
   }
 
   .bannerSlide .btn#next:hover {
-    /* mudar cor da seta para amarelo */
     border: solid var(--cor-secundaria);
     border-width: 0 3px 3px 0;
     display: inline-block;
     padding: 15px;
     position: absolute;
-    /* top: 50%; */
-    top: 40%;
+    top: 30%;
   }
 
   main {
@@ -696,7 +696,7 @@
     height: 50px;
     margin: 1px;
     text-size-adjust: 90%;
-    font-size: 30px;
+    font-size: 20px;
   }
 
   main .products-container {
@@ -731,7 +731,7 @@
   }
 
   main .product-card h2 {
-    font-size: 1.3em;
+    font-size: 20px;
     margin: 0;
     padding-left: 10px;
     height: 44px;
@@ -740,7 +740,7 @@
 
   main .product-card p {
     padding-left: 10px;
-    font-size: 24px;
+    font-size: 20px;
     margin-top: 15px;
     align-self: flex-start;
   }
@@ -834,4 +834,5 @@
     justify-content: center;
     width: 100%;
   }
+}
 }
