@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/estilos.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Página Mestre</title>
+  </head>
+  <body>
+    <main class="master-pg-container">
+      <section>
+        <h2>checkbox</h2>
+
+        <input name="campo" type="checkbox" />
+        <label for="Campo">Texto do checkbox</label>
+      </section>
+
+      <section class="master-section">
+        <h2>menu seleção</h2>
+
+        <div class="menu-selecao">
+          <select name="ordenacao">
+            <option value="">Menor preço</option>
+            <option value="maior-preco">Maior preço</option>
+            <option value="novidades">Novidades</option>
+          </select>
+        </div>
+      </section>
+
+      <section>
+        <h2>botão secundário</h2>
+        <button class="comprar botao-secundario">Adicionar ao carrinho</button>
+      </section>
+
+      <section>
+        <h2>botão primário</h2>
+        <button class="carregar-mais botao-primario">Ver mais produtos</button>
+      </section>
+
+      <!-- Necessário importar o arquivo de scripts para funcionar -->
+      <section class="master-section">
+        <h2>seletor de quantidade</h2>
+        <div class="seletor-quantidade">
+          <span id="btn-subtrai">-</span>
+          <input
+            id="quantidade"
+            type="number"
+            inputmode="numeric"
+            value="1"
+            min="1"
+          />
+          <span id="btn-adiciona">+</span>
+        </div>
+      </section>
+
+      <section class="master-section">
+        <h2>Input de texto</h2>
+        <input type="text" placeholder="placeholder" />
+      </section>
+
+      <section class="master-section card">
+        <h2>card de produtos do carrinho</h2>
+        <div class="card-produto-carrinho">
+          <div class="img-container">
+            <a href="/produto">
+              <img
+                src="/img/mesa-monaco.png"
+                alt="Foto Mesa de jantar Mônaco"
+              />
+            </a>
+          </div>
+          <div class="produto-info">
+            <a href="/produto">
+              <h5>Mesa de Jantar Mônaco</h5>
+            </a>
+            <p class="variacao">Tampo madeira</p>
+            <p class="quantidade">Quantidade: 1</p>
+            <p class="preco">R$ 800,00</p>
+          </div>
+          <span>Remover</span>
+        </div>
+      </section>
+
+    </main>
+
+    <script src="/scripts/scripts.js"></script>
+  </body>
+</html>
