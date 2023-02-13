@@ -2,55 +2,40 @@
 const express = require('express');
 const GeralController = require("./controllers/GeralController");
 const ProdutosController = require("./controllers/ProdutosController");
+const UsuarioController = require("./controllers/UsuarioController");
 
 const painelUsuario = require("./controllers/PainelUsuario");
 // Definir rotas
-router.get("/master", GeralController.master);
-
-router.get("/header", GeralController.header);
+router.get("/master", (req, res) => {
+    return res.sendFile(__dirname + "/views/master.html")
+});
 
 router.get("/", GeralController.home);
 
+router.get('/finalizacao-compra', GeralController.finalizacaoCompra);
+
+router.get("/carrinho", GeralController.carrinho);
+
+router.get('/login', GeralController.login);
+
+router.get('/login/email', GeralController.loginEmail);
+
+router.get('/checkoutpagamento', GeralController.checkoutPagamento);
+
+router.get("/checkoutDeEndereco", GeralController.checkoutEndereco);
+
 router.get("/produto", ProdutosController.show);
 
-router.get("/categorias/:categoria", (req, res) => {
-    return res.sendFile(__dirname + "/views/listagemProdutos.html");
-});
-
-router.get('/cadastro', (req, res) => {
-    return res.sendFile(__dirname + '/views/cadastro.html')
-});
-
+router.get("/categorias/:categoria", ProdutosController.listagem);
 
 router.get("/statusDePedidos", (req, res) => {
     return res.sendFile(__dirname + "/views/statusDePedidos.html")
 });
 
-router.get('/login', (req, res) => {
-    return res.sendFile(__dirname + '/views/login.html')
-});
-
-router.get("/carrinho", (req, res) => {
-    return res.sendFile(__dirname + "/views/carrinho.html");
-});
-
-
-router.get('/finalizacao-compra', (req, res) => {
-    return res.sendFile(__dirname + '/views/finalizacaoCompra.html')
-});
-
-router.get('/checkoutpagamento', (req, res) => {
-    return res.sendFile(__dirname + '/views/checkoutPagamento.html')
-});
-
-router.get("/checkoutDeEndereco", (req, res) => {
-    return res.sendFile(__dirname + "/views/checkoutEndereco.html");
-});
-
-router.get('/cadastro', (req, res) => {
-    return res.sendFile(__dirname + '/views/cadastro.html')
-})
+router.get("/cadastro", UsuarioController.showCadastro);
 
 router.get("/painelUsuario", painelUsuario.show);
 
+
+// Exportar o roteador
 module.exports = router;
