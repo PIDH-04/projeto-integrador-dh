@@ -5,6 +5,10 @@ const ProdutosController = require("./controllers/ProdutosController");
 const UsuarioController = require("./controllers/UsuarioController");
 
 const painelUsuario = require("./controllers/PainelUsuario");
+const router = express.Router()
+
+
+
 // Definir rotas
 router.get("/master", (req, res) => {
     return res.sendFile(__dirname + "/views/master.html")
