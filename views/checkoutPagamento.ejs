@@ -97,75 +97,26 @@
         </div>
         <div class="coluna2 container-dropshadow" id="container 2">
           <h3>Resumo da compra</h3>
-          <div class="resumo-compra">
+          <div class="resumo-compra subtotal">
             <div class="resumo">
               <p>Subtotal</p>
               <p class="valor">R$ 2.400,00</p>
             </div>
-            <div class="resumo">
+            <div class="resumo frete">
               <p>Frete</p>
               <p class="valor">R$ 900,00</p>
             </div>
-            <div class="resumo">
+            <div class="resumo total">
               <p>Total</p>
               <p class="valor">R$ 3.300,00</p>
             </div>
           </div>
           <h3>Seu carrinho</h3>
-          <div class="card-produto-carrinho">
-            <div class="img-container">
-              <a href="/produto">
-                <img
-                  src="/img/mesa-monaco.png"
-                  alt="Foto Mesa de jantar Mônaco"
-                />
-              </a>
-            </div>
-            <div class="produto-info">
-              <a href="/produto">
-                <h5>Mesa de Jantar Mônaco</h5>
-              </a>
-              <p class="variacao">Tampo madeira</p>
-              <p class="quantidade">Quantidade: 1</p>
-              <p class="preco">R$ 800,00</p>
-            </div>
-          </div>
-          <div class="card-produto-carrinho">
-            <div class="img-container">
-              <a href="/produto">
-                <img src="/img/mesa-dora.png" alt="Foto Mesa de jantar Dora" />
-              </a>
-            </div>
-            <div class="produto-info">
-              <a href="/produto">
-                <h5>Mesa de Jantar Dora</h5>
-              </a>
-              <p class="variacao">Tampo madeira</p>
-              <p class="quantidade">Quantidade: 1</p>
-              <p class="preco">R$ 800,00</p>
-            </div>
-          </div>
-          <div class="card-produto-carrinho">
-            <div class="img-container">
-              <a href="/produto">
-                <img
-                  src="/img/mesa-plana.png"
-                  alt="Foto Mesa de jantar Plana"
-                />
-              </a>
-            </div>
-            <div class="produto-info">
-              <a href="/produto">
-                <h5>Mesa de Jantar Plana</h5>
-              </a>
-              <p class="variacao">Tampo madeira</p>
-              <p class="quantidade">Quantidade: 1</p>
-              <p class="preco">R$ 800,00</p>
-            </div>
-          </div>
+          <div class="produtos"></div>
         </div>
       </div>
     </main>
     <%- include("partials/footer.ejs") %>
+    <script src="/scripts/carrinhoFluxoPagamento.js"></script>
   </body>
 </html>

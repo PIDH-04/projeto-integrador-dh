@@ -1,3 +1,12 @@
+function atualizaQuantidadeHeader() {
+  const quantidadeDeProdutos = document.getElementById("span");
+  const produtosNoCarrinho =
+  JSON.parse(localStorage.getItem("produtos")) != null
+    ? JSON.parse(localStorage.getItem("produtos"))
+    : [];
+  quantidadeDeProdutos.innerText = produtosNoCarrinho.length;
+}
+
 document.getElementById("menu-toggle").addEventListener("click", function() {
     var menuMobile = document.getElementById("menuMobile");
     if (menuMobile.style.display === "block") {
@@ -8,6 +17,9 @@ document.getElementById("menu-toggle").addEventListener("click", function() {
   });
 
   window.onload = function() {
+
+    atualizaQuantidadeHeader();
+
     document.getElementById('areaInternaMobile').addEventListener('click', () => {
       const submenuCategorias = document.getElementById('categoriasInternasMobile');
   

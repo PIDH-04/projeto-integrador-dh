@@ -17,11 +17,18 @@ header .inferior2 input {
   justify-content: space-evenly;
   margin-left: 10%;
   margin-right: 10%;
-  margin-top: 30px;
   margin-bottom: 60px;
   border: 0px;
   align-items: flex-start;
-  /* margin-top: 160px; */
+  margin-top: var(--margin-top);
+}
+
+.display-flex input{
+  width: 100%;
+}
+
+.display-flex .lembrar input{
+  width: auto;
 }
 
 .container {
@@ -156,9 +163,10 @@ footer .copyright p {
   }
 }
 
-@media (max-width: 800px) {
-  .display-flex {
-    margin-top: 30px;
+
+@media (max-width: 780px){
+  .display-flex{
+    margin-top: 150px;
   }
 }
 

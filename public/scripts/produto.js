@@ -110,4 +110,5 @@ window.addEventListener("load", () => {
   btnAdiciona.addEventListener("click", (e) => {
     quantidade.value = parseInt(quantidade.value) + 1;
   });
+
 });

@@ -7,6 +7,7 @@
   --cor-erro: #ff3333;
   --font-paragrafo: "Public Sans", sans-serif;
   --font-titulo: "Merriweather", serif;
+  --margin-top: 195px;
 }
 
 /* Reset básico dos estilos do navegador */
@@ -22,7 +23,7 @@ main {
   width: 70%;
   max-width: 1400px;
   margin: 0 auto;
-  margin-top: 30px;
+  margin-top: var(--margin-top);
 }
 
 section h2 {
@@ -292,8 +293,14 @@ div.card-produto-carrinho span {
   }
 }
 
-@media (max-width: 800px) {
+/* @media (max-width: 800px) {
   main {
     margin-top: 30px;
+  }
+} */
+
+@media (max-width: 780px){
+  main{
+    margin-top: 150px;
   }
 }
