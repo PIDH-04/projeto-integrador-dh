@@ -1,7 +1,7 @@
 .banner-categoria {
   background-color: var(--cor-principal);
   padding: 25px 15%;
-  /* margin-top: 150px; */
+  margin-top: var(--margin-top);
   color: white;
   display: flex;
   justify-content: space-between;
@@ -123,8 +123,9 @@ main {
 
 .produtos-container .produto {
   width: 100%;
-  min-height: 480px;
+  min-height: 500px;
   position: relative;
+  text-align: center;
 }
 
 .produtos-container .menu-selecao {
@@ -161,6 +162,12 @@ main {
   font-size: 22px;
   margin-top: 8px;
   font-weight: bold;
+}
+
+.produtos-container .produto p.variacao-produto{
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin-bottom: 15px;
 }
 
 .produtos-container .produto button {
