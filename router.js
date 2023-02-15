@@ -41,8 +41,9 @@ router.get("/painelUsuario", (req, res) => {
     return res.sendFile(__dirname + "/views/painelUsuario.html")
 });
 
-
+// Admin Routers
 router.get("/admin/login", AdminController.showLogin);
+router.get("/admin/clientes", AdminController.showClientes);
 
 // Exportar o roteador
 module.exports = router;
