@@ -1,0 +1,50 @@
+[
+    {
+    "nome":"Mesas de Jantar",
+    "icone": "/img/mesa-icone.svg",
+    "area": "interna",
+    "descrição": "É um item fundamental para a casa./nPequenas, grandes, de vidro ou madeira, você encontra aqui!"
+},
+{
+    "nome":"Cadeiras",
+    "icone": "/img/mesa-icone.svg",
+    "area": ["interna", "externa"],
+    "descrição": "É um item fundamental para a casa./nEstofadas, de acrílico ou madeira, você encontra aqui!"
+},
+{
+    "nome":"Mesas de Centro",
+    "icone": "/img/mesa-icone.svg",
+    "area":"interna",
+    "descrição": "O clássico das salas de estar./nPequenas, grandes, de vidro ou madeira, você encontra aqui!"
+},
+{
+    "nome":"Sofás",
+    "icone": "/img/mesa-icone.svg",
+    "area":["interna", "externa"],
+    "descrição": "É um item fundamental para sua sala./nPequenos, grandes, de couro ou linho, você encontra aqui!"
+},
+{
+    "nome":"Cômodas",
+    "icone": "/img/mesa-icone.svg",
+    "area": "interna",
+    "descrição": "Ideal para quartos infantis./nPequenas, grandes, de madeira maciça ou mdf, você encontra aqui!"
+},
+{
+    "nome":"Mesas Laterais",
+    "icone": "/img/mesa-icone.svg",
+    "area":"interna",
+    "descrição": "Um item que traz conforto e praticidade para a sua casa./nUnitárias ou conjunto, você encontra aqui!"
+},
+{
+    "nome":"Balanços",
+    "icone": "/img/mesa-icone.svg",
+    "area":"externa",
+    "descrição": "Item destaque para seu jardim./nPequenos, grandes, você encontra aqui!"
+},
+{
+    "nome":"Armários",
+    "icone": "/img/mesa-icone.svg",
+    "area":"interna",
+    "descrição": "É um item fundamental para a casa./nPequenas, grandes, de vidro ou madeira, você encontra aqui!"
+}
+]
