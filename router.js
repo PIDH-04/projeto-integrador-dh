@@ -1,5 +1,6 @@
 // Importar express
 const express = require('express');
+const AdminController = require('./controllers/AdminController');
 const GeralController = require("./controllers/GeralController");
 const ProdutosController = require("./controllers/ProdutosController");
 const UsuarioController = require("./controllers/UsuarioController");
@@ -39,6 +40,9 @@ router.get("/cadastro", UsuarioController.showCadastro);
 router.get("/painelUsuario", (req, res) => {
     return res.sendFile(__dirname + "/views/painelUsuario.html")
 });
+
+
+router.get("/admin/login", AdminController.showLogin);
 
 // Exportar o roteador
 module.exports = router;
