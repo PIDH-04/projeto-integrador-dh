@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <%- include("partials/adminHead", {css: ["adminLogin.css"], titulo: "Login Administrativo | E-móvel"}) %>
+  <body class="admin-container">
+    <main>
+      <div class="form-login-container">
+        <div class="logo-container">
+          <img src="/img/logo.svg" alt="Logo E-móvel" />
+        </div>
+        <p>Faça login para acessar a área administrativa</p>
+        <form action="" method="">
+          <div>
+            <label for="email">Digite seu e-mail</label>
+            <input name="email" placeholder="admin@emovel.com" id="email" />
+          </div>
+          <div>
+            <label for="password">Digite sua senha</label>
+            <input name="password" type="password" placeholder="admin@emovel.com" id="password" />
+          </div>
+          <button class="botao-secundario" type="submit">Acessar</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
