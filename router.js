@@ -4,7 +4,6 @@ const GeralController = require("./controllers/GeralController");
 const ProdutosController = require("./controllers/ProdutosController");
 const UsuarioController = require("./controllers/UsuarioController");
 
-const painelUsuario = require("./controllers/PainelUsuario");
 const router = express.Router()
 
 
@@ -32,13 +31,9 @@ router.get("/produto", ProdutosController.show);
 
 router.get("/categorias/:categoria", ProdutosController.listagem);
 
-router.get("/statusDePedidos", (req, res) => {
-    return res.sendFile(__dirname + "/views/statusDePedidos.html")
-});
-
 router.get("/cadastro", UsuarioController.showCadastro);
-
-router.get("/painelUsuario", painelUsuario.show);
+router.get("/painelUsuario", UsuarioController.showPainelUsuario);
+router.get("/statusDePedidos", UsuarioController.showstatusDePedido);
 
 
 // Exportar o roteador

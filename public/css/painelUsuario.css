@@ -16,6 +16,8 @@
      border-radius: 10px;
      width: 100px;
      margin-top: 20px;
+     margin-bottom: 10px;
+     
  }
 
  main {
@@ -115,6 +117,7 @@
 
  #container-a label {
      width: 100%;
+     margin-top: 30px;
  }
 
  footer {
