@@ -1,6 +1,7 @@
 [
     {
         "nome":"Cadeira Saarinen",
+        "img":"/img/cadeira.jpg",
         "categoria":"Cadeiras",
         "material":["madeira", "acetato"],
         "cores":["branco", "preto", "bege"],
@@ -14,6 +15,7 @@
     },
     {
         "nome":"Sofá Descanso Pleno",
+        "img":"/img/sofa.jpg",
         "categoria":"Sofás",
         "material":["madeira", "linho", "estofado"],
         "cores":["azul", "cinza", "preto"],
@@ -27,19 +29,7 @@
     },
     {
         "nome":"Mesa de Jantar Mônaco",
-        "categoria":"Mesas de Jantar",
-        "material":"madeira",
-        "cores":"branco",
-        "preco":800,
-        "descricao":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aperiam minima necessitatibus, quis blanditiis exercitationem veniam earum error quam cupiditate iste vitae accusamus voluptatem corporis ullam? Eos sit nisi vero.",
-        "medidas": {
-            "comprimento": 0.8,
-            "largura": 0.8,
-            "altura":0.8
-        }
-    },
-    {
-        "nome":"Mesa de Jantar Mônaco",
+        "img":"/img/mesa-monaco.png",
         "categoria":"Mesas de Jantar",
         "material":"madeira",
         "cores":"branco",
@@ -53,6 +43,7 @@
     },
     {
         "nome":"Mesa de Jantar Aspen",
+        "img":"/img/mesa-aspen.jpg",
         "categoria":"Mesas de Jantar",
         "material":"madeira",
         "cores":["preta", "bege"],
@@ -66,6 +57,7 @@
     },
     {
         "nome":"Mesa de Jantar Bio",
+        "img":"/img/mesa-bio.png",
         "categoria":"Mesas de Jantar",
         "material":"madeira",
         "cores":"bege",
@@ -79,6 +71,7 @@
     },
     {
         "nome":"Mesa de Jantar Dora",
+        "img":"/img/mesa-dora.png",
         "categoria":"Mesas de Jantar",
         "material":"madeira",
         "cores":["branco", "preto"],
