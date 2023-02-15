@@ -1,6 +1,8 @@
 const CadastroController = {
     showCadastro: (req, res) => {
         return res.render('cadastro');
+
+
     },
     finalizacaoCompra: (req, res) => {
       return res.render("finalizacaoCompra");
@@ -16,7 +18,15 @@ const CadastroController = {
     },
     checkoutPagamento: (req, res) => {
       return res.render("checkoutPagamento");
+    },
+
+    
+    criarCadastro: (req , res) =>{
+      return res.render ("criarCadastro");
+
     }
+
+ 
 }
 
 module.exports = CadastroController;
