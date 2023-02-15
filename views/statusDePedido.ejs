@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<%- include("partials/head", {css: ["statusDePedidos.css"], titulo: "Status de Pedidos E-móvel" }) %>
+
+  <%- include("partials/header") %>
+    <main>
+
+      <body>
+        <div id="div1">
+          <h1>Status de Pedidos</h1>
+          Filtrar por:
+          <select name="ordenacao">
+            <option value="">Entregues...</option>
+            <option value="a-caminho">Em andamento...</option>
+            <option value="compras">Todos...</option>
+          </select>
+          <p></p>
+          <p>Entregue dia 28 de dezembro 2022.</p>
+        </div>
+        <div id="div2">
+          <img class="imagem" src="/img/mesa-monaco.png" alt="" />
+          <p>Mesa de Jantar Mônaco Tampo madeira.</p>
+          <p>Quantidade: 1</p>
+        </div>
+      </body>
+    </main>
+    <%- include("partials/footer") %>
+      <script src="/scripts/painelIndex.js"></script>
+
+</html>

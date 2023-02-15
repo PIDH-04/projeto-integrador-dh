@@ -16,6 +16,12 @@ const CadastroController = {
     },
     checkoutPagamento: (req, res) => {
       return res.render("checkoutPagamento");
+    },
+    showPainelUsuario:(req, res) => {
+      return res.render('painelUsuario')
+    },
+    showstatusDePedido:(req, res) => {
+      return res.render("statusDePedido")
     }
 }
 
