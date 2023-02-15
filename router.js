@@ -42,7 +42,7 @@ router.get("/painelUsuario", (req, res) => {
 });
 
 // Admin Routers
-router.get("/admin/login", AdminController.showLogin);
+router.get("/admin/", AdminController.showLogin);
 router.get("/admin/clientes", AdminController.showClientes);
 
 // Exportar o roteador
