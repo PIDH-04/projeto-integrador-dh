@@ -63,6 +63,7 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 
+h1,
 h2,
 h3,
 h4,
@@ -269,6 +270,17 @@ div.card-produto-carrinho span {
 .erros li {
   list-style: none;
   line-height: 2rem;
+}
+
+/* ADMIN */
+
+body.admin-container{
+  display: flex;
+}
+
+body.admin-container main{
+  margin-top: 100px;
+  width: 100%;
 }
 
 @media (max-width: 1450px) {
