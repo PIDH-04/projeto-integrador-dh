@@ -10,6 +10,9 @@ const AdminController = {
   },
   showPedidos: (req, res) => {
     res.render("adminPedidos")
+  },
+  showCriarProduto: (req, res) => {
+    res.render("adminAddProduto");
   }
 };
 

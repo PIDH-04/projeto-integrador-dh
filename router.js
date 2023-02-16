@@ -42,6 +42,7 @@ router.get("/admin/", AdminController.showLogin);
 router.get("/admin/clientes", AdminController.showClientes);
 router.get("/admin/produtos", AdminController.showProdutos);
 router.get("/admin/pedidos", AdminController.showPedidos);
+router.get("/admin/produtos/criar", AdminController.showCriarProduto);
 
 // Exportar o roteador
 module.exports = router;

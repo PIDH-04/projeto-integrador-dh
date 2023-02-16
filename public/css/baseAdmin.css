@@ -51,3 +51,16 @@ body.admin-container form img {
   height: auto;
   margin-right: 10px;
 }
+
+
+body.admin-container .retornar-pagina{
+  margin-top: -20px;
+  display: block;
+  color: var(--cor-principal);
+  font-family: var(--font-paragrafo);
+  text-decoration: none;
+}
+
+body.admin-container .retornar-pagina img{
+  width: 12px;
+}
