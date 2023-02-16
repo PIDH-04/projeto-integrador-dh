@@ -41,6 +41,22 @@ function categoria() {
 
 }
 
+function editarProduto(id, novoProduto) {
+    const index = produtos.findIndex(p => p.id === id);
+    if (index !== -1) {
+      // Atualizar o produto
+      produtos[index] = {
+        id: id,
+        nome: novoProduto.nome || produtos[index].nome,
+        categoria: novoProduto.categoria || produtos[index].categoria,
+        preco: novoProduto.preco || produtos[index].preco,
+      };
+      return produtos[index];
+    } else {
+      return null;
+    }
+  }
+
 function listar() {
     return produtos;
 
