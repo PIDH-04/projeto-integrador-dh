@@ -283,6 +283,7 @@ body.admin-container main{
   margin-top: 100px;
   width: 100%;
   margin-left: 20%;
+  padding-right: 50px;
 }
 
 body.admin-container h1{
@@ -301,6 +302,7 @@ body.admin-container thead{
   background-color: var(--cor-texto-secundaria);
   border-radius: 100px;
   color: #fff;
+  box-shadow: 0px 6px 13px rgba(0, 0, 0, 0.25);
 }
 
 body.admin-container th, body.admin-container td{
