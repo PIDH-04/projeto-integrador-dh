@@ -276,12 +276,49 @@ div.card-produto-carrinho span {
 
 body.admin-container{
   display: flex;
+  align-items: stretch;
 }
 
 body.admin-container main{
   margin-top: 100px;
   width: 100%;
+  margin-left: 20%;
 }
+
+body.admin-container h1{
+  margin-bottom: 30px;
+}
+
+body.admin-container table{
+  width: 100%;
+  text-align: center;
+  font-family: var(--font-paragrafo);
+  border-collapse: collapse;
+}
+
+body.admin-container thead{
+  padding: 10px;
+  background-color: var(--cor-texto-secundaria);
+  border-radius: 100px;
+  color: #fff;
+}
+
+body.admin-container th, body.admin-container td{
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+body.admin-container th:first-child {
+  border-top-left-radius:10px;
+  border-bottom-left-radius:10px;
+}
+
+body.admin-container th:last-child {
+  border-top-right-radius:10px;
+  border-bottom-right-radius:10px;
+}
+
+
 
 @media (max-width: 1450px) {
   main {

@@ -1,10 +1,54 @@
 <!DOCTYPE html>
 <html>
-  <%- include("partials/adminHead", {css: ["adminLogin.css"], titulo: "Login Administrativo | E-móvel"}) %>
-  <body class="clientes-container">
+  <%- include("partials/adminHead", {css: ["adminClientes.css"], titulo: "Login Administrativo | E-móvel"}) %>
+  <body class="admin-container">
     <%- include("partials/adminHeader") %>
-    <main>
+    <main class="">
         <h1>Clientes</h1>
+
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Cliente</th>
+              <th>E-mail cliente</th>
+              <th>Ações</th>
+            </tr>
+
+            <tbody>
+              <tr>
+                <td>00001</td>
+                <td>Alberto da Silva</td>
+                <td>alberto.silva@gmail.com</td>
+                <td>
+                  <a class="botao-secundario" href="#">
+                    Ver pedidos
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>00001</td>
+                <td>Alberto da Silva</td>
+                <td>alberto.silva@gmail.com</td>
+                <td>
+                  <a class="botao-secundario" href="#">
+                    Ver pedidos
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>00001</td>
+                <td>Alberto da Silva</td>
+                <td>alberto.silva@gmail.com</td>
+                <td>
+                  <a class="botao-secundario" href="#">
+                    Ver pedidos
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </thead>
+        </table>
     </main>
   </body>
 </html>

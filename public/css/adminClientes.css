@@ -1,0 +1,7 @@
+body.admin-container .botao-secundario{
+    width:50%;
+    background-color: var(--cor-principal);
+    margin: 0 auto;
+    color: #fff;
+    font-size: 0.8rem;
+}
