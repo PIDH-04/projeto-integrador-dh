@@ -51,6 +51,7 @@ body.admin-container #novo-produto-form textarea{
     border-radius: 8px;
     padding: 10px;
     font-family: var(--font-paragrafo);
+    font-size: 0.9rem;
 }
 
 body.admin-container #novo-produto-form .imagem-produto-btn{
@@ -88,6 +89,20 @@ body.admin-container #novo-produto-form select{
     border-radius: 8px;
     cursor: pointer;
     background-color: #fff;
+}
+
+body.admin-container .container-botoes{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+body.admin-container .container-botoes button{
+    margin: 50px 0 0 ;
+}
+
+body.admin-container .container-botoes button:last-child{
+    background-color: #cd0808;
 }
 
 

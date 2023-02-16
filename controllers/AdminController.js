@@ -13,6 +13,9 @@ const AdminController = {
   },
   showCriarProduto: (req, res) => {
     res.render("adminAddProduto");
+  },
+  showEditarProduto: (req, res) => {
+    res.render("adminEditarProduto")
   }
 };
 
