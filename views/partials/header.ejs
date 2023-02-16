@@ -9,74 +9,53 @@
       <nav id="menuMobile">
         <ul>
           <li><a href="/">Home</a></li>
-          <li id="areaInternaMobile">
-            <a>Área Interna</a>
-            <ul id="categoriasInternasMobile">
-              <li><a href="/categorias/mesa">Cadeiras</a></li>
-              <li><a href="/categorias/mesa">Mesa de Jantar</a></li>
-              <li><a href="/categorias/mesa">Mesa de centro</a></li>
-              <li><a href="/categorias/mesa">Sofás</a></li>
-              <li><a href="/categorias/mesa">Cômodas</a></li>
-              <li><a href="/categorias/mesa">Mesa Laterais</a></li>
-              <li><a href="/categorias/mesa">Escritório</a></li>
-              <li><a href="/categorias/mesa">Camas</a></li>
+          <li id="categoriaMobile">
+            <a>Categorias</a>
+            <ul id="categoriasMobile">
+              <% for(const c of categorias) { %>
+                <li><a href="/categorias/<%= c.link %>">
+                    <%= c.nome %>
+                  </a></li>
+                <% } %>
             </ul>
           </li>
-          <li id="areaExternaMobile">
-            <a>Área Externa</a>
-            <ul id="categoriasExternasMobile">
-              <li><a href="/categorias/mesa">Cadeiras</a></li>
-              <li><a href="/categorias/mesa">Mesa de Jantar</a></li>
-              <li><a href="/categorias/mesa">Mesa de centro</a></li>
-              <li><a href="/categorias/mesa">Sofás</a></li>
-              <li><a href="/categorias/mesa">Cômodas</a></li>
-              <li><a href="/categorias/mesa">Mesa Laterais</a></li>
-            </ul>
-          </li>
-          <li><a href="/categorias/mesa">Sobre</a></li>
+          <li><a href="/">Sobre</a></li>
           <li><a href="/carrinho">Carrinho</a></li>
           <li><a href="/painelUsuario">Minha conta</a></li>
         </ul>
       </nav>
     </ul>
   </div>
-  <nav id="branco">
+  <nav class="branco">
     <div id="elementos-branco">
-      <a href="/">
-        <img class="logo" src="/img/logo-horizontal.svg" href="/"></img>
+      <a class="logo" href="/">
+        <img class="logoImg" src="/img/logo-horizontal.svg" href="/"></img>
       </a>
-      <div class="AreaInterna" href="/categorias/mesa">Área Interna
-        <button id="areaInterna"></button>
-        <ul id="categoriasInternas">
-          <li><a href="/categorias/mesa">Cadeiras</a></li>
-          <li><a href="/categorias/mesa">Mesa de Jantar</a></li>
-          <li><a href="/categorias/mesa">Mesa de centro</a></li>
-          <li><a href="/categorias/mesa">Sofás</a></li>
-          <li><a href="/categorias/mesa">Cômodas</a></li>
-          <li><a href="/categorias/mesa">Mesa Laterais</a></li>
-          <li><a href="/categorias/mesa">Escritório</a></li>
-          <li><a href="/categorias/mesa">Camas</a></li>
+      <div class="Categoria" href="/categorias/:categorias">Categorias
+        <ul id="categorias">
+          <% for(const c of categorias) { %>
+            <li><a href="/categorias/<%= c.link %>">
+                <%= c.nome %>
+              </a></li>
+            <% } %>
         </ul>
       </div>
-      <div class="AreaExterna" href="/categorias/mesa">Área Externa
-        <button id="areaExterna"></button>
-        <ul id="categoriasExternas">
-          <li><a href="/categorias/mesa">Cadeiras</a></li>
-          <li><a href="/categorias/mesa">Mesa de Jantar</a></li>
-          <li><a href="/categorias/mesa">Mesa de centro</a></li>
-          <li><a href="/categorias/mesa">Sofás</a></li>
-          <li><a href="/categorias/mesa">Cômodas</a></li>
-          <li><a href="/categorias/mesa">Mesa Laterais</a></li>
-        </ul>
-      </div>
-      <li class="sobre"><a href="/categorias/mesa">Sobre</a></li>
-      <img class="lupa" src="/img/lupa.png" alt="" />
-      <input id="busca" type="text" placeholder="buscar...." />
-      <a href="/carrinho">
-        <img class="sacola" src="/img/sacola-gray.svg" alt="" />
-        <span id="span">0</span>
-      </a>
-      <li class="painelusuario"><a href="/painelUsuario">Minha conta</a></li>
+      <li class="sobre">
+        <a href="/">Sobre</a>
+      </li>
+      <li class="buscar">
+        <img class="lupa" src="/img/lupa.png" alt="" />
+        <input id="busca" type="search" placeholder="Buscar...." />
+      </li>
+      <li class="painelusuario">
+        <a href="/painelUsuario">Minha conta</a>
+      </li>
+      <li>
+        <a href="/carrinho">
+          <img class="sacola" src="/img/sacola-gray.svg" alt="" />
+          <span id="span">0</span>
+        </a>
+      </li>
     </div>
   </nav>
 </header>
