@@ -4,60 +4,59 @@
   <body class="admin-container">
     <%- include("partials/adminHeader") %>
     <main class="">
-        <h1>Clientes</h1>
-        <form class="clientes-form-container">
-          <label for="busca-cliente">Buscar por cliente</label>
-          <div>
-            <input type="text" name="busca-cliente" id="busca-cliente" placeholder="Digite o nome do cliente" />
-            <button type="submit">
-              <img src="/img/pesquisar.png" alt="Pesquisar" />
-              Pesquisar
-            </button>
-          </div>
-        </form>
-        <table>
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Cliente</th>
-              <th>E-mail cliente</th>
-              <th>Ações</th>
-            </tr>
+      <h1>Clientes</h1>
+      <form class="clientes-form-container">
+        <label for="busca-cliente">Buscar por cliente</label>
+        <div>
+          <input
+            type="text"
+            name="busca-cliente"
+            id="busca-cliente"
+            placeholder="Digite o nome do cliente"
+          />
+          <button type="submit">
+            <img src="/img/pesquisar.png" alt="Pesquisar" />
+            Pesquisar
+          </button>
+        </div>
+      </form>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Cliente</th>
+            <th>E-mail cliente</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
 
-            <tbody>
-              <tr>
-                <td>00001</td>
-                <td>Alberto da Silva</td>
-                <td>alberto.silva@gmail.com</td>
-                <td>
-                  <a class="botao-secundario" href="#">
-                    Ver pedidos
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td>00001</td>
-                <td>Alberto da Silva</td>
-                <td>alberto.silva@gmail.com</td>
-                <td>
-                  <a class="botao-secundario" href="#">
-                    Ver pedidos
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td>00001</td>
-                <td>Alberto da Silva</td>
-                <td>alberto.silva@gmail.com</td>
-                <td>
-                  <a class="botao-secundario" href="#">
-                    Ver pedidos
-                  </a>
-                </td>
-              </tr>
-            </tbody>
-          </thead>
-        </table>
+        <tbody>
+          <tr>
+            <td>00001</td>
+            <td>Alberto da Silva</td>
+            <td>alberto.silva@gmail.com</td>
+            <td>
+              <a class="botao-secundario" href="#"> Ver pedidos </a>
+            </td>
+          </tr>
+          <tr>
+            <td>00001</td>
+            <td>Alberto da Silva</td>
+            <td>alberto.silva@gmail.com</td>
+            <td>
+              <a class="botao-secundario" href="#"> Ver pedidos </a>
+            </td>
+          </tr>
+          <tr>
+            <td>00001</td>
+            <td>Alberto da Silva</td>
+            <td>alberto.silva@gmail.com</td>
+            <td>
+              <a class="botao-secundario" href="#"> Ver pedidos </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </main>
   </body>
 </html>
