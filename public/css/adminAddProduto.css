@@ -45,6 +45,7 @@ body.admin-container #novo-produto-form textarea{
 }
 
 body.admin-container #novo-produto-form textarea{
+    border: 1px solid var(--cor-texto-secundaria);
     width: 100%;
     height: 200px;
     border-radius: 8px;
@@ -86,6 +87,7 @@ body.admin-container #novo-produto-form select{
     border: 1px solid var(--cor-texto-secundaria);
     border-radius: 8px;
     cursor: pointer;
+    background-color: #fff;
 }
 
 
