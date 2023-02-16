@@ -3,6 +3,10 @@ main{
     justify-content: center;
 }
 
+body.admin-container main{
+    margin-left: auto;
+}
+
 main .form-login-container{
     background-color: var(--cor-principal);
     border-radius: 8px;

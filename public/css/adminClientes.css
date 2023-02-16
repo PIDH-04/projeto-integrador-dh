@@ -64,7 +64,7 @@ body.admin-container .busca-container a{
 
 
 body.admin-container .img-produto-container img{
-    width: 80px;
+    width: 60px;
     margin: 0 auto;
 }
 
@@ -89,6 +89,11 @@ body.admin-container .acoes-container button, body.admin-container .acoes-contai
     font-weight: bold;
     margin: 0;
     line-height: 20px;
+}
+
+body.admin-container .acoes-container img{
+    height: 22px;
+    width: auto;
 }
 
 body.admin-container .acoes-container button{
