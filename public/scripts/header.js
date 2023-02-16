@@ -20,18 +20,8 @@ document.getElementById("menu-toggle").addEventListener("click", function() {
 
     atualizaQuantidadeHeader();
 
-    document.getElementById('areaInternaMobile').addEventListener('click', () => {
-      const submenuCategorias = document.getElementById('categoriasInternasMobile');
-  
-      if (submenuCategorias.style.display === 'none'){
-        submenuCategorias.style.display = "block";
-      } else {
-        submenuCategorias.style.display = "none";
-      }
-    });
-  
-    document.getElementById('areaExternaMobile').addEventListener('click', () => {
-      const submenuCategorias = document.getElementById('categoriasExternasMobile');
+    document.getElementById('categoriaMobile').addEventListener('click', () => {
+      const submenuCategorias = document.getElementById('categoriasMobile');
   
       if (submenuCategorias.style.display === 'none'){
         submenuCategorias.style.display = "block";
