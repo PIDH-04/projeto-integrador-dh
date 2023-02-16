@@ -8,6 +8,9 @@ const AdminController = {
   showProdutos: (req, res) => {
     res.render("adminProdutos")
   },
+  showPedidos: (req, res) => {
+    res.render("adminPedidos")
+  }
 };
 
 module.exports = AdminController;
