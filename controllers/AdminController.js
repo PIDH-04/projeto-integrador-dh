@@ -3,7 +3,10 @@ const AdminController = {
     res.render("adminLogin");
   },
   showClientes: (req, res) => {
-    res.render("adminClientes")
+    res.render("adminClientes");
+  },
+  showProdutos: (req, res) => {
+    res.render("adminProdutos")
   },
 };
 

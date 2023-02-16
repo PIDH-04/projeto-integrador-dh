@@ -47,3 +47,54 @@ body.admin-container form img{
     height: auto;
     margin-right: 10px;
 }
+
+body.admin-container .busca-container{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+body.admin-container .busca-container a{
+    margin: initial;
+    width: 200px;
+    margin-top: 20px;
+    background-color: var(--cor-secundaria);
+    color: #000;
+}
+
+
+body.admin-container .img-produto-container img{
+    width: 80px;
+    margin: 0 auto;
+}
+
+body.admin-container .acoes-container{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: stretch;
+    height: 100%;
+    padding-top: 20px;
+}
+
+body.admin-container .acoes-container button, body.admin-container .acoes-container a{
+    width: 50px;
+    height: 50px;
+    padding: 15px 0;
+    text-align: center;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: bold;
+    margin: 0;
+    line-height: 20px;
+}
+
+body.admin-container .acoes-container button{
+    background-color: #CD0808;
+}
+
+body.admin-container .acoes-container button:hover{
+    opacity: 0.8;
+}

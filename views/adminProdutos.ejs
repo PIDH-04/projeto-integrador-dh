@@ -4,46 +4,48 @@
   <body class="admin-container">
     <%- include("partials/adminHeader") %>
     <main class="">
-        <h1>Clientes</h1>
+        <h1>Produtos</h1>
+        <div class="busca-container">
+          <form>
+            <label for="busca-cliente">Busca Produto</label>
+            <div>
+              <input type="text" name="busca-produto" id="busca-produto" placeholder="Digite o nome do produto" />
+              <button type="submit">
+                <img src="/img/pesquisar.png" alt="Pesquisar" />
+                Pesquisar
+              </button>
+            </div>
+          </form>
 
+          <a href="#" class="botao-secundario">Adicionar Produto</a>
+        </div>
         <table>
           <thead>
             <tr>
+              <th>Imagem</th>
+              <th>Produto</th>
               <th>ID</th>
-              <th>Cliente</th>
-              <th>E-mail cliente</th>
+              <th>Categoria</th>
+              <th>Preço</th>
               <th>Ações</th>
             </tr>
 
             <tbody>
               <tr>
-                <td>00001</td>
-                <td>Alberto da Silva</td>
-                <td>alberto.silva@gmail.com</td>
                 <td>
-                  <a class="botao-secundario" href="#">
-                    Ver pedidos
-                  </a>
+                  <div class="img-produto-container">
+                    <img src="/img/mesa-plana.png" alt="Mesa Plana">
+                  </div>
                 </td>
-              </tr>
-              <tr>
+                <td>Mesa de Jantar Plana</td>
                 <td>00001</td>
-                <td>Alberto da Silva</td>
-                <td>alberto.silva@gmail.com</td>
-                <td>
+                <td>Mesa de Jantar</td>
+                <td>R$ 800,00</td>
+                <td class="acoes-container">
                   <a class="botao-secundario" href="#">
-                    Ver pedidos
+                    Edit
                   </a>
-                </td>
-              </tr>
-              <tr>
-                <td>00001</td>
-                <td>Alberto da Silva</td>
-                <td>alberto.silva@gmail.com</td>
-                <td>
-                  <a class="botao-secundario" href="#">
-                    Ver pedidos
-                  </a>
+                  <button>Del</button>
                 </td>
               </tr>
             </tbody>
