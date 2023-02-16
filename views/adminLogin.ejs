@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
   <%- include("partials/adminHead", {css: ["adminLogin.css"], titulo: "Login Administrativo | E-móvel"}) %>
   <body class="admin-container">
     <main>
@@ -15,9 +15,9 @@
           </div>
           <div>
             <label for="password">Digite sua senha</label>
-            <input name="password" type="password" placeholder="admin@emovel.com" id="password" />
+            <input name="password" type="password" id="password" />
           </div>
-          <button class="botao-secundario" type="submit">Acessar</button>
+          <a href="/admin/pedidos" class="botao-secundario" type="submit">Acessar</a>
         </form>
       </div>
     </main>
