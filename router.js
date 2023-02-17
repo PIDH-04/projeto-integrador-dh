@@ -1,5 +1,6 @@
 // Importar express
 const express = require('express');
+const AdminController = require('./controllers/AdminController');
 const GeralController = require("./controllers/GeralController");
 const ProdutosController = require("./controllers/ProdutosController");
 const UsuarioController = require("./controllers/UsuarioController");
@@ -35,6 +36,14 @@ router.get("/cadastro", UsuarioController.showCadastro);
 router.get("/painelUsuario", UsuarioController.showPainelUsuario);
 router.get("/statusDePedidos", UsuarioController.showstatusDePedido);
 
+
+// Admin Routers
+router.get("/admin/", AdminController.showLogin);
+router.get("/admin/clientes", AdminController.showClientes);
+router.get("/admin/produtos", AdminController.showProdutos);
+router.get("/admin/pedidos", AdminController.showPedidos);
+router.get("/admin/produtos/criar", AdminController.showCriarProduto);
+router.get("/admin/produtos/:id/editar", AdminController.showEditarProduto);
 
 // Exportar o roteador
 module.exports = router;

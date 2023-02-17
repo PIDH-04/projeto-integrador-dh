@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <%- include("partials/adminHead", {css: ["baseAdmin.css", "pedidosAdmin.css"],
+  titulo: "Pedidos Admin | E-móvel"}) %>
+  <body class="admin-container">
+    <%- include("partials/adminHeader") %>
+    <main class="">
+      <h1>Pedidos</h1>
+      <form class="pedidos-form-container">
+        <label for="data-inicial">
+          Data inicial
+          <input
+            class="data-seletor"
+            type="date"
+            name="data-inicial"
+            id="data-inicial"
+          />
+        </label>
+        <label for="data-final">
+          Data final
+          <input
+            class="data-seletor"
+            type="date"
+            name="data-final"
+            id="data-final"
+          />
+        </label>
+        <button type="submit">
+          <img src="/img/pesquisar.png" alt="Pesquisar" />
+          Pesquisar
+        </button>
+      </form>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Data</th>
+            <th>Cliente</th>
+            <th>E-mail cliente</th>
+            <th>Status</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>00001</td>
+            <td>10/02/2023</td>
+            <td>Alberto da Silva</td>
+            <td>alberto.silva@gmail.com</td>
+            <td>Entregue</td>
+            <td class="mudar-status-container">
+              <form action="" class="mudar-status">
+                <select>
+                  <option disabled selected>Alterar Status</option>
+                  <option value="realizado">Realizado</option>
+                  <option value="preparo">Em Preparo</option>
+                  <option value="transporte">Em transporte</option>
+                  <option value="entregue">Entregue</option>
+                  <option value="cancelado">Cancelado</option>
+                </select>
+                <button>Salvar</button>
+              </form>
+            </td>
+          </tr>
+          <tr>
+            <td>00001</td>
+            <td>10/02/2023</td>
+            <td>Alberto da Silva</td>
+            <td>alberto.silva@gmail.com</td>
+            <td>Entregue</td>
+            <td class="mudar-status-container">
+              <form action="" class="mudar-status">
+                <select>
+                  <option disabled selected>Alterar Status</option>
+                  <option value="realizado">Realizado</option>
+                  <option value="preparo">Em Preparo</option>
+                  <option value="transporte">Em transporte</option>
+                  <option value="entregue">Entregue</option>
+                  <option value="cancelado">Cancelado</option>
+                </select>
+                <button>Salvar</button>
+              </form>
+            </td>
+          </tr>
+          <tr>
+            <td>00001</td>
+            <td>10/02/2023</td>
+            <td>Alberto da Silva</td>
+            <td>alberto.silva@gmail.com</td>
+            <td>Entregue</td>
+            <td class="mudar-status-container">
+              <form action="" class="mudar-status">
+                <select>
+                  <option disabled selected>Alterar Status</option>
+                  <option value="realizado">Realizado</option>
+                  <option value="preparo">Em Preparo</option>
+                  <option value="transporte">Em transporte</option>
+                  <option value="entregue">Entregue</option>
+                  <option value="cancelado">Cancelado</option>
+                </select>
+                <button>Salvar</button>
+              </form>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+  </body>
+</html>

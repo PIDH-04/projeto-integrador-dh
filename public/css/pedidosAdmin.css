@@ -1,0 +1,44 @@
+body.admin-container form.pedidos-form-container{
+    display: flex;
+    width: 100%;
+    align-items: flex-end;
+}
+
+form.pedidos-form-container  input.data-seletor{
+    width: 80%;
+    margin-top: 10px;
+}
+
+body.admin-container form label{
+    margin-bottom: 0;
+}
+
+
+body.admin-container form.pedidos-form-container button{
+    padding:11px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--cor-secundaria);
+}
+
+body.admin-container .botao-secundario{
+    width:60%;
+}
+
+
+
+body.admin-container .mudar-status{
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 0;
+}
+
+body.admin-container .mudar-status select{
+    border-radius: 8px;
+    padding:10px;
+    background-color: #FFF;
+    border: 1px solid var(--cor-principal);
+}

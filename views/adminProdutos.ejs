@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <%- include("partials/adminHead", {css: ["baseAdmin.css", "produtosAdmin.css"], titulo: "Produtos Admin | E-móvel"}) %>
+  <body class="admin-container">
+    <%- include("partials/adminHeader") %>
+    <main class="">
+      <h1>Produtos</h1>
+      <div class="busca-container">
+        <form>
+          <label for="busca-cliente">Busca Produto</label>
+          <div>
+            <input
+              type="text"
+              name="busca-produto"
+              id="busca-produto"
+              placeholder="Digite o nome do produto"
+            />
+            <button type="submit">
+              <img src="/img/pesquisar.png" alt="Pesquisar" />
+              Pesquisar
+            </button>
+          </div>
+        </form>
+
+        <a href="/admin/produtos/criar" class="botao-secundario">Adicionar Produto</a>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Imagem</th>
+            <th>Produto</th>
+            <th>ID</th>
+            <th>Categoria</th>
+            <th>Preço</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div class="img-produto-container">
+                <img src="/img/mesa-plana.png" alt="Mesa Plana" />
+              </div>
+            </td>
+            <td>
+              <a href="#"> Mesa de Jantar Plana </a>
+            </td>
+            <td>00001</td>
+            <td>Mesa de Jantar</td>
+            <td>R$ 800,00</td>
+            <td class="acoes-container">
+              <a class="botao-secundario" href="/admin/produtos/1/editar">
+                <img src="/img/editar.svg" alt="del" />
+              </a>
+              <button><img src="/img/remover.svg" alt="del" /></button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="img-produto-container">
+                <img src="/img/mesa-plana.png" alt="Mesa Plana" />
+              </div>
+            </td>
+            <td>
+              <a href="#"> Mesa de Jantar Plana </a>
+            </td>
+            <td>00001</td>
+            <td>Mesa de Jantar</td>
+            <td>R$ 800,00</td>
+            <td class="acoes-container">
+              <a class="botao-secundario" href="#">
+                <img src="/img/editar.svg" alt="del" />
+              </a>
+              <button><img src="/img/remover.svg" alt="del" /></button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="img-produto-container">
+                <img src="/img/mesa-plana.png" alt="Mesa Plana" />
+              </div>
+            </td>
+            <td>
+              <a href="#"> Mesa de Jantar Plana </a>
+            </td>
+            <td>00001</td>
+            <td>Mesa de Jantar</td>
+            <td>R$ 800,00</td>
+            <td class="acoes-container">
+              <a class="botao-secundario" href="#">
+                <img src="/img/editar.svg" alt="del" />
+              </a>
+              <button><img src="/img/remover.svg" alt="del" /></button>
+            </td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </main>
+  </body>
+</html>

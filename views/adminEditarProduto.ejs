@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <%- include("partials/adminHead", {css: ["baseAdmin.css",
+  "adminAddProduto.css"], titulo: "Editar Produto | E-móvel"}) %>
+  <body class="admin-container">
+    <%- include("partials/adminHeader") %>
+    <main class="">
+      <h1>Editar Produto</h1>
+      <a href="/admin/produtos" class="retornar-pagina">
+        <img src="/img/voltar.svg" />
+        Voltar para produtos
+      </a>
+
+      <div class="header-produto">
+        <h2>Dados do produto</h2>
+      </div>
+
+      <form id="novo-produto-form">
+        <div class="duas-colunas">
+          <div>
+            <label for="nome-produto">Nome do Produto</label>
+            <input
+              type="text"
+              name="nome-produto"
+              id="nome-produto"
+              placeholder="Novo produto"
+              value="Mesa de Jantar Plana"
+            />
+
+            <label for="medidas">Medidas (L x P x A)</label>
+            <input
+              type="text"
+              name="medidas"
+              id="medidas"
+              placeholder="00 x 00 x 00"
+              value="90 x 90 x 90"
+            />
+
+            <label for="descrição">Descrição</label>
+            <textarea
+              name="descrição"
+              id="descrição"
+              placeholder="Descreva seu produto"
+            >Mesa de jantar com tampo em madeira</textarea>
+
+            <label for="preco">Preço</label>
+            <input
+              type="text"
+              name="preco"
+              id="preco"
+              placeholder="200,00"
+              value="800,00"
+            />
+          </div>
+
+          <div>
+            <div class="imagem-container">
+              <img src="/img/mesa-plana.png" />
+            </div>
+            <label class="imagem-produto-btn" for="imagem-produto"
+              >Selecionar imagens do produto</label
+            >
+            <input type="file" name="imagem-produto" id="imagem-produto" />
+            <label>Selecione a Categoria do produto</label>
+            <select>
+              <option disabled>Selecione uma categoria</option>
+              <option value="mesas" selected>Mesas</option>
+              <option value="cadeira">Cadeira</option>
+              <option value="poltronas">Poltrona</option>
+              <option value="escritório">Escritório</option>
+              <option value="banqueta">Banqueta</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="container-botoes">
+          <button class="botao-secundario" type="submit">Salvar</button>
+          <button class="botao-secundario apagar" type="submit">Apagar produto</button>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>

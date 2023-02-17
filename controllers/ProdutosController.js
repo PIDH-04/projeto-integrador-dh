@@ -1,12 +1,18 @@
+const categorias = require('../databases/Categorias.json');
+const produtos = require('../databases/Produtos.json');
+
 const ProdutosControllers = {
   show: (req, res) => {
-    return res.render("produto");
+    let id = req.params.idDoProduto;
+    const produto = produtos.find( p => p.id == id);
+
+    return res.render('produto', {categorias, produtos, produto});
   },
   listagem: (req, res) => {
-    return res.render("listagemProdutos");
+    return res.render('listagemProdutos', {categorias, produtos});
   },
   showCarrinho: (req, res) => {
-    return res.render("carrinho");
+    return res.render('carrinho', {categorias, produtos});
   },
 };
 

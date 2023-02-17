@@ -1,8 +1,10 @@
 [
     {
+        "id": 1,
         "nome":"Cadeira Saarinen",
-        "img":"/img/cadeira.jpg",
+        "img":["/img/cadeira-saarinen-preta.jpg", "/img/cadeira-saarinen-branca.jfif", "/img/cadeira-saarinen-bege.jfif"],
         "categoria":"Cadeiras",
+        "area": "interna",
         "material":["madeira", "acetato"],
         "cores":["branco", "preto", "bege"],
         "preco":100,
@@ -14,11 +16,13 @@
         }
     },
     {
+        "id": 2,
         "nome":"Sofá Descanso Pleno",
-        "img":"/img/sofa.jpg",
+        "img":["/img/sofa-pleno-preto.jpg", "/img/sofa-pleno-cinza.jfif", "/img/sofa-pleno-branco.jfif"],
         "categoria":"Sofás",
+        "area":"interna",
         "material":["madeira", "linho", "estofado"],
-        "cores":["azul", "cinza", "preto"],
+        "cores":["branco", "cinza", "preto"],
         "preco":2000,
         "descricao":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aperiam minima necessitatibus, quis blanditiis exercitationem veniam earum error quam cupiditate iste vitae accusamus voluptatem corporis ullam? Eos sit nisi vero.",
         "medidas": {
@@ -28,11 +32,14 @@
         }
     },
     {
+        "id": 3,
         "nome":"Mesa de Jantar Mônaco",
-        "img":"/img/mesa-monaco.png",
+        "img":["/img/mesa-monaco.png", "/img/mesa.jpg"],
         "categoria":"Mesas de Jantar",
+        "area":"interna",
         "material":"madeira",
-        "cores":"branco",
+        "tampo":["Tampo Madeira", "Tampo Vidro"],
+        "cores":["branco", "preto"],
         "preco":800,
         "descricao":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aperiam minima necessitatibus, quis blanditiis exercitationem veniam earum error quam cupiditate iste vitae accusamus voluptatem corporis ullam? Eos sit nisi vero.",
         "medidas": {
@@ -42,11 +49,14 @@
         }
     },
     {
+        "id": 4,
         "nome":"Mesa de Jantar Aspen",
-        "img":"/img/mesa-aspen.jpg",
+        "img":["/img/mesa-aspen.jpg", "/img/mesa.png"],
         "categoria":"Mesas de Jantar",
+        "area":"externa",
         "material":"madeira",
-        "cores":["preta", "bege"],
+        "tampo":["Tampo Madeira", "Tampo Vidro"],
+        "cores":["preto", "branco"],
         "preco":800,
         "descricao":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aperiam minima necessitatibus, quis blanditiis exercitationem veniam earum error quam cupiditate iste vitae accusamus voluptatem corporis ullam? Eos sit nisi vero.",
         "medidas": {
@@ -56,11 +66,14 @@
         }
     },
     {
-        "nome":"Mesa de Jantar Bio",
-        "img":"/img/mesa-bio.png",
+        "id": 5,
+        "nome":"Mesa de Jantar  Bio",
+        "img":["/img/mesa-bio.png", "/img/mesa.jpg", "/img/mesa.png"],
         "categoria":"Mesas de Jantar",
+        "area":"externa",
         "material":"madeira",
-        "cores":"bege",
+        "tampo":["Tampo Madeira", "Tampo Vidro"],
+        "cores":["bege", "branco", "preto"],
         "preco":800,
         "descricao":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aperiam minima necessitatibus, quis blanditiis exercitationem veniam earum error quam cupiditate iste vitae accusamus voluptatem corporis ullam? Eos sit nisi vero.",
         "medidas": {
@@ -70,10 +83,13 @@
         }
     },
     {
+        "id": 6,
         "nome":"Mesa de Jantar Dora",
-        "img":"/img/mesa-dora.png",
+        "img":["/img/mesa-dora.png", "/img/mesa.jpg"],
         "categoria":"Mesas de Jantar",
+        "area":"interna",
         "material":"madeira",
+        "tampo":["Tampo Madeira", "Tampo Vidro"],
         "cores":["branco", "preto"],
         "preco":800,
         "descricao":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aperiam minima necessitatibus, quis blanditiis exercitationem veniam earum error quam cupiditate iste vitae accusamus voluptatem corporis ullam? Eos sit nisi vero.",
@@ -83,4 +99,5 @@
             "altura":0.8
         }
     }
+
 ]

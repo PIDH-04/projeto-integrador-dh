@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <%- include("partials/adminHead", {css: ["baseAdmin.css",
+  "adminAddProduto.css"], titulo: "Novo produto | E-móvel"}) %>
+  <body class="admin-container">
+    <%- include("partials/adminHeader") %>
+    <main class="">
+      <h1>Novo Produto</h1>
+      <a href="/admin/produtos" class="retornar-pagina">
+        <img src="/img/voltar.svg" />
+        Voltar para produtos
+      </a>
+
+      <div class="header-produto">
+        <h2>Dados do produto</h2>
+      </div>
+
+      <form id="novo-produto-form">
+        <div class="duas-colunas">
+          <div>
+            <label for="nome-produto">Nome do Produto</label>
+            <input
+              type="text"
+              name="nome-produto"
+              id="nome-produto"
+              placeholder="Novo produto"
+            />
+
+            <label for="medidas">Medidas (L x P x A)</label>
+            <input
+              type="text"
+              name="medidas"
+              id="medidas"
+              placeholder="00 x 00 x 00"
+            />
+
+            <label for="descrição">Descrição</label>
+            <textarea
+              name="descrição"
+              id="descrição"
+              placeholder="Descreva seu produto"
+            ></textarea>
+
+            <label for="preco">Preço</label>
+            <input
+              type="text"
+              name="preco"
+              id="preco"
+              placeholder="200,00"
+            />
+          </div>
+
+          <div>
+            <div class="imagem-container">
+              <img src="/img/sem-imagem.svg" />
+            </div>
+            <label class="imagem-produto-btn" for="imagem-produto"
+              >Selecionar imagens do produto</label
+            >
+            <input type="file" name="imagem-produto" id="imagem-produto" />
+            <label>Selecione a Categoria do produto</label>
+            <select>
+              <option disabled selected>Selecione uma categoria</option>
+              <option value="mesas">Mesas</option>
+              <option value="cadeira">Cadeira</option>
+              <option value="poltronas">Poltrona</option>
+              <option value="escritório">Escritório</option>
+              <option value="banqueta">Banqueta</option>
+            </select>
+          </div>
+        </div>
+
+        <button class="botao-secundario" type="submit">Salvar</button>
+      </form>
+    </main>
+  </body>
+</html>
