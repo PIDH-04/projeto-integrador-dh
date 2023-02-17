@@ -25,7 +25,12 @@ const CadastroController = {
     },
     showstatusDePedido:(req, res) => {
       return res.render('statusDePedido', {categorias})
+
+    criarCadastro: (req , res) =>{
+      return res.render ("criarCadastro");
+
     }
+}
 }
 
 module.exports = CadastroController;
