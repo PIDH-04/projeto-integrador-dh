@@ -33,8 +33,8 @@ router.get("/produto", ProdutosController.show);
 router.get("/categorias/:categoria", ProdutosController.listagem);
 
 router.get("/cadastro", UsuarioController.showCadastro);
-router.get("/painelUsuario", UsuarioController.showPainelUsuario);
-router.get("/statusDePedidos", UsuarioController.showstatusDePedido);
+// router.get("/painelUsuario", UsuarioController.showPainelUsuario);
+// router.get("/statusDePedidos", UsuarioController.showstatusDePedido);
 
 
 // Admin Routers

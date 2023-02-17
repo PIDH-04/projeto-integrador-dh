@@ -6,7 +6,9 @@ const produtosSite = require('../databases/Produtos.json');
 function listarProdutos() {
     return Produtos;
 
+
 }
+
 
 function getprodutById(id) {
     const Produtos = Produtos.find(c => c.id === id);
