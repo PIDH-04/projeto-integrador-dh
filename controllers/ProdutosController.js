@@ -9,7 +9,9 @@ const ProdutosControllers = {
     return res.render('produto', {categorias, produto});
   },
   listagem: (req, res) => {
-    return res.render('listagemProdutos', {categorias, produtos});
+    let link = req.params.link;
+    const categoria = categorias.find( c => c.link == link);
+    return res.render('listagemProdutos', {categorias, produtos, categoria});
   },
   showCarrinho: (req, res) => {
     return res.render('carrinho', {categorias, produtos});
