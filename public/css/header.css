@@ -218,6 +218,7 @@
     }
 
     .branco {
+        background-color: #ffffff;
         top: 0;
         margin-top: calc(min(55px, 8%));
         display: block;
@@ -232,6 +233,7 @@
 
     #elementos-branco {
         width: 90%;
+        min-width: 769px;
         height: fit-content;
         background-color: #ffffff;
         list-style: none;
@@ -254,7 +256,7 @@
     }
 
     a.logo {
-        width: 23.12%;
+        width: 15%;
         max-height: 100px;
         min-height: 60px;
     }
@@ -277,7 +279,7 @@
     }
 
     .Categoria {
-        width: 14.45%;
+        width: 10%;
         position: relative;
         padding: 10px;
     }
@@ -292,7 +294,7 @@
         position: absolute;
         background-color: aliceblue;
         min-width: 130vw;
-        left: -350px;
+        left: -370px;
         padding-left: 360px;
         top: 40px;
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
@@ -335,13 +337,17 @@
 
     #elementos-branco #busca {
         width: 23.20%;
-        max-height: 35px;
+        max-height: 30px;
         min-height: 20px;
         border: none;
         flex-grow: 1;
         margin-right: 5%;
         border-bottom: 1px solid var(--cor-texto-primaria);
         outline: none;
+    }
+
+    #elementos-branco #busca::placeholder {
+        padding: 5px;
     }
 
     a.painelusuario {
@@ -365,6 +371,217 @@
     }
 
     #elementos-branco span {
+        text-decoration: none;
+        color: var(--cor-texto-primaria);
+    }
+}
+
+@media (min-width: 1150px) {
+    .cabeçalho {
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        background-color: var(--cor-secundaria);
+        position: fixed;
+        width: 100%;
+        height: 55px;
+        z-index: 1;
+    }
+
+    #elementos-cabeçalho {
+        width: 80%;
+        background-color: var(--cor-secundaria);
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+        font-family: var(--font-paragrafo);
+        text-decoration: none;
+        z-index: 99;
+        position: fixed;
+        height: 5%;
+    }
+
+    #note {
+        display: block;
+    }
+
+    #note a {
+        text-decoration: none;
+        color: var(--cor-texto-primaria);
+    }
+
+    .logoMobile {
+        display: none;
+    }
+
+    #menu-toggle {
+        display: none;
+    }
+
+    .branco {
+        background-color: #ffffff;
+        top: 0;
+        margin-top: calc(min(55px, 8%));
+        display: block;
+        position: fixed;
+        width: 100%;
+        height: fit-content;
+        z-index: 1;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #elementos-branco {
+        width: 90%;
+        min-width: 769px;
+        height: fit-content;
+        background-color: #ffffff;
+        list-style: none;
+        padding: 10px;
+        align-items: center;
+        font-family: var(--font-paragrafo);
+        text-decoration: none;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #elementos-branco a {
+        font-size: 1.4vw;
+        padding: 10px;
+        text-decoration: none;
+        color: var(--cor-texto-primaria);
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+    }
+
+    a.logo {
+        width: 15%;
+        max-height: 100px;
+        min-height: 60px;
+    }
+
+    .logoImg {
+        display: block;
+        max-width: 100%;
+        min-width: 140px;
+        max-height: 100%;
+        min-height: 40px;
+        padding-right: 10px;
+    }
+
+    header>img {
+        max-width: 300px;
+    }
+
+    #elementos-branco a:hover {
+        color: orange;
+    }
+
+    .Categoria {
+        width: 10%;
+        position: relative;
+        padding: 10px;
+        font-size: 1.4vw;
+    }
+
+    .Categoria:hover {
+        color: orange;
+    }
+
+    .Categoria #categorias {
+        border: none;
+        display: none;
+        position: absolute;
+        background-color: aliceblue;
+        min-width: 120vw;
+        left: -454px;
+        padding-left: 450px;
+        top: 40px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        columns: 3;
+        transition: all 0.5s;
+    }
+
+    .Categoria #categorias li {
+        list-style: none;
+    }
+
+    .Categoria:hover #categorias {
+        display: block;
+    }
+
+
+    a.sobre {
+        width: 9.32%;
+        max-height: 100px;
+        min-height: 50px;
+    }
+
+    .sobre {
+        max-width: 100%;
+        min-width: 55px;
+    }
+
+    .buscar {
+        display: flex;
+        justify-content: center;
+        width: 30%;
+        min-width: 250px;
+    }
+
+    .lupa {
+        max-width: 40px;
+        min-width: 25px;
+        max-height: 40px;
+        min-height: 25px;
+    }
+
+    #elementos-branco #busca {
+        width: 23.20%;
+        max-height: 30px;
+        min-height: 20px;
+        border: none;
+        flex-grow: 1;
+        margin-right: 5%;
+        border-bottom: 1px solid var(--cor-texto-primaria);
+        outline: none;
+    }
+
+    #elementos-branco #busca::placeholder {
+        padding: 5px;
+        font-size: 1.2vw;
+    }
+
+    a.painelusuario {
+        max-height: 100px;
+        min-height: 50px;
+        width: 16.04%;
+    }
+
+    .sacola {
+        max-width: 40px;
+        min-width: 25px;
+        max-height: 40px;
+        min-height: 20px;
+    }
+
+    .sacola img {
+        max-width: 40px;
+        min-width: 20px;
+        max-height: 40px;
+        min-height: 20px;
+    }
+
+    #elementos-branco span {
+        font-size: 1vw;
         text-decoration: none;
         color: var(--cor-texto-primaria);
     }
