@@ -24,7 +24,7 @@ router.get('/login', UsuarioController.login);
 
 router.get('/login/email', UsuarioController.loginEmail);
 
-router.get('/checkoutpagamento', UsuarioController.checkoutPagamento);
+// router.get('/checkoutpagamento', UsuarioController.checkoutPagamento);
 
 router.get("/checkoutDeEndereco", UsuarioController.checkoutEndereco);
 
