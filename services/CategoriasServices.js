@@ -1,4 +1,4 @@
-const categorias = require('../databasesCategorias.json');
+const categorias = require('../databases/Categorias.json');
 
 
 function listarCategorias() {
@@ -16,4 +16,7 @@ function getCategoriaById(id) {
 
 }
 
-module.exports = categoriasServices;
+module.exports = {
+    listarCategorias,
+    getCategoriaById
+}
