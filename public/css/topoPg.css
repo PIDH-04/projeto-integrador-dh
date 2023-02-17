@@ -1,0 +1,16 @@
+.topo-da-pg {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+    border: none;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: solid var(--cor-texto-secundaria);
+    border-width: 0 3px 3px 0;
+    padding: 10px;
+    transform: rotate(225deg);
+    -webkit-transform: rotate(225deg);
+    cursor: pointer;
+}

@@ -3,9 +3,13 @@ const produtos = require('../databases/Produtos.json');
 
 const CadastroController = {
     showCadastro: (req, res) => {
+<<<<<<< HEAD
         return res.render('cadastro');
 
 
+=======
+        return res.render('cadastro', {categorias});
+>>>>>>> c57b1b74b76b8d89d4d6597eea02701f0920a294
     },
     finalizacaoCompra: (req, res) => {
       return res.render('finalizacaoCompra', {categorias});
@@ -22,14 +26,26 @@ const CadastroController = {
     checkoutPagamento: (req, res) => {
       return res.render('checkoutPagamento', {categorias});
     },
+<<<<<<< HEAD
 
     
     criarCadastro: (req , res) =>{
       return res.render ("criarCadastro");
 
     }
+=======
+    showPainelUsuario:(req, res) => {
+      return res.render('painelUsuario', {categorias})
+    },
+    showstatusDePedido:(req, res) => {
+      return res.render('statusDePedido', {categorias})
+>>>>>>> c57b1b74b76b8d89d4d6597eea02701f0920a294
 
- 
+    criarCadastro: (req , res) =>{
+      return res.render ("criarCadastro");
+
+    }
+}
 }
 
 module.exports = CadastroController;
