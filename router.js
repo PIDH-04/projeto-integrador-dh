@@ -28,7 +28,7 @@ router.get('/checkoutpagamento', UsuarioController.checkoutPagamento);
 
 router.get("/checkoutDeEndereco", UsuarioController.checkoutEndereco);
 
-router.get("/produto", ProdutosController.show);
+router.get("/produto/:idDoProduto", ProdutosController.show);
 
 router.get("/categorias/:categoria", ProdutosController.listagem);
 

@@ -6,7 +6,7 @@ const ProdutosControllers = {
     let id = req.params.idDoProduto;
     const produto = produtos.find( p => p.id == id);
 
-    return res.render('produto', {categorias, produtos, produto});
+    return res.render('produto', {categorias, produto});
   },
   listagem: (req, res) => {
     return res.render('listagemProdutos', {categorias, produtos});
