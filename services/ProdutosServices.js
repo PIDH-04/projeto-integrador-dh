@@ -80,4 +80,7 @@ function listar() {
 
 }
 
-module.exports = Produtos;
+module.exports = {
+    Produtos,
+    produtosSite
+}
