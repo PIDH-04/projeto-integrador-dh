@@ -13,7 +13,7 @@
             <a>Categorias</a>
             <ul id="categoriasMobile">
               <% for(const c of categorias) { %>
-                <li><a href="/categorias/<%= c.link %>">
+                <li><a href="/produtos/<%= c.link %>">
                     <%= c.nome %>
                   </a></li>
                 <% } %>
@@ -45,7 +45,10 @@
       </li>
       <li class="buscar">
         <img class="lupa" src="/img/lupa.png" alt="" />
-        <input id="busca" type="search" placeholder="Buscar...." />
+        <form method="get" action="/busca"></form>
+        <input name="busca" id="busca" type="search" placeholder="Buscar...." />
+        
+      </form>
       </li>
       <li class="painelusuario">
         <a href="/painelUsuario">Minha conta</a>

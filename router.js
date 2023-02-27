@@ -30,7 +30,7 @@ router.get("/checkoutDeEndereco", UsuarioController.checkoutEndereco);
 
 router.get("/produto/:idDoProduto", ProdutosController.show);
 
-router.get("/categorias/:link", ProdutosController.listagem);
+router.get("/produtos/:link?", ProdutosController.listagem);
 
 router.get("/cadastro", UsuarioController.showCadastro);
 router.get("/painelUsuario", UsuarioController.showPainelUsuario);

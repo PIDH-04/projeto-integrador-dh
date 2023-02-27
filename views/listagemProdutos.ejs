@@ -7,13 +7,13 @@
     <%- include("partials/topoPg") %>
     <div class="banner-categoria">
       <div class="titulo-container">
-        <h2>Mesas de Jantar</h2>
-        <p>É um item fundamental para a casa.</p>
-        <p>Pequenas, grandes, de vidro ou madeira, você encontra aqui!</p>
+        <h2><%= categoria.nome %></h2>
+        <p><%= categoria.descrição[0] %></p>
+        <p><%= categoria.descrição[1] %></p>
       </div>
 
       <div class="icone-container">
-        <img src="/img/mesa-icone.svg" alt="Ícone mesa de jantar" />
+        <img src="<%= categoria.icone %>" alt="Ícone <%= categoria.nome %>" />
       </div>
     </div>
 
