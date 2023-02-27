@@ -452,7 +452,6 @@
     }
 
     #elementos-branco a {
-        font-size: 1.4vw;
         padding: 10px;
         text-decoration: none;
         color: var(--cor-texto-primaria);
@@ -488,7 +487,6 @@
         width: 10%;
         position: relative;
         padding: 10px;
-        font-size: 1.4vw;
     }
 
     .Categoria:hover {
@@ -557,7 +555,6 @@
 
     #elementos-branco #busca::placeholder {
         padding: 5px;
-        font-size: 1.2vw;
     }
 
     a.painelusuario {
@@ -581,7 +578,6 @@
     }
 
     #elementos-branco span {
-        font-size: 1vw;
         text-decoration: none;
         color: var(--cor-texto-primaria);
     }
