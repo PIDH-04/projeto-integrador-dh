@@ -33,9 +33,9 @@
       </a>
       <div class="Categoria" href="/categorias/:categorias">Categorias
         <ul id="categorias">
-          <% for(const c of categorias) { %>
-            <li><a href="/categorias/<%= c.link %>">
-                <%= c.nome %>
+          <% for(let i = 1; i < categorias.length; i++) { %>
+            <li><a href="/categorias/<%= categorias[i].link %>">
+                <%= categorias[i].nome %>
               </a></li>
             <% } %>
         </ul>

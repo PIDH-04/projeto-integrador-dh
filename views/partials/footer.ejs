@@ -11,8 +11,8 @@
 
     <nav class="menu">
       <ul class="categoria-principal">
-          <% for(const c of categorias) { %>
-            <li href="/produtos/<%= c.link %>"> <%= c.nome %> </li>
+          <% for(let i = 1; i < categorias.length; i++) { %>
+            <li href="/produtos/<%= categorias[i].link %>"> <%= categorias[i].nome %> </li>
           <% } %>
       </ul>
 

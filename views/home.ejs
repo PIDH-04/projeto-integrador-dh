@@ -78,12 +78,12 @@
         </p>
         <div class="break"></div>
         <div class="icone-container">
-          <% for (const c of categorias) { %>
-          <a class="botao-icone" href="/categorias/<%= c.link %>">
+          <% for(let i = 1; i < categorias.length; i++) { %>
+          <a class="botao-icone" href="/categorias/<%= categorias[i].link %>">
             <div class="icone">
-              <img src="<%= c.icone %>" alt="Ícone <%= c.nome %>" />
+              <img src="<%= categorias[i].icone %>" alt="Ícone <%= categorias[i].nome %>" />
             </div>
-            <h2><%= c.nome %></h2>
+            <h2><%= categorias[i].nome %></h2>
           </a>
           <% } %>
         </div>
