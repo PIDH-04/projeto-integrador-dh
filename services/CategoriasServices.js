@@ -1,12 +1,13 @@
 const CategoriasServices = require('../databases/Categorias.json');
+const fs = require('fs');
 
 function listarCategorias() {
     return CategoriasServices;
 
 }
 
-function categoriaId(id) {
-    const categoriaEncontrada = categorias.find(categoria => categoria.id === id);
+function mostrarCategoriasd(id) {
+    const categoriaEncontrada = CategoriasServices.find(categoria => categoria.id === id);
     
     if (categoriaEncontrada) {
       return categoriaEncontrada;
@@ -16,6 +17,7 @@ function categoriaId(id) {
   }
   
 module.exports = {
-    listarCategorias,
-    getCategoriaById: categoriaId
+  listarCategorias,
+  mostrarCategoriasd,
 }
+    

@@ -1,13 +1,7 @@
-const CategoriasServices = require('../databases/Categorias.json');
+const CategoriasServices = require ("../services/CategoriasServices")
 
+console.log(CategoriasServices.listarCategorias())
 
-function listarCategorias() {
-    return CategoriasServices;
-
-}
-
-const resultado = listarCategorias(CategoriasServices);
-console.log(resultado);
 
 
 
