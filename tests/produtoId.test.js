@@ -1,18 +1,14 @@
 const produtosSite = require('../databases/Produtos.json');
 
 function produtoId(id) {
-    const produto = produtosSite.find(c => c.id === id);
-    if (produto) {
-      return produto;
-    } else {
-      return null;
-    }
-  }
-  
-  // Teste: a função retorna o produto correto com base no ID
-  const produto = produtoId("Cadeira Saarinen");
-  if (produto) {
-    console.log(`O produto com ID ${produto.id} é ${produto.nome}`); // problema esta aqui 
-  } else {
-    console.log("Não foi possível encontrar o produto com o ID fornecido.");
-  }
+  const produto = produtosSite.find(c => c.id === id);
+  return produto || null;
+}
+
+// Teste: a função retorna o produto correto com base no ID
+const produto = produtoId("Cadeira Saarinen");
+if (produto) {
+  console.log(JSON.stringify(produto));
+} else {
+  console.log("Não foi possível encontrar o produto com o ID fornecido.");
+}
