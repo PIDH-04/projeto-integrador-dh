@@ -10,13 +10,6 @@ function listarProdutos() {
 
 
 
-
-
-
-
-
-
-
 function produtoId(id) {
     const produto = produtosSite.find(c => c.id === id);
     if (produto) {
@@ -71,23 +64,6 @@ if (produtoCriado && produtosSite.includes(produtoCriado)) {
 } else {
     console.log("Ocorreu um erro ao criar o produto.");
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

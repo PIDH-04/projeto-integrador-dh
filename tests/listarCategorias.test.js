@@ -1,8 +1,8 @@
-const CategoriasServices = require('../services/CategoriasServices');
+const CategoriasServices = require('../databases/Categorias.json');
 
 
 function listarCategorias() {
-    return produtosSite;
+    return CategoriasServices;
 
 }
 

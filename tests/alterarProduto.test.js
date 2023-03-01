@@ -1,4 +1,5 @@
-const produtosSite = require("../databases/Produtos.json"); // importar o arquivo JSON com os produtos existentes
+const produtosSite = require("../databases/Produtos.json"); 
+const fs = require('fs');
 
 // Definir a função 'alterarProduto', que recebe o ID do produto a ser alterado e o novo objeto de produto
 function alterarProduto(id, novoProduto) {
@@ -14,18 +15,29 @@ break;
 }
 
 // Escrever os dados atualizados no arquivo 'Produtos.json'
-fs.writeFileSync('../databases/Produtos.json', JSON.stringify(produtosSite));
+ fs.writeFileSync("./databases/Produtos.json", JSON.stringify(produtosSite));
 }
 
 // Definir um novo objeto de produto com as informações atualizadas
 const novoProduto = {
-id: 3,
-nome: 'Produto atualizado',
-preco: 12.34,
-};
+    "id": "Cadeira Saarinen",
+    "nome":"Cadeira Saarinen",
+    "img":["/img/cadeira-saarinen-preta.jpg", "/img/cadeira-saarinen-branca.jfif", "/img/cadeira-saarinen-bege.jfif"],
+    "categoria":"Cadeiras",
+    "area": "interna",
+    "material":["madeira", "acetato"],
+    "cores":["branco", "preto", "bege"],
+    "preco":100,
+    "descricao":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aperiam minima necessitatibus, quis blanditiis exercitationem veniam earum error quam cupiditate iste vitae accusamus voluptatem corporis ullam? Eos sit nisi vero.",
+    "medidas": {
+        "comprimento": 0.8,
+        "largura": 0.8,
+        "altura":0.8
+    }
+}
 
 // Chamar a função 'alterarProduto' passando o ID do produto a ser alterado e o novo objeto de produto
-alterarProduto(3, novoProduto);
+alterarProduto("Cadeira Saarinen-teste", novoProduto);
 
 // Testar se a alteração foi realizada corretamente imprimindo o conteúdo do arquivo 'Produtos.json' no console
 
