@@ -1,5 +1,5 @@
-const CategoriasServices = require('../services/CategoriasServices');
-
+const CategoriasServices = require('../databases/Categorias.json');
+const fs = require('fs');
 
 function categoriaId(id) {
   
@@ -13,6 +13,8 @@ function categoriaId(id) {
     return null;
   }
 }
+
+
 
 // Testa a função 
 console.log(categoriaId(1));

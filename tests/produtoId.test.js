@@ -10,9 +10,9 @@ function produtoId(id) {
   }
   
   // Teste: a função retorna o produto correto com base no ID
-  const produto = produtoId();
+  const produto = produtoId("Cadeira Saarinen");
   if (produto) {
-    console.log(`O produto com ID ${produto.id} é ${produto.nome}`);
+    console.log(`O produto com ID ${produto.id} é ${produto.nome}`); // problema esta aqui 
   } else {
     console.log("Não foi possível encontrar o produto com o ID fornecido.");
   }

@@ -30,7 +30,7 @@ function editarProduto(id, novoProduto) {
 
  // Criar um novo objeto de produto com as informações atualizadas
 const novoProduto = {
-    "id": "Cadeira Saarinen",
+    "id": "Cadeira Saarinen- teste",
     "nome":"Cadeira Saarinen",
     "img":["/img/cadeira-saarinen-preta.jpg", "/img/cadeira-saarinen-branca.jfif", "/img/cadeira-saarinen-bege.jfif"],
     "categoria":"Cadeiras",
@@ -47,7 +47,7 @@ const novoProduto = {
 }
 
 // Chamar a função 'editarProduto' passando o ID do produto a ser editado e o novo objeto de produto
-const produtoAtualizado = editarProduto("1", novoProduto);
+const produtoAtualizado = editarProduto("Cadeira Saarinen", novoProduto);
 
 // Imprimir o produto atualizado no console
 console.log(produtoAtualizado);
