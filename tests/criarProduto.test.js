@@ -19,10 +19,10 @@ function criarProduto(produto) {
     return produto;
 }
 
-// Criar um novo produto para ser adicionado ao array de produtos existentes
+// Cria um novo produto para ser adicionado ao array de produtos existentes
 const novoProduto = { nome: "Novo produto", preco: 24.99 };
 
-// Chamar a função criarProduto e passar o novo produto como parâmetro
+// Chama a função criarProduto e passar o novo produto como parâmetro
 const produtoCriado = criarProduto(novoProduto);
 
 // Verifica se o produto foi criado e adicionado ao array de produtos

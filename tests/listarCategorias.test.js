@@ -1,9 +1,14 @@
 const CategoriasServices = require('../services/CategoriasServices');
 
 
-console.log(CategoriasServices.listarCategorias());
+function listarCategorias() {
+    return produtosSite;
 
-//testando funções
+}
 
-//no terminal abaixo
-//node tests/listarCategorias.js
+const resultado = listarCategorias(CategoriasServices);
+console.log(resultado);
+
+
+
+

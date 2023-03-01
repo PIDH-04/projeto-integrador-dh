@@ -6,7 +6,7 @@ function listarCategorias() {
 
 }
 
-function getCategoriaById(id) {
+function categoriaId(id) {
     const categoria = categorias.find(c => c.id === id);
     if (categoria) {
         return categoria;
@@ -18,5 +18,5 @@ function getCategoriaById(id) {
 
 module.exports = {
     listarCategorias,
-    getCategoriaById
+    getCategoriaById: categoriaId
 }

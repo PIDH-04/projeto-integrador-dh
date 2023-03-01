@@ -1,4 +1,5 @@
 const produtosSite = require('../databases/Produtos.json');
+const fs = require('fs');
 
 function editarProduto(id, novoProduto) {
 
@@ -29,13 +30,24 @@ function editarProduto(id, novoProduto) {
 
  // Criar um novo objeto de produto com as informações atualizadas
 const novoProduto = {
- nome: 'Produto atualizado',
- categoria: 'Categoria atualizada',
- preco: 12.34
-};
+    "id": "Cadeira Saarinen",
+    "nome":"Cadeira Saarinen",
+    "img":["/img/cadeira-saarinen-preta.jpg", "/img/cadeira-saarinen-branca.jfif", "/img/cadeira-saarinen-bege.jfif"],
+    "categoria":"Cadeiras",
+    "area": "interna",
+    "material":["madeira", "acetato"],
+    "cores":["branco", "preto", "bege"],
+    "preco":100,
+    "descricao":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aperiam minima necessitatibus, quis blanditiis exercitationem veniam earum error quam cupiditate iste vitae accusamus voluptatem corporis ullam? Eos sit nisi vero.",
+    "medidas": {
+        "comprimento": 0.8,
+        "largura": 0.8,
+        "altura":0.8
+    }
+}
 
 // Chamar a função 'editarProduto' passando o ID do produto a ser editado e o novo objeto de produto
-const produtoAtualizado = editarProduto(1, novoProduto);
+const produtoAtualizado = editarProduto("1", novoProduto);
 
 // Imprimir o produto atualizado no console
 console.log(produtoAtualizado);
