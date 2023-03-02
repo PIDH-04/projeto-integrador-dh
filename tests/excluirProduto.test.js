@@ -1,1 +1,6 @@
-// excluir o produto de um determinado id
+const ProdutosServices = require("../services/ProdutosServices")
+
+console.log(ProdutosServices.excluirProdutoId("kakaka"))
+
+
+

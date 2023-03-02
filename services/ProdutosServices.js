@@ -72,6 +72,29 @@ function mostrarProdutoId(id) {
   return produto || null;
 }
 
+function excluirProdutoId(id) {
+  // Encontrar o índice do produto a ser excluído pelo ID
+  const indiceProduto = produtosSite.findIndex(p => p.id === id);
+
+  if (indiceProduto !== -1) {
+      // Remover o produto do array de produtos
+      produtosSite.splice(indiceProduto, 1);
+
+      // Escrever os dados atualizados no arquivo JSON
+      fs.writeFileSync('./databases/Produtos.json', JSON.stringify(produtosSite,null,4));
+
+      // Retornar true se o produto foi excluído com sucesso
+      return true;
+  } else {
+      // Retornar false se não encontrar o produto a ser excluído
+      return false;
+  }
+}
+
+function listarProdutosCategoria(categoria) {
+  const produtosFiltrados = produtosSite.filter(produto => produto.categoria === categoria);
+  return produtosFiltrados.length > 0 ? produtosFiltrados : null;
+}
 
 module.exports = {
   
@@ -80,5 +103,7 @@ module.exports = {
   editarProduto,
   listarProdutos,
   mostrarProdutoId,
-
+  excluirProdutoId,
+  listarProdutosCategoria,
+  
 }
