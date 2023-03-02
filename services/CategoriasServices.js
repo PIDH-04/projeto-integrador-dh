@@ -1,22 +1,22 @@
-const categorias = require('../databases/Categorias.json');
-
+const CategoriasServices = require('../databases/Categorias.json');
+const fs = require('fs');
 
 function listarCategorias() {
-    return categorias;
+  return CategoriasServices;
 
 }
 
-function categoriaId(id) {
-    const categoria = categorias.find(c => c.id === id);
-    if (categoria) {
-        return categoria;
-    } else {
-        return null;
-    }
+function mostrarCategoriasd(id) {
+  const categoriaEncontrada = CategoriasServices.find(categoria => categoria.id === id);
 
+  if (categoriaEncontrada) {
+    return categoriaEncontrada;
+  } else {
+    return null;
+  }
 }
 
 module.exports = {
-    listarCategorias,
-    getCategoriaById: categoriaId
+  listarCategorias,
+  mostrarCategoriasd,
 }

@@ -1,137 +1,109 @@
 const produtosSite = require('../databases/Produtos.json');
+const fs = require('fs');
 
 
+function categoriaId(id) {
 
-function listarProdutos() {
-    return produtosSite;
+  const categoriaEncontrada = CategoriasServices.categorias.find(categoria => categoria.id === id);
 
+  if (categoriaEncontrada) {
 
-}
-
-
-
-function produtoId(id) {
-    const produto = produtosSite.find(c => c.id === id);
-    if (produto) {
-      return produto;
-    } else {
-      return null;
-    }
-  }
-  
-  // Teste: a função retorna o produto correto com base no ID
-  const produto = produtoId(5);
-  if (produto) {
-    console.log(`O produto com ID ${produto.id} é ${produto.nome}`);
+    return categoriaEncontrada;
   } else {
-    console.log("Não foi possível encontrar o produto com o ID fornecido.");
+
+    return null;
   }
-
-
-
-
-
-
-
-
-
-
-  function criarProduto(produto) {
-
-    // Encontra o último ID dos produtos existentes e adicionar 1 para gerar um novo ID
-    const ultimoID = produtosSite.length > 0 ? Math.max(...produtosSite.map(p => p.id)) : 0;
-    const id = ultimoID + 1;
-
-    // Adiciona o ID ao objeto de produto
-    produto.id = id;
-
-    // Adiciona o produto ao array de produtos
-    produtosSite.push(produto);
-
-    // Retorna o produto criado
-    return produto;
 }
 
-// Criar um novo produto para ser adicionado ao array de produtos existentes
-const novoProduto = { nome: "Novo produto", preco: 24.99 };
+function criarProduto(produto) {
 
-// Chamar a função criarProduto e passar o novo produto como parâmetro
-const produtoCriado = criarProduto(novoProduto);
+  // Encontra o último ID dos produtos existentes e adiciona 1 para gerar um novo ID
+  const ultimoID = produtosSite[produtosSite.length -1].id
+  const id = ultimoID + 1;
 
-// Verifica se o produto foi criado e adicionado ao array de produtos
-if (produtoCriado && produtosSite.includes(produtoCriado)) {
-    console.log(`O produto ${produtoCriado.nome} foi criado e adicionado ao array de produtos.`);
-} else {
-    console.log("Ocorreu um erro ao criar o produto.");
+
+  // Adiciona o ID ao objeto de produto
+  produto.id = id;
+
+  // Adiciona o produto ao array de produtos
+  produtosSite.push(produto);
+
+  // Escreve o array atualizado de produtos no arquivo JSON
+  fs.writeFileSync('./databases/Produtos.json', JSON.stringify(produtosSite,null,4));
+
+  // Retorna o produto criado
+  return produto;
 }
-
-
-
-
-
-
-function categoria() {
-    const produtosCategorias = produtos.filter(p => p.categoria === categoria);
-
-    return produtosCategorias;
-
-}
-
-
-
 
 function editarProduto(id, novoProduto) {
-    
-    // Encontrar o índice do produto a ser editado pelo ID
-    const index = produtosSite.findIndex(p => p.id === id);
-    if (index !== -1) {
-       
-        // Atualizar o produto com os dados do novo produto
-        const produtoAtualizado = {
-            ...produtosSite[index],
-            ...novoProduto
-        };
-        
-        // Substituir o produto antigo pelo produto atualizado no array de produtos
-        produtosSite[index] = produtoAtualizado;
-        
-        // Escrever os dados atualizados no arquivo JSON
-        fs.writeFileSync('./databases/Produtos.json', JSON.stringify(produtosSite));
-        
-        // Retornar o produto atualizado
-        return produtoAtualizado;
-    } else {
-       
-        // Retornar null se não encontrar o produto a ser editado
-        return null;
-    }
+
+  // Encontrar o índice do produto a ser editado pelo ID
+  const index = produtosSite.findIndex(p => p.id === id);
+  if (index !== -1) {
+
+    // Atualizar o produto com os dados do novo produto
+    const produtoAtualizado = {
+      ...produtosSite[index],
+      ...novoProduto
+    };
+
+    // Substituir o produto antigo pelo produto atualizado no array de produtos
+    produtosSite[index] = produtoAtualizado;
+
+    // Escrever os dados atualizados no arquivo JSON
+    fs.writeFileSync('./databases/Produtos.json', JSON.stringify(produtosSite,null,4));
+
+    // Retornar o produto atualizado
+    return produtoAtualizado;
+  } else {
+
+    // Retornar null se não encontrar o produto a ser editado
+    return null;
+  }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-function listar() {
-    return produtos;
+function listarProdutos() {
+  return produtosSite;
 
 }
 
+function mostrarProdutoId(id) {
+  const produto = produtosSite.find(c => c.id === id);
+  return produto || null;
+}
 
+function excluirProdutoId(id) {
+  // Encontrar o índice do produto a ser excluído pelo ID
+  const indiceProduto = produtosSite.findIndex(p => p.id === id);
 
+  if (indiceProduto !== -1) {
+      // Remover o produto do array de produtos
+      produtosSite.splice(indiceProduto, 1);
 
+      // Escrever os dados atualizados no arquivo JSON
+      fs.writeFileSync('./databases/Produtos.json', JSON.stringify(produtosSite,null,4));
 
+      // Retornar true se o produto foi excluído com sucesso
+      return true;
+  } else {
+      // Retornar false se não encontrar o produto a ser excluído
+      return false;
+  }
+}
 
-
+function listarProdutosCategoria(categoria) {
+  const produtosFiltrados = produtosSite.filter(produto => produto.categoria === categoria);
+  return produtosFiltrados.length > 0 ? produtosFiltrados : null;
+}
 
 module.exports = {
-    Produtos: categorias,
-    produtosSite
+  
+  categoriaId,
+  criarProduto,
+  editarProduto,
+  listarProdutos,
+  mostrarProdutoId,
+  excluirProdutoId,
+  listarProdutosCategoria,
+  
 }

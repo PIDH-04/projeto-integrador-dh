@@ -1,3 +1,3 @@
 const ProdutosServices = require("../services/ProdutosServices")
 
-console.log(ProdutosServices.listarProdutos())
+console.log(ProdutosServices.listarProdutosCategoria(2))
