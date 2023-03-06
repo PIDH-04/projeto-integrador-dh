@@ -3,7 +3,7 @@ const ProdutosServices = require('../services/ProdutosServices');
 
 const ProdutosControllers = {
   show: (req, res) => {
-     // Mostrar categorias para header
+     // Mostrar categorias para header e footer
      const categorias = CategoriasServices.listarCategorias();
 
     let id = req.params.idDoProduto;
@@ -12,7 +12,7 @@ const ProdutosControllers = {
     return res.render('produto', {categorias, produto});
   },
   listagem: (req, res) => {
-     // Mostrar categorias para header
+     // Mostrar categorias para header e footer
      const categorias = CategoriasServices.listarCategorias();
 
     //Listar produtos
@@ -26,9 +26,12 @@ const ProdutosControllers = {
     return res.render('listagemProdutos', {categorias, produtos, categoria});
   },
   showCarrinho: (req, res) => {
-     // Mostrar categorias para header
+     // Mostrar categorias para header e footer
      const categorias = CategoriasServices.listarCategorias();
-     
+
+     //Listrar produtos
+     const produtos = ProdutosServices.listarProdutos();
+
     return res.render('carrinho', {categorias, produtos});
   },
 };
