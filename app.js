@@ -1,16 +1,27 @@
 // Importar express
 const express = require("express");
 const path = require("path");
-const router = require('./router');
+const router = require("./router");
+const session = require("express-session");
 
 // Criar o servidor
 const app = express();
-app.set("view engine","ejs");
+app.set("view engine", "ejs");
+
+// Configura o session
+app.use(
+  session({
+    secret: "keyboard cat",
+    resave: false,
+    saveUninitialized: false,
+  })
+);
 
 // Define a pasta public como pasta de arquivos estáticos
-app.use(express.static(path.join(__dirname, "public"), ));
-app.use(express.static('public/script', { type: 'application/javascript' }));
-
+app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static("public/script", { type: "application/javascript" }));
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
 // Definir roteador a ser usado
 app.use(router);
@@ -19,4 +30,3 @@ app.use(router);
 app.listen(3000, () => {
   console.log("Servidor rodando");
 });
-
