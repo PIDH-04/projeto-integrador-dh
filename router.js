@@ -4,9 +4,9 @@ const AdminController = require('./controllers/AdminController');
 const GeralController = require("./controllers/GeralController");
 const ProdutosController = require("./controllers/ProdutosController");
 const UsuarioController = require("./controllers/UsuarioController");
+const checaAutenticacaoAdmin = require('./middlewares/checaAutenticacaoAdmin');
 
 const router = express.Router()
-
 
 
 // Definir rotas
@@ -40,11 +40,11 @@ router.get("/cadastro", UsuarioController.showCadastro);
 // Admin Routers
 router.get("/admin/", AdminController.showLogin);
 router.post("/admin/login", AdminController.login);
-router.get("/admin/clientes", AdminController.showClientes);
-router.get("/admin/produtos", AdminController.showProdutos);
-router.get("/admin/pedidos", AdminController.showPedidos);
-router.get("/admin/produtos/criar", AdminController.showCriarProduto);
-router.get("/admin/produtos/:id/editar", AdminController.showEditarProduto);
+router.get("/admin/clientes", checaAutenticacaoAdmin, AdminController.showClientes);
+router.get("/admin/produtos", checaAutenticacaoAdmin, AdminController.showProdutos);
+router.get("/admin/pedidos", checaAutenticacaoAdmin, AdminController.showPedidos);
+router.get("/admin/produtos/criar", checaAutenticacaoAdmin, AdminController.showCriarProduto);
+router.get("/admin/produtos/:id/editar", checaAutenticacaoAdmin, AdminController.showEditarProduto);
 
 // Exportar o roteador
 module.exports = router;
