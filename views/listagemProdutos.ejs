@@ -1,146 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include("partials/head", {css: ["listagemProdutos.css"], titulo:
-  "listagem-produtos_E-móvel"}) %>
+<%- include("partials/head", {css: ["listagemProdutos.css"], titulo: "listagem-produtos_E-móvel" }) %>
+
   <body>
     <%- include("partials/header") %>
-    <%- include("partials/topoPg") %>
-    <div class="banner-categoria">
-      <div class="titulo-container">
-        <h2><%= categoria.nome %></h2>
-        <p><%= categoria.descrição[0] %></p>
-        <p><%= categoria.descrição[1] %></p>
-      </div>
+      <%- include("partials/topoPg") %>
+        <div class="banner-categoria">
+          <div class="titulo-container">
+            <h2>
+              <%= categoria.nome %>
+            </h2>
+            <p>
+              <%= categoria.descrição[0] %>
+            </p>
+            <p>
+              <%= categoria.descrição[1] %>
+            </p>
+          </div>
 
-      <div class="icone-container">
-        <img src="<%= categoria.icone %>" alt="Ícone <%= categoria.nome %>" />
-      </div>
-    </div>
-
-    <main>
-      <div class="filtros-container">
-        <div class="header">
-          <h4>Filtros</h4>
-          <p>Limpar filtros</p>
-        </div>
-        <form>
-          <span>
-            <input name="areainterna" type="checkbox" />
-            <label for="areainterna">Area Interna</label>
-          </span>
-
-          <span>
-            <input name="areaexterna" type="checkbox" />
-            <label for="areaexterna">Area Externa</label>
-          </span>
-        </form>
-      </div>
-
-      <div class="produtos-container">
-        <div class="ordenacao-container">
-          <form class="menu-selecao">
-            <p>Ordenar por:</p>
-            <select name="ordenacao">
-              <option value="">Menor preço</option>
-              <option value="maior-preco">Maior preço</option>
-              <option value="novidades">Novidades</option>
-            </select>
-          </form>
-          <p class="quantidade-produtos">Mostrando 500 produtos</p>
-        </div>
-
-        <div class="produtos">
-          <div>
-            <div class="produto">
-              <a href="/produto/:idDoProduto">
-                <div class="img-container">
-                  <img
-                    class="imagem-produto"
-                    src="/img/mesa-monaco.png"
-                    alt="Mesa de Jantar Mônaco"
-                  />
-                </div>
-                <div class="informacoes-container">
-                  <h3 class="titulo-produto">Mesa de Jantar Mônaco</h3>
-                  <p class="variacao-produto">Tampo em madeira</p>
-                  <p class="preco-produto">R$ 800,00</p>
-                </div>
-              </a>
-              <button class="comprar botao-secundario add-cart">
-                Adicionar ao carrinho
-              </button>
-            </div>
-
-            <div class="produto">
-              <a href="/produto">
-                <div class="img-container">
-                  <img
-                    class="imagem-produto"
-                    src="/img/mesa-aspen.jpg"
-                    alt="Mesa de Jantar Aspen"
-                  />
-                </div>
-                <div class="informacoes-container">
-                  <h3 class="titulo-produto">Mesa de Jantar Aspen</h3>
-                  <p class="variacao-produto">Tampo em madeira</p>
-                  <p class="preco-produto">R$ 800,00</p>
-                </div>
-              </a>
-              <button class="comprar botao-secundario add-cart">
-                Adicionar ao carrinho
-              </button>
-            </div>
-
-            <div class="produto">
-              <a href="/produto">
-                <div class="img-container">
-                  <img
-                    class="imagem-produto"
-                    src="/img/mesa-bio.png"
-                    alt="Mesa de Jantar Bio"
-                  />
-                </div>
-                <div class="informacoes-container">
-                  <h3 class="titulo-produto">Mesa de Jantar Bio</h3>
-                  <p class="variacao-produto">Tampo em madeira</p>
-                  <p class="preco-produto">R$ 800,00</p>
-                </div>
-              </a>
-              <button class="comprar botao-secundario add-cart">
-                Adicionar ao carrinho
-              </button>
-            </div>
-
-            <div class="produto">
-              <a href="/produto">
-                <div class="img-container">
-                  <img
-                    class="imagem-produto"
-                    src="/img/mesa-dora.png"
-                    alt="Mesa de Jantar Dora"
-                  />
-                </div>
-                <div class="informacoes-container">
-                  <h3 class="titulo-produto">Mesa de Jantar Dora</h3>
-                  <p class="variacao-produto">Tampo em madeira</p>
-                  <p class="preco-produto">R$ 800,00</p>
-                </div>
-              </a>
-              <button class="comprar botao-secundario add-cart">
-                Adicionar ao carrinho
-              </button>
-            </div>
+          <div class="icone-container">
+            <img src="<%= categoria.icone %>" alt="Ícone <%= categoria.nome %>" />
           </div>
         </div>
 
-        <div class="botao-container">
-          <button class="carregar-mais botao-primario">
-            Ver mais produtos
-          </button>
-        </div>
-      </div>
-    </main>
-    <%- include("partials/footer.ejs") %>
-    <script src="/scripts/addProdutoCarrinho.js"></script>
+        <main>
+          <div class="filtros-container">
+            <div class="header">
+              <h4>Filtros</h4>
+              <p>Limpar filtros</p>
+            </div>
+            <form>
+              <span>
+                <input name="areainterna" type="checkbox" />
+                <label for="areainterna">Area Interna</label>
+              </span>
+
+              <span>
+                <input name="areaexterna" type="checkbox" />
+                <label for="areaexterna">Area Externa</label>
+              </span>
+            </form>
+          </div>
+
+          <div class="produtos-container">
+            <div class="ordenacao-container">
+              <form class="menu-selecao">
+                <p>Ordenar por:</p>
+                <select name="ordenacao">
+                  <option value="">Menor preço</option>
+                  <option value="maior-preco">Maior preço</option>
+                  <option value="novidades">Novidades</option>
+                </select>
+              </form>
+              <p class="quantidade-produtos">Mostrando 500 produtos</p>
+            </div>
+
+            <div class="produto">
+              <% for (const p of produtos) { %>
+                <a href="/produto/<%= p.id %>">
+                  <div class="img-container">
+                    <img class="imagem-produto" src="<%= p.img[0] %>" alt="<%= p.nome %>" />
+                  </div>
+                  <div class="informacoes-container">
+                    <h3 class="titulo-produto">
+                      <%= p.nome %>
+                    </h3>
+                    <!-- <p class="variacao-produto">Tampo em madeira</p> -->
+                    <p class="preco-produto">R$ <%= p.preco %>,00</p>
+
+                  </div>
+                </a>
+                <button class="comprar botao-secundario add-cart">
+                  Adicionar ao carrinho
+                </button>
+            </div>
+            <% } %>
+
+              <div class="botao-container">
+                <button class="carregar-mais botao-primario">
+                  Ver mais produtos
+                </button>
+              </div>
+          </div>
+        </main>
+        <%- include("partials/footer.ejs") %>
+          <script src="/scripts/addProdutoCarrinho.js"></script>
   </body>
+
 </html>
