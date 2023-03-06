@@ -6,8 +6,8 @@ function listarCategorias() {
 
 }
 
-function mostrarCategoria(id) {
-  const categoriaEncontrada = categorias.find(categoria => categoria.id === id);
+function mostrarCategoriaSlug(slug) {
+  const categoriaEncontrada = categorias.find(categoria => categoria.slug === slug);
   const categoriaNeutra = categorias[0];
 
   if (categoriaEncontrada) {
@@ -17,7 +17,18 @@ function mostrarCategoria(id) {
   }
 }
 
+function mostrarCategoriaId(id) {
+  const categoriaEncontrada = categorias.find(categoria => categoria.id === id);
+
+  if (categoriaEncontrada) {
+    return categoriaEncontrada;
+  } else {
+    return null;
+  }
+}
+
 module.exports = {
   listarCategorias,
-  mostrarCategoria,
+  mostrarCategoriaSlug,
+  mostrarCategoriaId
 }
