@@ -1,7 +1,7 @@
 [
     {
         "nome": "Móveis",
-        "link": "moveis",
+        "id": "moveis",
         "icone": "/img/mesa-icone.svg",
         "descrição": [
             "Os melhores móveis do Brasil no conforto de um click.",
@@ -10,7 +10,7 @@
     },
     {
         "nome": "Mesas de Jantar",
-        "link": "mesasdejantar",
+        "id": "mesasdejantar",
         "icone": "/img/mesa-icone.svg",
         "area": "interna",
         "descrição": [
@@ -20,7 +20,7 @@
     },
     {
         "nome": "Cadeiras",
-        "link": "cadeiras",
+        "id": "cadeiras",
         "icone": "/img/mesa-icone.svg",
         "area": [
             "interna",
@@ -33,7 +33,7 @@
     },
     {
         "nome": "Mesas de Centro",
-        "link": "mesasdecentro",
+        "id": "mesasdecentro",
         "icone": "/img/mesa-icone.svg",
         "area": "interna",
         "descrição": [
@@ -43,7 +43,7 @@
     },
     {
         "nome": "Sofás",
-        "link": "sofas",
+        "id": "sofas",
         "icone": "/img/mesa-icone.svg",
         "area": [
             "interna",
@@ -56,7 +56,7 @@
     },
     {
         "nome": "Cômodas",
-        "link": "comodas",
+        "id": "comodas",
         "icone": "/img/mesa-icone.svg",
         "area": "interna",
         "descrição": [
@@ -66,7 +66,7 @@
     },
     {
         "nome": "Mesas Laterais",
-        "link": "mesaslaterais",
+        "id": "mesaslaterais",
         "icone": "/img/mesa-icone.svg",
         "area": "interna",
         "descrição": [
@@ -76,7 +76,7 @@
     },
     {
         "nome": "Balanços",
-        "link": "balancos",
+        "id": "balancos",
         "icone": "/img/mesa-icone.svg",
         "area": "externa",
         "descrição": [
@@ -86,7 +86,7 @@
     },
     {
         "nome": "Armários",
-        "link": "armarios",
+        "id": "armarios",
         "icone": "/img/mesa-icone.svg",
         "area": "interna",
         "descrição": [
