@@ -39,6 +39,7 @@ router.get("/cadastro", UsuarioController.showCadastro);
 
 // Admin Routers
 router.get("/admin/", AdminController.showLogin);
+router.post("/admin/login", AdminController.login);
 router.get("/admin/clientes", AdminController.showClientes);
 router.get("/admin/produtos", AdminController.showProdutos);
 router.get("/admin/pedidos", AdminController.showPedidos);
