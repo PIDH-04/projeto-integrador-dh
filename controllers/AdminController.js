@@ -2,23 +2,33 @@ const { buscaAdmin, checaSenha } = require("../services/AdminServices");
 
 const AdminController = {
   showLogin: (req, res) => {
-    res.render("adminLogin");
+    if (req.session.adminLogado == true) {
+      return res.redirect("/admin/pedidos");
+    } else {
+      const target = req.query.target;
+      const erro = req.query.erro;
+      return res.render("adminLogin", { target: target, erro: erro });
+    }
   },
   login: (req, res) => {
-    const { email, senha } = req.body;
+    const { email, senha, target } = req.body;
     const admin = buscaAdmin(email);
+    const queryParamsErro = target ? `target=${target}&erro=true` : 'erro=true'
 
     if (!admin) {
-      res.redirect("/admin?error=true");
+
+      return res.redirect(`/admin?${queryParamsErro}`);
     }
 
     const senhaCorreta = checaSenha(admin, senha);
 
     if (!senhaCorreta) {
-      res.redirect("/admin?error=true");
+      return res.redirect(`/admin?${queryParamsErro}`);
     }
 
-    res.redirect("/admin/pedidos");
+    req.session.adminLogado = true;
+    const enderecoSolicitado = target ? target : "/admin/pedidos";
+    res.redirect(enderecoSolicitado);
   },
   showClientes: (req, res) => {
     res.render("adminClientes");

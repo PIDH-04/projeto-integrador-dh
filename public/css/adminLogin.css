@@ -14,6 +14,12 @@ main .form-login-container{
     width: 40%;
 }
 
+main .form-login-container .erros{
+    margin-top:-30px;
+    margin-bottom: 30px;
+    display: block;
+}
+
 main .form-login-container .logo-container{
     width: 100%;
     text-align: center;
