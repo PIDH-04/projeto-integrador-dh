@@ -6,8 +6,8 @@ const ProdutosControllers = {
      // Mostrar categorias para header e footer
      const categorias = CategoriasServices.listarCategorias();
 
-    let id = req.params.idDoProduto;
-    const produto = produtos.find( p => p.id == id);
+    let slugProduto = req.params.slugProduto;
+    const produto = ProdutosServices.mostrarProdutoSlug(slugProduto);
 
     return res.render('produto', {categorias, produto});
   },
@@ -19,8 +19,8 @@ const ProdutosControllers = {
     const produtos = ProdutosServices.listarProdutos();
 
     //Pegar parametro da url e alterar a categoria mostrada
-    let id = req.params.id;
-    const categoria = CategoriasServices.mostrarCategoria(id);
+    let slugCategoria = req.params.slugCategoria;
+    const categoria = CategoriasServices.mostrarCategoriaSlug(slugCategoria);
 
     //Retorna view
     return res.render('listagemProdutos', {categorias, produtos, categoria});
