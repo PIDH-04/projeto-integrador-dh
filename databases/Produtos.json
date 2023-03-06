@@ -1,6 +1,7 @@
 [
     {
-        "id": "cadeirasaarinen",
+        "id":1, 
+        "slug": "cadeirasaarinen",
         "nome":"Cadeira Saarinen",
         "img":["/img/cadeira-saarinen-preta.png", "/img/cadeira-saarinen-branca.jfif", "/img/cadeira-saarinen-Bege.jfif"],
         "categoria":"Cadeiras",
@@ -16,7 +17,8 @@
         }
     },
     {
-        "id": "sofadescansopleno",
+        "id":2, 
+        "slug": "sofadescansopleno",
         "nome":"Sofá Descanso Pleno",
         "img":["/img/sofa-pleno-preto.png", "/img/sofa-pleno-cinza.png", "/img/sofa-pleno-branco.jpg"],
         "categoria":"Sofás",
@@ -32,7 +34,8 @@
         }
     },
     {
-        "id": "mesadejantarmonaco",
+        "id":3, 
+        "slug": "mesadejantarmonaco",
         "nome":"Mesa de Jantar Mônaco",
         "img":["/img/mesa-monaco.png", "/img/mesa.jpg"],
         "categoria":"Mesas de Jantar",
@@ -48,7 +51,8 @@
         }
     },
     {
-        "id": "mesadejantaraspen",
+        "id":4, 
+        "slug": "mesadejantaraspen",
         "nome":"Mesa de Jantar Aspen",
         "img":["/img/mesa-aspen.png", "/img/mesa.png"],
         "categoria":"Mesas de Jantar",
@@ -64,7 +68,8 @@
         }
     },
     {
-        "id": "mesadejantarbio",
+        "id":5, 
+        "slug": "mesadejantarbio",
         "nome":"Mesa de Jantar  Bio",
         "img":["/img/mesa-bio.png", "/img/mesa.jpg", "/img/mesa.png"],
         "categoria":"Mesas de Jantar",
@@ -80,7 +85,8 @@
         }
     },
     {
-        "id": "mesadejantardora",
+        "id":6, 
+        "slug": "mesadejantardora",
         "nome":"Mesa de Jantar Dora",
         "img":["/img/mesa-dora.png", "/img/mesa.jpg"],
         "categoria":"Mesas de Jantar",
