@@ -55,32 +55,35 @@
               <p class="quantidade-produtos">Mostrando 500 produtos</p>
             </div>
 
-            <div class="produto">
+
+            <div class="produtos">
               <% for (const p of produtos) { %>
-                <a href="/produto/<%= p.id %>">
-                  <div class="img-container">
-                    <img class="imagem-produto" src="<%= p.img[0] %>" alt="<%= p.nome %>" />
-                  </div>
-                  <div class="informacoes-container">
-                    <h3 class="titulo-produto">
-                      <%= p.nome %>
-                    </h3>
-                    <!-- <p class="variacao-produto">Tampo em madeira</p> -->
-                    <p class="preco-produto">R$ <%= p.preco %>,00</p>
+                <div class="produto">
+                  <a href="/produto/<%= p.id %>">
+                    <div class="img-container">
+                      <img class="imagem-produto" src="<%= p.img[0] %>" alt="<%= p.nome %>" />
+                    </div>
+                    <div class="informacoes-container">
+                      <h3 class="titulo-produto">
+                        <%= p.nome %>
+                      </h3>
+                      <!-- <p class="variacao-produto">Tampo em madeira</p> -->
+                      <p class="preco-produto">R$ <%= p.preco %>,00</p>
 
-                  </div>
-                </a>
-                <button class="comprar botao-secundario add-cart">
-                  Adicionar ao carrinho
-                </button>
+                    </div>
+                  </a>
+                  <button class="comprar botao-secundario add-cart">
+                    Adicionar ao carrinho
+                  </button>
+                </div>
+                <% } %>
             </div>
-            <% } %>
 
-              <div class="botao-container">
-                <button class="carregar-mais botao-primario">
-                  Ver mais produtos
-                </button>
-              </div>
+            <div class="botao-container">
+              <button class="carregar-mais botao-primario">
+                Ver mais produtos
+              </button>
+            </div>
           </div>
         </main>
         <%- include("partials/footer.ejs") %>
