@@ -1,5 +1,5 @@
 const { buscaAdmin } = require("../services/AdminServices");
-const { listarProdutos } = require("../services/ProdutosServices");
+const { listarProdutos, excluirProdutoId } = require("../services/ProdutosServices");
 const { checaSenha } = require("../services/UsuariosServices");
 
 const AdminController = {
@@ -38,7 +38,6 @@ const AdminController = {
   showProdutos: (req, res) => {
 
     const produtos = listarProdutos();
-    console.log(produtos)
     res.render("adminProdutos", { produtos });
   },
   showPedidos: (req, res) => {
@@ -50,6 +49,11 @@ const AdminController = {
   showEditarProduto: (req, res) => {
     res.render("adminEditarProduto");
   },
+  removeProduto: (req, res) => {
+    const { id } = req.params
+    excluirProdutoId(id)
+    return res.redirect('/admin/produtos')
+  }
 };
 
 module.exports = AdminController;
