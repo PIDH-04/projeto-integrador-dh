@@ -23,6 +23,10 @@ header .inferior2 input {
   margin-top: var(--margin-top);
 }
 
+.display-flex .erros-query{
+  display: block;
+}
+
 .display-flex input{
   width: 100%;
 }

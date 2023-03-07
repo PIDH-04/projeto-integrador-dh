@@ -61,24 +61,33 @@
       <!-- <h1 >  Bem vindo de volta </h1> -->
       <h2>Login por Email</h2>
 
-      <div class="errors2" id="div-errors2">
+      <div class="erros" id="errors2">
         <ul></ul>
       </div>
+      <% if(erro){ %> 
+        <ul class="erros erros-query" id="erros-novo-endereco">
+          <li>E-mail ou senha inválidos</li>
+        </ul>
+      <% } %>
 
-      <form class="formLogin" method="post">
+      <form class="formLogin" action="/login" method="POST">
         <div></div>
         <div class="email1">
-          <input type="email" placeholder="Email" name="Adress" id="Adress" class="form-control" required />
+          <input type="email" placeholder="Email" name="email" id="email-login" class="form-control"  />
         </div>
 
         <div class="senha">
-          <input type="password" placeholder="Senha" name="Adress" id="Adress1" class="form-control" required />
+          <input type="password" placeholder="Senha" name="senha" id="senha-login" class="form-control" required />
         </div>
 
         <div class="lembrar">
           <input type="checkbox" class="form-check-input" id="exampleCheck1" />
           <label class="form-check-label" for="exampleCheck1">Lembrar-me</label>
         </div>
+
+        <% if(target != undefined){ %> 
+          <input type="hidden" name="target" id="target" value="<%= target %>"/>
+        <% } %>
 
         <div>
           <button type="submit" class="botom botao-secundario">Entrar</button>
