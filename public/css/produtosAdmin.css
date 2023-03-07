@@ -45,6 +45,15 @@ body.admin-container .acoes-container img {
   width: auto;
 }
 
+body.admin-container .acoes-container form{
+  margin-bottom: 0;
+  width: auto;
+}
+
+body.admin-container .acoes-container form button{
+  padding: 10px;
+}
+
 body.admin-container .acoes-container button {
   background-color: #cd0808;
 }

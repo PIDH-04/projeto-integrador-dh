@@ -132,25 +132,5 @@
             "largura": 0.8,
             "altura": 0.8
         }
-    },
-    {
-        "id": null,
-        "nome": "Novo produto",
-        "preco": 24.99
-    },
-    {
-        "id": null,
-        "nome": "wesley",
-        "preco": 24.99
-    },
-    {
-        "id": null,
-        "nome": "wesley",
-        "preco": 24.99
-    },
-    {
-        "id": null,
-        "nome": "julio",
-        "preco": 24.99
     }
 ]

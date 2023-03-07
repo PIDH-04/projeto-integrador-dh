@@ -1,4 +1,5 @@
 const { buscaAdmin } = require("../services/AdminServices");
+const { listarProdutos } = require("../services/ProdutosServices");
 const { checaSenha } = require("../services/UsuariosServices");
 
 const AdminController = {
@@ -35,7 +36,10 @@ const AdminController = {
     res.render("adminClientes");
   },
   showProdutos: (req, res) => {
-    res.render("adminProdutos");
+
+    const produtos = listarProdutos();
+    console.log(produtos)
+    res.render("adminProdutos", { produtos });
   },
   showPedidos: (req, res) => {
     res.render("adminPedidos");
