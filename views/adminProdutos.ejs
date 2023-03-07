@@ -61,7 +61,7 @@
               >
                 <img src="/img/editar.svg" alt="del" />
               </a>
-              <form action="/produtos/:id/delete" method="POST">
+              <form action="/admin/produtos/<%= produto.id %>/delete?_method=DELETE" method="POST">
                 <button><img src="/img/remover.svg" alt="del" type="submit" /></button>
               </form>
             </td>
