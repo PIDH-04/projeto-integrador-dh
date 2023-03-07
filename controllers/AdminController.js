@@ -1,4 +1,5 @@
-const { buscaAdmin, checaSenha } = require("../services/AdminServices");
+const { buscaAdmin } = require("../services/AdminServices");
+const { checaSenha } = require("../services/UsuariosServices");
 
 const AdminController = {
   showLogin: (req, res) => {
