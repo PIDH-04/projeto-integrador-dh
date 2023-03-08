@@ -28,7 +28,7 @@ router.get('/checkoutpagamento', UsuarioController.checkoutPagamento);
 
 router.get("/checkoutDeEndereco", UsuarioController.checkoutEndereco);
 
-router.get("/:slugProduto", ProdutosController.show);
+router.get("/produto/:slugProduto", ProdutosController.show);
 
 router.get("/categorias/:slugCategoria?", ProdutosController.listagem);
 // o '?' torna o id dispensavel, podendo acessar o url '/categorias'
