@@ -1,5 +1,9 @@
 const { buscaAdmin } = require("../services/AdminServices");
-const { listarProdutos, excluirProdutoId } = require("../services/ProdutosServices");
+const {
+  listarProdutos,
+  excluirProdutoId,
+  mostrarProdutoId,
+} = require("../services/ProdutosServices");
 const { checaSenha } = require("../services/UsuariosServices");
 
 const AdminController = {
@@ -15,10 +19,9 @@ const AdminController = {
   login: (req, res) => {
     const { email, senha, target } = req.body;
     const admin = buscaAdmin(email);
-    const queryParamsErro = target ? `target=${target}&erro=true` : 'erro=true'
+    const queryParamsErro = target ? `target=${target}&erro=true` : "erro=true";
 
     if (!admin) {
-
       return res.redirect(`/admin?${queryParamsErro}`);
     }
 
@@ -36,7 +39,6 @@ const AdminController = {
     res.render("adminClientes");
   },
   showProdutos: (req, res) => {
-
     const produtos = listarProdutos();
     res.render("adminProdutos", { produtos });
   },
@@ -47,13 +49,15 @@ const AdminController = {
     res.render("adminAddProduto");
   },
   showEditarProduto: (req, res) => {
-    res.render("adminEditarProduto");
+    const { id } = req.params;
+    const produto = mostrarProdutoId(id);
+    res.render("adminEditarProduto", {produto});
   },
   removeProduto: (req, res) => {
-    const { id } = req.params
-    excluirProdutoId(id)
-    return res.redirect('/admin/produtos')
-  }
+    const { id } = req.params;
+    excluirProdutoId(id);
+    return res.redirect("/admin/produtos");
+  },
 };
 
 module.exports = AdminController;

@@ -6,7 +6,7 @@
     <%- include("partials/adminHeader") %>
     <%- include("partials/topoPg") %>
     <main class="">
-      <h1>Editar Produto</h1>
+      <h1>Editar <%= produto.nome %></h1>
       <a href="/admin/produtos" class="retornar-pagina">
         <img src="/img/voltar.svg" />
         Voltar para produtos
@@ -25,7 +25,7 @@
               name="nome-produto"
               id="nome-produto"
               placeholder="Novo produto"
-              value="Mesa de Jantar Plana"
+              value="<%= produto.nome %>"
             />
 
             <label for="medidas">Medidas (L x P x A)</label>
@@ -42,7 +42,7 @@
               name="descrição"
               id="descrição"
               placeholder="Descreva seu produto"
-            >Mesa de jantar com tampo em madeira</textarea>
+            ><%= produto.descricao %></textarea>
 
             <label for="preco">Preço</label>
             <input
@@ -50,13 +50,13 @@
               name="preco"
               id="preco"
               placeholder="200,00"
-              value="800,00"
+              value="<%= produto.preco %>"
             />
           </div>
 
           <div>
             <div class="imagem-container">
-              <img src="/img/mesa-plana.png" />
+              <img src="<%= produto.img[0] %>" />
             </div>
             <label class="imagem-produto-btn" for="imagem-produto"
               >Selecionar imagens do produto</label
@@ -73,12 +73,16 @@
             </select>
           </div>
         </div>
-
-        <div class="container-botoes">
-          <button class="botao-secundario" type="submit">Salvar</button>
-          <button class="botao-secundario apagar" type="submit">Apagar produto</button>
-        </div>
       </form>
+
+      
+      <div class="container-botoes">
+        <button class="botao-secundario" type="submit">Salvar</button>
+        <form action="/admin/produtos/<%= produto.id %>/delete?_method=DELETE" method="POST" id="delete-form">
+            <button class="botao-secundario apagar" id="delete-btn" type="submit">Apagar produto</button>
+        </form>
+      </div>
     </main>
+    <script src="/scripts/adminProduto.js"></script>
   </body>
 </html>
