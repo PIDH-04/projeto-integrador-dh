@@ -7,6 +7,7 @@ const {
   editarProduto,
 } = require("../services/ProdutosServices");
 const { checaSenha } = require("../services/UsuariosServices");
+const fs = require("fs");
 
 const AdminController = {
   showLogin: (req, res) => {
@@ -52,23 +53,31 @@ const AdminController = {
   },
   showEditarProduto: (req, res) => {
     const { id } = req.params;
-    const categorias = listarCategorias()
+    const categorias = listarCategorias();
     const produto = mostrarProdutoId(id);
-    res.render("adminEditarProduto", {produto, categorias});
+    res.render("adminEditarProduto", { produto, categorias });
   },
   editarProduto: (req, res) => {
-    const { id } = req.params
-    const produto = req.body
-    produto.img = ["/img/mesa-dora.png",
-    "/img/mesa.jpg"]
-    produto.preco = parseInt(produto.preco)
-    const produtoAtualizado = editarProduto(id, req.body)
+    const { id } = req.params;
+    const produto = req.body;
+    produto.preco = parseInt(produto.preco);
+
+    if(req.file){
+      const imgNovoNome = `${Date.now()}-${req.file.originalname}`;
+      fs.renameSync(req.file.path, `${req.file.destination}/${imgNovoNome}`);
+      produto.img = [`/img/produtos/${imgNovoNome}`];
+    }else{
+      const produtoOriginal = mostrarProdutoId(id)
+      produto.img = produtoOriginal.img
+    }
     
-    if(!produtoAtualizado){
-     return res.redirect(`/admin/produtos/${id}/editar?salvo=false`)
+    const produtoAtualizado = editarProduto(id, req.body);
+
+    if (!produtoAtualizado) {
+      return res.redirect(`/admin/produtos/${id}/editar?salvo=false`);
     }
 
-    return res.redirect(`/admin/produtos/${id}/editar?salvo=true`)
+    return res.redirect(`/admin/produtos/${id}/editar?salvo=true`);
   },
   removeProduto: (req, res) => {
     const { id } = req.params;

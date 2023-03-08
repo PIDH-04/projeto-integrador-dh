@@ -16,7 +16,7 @@
         <h2>Dados do produto</h2>
       </div>
 
-      <form action="/admin/produtos/<%= produto.id %>/editar?_method=PUT" method="POST" id="novo-produto-form">
+      <form action="/admin/produtos/<%= produto.id %>/editar?_method=PUT" method="POST" id="novo-produto-form" enctype="multipart/form-data">
         <div class="duas-colunas">
           <div>
             <label for="nome">Nome do Produto</label>
@@ -27,6 +27,9 @@
               placeholder="Novo produto"
               value="<%= produto.nome %>"
             />
+
+            <label>Slug</label>
+            <input type="text" name="slug" />
 
             <label for="medidas">Medidas (L x P x A)</label>
             <input
@@ -58,10 +61,10 @@
             <div class="imagem-container">
               <img src="<%= produto.img[0] %>" />
             </div>
-            <label class="imagem-produto-btn" for="imagem-produto"
+            <label class="imagem-produto-btn" for="img"
               >Selecionar imagens do produto</label
             >
-            <input type="file" name="imagem-produto" id="imagem-produto" />
+            <input type="file" name="img" id="img" id="imagem-produto" />
             <label>Selecione a Categoria do produto</label>
             <select name="categoria">
               <option disabled>Selecione uma categoria</option>
@@ -72,6 +75,7 @@
                 </option>
               <% } %>
             </select>
+            
           </div>
         </div>
       </form>
