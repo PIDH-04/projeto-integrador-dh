@@ -2,7 +2,7 @@
     {
         "nome":"Polentina",
         "email":"polentina@gmail.com",
-        "senha":"12345678",
+        "senha":"$2b$10$aLgye6UWdHYWVpbzXL1DhePNPr7YYIKsanzQoKwMrRj3mmt7kDO16",
         "cep":90100000,
         "endereço":"Rua Juju Ferreira",
         "numero": 100,
