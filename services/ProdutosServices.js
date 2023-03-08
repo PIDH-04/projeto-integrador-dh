@@ -43,13 +43,12 @@ function editarProduto(id, novoProduto) {
 
     // Atualizar o produto com os dados do novo produto
     const produtoAtualizado = {
-      ...produtosSite[index],
+      id: produtosSite[index].id,
       ...novoProduto
     };
 
     // Substituir o produto antigo pelo produto atualizado no array de produtos
     produtosSite[index] = produtoAtualizado;
-
     // Escrever os dados atualizados no arquivo JSON
     fs.writeFileSync('./databases/Produtos.json', JSON.stringify(produtosSite,null,4));
 
