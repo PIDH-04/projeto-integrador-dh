@@ -48,6 +48,7 @@ router.get("/admin/produtos", checaAutenticacaoAdmin, AdminController.showProdut
 router.get("/admin/pedidos", checaAutenticacaoAdmin, AdminController.showPedidos);
 router.get("/admin/produtos/criar", checaAutenticacaoAdmin, AdminController.showCriarProduto);
 router.get("/admin/produtos/:id/editar", checaAutenticacaoAdmin, AdminController.showEditarProduto);
+router.put("/admin/produtos/:id/editar", checaAutenticacaoAdmin, AdminController.editarProduto);
 router.delete("/admin/produtos/:id/delete", checaAutenticacaoAdmin,AdminController.removeProduto);
 
 // Exportar o roteador
