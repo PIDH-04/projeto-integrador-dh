@@ -54,6 +54,11 @@ function listarProdutos() {
 
 }
 
+function mostrarProdutoSlug(slug) {
+  const produto = produtos.find(c => c.slug === slug);
+  return produto || null;
+}
+
 function mostrarProdutoId(id) {
   const produto = produtos.find(c => c.id === id);
   return produto || null;
@@ -83,12 +88,20 @@ function listarProdutosCategoria(categoria) {
   return produtosFiltrados.length > 0 ? produtosFiltrados : null;
 }
 
+function listarProdutosCategoriaSlug(slugCategoria) {
+  const produtosFiltrados = produtos.filter(produto => produto.categoria === slugCategoria);
+ 
+  return produtosFiltrados.length > 0 ? produtosFiltrados : [];
+}
+
 module.exports = {
   criarProduto,
   editarProduto,
   listarProdutos,
+  mostrarProdutoSlug,
   mostrarProdutoId,
   excluirProdutoId,
   listarProdutosCategoria,
+  listarProdutosCategoriaSlug
   
 }

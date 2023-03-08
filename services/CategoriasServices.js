@@ -6,8 +6,8 @@ function listarCategorias() {
 
 }
 
-function mostrarCategoriaSlug(slug) {
-  const categoriaEncontrada = categorias.find(categoria => categoria.slug === slug);
+function mostrarCategoriaSlug(slugCategoria) {
+  const categoriaEncontrada = categorias.find(categoria => categoria.slug === slugCategoria);
   const categoriaNeutra = categorias[0];
 
   if (categoriaEncontrada) {

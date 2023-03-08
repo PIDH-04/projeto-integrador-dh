@@ -15,12 +15,14 @@ const ProdutosControllers = {
      // Mostrar categorias para header e footer
      const categorias = CategoriasServices.listarCategorias();
 
-    //Listar produtos
-    const produtos = ProdutosServices.listarProdutos();
-
-    //Pegar parametro da url e alterar a categoria mostrada
+    //Pegar parametro da url(slug)
     let slugCategoria = req.params.slugCategoria;
+    
+    //Alterar a categoria mostrada no banner da pagina
     const categoria = CategoriasServices.mostrarCategoriaSlug(slugCategoria);
+
+    //Alterar produtos para aparecer apenas os que constam a categoria do slug
+    const produtos = ProdutosServices.listarProdutosCategoriaSlug(slugCategoria);
 
     //Retorna view
     return res.render('listagemProdutos', {categorias, produtos, categoria});
