@@ -9,16 +9,33 @@
           <img src="/img/logo.svg" alt="Logo E-móvel" />
         </div>
         <p>Faça login para acessar a área administrativa</p>
-        <form action="" method="">
+        <form action="/admin/login?target=oi" method="POST">
+
+          <% if(erro){ %> 
+            <ul class="erros" id="erros-novo-endereco">
+              <li>E-mail ou senha inválidos</li>
+            </ul>
+          <% } %>
+
           <div>
             <label for="email">Digite seu e-mail</label>
-            <input type="text" name="email" placeholder="admin@emovel.com" id="email" />
+            <input
+              type="text"
+              name="email"
+              placeholder="admin@emovel.com"
+              id="email"
+              required
+            />
           </div>
           <div>
-            <label for="password">Digite sua senha</label>
-            <input name="password" type="password" id="password" />
+            <label for="senha">Digite sua senha</label>
+            <input name="senha" type="password" id="senha" required />
           </div>
-          <a href="/admin/pedidos" class="botao-secundario" type="submit">Acessar</a>
+
+          <% if(target != undefined){ %> 
+            <input type="hidden" name="target" id="target" value="<%= target %>"/>
+          <% } %>
+          <button class="botao-secundario" type="submit">Acessar</button>
         </form>
       </div>
     </main>
