@@ -16,14 +16,14 @@
         <h2>Dados do produto</h2>
       </div>
 
-      <form id="novo-produto-form">
+      <form action="/admin/produtos/<%= produto.id %>/editar?_method=PUT" method="POST" id="novo-produto-form">
         <div class="duas-colunas">
           <div>
-            <label for="nome-produto">Nome do Produto</label>
+            <label for="nome">Nome do Produto</label>
             <input
               type="text"
-              name="nome-produto"
-              id="nome-produto"
+              name="nome"
+              id="nome"
               placeholder="Novo produto"
               value="<%= produto.nome %>"
             />
@@ -37,10 +37,10 @@
               value="90 x 90 x 90"
             />
 
-            <label for="descrição">Descrição</label>
+            <label for="descricao">Descrição</label>
             <textarea
-              name="descrição"
-              id="descrição"
+              name="descricao"
+              id="descricao"
               placeholder="Descreva seu produto"
             ><%= produto.descricao %></textarea>
 
@@ -63,13 +63,14 @@
             >
             <input type="file" name="imagem-produto" id="imagem-produto" />
             <label>Selecione a Categoria do produto</label>
-            <select>
+            <select name="categoria">
               <option disabled>Selecione uma categoria</option>
-              <option value="mesas" selected>Mesas</option>
-              <option value="cadeira">Cadeira</option>
-              <option value="poltronas">Poltrona</option>
-              <option value="escritório">Escritório</option>
-              <option value="banqueta">Banqueta</option>
+              <% for(let categoria of categorias){ %>
+                <option value="<%= categoria.nome %>"
+                  <%= produto.categoria == categoria.nome ? "selected" : null %>>
+                  <%= categoria.nome %>
+                </option>
+              <% } %>
             </select>
           </div>
         </div>
@@ -77,7 +78,7 @@
 
       
       <div class="container-botoes">
-        <button class="botao-secundario" type="submit">Salvar</button>
+        <button class="botao-secundario" type="submit" form="novo-produto-form">Salvar</button>
         <form action="/admin/produtos/<%= produto.id %>/delete?_method=DELETE" method="POST" id="delete-form">
             <button class="botao-secundario apagar" id="delete-btn" type="submit">Apagar produto</button>
         </form>
