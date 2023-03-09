@@ -67,7 +67,7 @@ function listarProdutos() {
 }
 
 function mostrarProdutoId(id) {
-  const produto = produtosSite.find(c => c.id === id);
+  const produto = produtosSite.find(c => c.id == id);
   return produto || null;
 }
 
