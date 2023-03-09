@@ -5,6 +5,7 @@ const {
   excluirProdutoId,
   mostrarProdutoId,
   editarProduto,
+  criaSlug,
 } = require("../services/ProdutosServices");
 const { checaSenha } = require("../services/UsuariosServices");
 const fs = require("fs");
@@ -53,9 +54,11 @@ const AdminController = {
   },
   showEditarProduto: (req, res) => {
     const { id } = req.params;
+    const feedbackEdicao = req.query.salvo
+    console.log(feedbackEdicao)
     const categorias = listarCategorias();
     const produto = mostrarProdutoId(id);
-    res.render("adminEditarProduto", { produto, categorias });
+    res.render("adminEditarProduto", { produto, categorias, feedbackEdicao });
   },
   editarProduto: (req, res) => {
     const { id } = req.params;
