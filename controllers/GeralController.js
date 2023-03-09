@@ -1,9 +1,12 @@
-const categorias = require('../databases/Categorias.json');
-const produtos = require('../databases/Produtos.json');
+const CategoriasServices = require('../services/CategoriasServices');
+const ProdutosServices = require('../services/ProdutosServices');
 
 const GeralController = {
     home: (req, res) => {
-        return res.render('home', {categorias, produtos});
+      // Mostrar categorias para header e footer
+      const categorias = CategoriasServices.listarCategorias();
+      
+        return res.render('home', {categorias});
       }
 
       
