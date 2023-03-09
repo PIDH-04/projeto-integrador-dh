@@ -21,4 +21,3 @@ const novoUsuario = {
 
 console.log(UsuariosServices.criarUsuario(novoUsuario))
 
-
