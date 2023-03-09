@@ -18,7 +18,7 @@
 
       <form id="novo-produto-form" method="POST" action="/admin/produtos/criar" enctype="multipart/form-data">
         <div class="duas-colunas">
-          <div>
+          <div >
             <label for="nome">Nome do Produto</label>
             <input
               type="text"
@@ -27,13 +27,39 @@
               placeholder="Novo produto"
             />
 
-            <label for="medidas">Medidas (L x P x A)</label>
-            <input
-              type="text"
-              name="medidas"
-              id="medidas"
-              placeholder="00 x 00 x 00"
-            />
+          <label>Medidas (em cm)</label>
+          <div class="medidas-container">
+            <div>
+              <label>Largura</label>
+                <input
+                  type="text"
+                  name="largura"
+                  id="largura"
+                  placeholder="90"
+                />
+            </div>
+
+            <div>
+              <label>Comprimento</label>
+                <input
+                  type="text"
+                  name="comprimento"
+                  id="comprimento"
+                  placeholder="90"
+                />
+            </div>
+
+            <div>
+              <label>Altura</label>
+                <input
+                  type="text"
+                  name="altura"
+                  id="altura"
+                  placeholder="90"
+                />
+            </div>
+
+          </div>
 
             <label for="descricao">Descrição</label>
             <textarea

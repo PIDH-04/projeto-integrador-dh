@@ -63,6 +63,11 @@ const AdminController = {
     produto.img = [`/img/produtos/${imgNovoNome}`];
     produto.slug = criaSlug(produto.nome)
     produto.preco = parseInt(produto.preco)
+    produto.medidas = {
+      comprimento: parseInt(produto.comprimento),
+      largura: parseInt(produto.largura),
+      altura: parseInt(produto.altura),
+    }
     
     const produtoSalvo = criarProduto(produto)
 
@@ -79,7 +84,11 @@ const AdminController = {
     const { id } = req.params;
     const produto = req.body;
     produto.preco = parseInt(produto.preco);
-
+    produto.medidas = {
+      comprimento: parseInt(produto.comprimento),
+      largura: parseInt(produto.largura),
+      altura: parseInt(produto.altura),
+    }
     if(req.file){
       const imgNovoNome = `${Date.now()}-${req.file.originalname}`;
       fs.renameSync(req.file.path, `${req.file.destination}/${imgNovoNome}`);

@@ -36,14 +36,42 @@
               value="<%= produto.nome %>"
             />
 
-            <label for="medidas">Medidas (L x P x A)</label>
-            <input
-              type="text"
-              name="medidas"
-              id="medidas"
-              placeholder="00 x 00 x 00"
-              value="90 x 90 x 90"
-            />
+          <label>Medidas (em cm)</label>
+          <div class="medidas-container">
+            <div>
+              <label>Largura</label>
+                <input
+                  type="text"
+                  name="largura"
+                  id="largura"
+                  placeholder="90"
+                  value="<%= produto.medidas.largura %>"
+                />
+            </div>
+
+            <div>
+              <label>Comprimento</label>
+                <input
+                  type="text"
+                  name="comprimento"
+                  id="comprimento"
+                  placeholder="90"
+                  value="<%= produto.medidas.comprimento %>"
+                />
+            </div>
+
+            <div>
+              <label>Altura</label>
+                <input
+                  type="text"
+                  name="altura"
+                  id="altura"
+                  placeholder="90"
+                  value="<%= produto.medidas.altura %>"
+                />
+            </div>
+
+          </div>
 
             <label for="descricao">Descrição</label>
             <textarea
