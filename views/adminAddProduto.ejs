@@ -16,14 +16,14 @@
         <h2>Dados do produto</h2>
       </div>
 
-      <form id="novo-produto-form">
+      <form id="novo-produto-form" method="POST" action="/admin/produtos/criar" enctype="multipart/form-data">
         <div class="duas-colunas">
           <div>
-            <label for="nome-produto">Nome do Produto</label>
+            <label for="nome">Nome do Produto</label>
             <input
               type="text"
-              name="nome-produto"
-              id="nome-produto"
+              name="nome"
+              id="nome"
               placeholder="Novo produto"
             />
 
@@ -35,10 +35,10 @@
               placeholder="00 x 00 x 00"
             />
 
-            <label for="descrição">Descrição</label>
+            <label for="descricao">Descrição</label>
             <textarea
-              name="descrição"
-              id="descrição"
+              name="descricao"
+              id="descricao"
               placeholder="Descreva seu produto"
             ></textarea>
 
@@ -53,14 +53,14 @@
 
           <div>
             <div class="imagem-container">
-              <img src="/img/sem-imagem.svg" />
+              <img src="/img/sem-imagem.svg" id="preview-img" />
             </div>
-            <label class="imagem-produto-btn" for="imagem-produto"
+            <label class="imagem-produto-btn" for="img"
               >Selecionar imagens do produto</label
             >
-            <input type="file" name="imagem-produto" id="imagem-produto" />
+            <input type="file" name="img" id="img" />
             <label>Selecione a Categoria do produto</label>
-            <select>
+            <select name="categoria">
               <option disabled selected>Selecione uma categoria</option>
               <option value="mesas">Mesas</option>
               <option value="cadeira">Cadeira</option>
@@ -74,5 +74,6 @@
         <button class="botao-secundario" type="submit">Salvar</button>
       </form>
     </main>
+    <script src="/scripts/adminProduto.js"></script>
   </body>
 </html>
