@@ -33,9 +33,10 @@ router.get('/checkoutpagamento', checaAutenticacaoUsuario, UsuarioController.che
 
 router.get("/checkoutDeEndereco", checaAutenticacaoUsuario, UsuarioController.checkoutEndereco);
 
-router.get("/produto/:idDoProduto", ProdutosController.show);
+router.get("/produto/:slugProduto", ProdutosController.show);
 
-router.get("/categorias/:link", ProdutosController.listagem);
+router.get("/categorias/:slugCategoria?", ProdutosController.listagem);
+// o '?' torna o slugCategoria dispensavel, podendo acessar o url '/categorias'
 
 router.get("/cadastro", UsuarioController.showCadastro);
 router.get("/painelUsuario", checaAutenticacaoUsuario, UsuarioController.showPainelUsuario);

@@ -115,7 +115,7 @@ main {
   margin-top: 10px;
 }
 
-.produtos-container .produtos > div {
+.produtos-container .produtos {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   column-gap: 5%;
@@ -150,8 +150,10 @@ main {
 }
 
 .produtos-container .produto img {
-  width: 100%;
-  max-height: 100%;
+  max-width: 14rem;
+  max-height: 14rem;
+  min-width: 7rem;
+  min-height: 7rem;
 }
 
 .produtos-container .produto h3 {

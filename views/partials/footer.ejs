@@ -10,40 +10,10 @@
     </div>
 
     <nav class="menu">
-      <ul>
-        <li class="categoria-principal">
-          <a href="/categorias/area"> Área Interna </a>
-        </li>
-        <li>
-          <a href="/categorias/mesas"> Mesas </a>
-        </li>
-        <li>
-          <a href="/categorias/cadeiras"> Cadeiras </a>
-        </li>
-        <li>
-          <a href="/categorias/sofas"> Sofás </a>
-        </li>
-        <li>
-          <a href="/categorias/escritório"> Escritório </a>
-        </li>
-      </ul>
-
-      <ul>
-        <li class="categoria-principal">
-          <a href="/categorias/externa"> Área Externa </a>
-        </li>
-        <li>
-          <a href="/categorias/mesas"> Mesas </a>
-        </li>
-        <li>
-          <a href="/categorias/cadeiras"> Cadeiras </a>
-        </li>
-        <li>
-          <a href="/categorias/sofas"> Sofás </a>
-        </li>
-        <li>
-          <a href="/categorias/balancos"> Balanços </a>
-        </li>
+      <ul class="categoria-principal">
+          <% for(let i = 1; i < categorias.length; i++) { %>
+            <li href="/produtos/<%= categorias[i].link %>"> <%= categorias[i].nome %> </li>
+          <% } %>
       </ul>
 
       <ul>
