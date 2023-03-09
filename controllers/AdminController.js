@@ -6,6 +6,7 @@ const {
   mostrarProdutoId,
   editarProduto,
   criaSlug,
+  criarProduto,
 } = require("../services/ProdutosServices");
 const { checaSenha } = require("../services/UsuariosServices");
 const fs = require("fs");
@@ -52,10 +53,22 @@ const AdminController = {
   showCriarProduto: (req, res) => {
     res.render("adminAddProduto");
   },
+  gravaProduto: (req, res) => {
+    const produto = req.body
+    
+    const imgNovoNome = `${Date.now()}-${req.file.originalname}`;
+    fs.renameSync(req.file.path, `${req.file.destination}/${imgNovoNome}`);
+    produto.img = [`/img/produtos/${imgNovoNome}`];
+    produto.slug = criaSlug(produto.nome)
+    produto.preco = parseInt(produto.preco)
+    
+    const produtoSalvo = criarProduto(produto)
+
+    return res.redirect(`/admin/produtos/${produtoSalvo.id}/editar?salvo=true`)
+  },
   showEditarProduto: (req, res) => {
     const { id } = req.params;
     const feedbackEdicao = req.query.salvo
-    console.log(feedbackEdicao)
     const categorias = listarCategorias();
     const produto = mostrarProdutoId(id);
     res.render("adminEditarProduto", { produto, categorias, feedbackEdicao });
