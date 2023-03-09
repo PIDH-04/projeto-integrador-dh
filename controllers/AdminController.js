@@ -8,7 +8,7 @@ const {
   criaSlug,
   criarProduto,
 } = require("../services/ProdutosServices");
-const { checaSenha } = require("../services/UsuariosServices");
+const { checaSenha, listarUsuarios } = require("../services/UsuariosServices");
 const fs = require("fs");
 
 const AdminController = {
@@ -41,7 +41,8 @@ const AdminController = {
     res.redirect(enderecoSolicitado);
   },
   showClientes: (req, res) => {
-    res.render("adminClientes");
+    const clientes = listarUsuarios();
+    res.render("adminClientes", { clientes });
   },
   showProdutos: (req, res) => {
     const produtos = listarProdutos();
