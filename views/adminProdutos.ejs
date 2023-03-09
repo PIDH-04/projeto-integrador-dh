@@ -28,6 +28,13 @@
           >Adicionar Produto</a
         >
       </div>
+
+      <% if(feedbackDelete !== undefined){ %>
+        <div class="<%= feedbackDelete == 'true' ? 'sucesso' : 'erros' %>">
+          <%= feedbackDelete == 'true' ? 'Produto deletado com sucesso' : 'Erro ao deletar o produto' %>
+        </div>
+      <% } %>
+
       <table>
         <thead>
           <tr>

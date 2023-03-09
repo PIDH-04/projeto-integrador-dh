@@ -45,7 +45,8 @@ const AdminController = {
   },
   showProdutos: (req, res) => {
     const produtos = listarProdutos();
-    res.render("adminProdutos", { produtos });
+    const feedbackDelete = req.query.delete
+    res.render("adminProdutos", { produtos, feedbackDelete });
   },
   showPedidos: (req, res) => {
     res.render("adminPedidos");
@@ -97,8 +98,12 @@ const AdminController = {
   },
   removeProduto: (req, res) => {
     const { id } = req.params;
-    excluirProdutoId(id);
-    return res.redirect("/admin/produtos");
+    const produtoDeletado = excluirProdutoId(id);
+
+    if(!produtoDeletado){
+      return res.redirect("/admin/produtos?delete=false");
+    }
+    return res.redirect("/admin/produtos?delete=true");
   },
 };
 
