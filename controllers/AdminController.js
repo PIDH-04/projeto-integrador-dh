@@ -52,7 +52,8 @@ const AdminController = {
     res.render("adminPedidos");
   },
   showCriarProduto: (req, res) => {
-    res.render("adminAddProduto");
+    const categorias = listarCategorias()
+    res.render("adminAddProduto", { categorias });
   },
   gravaProduto: (req, res) => {
     const produto = req.body

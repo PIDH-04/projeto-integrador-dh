@@ -80,7 +80,12 @@
                 </option>
               <% } %>
             </select>
-            
+            <label>Selecione a Área do produto</label>
+            <select name="area">
+              <option disabled>Selecione uma área</option>
+              <option value="interna" <%= produto.area == "interna" ? "selected" : null %> >Área Interna</option>
+              <option value="externa" <%= produto.area == "externa" ? "selected" : null %>>Área Externa</option>
+            </select>
           </div>
         </div>
       </form>

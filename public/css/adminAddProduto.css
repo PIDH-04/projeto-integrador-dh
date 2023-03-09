@@ -89,6 +89,7 @@ body.admin-container #novo-produto-form select{
     border-radius: 8px;
     cursor: pointer;
     background-color: #fff;
+    margin-bottom: 30px;
 }
 
 body.admin-container .container-botoes{

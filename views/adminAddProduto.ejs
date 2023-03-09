@@ -62,11 +62,17 @@
             <label>Selecione a Categoria do produto</label>
             <select name="categoria">
               <option disabled selected>Selecione uma categoria</option>
-              <option value="mesas">Mesas</option>
-              <option value="cadeira">Cadeira</option>
-              <option value="poltronas">Poltrona</option>
-              <option value="escritório">Escritório</option>
-              <option value="banqueta">Banqueta</option>
+              <% for(let categoria of categorias){ %>
+                <option value="<%= categoria.nome %>">
+                  <%= categoria.nome %>
+                </option>
+              <% } %>
+            </select>
+            <label>Selecione a Área do produto</label>
+            <select name="area">
+              <option disabled>Selecione uma área</option>
+              <option value="interna" >Área Interna</option>
+              <option value="externa" >Área Externa</option>
             </select>
           </div>
         </div>
