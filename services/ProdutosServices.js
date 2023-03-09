@@ -50,7 +50,6 @@ function editarProduto(id, novoProduto) {
 
 function listarProdutos() {
   return produtos;
-
 }
 
 function mostrarProdutoSlug(slug) {
@@ -89,6 +88,13 @@ function listarProdutosCategoria(categoria) {
 
 function listarProdutosCategoriaSlug(slugCategoria) {
   const produtosFiltrados = produtos.filter(produto => produto.categoria === slugCategoria);
+  if(slugCategoria === undefined){
+    return produtos;
+  }else{
+    return produtosFiltrados.length > 0 ? produtosFiltrados : [];
+  }
+  
+}
 
   function criaSlug(nome) {
     let slug = nome.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
@@ -96,7 +102,6 @@ function listarProdutosCategoriaSlug(slugCategoria) {
     slug = slug.replaceAll("'", '-')
     return slug
   }
-
 
   module.exports = {
     criarProduto,
