@@ -43,13 +43,12 @@ function editarProduto(id, novoProduto) {
 
     // Atualizar o produto com os dados do novo produto
     const produtoAtualizado = {
-      ...produtosSite[index],
+      id: produtosSite[index].id,
       ...novoProduto
     };
 
     // Substituir o produto antigo pelo produto atualizado no array de produtos
     produtosSite[index] = produtoAtualizado;
-
     // Escrever os dados atualizados no arquivo JSON
     fs.writeFileSync('./databases/Produtos.json', JSON.stringify(produtosSite,null,4));
 
@@ -68,13 +67,13 @@ function listarProdutos() {
 }
 
 function mostrarProdutoId(id) {
-  const produto = produtosSite.find(c => c.id === id);
+  const produto = produtosSite.find(c => c.id == id);
   return produto || null;
 }
 
 function excluirProdutoId(id) {
   // Encontrar o índice do produto a ser excluído pelo ID
-  const indiceProduto = produtosSite.findIndex(p => p.id === id);
+  const indiceProduto = produtosSite.findIndex(p => p.id == id);
 
   if (indiceProduto !== -1) {
       // Remover o produto do array de produtos
@@ -96,6 +95,13 @@ function listarProdutosCategoria(categoria) {
   return produtosFiltrados.length > 0 ? produtosFiltrados : null;
 }
 
+function criaSlug(nome){
+  let slug = nome.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
+  slug = slug.replaceAll(' ', '-')
+  slug = slug.replaceAll("'", '-')
+  return slug
+}
+
 module.exports = {
   
   categoriaId,
@@ -105,5 +111,5 @@ module.exports = {
   mostrarProdutoId,
   excluirProdutoId,
   listarProdutosCategoria,
-  
+  criaSlug
 }

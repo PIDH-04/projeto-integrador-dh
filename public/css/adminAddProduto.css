@@ -99,12 +99,17 @@ body.admin-container .container-botoes{
 
 body.admin-container .container-botoes button{
     margin: 50px 0 0 ;
+    margin-top: 0;
 }
 
 body.admin-container .container-botoes button:last-child{
     background-color: #cd0808;
 }
 
+body.admin-container .container-botoes form{
+    margin-bottom: 0;
+    width: auto;
+}
 
 body.admin-container .botao-secundario{
     border: none;

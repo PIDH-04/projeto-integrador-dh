@@ -1,5 +1,15 @@
 const { buscaAdmin } = require("../services/AdminServices");
+const { listarCategorias } = require("../services/CategoriasServices");
+const {
+  listarProdutos,
+  excluirProdutoId,
+  mostrarProdutoId,
+  editarProduto,
+  criaSlug,
+  criarProduto,
+} = require("../services/ProdutosServices");
 const { checaSenha } = require("../services/UsuariosServices");
+const fs = require("fs");
 
 const AdminController = {
   showLogin: (req, res) => {
@@ -14,10 +24,9 @@ const AdminController = {
   login: (req, res) => {
     const { email, senha, target } = req.body;
     const admin = buscaAdmin(email);
-    const queryParamsErro = target ? `target=${target}&erro=true` : 'erro=true'
+    const queryParamsErro = target ? `target=${target}&erro=true` : "erro=true";
 
     if (!admin) {
-
       return res.redirect(`/admin?${queryParamsErro}`);
     }
 
@@ -35,7 +44,9 @@ const AdminController = {
     res.render("adminClientes");
   },
   showProdutos: (req, res) => {
-    res.render("adminProdutos");
+    const produtos = listarProdutos();
+    const feedbackDelete = req.query.delete
+    res.render("adminProdutos", { produtos, feedbackDelete });
   },
   showPedidos: (req, res) => {
     res.render("adminPedidos");
@@ -43,8 +54,56 @@ const AdminController = {
   showCriarProduto: (req, res) => {
     res.render("adminAddProduto");
   },
+  gravaProduto: (req, res) => {
+    const produto = req.body
+    
+    const imgNovoNome = `${Date.now()}-${req.file.originalname}`;
+    fs.renameSync(req.file.path, `${req.file.destination}/${imgNovoNome}`);
+    produto.img = [`/img/produtos/${imgNovoNome}`];
+    produto.slug = criaSlug(produto.nome)
+    produto.preco = parseInt(produto.preco)
+    
+    const produtoSalvo = criarProduto(produto)
+
+    return res.redirect(`/admin/produtos/${produtoSalvo.id}/editar?salvo=true`)
+  },
   showEditarProduto: (req, res) => {
-    res.render("adminEditarProduto");
+    const { id } = req.params;
+    const feedbackEdicao = req.query.salvo
+    const categorias = listarCategorias();
+    const produto = mostrarProdutoId(id);
+    res.render("adminEditarProduto", { produto, categorias, feedbackEdicao });
+  },
+  editarProduto: (req, res) => {
+    const { id } = req.params;
+    const produto = req.body;
+    produto.preco = parseInt(produto.preco);
+
+    if(req.file){
+      const imgNovoNome = `${Date.now()}-${req.file.originalname}`;
+      fs.renameSync(req.file.path, `${req.file.destination}/${imgNovoNome}`);
+      produto.img = [`/img/produtos/${imgNovoNome}`];
+    }else{
+      const produtoOriginal = mostrarProdutoId(id)
+      produto.img = produtoOriginal.img
+    }
+    
+    const produtoAtualizado = editarProduto(id, req.body);
+
+    if (!produtoAtualizado) {
+      return res.redirect(`/admin/produtos/${id}/editar?salvo=false`);
+    }
+
+    return res.redirect(`/admin/produtos/${id}/editar?salvo=true`);
+  },
+  removeProduto: (req, res) => {
+    const { id } = req.params;
+    const produtoDeletado = excluirProdutoId(id);
+
+    if(!produtoDeletado){
+      return res.redirect("/admin/produtos?delete=false");
+    }
+    return res.redirect("/admin/produtos?delete=true");
   },
 };
 
