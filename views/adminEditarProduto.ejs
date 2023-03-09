@@ -16,6 +16,14 @@
         <h2>Dados do produto</h2>
       </div>
 
+      <% if(feedbackEdicao !== undefined){ %>
+
+        <div class="<%= feedbackEdicao == 'true' ? 'sucesso' : 'erro' %>">
+          <%= feedbackEdicao == 'true' ? 'Produto alterado com sucesso' : 'Erro ao alterar o produto, tente novamente mais tarde' %>
+        </div>
+
+      <% } %>
+
       <form action="/admin/produtos/<%= produto.id %>/editar?_method=PUT" method="POST" id="novo-produto-form" enctype="multipart/form-data">
         <div class="duas-colunas">
           <div>
@@ -27,9 +35,6 @@
               placeholder="Novo produto"
               value="<%= produto.nome %>"
             />
-
-            <label>Slug</label>
-            <input type="text" name="slug" />
 
             <label for="medidas">Medidas (L x P x A)</label>
             <input
