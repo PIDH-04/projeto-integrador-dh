@@ -89,7 +89,8 @@ const AdminController = {
       largura: parseInt(produto.largura),
       altura: parseInt(produto.altura),
     }
-    if(req.file){
+
+    if(req.file !== undefined){
       const imgNovoNome = `${Date.now()}-${req.file.originalname}`;
       fs.renameSync(req.file.path, `${req.file.destination}/${imgNovoNome}`);
       produto.img = [`/img/produtos/${imgNovoNome}`];

@@ -18,9 +18,14 @@ function categoriaId(id) {
 function criarProduto(produto) {
 
   // Encontra o último ID dos produtos existentes e adiciona 1 para gerar um novo ID
-  const ultimoID = produtosSite[produtosSite.length -1].id
-  const id = ultimoID + 1;
-
+  let id = 0;
+  
+  if(produtosSite.length > 0){
+    const ultimoID = produtosSite[produtosSite.length -1].id
+    id = ultimoID + 1
+  }else {
+    id = 1;
+  }
 
   // Adiciona o ID ao objeto de produto
   produto.id = id;
@@ -38,7 +43,7 @@ function criarProduto(produto) {
 function editarProduto(id, novoProduto) {
 
   // Encontrar o índice do produto a ser editado pelo ID
-  const index = produtosSite.findIndex(p => p.id === id);
+  const index = produtosSite.findIndex(p => p.id == id);
   if (index !== -1) {
 
     // Atualizar o produto com os dados do novo produto
