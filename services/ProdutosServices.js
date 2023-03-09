@@ -73,7 +73,7 @@ function mostrarProdutoId(id) {
 
 function excluirProdutoId(id) {
   // Encontrar o índice do produto a ser excluído pelo ID
-  const indiceProduto = produtosSite.findIndex(p => p.id === id);
+  const indiceProduto = produtosSite.findIndex(p => p.id == id);
 
   if (indiceProduto !== -1) {
       // Remover o produto do array de produtos
