@@ -95,6 +95,13 @@ function listarProdutosCategoria(categoria) {
   return produtosFiltrados.length > 0 ? produtosFiltrados : null;
 }
 
+function criaSlug(nome){
+  let slug = nome.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
+  slug = slug.replaceAll(' ', '-')
+  slug = slug.replaceAll("'", '-')
+  return slug
+}
+
 module.exports = {
   
   categoriaId,
@@ -104,5 +111,5 @@ module.exports = {
   mostrarProdutoId,
   excluirProdutoId,
   listarProdutosCategoria,
-  
+  criaSlug
 }
