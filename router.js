@@ -31,7 +31,7 @@ router.get("/checkoutDeEndereco", UsuarioController.checkoutEndereco);
 router.get("/produto/:slugProduto", ProdutosController.show);
 
 router.get("/categorias/:slugCategoria?", ProdutosController.listagem);
-// o '?' torna o id dispensavel, podendo acessar o url '/categorias'
+// o '?' torna o slugCategoria dispensavel, podendo acessar o url '/categorias'
 
 router.get("/cadastro", UsuarioController.showCadastro);
 router.get("/painelUsuario", UsuarioController.showPainelUsuario);
