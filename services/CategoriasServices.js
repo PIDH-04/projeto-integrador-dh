@@ -36,6 +36,7 @@ function editaCategoria(id, novasInfos){
 
   categorias[indexCategoria] = {
     id: categorias[indexCategoria].id,
+    slug: categorias[indexCategoria].slug,
     ...novasInfos
   };
   fs.writeFileSync('./databases/Categorias.json', JSON.stringify(categorias,null,4));
