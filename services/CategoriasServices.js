@@ -6,8 +6,19 @@ function listarCategorias() {
 
 }
 
-function mostrarCategoriasd(id) {
-  const categoriaEncontrada = categorias.find(categoria => categoria.id == id);
+function mostrarCategoriaSlug(slugCategoria) {
+  const categoriaEncontrada = categorias.find(categoria => categoria.slug === slugCategoria);
+  const categoriaNeutra = categorias[0];
+
+  if (categoriaEncontrada) {
+    return categoriaEncontrada;
+  } else {
+    return categoriaNeutra;
+  }
+}
+
+function mostrarCategoriaId(id) {
+  const categoriaEncontrada = categorias.find(categoria => categoria.id === id);
 
   if (categoriaEncontrada) {
     return categoriaEncontrada;
@@ -33,6 +44,7 @@ function editaCategoria(id, novasInfos){
 
 module.exports = {
   listarCategorias,
-  mostrarCategoriasd,
+  mostrarCategoriaSlug,
+  mostrarCategoriaId,
   editaCategoria
 }
