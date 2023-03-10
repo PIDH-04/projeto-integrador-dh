@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <%- include("partials/adminHead", {css: ["baseAdmin.css", "produtosAdmin.css"], titulo: "Produtos Admin | E-móvel"}) %>
+  <%- include("partials/adminHead", {css: ["baseAdmin.css",
+  "produtosAdmin.css"], titulo: "Produtos Admin | E-móvel"}) %>
   <body class="admin-container">
     <%- include("partials/adminHeader") %>
     <%- include("partials/topoPg") %>
@@ -23,8 +24,17 @@
           </div>
         </form>
 
-        <a href="/admin/produtos/criar" class="botao-secundario">Adicionar Produto</a>
+        <a href="/admin/produtos/criar" class="botao-secundario"
+          >Adicionar Produto</a
+        >
       </div>
+
+      <% if(feedbackDelete !== undefined){ %>
+        <div class="<%= feedbackDelete == 'true' ? 'sucesso' : 'erros' %>">
+          <%= feedbackDelete == 'true' ? 'Produto deletado com sucesso' : 'Erro ao deletar o produto' %>
+        </div>
+      <% } %>
+
       <table>
         <thead>
           <tr>
@@ -37,64 +47,33 @@
           </tr>
         </thead>
         <tbody>
+          <% for(let produto of produtos){ %>
           <tr>
             <td>
               <div class="img-produto-container">
-                <img src="/img/mesa-plana.png" alt="Mesa Plana" />
+                <img src="<%= produto.img[0] %>" alt="<%= produto.nome %>" />
               </div>
             </td>
             <td>
-              <a href="#"> Mesa de Jantar Plana </a>
+              <a href="#"> <%= produto.nome %> </a>
             </td>
-            <td>00001</td>
-            <td>Mesa de Jantar</td>
-            <td>R$ 800,00</td>
+            <td><%= produto.id %></td>
+            <td><%= produto.categoria %></td>
+            <td><%= produto.preco.toLocaleString('pt-BR', {style: 'currency',
+              currency: 'BRL'}) %></td>
             <td class="acoes-container">
-              <a class="botao-secundario" href="/admin/produtos/1/editar">
+              <a
+                class="botao-secundario"
+                href="/admin/produtos/<%= produto.id %>/editar"
+              >
                 <img src="/img/editar.svg" alt="del" />
               </a>
-              <button><img src="/img/remover.svg" alt="del" /></button>
+              <form action="/admin/produtos/<%= produto.id %>/delete?_method=DELETE" method="POST">
+                <button><img src="/img/remover.svg" alt="del" type="submit" /></button>
+              </form>
             </td>
           </tr>
-          <tr>
-            <td>
-              <div class="img-produto-container">
-                <img src="/img/mesa-plana.png" alt="Mesa Plana" />
-              </div>
-            </td>
-            <td>
-              <a href="#"> Mesa de Jantar Plana </a>
-            </td>
-            <td>00001</td>
-            <td>Mesa de Jantar</td>
-            <td>R$ 800,00</td>
-            <td class="acoes-container">
-              <a class="botao-secundario" href="#">
-                <img src="/img/editar.svg" alt="del" />
-              </a>
-              <button><img src="/img/remover.svg" alt="del" /></button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div class="img-produto-container">
-                <img src="/img/mesa-plana.png" alt="Mesa Plana" />
-              </div>
-            </td>
-            <td>
-              <a href="#"> Mesa de Jantar Plana </a>
-            </td>
-            <td>00001</td>
-            <td>Mesa de Jantar</td>
-            <td>R$ 800,00</td>
-            <td class="acoes-container">
-              <a class="botao-secundario" href="#">
-                <img src="/img/editar.svg" alt="del" />
-              </a>
-              <button><img src="/img/remover.svg" alt="del" /></button>
-            </td>
-          </tr>
-          
+          <% } %>
         </tbody>
       </table>
     </main>

@@ -1,5 +1,6 @@
 // Importar express
 const express = require('express');
+const multer = require('multer')
 const AdminController = require('./controllers/AdminController');
 const GeralController = require("./controllers/GeralController");
 const ProdutosController = require("./controllers/ProdutosController");
@@ -9,6 +10,8 @@ const checaAutenticacaoUsuario = require('./middlewares/checaAutenticacaoUsuario
 
 const router = express.Router()
 
+// Configuração Multer
+const upload = multer({dest: 'public/img/produtos'})
 
 // Definir rotas
 router.get("/master", (req, res) => {
@@ -30,9 +33,10 @@ router.get('/checkoutpagamento', checaAutenticacaoUsuario, UsuarioController.che
 
 router.get("/checkoutDeEndereco", checaAutenticacaoUsuario, UsuarioController.checkoutEndereco);
 
-router.get("/produto/:idDoProduto", ProdutosController.show);
+router.get("/produto/:slugProduto", ProdutosController.show);
 
-router.get("/categorias/:link", ProdutosController.listagem);
+router.get("/categorias/:slugCategoria?", ProdutosController.listagem);
+// o '?' torna o slugCategoria dispensavel, podendo acessar o url '/categorias'
 
 router.get("/cadastro", UsuarioController.showCadastro);
 router.get("/painelUsuario", checaAutenticacaoUsuario, UsuarioController.showPainelUsuario);
@@ -47,7 +51,10 @@ router.get("/admin/clientes", checaAutenticacaoAdmin, AdminController.showClient
 router.get("/admin/produtos", checaAutenticacaoAdmin, AdminController.showProdutos);
 router.get("/admin/pedidos", checaAutenticacaoAdmin, AdminController.showPedidos);
 router.get("/admin/produtos/criar", checaAutenticacaoAdmin, AdminController.showCriarProduto);
-router.get("/admin/produtos/:id/editar", checaAutenticacaoAdmin, AdminController.showEditarProduto);
+router.post("/admin/produtos/criar", checaAutenticacaoAdmin, upload.single('img'), AdminController.gravaProduto);
+router.get("/admin/produtos/:id/editar", checaAutenticacaoAdmin,  AdminController.showEditarProduto);
+router.put("/admin/produtos/:id/editar", checaAutenticacaoAdmin, upload.single('img'), AdminController.editarProduto);
+router.delete("/admin/produtos/:id/delete", checaAutenticacaoAdmin,AdminController.removeProduto);
 
 // Exportar o roteador
 module.exports = router;

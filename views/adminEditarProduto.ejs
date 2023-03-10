@@ -6,7 +6,7 @@
     <%- include("partials/adminHeader") %>
     <%- include("partials/topoPg") %>
     <main class="">
-      <h1>Editar Produto</h1>
+      <h1>Editar <%= produto.nome %></h1>
       <a href="/admin/produtos" class="retornar-pagina">
         <img src="/img/voltar.svg" />
         Voltar para produtos
@@ -16,16 +16,24 @@
         <h2>Dados do produto</h2>
       </div>
 
-      <form id="novo-produto-form">
+      <% if(feedbackEdicao !== undefined){ %>
+
+        <div class="<%= feedbackEdicao == 'true' ? 'sucesso' : 'erro' %>">
+          <%= feedbackEdicao == 'true' ? 'Produto salvo' : 'Erro ao salvar o produto, tente novamente mais tarde' %>
+        </div>
+
+      <% } %>
+
+      <form action="/admin/produtos/<%= produto.id %>/editar?_method=PUT" method="POST" id="novo-produto-form" enctype="multipart/form-data">
         <div class="duas-colunas">
           <div>
-            <label for="nome-produto">Nome do Produto</label>
+            <label for="nome">Nome do Produto</label>
             <input
               type="text"
-              name="nome-produto"
-              id="nome-produto"
+              name="nome"
+              id="nome"
               placeholder="Novo produto"
-              value="Mesa de Jantar Plana"
+              value="<%= produto.nome %>"
             />
 
             <label for="medidas">Medidas (L x P x A)</label>
@@ -37,12 +45,12 @@
               value="90 x 90 x 90"
             />
 
-            <label for="descrição">Descrição</label>
+            <label for="descricao">Descrição</label>
             <textarea
-              name="descrição"
-              id="descrição"
+              name="descricao"
+              id="descricao"
               placeholder="Descreva seu produto"
-            >Mesa de jantar com tampo em madeira</textarea>
+            ><%= produto.descricao %></textarea>
 
             <label for="preco">Preço</label>
             <input
@@ -50,35 +58,41 @@
               name="preco"
               id="preco"
               placeholder="200,00"
-              value="800,00"
+              value="<%= produto.preco %>"
             />
           </div>
 
           <div>
             <div class="imagem-container">
-              <img src="/img/mesa-plana.png" />
+              <img id="preview-img" src="<%= produto.img[0] %>" />
             </div>
-            <label class="imagem-produto-btn" for="imagem-produto"
+            <label class="imagem-produto-btn" for="img"
               >Selecionar imagens do produto</label
             >
-            <input type="file" name="imagem-produto" id="imagem-produto" />
+            <input type="file" name="img" id="img" id="imagem-produto" />
             <label>Selecione a Categoria do produto</label>
-            <select>
+            <select name="categoria">
               <option disabled>Selecione uma categoria</option>
-              <option value="mesas" selected>Mesas</option>
-              <option value="cadeira">Cadeira</option>
-              <option value="poltronas">Poltrona</option>
-              <option value="escritório">Escritório</option>
-              <option value="banqueta">Banqueta</option>
+              <% for(let categoria of categorias){ %>
+                <option value="<%= categoria.nome %>"
+                  <%= produto.categoria == categoria.nome ? "selected" : null %>>
+                  <%= categoria.nome %>
+                </option>
+              <% } %>
             </select>
+            
           </div>
         </div>
-
-        <div class="container-botoes">
-          <button class="botao-secundario" type="submit">Salvar</button>
-          <button class="botao-secundario apagar" type="submit">Apagar produto</button>
-        </div>
       </form>
+
+      
+      <div class="container-botoes">
+        <button class="botao-secundario" type="submit" form="novo-produto-form">Salvar</button>
+        <form action="/admin/produtos/<%= produto.id %>/delete?_method=DELETE" method="POST" id="delete-form">
+            <button class="botao-secundario apagar" id="delete-btn" type="submit">Apagar produto</button>
+        </form>
+      </div>
     </main>
+    <script src="/scripts/adminProduto.js"></script>
   </body>
 </html>

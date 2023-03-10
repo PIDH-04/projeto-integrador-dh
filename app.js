@@ -3,6 +3,7 @@ const express = require("express");
 const path = require("path");
 const router = require("./router");
 const session = require("express-session");
+const methodOverride = require('method-override');
 
 // Criar o servidor
 const app = express();
@@ -22,6 +23,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(express.static("public/script", { type: "application/javascript" }));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(methodOverride('_method'))
 
 // Definir roteador a ser usado
 app.use(router);

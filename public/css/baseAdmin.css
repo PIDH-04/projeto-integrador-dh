@@ -1,3 +1,16 @@
+.sucesso{
+  background-color: var(--cor-sucesso);
+  padding: 20px 10px;
+  font-family: var(--font-paragrafo);
+  margin-bottom: 40px;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.erros{
+  margin-bottom: 40px;
+}
+
 body.admin-container .botao-secundario {
   width: 50%;
   background-color: var(--cor-principal);

@@ -1,26 +1,32 @@
 [
     {
-        "id": "sofa-descanso-pleno",
-        "nome": "Sofá Descanso Pleno",
-        "img": [
-            "/img/sofa-pleno-preto.jpg",
-            "/img/sofa-pleno-cinza.jfif",
-            "/img/sofa-pleno-branco.jfif"
-        ],
-        "categoria": "Sofás",
+        "id":1, 
+        "slug": "cadeirasaarinen",
+        "nome":"Cadeira Saarinen",
+        "img":["/img/cadeira-saarinen-preta.png", "/img/cadeira-saarinen-branca.jfif", "/img/cadeira-saarinen-Bege.jfif"],
+        "categoria":"cadeiras",
         "area": "interna",
-        "material": [
-            "madeira",
-            "linho",
-            "estofado"
-        ],
-        "cores": [
-            "branco",
-            "cinza",
-            "preto"
-        ],
-        "preco": 2000,
-        "descricao": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aperiam minima necessitatibus, quis blanditiis exercitationem veniam earum error quam cupiditate iste vitae accusamus voluptatem corporis ullam? Eos sit nisi vero.",
+        "material":["Madeira", "Acetato"],
+        "cores":["Branco", "Preto", "Bege"],
+        "preco":100,
+        "descricao":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aperiam minima necessitatibus, quis blanditiis exercitationem veniam earum error quam cupiditate iste vitae accusamus voluptatem corporis ullam? Eos sit nisi vero.",
+        "medidas": {
+            "comprimento": 0.8,
+            "largura": 0.8,
+            "altura":0.8
+        }
+    },
+    {
+        "id":2, 
+        "slug": "sofadescansopleno",
+        "nome":"Sofá Descanso Pleno",
+        "img":["/img/sofa-pleno-preto.png", "/img/sofa-pleno-cinza.png", "/img/sofa-pleno-branco.jpg"],
+        "categoria":"sofas",
+        "area":"interna",
+        "material":["Madeira", "Linho", "Estofado"],
+        "cores":["Branco", "Cinza", "Preto"],
+        "preco":2000,
+        "descricao":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aperiam minima necessitatibus, quis blanditiis exercitationem veniam earum error quam cupiditate iste vitae accusamus voluptatem corporis ullam? Eos sit nisi vero.",
         "medidas": {
             "comprimento": 1,
             "largura": 1.5,
@@ -28,25 +34,16 @@
         }
     },
     {
-        "id": "mesa-de-jantar-monaco",
-        "nome": "Mesa de Jantar Mônaco",
-        "img": [
-            "/img/mesa-monaco.png",
-            "/img/mesa.jpg"
-        ],
-        "categoria": "Mesas de Jantar",
-        "area": "interna",
-        "material": "madeira",
-        "tampo": [
-            "Tampo Madeira",
-            "Tampo Vidro"
-        ],
-        "cores": [
-            "branco",
-            "preto"
-        ],
-        "preco": 800,
-        "descricao": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aperiam minima necessitatibus, quis blanditiis exercitationem veniam earum error quam cupiditate iste vitae accusamus voluptatem corporis ullam? Eos sit nisi vero.",
+        "id":3, 
+        "slug": "mesadejantarmonaco",
+        "nome":"Mesa de Jantar Mônaco",
+        "img":["/img/mesa-monaco.png", "/img/mesa.jpg"],
+        "categoria":"mesasdejantar",
+        "area":"interna",
+        "material":"Madeira",
+        "cores":["Branco", "Preto"],
+        "preco":800,
+        "descricao":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aperiam minima necessitatibus, quis blanditiis exercitationem veniam earum error quam cupiditate iste vitae accusamus voluptatem corporis ullam? Eos sit nisi vero.",
         "medidas": {
             "comprimento": 1,
             "largura": 0.8,
@@ -54,25 +51,16 @@
         }
     },
     {
-        "id": "mesa-de-jantar-aspen",
-        "nome": "Mesa de Jantar Aspen",
-        "img": [
-            "/img/mesa-aspen.jpg",
-            "/img/mesa.png"
-        ],
-        "categoria": "Mesas de Jantar",
-        "area": "externa",
-        "material": "madeira",
-        "tampo": [
-            "Tampo Madeira",
-            "Tampo Vidro"
-        ],
-        "cores": [
-            "preto",
-            "branco"
-        ],
-        "preco": 800,
-        "descricao": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aperiam minima necessitatibus, quis blanditiis exercitationem veniam earum error quam cupiditate iste vitae accusamus voluptatem corporis ullam? Eos sit nisi vero.",
+        "id":4, 
+        "slug": "mesadejantaraspen",
+        "nome":"Mesa de Jantar Aspen",
+        "img":["/img/mesa-aspen.png", "/img/mesa.png"],
+        "categoria":"mesasdejantar",
+        "area":"externa",
+        "material":"Madeira",
+        "cores":["Preto", "Branco"],
+        "preco":800,
+        "descricao":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aperiam minima necessitatibus, quis blanditiis exercitationem veniam earum error quam cupiditate iste vitae accusamus voluptatem corporis ullam? Eos sit nisi vero.",
         "medidas": {
             "comprimento": 1,
             "largura": 0.8,
@@ -80,27 +68,16 @@
         }
     },
     {
-        "id": "mesa-de-jantar-bio",
-        "nome": "Mesa de Jantar  Bio",
-        "img": [
-            "/img/mesa-bio.png",
-            "/img/mesa.jpg",
-            "/img/mesa.png"
-        ],
-        "categoria": "Mesas de Jantar",
-        "area": "externa",
-        "material": "madeira",
-        "tampo": [
-            "Tampo Madeira",
-            "Tampo Vidro"
-        ],
-        "cores": [
-            "bege",
-            "branco",
-            "preto"
-        ],
-        "preco": 800,
-        "descricao": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aperiam minima necessitatibus, quis blanditiis exercitationem veniam earum error quam cupiditate iste vitae accusamus voluptatem corporis ullam? Eos sit nisi vero.",
+        "id":5, 
+        "slug": "mesadejantarbio",
+        "nome":"Mesa de Jantar  Bio",
+        "img":["/img/mesa-bio.png", "/img/mesa.jpg", "/img/mesa.png"],
+        "categoria":"mesasdejantar",
+        "area":"externa",
+        "material":"Madeira",
+        "cores":["Bege", "Branco", "Preto"],
+        "preco":800,
+        "descricao":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aperiam minima necessitatibus, quis blanditiis exercitationem veniam earum error quam cupiditate iste vitae accusamus voluptatem corporis ullam? Eos sit nisi vero.",
         "medidas": {
             "comprimento": 1,
             "largura": 0.8,
@@ -108,25 +85,16 @@
         }
     },
     {
-        "id": "mesa-de-jantar-dora",
-        "nome": "Mesa de Jantar Dora",
-        "img": [
-            "/img/mesa-dora.png",
-            "/img/mesa.jpg"
-        ],
-        "categoria": "Mesas de Jantar",
-        "area": "interna",
-        "material": "madeira",
-        "tampo": [
-            "Tampo Madeira",
-            "Tampo Vidro"
-        ],
-        "cores": [
-            "branco",
-            "preto"
-        ],
-        "preco": 800,
-        "descricao": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aperiam minima necessitatibus, quis blanditiis exercitationem veniam earum error quam cupiditate iste vitae accusamus voluptatem corporis ullam? Eos sit nisi vero.",
+        "id":6, 
+        "slug": "mesadejantardora",
+        "nome":"Mesa de Jantar Dora",
+        "img":["/img/mesa-dora.png", "/img/mesa.jpg"],
+        "categoria":"mesasdejantar",
+        "area":"interna",
+        "material":"Madeira",
+        "cores":["Branco", "Preto"],
+        "preco":800,
+        "descricao":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aperiam minima necessitatibus, quis blanditiis exercitationem veniam earum error quam cupiditate iste vitae accusamus voluptatem corporis ullam? Eos sit nisi vero.",
         "medidas": {
             "comprimento": 1,
             "largura": 0.8,
@@ -134,23 +102,88 @@
         }
     },
     {
-        "id": null,
-        "nome": "Novo produto",
-        "preco": 24.99
+        "id":7, 
+        "slug": "mesadecentronature",
+        "nome":"Mesa de Centro Nature",
+        "img":["/img/mesa-nature-bege.jpg", "/img/mesa-nature-branca.jpg", "/img/mesa-nature-amarela.jpg"],
+        "categoria":"mesasdecentro",
+        "area":"interna",
+        "material":"Madeira",
+        "cores":["Branco", "Bege", "Amarelo"],
+        "preco":200,
+        "descricao":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aperiam minima necessitatibus, quis blanditiis exercitationem veniam earum error quam cupiditate iste vitae accusamus voluptatem corporis ullam? Eos sit nisi vero.",
+        "medidas": {
+            "comprimento": 0.6,
+            "largura": 0.6,
+            "altura": 0.6
+        }
     },
     {
-        "id": null,
-        "nome": "wesley",
-        "preco": 24.99
+        "id":8, 
+        "slug": "comodajungle",
+        "nome":"Cômoda Jungle",
+        "img":["/img/comoda-jungle-bege.avif", "/img/comoda-jungle-preta.avif"],
+        "categoria":"comodas",
+        "area":"interna",
+        "material":"Madeira",
+        "cores":["Bege", "Preto"],
+        "preco":500,
+        "descricao":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aperiam minima necessitatibus, quis blanditiis exercitationem veniam earum error quam cupiditate iste vitae accusamus voluptatem corporis ullam? Eos sit nisi vero.",
+        "medidas": {
+            "comprimento": 1.5,
+            "largura": 0.8,
+            "altura": 1
+        }
     },
     {
-        "id": null,
-        "nome": "wesley",
-        "preco": 24.99
+        "id":9, 
+        "slug": "mesalateralaurora",
+        "nome":"Mesa Lateral Aurora",
+        "img":["/img/mesa-aurora-branca.jpg", "/img/mesa-aurora-preta.jpg"],
+        "categoria":"mesaslaterais",
+        "area":"interna",
+        "material":"Madeira",
+        "cores":["Branco", "Preto"],
+        "preco":80,
+        "descricao":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aperiam minima necessitatibus, quis blanditiis exercitationem veniam earum error quam cupiditate iste vitae accusamus voluptatem corporis ullam? Eos sit nisi vero.",
+        "medidas": {
+            "comprimento": 0.3,
+            "largura": 0.3,
+            "altura": 0.6
+        }
     },
     {
-        "id": null,
-        "nome": "julio",
-        "preco": 24.99
+        "id":10, 
+        "slug": "balancodejardimlover",
+        "nome":"Balanço de Jardim Lover",
+        "img":["/img/balanco-lover-bege.webp", "/img/balanco-lover-amarelo.webp"],
+        "categoria":"balancos",
+        "area":"externa",
+        "material":"Sisal",
+        "cores":["Bege", "Amarelo"],
+        "preco":1500,
+        "descricao":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aperiam minima necessitatibus, quis blanditiis exercitationem veniam earum error quam cupiditate iste vitae accusamus voluptatem corporis ullam? Eos sit nisi vero.",
+        "medidas": {
+            "comprimento": 1.5,
+            "largura": 0.9,
+            "altura": 1.5
+        }
+    },
+    {
+        "id":11, 
+        "slug": "armarioarmando",
+        "nome":"Armário de Quarto Armando",
+        "img":["/img/armario-armando-branco.jpg", "/img/armario-armando-bege.webp", "/img/armario-armando-preto.webp"],
+        "categoria":"armarios",
+        "area":"interna",
+        "material":"Madeira",
+        "cores":["Branco", "Bege", "Preto"],
+        "preco":1000,
+        "descricao":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aperiam minima necessitatibus, quis blanditiis exercitationem veniam earum error quam cupiditate iste vitae accusamus voluptatem corporis ullam? Eos sit nisi vero.",
+        "medidas": {
+            "comprimento": 0.9,
+            "largura": 0.6,
+            "altura": 1.8
+        }
     }
 ]

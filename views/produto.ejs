@@ -23,8 +23,8 @@
     <main class="produto-container produto">
       <section class="img-container">
         <div class="img-vitrine-container">
-          <img
-            src="<%= produto.img %>"
+            <img
+            src="<%= produto.img[0] %>"
             class="img-vitrine"
             alt="<%= produto.nome %>"
           />
@@ -38,21 +38,13 @@
           </span>
         </div>
         <div class="produto-images">
+          <% produto.img.forEach(item => { %>
           <img
-            src="<%= produto.img %>"
+            src="<%= item %>"
             class="img-produto imagem-produto"
             alt="<%= produto.nome %>"
           />
-          <img
-            src="<%= produto.img %>"
-            class="img-produto"
-            alt="<%= produto.nome %>"
-          />
-          <img
-            src="<%= produto.img %>"
-            class="img-produto"
-            alt="<%= produto.nome %>"
-          />
+          <% }); %>
         </div>
       </section>
 
@@ -78,14 +70,15 @@
             />
             <span id="btn-adiciona">+</span>
           </div>
-          <div class="ordenacao-container">
+          <!-- <div class="ordenacao-container">
             <div class="menu-selecao">
               <select name="ordenacao">
-                <option value=""><%= produto.tampo %></option>
-                <option value="vidro"><%= produto.tampo %></option>
+                <% produto.cores.forEach(item => { %>
+                <option value=""><%= item %></option>
+                <% } ) %>
             </select>
             </div>
-          </div>
+          </div> -->
         </form>
 
         <a href="#" class="comprar botao-secundario add-cart"

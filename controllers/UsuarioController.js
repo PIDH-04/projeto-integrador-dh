@@ -1,13 +1,19 @@
-const categorias = require('../databases/Categorias.json');
-const produtos = require('../databases/Produtos.json');
+const CategoriasServices = require('../services/CategoriasServices');
+const ProdutosServices = require('../services/ProdutosServices');
 const { buscaUsuario, checaSenha } = require('../services/UsuariosServices');
 
 const CadastroController = {
     showCadastro: (req, res) => {
         const {target, erro} = req.query
+      // Mostrar categorias para header e footer
+     const categorias = CategoriasServices.listarCategorias();
+     
         return res.render('cadastro', {categorias, target, erro});
     },
     finalizacaoCompra: (req, res) => {
+      // Mostrar categorias para header e footer
+     const categorias = CategoriasServices.listarCategorias();
+
       return res.render('finalizacaoCompra', {categorias});
     },
     showLogin: (req, res) => {
@@ -39,15 +45,27 @@ const CadastroController = {
       return res.render('loginEmail');
     },
     checkoutEndereco: (req, res) => {
+      // Mostrar categorias para header e footer
+     const categorias = CategoriasServices.listarCategorias();
+
       return res.render('checkoutEndereco', {categorias});
     },
     checkoutPagamento: (req, res) => {
+      // Mostrar categorias para header e footer
+     const categorias = CategoriasServices.listarCategorias();
+
       return res.render('checkoutPagamento', {categorias});
     },
     showPainelUsuario:(req, res) => {
+      // Mostrar categorias para header e footer
+     const categorias = CategoriasServices.listarCategorias();
+
       return res.render('painelUsuario', {categorias})
     },
     showstatusDePedido:(req, res) => {
+      // Mostrar categorias para header e footer
+     const categorias = CategoriasServices.listarCategorias();
+
       return res.render('statusDePedido', {categorias})
     },
     criarCadastro: (req , res) =>{
