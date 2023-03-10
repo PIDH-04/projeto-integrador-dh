@@ -1,5 +1,5 @@
 const { buscaAdmin } = require("../services/AdminServices");
-const { listarCategorias, mostrarCategoriaId, editaCategoria } = require("../services/CategoriasServices");
+const { listarCategorias, mostrarCategoriaId, editaCategoria, criaCategoria } = require("../services/CategoriasServices");
 const {
   listarProdutos,
   excluirProdutoId,
@@ -149,6 +149,21 @@ const AdminController = {
       return res.redirect(`/admin/categorias/${id}/editar?salvo=false`)
     }
     return res.redirect(`/admin/categorias/${id}/editar?salvo=true`)
+  },
+  showCriarCategoria: (req, res) => {
+    const feedbackEdicao = req.query.salvo
+    res.render('adminAddCategoria', {feedbackEdicao})
+  },
+  gravarCategoria: (req, res) => {
+    const categoria = req.body;
+    categoria.slug = criaSlug(categoria.nome)
+
+    const imgNovoNome = `${Date.now()}-${req.file.originalname}`;
+    fs.renameSync(req.file.path, `${req.file.destination}/${imgNovoNome}`);
+    categoria.icone = `/img/produtos/${imgNovoNome}`;
+
+    const categoriaSalva = criaCategoria(categoria)
+    return res.redirect(`/admin/categorias/${categoriaSalva.id}/editar?salvo=true`);
   }
 };
 

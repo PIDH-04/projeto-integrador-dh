@@ -43,9 +43,24 @@ function editaCategoria(id, novasInfos){
   return true
 }
 
+function criaCategoria(infosCategoria){
+  const id = categorias[categorias.length - 1].id + 1;
+  
+  const categoria = {
+    id,
+    ...infosCategoria
+  }
+
+  categorias.push(categoria)
+  fs.writeFileSync('./databases/Categorias.json', JSON.stringify(categorias,null,4));
+
+  return categoria
+}
+
 module.exports = {
   listarCategorias,
   mostrarCategoriaSlug,
   mostrarCategoriaId,
-  editaCategoria
+  editaCategoria,
+  criaCategoria
 }

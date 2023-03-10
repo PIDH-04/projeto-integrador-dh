@@ -58,6 +58,9 @@ router.delete("/admin/produtos/:id/delete", checaAutenticacaoAdmin,AdminControll
 router.get("/admin/categorias", checaAutenticacaoAdmin, AdminController.showCategorias)
 router.get("/admin/categorias/:id/editar", checaAutenticacaoAdmin,  AdminController.showEditarCategoria);
 router.put("/admin/categorias/:id/editar", checaAutenticacaoAdmin,  upload.single('img'), AdminController.editarCategoria);
+router.get("/admin/categorias/criar", checaAutenticacaoAdmin, AdminController.showCriarCategoria);
+router.post("/admin/categorias/criar", checaAutenticacaoAdmin, upload.single('img'), AdminController.gravarCategoria);
+
 
 // Exportar o roteador
 module.exports = router;
