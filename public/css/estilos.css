@@ -296,6 +296,7 @@ body.admin-container table {
   text-align: center;
   font-family: var(--font-paragrafo);
   border-collapse: collapse;
+  margin-bottom: 60px;
 }
 
 body.admin-container thead {
