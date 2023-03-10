@@ -1,106 +1,75 @@
 [
     {
         "nome": "Móveis",
-        "id":1,
+        "id": 1,
         "slug": "moveis",
         "icone": "/img/mesa-icone.svg",
-        "descrição": [
-            "Os melhores móveis do Brasil no conforto de um click.",
-            "Deixe sua casa mais aconchegante com a E-móvel. Sua casa merece!"
-        ]
+        "descrição": "Os melhores móveis do Brasil no conforto de um click\r\nDeixe sua casa mais aconchegante com a E-móvel. Sua casa merece!"
     },
     {
         "nome": "Mesas de Jantar",
-        "id":2,
+        "id": 2,
         "slug": "mesasdejantar",
         "icone": "/img/mesa-icone.svg",
         "area": "interna",
-        "descrição": [
-            "É um item fundamental para a casa.",
-            "Pequenas, grandes, de vidro ou madeira, você encontra aqui!"
-        ]
+        "descricao": "É um item fundamental para a casa.\r\nPequenas, grandes, de vidro ou madeira, você encontra aqui!"
     },
     {
+        "id": 3,
         "nome": "Cadeiras",
-        "id":3,
+        "descricao": "É um item fundamental para a casa. \r\nEstofadas, de acrílico ou madeira, você encontra aqui!",
         "slug": "cadeiras",
-        "icone": "/img/mesa-icone.svg",
-        "area": [
-            "interna",
-            "externa"
-        ],
-        "descrição": [
-            "É um item fundamental para a casa.",
-            "Estofadas, de acrílico ou madeira, você encontra aqui!"
-        ]
+        "icone": "/img/mesa-icone.svg"
     },
     {
         "nome": "Mesas de Centro",
-        "id":4,
+        "id": 4,
         "slug": "mesasdecentro",
         "icone": "/img/mesa-icone.svg",
         "area": "interna",
-        "descrição": [
-            "O clássico das salas de estar.",
-            "Pequenas, grandes, de vidro ou madeira, você encontra aqui!"
-        ]
+        "descricao": "O clássico das salas de estar.\r\nPequenas, grandes, de vidro ou madeira, você encontra aqui!"
     },
     {
         "nome": "Sofás",
-        "id":5,
+        "id": 5,
         "slug": "sofas",
         "icone": "/img/mesa-icone.svg",
         "area": [
             "interna",
             "externa"
         ],
-        "descrição": [
-            "É um item fundamental para sua sala.",
-            "Pequenos, grandes, de couro ou linho, você encontra aqui!"
-        ]
+        "descricao": "É um item fundamental para sua sala.\r\nPequenos, grandes, de couro ou linho, você encontra aqui!"
     },
     {
         "nome": "Cômodas",
-        "id":6,
+        "id": 6,
         "slug": "comodas",
         "icone": "/img/mesa-icone.svg",
         "area": "interna",
-        "descrição": [
-            "Ideal para quartos infantis.",
-            "Pequenas, grandes, de madeira maciça ou mdf, você encontra aqui!"
-        ]
+        "descricao": "Ideal para quartos infantis.\r\nPequenas, grandes, de madeira maciça ou mdf, você encontra aqui!"
     },
     {
         "nome": "Mesas Laterais",
-        "id":7,
+        "id": 7,
         "slug": "mesaslaterais",
         "icone": "/img/mesa-icone.svg",
         "area": "interna",
-        "descrição": [
-            "Um item que traz conforto e praticidade para a sua casa.",
-            "Unitárias ou conjunto, você encontra aqui!"
-        ]
+        "descricao": "Um item que traz conforto e praticidade para a sua casa. <br> Unitárias ou conjunto, você encontra aqui!"
     },
     {
         "nome": "Balanços",
-        "id":8,
+        "id": 8,
         "slug": "balancos",
         "icone": "/img/mesa-icone.svg",
         "area": "externa",
-        "descrição": [
-            "Item destaque para seu jardim.",
-            "Pequenos, grandes, você encontra aqui!"
-        ]
+        "descricao": "Item destaque para seu jardim.\r\nPequenos, grandes, você encontra aqui!"
     },
     {
         "nome": "Armários",
-        "id":9,
+        "id": 9,
         "slug": "armarios",
         "icone": "/img/mesa-icone.svg",
         "area": "interna",
-        "descrição": [
-            "É um item fundamental para a casa.",
-            "Pequenas, grandes, de vidro ou madeira, você encontra aqui!"
-        ]
+        "descricao": "É um item fundamental para a casa.\r\nPequenas, grandes, de vidro ou madeira, você encontra aqui!"
     }
 ]
