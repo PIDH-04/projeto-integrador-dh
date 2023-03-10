@@ -1,5 +1,5 @@
 const { buscaAdmin } = require("../services/AdminServices");
-const { listarCategorias, mostrarCategoriasd, editaCategoria } = require("../services/CategoriasServices");
+const { listarCategorias, mostrarCategoriaId, editaCategoria } = require("../services/CategoriasServices");
 const {
   listarProdutos,
   excluirProdutoId,
@@ -85,6 +85,7 @@ const AdminController = {
     const { id } = req.params;
     const produto = req.body;
     produto.preco = parseInt(produto.preco);
+    produto.slug = criaSlug(produto.nome)
     produto.medidas = {
       comprimento: parseInt(produto.comprimento),
       largura: parseInt(produto.largura),
@@ -124,21 +125,23 @@ const AdminController = {
   showEditarCategoria: (req, res) => {
     const { id } = req.params
     const feedbackEdicao = req.query.salvo
-    const categoria = mostrarCategoriasd(id);
+    const categoria = mostrarCategoriaId(parseInt(id));
     res.render("adminEditarCategoria", { categoria, feedbackEdicao })
   },
   editarCategoria: (req, res) => {
     const { id } = req.params
     const infosCategoria = req.body
-    infosCategoria.link = criaSlug(infosCategoria.nome)
+    // Remover do editaCategoria a manutenção do slug
+    // infosCategoria.slug = criaSlug(infosCategoria.nome)
+   
     
     if(req.file !== undefined){
       const imgNovoNome = `${Date.now()}-${req.file.originalname}`;
       fs.renameSync(req.file.path, `${req.file.destination}/${imgNovoNome}`);
       infosCategoria.icone = `/img/produtos/${imgNovoNome}`;
     }else{
-      const categoriaOriginal = mostrarCategoriasd(id)
-      infosCategoria.icone = categoriaOriginal.img
+      const categoriaOriginal = mostrarCategoriaId(parseInt(id))
+      infosCategoria.icone = categoriaOriginal.icone
     }
     const categoriaEditada = editaCategoria(id, infosCategoria)
 
