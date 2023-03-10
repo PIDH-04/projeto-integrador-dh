@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <%- include("partials/adminHead", {css: ["baseAdmin.css",
-  "adminAddProduto.css"], titulo: "Editar Categoria | E-móvel"}) %>
+  "adminAddProduto.css"], titulo: "Nova Categoria | E-móvel"}) %>
   <body class="admin-container">
     <%- include("partials/adminHeader") %>
     <%- include("partials/topoPg") %>
@@ -53,10 +53,8 @@
             <input type="file" name="img" id="img" id="imagem-produto" />
           </div>
         </div>
-      </form>
-      <div class="container-botoes">
         <button class="botao-secundario" type="submit" form="novo-produto-form">Salvar</button>
-      </div>
+      </form>
     </main>
     <script src="/scripts/adminProduto.js"></script>
   </body>

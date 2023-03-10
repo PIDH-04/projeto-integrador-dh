@@ -57,10 +57,22 @@ function criaCategoria(infosCategoria){
   return categoria
 }
 
+function deletaCategoria(id){
+  const indexCategoria = categorias.findIndex(categoria => categoria.id == id)
+   if (indexCategoria !== -1) {
+    categorias.splice(indexCategoria, 1);
+    fs.writeFileSync('./databases/Categorias.json', JSON.stringify(categorias, null, 4));
+    return true;
+  } else {
+    return false;
+  }
+}
+
 module.exports = {
   listarCategorias,
   mostrarCategoriaSlug,
   mostrarCategoriaId,
   editaCategoria,
-  criaCategoria
+  criaCategoria,
+  deletaCategoria
 }

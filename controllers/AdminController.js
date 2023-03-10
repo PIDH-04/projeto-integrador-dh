@@ -1,5 +1,5 @@
 const { buscaAdmin } = require("../services/AdminServices");
-const { listarCategorias, mostrarCategoriaId, editaCategoria, criaCategoria } = require("../services/CategoriasServices");
+const { listarCategorias, mostrarCategoriaId, editaCategoria, criaCategoria, deletaCategoria } = require("../services/CategoriasServices");
 const {
   listarProdutos,
   excluirProdutoId,
@@ -120,7 +120,8 @@ const AdminController = {
   },
   showCategorias: (req, res) => {
     const categorias = listarCategorias()
-    res.render('adminCategorias', { categorias,feedbackDelete: undefined })
+    const feedbackDelete = req.query.delete
+    res.render('adminCategorias', { categorias, feedbackDelete })
   },
   showEditarCategoria: (req, res) => {
     const { id } = req.params
@@ -164,6 +165,16 @@ const AdminController = {
 
     const categoriaSalva = criaCategoria(categoria)
     return res.redirect(`/admin/categorias/${categoriaSalva.id}/editar?salvo=true`);
+  },
+  removeCategoria: (req, res) => {
+    const { id } = req.params
+    const categoriaDeletada = deletaCategoria(id)
+
+    if(!categoriaDeletada){
+      return res.redirect('/admin/categorias?delete=false')
+    }
+
+    return res.redirect('/admin/categorias?delete=true')
   }
 };
 
