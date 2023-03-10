@@ -118,7 +118,8 @@ const AdminController = {
     return res.redirect("/admin/produtos?delete=true");
   },
   showCategorias: (req, res) => {
-    res.render('adminCategorias', {feedbackDelete: undefined})
+    const categorias = listarCategorias()
+    res.render('adminCategorias', { categorias,feedbackDelete: undefined })
   }
 };
 

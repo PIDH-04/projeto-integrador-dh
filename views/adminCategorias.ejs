@@ -45,22 +45,24 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Mesa de Jantar</td>
-            <td>mesa-de-jantar</td>
-            <td class="acoes-container">
-              <a
-                class="botao-secundario"
-                href="/admin/produtos/1/editar"
-              >
-                <img src="/img/editar.svg" alt="del" />
-              </a>
-              <form action="/admin/produtos/1/delete?_method=DELETE" method="POST">
-                <button><img src="/img/remover.svg" alt="del" type="submit" /></button>
-              </form>
-            </td>
-          </tr>
+          <% for(let categoria of categorias){ %>
+            <tr>
+              <td><%= categoria.id %></td>
+              <td><%= categoria.nome %></td>
+              <td><%= categoria.link %></td>
+              <td class="acoes-container">
+                <a
+                  class="botao-secundario"
+                  href="/admin/categorias/<%= categoria.id %>/editar"
+                >
+                  <img src="/img/editar.svg" alt="del" />
+                </a>
+                <form action="/admin/categorias/<%= categoria.id %>/delete?_method=DELETE" method="POST">
+                  <button><img src="/img/remover.svg" alt="del" type="submit" /></button>
+                </form>
+              </td>
+            </tr>
+            <% } %>
           
         </tbody>
       </table>
