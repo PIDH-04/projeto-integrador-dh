@@ -117,6 +117,9 @@ const AdminController = {
     }
     return res.redirect("/admin/produtos?delete=true");
   },
+  showCategorias: (req, res) => {
+    res.render('adminCategorias', {feedbackDelete: undefined})
+  }
 };
 
 module.exports = AdminController;

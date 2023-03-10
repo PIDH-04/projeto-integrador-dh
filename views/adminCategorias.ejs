@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <%- include("partials/adminHead", {css: ["baseAdmin.css",
+  "produtosAdmin.css"], titulo: "Categorias Admin | E-móvel"}) %>
+  <body class="admin-container">
+    <%- include("partials/adminHeader") %>
+    <%- include("partials/topoPg") %>
+    <main class="">
+      <h1>Categorias</h1>
+      <div class="busca-container">
+        <form>
+          <label for="busca-cliente">Busca Categorias</label>
+          <div>
+            <input
+              type="text"
+              name="busca-produto"
+              id="busca-produto"
+              placeholder="Digite o nome da categoria"
+            />
+            <button type="submit">
+              <img src="/img/pesquisar.png" alt="Pesquisar" />
+              Pesquisar
+            </button>
+          </div>
+        </form>
+
+        <a href="/admin/produtos/criar" class="botao-secundario"
+          >Adicionar categoria</a
+        >
+      </div>
+
+      <% if(feedbackDelete !== undefined){ %>
+        <div class="<%= feedbackDelete == 'true' ? 'sucesso' : 'erros' %>">
+          <%= feedbackDelete == 'true' ? 'Produto deletado com sucesso' : 'Erro ao deletar o produto' %>
+        </div>
+      <% } %>
+
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome da Categoria</th>
+            <th>Slug</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Mesa de Jantar</td>
+            <td>mesa-de-jantar</td>
+            <td class="acoes-container">
+              <a
+                class="botao-secundario"
+                href="/admin/produtos/1/editar"
+              >
+                <img src="/img/editar.svg" alt="del" />
+              </a>
+              <form action="/admin/produtos/1/delete?_method=DELETE" method="POST">
+                <button><img src="/img/remover.svg" alt="del" type="submit" /></button>
+              </form>
+            </td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </main>
+  </body>
+</html>
