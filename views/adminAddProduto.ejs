@@ -89,7 +89,7 @@
             <select name="categoria">
               <option disabled selected>Selecione uma categoria</option>
               <% for(let categoria of categorias){ %>
-                <option value="<%= categoria.nome %>">
+                <option value="<%= categoria.slug %>">
                   <%= categoria.nome %>
                 </option>
               <% } %>

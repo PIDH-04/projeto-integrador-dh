@@ -102,8 +102,8 @@
             <select name="categoria">
               <option disabled>Selecione uma categoria</option>
               <% for(let categoria of categorias){ %>
-                <option value="<%= categoria.nome %>"
-                  <%= produto.categoria == categoria.nome ? "selected" : null %>>
+                <option value="<%= categoria.slug %>"
+                  <%= produto.categoria == categoria.slug ? "selected" : null %>>
                   <%= categoria.nome %>
                 </option>
               <% } %>
