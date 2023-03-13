@@ -5,6 +5,19 @@ function buscaAdmin(email) {
   return administrador;
 }
 
+function listaUsuariosAdmin(){
+  const admins = []
+  for(let admin of administradores){
+    admins.push({
+      id: admin.id,
+      nome: admin.nome,
+      email: admin.email
+    })
+  }
+  return admins
+}
+
 module.exports = {
   buscaAdmin,
+  listaUsuariosAdmin
 };

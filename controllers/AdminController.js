@@ -1,4 +1,4 @@
-const { buscaAdmin } = require("../services/AdminServices");
+const { buscaAdmin, listaUsuariosAdmin } = require("../services/AdminServices");
 const { listarCategorias, mostrarCategoriaId, editaCategoria, criaCategoria, deletaCategoria } = require("../services/CategoriasServices");
 const {
   listarProdutos,
@@ -175,6 +175,11 @@ const AdminController = {
     }
 
     return res.redirect('/admin/categorias?delete=true')
+  },
+  showUsuarios: (req, res) => {
+    const usuarios = listaUsuariosAdmin();
+    console.log(usuarios)
+    res.render('adminUsuarios', { usuarios, feedbackDelete: undefined })
   }
 };
 

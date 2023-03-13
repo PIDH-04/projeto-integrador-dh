@@ -61,7 +61,7 @@ router.put("/admin/categorias/:id/editar", checaAutenticacaoAdmin,  upload.singl
 router.get("/admin/categorias/criar", checaAutenticacaoAdmin, AdminController.showCriarCategoria);
 router.post("/admin/categorias/criar", checaAutenticacaoAdmin, upload.single('img'), AdminController.gravarCategoria);
 router.delete("/admin/categorias/:id/delete", checaAutenticacaoAdmin,AdminController.removeCategoria);
-
+router.get('/admin/usuarios', checaAutenticacaoAdmin, AdminController.showUsuarios)
 
 
 // Exportar o roteador

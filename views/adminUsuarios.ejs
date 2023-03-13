@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <%- include("partials/adminHead", {css: ["baseAdmin.css",
+  "produtosAdmin.css"], titulo: "Usuários Admin | E-móvel"}) %>
+  <body class="admin-container">
+    <%- include("partials/adminHeader") %>
+    <%- include("partials/topoPg") %>
+    <main class="">
+      <h1>Usuários Admin</h1>
+      <div class="busca-container">
+        <form>
+          <label for="busca-cliente">Usuários</label>
+          <div>
+            <input
+              type="text"
+              name="busca-produto"
+              id="busca-produto"
+              placeholder="Digite o nome do usuário"
+            />
+            <button type="submit">
+              <img src="/img/pesquisar.png" alt="Pesquisar" />
+              Pesquisar
+            </button>
+          </div>
+        </form>
+
+        <a href="/admin/produtos/criar" class="botao-secundario"
+          >Adicionar Usuário</a
+        >
+      </div>
+
+      <% if(feedbackDelete !== undefined){ %>
+        <div class="<%= feedbackDelete == 'true' ? 'sucesso' : 'erros' %>">
+          <%= feedbackDelete == 'true' ? 'Produto deletado com sucesso' : 'Erro ao deletar o produto' %>
+        </div>
+      <% } %>
+
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>E-mail</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for(let usuario of usuarios){ %>
+          <tr>
+            <td><%= usuario.id %></td>
+            <td><%= usuario.nome %></td>
+            <td><%= usuario.email %></td>
+            <td class="acoes-container">
+              <a
+                class="botao-secundario"
+                href="/admin/usuarios/<%= usuario.id %>/editar"
+              >
+                <img src="/img/editar.svg" alt="del" />
+              </a>
+              <form action="/admin/usuarios/<%= usuario.id %>/delete?_method=DELETE" method="POST">
+                <button><img src="/img/remover.svg" alt="del" type="submit" /></button>
+              </form>
+            </td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
+    </main>
+  </body>
+</html>
