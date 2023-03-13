@@ -178,7 +178,6 @@ const AdminController = {
   },
   showUsuarios: (req, res) => {
     const usuarios = listaUsuariosAdmin();
-    console.log(usuarios)
     res.render('adminUsuarios', { usuarios, feedbackDelete: undefined })
   }
 };
