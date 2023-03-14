@@ -1,4 +1,4 @@
-const { buscaAdmin, listaUsuariosAdmin } = require("../services/AdminServices");
+const { buscaAdmin, listaUsuariosAdmin, buscaAdminId, salvaAdmin } = require("../services/AdminServices");
 const { listarCategorias, mostrarCategoriaId, editaCategoria, criaCategoria, deletaCategoria } = require("../services/CategoriasServices");
 const {
   listarProdutos,
@@ -9,6 +9,7 @@ const {
   criarProduto,
 } = require("../services/ProdutosServices");
 const { checaSenha, listarUsuarios } = require("../services/UsuariosServices");
+const bcrypt = require('bcrypt')
 const fs = require("fs");
 
 const AdminController = {
@@ -179,6 +180,33 @@ const AdminController = {
   showUsuarios: (req, res) => {
     const usuarios = listaUsuariosAdmin();
     res.render('adminUsuarios', { usuarios, feedbackDelete: undefined })
+  },
+  showEditarUsuario: (req, res) => {
+    const { id } = req.params
+    const usuario = buscaAdminId(id)
+    res.render('adminEditarUsuario', { usuario,feedbackEdicao: undefined })
+  },
+  editarUsuario: (req, res) => {
+    const { id } = req.params
+    const novasInformacoes = {
+      nome: req.body.nome,
+      email: req.body.email,
+    }
+
+    if(req.body.senha == ''){
+      const usuario = buscaAdminId(id)
+      novasInformacoes.senha = usuario.senha
+    }else{
+      novasInformacoes.senha = bcrypt.hashSync(req.body.senha, 8)
+    }
+
+    const usuarioSalvo = salvaAdmin(id, novasInformacoes)
+
+    if(!usuarioSalvo){
+      return res.redirect(`/admin/usuarios/${id}/editar?salvo=false`)
+    }
+
+    return res.redirect(`/admin/usuarios/${id}/editar?salvo=true`)
   }
 };
 
