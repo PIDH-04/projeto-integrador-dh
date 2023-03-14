@@ -42,9 +42,32 @@ function salvaAdmin(id, novasInfos) {
   }
 }
 
+function removeAdmin(id){
+
+  if(administradores.length == 1){
+    return false
+  }
+
+  const indexUsuario = administradores.findIndex(admin => admin.id == id)
+  if(indexUsuario != -1){
+    const usuarioRemovido = administradores.splice(indexUsuario, 1)
+    fs.writeFileSync(
+      "./databases/Administradores.json",
+      JSON.stringify(administradores, null, 4)
+    );
+
+    return true
+
+  } else{
+    return false
+  }
+
+}
+
 module.exports = {
   buscaAdmin,
   buscaAdminId,
   listaUsuariosAdmin,
-  salvaAdmin
+  salvaAdmin,
+  removeAdmin
 };

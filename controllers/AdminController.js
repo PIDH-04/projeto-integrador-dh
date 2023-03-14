@@ -1,4 +1,4 @@
-const { buscaAdmin, listaUsuariosAdmin, buscaAdminId, salvaAdmin } = require("../services/AdminServices");
+const { buscaAdmin, listaUsuariosAdmin, buscaAdminId, salvaAdmin, removeAdmin } = require("../services/AdminServices");
 const { listarCategorias, mostrarCategoriaId, editaCategoria, criaCategoria, deletaCategoria } = require("../services/CategoriasServices");
 const {
   listarProdutos,
@@ -178,13 +178,15 @@ const AdminController = {
     return res.redirect('/admin/categorias?delete=true')
   },
   showUsuarios: (req, res) => {
+    const feedbackDelete = req.query.delete
     const usuarios = listaUsuariosAdmin();
-    res.render('adminUsuarios', { usuarios, feedbackDelete: undefined })
+    res.render('adminUsuarios', { usuarios, feedbackDelete })
   },
   showEditarUsuario: (req, res) => {
+    const feedbackEdicao = req.query.salvo
     const { id } = req.params
     const usuario = buscaAdminId(id)
-    res.render('adminEditarUsuario', { usuario,feedbackEdicao: undefined })
+    res.render('adminEditarUsuario', { usuario, feedbackEdicao })
   },
   editarUsuario: (req, res) => {
     const { id } = req.params
@@ -207,6 +209,16 @@ const AdminController = {
     }
 
     return res.redirect(`/admin/usuarios/${id}/editar?salvo=true`)
+  },
+  removeUsuario: (req, res) =>{
+    const { id } = req.params
+    const adminRemovido = removeAdmin(id)
+
+    if(!adminRemovido){
+      return res.redirect('/admin/usuarios?delete=false')
+    } 
+
+    return res.redirect('/admin/usuarios?delete=true')
   }
 };
 
