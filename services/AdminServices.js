@@ -1,5 +1,6 @@
 const administradores = require("../databases/Administradores.json");
 const fs = require("fs");
+const bcrypt = require('bcrypt')
 
 function buscaAdmin(email) {
   const administrador = administradores.find((adm) => adm.email == email);
@@ -64,10 +65,32 @@ function removeAdmin(id){
 
 }
 
+function gravaAdmin(informacoes){
+  const id = administradores[administradores.length - 1].id + 1
+
+  const novoUsuario = {
+    id,
+    nome: informacoes.nome,
+    email: informacoes.email,
+    senha: bcrypt.hashSync(informacoes.senha, 8)
+  }
+
+  administradores.push(novoUsuario)
+
+  fs.writeFileSync(
+    "./databases/Administradores.json",
+    JSON.stringify(administradores, null, 4)
+  );
+
+  return id
+
+}
+
 module.exports = {
   buscaAdmin,
   buscaAdminId,
   listaUsuariosAdmin,
   salvaAdmin,
-  removeAdmin
+  removeAdmin,
+  gravaAdmin
 };

@@ -1,4 +1,4 @@
-const { buscaAdmin, listaUsuariosAdmin, buscaAdminId, salvaAdmin, removeAdmin } = require("../services/AdminServices");
+const { buscaAdmin, listaUsuariosAdmin, buscaAdminId, salvaAdmin, removeAdmin, gravaAdmin } = require("../services/AdminServices");
 const { listarCategorias, mostrarCategoriaId, editaCategoria, criaCategoria, deletaCategoria } = require("../services/CategoriasServices");
 const {
   listarProdutos,
@@ -219,6 +219,14 @@ const AdminController = {
     } 
 
     return res.redirect('/admin/usuarios?delete=true')
+  },
+  showCriaUsuario: (req, res) =>{
+    res.render('adminCriarUsuario', {feedbackEdicao: undefined})
+  },
+  gravarUsuario: (req, res) => {
+    const NovoUsuarioId = gravaAdmin(req.body)
+
+    res.redirect(`/admin/usuarios/${NovoUsuarioId}/editar?salvo=true`)
   }
 };
 
