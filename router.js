@@ -51,9 +51,9 @@ router.get("/admin/clientes", checaAutenticacaoAdmin, AdminController.showClient
 router.get("/admin/produtos", checaAutenticacaoAdmin, AdminController.showProdutos);
 router.get("/admin/pedidos", checaAutenticacaoAdmin, AdminController.showPedidos);
 router.get("/admin/produtos/criar", checaAutenticacaoAdmin, AdminController.showCriarProduto);
-router.post("/admin/produtos/criar", checaAutenticacaoAdmin, upload.single('img'), AdminController.gravaProduto);
+router.post("/admin/produtos/criar", checaAutenticacaoAdmin, upload.array('img', 10), AdminController.gravaProduto);
 router.get("/admin/produtos/:id/editar", checaAutenticacaoAdmin,  AdminController.showEditarProduto);
-router.put("/admin/produtos/:id/editar", checaAutenticacaoAdmin, upload.single('img'), AdminController.editarProduto);
+router.put("/admin/produtos/:id/editar", checaAutenticacaoAdmin, upload.array('img', 10), AdminController.editarProduto);
 router.delete("/admin/produtos/:id/delete", checaAutenticacaoAdmin,AdminController.removeProduto);
 router.get("/admin/categorias", checaAutenticacaoAdmin, AdminController.showCategorias)
 router.get("/admin/categorias/:id/editar", checaAutenticacaoAdmin,  AdminController.showEditarCategoria);

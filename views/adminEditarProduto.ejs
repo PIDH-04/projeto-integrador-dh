@@ -78,7 +78,7 @@
               name="descricao"
               id="descricao"
               placeholder="Descreva seu produto"
-            ><%= produto.descricao %></textarea>
+            ><%- produto.descricao %></textarea>
 
             <label for="preco">Preço</label>
             <input
@@ -97,7 +97,12 @@
             <label class="imagem-produto-btn" for="img"
               >Selecionar imagens do produto</label
             >
-            <input type="file" name="img" id="img" id="imagem-produto" />
+            <input type="file" name="img" id="img" id="imagem-produto" multiple />
+            <div class="imgs-produto">
+              <% for(let img of produto.img){ %>
+                <img src="<%= img %>" />
+              <% } %>  
+            </div>
             <label>Selecione a Categoria do produto</label>
             <select name="categoria">
               <option disabled>Selecione uma categoria</option>

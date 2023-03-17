@@ -35,6 +35,18 @@ body.admin-container #novo-produto-form .duas-colunas div:last-child{
 }
 
 
+body.admin-container #novo-produto-form  .duas-colunas .imgs-produto{
+    display: flex;
+    width: 100%;
+    margin-top: -20px;
+    margin-bottom: 50px;
+    border-bottom: 1px solid var(--cor-secundaria);
+}
+
+body.admin-container #novo-produto-form .imgs-produto img{
+    width: 80px;
+}
+
 body.admin-container #novo-produto-form .duas-colunas div.medidas-container{
     width: 100%;
     display: flex;

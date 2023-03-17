@@ -59,10 +59,13 @@ const AdminController = {
   },
   gravaProduto: (req, res) => {
     const produto = req.body
-    
-    const imgNovoNome = `${Date.now()}-${req.file.originalname}`;
-    fs.renameSync(req.file.path, `${req.file.destination}/${imgNovoNome}`);
-    produto.img = [`/img/produtos/${imgNovoNome}`];
+    const imgs = []
+    for(let img of req.files){
+      const imgNovoNome = `${Date.now()}-${img.originalname}`;
+      fs.renameSync(img.path, `${img.destination}/${imgNovoNome}`);
+      imgs.push(`/img/produtos/${imgNovoNome}`)
+    }
+    produto.img = imgs;
     produto.slug = criaSlug(produto.nome)
     produto.preco = parseInt(produto.preco)
     produto.medidas = {
@@ -92,11 +95,15 @@ const AdminController = {
       largura: parseInt(produto.largura),
       altura: parseInt(produto.altura),
     }
+    const imgs = []
 
-    if(req.file !== undefined){
-      const imgNovoNome = `${Date.now()}-${req.file.originalname}`;
-      fs.renameSync(req.file.path, `${req.file.destination}/${imgNovoNome}`);
-      produto.img = [`/img/produtos/${imgNovoNome}`];
+    if(req.files.length > 0){
+      for(let img of req.files){
+        const imgNovoNome = `${Date.now()}-${img.originalname}`;
+        fs.renameSync(img.path, `${img.destination}/${imgNovoNome}`);
+        imgs.push(`/img/produtos/${imgNovoNome}`)
+      }
+      produto.img = imgs;
     }else{
       const produtoOriginal = mostrarProdutoId(id)
       produto.img = produtoOriginal.img
