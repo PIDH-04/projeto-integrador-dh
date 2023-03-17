@@ -41,10 +41,12 @@ body.admin-container #novo-produto-form  .duas-colunas .imgs-produto{
     margin-top: -20px;
     margin-bottom: 50px;
     border-bottom: 1px solid var(--cor-secundaria);
+    gap: 10px;
 }
 
 body.admin-container #novo-produto-form .imgs-produto img{
     width: 80px;
+    cursor: pointer;
 }
 
 body.admin-container #novo-produto-form .duas-colunas div.medidas-container{

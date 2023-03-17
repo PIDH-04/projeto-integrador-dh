@@ -13,9 +13,28 @@ window.addEventListener('load', () => {
                 const src = URL.createObjectURL(e.target.files[i]);
                 imgsContainer.innerHTML += `<img src=${src} />`
             }
+            
+            addEventListenerNasImagens()
         }
     }
 
+    function addEventListenerNasImagens(){
+        const imgs = imgsContainer.querySelectorAll('img')
+        if(imgs.length > 0){
+            for(let img of imgs){
+                img.removeEventListener('click', mudaPreview)
+                img.addEventListener('click', mudaPreview)
+            }
+        }
+    }
+
+    function mudaPreview(){
+        campoPreview.src = this.src
+    }
+
+    
+        
+    addEventListenerNasImagens()
     inputImg.addEventListener('change', mostraImagemPreview)
 
 })
