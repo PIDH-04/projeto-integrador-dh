@@ -17,12 +17,14 @@ const ProdutosControllers = {
 
     //Pegar parametro da url(slug)
     let slugCategoria = req.params.slugCategoria;
-    
     //Alterar a categoria mostrada no banner da pagina
     const categoria = CategoriasServices.mostrarCategoriaSlug(slugCategoria);
 
-    //Alterar produtos para aparecer apenas os que constam a categoria do slug
-    const produtos = ProdutosServices.listarProdutosCategoriaSlug(slugCategoria);
+    //Pegar parametro da url(area)
+    const area = req.params.area;
+    
+    //Alterar produtos para aparecer apenas os que constam a categoria do slug e no filtro
+    const produtos = ProdutosServices.listarProdutosFiltrados(slugCategoria, area);
 
     //Retorna view
     return res.render('listagemProdutos', {categorias, produtos, categoria});
