@@ -1,6 +1,7 @@
 // Importar express
 const express = require('express');
-const multer = require('multer')
+const multer = require('multer');
+const { check } = require('express-validator')
 const AdminController = require('./controllers/AdminController');
 const GeralController = require("./controllers/GeralController");
 const ProdutosController = require("./controllers/ProdutosController");
@@ -43,9 +44,14 @@ router.get("/painelUsuario", checaAutenticacaoUsuario, UsuarioController.showPai
 // router.get("/statusDePedidos", UsuarioController.showstatusDePedido);
 
 
+const validacoes = [
+    check('email').notEmpty().bail().isEmail(),
+    check('senha').notEmpty().bail().isLength({min: 3})
+]
+
 // Admin Routers
 router.get("/admin/", AdminController.showLogin);
-router.post("/admin/login", AdminController.login);
+router.post("/admin/login", validacoes,AdminController.login);
 router.get("/admin/logout", UsuarioController.logout);
 router.get("/admin/clientes", checaAutenticacaoAdmin, AdminController.showClientes);
 router.get("/admin/produtos", checaAutenticacaoAdmin, AdminController.showProdutos);

@@ -11,6 +11,7 @@ const {
 const { checaSenha, listarUsuarios } = require("../services/UsuariosServices");
 const bcrypt = require('bcrypt')
 const fs = require("fs");
+const { validationResult } = require('express-validator')
 
 const AdminController = {
   showLogin: (req, res) => {
@@ -24,15 +25,19 @@ const AdminController = {
   },
   login: (req, res) => {
     const { email, senha, target } = req.body;
-    const admin = buscaAdmin(email);
+    const verificaoesErros = validationResult(req)
     const queryParamsErro = target ? `target=${target}&erro=true` : "erro=true";
+    
+    if(verificaoesErros.errors.length > 0) {
+      return res.redirect(`/admin?${queryParamsErro}`);
+    }
 
+    const admin = buscaAdmin(email);
     if (!admin) {
       return res.redirect(`/admin?${queryParamsErro}`);
     }
 
     const senhaCorreta = checaSenha(admin, senha);
-
     if (!senhaCorreta) {
       return res.redirect(`/admin?${queryParamsErro}`);
     }
