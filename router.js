@@ -8,6 +8,7 @@ const ProdutosController = require("./controllers/ProdutosController");
 const UsuarioController = require("./controllers/UsuarioController");
 const checaAutenticacaoAdmin = require('./middlewares/checaAutenticacaoAdmin');
 const checaAutenticacaoUsuario = require('./middlewares/checaAutenticacaoUsuario');
+const validacoesExpress = require('./helpers/validacoesExpress');
 
 const router = express.Router()
 
@@ -44,14 +45,9 @@ router.get("/painelUsuario", checaAutenticacaoUsuario, UsuarioController.showPai
 // router.get("/statusDePedidos", UsuarioController.showstatusDePedido);
 
 
-const validacoes = [
-    check('email').notEmpty().bail().isEmail(),
-    check('senha').notEmpty().bail().isLength({min: 3})
-]
-
 // Admin Routers
 router.get("/admin/", AdminController.showLogin);
-router.post("/admin/login", validacoes,AdminController.login);
+router.post("/admin/login", validacoesExpress.login ,AdminController.login);
 router.get("/admin/logout", UsuarioController.logout);
 router.get("/admin/clientes", checaAutenticacaoAdmin, AdminController.showClientes);
 router.get("/admin/produtos", checaAutenticacaoAdmin, AdminController.showProdutos);
