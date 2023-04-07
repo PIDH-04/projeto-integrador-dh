@@ -1,6 +1,7 @@
 const CategoriasServices = require('../services/CategoriasServices');
 const ProdutosServices = require('../services/ProdutosServices');
-const { buscaUsuario, checaSenha } = require('../services/UsuariosServices');
+const { buscaUsuario, checaSenha , criarUsuario , } = require('../services/UsuariosServices');
+
 
 const CadastroController = {
     showCadastro: (req, res) => {
@@ -69,7 +70,14 @@ const CadastroController = {
       return res.render('statusDePedido', {categorias})
     },
     criarCadastro: (req , res) =>{
-      return res.render ("criarCadastro");
+      const usuario = {
+        nome:req.body.nome,
+        email:req.body.email,
+        senha:req.body.senha
+
+      }
+      criarUsuario(usuario);
+      return res.redirect("/cadastro?msg=facaOLogin");
 
     }
 }

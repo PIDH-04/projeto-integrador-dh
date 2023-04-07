@@ -1,19 +1,11 @@
 [
     {
-<<<<<<<<< Temporary merge branch 1
-        "nome":"Polentina",
-        "email":"polentina@gmail.com",
-        "senha":"$2b$10$aLgye6UWdHYWVpbzXL1DhePNPr7YYIKsanzQoKwMrRj3mmt7kDO16",
-        "cep":90100000,
-        "endereço":"Rua Juju Ferreira",
-=========
-        "id": 1,
         "nome": "Polentina",
         "email": "polentina@gmail.com",
-        "senha": "12345678",
+        "senha": "$2b$10$aLgye6UWdHYWVpbzXL1DhePNPr7YYIKsanzQoKwMrRj3mmt7kDO16",
         "cep": 90100000,
         "endereço": "Rua Juju Ferreira",
->>>>>>>>> Temporary merge branch 2
+        "id": 1,
         "numero": 100,
         "complemento": 47,
         "bairro": "parecida",
@@ -75,5 +67,21 @@
             3
         ],
         "id": 3
+    },
+    {
+        "nome": "Henrique Bendzius",
+        "email": "vendas.henriquebolsas@gmail.com",
+        "id": 4
+    },
+    {
+        "nome": "Henrique silva",
+        "email": "vendas.silvas@gmail.com",
+        "id": 5
+    },
+    {
+        "nome": "Henrique Bendzius Silva",
+        "email": "vendas.henriquebolsas@gmail.com",
+        "senha": "12345678",
+        "id": 6
     }
 ]
