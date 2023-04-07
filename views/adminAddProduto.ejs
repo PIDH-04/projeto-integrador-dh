@@ -3,8 +3,7 @@
   <%- include("partials/adminHead", {css: ["baseAdmin.css",
   "adminAddProduto.css"], titulo: "Novo produto | E-móvel"}) %>
   <body class="admin-container">
-    <%- include("partials/adminHeader") %>
-    <%- include("partials/topoPg") %>
+    <%- include("partials/adminHeader") %> <%- include("partials/topoPg") %>
     <main class="">
       <h1>Novo Produto</h1>
       <a href="/admin/produtos" class="retornar-pagina">
@@ -16,65 +15,78 @@
         <h2>Dados do produto</h2>
       </div>
 
-      <form id="novo-produto-form" method="POST" action="/admin/produtos/criar" enctype="multipart/form-data">
+      <form
+        id="novo-produto-form"
+        method="POST"
+        action="/admin/produtos/criar"
+        enctype="multipart/form-data"
+      >
         <div class="duas-colunas">
-          <div >
+          <div>
             <label for="nome">Nome do Produto</label>
             <input
               type="text"
               name="nome"
               id="nome"
               placeholder="Novo produto"
+              value="<%= locals.produto && locals.produto.nome ? locals.produto.nome : '' %>"
             />
-
-          <label>Medidas (em cm)</label>
-          <div class="medidas-container">
-            <div>
-              <label>Largura</label>
+            <% if (locals.erros && locals.erros.nome) { %>
+            <p class="erro-valor"><%= erros.nome.msg %></p>
+            <% } %>
+            <label>Medidas (em cm)</label>
+            <div class="medidas-container">
+              <div>
+                <label>Largura</label>
                 <input
                   type="text"
                   name="largura"
                   id="largura"
                   placeholder="90"
+                  value="<%= locals.produto && locals.produto.largura ? locals.produto.largura : '' %>"
                 />
-            </div>
+                <% if (locals.erros && locals.erros.largura) { %>
+                <p class="erro-valor"><%= erros.largura.msg %></p>
+                <% } %>
+              </div>
 
-            <div>
-              <label>Comprimento</label>
+              <div>
+                <label>Comprimento</label>
                 <input
                   type="text"
                   name="comprimento"
                   id="comprimento"
                   placeholder="90"
+                  value="<%= locals.produto && locals.produto.comprimento ? locals.produto.comprimento : '' %>"
                 />
+                <% if (locals.erros && locals.erros.comprimento) { %>
+                <p class="erro-valor"><%= erros.comprimento.msg %></p>
+                <% } %>
+              </div>
+              <div>
+                <label>Altura</label>
+                <input type="text" name="altura" id="altura" placeholder="90" value="<%= locals.produto && locals.produto.altura ? locals.produto.altura : '' %>"/>
+                <% if (locals.erros && locals.erros.altura) { %>
+                <p class="erro-valor"><%= erros.altura.msg %></p>
+                <% } %>
+              </div>
             </div>
-
-            <div>
-              <label>Altura</label>
-                <input
-                  type="text"
-                  name="altura"
-                  id="altura"
-                  placeholder="90"
-                />
-            </div>
-
-          </div>
 
             <label for="descricao">Descrição</label>
             <textarea
               name="descricao"
               id="descricao"
               placeholder="Descreva seu produto"
-            ></textarea>
+            ><%= locals.produto && locals.produto.descricao ? locals.produto.descricao : '' %></textarea>
+            <% if (locals.erros && locals.erros.descricao) { %>
+            <p class="erro-valor"><%= erros.descricao.msg %></p>
+            <% } %>
 
             <label for="preco">Preço</label>
-            <input
-              type="text"
-              name="preco"
-              id="preco"
-              placeholder="200,00"
-            />
+            <input type="text" name="preco" id="preco" placeholder="200,00" value="<%= locals.produto && locals.produto.preco ? locals.produto.preco : '' %>"/>
+            <% if (locals.erros && locals.erros.preco) { %>
+            <p class="erro-valor"><%= erros.preco.msg %></p>
+            <% } %>
           </div>
 
           <div>
@@ -84,23 +96,33 @@
             <label class="imagem-produto-btn" for="img"
               >Selecionar imagens do produto</label
             >
+            <% if (locals.erros && locals.erros.imagens) { %>
+            <p class="erro-valor"><%= erros.imagens.msg %></p>
+            <% } %>
+
             <div class="imgs-produto"></div>
             <input type="file" name="img" id="img" multiple />
             <label>Selecione a Categoria do produto</label>
             <select name="categoria">
               <option disabled selected>Selecione uma categoria</option>
               <% for(let categoria of categorias){ %>
-                <option value="<%= categoria.slug %>">
-                  <%= categoria.nome %>
-                </option>
+              <option value="<%= categoria.slug %>"<%= locals.produto && locals.produto.categoria == categoria.slug ? 'selected' : null %>>
+                <%= categoria.nome %>
+              </option>
               <% } %>
             </select>
+            <% if (locals.erros && locals.erros.categoria) { %>
+            <p class="erro-valor"><%= erros.categoria.msg %></p>
+            <% } %>
             <label>Selecione a Área do produto</label>
             <select name="area">
-              <option disabled>Selecione uma área</option>
-              <option value="interna" >Área Interna</option>
-              <option value="externa" >Área Externa</option>
+              <option disabled selected>Selecione uma área</option>
+              <option value="interna" <%= locals.produto && locals.produto.area == 'interna' ? 'selected' : null %> >Área Interna</option>
+              <option value="externa" <%= locals.produto && locals.produto.area == 'externa' ? 'selected' : null %> >Área Externa</option>
             </select>
+             <% if (locals.erros && locals.erros.area) { %>
+            <p class="erro-valor"><%= erros.area.msg %></p>
+            <% } %>
           </div>
         </div>
 

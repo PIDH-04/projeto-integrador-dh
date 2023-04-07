@@ -34,6 +34,12 @@ body.admin-container #novo-produto-form .duas-colunas div:last-child{
     width: 40%;
 }
 
+body.admin-container #novo-produto-form .duas-colunas .erro-valor{
+    margin-top: -20px;
+    font-size: 14px;
+    color: var(--cor-erro);
+    margin-bottom: 20px;
+}
 
 body.admin-container #novo-produto-form  .duas-colunas .imgs-produto{
     display: flex;
