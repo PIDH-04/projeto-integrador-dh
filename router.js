@@ -1,7 +1,6 @@
 // Importar express
 const express = require('express');
 const multer = require('multer');
-const { check } = require('express-validator')
 const AdminController = require('./controllers/AdminController');
 const GeralController = require("./controllers/GeralController");
 const ProdutosController = require("./controllers/ProdutosController");
@@ -53,7 +52,7 @@ router.get("/admin/clientes", checaAutenticacaoAdmin, AdminController.showClient
 router.get("/admin/produtos", checaAutenticacaoAdmin, AdminController.showProdutos);
 router.get("/admin/pedidos", checaAutenticacaoAdmin, AdminController.showPedidos);
 router.get("/admin/produtos/criar", checaAutenticacaoAdmin, AdminController.showCriarProduto);
-router.post("/admin/produtos/criar", checaAutenticacaoAdmin, upload.array('img', 10), AdminController.gravaProduto);
+router.post("/admin/produtos/criar", checaAutenticacaoAdmin, upload.array('img', 10), validacoesExpress.criacaoProduto ,AdminController.gravaProduto);
 router.get("/admin/produtos/:id/editar", checaAutenticacaoAdmin,  AdminController.showEditarProduto);
 router.put("/admin/produtos/:id/editar", checaAutenticacaoAdmin, upload.array('img', 10), AdminController.editarProduto);
 router.delete("/admin/produtos/:id/delete", checaAutenticacaoAdmin,AdminController.removeProduto);
