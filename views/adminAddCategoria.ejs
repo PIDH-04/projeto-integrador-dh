@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <%- include("partials/adminHead", {css: ["baseAdmin.css",
+  "adminAddProduto.css"], titulo: "Nova Categoria | E-móvel"}) %>
+  <body class="admin-container">
+    <%- include("partials/adminHeader") %>
+    <%- include("partials/topoPg") %>
+    <main class="">
+      <h1>Nova Categoria</h1>
+      <a href="/admin/categorias" class="retornar-pagina">
+        <img src="/img/voltar.svg" />
+        Voltar para categorias
+      </a>
+
+      <div class="header-produto">
+        <h2>Dados da Categoria</h2>
+      </div>
+
+      <% if(feedbackEdicao !== undefined){ %>
+
+        <div class="<%= feedbackEdicao == 'true' ? 'sucesso' : 'erros' %>">
+          <%= feedbackEdicao == 'true' ? 'Categoria salva' : 'Erro ao salvar a categoria, tente novamente mais tarde' %>
+        </div>
+
+      <% } %>
+
+      <form action="/admin/categorias/criar" method="POST" id="novo-produto-form" enctype="multipart/form-data">
+        <div class="duas-colunas">
+          <div>
+            <label for="nome">Nome da Categoria</label>
+            <input
+              type="text"
+              name="nome"
+              id="nome"
+              placeholder="Novo produto"
+            />
+
+            <label for="descricao">Descrição</label>
+            <textarea
+              name="descricao"
+              id="descricao"
+              placeholder="Descreva sua categoria"
+            ></textarea>
+          </div>
+
+          <div>
+            <div class="imagem-container">
+              <img id="preview-img" src="/img/sem-imagem.svg" />
+            </div>
+            <label class="imagem-produto-btn" for="img"
+              >Selecionar ícone da categoria</label
+            >
+            <input type="file" name="img" id="img" id="imagem-produto" />
+          </div>
+        </div>
+        <button class="botao-secundario" type="submit" form="novo-produto-form">Salvar</button>
+      </form>
+    </main>
+    <script src="/scripts/adminProduto.js"></script>
+  </body>
+</html>
