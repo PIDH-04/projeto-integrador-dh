@@ -7,7 +7,7 @@
     <main>
       <div id="container-a">
         <h1>Painel do Usuário</h1>
-        <img class="imglogin" src="/img/img.jpg" alt="" />
+        <img class="imglogin" src="/img/<%= usuario.img %>" alt="img<%= usuario.nome %>" />
         <br />
         <form id="form" class="botao-primario">
           <label class="alterar-img">
@@ -23,12 +23,12 @@
           <br>
           <label for="Nome">
             Seu Nome
-            <input type="text" placeholder="Digite seu Nome" value="Marcos Dos Santos" name="nome" id="nome"
+            <input type="text" placeholder="Digite seu Nome" value="<%= usuario.nome %>" name="nome" id="nome"
               class="form-control" required />
           </label>
           <label for="E-mail">
             E-mail
-            <input type="email" value="marcos@uol.com" name="Email" id="email" class="form-control" required />
+            <input type="email" value="<%= usuario.email %>" name="Email" id="email" class="form-control" required />
           </label>
           <label for="Digite sua Senha">
             Alterar senha
