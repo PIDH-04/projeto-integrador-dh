@@ -281,7 +281,7 @@ body.admin-container {
 }
 
 body.admin-container main {
-  margin-top: 100px;
+  margin-top: 60px;
   width: 100%;
   margin-left: 20%;
   padding-right: 50px;
@@ -296,6 +296,7 @@ body.admin-container table {
   text-align: center;
   font-family: var(--font-paragrafo);
   border-collapse: collapse;
+  margin-bottom: 60px;
 }
 
 body.admin-container thead {

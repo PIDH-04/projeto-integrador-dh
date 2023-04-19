@@ -63,11 +63,10 @@ function criarUsuario(usuario) {
   return usuario;
 }
 
-
 module.exports = {
   criarUsuario,
   deletarUsuario,
   buscaUsuario,
   checaSenha,
-  editarUsuario
+  criarUsuario
 };
