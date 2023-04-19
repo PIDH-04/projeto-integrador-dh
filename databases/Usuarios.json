@@ -83,5 +83,11 @@
         "email": "vendas.henriquebolsas@gmail.com",
         "senha": "12345678",
         "id": 6
+    },
+    {
+        "nome": "Henrique Bendzius",
+        "email": "vendas.henriquebolsas@gmail.com",
+        "senha": "12345678",
+        "id": 7
     }
 ]
