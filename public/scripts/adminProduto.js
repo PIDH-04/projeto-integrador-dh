@@ -8,13 +8,15 @@ window.addEventListener('load', () => {
         if(e.target.files.length > 0){
             let src = URL.createObjectURL(event.target.files[0])
             campoPreview.src = src;
-
-            for(let i = 0; i < e.target.files.length; i++){
-                const src = URL.createObjectURL(e.target.files[i]);
-                imgsContainer.innerHTML += `<img src=${src} />`
-            }
             
-            addEventListenerNasImagens()
+            if(window.location.pathname.includes('produtos')){
+                for(let i = 0; i < e.target.files.length; i++){
+                    const src = URL.createObjectURL(e.target.files[i]);
+                    imgsContainer.innerHTML += `<img src=${src} />`
+                }
+            
+                addEventListenerNasImagens()
+            } 
         }
     }
 
@@ -32,9 +34,9 @@ window.addEventListener('load', () => {
         campoPreview.src = this.src
     }
 
-    
-        
-    addEventListenerNasImagens()
+    if(window.location.pathname.includes('produtos')){
+        addEventListenerNasImagens()
+    }    
     inputImg.addEventListener('change', mostraImagemPreview)
 
 })
