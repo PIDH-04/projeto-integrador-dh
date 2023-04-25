@@ -270,6 +270,12 @@ const AdminController = {
   showBanners: (req, res) => {
     const feedbackDelete = req.query.delete;
     res.render('adminBanners', { feedbackDelete })
+  },
+  showCriarBanner: (req, res) => {
+    res.render('adminAddBanner')
+  },
+  gravarBanner: (req, res) => {
+    res.json(req.body);
   }
 };
 
