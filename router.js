@@ -68,6 +68,7 @@ router.put('/admin/usuarios/:id/editar', checaAutenticacaoAdmin, AdminController
 router.delete('/admin/usuarios/:id/delete', checaAutenticacaoAdmin, AdminController.removeUsuario)
 router.get('/admin/usuarios/criar', checaAutenticacaoAdmin, AdminController.showCriaUsuario)
 router.post('/admin/usuarios/criar', checaAutenticacaoAdmin, AdminController.gravarUsuario)
+router.get('/admin/banners', AdminController.showBanners)
 
 // Exportar o roteador
 module.exports = router;

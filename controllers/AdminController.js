@@ -267,6 +267,10 @@ const AdminController = {
 
     res.redirect(`/admin/usuarios/${NovoUsuarioId}/editar?salvo=true`);
   },
+  showBanners: (req, res) => {
+    const feedbackDelete = req.query.delete;
+    res.render('adminBanners', { feedbackDelete })
+  }
 };
 
 module.exports = AdminController;

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <%- include("partials/adminHead", {css: ["baseAdmin.css",
+  "produtosAdmin.css"], titulo: "Produtos Admin | E-móvel"}) %>
+  <body class="admin-container">
+    <%- include("partials/adminHeader") %>
+    <%- include("partials/topoPg") %>
+    <main class="">
+      <h1>Banners</h1>
+      <div class="busca-container banner">
+        <!-- <form>
+          <label for="busca-cliente">Busca Produto</label>
+          <div>
+            <input
+              type="text"
+              name="busca-produto"
+              id="busca-produto"
+              placeholder="Digite o nome do produto"
+            />
+            <button type="submit">
+              <img src="/img/pesquisar.png" alt="Pesquisar" />
+              Pesquisar
+            </button>
+          </div>
+        </form> -->
+
+        <a href="/admin/produtos/criar" class="botao-secundario"
+          >Adicionar Banner</a
+        >
+      </div>
+
+      <% if(feedbackDelete !== undefined){ %>
+        <div class="<%= feedbackDelete == 'true' ? 'sucesso' : 'erros' %>">
+          <%= feedbackDelete == 'true' ? 'Produto deletado com sucesso' : 'Erro ao deletar o produto' %>
+        </div>
+      <% } %>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Banner</th>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Data de criação</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div class="img-produto-container banner">
+                <img src="/img/banner1.jpg" alt="Banner 1" />
+              </div>
+            </td>
+            <td>
+              00001
+            </td>
+            <td>Banner Promoções cadeiras</td>
+            <td>10/10/2022</td>
+            <td class="acoes-container">
+              <a
+                class="botao-secundario"
+                href="/admin/produtos/1/editar"
+              >
+                <img src="/img/editar.svg" alt="del" />
+              </a>
+              <form action="/admin/produtos/1/delete?_method=DELETE" method="POST">
+                <button><img src="/img/remover.svg" alt="del" type="submit" /></button>
+              </form>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+  </body>
+</html>

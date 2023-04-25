@@ -12,8 +12,24 @@ body.admin-container .busca-container a {
   color: #000;
 }
 
+body.admin-container .busca-container.banner a {
+  margin-left: auto;
+  width: 200px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  background-color: var(--cor-secundaria);
+  color: #000;
+}
+
 body.admin-container .img-produto-container img {
-  width: 45px;
+  max-width: 45px;
+  max-height: 30px;
+  margin: 0 auto;
+}
+
+body.admin-container .img-produto-container.banner img {
+  width: 85px;
+  max-width: initial;
   margin: 0 auto;
 }
 
