@@ -269,13 +269,29 @@ const AdminController = {
   },
   showBanners: (req, res) => {
     const feedbackDelete = req.query.delete;
-    res.render('adminBanners', { feedbackDelete })
+    return res.render('adminBanners', { feedbackDelete })
   },
   showCriarBanner: (req, res) => {
-    res.render('adminAddBanner')
+    return res.render('adminAddBanner')
   },
   gravarBanner: (req, res) => {
-    res.json(req.body);
+    const resultados = validationResult(req)
+    const infosBanner = req.body
+
+    if(req.file){
+      const imgNovoNome = `${Date.now()}-${req.file.originalname}`;
+      fs.renameSync(req.file.path, `${req.file.destination}/${imgNovoNome}`);
+      infosBanner.img = `/img/banners/${imgNovoNome}`
+    }
+
+    if(validationResult.length > 0){
+      return res.render('adminAddBanner', {
+        erros: validationResult(req).mapped(),
+        infosBanner,
+      })
+    }
+
+    res.json(resultados);
   }
 };
 

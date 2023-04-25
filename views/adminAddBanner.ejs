@@ -33,32 +33,47 @@
               name="nome"
               id="nome"
               placeholder="Novo banner"
+              value="<%= locals.infosBanner && locals.infosBanner.nome %>"
             />
+
+            <% if (locals.erros && locals.erros.nome) { %>
+              <p class="erro-valor"><%= erros.nome.msg %></p>
+            <% } %>
 
             <label for="descricao">Texto do banner</label>
             <textarea
-              name="Texto"
-              id="Texto"
-              placeholder="Descreva sua categoria"
-            ></textarea>
+              name="texto"
+              id="texto"
+              placeholder="Este texto aparecerá por cima do banner"
+            ><%= locals.infosBanner && locals.infosBanner.texto %></textarea>
 
-            <label for="nome">Link do banner</label>
+            <label for="link">Link do banner</label>
             <input
               type="text"
-              name="nome"
-              id="nome"
+              name="link"
+              id="link"
               placeholder="https://emovel.com.br/cadeiras"
+              value="<%= locals.infosBanner && locals.infosBanner.link %>"
             />
           </div>
 
           <div>
             <div class="imagem-container">
-              <img id="preview-img" src="/img/sem-imagem.svg" />
+              <img 
+                id="preview-img" 
+                src="<%= locals.infosBanner && locals.infosBanner.img ? locals.infosBanner.img : '/img/sem-imagem.svg' %>" />
             </div>
             <label class="imagem-produto-btn" for="img"
               >Selecionar banner</label
             >
-            <input type="file" name="img" id="img" id="imagem-produto" />
+            <input type="file" name="img" id="img" id="imagem-produto" 
+              value="<%= locals.infosBanner && locals.infosBanner.img %>"
+            />
+
+            <% if (locals.erros && locals.erros.imagem) { %>
+              <p class="erro-valor"><%= erros.imagem.msg %></p>
+            <% } %>
+
           </div>
         </div>
         <button class="botao-secundario" type="submit" form="novo-produto-form">Salvar</button>

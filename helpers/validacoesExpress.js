@@ -25,6 +25,15 @@ const validacoesExpress = {
       return true;
     }).withMessage('É necessário adicionar uma foto ao produto')
   ],
+  criacaoBanner: [
+    check("nome").notEmpty().bail().trim().withMessage('O nome do banner deve ser preenchido'),
+    check("imagem").custom((value, { req }) => {
+      if (req.file.length < 1) {
+        return false;
+      }
+      return true;
+    }).withMessage('É necessário adicionar uma imagem do banner')
+  ]
 };
 
 module.exports = validacoesExpress;
