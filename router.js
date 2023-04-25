@@ -13,6 +13,7 @@ const router = express.Router()
 
 // Configuração Multer
 const upload = multer({dest: 'public/img/produtos'})
+const uploadBanner = multer({dest: 'public/img/banners'})
 
 // Definir rotas
 router.get("/master", (req, res) => {
@@ -70,7 +71,7 @@ router.get('/admin/usuarios/criar', checaAutenticacaoAdmin, AdminController.show
 router.post('/admin/usuarios/criar', checaAutenticacaoAdmin, AdminController.gravarUsuario)
 router.get('/admin/banners', checaAutenticacaoAdmin, AdminController.showBanners)
 router.get('/admin/banners/criar', checaAutenticacaoAdmin, AdminController.showCriarBanner)
-router.post('/admin/banners/criar', checaAutenticacaoAdmin, upload.single('img'), AdminController.gravarBanner)
+router.post('/admin/banners/criar', checaAutenticacaoAdmin, uploadBanner.single('img'), validacoesExpress.criacaoBanner, AdminController.gravarBanner)
 
 // Exportar o roteador
 module.exports = router;
