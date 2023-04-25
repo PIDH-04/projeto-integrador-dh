@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
     Areas.associate = (models) => {
         Areas.hasMany(
             models.Produtos,
-            {as: "produtos", foreignKey: "produtos_id"}
+            {as: "produtos", foreignKey: "areas_id"}
         );
     }
 
