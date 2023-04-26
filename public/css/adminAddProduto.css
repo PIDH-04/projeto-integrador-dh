@@ -34,6 +34,38 @@ body.admin-container #novo-produto-form .duas-colunas div:last-child{
     width: 40%;
 }
 
+body.admin-container #novo-produto-form .duas-colunas .erro-valor{
+    margin-top: -20px;
+    font-size: 14px;
+    color: var(--cor-erro);
+    margin-bottom: 20px;
+}
+
+body.admin-container #novo-produto-form  .duas-colunas .imgs-produto{
+    display: flex;
+    width: 100%;
+    margin-top: -20px;
+    margin-bottom: 50px;
+    border-bottom: 1px solid var(--cor-secundaria);
+    gap: 10px;
+}
+
+body.admin-container #novo-produto-form .imgs-produto img{
+    width: 80px;
+    cursor: pointer;
+}
+
+body.admin-container #novo-produto-form .duas-colunas div.medidas-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+
+body.admin-container #novo-produto-form .duas-colunas div.medidas-container div{
+    width: 100%;
+}
+
 body.admin-container #novo-produto-form label{
     width: 100%;
 }
@@ -89,16 +121,18 @@ body.admin-container #novo-produto-form select{
     border-radius: 8px;
     cursor: pointer;
     background-color: #fff;
+    margin-bottom: 30px;
 }
 
 body.admin-container .container-botoes{
     display: flex;
     justify-content: center;
     gap: 50px;
+    margin-bottom: 30px;
 }
 
 body.admin-container .container-botoes button{
-    margin: 50px 0 0 ;
+    margin: 30px 0 0 ;
     margin-top: 0;
 }
 
@@ -117,5 +151,5 @@ body.admin-container .botao-secundario{
     width: auto;
     padding: 10px 50px;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 25px;
 }

@@ -8,6 +8,8 @@ const ProdutosControllers = {
 
     let slugProduto = req.params.slugProduto;
     const produto = ProdutosServices.mostrarProdutoSlug(slugProduto);
+    produto.descricao = produto.descricao.replace('\r\n', " <br> ")
+
 
     return res.render('produto', {categorias, produto});
   },
@@ -19,11 +21,11 @@ const ProdutosControllers = {
     let slugCategoria = req.params.slugCategoria;
     //Alterar a categoria mostrada no banner da pagina
     const categoria = CategoriasServices.mostrarCategoriaSlug(slugCategoria);
+    categoria.descricao = categoria.descricao.replace('\r\n', " <br> ")
 
     //Pegar parametro da url(area)
     const area = req.params.area;
-    
-    //Alterar produtos para aparecer apenas os que constam a categoria do slug e no filtro
+        //Alterar produtos para aparecer apenas os que constam a categoria do slug e no filtro
     const produtos = ProdutosServices.listarProdutosFiltrados(slugCategoria, area);
 
     //Retorna view

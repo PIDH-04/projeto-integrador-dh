@@ -27,8 +27,52 @@ function mostrarCategoriaId(id) {
   }
 }
 
+function editaCategoria(id, novasInfos){
+  const indexCategoria = categorias.findIndex(categoria => categoria.id == id);
+
+  if(indexCategoria == -1){
+    return false
+  }
+
+  categorias[indexCategoria] = {
+    id: categorias[indexCategoria].id,
+    slug: categorias[indexCategoria].slug,
+    ...novasInfos
+  };
+  fs.writeFileSync('./databases/Categorias.json', JSON.stringify(categorias,null,4));
+  return true
+}
+
+function criaCategoria(infosCategoria){
+  const id = categorias[categorias.length - 1].id + 1;
+  
+  const categoria = {
+    id,
+    ...infosCategoria
+  }
+
+  categorias.push(categoria)
+  fs.writeFileSync('./databases/Categorias.json', JSON.stringify(categorias,null,4));
+
+  return categoria
+}
+
+function deletaCategoria(id){
+  const indexCategoria = categorias.findIndex(categoria => categoria.id == id)
+   if (indexCategoria !== -1) {
+    categorias.splice(indexCategoria, 1);
+    fs.writeFileSync('./databases/Categorias.json', JSON.stringify(categorias, null, 4));
+    return true;
+  } else {
+    return false;
+  }
+}
+
 module.exports = {
   listarCategorias,
   mostrarCategoriaSlug,
-  mostrarCategoriaId
+  mostrarCategoriaId,
+  editaCategoria,
+  criaCategoria,
+  deletaCategoria
 }

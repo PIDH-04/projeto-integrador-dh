@@ -32,30 +32,16 @@
         </thead>
 
         <tbody>
-          <tr>
-            <td>00001</td>
-            <td>Alberto da Silva</td>
-            <td>alberto.silva@gmail.com</td>
-            <td>
-              <a class="botao-secundario" href="#"> Ver pedidos </a>
-            </td>
-          </tr>
-          <tr>
-            <td>00001</td>
-            <td>Alberto da Silva</td>
-            <td>alberto.silva@gmail.com</td>
-            <td>
-              <a class="botao-secundario" href="#"> Ver pedidos </a>
-            </td>
-          </tr>
-          <tr>
-            <td>00001</td>
-            <td>Alberto da Silva</td>
-            <td>alberto.silva@gmail.com</td>
-            <td>
-              <a class="botao-secundario" href="#"> Ver pedidos </a>
-            </td>
-          </tr>
+          <% for(let cliente of clientes) { %>
+            <tr>
+              <td><%= cliente.id %></td>
+              <td><%= cliente.nome %></td>
+              <td><%= cliente.email %></td>
+              <td>
+                <a class="botao-secundario" href="#"> Ver pedidos </a>
+              </td>
+            </tr>
+           <% } %> 
         </tbody>
       </table>
     </main>

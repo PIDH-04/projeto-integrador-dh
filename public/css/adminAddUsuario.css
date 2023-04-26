@@ -1,0 +1,21 @@
+body.admin-container #novo-produto-form .duas-colunas{
+    flex-wrap: nowrap;
+}
+
+body.admin-container #novo-produto-form .duas-colunas div{
+    width: 45%;
+    display: block;
+}
+
+body.admin-container #novo-produto-form .duas-colunas div:last-child{
+    width: 50%;
+}
+
+body.admin-container #novo-produto-form .add-usuario div{
+    width: 45%;
+    display: block;
+}
+
+body.admin-container #novo-produto-form .add-usuario div:last-child{
+    width: 45%;
+}
