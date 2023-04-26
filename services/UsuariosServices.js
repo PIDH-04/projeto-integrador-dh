@@ -1,5 +1,7 @@
 const usuarios = require("../databases/Usuarios.json");
 const bcrypt = require("bcrypt");
+const {clientes} =require('../databases/models');
+
 const { error } = require("console");
 const fs = require('fs');
 const path = require('path');
@@ -63,7 +65,18 @@ function criarUsuario(usuario) {
   return usuario;
 }
 
+ async function listarUsuarios(){
+  const usuariosFormatados = []
+  const clientes = await Clientes.findAll({include: "Enderecos"})
+
+  return clientes;
+
+}
+
+
+
 module.exports = {
+  listarUsuarios,
   criarUsuario,
   deletarUsuario,
   buscaUsuario,

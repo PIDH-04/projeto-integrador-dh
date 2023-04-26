@@ -1,6 +1,9 @@
+const {clientes} =require('../databases/models');
 const CategoriasServices = require('../services/CategoriasServices');
 const ProdutosServices = require('../services/ProdutosServices');
 const { buscaUsuario, checaSenha , criarUsuario , } = require('../services/UsuariosServices');
+
+
 
 
 const CadastroController = {
