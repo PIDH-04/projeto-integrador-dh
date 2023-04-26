@@ -1,5 +1,6 @@
 const CategoriasServices = require('../services/CategoriasServices');
 const ProdutosServices = require('../services/ProdutosServices');
+const {Produtos} = require('../databases/models');
 
 const GeralController = {
     home: (req, res) => {

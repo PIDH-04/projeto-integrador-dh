@@ -1,3 +1,4 @@
+const {Produtos} = require('../databases/models');
 const categorias = require('../databases/Categorias.json');
 const fs = require('fs');
 

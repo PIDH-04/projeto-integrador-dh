@@ -12,6 +12,7 @@ const CadastroController = {
       // Mostrar categorias para header e footer
      const categorias = CategoriasServices.listarCategorias();
      
+     
         return res.render('cadastro', {categorias, target, erro});
     },
     finalizacaoCompra: (req, res) => {

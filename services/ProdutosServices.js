@@ -1,5 +1,9 @@
+const {Produtos} = require('../databases/models');
 const produtos = require('../databases/Produtos.json');
 const fs = require('fs');
+
+
+
 
 
 function criarProduto(produto) {
@@ -54,7 +58,21 @@ function editarProduto(id, novoProduto) {
 }
 
 function listarProdutos() {
-  return produtos;
+  const formatClientes = cliente => {
+    return {
+        id: cliente.id,
+        nome: cliente.nome,
+        email: cliente.email,
+        senha: cliente.senha
+    }
+}
+
+
+
+let clientesFormatados = clientes.map(formatClientes);
+
+console.table(clientesFormatados); 
+
 }
 
 function mostrarProdutoSlug(slug) {
