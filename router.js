@@ -40,6 +40,7 @@ router.get("/categorias/:slugCategoria?/:area?", ProdutosController.listagem);
 // o '?' torna o parametro dispensavel, podendo acessar o url '/categorias'
 
 router.get("/cadastro", UsuarioController.showCadastro);
+router.post("/cadastro",UsuarioController.criarCadastro);
 router.get("/painelUsuario", checaAutenticacaoUsuario, UsuarioController.showPainelUsuario);
 // router.get("/statusDePedidos", UsuarioController.showstatusDePedido);
 
