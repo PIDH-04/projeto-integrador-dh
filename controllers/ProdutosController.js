@@ -1,27 +1,32 @@
 const CategoriasServices = require('../services/CategoriasServices');
 const ProdutosServices = require('../services/ProdutosServices');
 
+let categorias = CategoriasServices.listarCategorias().then(
+    function(categorias){
+      return categorias
+    }
+  ).catch()
+
 const ProdutosControllers = {
   show: (req, res) => {
-     // Mostrar categorias para header e footer
-     const categorias = CategoriasServices.listarCategorias();
 
     let slugProduto = req.params.slugProduto;
     const produto = ProdutosServices.mostrarProdutoSlug(slugProduto);
     produto.descricao = produto.descricao.replace('\r\n', " <br> ")
 
+    
 
     return res.render('produto', {categorias, produto});
   },
-  listagem: (req, res) => {
+  listagem: async (req, res) => {
      // Mostrar categorias para header e footer
-     const categorias = CategoriasServices.listarCategorias();
+    
 
     //Pegar parametro da url(slug)
     let slugCategoria = req.params.slugCategoria;
     //Alterar a categoria mostrada no banner da pagina
     const categoria = CategoriasServices.mostrarCategoriaSlug(slugCategoria);
-    categoria.descricao = categoria.descricao.replace('\r\n', " <br> ")
+    //categoria.descricao = categoria.descricao.replace('\r\n', " <br> ")
 
     //Pegar parametro da url(area)
     const area = req.params.area;
@@ -31,9 +36,9 @@ const ProdutosControllers = {
     //Retorna view
     return res.render('listagemProdutos', {categorias, produtos, categoria});
   },
-  showCarrinho: (req, res) => {
+  showCarrinho: async (req, res) => {
      // Mostrar categorias para header e footer
-     const categorias = CategoriasServices.listarCategorias();
+    
 
      //Listrar produtos
      const produtos = ProdutosServices.listarProdutos();

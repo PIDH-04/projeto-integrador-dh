@@ -1,5 +1,6 @@
 const produtos = require('../databases/Produtos.json');
 const fs = require('fs');
+const {Produtos} = require('../databases/models');
 
 
 function criarProduto(produto) {
@@ -53,8 +54,8 @@ function editarProduto(id, novoProduto) {
   }
 }
 
-function listarProdutos() {
-  return produtos;
+async function listarProdutos() {
+  return await Produtos.findAll();
 }
 
 function mostrarProdutoSlug(slug) {
