@@ -9,6 +9,10 @@ module.exports = (sequelize, DataTypes) => {
                 allowNull: false,
                 primaryKey: true
             },
+            slug:{
+                type: DataTypes.STRING(100),
+                allowNull: false
+            },
             nome:{
                 type: DataTypes.STRING(45),
                 allowNull: false
@@ -23,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
     Areas.associate = (models) => {
         Areas.hasMany(
             models.Produtos,
-            {as: "produtos", foreignKey: "areas_id"}
+            {as: "produtos", foreignKey: "areas_slug"}
         );
     }
 

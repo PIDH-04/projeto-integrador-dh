@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
     Visitas.associate = (models) => {
         Visitas.belongsTo(
             models.Produtos,
-            {as: "produtos", foreignKey: "produtos_id"}
+            {as: "produtos", foreignKey: "produtos_slug"}
         );
     }
 

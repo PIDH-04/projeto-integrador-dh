@@ -9,11 +9,15 @@ module.exports = (sequelize, DataTypes) => {
                 allowNull: false,
                 primaryKey: true
             },
-            categorias_id:{
+            slug:{
+                type: DataTypes.STRING(100),
+                allowNull: false
+            },
+            categorias_slug:{
                 type: DataTypes.INTEGER,
                 allowNull: false
             },
-            areas_id:{
+            areas_slug:{
                 type: DataTypes.INTEGER,
                 allowNull: false
             },
@@ -55,11 +59,11 @@ module.exports = (sequelize, DataTypes) => {
     Produtos.associate = (models) => {
         Produtos.belongsTo(
             models.Areas,
-            {as: "areas", foreignKey: "areas_id"}
+            {as: "areas", foreignKey: "areas_slug"}
         );
         Produtos.belongsTo(
             models.Categorias,
-            {as: "categorias", foreignKey: "categorias_id"}
+            {as: "categorias", foreignKey: "categorias_slug"}
         );
         Produtos.hasMany(
             models.Imagens,
@@ -67,7 +71,7 @@ module.exports = (sequelize, DataTypes) => {
         );
         Produtos.hasMany(
             models.Visitas,
-            {as: "visitas", foreignKey: "produtos_id"}
+            {as: "visitas", foreignKey: "produtos_slug"}
         );
         Produtos.belongsToMany(
             models.Pedidos,
