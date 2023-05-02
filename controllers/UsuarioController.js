@@ -1,5 +1,6 @@
 const {clientes} =require('../databases/models');
 const CategoriasServices = require('../services/CategoriasServices');
+const UsuariosServices = require('../services/CategoriasServices');
 const ProdutosServices = require('../services/ProdutosServices');
 const { buscaUsuario, checaSenha , criarUsuario , } = require('../services/UsuariosServices');
 
@@ -7,10 +8,11 @@ const { buscaUsuario, checaSenha , criarUsuario , } = require('../services/Usuar
 
 
 const CadastroController = {
-    showCadastro: (req, res) => {
+    showCadastro: async (req, res) => {
+      
         const {target, erro} = req.query
       // Mostrar categorias para header e footer
-     const categorias = CategoriasServices.listarCategorias();
+     const categorias = await CategoriasServices.listarCategorias();
      
      
         return res.render('cadastro', {categorias, target, erro});
@@ -73,14 +75,16 @@ const CadastroController = {
 
       return res.render('statusDePedido', {categorias})
     },
-    criarCadastro: (req , res) =>{
+    criarCadastro: async (req , res) =>{
       const usuario = {
         nome:req.body.nome,
         email:req.body.email,
         senha:req.body.senha
 
       }
-      criarUsuario(usuario);
+console.log(usuario);
+
+      await UsuariosServices.criarUsuario(usuario);
       return res.redirect("/cadastro?msg=facaOLogin");
 
     }

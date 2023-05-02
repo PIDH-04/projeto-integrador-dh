@@ -1,7 +1,7 @@
 const {Produtos} = require('../databases/models');
 const produtos = require('../databases/Produtos.json');
 const fs = require('fs');
-const {Produtos} = require('../databases/models');
+//const {Produtos} = require('../databases/models');
 
 
 
