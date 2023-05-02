@@ -12,8 +12,9 @@
           <li id="categoriaMobile">
             <a>Categorias</a>
             <ul id="categoriasMobile">
+              <% console.log(categorias) %>
               <% for(const c of categorias) { %>
-                <li><a href="/produtos/<%= c.link %>">
+                <li><a href="/categorias/<%= c.slug%>">
                     <%= c.nome %>
                   </a></li>
                 <% } %>

@@ -36,8 +36,8 @@ router.get("/checkoutDeEndereco", checaAutenticacaoUsuario, UsuarioController.ch
 
 router.get("/produto/:slugProduto", ProdutosController.show);
 
-router.get("/categorias/:slugCategoria?", ProdutosController.listagem);
-// o '?' torna o slugCategoria dispensavel, podendo acessar o url '/categorias'
+router.get("/categorias/:slugCategoria?/:area?", ProdutosController.listagem);
+// o '?' torna o parametro dispensavel, podendo acessar o url '/categorias'
 
 router.get("/cadastro", UsuarioController.showCadastro);
 router.post("/cadastro",UsuarioController.criarCadastro);

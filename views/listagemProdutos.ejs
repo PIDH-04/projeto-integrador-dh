@@ -25,17 +25,30 @@
           <div class="filtros-container">
             <div class="header">
               <h4>Filtros</h4>
-              <p>Limpar filtros</p>
+              <a href="/categorias/<%= categoria.slug %>">
+                <p>Limpar filtros</p>
+              </a>
+              
             </div>
             <form>
               <span>
-                <input name="areainterna" type="checkbox" />
-                <label for="areainterna">Area Interna</label>
+                <a href="/categorias/<%= categoria.slug %>/interna">
+                  <div class="imagens-checkbox">
+                    <img src="/img/checkbox.png" class="imagem-checkbox">
+                    <img src="/img/checkbox-checked.png" class="imagem-checked">
+                  </div>
+                  <label for="areainterna">Area Interna</label>
+                </a>
               </span>
 
               <span>
-                <input name="areaexterna" type="checkbox" />
-                <label for="areaexterna">Area Externa</label>
+                <a href="/categorias/<%= categoria.slug %>/externa">
+                  <div class="imagens-checkbox">
+                    <img src="/img/checkbox.png" class="imagem-checkbox">
+                    <img src="/img/checkbox-checked.png" class="imagem-checked">
+                  </div>
+                  <label for="areaexterna">Area Externa</label>
+                </a>
               </span>
             </form>
           </div>

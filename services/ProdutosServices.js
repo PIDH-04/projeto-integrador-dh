@@ -1,6 +1,7 @@
 const {Produtos} = require('../databases/models');
 const produtos = require('../databases/Produtos.json');
 const fs = require('fs');
+const {Produtos} = require('../databases/models');
 
 
 
@@ -109,22 +110,29 @@ function listarProdutosCategoria(categoria) {
   return produtosFiltrados.length > 0 ? produtosFiltrados : [];
 }
 
-function listarProdutosCategoriaSlug(slugCategoria) {
-  const produtosFiltrados = produtos.filter(produto => produto.categoria === slugCategoria);
-  if(slugCategoria === undefined){
-    return produtos;
-  }else{
-    return produtosFiltrados.length > 0 ? produtosFiltrados : [];
-  }
-  
-}
-
   function criaSlug(nome) {
     let slug = nome.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
     slug = slug.replaceAll(' ', '-')
     slug = slug.replaceAll("'", '-')
     return slug
   }
+
+function listarProdutosFiltrados(slugCategoria, area){
+  if (slugCategoria && area) {
+    const produtosFiltrados = produtos.filter(produto => produto.categoria === slugCategoria && produto.area === area);
+    return produtosFiltrados
+  }else if(slugCategoria) {
+    const produtosFiltrados = produtos.filter(produto => produto.categoria === slugCategoria);
+    return produtosFiltrados
+  }else if(area) {
+    const produtosFiltrados = produtos.filter(produto => produto.area === area);
+    return produtosFiltrados
+  }else{
+    return produtos
+  }
+  }
+
+
 
   module.exports = {
     criarProduto,
@@ -134,6 +142,6 @@ function listarProdutosCategoriaSlug(slugCategoria) {
     mostrarProdutoId,
     excluirProdutoId,
     listarProdutosCategoria,
-    listarProdutosCategoriaSlug,
-    criaSlug
+    criaSlug,
+    listarProdutosFiltrados
   }
