@@ -9,11 +9,6 @@ const fs = require('fs');
 
 
 
-
-
-
-
-
 async function criarProduto(produto) {
 
   // Encontra o último ID dos produtos existentes e adiciona 1 para gerar um novo ID
@@ -84,9 +79,11 @@ async function listarProdutos() {
 }
 
 async function mostrarProdutoSlug(slug) {
-  const produto = await Produtos.findAll({ 
-    where:{slug}
-   
+  const produto = await Produtos.findAll({
+    where: {
+      slug
+    }
+
   });
   console.log(produto);
   return produto || null;
