@@ -25,14 +25,14 @@
           <div class="filtros-container">
             <div class="header">
               <h4>Filtros</h4>
-              <a href="/categorias/<%= categoria.slug %>">
+              <a href="/categorias/<%= categoria.id %>">
                 <p>Limpar filtros</p>
               </a>
               
             </div>
             <form>
               <span>
-                <a href="/categorias/<%= categoria.slug %>/interna">
+                <a href="/categorias/<%= categoria.id %>/interna">
                   <div class="imagens-checkbox">
                     <img src="/img/checkbox.png" class="imagem-checkbox">
                     <img src="/img/checkbox-checked.png" class="imagem-checked">
@@ -42,7 +42,7 @@
               </span>
 
               <span>
-                <a href="/categorias/<%= categoria.slug %>/externa">
+                <a href="/categorias/<%= categoria.id %>/externa">
                   <div class="imagens-checkbox">
                     <img src="/img/checkbox.png" class="imagem-checkbox">
                     <img src="/img/checkbox-checked.png" class="imagem-checked">
@@ -68,9 +68,9 @@
 
 
             <div class="produtos">
-              <% for (const p of produtos) { %>
+              <% for (let p of produtos) { %>
                 <div class="produto">
-                  <a href="/produto/<%= p.slug %>">
+                  <a href="/produto/<%= p.id %>">
                     <div class="img-container">
                       <img class="imagem-produto" src="<%= p.img[0] %>" alt="<%= p.nome %>" />
                     </div>

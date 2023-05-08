@@ -13,8 +13,8 @@ module.exports = (sequelize, DataTypes) => {
                 type: DataTypes.INTEGER,
                 allowNull: false
             },
-            cidades_id:{
-                type: DataTypes.STRING(255),
+            cidade:{
+                type: DataTypes.STRING(120),
                 allowNull: false
             },
             logradouro:{
@@ -26,7 +26,7 @@ module.exports = (sequelize, DataTypes) => {
                 allowNull: false
             },
             bairro:{
-                type: DataTypes.STRING(255),
+                type: DataTypes.STRING(45),
                 allowNull: false
             },
             cep:{
@@ -34,7 +34,7 @@ module.exports = (sequelize, DataTypes) => {
                 allowNull: false
             },
             complemento:{
-                type: DataTypes.STRING(6),
+                type: DataTypes.STRING(255),
                 allowNull: true
             }
         },
