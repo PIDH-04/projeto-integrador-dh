@@ -54,5 +54,5 @@ module.exports = {
   deletarCliente,
   buscaCliente,
   checaSenha,
-  criarCliente
+  editarCliente
 };
