@@ -16,10 +16,10 @@
         <h2>Dados do Usuário</h2>
       </div>
 
-      <% if(feedbackEdicao !== undefined){ %>
+      <% if(locals.feedbackEdicao !== undefined){ %>
 
-        <div class="<%= feedbackEdicao == 'true' ? 'sucesso' : 'erros' %>">
-          <%= feedbackEdicao == 'true' ? 'Usuário salvo' : 'Erro ao salvar usuário, tente novamente mais tarde' %>
+        <div class="<%= locals.feedbackEdicao == 'true' ? 'sucesso' : 'erros' %>">
+          <%= locals.feedbackEdicao == 'true' ? 'Usuário salvo' : 'Erro ao salvar usuário, tente novamente mais tarde' %>
         </div>
 
       <% } %>
@@ -33,7 +33,9 @@
               name="nome"
               id="nome"
               placeholder="Nome do usuário"
+              value="<%= locals.infoPassada && locals.infoPassada.nome %>"
             />
+            
 
             <label for="email">E-mail</label>
             <input
@@ -41,7 +43,12 @@
               name="email"
               id="email"
               placeholder="Novo produto"
+              value="<%= locals.infoPassada && locals.infoPassada.email %>"
             />
+
+            <% if (locals.uniqueEmailError) { %>
+              <p class="erro-valor">Email já cadastrado</p>
+            <% } %>
           </div>
 
           <div>

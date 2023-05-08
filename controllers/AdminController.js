@@ -276,7 +276,11 @@ const AdminController = {
       return res.redirect(`/admin/usuarios/${NovoUsuarioId}/editar?salvo=true`);
 
     }catch(e){
-      return res.redirect((`/admin/usuarios/?criacao=false`));
+      if(e.message == 'email must be unique'){
+        return res.render('adminCriarUsuario', { uniqueEmailError: true, infoPassada: req.body })
+      }else{
+        return res.redirect((`/admin/usuarios/?criacao=false`));
+      }
     }
 
   },

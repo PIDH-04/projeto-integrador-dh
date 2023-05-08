@@ -63,7 +63,8 @@ async function gravaAdmin(informacoes) {
     return novoAdmin.id
 
   }catch(e){
-    throw new Error('Não foi possível cadastrar o novo admin')
+    console.log(e)
+    throw new Error(e.errors[0].message)
   }
 }
 
@@ -113,7 +114,7 @@ async function editaBanner(id, novasInfos) {
     const bannerEditado = await Banners.update(novasInfos, { where: { id: id } });
     return bannerEditado;
   } catch (e) {
-    throw new Error("Não foi possível editar o banner");
+    throw new Error(e);
   }
 }
 
