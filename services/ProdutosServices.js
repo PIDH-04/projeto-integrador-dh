@@ -38,6 +38,15 @@ async function criarProduto(infosProduto) {
   let produtoNovo = await Produtos.create(infosProduto);
 }
 
+//deleta produto
+async function excluirProdutoId(idProduto) {
+  let produtoParaRemover = await Produtos.destroy({ where: { id: idProduto } });
+
+  if (produtoParaRemover == 0) {
+    throw new Error("Produto inexistente");
+  }
+}
+
 function editarProduto(id, novoProduto) {
 
   // Encontrar o índice do produto a ser editado pelo ID
@@ -65,24 +74,6 @@ function editarProduto(id, novoProduto) {
 }
 
 
-function excluirProdutoId(id) {
-  // Encontrar o índice do produto a ser excluído pelo ID
-  const indiceProduto = produtos.findIndex(p => p.id == id);
-
-  if (indiceProduto !== -1) {
-    // Remover o produto do array de produtos
-    produtos.splice(indiceProduto, 1);
-
-    // Escrever os dados atualizados no arquivo JSON
-    fs.writeFileSync('./databases/Produtos.json', JSON.stringify(produtos, null, 4));
-
-    // Retornar true se o produto foi excluído com sucesso
-    return true;
-  } else {
-    // Retornar false se não encontrar o produto a ser excluído
-    return false;
-  }
-}
 
 module.exports = {
   criarProduto,
