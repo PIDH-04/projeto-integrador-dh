@@ -2,7 +2,7 @@ const {clientes} =require('../databases/models');
 const CategoriasServices = require('../services/CategoriasServices');
 const UsuariosServices = require('../services/CategoriasServices');
 const ProdutosServices = require('../services/ProdutosServices');
-const { buscaUsuario, checaSenha , criarUsuario , } = require('../services/UsuariosServices');
+const { buscaUsuario, checaSenha , criarUsuario , } = require('../services/ClientesServices');
 
 
 

@@ -1,15 +1,21 @@
-const usuarios = require("../databases/Usuarios.json");
 const bcrypt = require("bcrypt");
-const {clientes} =require('../databases/models');
-
-const { error } = require("console");
+const { Clientes } =require('../databases/models');
 const fs = require('fs');
 const path = require('path');
 
-function buscaUsuario(email) {
-  const usuario = usuarios.find((usuario) => usuario.email == email);
-  return usuario;
+//listar clientes
+async function listaClientes(){
+  const clientes = Clientes.findAll();
+  return clientes
 }
+
+//mostra cliente especifico
+async function buscaCliente(email) {
+  const cliente = Clientes.findAll({where:{email:email}});
+  return cliente;
+}
+
+
 function checaSenha(usuario, senha) {
   return bcrypt.compareSync(senha, usuario.senha);
 }
@@ -62,7 +68,7 @@ module.exports = {
   listarUsuarios,
   criarUsuario,
   deletarUsuario,
-  buscaUsuario,
+  buscaCliente,
   checaSenha,
   criarUsuario
 };
