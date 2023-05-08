@@ -1,5 +1,5 @@
 const fs = require('fs');
-const {Categorias} = require('../databases/models');
+const { Categorias } = require('../databases/models');
 
 //lista todas as categorias
 async function listarCategorias() {
@@ -11,54 +11,47 @@ async function listarCategorias() {
 async function mostrarCategoriaId(idCategoria) {
   const categoriaEncontrada = Categorias.findByPk(idCategoria);
 
-  if (categoriaEncontrada == undefined){
+  if (categoriaEncontrada == undefined) {
     return Categorias.findByPk({
-      where:{id:1}
+      where: { id: 1 }
     })
-}
-return categoriaEncontrada;
+  }
+  return categoriaEncontrada;
 }
 
 //criar categoria
-async function criaCategoria(infosCategoria){
+async function criaCategoria(infosCategoria) {
   let categoriaNova = await Categorias.create(infosCategoria);
 }
 
 //deleta categoria
-async function deletaCategoria(idCategoria){
+async function deletaCategoria(idCategoria) {
 
-  let categoriaParaRemover = await Categorias.destroy({where: {id: idCategoria}});
+  let categoriaParaRemover = await Categorias.destroy({ where: { id: idCategoria } });
 
-  if(categoriaParaRemover == 0){
-      throw new Error("Categoria inexistente");
+  if (categoriaParaRemover == 0) {
+    throw new Error("Categoria inexistente");
   }
-  
+
 }
 
 //edita categoria
-function editaCategoria(id, novasInfos){
-  const indexCategoria = categorias.findIndex(categoria => categoria.id == id);
+async function editaCategoria(idCategoria, novasInfos) {
 
-  if(indexCategoria == -1){
-    return false
-  }
+  //acha a categoria a ser editada pelo id
+  const categoria = await Categorias.findByPk(idCategoria);
 
-  categorias[indexCategoria] = {
-    id: categorias[indexCategoria].id,
-    slug: categorias[indexCategoria].slug,
-    ...novasInfos
+  //da error se o id da categoria não corresponder a nenhum
+  if (categoria === undefined) {
+    throw new Error("Categoria inexistente");
   };
-  fs.writeFileSync('./databases/Categorias.json', JSON.stringify(categorias,null,4));
-  return true
+
+  await categoria.update(novasInfos);
+
 }
-
-
-
-
 
 module.exports = {
   listarCategorias,
-  mostrarCategoriaSlug,
   mostrarCategoriaId,
   editaCategoria,
   criaCategoria,
