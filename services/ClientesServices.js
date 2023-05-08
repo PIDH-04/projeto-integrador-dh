@@ -22,8 +22,8 @@ async function criarCliente(infosCliente) {
   const novoCliente = await Clientes.create(infosCliente);
 }
 
-function checaSenha(usuario, senha) {
-  return bcrypt.compareSync(senha, usuario.senha);
+function checaSenha(cliente, senha) {
+  return bcrypt.compareSync(senha, cliente.senha);
 }
 
 //deleta cliente
