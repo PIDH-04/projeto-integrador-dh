@@ -33,29 +33,9 @@ async function listarProdutosFiltrados(idCategoria, idArea) {
     return produtosFiltrados;
   }
 
-async function criarProduto(produto) {
-
-  // Encontra o último ID dos produtos existentes e adiciona 1 para gerar um novo ID
-  let id = 0;
-
-  if (produtos.length > 0) {
-    const ultimoID = produtos[produtos.length - 1].id
-    id = ultimoID + 1
-  } else {
-    id = 1;
-  }
-
-  // Adiciona o ID ao objeto de produto
-  produto.id = id;
-
-  // Adiciona o produto ao array de produtos
-  produtos.push(produto);
-
-  // Escreve o array atualizado de produtos no arquivo JSON
-  fs.writeFileSync('./databases/Produtos.json', JSON.stringify(produtos, null, 4));
-
-  // Retorna o produto criado
-  return produto;
+  //cria produto
+async function criarProduto(infosProduto) {
+  let produtoNovo = await Produtos.create(infosProduto);
 }
 
 function editarProduto(id, novoProduto) {
