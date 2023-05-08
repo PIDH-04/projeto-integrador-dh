@@ -4,7 +4,6 @@ window.addEventListener('load', () => {
     const inputImg = document.getElementById('img')
     
     function mostraImagemPreview(e){
-        console.log(e.target.files.length)
         if(e.target.files.length > 0){
             let src = URL.createObjectURL(event.target.files[0])
             campoPreview.src = src;
