@@ -26,15 +26,15 @@ async function criaCategoria(infosCategoria){
 
 //deleta categoria
 async function deletaCategoria(idCategoria){
-  const indexCategoria = categorias.findIndex(categoria => categoria.id == id)
-   if (indexCategoria !== -1) {
-    categorias.splice(indexCategoria, 1);
-    fs.writeFileSync('./databases/Categorias.json', JSON.stringify(categorias, null, 4));
-    return true;
-  } else {
-    return false;
+
+  let categoriaParaRemover = await Categorias.destroy({where: {id: idCategoria}});
+
+  if(categoriaParaRemover == 0){
+      throw new Error("Categoria inexistente");
   }
+  
 }
+
 //edita categoria
 function editaCategoria(id, novasInfos){
   const indexCategoria = categorias.findIndex(categoria => categoria.id == id);
