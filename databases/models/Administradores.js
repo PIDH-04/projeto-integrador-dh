@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
             id: {
                 type: DataTypes.INTEGER,
                 primaryKey: true,
-                autoIncremente: true,
+                autoIncrement: true,
                 allowNull: false
             },
             nome: {
@@ -25,7 +25,8 @@ module.exports = (sequelize, DataTypes) => {
         },
         {
             tableName: 'administradores',
-            timestamps: false
+            timestamps: true,
+            paranoid: true
         }
     )
 

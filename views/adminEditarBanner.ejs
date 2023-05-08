@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <%- include("partials/adminHead", {css: ["baseAdmin.css",
-  "adminAddProduto.css"], titulo: "Nova Categoria | E-móvel"}) %>
+  "adminAddProduto.css"], titulo: "Editar banner | E-móvel"}) %>
   <body class="admin-container">
     <%- include("partials/adminHeader") %>
     <%- include("partials/topoPg") %>
     <main class="">
-      <h1>Novo Banner</h1>
+      <h1><%= locals.infosBanner.nome %></h1>
       <a href="/admin/banners" class="retornar-pagina">
         <img src="/img/voltar.svg" />
         Voltar para banners
@@ -19,12 +19,12 @@
       <% if(locals.feedbackEdicao !== undefined){ %>
 
         <div class="<%= locals.feedbackEdicao == 'true' ? 'sucesso' : 'erros' %>">
-          <%= locals.feedbackEdicao == 'true' ? 'Categoria salva' : 'Erro ao salvar a categoria, tente novamente mais tarde' %>
+          <%= locals.feedbackEdicao == 'true' ? 'Banner salvo' : 'Erro ao salvar o banner, tente novamente mais tarde' %>
         </div>
 
       <% } %>
 
-      <form action="/admin/banners/criar" method="POST" id="novo-produto-form" enctype="multipart/form-data">
+      <form action="/admin/banners/<%= infosBanner.id %>/editar?_method=PUT" method="POST" id="novo-produto-form" enctype="multipart/form-data">
         <div class="duas-colunas">
           <div>
             <label for="nome">Nome do banner</label>
@@ -35,17 +35,14 @@
               placeholder="Novo banner"
               value="<%= locals.infosBanner && locals.infosBanner.nome %>"
             />
-
-            <% if (locals.erros && locals.erros.nome) { %>
-              <p class="erro-valor"><%= erros.nome.msg %></p>
-            <% } %>
+            <p class="erro-valor erro-nome"></p>
 
             <label for="descricao">Texto do banner</label>
             <textarea
               name="descricao"
               id="descricao"
               placeholder="Este texto aparecerá por cima do banner"
-            ><%= locals.infosBanner && locals.infosBanner.texto %></textarea>
+            ><%= locals.infosBanner && locals.infosBanner.descricao %></textarea>
 
             <label for="link">Link do banner</label>
             <input
@@ -61,7 +58,7 @@
             <div class="imagem-container">
               <img 
                 id="preview-img" 
-                src="<%= locals.infosBanner && locals.infosBanner.img ? locals.infosBanner.img : '/img/sem-imagem.svg' %>" />
+                src="<%= locals.infosBanner && locals.infosBanner.caminho ? locals.infosBanner.caminho : '/img/sem-imagem.svg' %>" />
             </div>
             <label class="imagem-produto-btn" for="img"
               >Selecionar banner</label
@@ -76,9 +73,16 @@
 
           </div>
         </div>
-        <button class="botao-secundario" type="submit" form="novo-produto-form">Salvar</button>
       </form>
+
+        <div class="container-botoes">
+          <button class="botao-secundario" type="submit" form="novo-produto-form">Salvar</button>
+          <form action="/admin/banners/<%= infosBanner.id %>/delete?_method=DELETE" method="POST" id="delete-form">
+              <button class="botao-secundario apagar" id="delete-btn" type="submit">Apagar banner</button>
+          </form>
+        </div>
     </main>
     <script src="/scripts/adminProduto.js"></script>
+    <script src="/scripts/adminEditarBanner.js"></script>
   </body>
 </html>

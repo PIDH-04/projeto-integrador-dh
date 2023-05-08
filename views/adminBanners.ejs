@@ -31,7 +31,7 @@
 
       <% if(feedbackDelete !== undefined){ %>
         <div class="<%= feedbackDelete == 'true' ? 'sucesso' : 'erros' %>">
-          <%= feedbackDelete == 'true' ? 'Produto deletado com sucesso' : 'Erro ao deletar o produto' %>
+          <%= feedbackDelete == 'true' ? 'Banner deletado com sucesso' : 'Erro ao deletar o produto' %>
         </div>
       <% } %>
 
@@ -46,29 +46,40 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>
-              <div class="img-produto-container banner">
-                <img src="/img/banner1.jpg" alt="Banner 1" />
-              </div>
-            </td>
-            <td>
-              00001
-            </td>
-            <td>Banner Promoções cadeiras</td>
-            <td>10/10/2022</td>
-            <td class="acoes-container">
-              <a
-                class="botao-secundario"
-                href="/admin/produtos/1/editar"
-              >
-                <img src="/img/editar.svg" alt="del" />
-              </a>
-              <form action="/admin/produtos/1/delete?_method=DELETE" method="POST">
-                <button><img src="/img/remover.svg" alt="del" type="submit" /></button>
-              </form>
-            </td>
-          </tr>
+          <% banners.forEach(banner => { %>
+              <tr>
+                <td>
+                  <div class="img-produto-container banner">
+                    <img src="<%= banner.caminho %>" alt="<%= banner.nome %>" />
+                  </div>
+                </td>
+                <td>
+                  <%= banner.id %>
+                </td>
+                <td><%= banner.nome %></td>
+                <td>
+                  <% const data = new Date(banner.createdAt) %>
+                  <% const dia = data.getDate() %>
+                  <% const mes = data.getMonth() %>
+                  <% const ano = data.getFullYear() %>
+                  <% const diaFormatado = dia < 10 ? `0${dia}` : dia  %>
+                  <% const mesFormatado = mes < 10 ? `0${mes}` : mes  %>
+                  <%= `${diaFormatado}/${mesFormatado}/${ano}`  %>
+                </td>
+                <td class="acoes-container">
+                  <a
+                    class="botao-secundario"
+                    href="/admin/banners/<%= banner.id %>/editar"
+                  >
+                    <img src="/img/editar.svg" alt="del" />
+                  </a>
+                  <form action="/admin/banners/<%= banner.id %>/delete?_method=DELETE" method="POST">
+                    <button><img src="/img/remover.svg" alt="del" type="submit" /></button>
+                  </form>
+                </td>
+              </tr>
+
+          <% }) %>
         </tbody>
       </table>
     </main>

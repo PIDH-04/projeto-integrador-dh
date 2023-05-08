@@ -72,6 +72,9 @@ router.post('/admin/usuarios/criar', checaAutenticacaoAdmin, AdminController.gra
 router.get('/admin/banners', checaAutenticacaoAdmin, AdminController.showBanners)
 router.get('/admin/banners/criar', checaAutenticacaoAdmin, AdminController.showCriarBanner)
 router.post('/admin/banners/criar', checaAutenticacaoAdmin, uploadBanner.single('img'), validacoesExpress.criacaoBanner, AdminController.gravarBanner)
+router.delete('/admin/banners/:id/delete', checaAutenticacaoAdmin, AdminController.removerBanner)
+router.get('/admin/banners/:id/editar', checaAutenticacaoAdmin, AdminController.showEditarBanner)
+router.put('/admin/banners/:id/editar', checaAutenticacaoAdmin, uploadBanner.single('img'), AdminController.editarBanner)
 
 // Exportar o roteador
 module.exports = router;

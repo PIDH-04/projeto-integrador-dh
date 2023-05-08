@@ -5,6 +5,11 @@ const {
   salvaAdmin,
   removeAdmin,
   gravaAdmin,
+  salvaBanner,
+  listaBanners,
+  removeBanner,
+  detalhaBanner,
+  editaBanner,
 } = require("../services/AdminServices");
 const {
   listarCategorias,
@@ -25,6 +30,7 @@ const { checaSenha, listarUsuarios } = require("../services/UsuariosServices");
 const bcrypt = require("bcrypt");
 const fs = require("fs");
 const { validationResult } = require("express-validator");
+const { Administradores } = require("../databases/models");
 
 const AdminController = {
   showLogin: (req, res) => {
@@ -36,17 +42,16 @@ const AdminController = {
       return res.render("adminLogin", { target: target, erro: erro });
     }
   },
-  login: (req, res) => {
+  login: async (req, res) => {
     const { email, senha, target } = req.body;
     const verificaoesErros = validationResult(req);
     const queryParamsErro = target ? `target=${target}&erro=true` : "erro=true";
 
     if (verificaoesErros.errors.length > 0) {
-      console.log(verificaoesErros);
       return res.redirect(`/admin?${queryParamsErro}`);
     }
 
-    const admin = buscaAdmin(email);
+    const admin = await Administradores.findOne({ where: { email: email } });
     if (!admin) {
       return res.redirect(`/admin?${queryParamsErro}`);
     }
@@ -82,7 +87,6 @@ const AdminController = {
 
     const erros = validationResult(req);
     if (erros.errors.length > 0) {
-      console.log(erros);
       const categorias = listarCategorias();
       return res.render("adminAddProduto", {
         categorias,
@@ -216,38 +220,42 @@ const AdminController = {
 
     return res.redirect("/admin/categorias?delete=true");
   },
-  showUsuarios: (req, res) => {
+  showUsuarios: async (req, res) => {
     const feedbackDelete = req.query.delete;
-    const usuarios = listaUsuariosAdmin();
-    res.render("adminUsuarios", { usuarios, feedbackDelete });
+    const feedbackCriacao = req.query.criacao
+    const usuarios = await Administradores.findAll();
+    res.render("adminUsuarios", { usuarios, feedbackDelete, feedbackCriacao });
   },
-  showEditarUsuario: (req, res) => {
+  showEditarUsuario: async (req, res) => {
     const feedbackEdicao = req.query.salvo;
     const { id } = req.params;
-    const usuario = buscaAdminId(id);
+    const usuario = await Administradores.findByPk(id);
     res.render("adminEditarUsuario", { usuario, feedbackEdicao });
   },
-  editarUsuario: (req, res) => {
+  editarUsuario: async (req, res) => {
     const { id } = req.params;
-    const novasInformacoes = {
-      nome: req.body.nome,
-      email: req.body.email,
-    };
+    try {
+      const novasInformacoes = {
+        nome: req.body.nome,
+        email: req.body.email,
+      };
 
-    if (req.body.senha == "") {
-      const usuario = buscaAdminId(id);
-      novasInformacoes.senha = usuario.senha;
-    } else {
-      novasInformacoes.senha = bcrypt.hashSync(req.body.senha, 8);
-    }
+      if (req.body.senha !== "") {
+        novasInformacoes.senha = bcrypt.hashSync(req.body.senha, 8);
+      }
 
-    const usuarioSalvo = salvaAdmin(id, novasInformacoes);
+      const usuarioSalvo = await Administradores.update(novasInformacoes, {
+        where: { id: id },
+      });
 
-    if (!usuarioSalvo) {
+      if (usuarioSalvo[0] == 0) {
+        throw new Error("Usuário não encontrado");
+      }
+
+      return res.redirect(`/admin/usuarios/${id}/editar?salvo=true`);
+    } catch (e) {
       return res.redirect(`/admin/usuarios/${id}/editar?salvo=false`);
     }
-
-    return res.redirect(`/admin/usuarios/${id}/editar?salvo=true`);
   },
   removeUsuario: (req, res) => {
     const { id } = req.params;
@@ -262,37 +270,83 @@ const AdminController = {
   showCriaUsuario: (req, res) => {
     res.render("adminCriarUsuario", { feedbackEdicao: undefined });
   },
-  gravarUsuario: (req, res) => {
-    const NovoUsuarioId = gravaAdmin(req.body);
+  gravarUsuario: async (req, res) => {
+    try{
+      const NovoUsuarioId = await gravaAdmin(req.body);
+      return res.redirect(`/admin/usuarios/${NovoUsuarioId}/editar?salvo=true`);
 
-    res.redirect(`/admin/usuarios/${NovoUsuarioId}/editar?salvo=true`);
+    }catch(e){
+      return res.redirect((`/admin/usuarios/?criacao=false`));
+    }
+
   },
-  showBanners: (req, res) => {
+  showBanners: async (req, res) => {
     const feedbackDelete = req.query.delete;
-    return res.render('adminBanners', { feedbackDelete })
+    const banners = await listaBanners();
+    return res.render("adminBanners", { feedbackDelete, banners });
   },
   showCriarBanner: (req, res) => {
-    return res.render('adminAddBanner')
+    return res.render("adminAddBanner");
   },
-  gravarBanner: (req, res) => {
-    const resultados = validationResult(req)
-    const infosBanner = req.body
+  gravarBanner: async (req, res) => {
+    const resultados = validationResult(req);
+    const infosBanner = req.body;
 
-    if(req.file){
+    if (req.file) {
       const imgNovoNome = `${Date.now()}-${req.file.originalname}`;
       fs.renameSync(req.file.path, `${req.file.destination}/${imgNovoNome}`);
-      infosBanner.img = `/img/banners/${imgNovoNome}`
+      infosBanner.img = `/img/banners/${imgNovoNome}`;
     }
 
-    if(validationResult.length > 0){
-      return res.render('adminAddBanner', {
+    if (resultados.errors.length > 0) {
+      return res.render("adminAddBanner", {
         erros: validationResult(req).mapped(),
         infosBanner,
-      })
+      });
     }
 
-    res.json(resultados);
-  }
+    const bannerSalvo = await salvaBanner(infosBanner);
+    return res.redirect(`/admin/banners/${bannerSalvo.id}/editar?salvo=true`);
+  },
+  removerBanner: async (req, res) => {
+    try {
+      const { id } = req.params;
+      await removeBanner(id);
+      return res.redirect("/admin/banners?delete=true");
+    } catch (e) {
+      return res.redirect("/admin/banners?delete=false");
+    }
+  },
+  showEditarBanner: async (req, res) => {
+    try {
+      const { id } = req.params;
+      const feedbackEdicao = req.query.salvo;
+      const banner = await detalhaBanner(id);
+      return res.render("adminEditarBanner", {
+        infosBanner: banner,
+        feedbackEdicao,
+      });
+    } catch (e) {
+      return res.redirect("/admin/banners");
+    }
+  },
+  editarBanner: async (req, res) => {
+    try {
+      const { id } = req.params;
+      const infosBanner = req.body;
+
+      if (req.file) {
+        const imgNovoNome = `${Date.now()}-${req.file.originalname}`;
+        fs.renameSync(req.file.path, `${req.file.destination}/${imgNovoNome}`);
+        infosBanner.caminho = `/img/banners/${imgNovoNome}`;
+      }
+
+      await editaBanner(id, infosBanner);
+      return res.redirect(`/admin/banners/${id}/editar?salvo=true`);
+    } catch (e) {
+      return res.redirect(`/admin/banners/${id}/editar?salvo=false`);
+    }
+  },
 };
 
 module.exports = AdminController;

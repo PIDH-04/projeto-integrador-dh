@@ -15,8 +15,9 @@ create table administradores (
 create table banners (
 	id int not null primary key auto_increment,
     caminho varchar(256) not null,
-    descricao text not null,
+    descricao text null,
     link varchar(255) null,
+    nome varchar(255) not null,
     createdAt timestamp not null,
     updatedAt timestamp null,
     deletedAt timestamp null
@@ -276,7 +277,7 @@ INSERT INTO visitas (id, produtos_id, createdAt) VALUES
 	(2, 5, now()),
 	(3, 8, now());
 
-insert into banners (id, caminho, descricao, createdAt) values (1, '/img/banner1.jpeg', 'Cadeiras em promoção!', now());
+insert into banners (id, caminho, descricao, nome, createdAt) values (1, '/img/banner1.jpeg', 'Cadeiras em promoção!', 'Cadeiras em promocao', now());
 
 
 -- Consultas

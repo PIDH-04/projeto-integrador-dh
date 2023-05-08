@@ -29,9 +29,15 @@
         >
       </div>
 
-      <% if(feedbackDelete !== undefined){ %>
-        <div class="<%= feedbackDelete == 'true' ? 'sucesso' : 'erros' %>">
-          <%= feedbackDelete == 'true' ? 'Produto deletado com sucesso' : 'Erro ao deletar o produto' %>
+      <% if(locals.feedbackDelete !== undefined){ %>
+        <div class="<%= locals.feedbackDelete == 'true' ? 'sucesso' : 'erros' %>">
+          <%= locals.feedbackDelete == 'true' ? 'Produto deletado com sucesso' : 'Erro ao deletar o produto' %>
+        </div>
+      <% } %>
+
+      <% if(locals.feedbackCriacao !== undefined){ %>
+        <div class="<%= locals.feedbackCriacao == 'true' ? 'sucesso' : 'erros' %>">
+          <%= locals.feedbackCriacao == 'false' && 'Erro ao criar usuario' %>
         </div>
       <% } %>
 
