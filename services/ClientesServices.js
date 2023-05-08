@@ -5,13 +5,15 @@ const path = require('path');
 
 //listar clientes
 async function listaClientes(){
-  const clientes = Clientes.findAll();
-  return clientes
+  const clientes = await Clientes.findAll({include: "enderecos"})
+
+  return clientes;
 }
 
 //mostra cliente especifico
 async function buscaCliente(email) {
   const cliente = Clientes.findAll({where:{email:email}});
+
   return cliente;
 }
 
@@ -23,6 +25,16 @@ async function criarCliente(infosCliente) {
 function checaSenha(usuario, senha) {
   return bcrypt.compareSync(senha, usuario.senha);
 }
+
+//deleta cliente
+async function deletarCliente(idCliente){
+  let clienteParaRemover = await Clientes.destroy({ where: { id: idCliente}});
+
+  if (clienteParaRemover == 0) {
+    throw new Error("Cliente inexistente");
+  }
+}
+
 
 function editarUsuario (idUsuario , usuarios){
   const editUsuario = usuarios.find((usuario)=> usuario.id == idUsuario);
@@ -37,24 +49,11 @@ function editarUsuario (idUsuario , usuarios){
 }
 
 
-function deletarUsuario(idUsuario ){
-  const deleteUsuario = usuarios.find((usuario)=> usuario.id == idUsuario);
-  if(deleteUsuario == undefined){
-    return error("Usuario inexistente");
-  }
-  usuarios.splice(deleteUsuario,1);
-  salvar();
-}
 
 
 
- async function listarUsuarios(){
-  const usuariosFormatados = []
-  const clientes = await Clientes.findAll({include: "Enderecos"})
 
-  return clientes;
 
-}
 
 
 
