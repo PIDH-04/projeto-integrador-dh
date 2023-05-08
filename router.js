@@ -34,9 +34,9 @@ router.get('/checkoutpagamento', checaAutenticacaoUsuario, UsuarioController.che
 
 router.get("/checkoutDeEndereco", checaAutenticacaoUsuario, UsuarioController.checkoutEndereco);
 
-router.get("/produto/:slugProduto", ProdutosController.show);
+router.get("/produto/:idProduto", ProdutosController.show);
 
-router.get("/categorias/:slugCategoria?/:area?", ProdutosController.listagem);
+router.get("/categorias/:idCategoria?/:area?", ProdutosController.listagem);
 // o '?' torna o parametro dispensavel, podendo acessar o url '/categorias'
 
 router.get("/cadastro", UsuarioController.showCadastro);
