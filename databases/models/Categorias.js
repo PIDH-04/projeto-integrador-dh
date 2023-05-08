@@ -13,6 +13,10 @@ module.exports = (sequelize, DataTypes) => {
                 type: DataTypes.STRING(45),
                 allowNull: false
             },
+            slug:{
+                type: DataTypes.STRING(100),
+                allowNull: false
+            },
             caminho:{
                 type: DataTypes.STRING(255),
                 allowNull: false
@@ -31,7 +35,7 @@ module.exports = (sequelize, DataTypes) => {
     Categorias.associate = (models) => {
         Categorias.hasMany(
             models.Produtos,
-            {as: "produtos", foreignKey: "categorias_id"}
+            {as: "produtos", foreignKey: "categorias_slug"}
         );
     }
 

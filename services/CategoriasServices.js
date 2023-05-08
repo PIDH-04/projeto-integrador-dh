@@ -2,10 +2,13 @@ const {Produtos} = require('../databases/models');
 const categorias = require('../databases/Categorias.json');
 const fs = require('fs');
 const {Categorias} = require('../databases/models');
+const { log } = require('console');
 
 //exemplo função crud
 async function listarCategorias() {
   let categorias = await Categorias.findAll();
+  
+ 
   return categorias
 }
 

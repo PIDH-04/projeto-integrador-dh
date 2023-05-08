@@ -1,3 +1,4 @@
+
 drop database if exists emovel;
 create database emovel;
 use emovel;
@@ -92,8 +93,8 @@ create table areas(
 create table produtos (
 	id int not null primary key auto_increment,
     slug varchar(100) not null unique,
-    categorias_id int not null,
-    areas_id int not null,
+    categorias_slug varchar(100) not null,
+    areas_slug varchar(100) not null,
     nome varchar(45) not null,
     largura decimal not null,
     profundidade decimal not null,
@@ -104,8 +105,8 @@ create table produtos (
     createdAt timestamp not null,
     updatedAt timestamp null,
     deletedAt timestamp null,
-    foreign key (categorias_id) references categorias(id) on delete restrict on update cascade,
-    foreign key (areas_id) references areas(id) on delete restrict on update cascade
+    foreign key (categorias_slug) references categorias(slug) on delete restrict on update cascade,
+    foreign key (areas_slug) references areas(slug) on delete restrict on update cascade
 );
 
 
@@ -153,9 +154,9 @@ create table pedidos_has_produtos(
 
 create table visitas(
 	id int not null primary key auto_increment,
-    produtos_id int not null,
+    produtos_slug int not null,
 	createdAt timestamp not null,
-    foreign key (produtos_id) references produtos(id) on delete restrict on update cascade
+    foreign key (produtos_slug) references produtos(slug) on delete restrict on update cascade
 );
 
 -- Inserção de dados 
@@ -297,5 +298,3 @@ select
 	inner join areas as a on p.areas_id = a.id
 where 
 	p.areas_id = 1 and p.categorias_id = 2;
-
-

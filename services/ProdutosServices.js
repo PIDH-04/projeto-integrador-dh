@@ -1,4 +1,8 @@
-const {Produtos} = require('../databases/models');
+const {
+  Produtos
+} = require('../databases/models');
+
+
 const produtos = require('../databases/Produtos.json');
 const fs = require('fs');
 //const {Produtos} = require('../databases/models');
@@ -7,15 +11,18 @@ const fs = require('fs');
 
 
 
-function criarProduto(produto) {
+
+
+
+async function criarProduto(produto) {
 
   // Encontra o último ID dos produtos existentes e adiciona 1 para gerar um novo ID
   let id = 0;
-  
-  if(produtos.length > 0){
-    const ultimoID = produtos[produtos.length -1].id
+
+  if (produtos.length > 0) {
+    const ultimoID = produtos[produtos.length - 1].id
     id = ultimoID + 1
-  }else {
+  } else {
     id = 1;
   }
 
@@ -58,26 +65,30 @@ function editarProduto(id, novoProduto) {
   }
 }
 
-function listarProdutos() {
+async function listarProdutos() {
   const formatClientes = cliente => {
     return {
-        id: cliente.id,
-        nome: cliente.nome,
-        email: cliente.email,
-        senha: cliente.senha
+      id: cliente.id,
+      nome: cliente.nome,
+      email: cliente.email,
+      senha: cliente.senha
     }
+  }
+
+
+
+  let clientesFormatados = clientes.map(formatClientes);
+
+  //console.table(clientesFormatados);
+
 }
 
-
-
-let clientesFormatados = clientes.map(formatClientes);
-
-console.table(clientesFormatados); 
-
-}
-
-function mostrarProdutoSlug(slug) {
-  const produto = produtos.find(c => c.slug === slug);
+async function mostrarProdutoSlug(slug) {
+  const produto = await Produtos.findAll({ 
+    where:{slug}
+   
+  });
+  console.log(produto);
   return produto || null;
 }
 
@@ -110,38 +121,40 @@ function listarProdutosCategoria(categoria) {
   return produtosFiltrados.length > 0 ? produtosFiltrados : [];
 }
 
-  function criaSlug(nome) {
-    let slug = nome.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
-    slug = slug.replaceAll(' ', '-')
-    slug = slug.replaceAll("'", '-')
-    return slug
-  }
+function criaSlug(nome) {
+  let slug = nome.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
+  slug = slug.replaceAll(' ', '-')
+  slug = slug.replaceAll("'", '-')
+  return slug
+}
 
-function listarProdutosFiltrados(slugCategoria, area){
+async function listarProdutosFiltrados(slugCategoria, area) {
   if (slugCategoria && area) {
-    const produtosFiltrados = produtos.filter(produto => produto.categoria === slugCategoria && produto.area === area);
+    const produtosFiltrados = await Produtos.findAll()
+    console.log(produtosFiltrados)
+    //const produtosFiltrados = produtos.filter(produto => produto.categoria === slugCategoria && produto.area === area);
     return produtosFiltrados
-  }else if(slugCategoria) {
+  } else if (slugCategoria) {
     const produtosFiltrados = produtos.filter(produto => produto.categoria === slugCategoria);
     return produtosFiltrados
-  }else if(area) {
+  } else if (area) {
     const produtosFiltrados = produtos.filter(produto => produto.area === area);
     return produtosFiltrados
-  }else{
+  } else {
     return produtos
   }
-  }
+}
 
 
 
-  module.exports = {
-    criarProduto,
-    editarProduto,
-    listarProdutos,
-    mostrarProdutoSlug,
-    mostrarProdutoId,
-    excluirProdutoId,
-    listarProdutosCategoria,
-    criaSlug,
-    listarProdutosFiltrados
-  }
+module.exports = {
+  criarProduto,
+  editarProduto,
+  listarProdutos,
+  mostrarProdutoSlug,
+  mostrarProdutoId,
+  excluirProdutoId,
+  listarProdutosCategoria,
+  criaSlug,
+  listarProdutosFiltrados
+}

@@ -1,4 +1,4 @@
-const {Produtos} = require('../databases/models');
+const { Administradores} = require('../databases/models');
 const administradores = require("../databases/Administradores.json");
 const fs = require("fs");
 const bcrypt = require('bcrypt')
