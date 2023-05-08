@@ -15,6 +15,10 @@ async function buscaCliente(email) {
   return cliente;
 }
 
+//criar cliente
+async function criarCliente(infosCliente) {
+  const novoCliente = await Clientes.create(infosCliente);
+}
 
 function checaSenha(usuario, senha) {
   return bcrypt.compareSync(senha, usuario.senha);
@@ -32,12 +36,6 @@ function editarUsuario (idUsuario , usuarios){
   salvar();
 }
 
-function salvar (){
-  const arquivo = path.resolve(__dirname + '/../databases/Usuarios.json');
-  fs.writeFileSync(arquivo,JSON.stringify(usuarios,null,4));
-
-  
-}
 
 function deletarUsuario(idUsuario ){
   const deleteUsuario = usuarios.find((usuario)=> usuario.id == idUsuario);
@@ -48,11 +46,7 @@ function deletarUsuario(idUsuario ){
   salvar();
 }
 
-async function criarUsuario(usuario) {
 
-  const novoUsuario = await Clientes.create(usuario);
-
-}
 
  async function listarUsuarios(){
   const usuariosFormatados = []
