@@ -1,13 +1,37 @@
-const {
-  Produtos
-} = require('../databases/models');
+const { Produtos } = require('../databases/models');
 
+//listar todos os produtos
+async function listarProdutos() {
+  const produtos = Produtos.findAll();
+  return produtos
+}
 
-const produtos = require('../databases/Produtos.json');
-const fs = require('fs');
-//const {Produtos} = require('../databases/models');
+//listar produto de id especifico
+async function mostrarProdutoId(idProduto) {
+  const produto = await Produtos.findByPk(idProduto);
+  return produto
+}
 
-
+//lista os produtos filtrado(a partir dos parametros da url)
+async function listarProdutosFiltrados(idCategoria, idArea) {
+    let filtro = {};
+    if (idCategoria !== undefined) {
+      filtro = {
+        where: {
+          categorias_id: idCategoria
+        }
+      }
+    }
+    if (idArea !== undefined) {
+      filtro.include = [{
+        model: Areas,
+        where: { id: idArea }
+      }]
+    }
+  
+    const produtosFiltrados = await Produtos.findAll(filtro);
+    return produtosFiltrados;
+  }
 
 async function criarProduto(produto) {
 
@@ -60,39 +84,6 @@ function editarProduto(id, novoProduto) {
   }
 }
 
-async function listarProdutos() {
-  const formatClientes = cliente => {
-    return {
-      id: cliente.id,
-      nome: cliente.nome,
-      email: cliente.email,
-      senha: cliente.senha
-    }
-  }
-
-
-
-  let clientesFormatados = clientes.map(formatClientes);
-
-  //console.table(clientesFormatados);
-
-}
-
-async function mostrarProdutoSlug(slug) {
-  const produto = await Produtos.findAll({
-    where: {
-      slug
-    }
-
-  });
-  console.log(produto);
-  return produto || null;
-}
-
-function mostrarProdutoId(id) {
-  const produto = produtos.find(c => c.id == id);
-  return produto || null;
-}
 
 function excluirProdutoId(id) {
   // Encontrar o índice do produto a ser excluído pelo ID
@@ -113,45 +104,11 @@ function excluirProdutoId(id) {
   }
 }
 
-function listarProdutosCategoria(categoria) {
-  const produtosFiltrados = produtos.filter(produto => produto.categoria === categoria);
-  return produtosFiltrados.length > 0 ? produtosFiltrados : [];
-}
-
-function criaSlug(nome) {
-  let slug = nome.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
-  slug = slug.replaceAll(' ', '-')
-  slug = slug.replaceAll("'", '-')
-  return slug
-}
-
-async function listarProdutosFiltrados(slugCategoria, area) {
-  if (slugCategoria && area) {
-    const produtosFiltrados = await Produtos.findAll()
-    console.log(produtosFiltrados)
-    //const produtosFiltrados = produtos.filter(produto => produto.categoria === slugCategoria && produto.area === area);
-    return produtosFiltrados
-  } else if (slugCategoria) {
-    const produtosFiltrados = produtos.filter(produto => produto.categoria === slugCategoria);
-    return produtosFiltrados
-  } else if (area) {
-    const produtosFiltrados = produtos.filter(produto => produto.area === area);
-    return produtosFiltrados
-  } else {
-    return produtos
-  }
-}
-
-
-
 module.exports = {
   criarProduto,
   editarProduto,
   listarProdutos,
-  mostrarProdutoSlug,
   mostrarProdutoId,
   excluirProdutoId,
-  listarProdutosCategoria,
-  criaSlug,
   listarProdutosFiltrados
 }
