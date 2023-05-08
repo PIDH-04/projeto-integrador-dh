@@ -1,42 +1,26 @@
-const {Produtos} = require('../databases/models');
-const categorias = require('../databases/Categorias.json');
 const fs = require('fs');
 const {Categorias} = require('../databases/models');
-const { log } = require('console');
 
-//exemplo função crud
+//lista todas as categorias
 async function listarCategorias() {
   let categorias = await Categorias.findAll();
-  
- 
   return categorias
 }
 
-async function mostrarCategoriaSlug(slugCategoria) {
-  //const categoriaEncontrada = categorias.find(categoria => categoria.slug === slugCategoria);
-  const categoriaNeutra = await categorias[0];
+//mostrar categoria de id especifico
+async function mostrarCategoriaId(idCategoria) {
+  const categoriaEncontrada = Categorias.findByPk(idCategoria);
 
-  if (categoriaEncontrada) {
-    return categoriaEncontrada;
-  } else {
-    return categoriaNeutra;
-  }
+  if (categoriaEncontrada == undefined){
+    return Categorias.findByPk({
+      where:{id:1}
+    })
+}
+return categoriaEncontrada;
 }
 
-async function mostrarCategoriaId(id) {
-  //const categoriaEncontrada = categorias.find(categoria => categoria.id === id);
-  const categoriaEncontrada = await categorias.findAll(id);
-
-  if (categoriaEncontrada) {
-    return categoriaEncontrada;
-  } else {
-    return null;
-  }
-}
-
-async function editaCategoria(id, novasInfos){
-  //const indexCategoria = categorias.findIndex(categoria => categoria.id == id);
-  const indexCategoria = await Categoria.update(id,nome , slug, caminho ,descricao);
+function editaCategoria(id, novasInfos){
+  const indexCategoria = categorias.findIndex(categoria => categoria.id == id);
 
   if(indexCategoria == -1){
     return false
@@ -51,9 +35,8 @@ async function editaCategoria(id, novasInfos){
   return true
 }
 
-async function criaCategoria(infosCategoria){
- // const id = categorias[categorias.length - 1].id + 1;
- const criaCategoria = await criaCategoria.findAll(categoria)
+function criaCategoria(infosCategoria){
+  const id = categorias[categorias.length - 1].id + 1;
   
   const categoria = {
     id,
@@ -66,9 +49,8 @@ async function criaCategoria(infosCategoria){
   return categoria
 }
 
-async function deletaCategoria(id){
-  //const indexCategoria = categorias.findIndex(categoria => categoria.id == id)
-  const deletaCategoria = await indexCategoria.findAll(id)
+function deletaCategoria(id){
+  const indexCategoria = categorias.findIndex(categoria => categoria.id == id)
    if (indexCategoria !== -1) {
     categorias.splice(indexCategoria, 1);
     fs.writeFileSync('./databases/Categorias.json', JSON.stringify(categorias, null, 4));

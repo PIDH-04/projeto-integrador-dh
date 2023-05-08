@@ -1,8 +1,5 @@
 const CategoriasServices = require('../services/CategoriasServices');
 const ProdutosServices = require('../services/ProdutosServices');
-const {Produtos} = require('../databases/models');
-
-
 
 const ProdutosControllers = {
   show: async (req, res) => {
@@ -12,16 +9,11 @@ const ProdutosControllers = {
     console.log(produto);
     //produto.descricao = produto.descricao.replace('\r\n', " <br> ")
 
-    
-    
-
     return res.render('produto', {categorias, produto});
   },
   listagem: async (req, res) => {
      // Mostrar categorias para header e footer
      const categorias = await CategoriasServices.listarCategorias();
-    
-
     //Pegar parametro da url(slug)
     let slugCategoria = req.params.slugCategoria;
     //Alterar a categoria mostrada no banner da pagina
