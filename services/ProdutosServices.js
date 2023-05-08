@@ -14,26 +14,26 @@ async function mostrarProdutoId(idProduto) {
 
 //lista os produtos filtrado(a partir dos parametros da url)
 async function listarProdutosFiltrados(idCategoria, idArea) {
-    let filtro = {};
-    if (idCategoria !== undefined) {
-      filtro = {
-        where: {
-          categorias_id: idCategoria
-        }
+  let filtro = {};
+  if (idCategoria !== undefined) {
+    filtro = {
+      where: {
+        categorias_id: idCategoria
       }
     }
-    if (idArea !== undefined) {
-      filtro.include = [{
-        model: Areas,
-        where: { id: idArea }
-      }]
-    }
-  
-    const produtosFiltrados = await Produtos.findAll(filtro);
-    return produtosFiltrados;
+  }
+  if (idArea !== undefined) {
+    filtro.include = [{
+      model: Areas,
+      where: { id: idArea }
+    }]
   }
 
-  //cria produto
+  const produtosFiltrados = await Produtos.findAll(filtro);
+  return produtosFiltrados;
+}
+
+//cria produto
 async function criarProduto(infosProduto) {
   let produtoNovo = await Produtos.create(infosProduto);
 }
@@ -47,33 +47,18 @@ async function excluirProdutoId(idProduto) {
   }
 }
 
-function editarProduto(id, novoProduto) {
+//edita um produto
+async function editarProduto(idProduto, novasInfos) {
+  //acha o produto a ser editado pelo id
+  const produto = await Produtos.findByPk(idProduto);
 
-  // Encontrar o índice do produto a ser editado pelo ID
-  const index = produtos.findIndex(p => p.id == id);
-  if (index !== -1) {
+  //da error se o id do produto não corresponder a nenhum
+  if (produto === undefined) {
+    throw new Error("Produto inexistente");
+  };
 
-    // Atualizar o produto com os dados do novo produto
-    const produtoAtualizado = {
-      id: produtos[index].id,
-      ...novoProduto
-    };
-
-    // Substituir o produto antigo pelo produto atualizado no array de produtos
-    produtos[index] = produtoAtualizado;
-    // Escrever os dados atualizados no arquivo JSON
-    fs.writeFileSync('./databases/Produtos.json', JSON.stringify(produtos, null, 4));
-
-    // Retornar o produto atualizado
-    return produtoAtualizado;
-  } else {
-
-    // Retornar null se não encontrar o produto a ser editado
-    return null;
-  }
+  await produto.update(novasInfos);
 }
-
-
 
 module.exports = {
   criarProduto,
