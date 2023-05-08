@@ -19,6 +19,23 @@ async function mostrarCategoriaId(idCategoria) {
 return categoriaEncontrada;
 }
 
+//criar categoria
+async function criaCategoria(infosCategoria){
+  let categoriaNova = await Categorias.create(infosCategoria);
+}
+
+//deleta categoria
+async function deletaCategoria(idCategoria){
+  const indexCategoria = categorias.findIndex(categoria => categoria.id == id)
+   if (indexCategoria !== -1) {
+    categorias.splice(indexCategoria, 1);
+    fs.writeFileSync('./databases/Categorias.json', JSON.stringify(categorias, null, 4));
+    return true;
+  } else {
+    return false;
+  }
+}
+//edita categoria
 function editaCategoria(id, novasInfos){
   const indexCategoria = categorias.findIndex(categoria => categoria.id == id);
 
@@ -35,30 +52,9 @@ function editaCategoria(id, novasInfos){
   return true
 }
 
-function criaCategoria(infosCategoria){
-  const id = categorias[categorias.length - 1].id + 1;
-  
-  const categoria = {
-    id,
-    ...infosCategoria
-  }
 
-  categorias.push(categoria)
-  fs.writeFileSync('./databases/Categorias.json', JSON.stringify(categorias,null,4));
 
-  return categoria
-}
 
-function deletaCategoria(id){
-  const indexCategoria = categorias.findIndex(categoria => categoria.id == id)
-   if (indexCategoria !== -1) {
-    categorias.splice(indexCategoria, 1);
-    fs.writeFileSync('./databases/Categorias.json', JSON.stringify(categorias, null, 4));
-    return true;
-  } else {
-    return false;
-  }
-}
 
 module.exports = {
   listarCategorias,
