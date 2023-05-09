@@ -26,12 +26,12 @@ body.admin-container #novo-produto-form > .duas-colunas{
 
 
 body.admin-container #novo-produto-form .duas-colunas div{
-    width: 52%;
+    width: 45%;
     display: block;
 }
 
 body.admin-container #novo-produto-form .duas-colunas div:last-child{
-    width: 40%;
+    width: 45%;
 }
 
 body.admin-container #novo-produto-form .duas-colunas .erro-valor{
@@ -136,7 +136,7 @@ body.admin-container .container-botoes button{
     margin-top: 0;
 }
 
-body.admin-container .container-botoes button:last-child{
+body.admin-container .container-botoes .delete-btn{
     background-color: #cd0808;
 }
 

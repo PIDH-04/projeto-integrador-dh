@@ -1,9 +1,10 @@
 body.admin-container #novo-produto-form .duas-colunas{
     flex-wrap: nowrap;
+    gap: 50px;
 }
 
 body.admin-container #novo-produto-form .duas-colunas div{
-    width: 45%;
+    width: 48%;
     display: block;
 }
 
@@ -12,10 +13,10 @@ body.admin-container #novo-produto-form .duas-colunas div:last-child{
 }
 
 body.admin-container #novo-produto-form .add-usuario div{
-    width: 45%;
+    width: 50%;
     display: block;
 }
 
 body.admin-container #novo-produto-form .add-usuario div:last-child{
-    width: 45%;
+    width: 50%;
 }
