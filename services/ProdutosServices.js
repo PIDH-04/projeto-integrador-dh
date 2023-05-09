@@ -1,4 +1,5 @@
 const { Produtos } = require('../databases/models');
+const { Areas } = require('../databases/models');
 
 //listar todos os produtos
 async function listarProdutos() {
@@ -21,13 +22,13 @@ async function listarProdutosFiltrados(idCategoria, idArea) {
         categorias_id: idCategoria
       }
     }
-  }
-  if (idArea !== undefined) {
-    filtro.include = [{
-      model: Areas,
-      where: { id: idArea }
-    }]
-  }
+ }
+    if (idArea !== undefined) {
+      filtro.include = [{
+        model: Areas,
+        where: { id: idArea }
+      }]
+    }
 
   const produtosFiltrados = await Produtos.findAll(filtro);
   return produtosFiltrados;
@@ -59,6 +60,7 @@ async function editarProduto(idProduto, novasInfos) {
 
   await produto.update(novasInfos);
 }
+
 
 module.exports = {
   criarProduto,
