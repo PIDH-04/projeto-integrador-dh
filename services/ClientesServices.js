@@ -19,7 +19,12 @@ async function buscaCliente(email) {
 
 //criar cliente
 async function criarCliente(infosCliente) {
+  console.log(infosCliente);
+ try {
   const novoCliente = await Clientes.create(infosCliente);
+ } catch (error) {
+  console.log(error);
+ } 
 }
 
 function checaSenha(cliente, senha) {
