@@ -110,7 +110,7 @@ create table pedidos(
     preco decimal(6,2) not null,
     formas_de_pagamento_id int not null,
     pagoAt timestamp null,
-    createdAt timestamp not null,
+    createdAt timestamp null,
     deletedAt timestamp null,
     entregueAt timestamp null,
     updatedAt timestamp null,
@@ -135,6 +135,27 @@ create table visitas(
 	createdAt timestamp not null,
     foreign key (produtos_slug) references produtos(slug) on delete restrict on update cascade
 );
+
+create table estados(
+	id int not null primary key auto_increment,
+	 nome varchar(45) not null
+);
+
+create table cidades(
+	id int not null primary key auto_increment,
+	 nome varchar(45) not null,
+      estados_id int not null,
+	foreign key (estados_id) references estados(id) on delete restrict on update cascade
+);
+
+create table fretes(
+	id int not null primary key auto_increment,
+	estados_id int not null,
+     preco decimal(6,2) not null,
+	foreign key (estados_id) references estados(id) on delete restrict on update cascade
+);
+
+
 
 -- Inserção de dados 
 
@@ -240,8 +261,8 @@ INSERT INTO formas_de_pagamento (id, nome) VALUES
 	(4, "cartão de débito");
     
     
-INSERT INTO enderecos (id, clientes_id, bairro, logradouro, numero, cidades_id, cep, createdAt) VALUES
-    (1, 1, "parecida", "Rua Juju Ferreira", 100, 1, "90100000", now());
+INSERT INTO enderecos (id, clientes_id, bairro, logradouro, numero, cep, createdAt) VALUES
+    (1, 1, "parecida", "Rua Juju Ferreira", 100, "90100000", now());
     
 INSERT INTO pedidos (id, enderecos_id, clientes_id, formas_de_pagamento_id, preco, createdAt) VALUES (1, 1, 1, 2, 1000.00, now());
 
