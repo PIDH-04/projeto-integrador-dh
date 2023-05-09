@@ -68,14 +68,18 @@
               >
                 <img src="/img/editar.svg" alt="del" />
               </a>
-              <form action="/admin/produtos/<%= produto.id %>/delete?_method=DELETE" method="POST">
-                <button><img src="/img/remover.svg" alt="del" type="submit" /></button>
-              </form>
+              <div class='delete-btn'>
+                <img src="/img/remover.svg" alt="del" type="submit" />
+              </div>
+              <%- include("partials/deleteModal", {
+                action: `/admin/produtos/${produto.id}/delete?_method=DELETE`}) 
+              %>
             </td>
           </tr>
           <% } %>
         </tbody>
       </table>
     </main>
+    <script src="/scripts/deleteModal.js"></script>
   </body>
 </html>

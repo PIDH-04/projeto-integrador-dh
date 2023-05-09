@@ -1,0 +1,52 @@
+body.admin-container .container-botoes .modal{
+    position: fixed;
+    width: 100%;
+    background-color: rgba(0,0,0,0.4);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+  }
+  
+  body.admin-container .container-botoes .modal.-active{
+    display: flex;
+  }
+  
+  body.admin-container .container-botoes .modal > div{
+    background-color: #fff;
+    display: block;
+    padding:24px;
+    border-radius: 8px;
+  }
+  
+  body.admin-container .container-botoes .modal > div h3{
+    text-align: left;
+    margin-bottom: 16px;
+  }
+  
+  body.admin-container .container-botoes .modal > div .modal-btns{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 24px;
+    gap: 24px;
+  }
+  
+  body.admin-container .container-botoes .modal > div .modal-btns button{
+    background-color: #cd0808;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  body.admin-container .container-botoes .modal > div .modal-btns span{
+    font-size: 14px;
+    cursor: pointer;
+    font-family: var(--font-paragrafo);
+  }
+  
+  body.admin-container .container-botoes .modal > div .modal-btns span:hover{
+    opacity: 0.8;
+  }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <%- include("partials/adminHead", {css: ["baseAdmin.css",
-  "adminAddProduto.css"], titulo: "Editar Categoria | E-móvel"}) %>
+  "adminAddProduto.css", "deleteModal.css"], titulo: "Editar Categoria | E-móvel"}) %>
   <body class="admin-container">
     <%- include("partials/adminHeader") %>
     <%- include("partials/topoPg") %>
@@ -59,11 +59,15 @@
       
       <div class="container-botoes">
         <button class="botao-secundario" type="submit" form="novo-produto-form">Salvar</button>
-        <form action="/admin/categorias/<%= categoria.id %>/delete?_method=DELETE" method="POST" id="delete-form">
-            <button class="botao-secundario apagar" id="delete-btn" type="submit">Apagar categoria</button>
-        </form>
+        <button class='delete-btn botao-secundario'>
+          Remover
+        </button>
+        <%- include("partials/deleteModal", {
+          action: `/admin/categorias/${categoria.id}/delete?_method=DELETE`}) 
+        %>
       </div>
     </main>
     <script src="/scripts/adminProduto.js"></script>
+    <script src="/scripts/deleteModal.js"></script>
   </body>
 </html>
