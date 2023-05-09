@@ -12,8 +12,8 @@
           <li id="categoriaMobile">
             <a>Categorias</a>
             <ul id="categoriasMobile">
-              <% for(const c of categorias) { %>
-                <li><a href="/categorias/<%= c.link %>">
+              <% for(let c of categorias) { %>
+                <li><a href="/categorias/<%= c.id%>">
                     <%= c.nome %>
                   </a></li>
                 <% } %>
@@ -34,7 +34,7 @@
       <div class="Categoria" href="/categorias/:categorias">Categorias
         <ul id="categorias">
           <% for(let i = 1; i < categorias.length; i++) { %>
-            <li><a href="/categorias/<%= categorias[i].slug %>">
+            <li><a href="/categorias/<%= categorias[i].id %>">
                 <%= categorias[i].nome %>
               </a></li>
             <% } %>

@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
                 allowNull: false
             },
             nome:{
-                type: DataTypes.STRING(255),
+                type: DataTypes.STRING(45),
                 allowNull: false
             },
             largura:{

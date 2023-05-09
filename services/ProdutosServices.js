@@ -1,128 +1,70 @@
-const produtos = require('../databases/Produtos.json');
-const fs = require('fs');
+const { Produtos } = require('../databases/models');
 
-
-function criarProduto(produto) {
-
-  // Encontra o último ID dos produtos existentes e adiciona 1 para gerar um novo ID
-  let id = 0;
-  
-  if(produtos.length > 0){
-    const ultimoID = produtos[produtos.length -1].id
-    id = ultimoID + 1
-  }else {
-    id = 1;
-  }
-
-  // Adiciona o ID ao objeto de produto
-  produto.id = id;
-
-  // Adiciona o produto ao array de produtos
-  produtos.push(produto);
-
-  // Escreve o array atualizado de produtos no arquivo JSON
-  fs.writeFileSync('./databases/Produtos.json', JSON.stringify(produtos, null, 4));
-
-  // Retorna o produto criado
-  return produto;
+//listar todos os produtos
+async function listarProdutos() {
+  const produtos = Produtos.findAll();
+  return produtos
 }
 
-function editarProduto(id, novoProduto) {
+//listar produto de id especifico
+async function mostrarProdutoId(idProduto) {
+  const produto = await Produtos.findByPk(idProduto);
+  return produto
+}
 
-  // Encontrar o índice do produto a ser editado pelo ID
-  const index = produtos.findIndex(p => p.id == id);
-  if (index !== -1) {
+//lista os produtos filtrado(a partir dos parametros da url)
+async function listarProdutosFiltrados(idCategoria, idArea) {
+  let filtro = {};
+  if (idCategoria !== undefined) {
+    filtro = {
+      where: {
+        categorias_id: idCategoria
+      }
+    }
+  }
+  if (idArea !== undefined) {
+    filtro.include = [{
+      model: Areas,
+      where: { id: idArea }
+    }]
+  }
 
-    // Atualizar o produto com os dados do novo produto
-    const produtoAtualizado = {
-      id: produtos[index].id,
-      ...novoProduto
-    };
+  const produtosFiltrados = await Produtos.findAll(filtro);
+  return produtosFiltrados;
+}
 
-    // Substituir o produto antigo pelo produto atualizado no array de produtos
-    produtos[index] = produtoAtualizado;
-    // Escrever os dados atualizados no arquivo JSON
-    fs.writeFileSync('./databases/Produtos.json', JSON.stringify(produtos, null, 4));
+//cria produto
+async function criarProduto(infosProduto) {
+  let produtoNovo = await Produtos.create(infosProduto);
+}
 
-    // Retornar o produto atualizado
-    return produtoAtualizado;
-  } else {
+//deleta produto
+async function excluirProdutoId(idProduto) {
+  let produtoParaRemover = await Produtos.destroy({ where: { id: idProduto } });
 
-    // Retornar null se não encontrar o produto a ser editado
-    return null;
+  if (produtoParaRemover == 0) {
+    throw new Error("Produto inexistente");
   }
 }
 
-function listarProdutos() {
-  return produtos;
+//edita um produto
+async function editarProduto(idProduto, novasInfos) {
+  //acha o produto a ser editado pelo id
+  const produto = await Produtos.findByPk(idProduto);
+
+  //da error se o id do produto não corresponder a nenhum
+  if (produto === undefined) {
+    throw new Error("Produto inexistente");
+  };
+
+  await produto.update(novasInfos);
 }
 
-function mostrarProdutoSlug(slug) {
-  const produto = produtos.find(c => c.slug === slug);
-  return produto || null;
+module.exports = {
+  criarProduto,
+  editarProduto,
+  listarProdutos,
+  mostrarProdutoId,
+  excluirProdutoId,
+  listarProdutosFiltrados
 }
-
-function mostrarProdutoId(id) {
-  const produto = produtos.find(c => c.id == id);
-  return produto || null;
-}
-
-function excluirProdutoId(id) {
-  // Encontrar o índice do produto a ser excluído pelo ID
-  const indiceProduto = produtos.findIndex(p => p.id == id);
-
-  if (indiceProduto !== -1) {
-    // Remover o produto do array de produtos
-    produtos.splice(indiceProduto, 1);
-
-    // Escrever os dados atualizados no arquivo JSON
-    fs.writeFileSync('./databases/Produtos.json', JSON.stringify(produtos, null, 4));
-
-    // Retornar true se o produto foi excluído com sucesso
-    return true;
-  } else {
-    // Retornar false se não encontrar o produto a ser excluído
-    return false;
-  }
-}
-
-function listarProdutosCategoria(categoria) {
-  const produtosFiltrados = produtos.filter(produto => produto.categoria === categoria);
-  return produtosFiltrados.length > 0 ? produtosFiltrados : [];
-}
-
-  function criaSlug(nome) {
-    let slug = nome.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
-    slug = slug.replaceAll(' ', '-')
-    slug = slug.replaceAll("'", '-')
-    return slug
-  }
-
-function listarProdutosFiltrados(slugCategoria, area){
-  if (slugCategoria && area) {
-    const produtosFiltrados = produtos.filter(produto => produto.categoria === slugCategoria && produto.area === area);
-    return produtosFiltrados
-  }else if(slugCategoria) {
-    const produtosFiltrados = produtos.filter(produto => produto.categoria === slugCategoria);
-    return produtosFiltrados
-  }else if(area) {
-    const produtosFiltrados = produtos.filter(produto => produto.area === area);
-    return produtosFiltrados
-  }else{
-    return produtos
-  }
-  }
-
-
-
-  module.exports = {
-    criarProduto,
-    editarProduto,
-    listarProdutos,
-    mostrarProdutoSlug,
-    mostrarProdutoId,
-    excluirProdutoId,
-    listarProdutosCategoria,
-    criaSlug,
-    listarProdutosFiltrados
-  }

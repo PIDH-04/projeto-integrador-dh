@@ -9,10 +9,6 @@ module.exports = (sequelize, DataTypes) => {
                 allowNull: false,
                 primaryKey: true
             },
-            slug:{
-                type: DataTypes.STRING(100),
-                allowNull: false
-            },
             nome:{
                 type: DataTypes.STRING(45),
                 allowNull: false

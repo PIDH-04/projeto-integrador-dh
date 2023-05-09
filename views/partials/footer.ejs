@@ -12,7 +12,7 @@
     <nav class="menu">
       <ul class="categoria-principal">
           <% for(let i = 1; i < categorias.length; i++) { %>
-            <li href="/categorias/<%= categorias[i].slug %>"> <%= categorias[i].nome %> </li>
+            <li href="/categorias/<%= categorias[i].id %>"> <%= categorias[i].nome %> </li>
           <% } %>
       </ul>
 
