@@ -11,7 +11,12 @@ window.addEventListener('load', () => {
             if(window.location.pathname.includes('produtos')){
                 for(let i = 0; i < e.target.files.length; i++){
                     const src = URL.createObjectURL(e.target.files[i]);
-                    imgsContainer.innerHTML += `<img src=${src} />`
+                    imgsContainer.innerHTML += `
+                        <div class="miniatura-img-produto">
+                            <span class="remover-img">X</span>
+                            <img src="${src}" />
+                        </div>
+                  `
                 }
             
                 addEventListenerNasImagens()

@@ -45,14 +45,48 @@ body.admin-container #novo-produto-form  .duas-colunas .imgs-produto{
     display: flex;
     width: 100%;
     margin-top: -20px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     border-bottom: 1px solid var(--cor-secundaria);
-    gap: 10px;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding-top: 15px;
 }
 
-body.admin-container #novo-produto-form .imgs-produto img{
+
+body.admin-container #novo-produto-form .imgs-produto > div.miniatura-img-produto{
     width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    position: relative;
+}
+
+body.admin-container #novo-produto-form .imgs-produto > div.miniatura-img-produto .remover-img{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: var(--cor-erro);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    font-family: var(--font-paragrafo);
+    right: -15px;
+    top: -15px;
     cursor: pointer;
+}
+
+body.admin-container #novo-produto-form .imgs-produto > div.miniatura-img-produto img{
+    width:85%;
+    height: 85%;
+    cursor: pointer;
+    margin-right: 0;
+    object-fit: contain;
 }
 
 body.admin-container #novo-produto-form .duas-colunas div.medidas-container{
@@ -106,13 +140,17 @@ body.admin-container #novo-produto-form div.imagem-container {
     height: 250px;
     text-align: center;
     overflow: hidden;
-}   
-
-body.admin-container #novo-produto-form .imagem-container img {
-    margin: 0 auto;
-    height: 90%;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+body.admin-container #novo-produto-form div.imagem-container img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+}  
 
 body.admin-container #novo-produto-form select{
     width: 100%;
