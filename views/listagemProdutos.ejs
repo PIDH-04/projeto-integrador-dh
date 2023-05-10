@@ -17,7 +17,7 @@
           </div>
 
           <div class="icone-container">
-            <img src="/<%= categoria.caminho %>" alt="Ícone <%= categoria.nome %>" />
+            <img src="<%= categoria.caminho %>" alt="Ícone <%= categoria.nome %>" />
           </div>
         </div>
 
@@ -29,12 +29,12 @@
             </div>
             <form>
               <span>
-                <input name="areainterna" type="checkbox" />
+                <input name="areainterna" id="areainterna" type="checkbox" />
                 <label for="areainterna">Area Interna</label>
               </span>
 
               <span>
-                <input name="areaexterna" type="checkbox" />
+                <input name="areaexterna" id="areaexterna" type="checkbox" />
                 <label for="areaexterna">Area Externa</label>
               </span>
             </form>
@@ -85,6 +85,7 @@
           </div>
         </main>
         <%- include("partials/footer.ejs") %>
+        <script src="/scripts/filtrosArea.js"></script>
           <script src="/scripts/addProdutoCarrinho.js"></script>
   </body>
 

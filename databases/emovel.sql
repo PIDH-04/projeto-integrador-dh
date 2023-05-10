@@ -168,15 +168,15 @@ INSERT INTO areas (id, nome, createdAt) VALUES
 	(2, "externa", now());
 
 INSERT INTO categorias (id, nome, caminho, descricao, createdAt) VALUES 
-(1, "Móveis", "/img/moveis-icone.svg", "Os melhores móveis do Brasil no conforto de um click. Deixe sua casa mais aconchegante com a E-móvel. Sua casa merece!", now()),
-(2, "Mesas de Jantar", "img/mesasdejantar-icone.svg", "É um item fundamental para a casa. Pequenas, grandes, de vidro ou madeira, você encontra aqui!", now()),
-(3, "Cadeiras", "/img/cadeiras-icone.svg", "É um item fundamental para a casa. Estofadas, de acrílico ou madeira, você encontra aqui!", now()),
-(4, "Mesas de Centro", "/img/mesasdecentro-icone.svg", "O clássico das salas de estar. Pequenas, grandes, de vidro ou madeira, você encontra aqui!", now()),
-(5, "Sofás", "/img/sofas-icone.svg", "É um item fundamental para sua sala. Pequenos, grandes, de couro ou linho, você encontra aqui!", now()),
-(6, "Cômodas", "/img/comodas-icone.svg", "Ideal para quartos infantis. Pequenas, grandes, de madeira maciça ou mdf, você encontra aqui!", now()),
-(7, "Mesas Laterais", "/img/mesaslaterais-icone.svg", "Um item que traz conforto e praticidade para a sua casa. Unitárias ou conjunto, você encontra aqui!", now()),
-(8, "Balanços", "/img/balancos-icone.svg", "Item destaque para seu jardim. Pequenos, grandes, você encontra aqui!", now()),
-(9, "Armários", "/img/armarios-icone.svg", "É um item fundamental para a casa. Pequenos, grandes, de vidro ou madeira, você encontra aqui!", now());
+(1, "Móveis", "/img/mesa-icone.svg", "Os melhores móveis do Brasil no conforto de um click. Deixe sua casa mais aconchegante com a E-móvel. Sua casa merece!", now()),
+(2, "Mesas de Jantar", "/img/mesa-icone.svg", "É um item fundamental para a casa. Pequenas, grandes, de vidro ou madeira, você encontra aqui!", now()),
+(3, "Cadeiras", "/img/mesa-icone.svg", "É um item fundamental para a casa. Estofadas, de acrílico ou madeira, você encontra aqui!", now()),
+(4, "Mesas de Centro", "/img/mesa-icone.svg", "O clássico das salas de estar. Pequenas, grandes, de vidro ou madeira, você encontra aqui!", now()),
+(5, "Sofás", "/img/mesa-icone.svg", "É um item fundamental para sua sala. Pequenos, grandes, de couro ou linho, você encontra aqui!", now()),
+(6, "Cômodas", "/img/mesa-icone.svg", "Ideal para quartos infantis. Pequenas, grandes, de madeira maciça ou mdf, você encontra aqui!", now()),
+(7, "Mesas Laterais", "/img/mesa-icone.svg", "Um item que traz conforto e praticidade para a sua casa. Unitárias ou conjunto, você encontra aqui!", now()),
+(8, "Balanços", "/img/mesa-icone.svg", "Item destaque para seu jardim. Pequenos, grandes, você encontra aqui!", now()),
+(9, "Armários", "/img/mesa-icone.svg", "É um item fundamental para a casa. Pequenos, grandes, de vidro ou madeira, você encontra aqui!", now());
 
 INSERT INTO produtos (id, categorias_id, areas_id, nome, preco, descricao, largura, profundidade, altura, createdAt, peso) VALUES 
 (1, 3, 1, "Cadeira Saarinen", 100.00, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aperiam minima necessitatibus, quis blanditiis exercitationem veniam earum error quam cupiditate iste vitae accusamus voluptatem corporis ullam? Eos sit nisi vero.", 80, 80, 80, now(), 10.0),

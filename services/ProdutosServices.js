@@ -1,6 +1,5 @@
 const { Produtos } = require('../databases/models');
 const { Areas } = require('../databases/models');
-const { Imagens } = require('../databases/models');
 
 //listar todos os produtos
 async function listarProdutos() {
@@ -34,7 +33,6 @@ async function listarProdutosFiltrados(idCategoria, idArea) {
     }
 
   const produtosFiltrados = await Produtos.findAll(filtro);
-  console.log(produtosFiltrados[0].imagens[0].caminho)
 
   return produtosFiltrados;
 }
