@@ -12,7 +12,7 @@ async function listaClientes() {
 
 //mostra cliente especifico
 async function buscaCliente(email) {
-  const cliente = Clientes.findAll({ where: { email: email } });
+  const cliente = Clientes.findOne({ where: { email: email } });
 
   return cliente;
 }

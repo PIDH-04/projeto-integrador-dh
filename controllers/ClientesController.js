@@ -26,8 +26,9 @@ const CadastroController = {
 
 
     if (!cliente) return res.redirect(`/cadastro?${queryParamsErro}`)
+    console.log(cliente);
 
-    const senhaCorreta = await ClientesServices.checaSenha(cliente, senha)
+    const senhaCorreta = ClientesServices.checaSenha(cliente, senha)
 
     if (!senhaCorreta) return res.redirect(`/cadastro?${queryParamsErro}`)
 
