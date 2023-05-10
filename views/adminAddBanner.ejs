@@ -35,6 +35,7 @@
               placeholder="Novo banner"
               value="<%= locals.infosBanner && locals.infosBanner.nome %>"
             />
+            <p class="erro-valor erro-nome"></p>
 
             <% if (locals.erros && locals.erros.nome) { %>
               <p class="erro-valor"><%= erros.nome.msg %></p>
@@ -70,6 +71,8 @@
               value="<%= locals.infosBanner && locals.infosBanner.img %>"
             />
 
+            <p class="erro-valor erro-img"></p>
+
             <% if (locals.erros && locals.erros.imagem) { %>
               <p class="erro-valor"><%= erros.imagem.msg %></p>
             <% } %>
@@ -80,5 +83,6 @@
       </form>
     </main>
     <script src="/scripts/adminProduto.js"></script>
+    <script src="/scripts/adminEditarBanner.js"></script>
   </body>
 </html>

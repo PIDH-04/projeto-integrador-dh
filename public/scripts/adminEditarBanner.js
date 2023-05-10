@@ -1,11 +1,21 @@
 window.addEventListener('load', () => {
     const form = document.getElementById('novo-produto-form')
     const campoNome = document.getElementById('nome')
-    const erro = document.querySelector('.erro-nome')
+    const erroNome = document.querySelector('.erro-nome')
+    const erroImg = document.querySelector('.erro-img')
+    const img = document.getElementById('img')
 
     function handleSubmit(e){
+        erroNome.innerText = ''
+        erroImg.innerText = ''
+
         if(campoNome.value == ''){
-            erro.innerText = 'O nome deve ser preenchido'
+            erroNome.innerText = 'O nome deve ser preenchido'
+            e.preventDefault()
+        }
+
+        if(img.files.length == 0){
+            erroImg.innerText = 'Selecione pelo menos uma imagem'
             e.preventDefault()
         }
     }
