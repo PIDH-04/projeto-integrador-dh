@@ -69,8 +69,8 @@ const AdminController = {
     const clientes = listarUsuarios();
     res.render("adminClientes", { clientes });
   },
-  showProdutos: (req, res) => {
-    const produtos = listarProdutos();
+  showProdutos: async (req, res) => {
+    const produtos = await listarProdutos();
     const feedbackDelete = req.query.delete;
     res.render("adminProdutos", { produtos, feedbackDelete });
   },
@@ -113,11 +113,12 @@ const AdminController = {
 
     return res.redirect(`/admin/produtos/${produtoSalvo.id}/editar?salvo=true`);
   },
-  showEditarProduto: (req, res) => {
+  showEditarProduto: async (req, res) => {
     const { id } = req.params;
     const feedbackEdicao = req.query.salvo;
     const categorias = listarCategorias();
-    const produto = mostrarProdutoId(id);
+    const produto = await mostrarProdutoId(id);
+    console.log(produto.imagens[0].caminho)
     res.render("adminEditarProduto", { produto, categorias, feedbackEdicao });
   },
   editarProduto: (req, res) => {

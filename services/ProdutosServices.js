@@ -1,5 +1,19 @@
 const produtos = require('../databases/Produtos.json');
+const {Produtos} = require('../databases/models')
 const fs = require('fs');
+
+
+//listar todos os produtos
+async function listarProdutos() {
+  const produtos = Produtos.findAll({include:'imagens'});
+  return produtos
+}
+
+//listar produto de id especifico
+async function mostrarProdutoId(idProduto) {
+  const produto = await Produtos.findByPk(idProduto, {include: 'imagens'});
+  return produto
+}
 
 
 function criarProduto(produto) {
@@ -53,19 +67,19 @@ function editarProduto(id, novoProduto) {
   }
 }
 
-function listarProdutos() {
-  return produtos;
-}
+// function listarProdutos() {
+//   return produtos;
+// }
 
 function mostrarProdutoSlug(slug) {
   const produto = produtos.find(c => c.slug === slug);
   return produto || null;
 }
 
-function mostrarProdutoId(id) {
-  const produto = produtos.find(c => c.id == id);
-  return produto || null;
-}
+// function mostrarProdutoId(id) {
+//   const produto = produtos.find(c => c.id == id);
+//   return produto || null;
+// }
 
 function excluirProdutoId(id) {
   // Encontrar o índice do produto a ser excluído pelo ID
@@ -117,5 +131,5 @@ function listarProdutosCategoriaSlug(slugCategoria) {
     excluirProdutoId,
     listarProdutosCategoria,
     listarProdutosCategoriaSlug,
-    criaSlug
+    criaSlug,
   }

@@ -51,13 +51,13 @@
               </div>
 
               <div>
-                <label>Comprimento</label>
+                <label>Profundidade</label>
                 <input
                   type="text"
-                  name="comprimento"
-                  id="comprimento"
+                  name="profundidade"
+                  id="profundidade"
                   placeholder="90"
-                  value="<%= locals.produto && locals.produto.comprimento ? locals.produto.comprimento : '' %>"
+                  value="<%= locals.produto && locals.produto.profundidade ? locals.produto.profundidade : '' %>"
                 />
                 <% if (locals.erros && locals.erros.comprimento) { %>
                 <p class="erro-valor"><%= erros.comprimento.msg %></p>

@@ -25,13 +25,22 @@ window.addEventListener('load', () => {
     }
 
     function addEventListenerNasImagens(){
+        const miniaturas = imgsContainer.querySelectorAll('.miniatura-img-produto')
         const imgs = imgsContainer.querySelectorAll('img')
+        
         if(imgs.length > 0){
             for(let img of imgs){
                 img.removeEventListener('click', mudaPreview)
                 img.addEventListener('click', mudaPreview)
             }
         }
+        
+        miniaturas.forEach(miniatura => {
+            const deleteBtn = miniatura.querySelector('.remover-img')
+            deleteBtn.addEventListener('click', () => {
+                console.log('id do produto', miniatura.dataset.id)
+            })
+        })
     }
 
     function mudaPreview(){
