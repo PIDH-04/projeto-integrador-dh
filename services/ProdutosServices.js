@@ -1,14 +1,16 @@
 const { Produtos } = require('../databases/models');
+const { Areas } = require('../databases/models');
+const { Imagens } = require('../databases/models');
 
 //listar todos os produtos
 async function listarProdutos() {
-  const produtos = Produtos.findAll();
+  const produtos = Produtos.findAll({include:{Imagens}});
   return produtos
 }
 
 //listar produto de id especifico
 async function mostrarProdutoId(idProduto) {
-  const produto = await Produtos.findByPk(idProduto);
+  const produto = await Produtos.findByPk(idProduto, {include: {Imagens}});
   return produto
 }
 
@@ -19,17 +21,21 @@ async function listarProdutosFiltrados(idCategoria, idArea) {
     filtro = {
       where: {
         categorias_id: idCategoria
-      }
+      }, 
+      include:["imagens"]
     }
-  }
-  if (idArea !== undefined) {
-    filtro.include = [{
-      model: Areas,
-      where: { id: idArea }
-    }]
-  }
+ }
+    if (idArea !== undefined) {
+      filtro.include = [{
+        model: Areas,
+        where: { id: idArea },
+        as: 'areas'
+      }, "imagens"]
+    }
 
   const produtosFiltrados = await Produtos.findAll(filtro);
+  console.log(produtosFiltrados[0].imagens[0].caminho)
+
   return produtosFiltrados;
 }
 
@@ -59,6 +65,7 @@ async function editarProduto(idProduto, novasInfos) {
 
   await produto.update(novasInfos);
 }
+
 
 module.exports = {
   criarProduto,

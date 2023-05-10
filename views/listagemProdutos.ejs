@@ -17,7 +17,7 @@
           </div>
 
           <div class="icone-container">
-            <img src="<%= categoria.icone %>" alt="Ícone <%= categoria.nome %>" />
+            <img src="/<%= categoria.caminho %>" alt="Ícone <%= categoria.nome %>" />
           </div>
         </div>
 
@@ -25,30 +25,17 @@
           <div class="filtros-container">
             <div class="header">
               <h4>Filtros</h4>
-              <a href="/categorias/<%= categoria.id %>">
-                <p>Limpar filtros</p>
-              </a>
-              
+              <p>Limpar filtros</p>
             </div>
             <form>
               <span>
-                <a href="/categorias/<%= categoria.id %>/interna">
-                  <div class="imagens-checkbox">
-                    <img src="/img/checkbox.png" class="imagem-checkbox">
-                    <img src="/img/checkbox-checked.png" class="imagem-checked">
-                  </div>
-                  <label for="areainterna">Area Interna</label>
-                </a>
+                <input name="areainterna" type="checkbox" />
+                <label for="areainterna">Area Interna</label>
               </span>
 
               <span>
-                <a href="/categorias/<%= categoria.id %>/externa">
-                  <div class="imagens-checkbox">
-                    <img src="/img/checkbox.png" class="imagem-checkbox">
-                    <img src="/img/checkbox-checked.png" class="imagem-checked">
-                  </div>
-                  <label for="areaexterna">Area Externa</label>
-                </a>
+                <input name="areaexterna" type="checkbox" />
+                <label for="areaexterna">Area Externa</label>
               </span>
             </form>
           </div>
@@ -68,11 +55,11 @@
 
 
             <div class="produtos">
-              <% for (let p of produtos) { %>
+              <% for (const p of produtos) { %>
                 <div class="produto">
                   <a href="/produto/<%= p.id %>">
                     <div class="img-container">
-                      <img class="imagem-produto" src="<%= p.img[0] %>" alt="<%= p.nome %>" />
+                      <img class="imagem-produto" src="<%= p.imagens[0].caminho %>" alt="<%= produtos.nome %>" />
                     </div>
                     <div class="informacoes-container">
                       <h3 class="titulo-produto">

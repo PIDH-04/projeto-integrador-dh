@@ -1,4 +1,3 @@
-
 drop database if exists emovel;
 create database emovel;
 use emovel;
