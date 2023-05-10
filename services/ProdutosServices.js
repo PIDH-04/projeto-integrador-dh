@@ -4,13 +4,13 @@ const { Imagens } = require('../databases/models');
 
 //listar todos os produtos
 async function listarProdutos() {
-  const produtos = Produtos.findAll({include:{Imagens}});
+  const produtos = Produtos.findAll({include:'imagens'});
   return produtos
 }
 
 //listar produto de id especifico
 async function mostrarProdutoId(idProduto) {
-  const produto = await Produtos.findByPk(idProduto, {include: {Imagens}});
+  const produto = await Produtos.findByPk(idProduto, {include: 'imagens'});
   return produto
 }
 
