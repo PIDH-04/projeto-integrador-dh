@@ -9,10 +9,10 @@ async function listarCategorias() {
 
 //mostrar categoria de id especifico
 async function mostrarCategoriaId(idCategoria) {
-  const categoriaEncontrada = Categorias.findByPk(idCategoria);
+  const categoriaEncontrada = await Categorias.findByPk(idCategoria);
 
   if (categoriaEncontrada == undefined) {
-    return Categorias.findByPk({
+    return await Categorias.findOne({
       where: { id: 1 }
     })
   }

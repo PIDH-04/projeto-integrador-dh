@@ -17,7 +17,7 @@
           </div>
 
           <div class="icone-container">
-            <img src="<%= categoria.icone %>" alt="Ícone <%= categoria.nome %>" />
+            <img src="/<%= categoria.caminho %>" alt="Ícone <%= categoria.nome %>" />
           </div>
         </div>
 
@@ -57,9 +57,9 @@
             <div class="produtos">
               <% for (const p of produtos) { %>
                 <div class="produto">
-                  <a href="/produto/<%= p.slug %>">
+                  <a href="/produto/<%= p.id %>">
                     <div class="img-container">
-                      <img class="imagem-produto" src="<%= p.img[0] %>" alt="<%= p.nome %>" />
+                      <img class="imagem-produto" src="<%= p.imagens[0].caminho %>" alt="<%= produtos.nome %>" />
                     </div>
                     <div class="informacoes-container">
                       <h3 class="titulo-produto">

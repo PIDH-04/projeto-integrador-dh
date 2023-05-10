@@ -1,4 +1,3 @@
-
 drop database if exists emovel;
 create database emovel;
 use emovel;
@@ -82,8 +81,8 @@ create table produtos (
     createdAt timestamp not null,
     updatedAt timestamp null,
     deletedAt timestamp null,
-    foreign key (categorias_slug) references categorias(slug) on delete restrict on update cascade,
-    foreign key (areas_slug) references areas(slug) on delete restrict on update cascade
+    foreign key (categorias_id) references categorias(id) on delete restrict on update cascade,
+    foreign key (areas_id) references areas(id) on delete restrict on update cascade
 );
 
 
@@ -131,9 +130,9 @@ create table pedidos_has_produtos(
 
 create table visitas(
 	id int not null primary key auto_increment,
-    produtos_slug int not null,
+    produtos_id int not null,
 	createdAt timestamp not null,
-    foreign key (produtos_slug) references produtos(slug) on delete restrict on update cascade
+    foreign key (produtos_id) references produtos(id) on delete restrict on update cascade
 );
 
 create table estados(
