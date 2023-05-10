@@ -5,6 +5,8 @@ const { Categorias } = require('../databases/models');
 async function listarCategorias() {
   let categorias = await Categorias.findAll();
   return categorias
+
+  
 }
 
 //mostrar categoria de id especifico
