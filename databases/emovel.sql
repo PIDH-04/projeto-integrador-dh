@@ -261,8 +261,8 @@ INSERT INTO formas_de_pagamento (id, nome) VALUES
 	(4, "cartão de débito");
     
     
-INSERT INTO enderecos (id, clientes_id, bairro, logradouro, numero, cep, createdAt) VALUES
-    (1, 1, "parecida", "Rua Juju Ferreira", 100, "90100000", now());
+INSERT INTO enderecos (id, clientes_id, bairro, logradouro, numero, cep, createdAt, cidade) VALUES
+    (1, 1, "parecida", "Rua Juju Ferreira", 100, "90100000", now(), 'São Paulo');
     
 INSERT INTO pedidos (id, enderecos_id, clientes_id, formas_de_pagamento_id, preco, createdAt) VALUES (1, 1, 1, 2, 1000.00, now());
 
