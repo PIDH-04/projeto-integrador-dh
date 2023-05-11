@@ -1,76 +1,57 @@
-const categorias = require('../databases/Categorias.json');
 const fs = require('fs');
+const { Categorias } = require('../databases/models');
 
-function listarCategorias() {
-  return categorias;
+//lista todas as categorias
+async function listarCategorias() {
+  let categorias = await Categorias.findAll();
+  return categorias
+}
+
+//mostrar categoria de id especifico
+async function mostrarCategoriaId(idCategoria) {
+  const categoriaEncontrada = await Categorias.findByPk(idCategoria);
+
+  if (categoriaEncontrada == undefined) {
+    return await Categorias.findOne({
+      where: { id: 1 }
+    })
+  }
+  return categoriaEncontrada;
+}
+
+//criar categoria
+async function criaCategoria(infosCategoria) {
+  let categoriaNova = await Categorias.create(infosCategoria);
+}
+
+//deleta categoria
+async function deletaCategoria(idCategoria) {
+
+  let categoriaParaRemover = await Categorias.destroy({ where: { id: idCategoria } });
+
+  if (categoriaParaRemover == 0) {
+    throw new Error("Categoria inexistente");
+  }
 
 }
 
-function mostrarCategoriaSlug(slugCategoria) {
-  const categoriaEncontrada = categorias.find(categoria => categoria.slug === slugCategoria);
-  const categoriaNeutra = categorias[0];
+//edita categoria
+async function editaCategoria(idCategoria, novasInfos) {
 
-  if (categoriaEncontrada) {
-    return categoriaEncontrada;
-  } else {
-    return categoriaNeutra;
-  }
-}
+  //acha a categoria a ser editada pelo id
+  const categoria = await Categorias.findByPk(idCategoria);
 
-function mostrarCategoriaId(id) {
-  const categoriaEncontrada = categorias.find(categoria => categoria.id === id);
-
-  if (categoriaEncontrada) {
-    return categoriaEncontrada;
-  } else {
-    return null;
-  }
-}
-
-function editaCategoria(id, novasInfos){
-  const indexCategoria = categorias.findIndex(categoria => categoria.id == id);
-
-  if(indexCategoria == -1){
-    return false
-  }
-
-  categorias[indexCategoria] = {
-    id: categorias[indexCategoria].id,
-    slug: categorias[indexCategoria].slug,
-    ...novasInfos
+  //da error se o id da categoria não corresponder a nenhum
+  if (categoria === undefined) {
+    throw new Error("Categoria inexistente");
   };
-  fs.writeFileSync('./databases/Categorias.json', JSON.stringify(categorias,null,4));
-  return true
-}
 
-function criaCategoria(infosCategoria){
-  const id = categorias[categorias.length - 1].id + 1;
-  
-  const categoria = {
-    id,
-    ...infosCategoria
-  }
+  await categoria.update(novasInfos);
 
-  categorias.push(categoria)
-  fs.writeFileSync('./databases/Categorias.json', JSON.stringify(categorias,null,4));
-
-  return categoria
-}
-
-function deletaCategoria(id){
-  const indexCategoria = categorias.findIndex(categoria => categoria.id == id)
-   if (indexCategoria !== -1) {
-    categorias.splice(indexCategoria, 1);
-    fs.writeFileSync('./databases/Categorias.json', JSON.stringify(categorias, null, 4));
-    return true;
-  } else {
-    return false;
-  }
 }
 
 module.exports = {
   listarCategorias,
-  mostrarCategoriaSlug,
   mostrarCategoriaId,
   editaCategoria,
   criaCategoria,

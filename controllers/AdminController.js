@@ -21,7 +21,7 @@ const {
   criaSlug,
   criarProduto,
 } = require("../services/ProdutosServices");
-const { checaSenha, listarUsuarios } = require("../services/UsuariosServices");
+const { checaSenha, listarUsuarios } = require("../services/ClientesServices");
 const bcrypt = require("bcrypt");
 const fs = require("fs");
 const { validationResult } = require("express-validator");
@@ -34,8 +34,8 @@ const AdminController = {
       const target = req.query.target;
       const erro = req.query.erro;
       return res.render("adminLogin", { target: target, erro: erro });
-    }
-  },
+      }
+ },
   login: (req, res) => {
     const { email, senha, target } = req.body;
     const verificaoesErros = validationResult(req);
