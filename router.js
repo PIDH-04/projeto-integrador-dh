@@ -8,6 +8,7 @@ const ClientesController = require("./controllers/ClientesController");
 const checaAutenticacaoAdmin = require('./middlewares/checaAutenticacaoAdmin');
 const checaAutenticacaoUsuario = require('./middlewares/checaAutenticacaoUsuario');
 const validacoesExpress = require('./helpers/validacoesExpress');
+const gravarAcessoProduto = require('./middlewares/gravarAcessoProduto');
 
 const router = express.Router()
 
@@ -34,7 +35,7 @@ router.get('/checkoutpagamento', checaAutenticacaoUsuario, ClientesController.ch
 
 router.get("/checkoutDeEndereco", checaAutenticacaoUsuario, ClientesController.checkoutEndereco);
 
-router.get("/produto/:idProduto", ProdutosController.show);
+router.get("/produto/:idProduto", gravarAcessoProduto, ProdutosController.show);
 
 router.get("/categorias/:idCategoria?/:idArea?", ProdutosController.listagem);
 // o '?' torna o parametro dispensavel, podendo acessar o url '/categorias'

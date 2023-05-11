@@ -1,10 +1,14 @@
-const produtos = require("../databases/Produtos.json");
+const {Produtos} = require("../databases/models");
+const {Visitas} = require('../databases/models');
 
 const gravarAcessoProduto = (req, res, next)=>{
-    if(req.params === produtos.slug){
-        //req.params ta pegando só o slug do produto acessado
+    if(req.params === Produtos.id){
+        //req.params ta pegando só o id do produto acessado
 
         //score no banco de dados
+        Visitas.create({
+            produtos_id:req.params
+        })
     }
 
     next()
