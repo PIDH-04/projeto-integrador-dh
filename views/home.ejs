@@ -9,19 +9,19 @@
         <div class="slides active">
           <div class="slide">
             <h1 class="banner-text">PROMOÇÃO CLIENTES E-MÓVEL</h1>
-            <a class="botao-secundario" href="/categorias">Veja mais</a>
+            <a class="botao-secundario" href="/categorias/1">Veja mais</a>
           </div>
         </div>
         <div class="slides">
           <div class="slide">
             <h1 class="banner-text">ARMÁRIOS DE COZINHA SOB MEDIDA</h1>
-            <a class="botao-secundario" href="/categorias">Veja mais</a>
+            <a class="botao-secundario" href="/categorias/9">Veja mais</a>
           </div>
         </div>
         <div class="slides">
           <div class="slide">
-            <h1 class="banner-text">ÁREA EXCLUSIVA PARA ARQUITETOS</h1>
-            <a class="botao-secundario" href="/categorias">Veja mais</a>
+            <h1 class="banner-text">CRIE SEU MÓVEL EXCLUSIVO</h1>
+            <a class="botao-secundario" href="/cadastro">Veja mais</a>
           </div>
         </div>
         <div class="btn" id="prev"></div>
@@ -32,42 +32,20 @@
         <section class="vitrine">
           <h1>Produtos em destaque</h1>
           <div class="products-container">
+            <% for (const d of destaque) { %>
             <div class="product-card">
-              <a class="botao-primario" href="/produto/mesa-de-jantar-monaco">
+              <a class="botao-primario" href="/produto/<%= d.produtos.id %>">
                 <div class="imgDestaque">
-                  <img src="/img/mesa-monaco.png" alt="Foto Mesa de jantar Mônaco"/>
+                  <img src="<%= d.produtos.imagens[0].caminho %>" alt="Foto <%= d.produtos.nome %>"/>
               </div>
                 <div class="card">
-                  <h2>Mesa de Jantar Mônaco</h2>
-                  <p>R$ 800,00</p>
-                  <div class="ver" href="/produto/mesa-de-jantar-monaco">Veja mais</div>
+                  <h2><%= d.produtos.nome %></h2>
+                  <p>R$ <%= d.produtos.preco %></p>
+                  <div class="ver" href="/produto/<%= d.produtos.id %>">Veja mais</div>
                 </div>
               </a>
             </div>
-            <div class="product-card">
-              <a class="botao-primario" href="/produto/cadeira-saarinen">
-                <div class="imgDestaque">
-                  <img src="/img/cadeira-saarinen-preta.png" alt="Foto Cadeira" />
-                </div>
-                <div class="card">
-                  <h2>Cadeira Preta Saarinen</h2>
-                  <p>R$ 800,00</p>
-                  <div class="ver" href="/produto/cadeira-saarinen">Veja mais</div>
-                </div>
-              </a>
-            </div>
-            <div class="product-card">
-              <a class="botao-primario" href="/produto/sofa-pleno">
-                <div class="imgDestaque">
-                  <img src="/img/sofa-pleno-preto.png" alt="Foto Sofa Descanso Pleno" />
-                </div>
-                <div class="card">
-                  <h2>Sofá Descanso Pleno</h2>
-                  <p>R$ 800,00</p>
-                  <div class="ver" href="/produto/sofa-pleno">Veja mais</div>
-                </div>
-              </a>
-            </div>
+            <% } %>
           </div>
         </section>
       </main>
@@ -84,7 +62,7 @@
           <% for(let i = 1; i < categorias.length; i++) { %>
           <a class="botao-icone" href="/categorias/<%= categorias[i].link %>">
             <div class="icone">
-              <img src="<%= categorias[i].icone %>" alt="Ícone <%= categorias[i].nome %>" />
+              <img src="<%= categorias[i].caminho %>" alt="Ícone <%= categorias[i].nome %>" />
             </div>
             <h2><%= categorias[i].nome %></h2>
           </a>
@@ -92,7 +70,7 @@
         </div>
         <div class="break"></div>
         <div>
-          <a class="botao-secundario" href="/categorias"
+          <a class="botao-secundario" href="/categorias/1"
             >Todos os produtos</a
           >
         </div>
