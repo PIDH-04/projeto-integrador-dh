@@ -31,8 +31,24 @@ function criarUsuario(usuario) {
   return usuario;
 }
 
+function listarUsuarios(){
+  const usuariosFormatados = []
+  
+  for(let usuario of usuarios){
+    usuariosFormatados.push({
+      nome: usuario.nome,
+      email: usuario.email,
+      id: usuario.id
+    })
+  }
+
+  return usuariosFormatados;
+}
+
+
 module.exports = {
   buscaUsuario,
   checaSenha,
-  criarUsuario
+  criarUsuario,
+  listarUsuarios
 };

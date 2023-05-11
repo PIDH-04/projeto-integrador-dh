@@ -53,10 +53,10 @@
         <h3 class="preco-produto">R$ <%= produto.preco %>,00</h3>
 
         <p>
-          <%= produto.descricao %>
+          <%- produto.descricao %>
         </p>
 
-        <p class="medidas">Medidas: <%= produto.medidas.largura %> x <%= produto.medidas.comprimento %> x <%= produto.medidas.altura %> m</p>
+        <p class="medidas">Medidas: <%= produto.medidas.largura %> x <%= produto.medidas.comprimento %> x <%= produto.medidas.altura %> cm</p>
 
         <form>
           <div class="seletor-quantidade">
@@ -73,9 +73,7 @@
           <!-- <div class="ordenacao-container">
             <div class="menu-selecao">
               <select name="ordenacao">
-                <% produto.cores.forEach(item => { %>
-                <option value=""><%= item %></option>
-                <% } ) %>
+               
             </select>
             </div>
           </div> -->

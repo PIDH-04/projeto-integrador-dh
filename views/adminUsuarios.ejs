@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <%- include("partials/adminHead", {css: ["baseAdmin.css",
-  "produtosAdmin.css"], titulo: "Produtos Admin | E-móvel"}) %>
+  "produtosAdmin.css"], titulo: "Usuários Admin | E-móvel"}) %>
   <body class="admin-container">
     <%- include("partials/adminHeader") %>
     <%- include("partials/topoPg") %>
     <main class="">
-      <h1>Produtos</h1>
+      <h1>Usuários Admin</h1>
       <div class="busca-container">
         <form>
-          <label for="busca-cliente">Busca Produto</label>
+          <label for="busca-cliente">Pesquisar usuários</label>
           <div>
             <input
               type="text"
               name="busca-produto"
               id="busca-produto"
-              placeholder="Digite o nome do produto"
+              placeholder="Digite o nome do usuário"
             />
             <button type="submit">
               <img src="/img/pesquisar.png" alt="Pesquisar" />
@@ -24,8 +24,8 @@
           </div>
         </form>
 
-        <a href="/admin/produtos/criar" class="botao-secundario"
-          >Adicionar Produto</a
+        <a href="/admin/usuarios/criar" class="botao-secundario"
+          >Adicionar Usuário</a
         >
       </div>
 
@@ -38,37 +38,26 @@
       <table>
         <thead>
           <tr>
-            <th>Imagem</th>
-            <th>Produto</th>
             <th>ID</th>
-            <th>Categoria</th>
-            <th>Preço</th>
+            <th>Nome</th>
+            <th>E-mail</th>
             <th>Ações</th>
           </tr>
         </thead>
         <tbody>
-          <% for(let produto of produtos){ %>
+          <% for(let usuario of usuarios){ %>
           <tr>
-            <td>
-              <div class="img-produto-container">
-                <img src="<%= produto.img[0] %>" alt="<%= produto.nome %>" />
-              </div>
-            </td>
-            <td>
-              <a href="/produto/<%= produto.slug %>" target="_blank"> <%= produto.nome %> </a>
-            </td>
-            <td><%= produto.id %></td>
-            <td><%= produto.categoria %></td>
-            <td><%= produto.preco.toLocaleString('pt-BR', {style: 'currency',
-              currency: 'BRL'}) %></td>
+            <td><%= usuario.id %></td>
+            <td><%= usuario.nome %></td>
+            <td><%= usuario.email %></td>
             <td class="acoes-container">
               <a
                 class="botao-secundario"
-                href="/admin/produtos/<%= produto.id %>/editar"
+                href="/admin/usuarios/<%= usuario.id %>/editar"
               >
                 <img src="/img/editar.svg" alt="del" />
               </a>
-              <form action="/admin/produtos/<%= produto.id %>/delete?_method=DELETE" method="POST">
+              <form action="/admin/usuarios/<%= usuario.id %>/delete?_method=DELETE" method="POST">
                 <button><img src="/img/remover.svg" alt="del" type="submit" /></button>
               </form>
             </td>

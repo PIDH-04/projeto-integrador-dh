@@ -18,7 +18,7 @@
 
       <% if(feedbackEdicao !== undefined){ %>
 
-        <div class="<%= feedbackEdicao == 'true' ? 'sucesso' : 'erro' %>">
+        <div class="<%= feedbackEdicao == 'true' ? 'sucesso' : 'erros' %>">
           <%= feedbackEdicao == 'true' ? 'Produto salvo' : 'Erro ao salvar o produto, tente novamente mais tarde' %>
         </div>
 
@@ -36,21 +36,49 @@
               value="<%= produto.nome %>"
             />
 
-            <label for="medidas">Medidas (L x P x A)</label>
-            <input
-              type="text"
-              name="medidas"
-              id="medidas"
-              placeholder="00 x 00 x 00"
-              value="90 x 90 x 90"
-            />
+          <label>Medidas (em cm)</label>
+          <div class="medidas-container">
+            <div>
+              <label>Largura</label>
+                <input
+                  type="text"
+                  name="largura"
+                  id="largura"
+                  placeholder="90"
+                  value="<%= produto.medidas.largura %>"
+                />
+            </div>
+
+            <div>
+              <label>Comprimento</label>
+                <input
+                  type="text"
+                  name="comprimento"
+                  id="comprimento"
+                  placeholder="90"
+                  value="<%= produto.medidas.comprimento %>"
+                />
+            </div>
+
+            <div>
+              <label>Altura</label>
+                <input
+                  type="text"
+                  name="altura"
+                  id="altura"
+                  placeholder="90"
+                  value="<%= produto.medidas.altura %>"
+                />
+            </div>
+
+          </div>
 
             <label for="descricao">Descrição</label>
             <textarea
               name="descricao"
               id="descricao"
               placeholder="Descreva seu produto"
-            ><%= produto.descricao %></textarea>
+            ><%- produto.descricao %></textarea>
 
             <label for="preco">Preço</label>
             <input
@@ -69,18 +97,28 @@
             <label class="imagem-produto-btn" for="img"
               >Selecionar imagens do produto</label
             >
-            <input type="file" name="img" id="img" id="imagem-produto" />
+            <input type="file" name="img" id="img" id="imagem-produto" multiple />
+            <div class="imgs-produto">
+              <% for(let img of produto.img){ %>
+                <img src="<%= img %>" />
+              <% } %>  
+            </div>
             <label>Selecione a Categoria do produto</label>
             <select name="categoria">
               <option disabled>Selecione uma categoria</option>
               <% for(let categoria of categorias){ %>
-                <option value="<%= categoria.nome %>"
-                  <%= produto.categoria == categoria.nome ? "selected" : null %>>
+                <option value="<%= categoria.slug %>"
+                  <%= produto.categoria == categoria.slug ? "selected" : null %>>
                   <%= categoria.nome %>
                 </option>
               <% } %>
             </select>
-            
+            <label>Selecione a Área do produto</label>
+            <select name="area">
+              <option disabled>Selecione uma área</option>
+              <option value="interna" <%= produto.area == "interna" ? "selected" : null %> >Área Interna</option>
+              <option value="externa" <%= produto.area == "externa" ? "selected" : null %>>Área Externa</option>
+            </select>
           </div>
         </div>
       </form>
