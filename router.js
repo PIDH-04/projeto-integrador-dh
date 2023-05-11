@@ -4,7 +4,7 @@ const multer = require('multer');
 const AdminController = require('./controllers/AdminController');
 const GeralController = require("./controllers/GeralController");
 const ProdutosController = require("./controllers/ProdutosController");
-const UsuarioController = require("./controllers/UsuarioController");
+const ClientesController = require("./controllers/ClientesController");
 const checaAutenticacaoAdmin = require('./middlewares/checaAutenticacaoAdmin');
 const checaAutenticacaoUsuario = require('./middlewares/checaAutenticacaoUsuario');
 const validacoesExpress = require('./helpers/validacoesExpress');
@@ -22,33 +22,34 @@ router.get("/master", (req, res) => {
 
 router.get("/", GeralController.home);
 
-router.get('/finalizacao-compra', checaAutenticacaoUsuario, UsuarioController.finalizacaoCompra);
+router.get('/finalizacao-compra', checaAutenticacaoUsuario, ClientesController.finalizacaoCompra);
 
 router.get("/carrinho", ProdutosController.showCarrinho);
 
-router.get('/login', UsuarioController.showLogin);
-router.post('/login', UsuarioController.login);
+router.get('/login', ClientesController.showLogin);
+router.post('/login', ClientesController.login);
 
-router.get('/login/email', UsuarioController.loginEmail);
+router.get('/login/email', ClientesController.loginEmail);
 
-router.get('/checkoutpagamento', checaAutenticacaoUsuario, UsuarioController.checkoutPagamento);
+router.get('/checkoutpagamento', checaAutenticacaoUsuario, ClientesController.checkoutPagamento);
 
-router.get("/checkoutDeEndereco", checaAutenticacaoUsuario, UsuarioController.checkoutEndereco);
+router.get("/checkoutDeEndereco", checaAutenticacaoUsuario, ClientesController.checkoutEndereco);
 
-router.get("/produto/:slugProduto", ProdutosController.show);
+router.get("/produto/:idProduto", ProdutosController.show);
 
-router.get("/categorias/:slugCategoria?", ProdutosController.listagem);
-// o '?' torna o slugCategoria dispensavel, podendo acessar o url '/categorias'
+router.get("/categorias/:idCategoria?/:idArea?", ProdutosController.listagem);
+// o '?' torna o parametro dispensavel, podendo acessar o url '/categorias'
 
-router.get("/cadastro", UsuarioController.showCadastro);
-router.get("/painelUsuario", checaAutenticacaoUsuario, UsuarioController.showPainelUsuario);
-// router.get("/statusDePedidos", UsuarioController.showstatusDePedido);
+router.get("/cadastro", ClientesController.showCadastro);
+router.post("/cadastro",ClientesController.criarCadastro);
+router.get("/painelUsuario", checaAutenticacaoUsuario, ClientesController.showPainelUsuario);
+// router.get("/statusDePedidos", ClientesController.showstatusDePedido);
 
 
 // Admin Routers
 router.get("/admin/", AdminController.showLogin);
 router.post("/admin/login", validacoesExpress.login ,AdminController.login);
-router.get("/admin/logout", UsuarioController.logout);
+router.get("/admin/logout", ClientesController.logout);
 router.get("/admin/clientes", checaAutenticacaoAdmin, AdminController.showClientes);
 router.get("/admin/produtos", checaAutenticacaoAdmin, AdminController.showProdutos);
 router.get("/admin/pedidos", checaAutenticacaoAdmin, AdminController.showPedidos);

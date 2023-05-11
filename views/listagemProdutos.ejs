@@ -7,7 +7,7 @@
       <%- include("partials/topoPg") %>
         <div class="banner-categoria">
           <div class="titulo-container">
-            <h2>
+            <h2 id="idCategoria" data-idCategoria="<%= categoria.id %>">
               <%= categoria.nome %>
             </h2>
             
@@ -17,7 +17,7 @@
           </div>
 
           <div class="icone-container">
-            <img src="<%= categoria.icone %>" alt="Ícone <%= categoria.nome %>" />
+            <img src="<%= categoria.caminho %>" alt="Ícone <%= categoria.nome %>" />
           </div>
         </div>
 
@@ -25,16 +25,16 @@
           <div class="filtros-container">
             <div class="header">
               <h4>Filtros</h4>
-              <p>Limpar filtros</p>
+              <p id="limpafiltro">Limpar filtros</p>
             </div>
             <form>
               <span>
-                <input name="areainterna" type="checkbox" />
+                <input name="areainterna" id="areainterna" type="checkbox" />
                 <label for="areainterna">Area Interna</label>
               </span>
 
               <span>
-                <input name="areaexterna" type="checkbox" />
+                <input name="areaexterna" id="areaexterna" type="checkbox" />
                 <label for="areaexterna">Area Externa</label>
               </span>
             </form>
@@ -57,9 +57,9 @@
             <div class="produtos">
               <% for (const p of produtos) { %>
                 <div class="produto">
-                  <a href="/produto/<%= p.slug %>">
+                  <a href="/produto/<%= p.id %>">
                     <div class="img-container">
-                      <img class="imagem-produto" src="<%= p.img[0] %>" alt="<%= p.nome %>" />
+                      <img class="imagem-produto" src="<%= p.imagens[0].caminho %>" alt="<%= produtos.nome %>" />
                     </div>
                     <div class="informacoes-container">
                       <h3 class="titulo-produto">
@@ -85,6 +85,7 @@
           </div>
         </main>
         <%- include("partials/footer.ejs") %>
+        <script src="/scripts/filtrosArea.js"></script>
           <script src="/scripts/addProdutoCarrinho.js"></script>
   </body>
 
