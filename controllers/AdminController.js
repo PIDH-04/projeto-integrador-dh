@@ -25,6 +25,7 @@ const {
   editarProduto,
   criaSlug,
   criarProduto,
+  adicionarImagensAoProduto,
 } = require("../services/ProdutosServices");
 const { checaSenha, listarUsuarios } = require("../services/ClientesServices");
 const bcrypt = require("bcrypt");
@@ -77,81 +78,80 @@ const AdminController = {
   showPedidos: (req, res) => {
     res.render("adminPedidos");
   },
-  showCriarProduto: (req, res) => {
-    const categorias = listarCategorias();
+  showCriarProduto: async (req, res) => {
+    const categorias = await listarCategorias();
     res.render("adminAddProduto", { categorias });
   },
-  gravaProduto: (req, res) => {
+  gravaProduto: async (req, res) => {
     const produto = req.body;
     const imgs = [];
+    try {
+      const erros = validationResult(req);
+      if (erros.errors.length > 0) {
+        const categorias = await listarCategorias();
+        return res.render("adminAddProduto", {
+          categorias,
+          erros: validationResult(req).mapped(),
+          produto,
+        });
+      }
 
-    const erros = validationResult(req);
-    if (erros.errors.length > 0) {
-      const categorias = listarCategorias();
-      return res.render("adminAddProduto", {
-        categorias,
-        erros: validationResult(req).mapped(),
-        produto,
-      });
+      for (let img of req.files) {
+        const imgNovoNome = `${Date.now()}-${img.originalname}`;
+        fs.renameSync(img.path, `${img.destination}/${imgNovoNome}`);
+        imgs.push({ caminho: `/img/produtos/${imgNovoNome}` });
+      }
+
+      produto.preco = parseInt(produto.preco);
+      produto.profundidade = parseInt(produto.profundidade);
+      produto.largura = parseInt(produto.largura);
+      produto.altura = parseInt(produto.altura);
+
+      // return res.json(produto)
+
+      const produtoSalvo = await criarProduto(produto, imgs);
+
+      return res.redirect(
+        `/admin/produtos/${produtoSalvo.id}/editar?salvo=true`
+      );
+    } catch (e) {
+      console.log(e);
+      return res.redirect(`/admin/produtos`);
     }
-
-    for (let img of req.files) {
-      const imgNovoNome = `${Date.now()}-${img.originalname}`;
-      fs.renameSync(img.path, `${img.destination}/${imgNovoNome}`);
-      imgs.push(`/img/produtos/${imgNovoNome}`);
-    }
-    produto.img = imgs;
-    produto.slug = criaSlug(produto.nome);
-    produto.preco = parseInt(produto.preco);
-    produto.medidas = {
-      comprimento: parseInt(produto.comprimento),
-      largura: parseInt(produto.largura),
-      altura: parseInt(produto.altura),
-    };
-
-    const produtoSalvo = criarProduto(produto);
-
-    return res.redirect(`/admin/produtos/${produtoSalvo.id}/editar?salvo=true`);
   },
   showEditarProduto: async (req, res) => {
     const { id } = req.params;
     const feedbackEdicao = req.query.salvo;
-    const categorias = listarCategorias();
+    const categorias = await listarCategorias();
     const produto = await mostrarProdutoId(id);
-    console.log(produto.imagens[0].caminho)
     res.render("adminEditarProduto", { produto, categorias, feedbackEdicao });
   },
-  editarProduto: (req, res) => {
+  editarProduto: async (req, res) => {
     const { id } = req.params;
     const produto = req.body;
     produto.preco = parseInt(produto.preco);
-    produto.slug = criaSlug(produto.nome);
-    produto.medidas = {
-      comprimento: parseInt(produto.comprimento),
-      largura: parseInt(produto.largura),
-      altura: parseInt(produto.altura),
-    };
-    const imgs = [];
 
-    if (req.files.length > 0) {
-      for (let img of req.files) {
-        const imgNovoNome = `${Date.now()}-${img.originalname}`;
-        fs.renameSync(img.path, `${img.destination}/${imgNovoNome}`);
-        imgs.push(`/img/produtos/${imgNovoNome}`);
+    try {
+      const imgs = [];
+
+      if (req.files.length > 0) {
+        for (let img of req.files) {
+          const imgNovoNome = `${Date.now()}-${img.originalname}`;
+          fs.renameSync(img.path, `${img.destination}/${imgNovoNome}`);
+          imgs.push({
+            produtos_id: id,
+            caminho: `/img/produtos/${imgNovoNome}`,
+          });
+        }
+
+        await adicionarImagensAoProduto(imgs);
       }
-      produto.img = imgs;
-    } else {
-      const produtoOriginal = mostrarProdutoId(id);
-      produto.img = produtoOriginal.img;
-    }
 
-    const produtoAtualizado = editarProduto(id, req.body);
-
-    if (!produtoAtualizado) {
+      await editarProduto(id, req.body);
+      return res.redirect(`/admin/produtos/${id}/editar?salvo=true`);
+    } catch (e) {
       return res.redirect(`/admin/produtos/${id}/editar?salvo=false`);
     }
-
-    return res.redirect(`/admin/produtos/${id}/editar?salvo=true`);
   },
   removeProduto: (req, res) => {
     const { id } = req.params;
@@ -162,68 +162,72 @@ const AdminController = {
     }
     return res.redirect("/admin/produtos?delete=true");
   },
-  showCategorias: (req, res) => {
-    const categorias = listarCategorias();
+  showCategorias: async (req, res) => {
+    const categorias = await listarCategorias();
     const feedbackDelete = req.query.delete;
     res.render("adminCategorias", { categorias, feedbackDelete });
   },
-  showEditarCategoria: (req, res) => {
+  showEditarCategoria: async (req, res) => {
     const { id } = req.params;
     const feedbackEdicao = req.query.salvo;
-    const categoria = mostrarCategoriaId(parseInt(id));
+    const categoria = await mostrarCategoriaId(parseInt(id));
+    console.log(categoria);
     res.render("adminEditarCategoria", { categoria, feedbackEdicao });
   },
-  editarCategoria: (req, res) => {
+  editarCategoria: async (req, res) => {
     const { id } = req.params;
     const infosCategoria = req.body;
     // Remover do editaCategoria a manutenção do slug
     // infosCategoria.slug = criaSlug(infosCategoria.nome)
 
-    if (req.file !== undefined) {
-      const imgNovoNome = `${Date.now()}-${req.file.originalname}`;
-      fs.renameSync(req.file.path, `${req.file.destination}/${imgNovoNome}`);
-      infosCategoria.icone = `/img/produtos/${imgNovoNome}`;
-    } else {
-      const categoriaOriginal = mostrarCategoriaId(parseInt(id));
-      infosCategoria.icone = categoriaOriginal.icone;
-    }
-    const categoriaEditada = editaCategoria(id, infosCategoria);
+    try {
+      if (req.file !== undefined) {
+        const imgNovoNome = `${Date.now()}-${req.file.originalname}`;
+        fs.renameSync(req.file.path, `${req.file.destination}/${imgNovoNome}`);
+        infosCategoria.caminho = `/img/produtos/${imgNovoNome}`;
+      } else {
+        const categoriaOriginal = await mostrarCategoriaId(parseInt(id));
+        infosCategoria.caminho = categoriaOriginal.caminho;
+      }
 
-    if (!categoriaEditada) {
+      await editaCategoria(id, infosCategoria);
+      return res.redirect(`/admin/categorias/${id}/editar?salvo=true`);
+    } catch (e) {
       return res.redirect(`/admin/categorias/${id}/editar?salvo=false`);
     }
-    return res.redirect(`/admin/categorias/${id}/editar?salvo=true`);
   },
   showCriarCategoria: (req, res) => {
     const feedbackEdicao = req.query.salvo;
     res.render("adminAddCategoria", { feedbackEdicao });
   },
-  gravarCategoria: (req, res) => {
+  gravarCategoria: async (req, res) => {
     const categoria = req.body;
-    categoria.slug = criaSlug(categoria.nome);
+    try {
+      const imgNovoNome = `${Date.now()}-${req.file.originalname}`;
+      fs.renameSync(req.file.path, `${req.file.destination}/${imgNovoNome}`);
+      categoria.caminho = `/img/produtos/${imgNovoNome}`;
 
-    const imgNovoNome = `${Date.now()}-${req.file.originalname}`;
-    fs.renameSync(req.file.path, `${req.file.destination}/${imgNovoNome}`);
-    categoria.icone = `/img/produtos/${imgNovoNome}`;
-
-    const categoriaSalva = criaCategoria(categoria);
-    return res.redirect(
-      `/admin/categorias/${categoriaSalva.id}/editar?salvo=true`
-    );
+      const categoriaSalva = await criaCategoria(categoria);
+      return res.redirect(
+        `/admin/categorias/${categoriaSalva.id}/editar?salvo=true`
+      );
+    } catch (e) {
+      console.log(e);
+      return res.redirect("/admin/categorias/criar");
+    }
   },
-  removeCategoria: (req, res) => {
-    const { id } = req.params;
-    const categoriaDeletada = deletaCategoria(id);
-
-    if (!categoriaDeletada) {
+  removeCategoria: async (req, res) => {
+    try {
+      const { id } = req.params;
+      await deletaCategoria(id);
+      return res.redirect("/admin/categorias?delete=true");
+    } catch (e) {
       return res.redirect("/admin/categorias?delete=false");
     }
-
-    return res.redirect("/admin/categorias?delete=true");
   },
   showUsuarios: async (req, res) => {
     const feedbackDelete = req.query.delete;
-    const feedbackCriacao = req.query.criacao
+    const feedbackCriacao = req.query.criacao;
     const usuarios = await Administradores.findAll();
     res.render("adminUsuarios", { usuarios, feedbackDelete, feedbackCriacao });
   },
@@ -272,18 +276,19 @@ const AdminController = {
     res.render("adminCriarUsuario", { feedbackEdicao: undefined });
   },
   gravarUsuario: async (req, res) => {
-    try{
+    try {
       const NovoUsuarioId = await gravaAdmin(req.body);
       return res.redirect(`/admin/usuarios/${NovoUsuarioId}/editar?salvo=true`);
-
-    }catch(e){
-      if(e.message == 'email must be unique'){
-        return res.render('adminCriarUsuario', { uniqueEmailError: true, infoPassada: req.body })
-      }else{
-        return res.redirect((`/admin/usuarios/?criacao=false`));
+    } catch (e) {
+      if (e.message == "email must be unique") {
+        return res.render("adminCriarUsuario", {
+          uniqueEmailError: true,
+          infoPassada: req.body,
+        });
+      } else {
+        return res.redirect(`/admin/usuarios/?criacao=false`);
       }
     }
-
   },
   showBanners: async (req, res) => {
     const feedbackDelete = req.query.delete;

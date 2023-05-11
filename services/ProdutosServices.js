@@ -1,16 +1,16 @@
-const { Produtos } = require('../databases/models');
-const { Areas } = require('../databases/models');
+const { Produtos, Imagens } = require("../databases/models");
+const { Areas } = require("../databases/models");
 
 //listar todos os produtos
 async function listarProdutos() {
-  const produtos = Produtos.findAll({ include: 'imagens' });
-  return produtos
+  const produtos = Produtos.findAll({ include: "imagens" });
+  return produtos;
 }
 
 //listar produto de id especifico
 async function mostrarProdutoId(idProduto) {
-  const produto = await Produtos.findByPk(idProduto, { include: 'imagens' });
-  return produto
+  const produto = await Produtos.findByPk(idProduto, { include: "imagens" });
+  return produto;
 }
 
 //lista os produtos filtrado(a partir dos parametros da url)
@@ -19,21 +19,23 @@ async function listarProdutosFiltrados(idCategoria, idArea) {
   if (idCategoria !== undefined && 1) {
     filtro = {
       where: {
-        categorias_id: idCategoria
+        categorias_id: idCategoria,
       },
-      include: ["imagens"]
-    }
+      include: ["imagens"],
+    };
   }
   if (idCategoria == 1) {
-    filtro = {model: Produtos,
-      include: ["imagens"]};
+    filtro = { model: Produtos, include: ["imagens"] };
   }
   if (idArea !== undefined) {
-    filtro.include = [{
-      model: Areas,
-      where: { id: idArea },
-      as: 'areas'
-    }, "imagens"]
+    filtro.include = [
+      {
+        model: Areas,
+        where: { id: idArea },
+        as: "areas",
+      },
+      "imagens",
+    ];
   }
 
   const produtosFiltrados = await Produtos.findAll(filtro);
@@ -43,13 +45,28 @@ async function listarProdutosFiltrados(idCategoria, idArea) {
 
 //lista as areas dos produtos
 async function listarAreas() {
-  const areas = Areas.findAll()
-  return areas
+  const areas = Areas.findAll();
+  return areas;
 }
 
 //cria produto
-async function criarProduto(infosProduto) {
-  let produtoNovo = await Produtos.create(infosProduto);
+async function criarProduto(infosProduto, imagens) {
+  try {
+    let produtoNovo = await Produtos.create(
+      { ...infosProduto, imagens: imagens },
+      {
+        include: {
+          model: Imagens,
+          as: 'imagens'
+        },
+      }
+    );
+
+    return produtoNovo
+  } catch (e) {
+    console.log(e);
+    throw new Error(e);
+  }
 }
 
 //deleta produto
@@ -64,16 +81,33 @@ async function excluirProdutoId(idProduto) {
 //edita um produto
 async function editarProduto(idProduto, novasInfos) {
   //acha o produto a ser editado pelo id
-  const produto = await Produtos.findByPk(idProduto);
+  // const produto = await Produtos.findByPk(idProduto);
+  try{
+    const produto = await Produtos.update(novasInfos, {where: {id: idProduto}})
 
-  //da error se o id do produto não corresponder a nenhum
-  if (produto === undefined) {
-    throw new Error("Produto inexistente");
-  };
+    if (produto === undefined) {
+      throw new Error('Produto não encontrado');
+    }
 
-  await produto.update(novasInfos);
+  }catch(e){
+    throw new Error(e);
+
+  }
+
+  // //da error se o id do produto não corresponder a nenhum
+
+  // await produto.update(novasInfos);
+
 }
 
+
+async function adicionarImagensAoProduto(imagens){
+  try{
+    await Imagens.bulkCreate(imagens)
+  }catch(e){
+    throw new Error(e)
+  }
+}
 
 module.exports = {
   criarProduto,
@@ -82,5 +116,6 @@ module.exports = {
   listarAreas,
   mostrarProdutoId,
   excluirProdutoId,
-  listarProdutosFiltrados
-}
+  listarProdutosFiltrados,
+  adicionarImagensAoProduto
+};

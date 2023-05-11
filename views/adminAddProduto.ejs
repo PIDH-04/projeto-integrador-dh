@@ -59,8 +59,8 @@
                   placeholder="90"
                   value="<%= locals.produto && locals.produto.profundidade ? locals.produto.profundidade : '' %>"
                 />
-                <% if (locals.erros && locals.erros.comprimento) { %>
-                <p class="erro-valor"><%= erros.comprimento.msg %></p>
+                <% if (locals.erros && locals.erros.profundidade) { %>
+                <p class="erro-valor"><%= erros.profundidade.msg %></p>
                 <% } %>
               </div>
               <div>
@@ -68,6 +68,13 @@
                 <input type="text" name="altura" id="altura" placeholder="90" value="<%= locals.produto && locals.produto.altura ? locals.produto.altura : '' %>"/>
                 <% if (locals.erros && locals.erros.altura) { %>
                 <p class="erro-valor"><%= erros.altura.msg %></p>
+                <% } %>
+              </div>
+              <div>
+                <label for="preco">Peso (em kg)</label>
+                <input type="text" name="peso" id="peso" placeholder="80" value="<%= locals.produto && locals.produto.peso ? locals.produto.peso : '' %>"/>
+                <% if (locals.erros && locals.erros.peso) { %>
+                <p class="erro-valor"><%= erros.peso.msg %></p>
                 <% } %>
               </div>
             </div>
@@ -103,10 +110,10 @@
             <div class="imgs-produto"></div>
             <input type="file" name="img" id="img" multiple />
             <label>Selecione a Categoria do produto</label>
-            <select name="categoria">
+            <select name="categorias_id">
               <option disabled selected>Selecione uma categoria</option>
               <% for(let categoria of categorias){ %>
-              <option value="<%= categoria.slug %>"<%= locals.produto && locals.produto.categoria == categoria.slug ? 'selected' : null %>>
+              <option value="<%= categoria.id %>"<%= locals.produto && locals.produto.categoria == categoria.id ? 'selected' : null %>>
                 <%= categoria.nome %>
               </option>
               <% } %>
@@ -115,10 +122,10 @@
             <p class="erro-valor"><%= erros.categoria.msg %></p>
             <% } %>
             <label>Selecione a Área do produto</label>
-            <select name="area">
+            <select name="areas_id">
               <option disabled selected>Selecione uma área</option>
-              <option value="interna" <%= locals.produto && locals.produto.area == 'interna' ? 'selected' : null %> >Área Interna</option>
-              <option value="externa" <%= locals.produto && locals.produto.area == 'externa' ? 'selected' : null %> >Área Externa</option>
+              <option value="1" <%= locals.produto && locals.produto.area == '1' ? 'selected' : null %> >Área Interna</option>
+              <option value="2" <%= locals.produto && locals.produto.area == '2' ? 'selected' : null %> >Área Externa</option>
             </select>
              <% if (locals.erros && locals.erros.area) { %>
             <p class="erro-valor"><%= erros.area.msg %></p>

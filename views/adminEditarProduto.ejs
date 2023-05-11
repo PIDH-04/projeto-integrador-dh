@@ -70,6 +70,13 @@
                   value="<%= produto.altura %>"
                 />
             </div>
+            <div>
+              <label for="peso">Peso (em kg)</label>
+              <input type="text" name="peso" id="peso" placeholder="80" value="<%= locals.produto && locals.produto.peso ? locals.produto.peso : '' %>"/>
+              <% if (locals.erros && locals.erros.peso) { %>
+              <p class="erro-valor"><%= erros.peso.msg %></p>
+              <% } %>
+            </div>
 
           </div>
 
@@ -107,20 +114,20 @@
               <% } %>  
             </div>
             <label>Selecione a Categoria do produto</label>
-            <select name="categoria">
+            <select name="categorias_id">
               <option disabled>Selecione uma categoria</option>
               <% for(let categoria of categorias){ %>
-                <option value="<%= categoria.slug %>"
-                  <%= produto.categoria == categoria.slug ? "selected" : null %>>
+                <option value="<%= categoria.id %>"
+                  <%= categoria.id == produto.categorias_id ? "selected" : null %>>
                   <%= categoria.nome %>
                 </option>
               <% } %>
             </select>
             <label>Selecione a Área do produto</label>
-            <select name="area">
+            <select name="areas_id">
               <option disabled>Selecione uma área</option>
-              <option value="interna" <%= produto.area == "interna" ? "selected" : null %> >Área Interna</option>
-              <option value="externa" <%= produto.area == "externa" ? "selected" : null %>>Área Externa</option>
+              <option value="1" <%= produto.area == "1" ? "selected" : null %> >Área Interna</option>
+              <option value="2" <%= produto.area == "2" ? "selected" : null %>>Área Externa</option>
             </select>
           </div>
         </div>
