@@ -1,16 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <%- include("partials/head", {css: ["cadastro.css"], titulo: "Cadastro_E-móvel"}) %>
-
-
-
 
 <body>
   <%- include("partials/header") %>
 
   <%- include("partials/topoPg") %>
-  
 
   <div class="display-flex">
     <section class="container">
@@ -80,10 +75,10 @@
           <input type="password" placeholder="Senha" name="senha" id="senha-login" class="form-control" required />
         </div>
 
-        <div class="lembrar">
+        <!-- <div class="lembrar">
           <input type="checkbox" class="form-check-input" id="exampleCheck1" />
           <label class="form-check-label" for="exampleCheck1">Lembrar-me</label>
-        </div>
+        </div> -->
 
         <% if(target != undefined){ %> 
           <input type="hidden" name="target" id="target" value="<%= target %>"/>
@@ -94,7 +89,7 @@
         </div>
       </form>
 
-      <h3>esqueceu sua senha?</h3>
+      <!-- <h3>esqueceu sua senha?</h3> -->
     </section>
   </div>
 
