@@ -63,6 +63,7 @@ const AdminController = {
     }
 
     req.session.adminLogado = true;
+    req.session.usuarioId = admin.id
     const enderecoSolicitado = target ? target : "/admin/pedidos";
     res.redirect(enderecoSolicitado);
   },
@@ -268,6 +269,11 @@ const AdminController = {
 
     if (!adminRemovido) {
       return res.redirect("/admin/usuarios?delete=false");
+    }
+
+    const usuarioLogado = req.session.usuarioId
+    if(usuarioLogado == id){
+      req.session.destroy();
     }
 
     return res.redirect("/admin/usuarios?delete=true");
