@@ -1,9 +1,9 @@
 <header>
   <div class="cabeçalho">
     <ul id="elementos-cabeçalho">
-      <li id="note">BRL</li>
+      <!-- <li id="note">BRL</li> -->
       <li id="note">FRETE GRÁTIS PARA TODO BRASIL</li>
-      <li id="note"><a href="">F.A.Q.</a></li>
+      <!-- <li id="note"><a href="">F.A.Q.</a></li> -->
       <img class="logoMobile" src="/img/logo-horizontal.svg" href="/"></img>
       <button id="menu-toggle">&#9776;</button>
       <nav id="menuMobile">
@@ -12,14 +12,14 @@
           <li id="categoriaMobile">
             <a>Categorias</a>
             <ul id="categoriasMobile">
-              <% for(const c of categorias) { %>
-                <li><a href="/produtos/<%= c.link %>">
+              <% for(let c of categorias) { %>
+                <li><a href="/categorias/<%= c.id%>">
                     <%= c.nome %>
                   </a></li>
                 <% } %>
             </ul>
           </li>
-          <li><a href="/">Sobre</a></li>
+          <!-- <li><a href="/">Sobre</a></li> -->
           <li><a href="/carrinho">Carrinho</a></li>
           <li><a href="/painelUsuario">Minha conta</a></li>
         </ul>
@@ -34,15 +34,15 @@
       <div class="Categoria" href="/categorias/:categorias">Categorias
         <ul id="categorias">
           <% for(let i = 1; i < categorias.length; i++) { %>
-            <li><a href="/categorias/<%= categorias[i].slug %>">
+            <li><a href="/categorias/<%= categorias[i].id %>">
                 <%= categorias[i].nome %>
               </a></li>
             <% } %>
         </ul>
       </div>
-      <li class="sobre">
+      <!-- <li class="sobre">
         <a href="/">Sobre</a>
-      </li>
+      </li> -->
       <li class="buscar">
         <img class="lupa" src="/img/lupa.png" alt="" />
         <form method="get" action="/busca"></form>

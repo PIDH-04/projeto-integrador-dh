@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
   <%- include("partials/head", {css: ["produto.css"], titulo: "Produto | E-móvel"}) %>
 
@@ -24,7 +24,7 @@
       <section class="img-container">
         <div class="img-vitrine-container">
             <img
-            src="<%= produto.img[0] %>"
+            src="<%= produto.imagens[0].caminho %>"
             class="img-vitrine"
             alt="<%= produto.nome %>"
           />
@@ -38,9 +38,9 @@
           </span>
         </div>
         <div class="produto-images">
-          <% produto.img.forEach(item => { %>
+          <% produto.imagens.forEach(item => { %>
           <img
-            src="<%= item %>"
+            src="<%= item.caminho %>"
             class="img-produto imagem-produto"
             alt="<%= produto.nome %>"
           />
@@ -50,13 +50,13 @@
 
       <section class="info-container">
         <h1 class="titulo-produto"><%= produto.nome %></h1>
-        <h3 class="preco-produto">R$ <%= produto.preco %>,00</h3>
+        <h3 class="preco-produto">R$ <%= produto.preco %></h3>
 
         <p>
           <%- produto.descricao %>
         </p>
 
-        <p class="medidas">Medidas: <%= produto.medidas.largura %> x <%= produto.medidas.comprimento %> x <%= produto.medidas.altura %> cm</p>
+        <p class="medidas">Medidas: <%= produto.largura %> x <%= produto.profundidade %> x <%= produto.altura %> cm</p>
 
         <form>
           <div class="seletor-quantidade">

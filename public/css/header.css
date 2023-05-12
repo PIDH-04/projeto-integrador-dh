@@ -396,13 +396,15 @@
         width: 80%;
         background-color: var(--cor-secundaria);
         display: flex;
-        justify-content: space-between;
+        /* justify-content: space-between; */
         list-style: none;
         font-family: var(--font-paragrafo);
         text-decoration: none;
         z-index: 99;
         position: fixed;
         height: 5%;
+
+        justify-content: center;
     }
 
     #note {
