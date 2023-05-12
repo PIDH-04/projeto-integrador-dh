@@ -46,6 +46,51 @@ async function listarProdutosFiltrados(idCategoria, idArea) {
   return produtosFiltrados;
 }
 
+//ordenacao dos produtos
+async function ordenarProdutos(ordenacao, idCategoria, idArea) {
+  const produtosFiltrados = await listarProdutosFiltrados(idCategoria, idArea);
+
+  if (ordenacao === 'menor') {
+    const produtosOrdenados = await Produtos.findAll({
+      where: {
+        id: produtosFiltrados.map(produto => produto.id)
+      },
+      order: [['preco', 'ASC']]
+    });
+
+    return produtosOrdenados;
+  }
+  if (ordenacao === 'maior') {
+    const produtosOrdenados = await Produtos.findAll({
+      where: {
+        id: produtosFiltrados.map(produto => produto.id)
+      },
+      order: [['preco', 'DESC']]
+    });
+
+    return produtosOrdenados;
+  }
+  if (ordenacao === 'novidades') {
+    const produtosOrdenados = await Produtos.findAll({
+      where: {
+        id: produtosFiltrados.map(produto => produto.id)
+      },
+      order: [['createdAt', 'DESC']]
+    });
+
+    return produtosOrdenados;
+  }else{
+  return produtosFiltrados;
+  }
+}
+
+//lista as areas dos produtos
+async function listarAreas(idArea) {
+  const areas = await Areas.findByPk(idArea)
+
+  return areas
+}
+
 //listar 3 produtos mais acessados
 async function produtosMaisAcessados() {
   const acesso = Visitas.findAll({
@@ -99,6 +144,8 @@ module.exports = {
   criarProduto,
   editarProduto,
   listarProdutos,
+  listarAreas,
+  ordenarProdutos,
   produtosMaisAcessados,
   mostrarProdutoId,
   excluirProdutoId,
