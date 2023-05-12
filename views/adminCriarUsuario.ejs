@@ -34,6 +34,7 @@
               id="nome"
               placeholder="Nome do usuário"
               value="<%= locals.infoPassada && locals.infoPassada.nome %>"
+              required
             />
             <p class="erro-valor" id="erro-nome"></p>
 
@@ -44,6 +45,7 @@
               id="email"
               placeholder="Novo produto"
               value="<%= locals.infoPassada && locals.infoPassada.email %>"
+              required
             />
 
             <% if (locals.uniqueEmailError) { %>
@@ -61,6 +63,7 @@
               name="senha"
               id="senha"
               placeholder="Adiciona nova senha"
+              required
             />
             <p class="erro-valor" id="erro-senha"></p>
             
@@ -70,6 +73,7 @@
               name="confirma-senha"
               id="confirmaSenha"
               placeholder="Confirme a nova senha"
+              required
             />
             <p class="erro-valor" id="erro-confirma-senha"></p>
         </div>
