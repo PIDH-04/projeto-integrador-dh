@@ -27,7 +27,7 @@ const {
   criarProduto,
   adicionarImagensAoProduto,
 } = require("../services/ProdutosServices");
-const { checaSenha, listarUsuarios } = require("../services/ClientesServices");
+const { checaSenha, listaClientes } = require("../services/ClientesServices");
 const bcrypt = require("bcrypt");
 const fs = require("fs");
 const { validationResult } = require("express-validator");
@@ -66,8 +66,8 @@ const AdminController = {
     const enderecoSolicitado = target ? target : "/admin/pedidos";
     res.redirect(enderecoSolicitado);
   },
-  showClientes: (req, res) => {
-    const clientes = listarUsuarios();
+  showClientes: async (req, res) => {
+    const clientes = await listaClientes();
     res.render("adminClientes", { clientes });
   },
   showProdutos: async (req, res) => {
