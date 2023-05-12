@@ -14,9 +14,11 @@ window.addEventListener('load', () => {
             e.preventDefault()
         }
 
-        if(img.files.length == 0){
-            erroImg.innerText = 'Selecione pelo menos uma imagem'
-            e.preventDefault()
+        if(window.location.pathname.includes('criar')){
+            if(img.files.length == 0){
+                erroImg.innerText = 'A imagem deve ser selecionada'
+                e.preventDefault()
+            }
         }
     }
 
