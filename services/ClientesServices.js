@@ -21,11 +21,21 @@ async function buscaCliente(email) {
 async function criarCliente(infosCliente) {
   console.log(infosCliente);
  try {
+ infosCliente.senha = bcrypt.hashSync(infosCliente.senha, 8)
   const novoCliente = await Clientes.create(infosCliente);
+ // const {senha: _,...clienteSemSenha} = novoCliente
+ const cliente = {...clienteSemSenha}
+ console.log(cliente);
+  return clienteSemSenha;
+  
  } catch (error) {
   console.log(error);
+  
+  
  } 
 }
+
+
 
 function checaSenha(cliente, senha) {
   return bcrypt.compareSync(senha, cliente.senha);
@@ -53,7 +63,15 @@ async function editarCliente(idCliente, novasInfos) {
   await cliente.update(novasInfos);
 }
 
+//mostra cliente especifico pela id
+async function buscaClienteId(idCliente) {
+  const cliente = await Clientes.findByPk(idCliente);
+  const {senha: _,...clienteSemSenha} = cliente
+  return clienteSemSenha;
+}
+
 module.exports = {
+  buscaClienteId,
   listaClientes,
   criarCliente,
   deletarCliente,

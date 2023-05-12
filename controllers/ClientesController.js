@@ -59,9 +59,16 @@ const CadastroController = {
   },
   showPainelUsuario: async (req, res) => {
     // Mostrar categorias para header e footer
+   // console.log(req.session);
+   const cliente = req.session.cliente
+   console.log(req.session.clienteLogado);
     const categorias = await CategoriasServices.listarCategorias();
+    const idCliente = req.params.idCliente
+    console.log(idCliente);
+    //const cliente = await ClientesServices.buscaClienteId(idCliente);
 
-    return res.render('painelUsuario', { categorias })
+
+    return res.render('painelUsuario', { categorias , cliente })
   },
   showstatusDePedido: async (req, res) => {
     // Mostrar categorias para header e footer
@@ -75,9 +82,16 @@ const CadastroController = {
       email: req.body.email,
       senha: req.body.senha
     }
-    await ClientesServices.criarCliente(cliente);
+    
+    const clienteCadastro = await ClientesServices.criarCliente(cliente);
 
-    return res.redirect("/cadastro?msg=facaOLogin");
+    console.log('PROJETOINTEGRADOR',clienteCadastro);
+    req.session.clienteLogado = true
+    req.session.cliente = clienteCadastro
+
+   return res.redirect("/cadastro?msg=facaOLogin");
+
+
   }
 }
 

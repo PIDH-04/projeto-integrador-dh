@@ -1,6 +1,6 @@
 const checaAutenticacaoUsuario = (req, res, next) => {
     const enderecoAcessado = req.originalUrl
-    if(!req.session.usuarioLogado){
+    if(!req.session.clienteLogado){
         return res.redirect(`/cadastro?target=${enderecoAcessado}`)
     }
 
