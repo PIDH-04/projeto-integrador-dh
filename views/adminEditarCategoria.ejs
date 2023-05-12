@@ -34,14 +34,19 @@
               id="nome"
               placeholder="Novo produto"
               value="<%= categoria.nome %>"
+              required
             />
+            <p class="erro-valor erro-nome"></p>
+
 
             <label for="descricao">Descrição</label>
             <textarea
               name="descricao"
               id="descricao"
               placeholder="Descreva sua categoria"
+              required
             ><%= categoria.descricao %></textarea>
+            <p class="erro-valor erro-descricao"></p>
           </div>
 
           <div>
@@ -53,6 +58,9 @@
             >
             <input type="file" name="img" id="img" id="imagem-produto" />
           </div>
+          <p class="erro-valor erro-img"></p>
+
+
         </div>
       </form>
 
@@ -69,5 +77,6 @@
     </main>
     <script src="/scripts/adminProduto.js"></script>
     <script src="/scripts/deleteModal.js"></script>
+    <script src="/scripts/adminEditarCategoria.js"></script>
   </body>
 </html>
