@@ -5,7 +5,9 @@ const GeralController = {
   home: async (req, res) => {
     // Mostrar categorias para header e footer
     const categorias = await CategoriasServices.listarCategorias();
-    return res.render('home', { categorias });
+    //Mostra os 3 produtos mais acessados/visitados
+    const destaque = await ProdutosServices.produtosMaisAcessados();
+    return res.render('home', { categorias, destaque });
   }
 };
 

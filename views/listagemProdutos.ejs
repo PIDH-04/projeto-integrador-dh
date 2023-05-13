@@ -27,7 +27,7 @@
               <h4>Filtros</h4>
               <p id="limpafiltro">Limpar filtros</p>
             </div>
-            <form>
+            <form class="card-area">
               <span>
                 <input name="areainterna" id="areainterna" type="checkbox" />
                 <label for="areainterna">Area Interna</label>
@@ -41,17 +41,15 @@
           </div>
 
           <div class="produtos-container">
-            <div class="ordenacao-container">
-              <form class="menu-selecao">
+            <!-- <div class="ordenacao-container">
                 <p>Ordenar por:</p>
-                <select name="ordenacao">
-                  <option value="">Menor preço</option>
-                  <option value="maior-preco">Maior preço</option>
-                  <option value="novidades">Novidades</option>
-                </select>
-              </form>
+                <div name="ordenacao"><% console.log(area) %>
+                  <a id="menorpreco" href="/categorias/<%= categoria.id %>/menor">Menor preço</a>
+                  <a id="maiorpreco" href="/categorias/<%= categoria.id %>/menor">Maior preço</a>
+                  <a id="novidades" href="/categorias/<%= categoria.id %>/novidades">Novidades</a>
+                </div>
               <p class="quantidade-produtos">Mostrando 500 produtos</p>
-            </div>
+            </div> -->
 
 
             <div class="produtos">
@@ -59,14 +57,14 @@
                 <div class="produto">
                   <a href="/produto/<%= p.id %>">
                     <div class="img-container">
-                      <img class="imagem-produto" src="<%= p.imagens[0].caminho %>" alt="<%= produtos.nome %>" />
+                      <img class="imagem-produto" src="<%= p.imagens[0].caminho %>" alt="<%= p.nome %>" />
                     </div>
                     <div class="informacoes-container">
                       <h3 class="titulo-produto">
                         <%= p.nome %>
                       </h3>
                       <!-- <p class="variacao-produto">Tampo em madeira</p> -->
-                      <p class="preco-produto">R$ <%= p.preco %>,00</p>
+                      <p class="preco-produto">R$ <%= p.preco %></p>
 
                     </div>
                   </a>
@@ -77,11 +75,11 @@
                 <% } %>
             </div>
 
-            <div class="botao-container">
+            <!-- <div class="botao-container">
               <button class="carregar-mais botao-primario">
                 Ver mais produtos
               </button>
-            </div>
+            </div> -->
           </div>
         </main>
         <%- include("partials/footer.ejs") %>

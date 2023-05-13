@@ -1,5 +1,8 @@
-const { Produtos, Imagens } = require("../databases/models");
-const { Areas } = require("../databases/models");
+const Sequelize = require('sequelize');
+const { Produtos } = require('../databases/models');
+const { Areas } = require('../databases/models');
+const { Visitas } = require('../databases/models');
+const { Imagens } = require('../databases/models');
 
 //listar todos os produtos
 async function listarProdutos() {
@@ -25,7 +28,10 @@ async function listarProdutosFiltrados(idCategoria, idArea) {
     };
   }
   if (idCategoria == 1) {
-    filtro = { model: Produtos, include: ["imagens"] };
+    filtro = {
+      model: Produtos,
+      include: ["imagens"]
+    };
   }
   if (idArea !== undefined) {
     filtro.include = [
@@ -43,10 +49,70 @@ async function listarProdutosFiltrados(idCategoria, idArea) {
   return produtosFiltrados;
 }
 
+//ordenacao dos produtos
+async function ordenarProdutos(ordenacao, idCategoria, idArea) {
+  const produtosFiltrados = await listarProdutosFiltrados(idCategoria, idArea);
+
+  if (ordenacao === 'menor') {
+    const produtosOrdenados = await Produtos.findAll({
+      where: {
+        id: produtosFiltrados.map(produto => produto.id)
+      },
+      order: [['preco', 'ASC']]
+    });
+
+    return produtosOrdenados;
+  }
+  if (ordenacao === 'maior') {
+    const produtosOrdenados = await Produtos.findAll({
+      where: {
+        id: produtosFiltrados.map(produto => produto.id)
+      },
+      order: [['preco', 'DESC']]
+    });
+
+    return produtosOrdenados;
+  }
+  if (ordenacao === 'novidades') {
+    const produtosOrdenados = await Produtos.findAll({
+      where: {
+        id: produtosFiltrados.map(produto => produto.id)
+      },
+      order: [['createdAt', 'DESC']]
+    });
+
+    return produtosOrdenados;
+  }else{
+  return produtosFiltrados;
+  }
+}
+
 //lista as areas dos produtos
-async function listarAreas() {
-  const areas = Areas.findAll();
-  return areas;
+async function listarAreas(idArea) {
+  const areas = await Areas.findByPk(idArea)
+
+  return areas
+}
+
+//listar 3 produtos mais acessados
+async function produtosMaisAcessados() {
+  const acesso = Visitas.findAll({
+    attributes: ['produtos_id', [Sequelize.fn('COUNT', 'produtos_id'), 'visitas']],
+    include: [{
+      model: Produtos,
+      as: 'produtos',
+      include: [{
+        model: Imagens,
+        as: 'imagens',
+        attributes: ['caminho']
+      }]
+    }],
+    group: ['produtos_id'],
+    order: [[Sequelize.literal('visitas'), 'DESC']],
+    limit: 3
+  })
+
+  return acesso
 }
 
 //cria produto
@@ -114,6 +180,8 @@ module.exports = {
   editarProduto,
   listarProdutos,
   listarAreas,
+  ordenarProdutos,
+  produtosMaisAcessados,
   mostrarProdutoId,
   excluirProdutoId,
   listarProdutosFiltrados,

@@ -24,10 +24,14 @@ const ProdutosControllers = {
 
     //Pegar parametro da url(idArea)
     const idArea = req.params.idArea;
+    //Pegar parametro da url(ordenacao)
+    /* const ordenacao = req.params.ordenacao; */
+    
+    /* const area = await ProdutosServices.listarAreas(idArea); */
     //Alterar produtos para aparecer apenas os que constam a categoria e area indicada na url
-    const produtos = await ProdutosServices.listarProdutosFiltrados(idCategoria, idArea);
+    const produtos = await ProdutosServices.listarProdutosFiltrados(idCategoria, idArea/* , ordenacao */);
 
-    return res.render('listagemProdutos', { categorias, produtos, categoria });
+    return res.render('listagemProdutos', { categorias, produtos, categoria/* , area  */});
   },
   showCarrinho: async (req, res) => {
     // Mostrar categorias para header e footer
