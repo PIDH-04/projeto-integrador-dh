@@ -63,13 +63,15 @@
   <div class="resultado-busca">
     <% if (pesquisados !== ''){ %>
     <% pesquisados.forEach((produto)=> { %>
-      <ul>
-        <li>
+      <ul href="/produto/<%= produto.id %>">
+        <a href="/produto/<%= produto.id %>">
+        <li href="/produto/<%= produto.id %>">
           <%= produto.nome %>
         </li>
-        <div class="imagemPesquisa">
+        <div class="imagemPesquisa" href="/produto/<%= produto.id %>">
           <img src="<%= produto.imagens[0].caminho %>" href="/produto/<%= produto.id %>">
         </div>
+      </a>
       </ul>
       <% }) %>
       <% } %>
