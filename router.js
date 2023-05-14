@@ -45,7 +45,7 @@ router.get("/categorias/:idCategoria?/:idArea?/:ordenacao?", ProdutosController.
 router.get("/cadastro", ClientesController.showCadastro);
 router.post("/cadastro",ClientesController.criarCadastro);
 router.get("/painelUsuario", checaAutenticacaoUsuario, ClientesController.showPainelUsuario);
-// router.get("/statusDePedidos", ClientesController.showstatusDePedido);
+router.get("/statusDePedidos/:idCliente", checaAutenticacaoUsuario, ClientesController.showstatusDePedido);
 router.post('/clientes/endereco/criar', checaAutenticacaoUsuario, ClientesController.criaEndereco)
 router.post('/pedidos/criar', checaAutenticacaoUsuario, PedidosController.criar)
 

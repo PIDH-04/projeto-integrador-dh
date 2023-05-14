@@ -258,11 +258,12 @@ INSERT INTO formas_de_pagamento (id, nome) VALUES
 INSERT INTO enderecos (id, clientes_id, bairro, logradouro, numero, cep, createdAt, cidade) VALUES
     (1, 1, "parecida", "Rua Juju Ferreira", 100, "90100000", now(), 'São Paulo');
     
-INSERT INTO pedidos (id, enderecos_id, clientes_id, formas_de_pagamento_id, preco, createdAt) VALUES (1, 1, 1, 2, 1000.00, now());
+INSERT INTO pedidos (id, enderecos_id, clientes_id, formas_de_pagamento_id, preco, createdAt, entregueAt) VALUES (1, 1, 1, 2, 800.00, 1684084748000, now()),(2, 1, 1, 2, 1000.00, now(), null);
 
 INSERT INTO pedidos_has_produtos (pedidos_id, produtos_id, quantidade) VALUES 
-	(1, 1, 2),
-	(1, 3, 1);
+	(1, 5, 1),
+    (2, 1, 2),
+	(2, 3, 1);
 
 INSERT INTO visitas (id, produtos_id, createdAt) VALUES 
 	(1, 2, now()),

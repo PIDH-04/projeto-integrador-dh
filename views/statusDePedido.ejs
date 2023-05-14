@@ -1,31 +1,85 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<%- include("partials/head", {css: ["statusDePedidos.css"], titulo: "Status de Pedidos E-móvel" }) %>
+<%- include("partials/head", {css: ["statusDePedido.css"], titulo: "Status de Pedidos E-móvel" }) %>
 
-  <%- include("partials/header") %>
-  <%- include("partials/topoPg") %>
-    <main>
+  <body>
+    <%- include("partials/header") %>
+      <%- include("partials/topoPg") %>
 
-      <body>
-        <div id="div1">
-          <h1>Status de Pedidos</h1>
-          Filtrar por:
-          <select name="ordenacao">
-            <option value="">Entregues...</option>
-            <option value="a-caminho">Em andamento...</option>
-            <option value="compras">Todos...</option>
-          </select>
-          <p></p>
-          <p>Entregue dia 28 de dezembro 2022.</p>
-        </div>
-        <div id="div2">
-          <img class="imagem" src="/img/mesa-monaco.png" alt="" />
-          <p>Mesa de Jantar Mônaco Tampo madeira.</p>
-          <p>Quantidade: 1</p>
-        </div>
-      </body>
-    </main>
-    <%- include("partials/footer") %>
-      <script src="/scripts/painelIndex.js"></script>
+
+        <main>
+          <h1>Status de Pedidos de <%= cliente.nome %>
+          </h1>
+          <div class="pedidos">
+            <div class="painel" id="entregues">
+              <h2 class="titulo1" id="titulo">Entregues &#x25B6;</h2>
+              <div class="conteudoPedido">
+                <% for (const e of entregues) { %>
+                  <div class="produtoPedido">
+                    <div id="imagem-produto">
+                      <img class="imagem" src="<%= e.imagens[0].caminho %>" alt="" />
+                    </div>
+                    <div class="descricaoPedido">
+                      <p>
+                        <%= e.nome %>
+                      </p>
+                      <p>R$<%= e.preco %></p>
+                      <% if (e && e.entregueAt) { %>
+                        <p>Entregue em <%= new Date(e.entregueAt).toLocaleString() %></p>
+                      <% } %>
+                    </div>
+                  </div>
+                  <% } %>
+              </div>
+            </div>
+            <div class="painel" id="andamento">
+              <h2 class="titulo2" id="titulo">Em andamento &#x25B6;</h2>
+              <div class="conteudoPedido">
+                <% for (const a of andamento) { %>
+                  <div class="produtoPedido">
+                    <div id="imagem-produto">
+                      <img class="imagem" src="<%= a.imagens[0].caminho %>" alt="" />
+                    </div>
+                    <div class="descricaoPedido">
+                      <p>
+                        <%= a.nome %>
+                      </p>
+                      <p>R$<%= a.preco %></p>
+                      <% if (a && a.createdAt) { %>
+                        <p>Pedido realizado em <%= new Date(a.createdAt).toLocaleString() %></p>
+                      <% } %>                      
+                    </div>
+                  </div>
+                  <% } %>
+              </div>
+            </div>
+            <div class="painel" id="todos">
+              <h2 class="titulo3" id="titulo">Todos &#x25B6;</h2>
+              <div class="conteudoPedido">
+                <% for (const t of todos) { %>
+                  <div class="produtoPedido">
+                    <div id="imagem-produto">
+                      <img class="imagem" src="<%= t.imagens[0].caminho %>" alt="" />
+                    </div>
+                    <div class="descricaoPedido">
+                      <p>
+                        <%= t.nome %>
+                      </p>
+                      <p>R$<%= t.preco %></p>
+                      <% if (t && t.createdAt) { %>
+                        <p>Pedido realizado em <%= new Date(t.createdAt).toLocaleString() %></p>
+                      <% } %>
+                      
+                    </div>
+                  </div>
+                  <% } %>
+              </div>
+            </div>
+          </div>
+        </main>
+
+        <%- include("partials/footer") %>
+          <script src="/scripts/statusDePedido.js"></script>
+  </body>
 
 </html>
