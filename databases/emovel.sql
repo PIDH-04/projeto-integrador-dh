@@ -171,15 +171,15 @@ INSERT INTO areas (id, nome, createdAt) VALUES
 INSERT INTO categorias (id, nome, caminho, descricao, createdAt) VALUES 
 (1, "Móveis", "/img/mesa-icone.svg", "Os melhores móveis do Brasil no conforto de um click. Deixe sua casa mais aconchegante com a E-móvel. Sua casa merece!", now()),
 (2, "Mesas de Jantar", "/img/mesa-icone.svg", "É um item fundamental para a casa. Pequenas, grandes, de vidro ou madeira, você encontra aqui!", now()),
-(3, "Armários", "/img/mesa-icone.svg", "É um item fundamental para a casa. Pequenos, grandes, de vidro ou madeira, você encontra aqui!", now());
+(3, "Armários", "/img/mesa-icone.svg", "É um item fundamental para a casa. Pequenos, grandes, de vidro ou madeira, você encontra aqui!", now()),
 (4, "Mesas de Centro", "/img/mesa-icone.svg", "O clássico das salas de estar. Pequenas, grandes, de vidro ou madeira, você encontra aqui!", now()),
 (5, "Sofás", "/img/mesa-icone.svg", "É um item fundamental para sua sala. Pequenos, grandes, de couro ou linho, você encontra aqui!", now()),
 (6, "Cômodas", "/img/mesa-icone.svg", "Ideal para quartos infantis. Pequenas, grandes, de madeira maciça ou mdf, você encontra aqui!", now()),
-(7, "Mesas Laterais", "/img/mesa-icone.svg", "Um item que traz conforto e praticidade para a sua casa. Unitárias ou conjunto, você encontra aqui!", now()),
+(7, "Mesas Laterais", "/img/mesa-icone.svg", "Um item que traz conforto e praticidade para a sua casa. Unitárias ou conjunto, você encontra aqui!", now());
 
 
 INSERT INTO produtos (id, categorias_id, areas_id, nome, preco, descricao, largura, profundidade, altura, createdAt, peso) VALUES 
-(1, 3, 1, "Cadeira Saarinen", 100.00, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aperiam minima necessitatibus, quis blanditiis exercitationem veniam earum error quam cupiditate iste vitae accusamus voluptatem corporis ullam? Eos sit nisi vero.", 80, 80, 80, now(), 10.0),
+(1, 3, 1, "Armário Armando", 1000.00, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aperiam minima necessitatibus, quis blanditiis exercitationem veniam earum error quam cupiditate iste vitae accusamus voluptatem corporis ullam? Eos sit nisi vero.", 90, 60, 180, now(), 10.0),
 (2, 5, 1, "Sofá Descanso Pleno", 2000.00, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aperiam minima necessitatibus, quis blanditiis exercitationem veniam earum error quam cupiditate iste vitae accusamus voluptatem corporis ullam? Eos sit nisi vero.", 100, 100, 100, now(), 10.0),
 (3, 2, 1, "Mesa de Jantar Mônaco", 800.00, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aperiam minima necessitatibus, quis blanditiis exercitationem veniam earum error quam cupiditate iste vitae accusamus voluptatem corporis ullam? Eos sit nisi vero.", 100, 80, 80, now(), 10.0),
 (4, 2, 2, "Mesa de Jantar Aspen", 800.00, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aperiam minima necessitatibus, quis blanditiis exercitationem veniam earum error quam cupiditate iste vitae accusamus voluptatem corporis ullam? Eos sit nisi vero.", 100, 80, 80, now(), 10.0),
@@ -187,38 +187,32 @@ INSERT INTO produtos (id, categorias_id, areas_id, nome, preco, descricao, largu
 (6, 2, 1, "Mesa de Jantar Dora", 800.00, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aperiam minima necessitatibus, quis blanditiis exercitationem veniam earum error quam cupiditate iste vitae accusamus voluptatem corporis ullam? Eos sit nisi vero.", 100 , 80 , 80, now(), 10.0),
 (7, 4, 1, "Mesa de Centro Nature", 200.00, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aperiam minima necessitatibus, quis blanditiis exercitationem veniam earum error quam cupiditate iste vitae accusamus voluptatem corporis ullam? Eos sit nisi vero.", 60, 60, 60, now(), 10.0),
 (8, 6, 1, "Cômoda Jungle", 500.00, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aperiam minima necessitatibus, quis blanditiis exercitationem veniam earum error quam cupiditate iste vitae accusamus voluptatem corporis ullam? Eos sit nisi vero.", 150, 80, 100, now(), 10.0),
-(9, 7, 1, "Mesa Lateral Aurora", 80.00, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aperiam minima necessitatibus, quis blanditiis exercitationem veniam earum error quam cupiditate iste vitae accusamus voluptatem corporis ullam? Eos sit nisi vero.", 30, 30, 60, now(), 10.0),
-(10, 8, 2, "Balanço de Jardim Lover", 1500.00, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aperiam minima necessitatibus, quis blanditiis exercitationem veniam earum error quam cupiditate iste vitae accusamus voluptatem corporis ullam? Eos sit nisi vero.", 150, 90, 150, now(), 10.0),
-(11, 9, 1, "Armário Armando", 1000.00, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aperiam minima necessitatibus, quis blanditiis exercitationem veniam earum error quam cupiditate iste vitae accusamus voluptatem corporis ullam? Eos sit nisi vero.", 90, 60, 180, now(), 10.0);
+(9, 7, 1, "Mesa Lateral Aurora", 80.00, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aperiam minima necessitatibus, quis blanditiis exercitationem veniam earum error quam cupiditate iste vitae accusamus voluptatem corporis ullam? Eos sit nisi vero.", 30, 30, 60, now(), 10.0);
+
 
 INSERT INTO imagens (id, caminho, produtos_id, createdAt) VALUES 
-	(1, "/img/cadeira-saarinen-preta.png", 1,  now()),
-	(2, "/img/cadeira-saarinen-branca.jfif", 1, now()),
-	(3, "/img/cadeira-saarinen-Bege.jfif", 1, now()),
-	(4, "/img/sofa-pleno-preto.png", 2, now()),
-	(5, "/img/sofa-pleno-cinza.png", 2, now()),
-	(6, "/img/sofa-pleno-branco.jpg", 2, now()),
-	(7, "/img/mesa-monaco.png", 3, now()),
-	(8, "/img/mesa.jpg", 3, now()),
-	(9, "/img/mesa-aspen.png", 4, now()),
-	(10, "/img/mesa.png", 4, now()),
-	(11, "/img/mesa-bio.png", 5, now()),
-	(12, "/img/mesa.jpg", 5, now()),
-	(13, "/img/mesa.png", 5, now()),
-	(14, "/img/mesa-dora.png", 6, now()),
-	(15, "/img/mesa.jpg", 6, now()),
-	(16, "/img/mesa-nature-bege.jpg", 7, now()),
-	(17, "/img/mesa-nature-branca.jpg", 7, now()),
-	(18, "/img/mesa-nature-amarela.jpg", 7, now()),
-	(19, "/img/comoda-jungle-bege.avif", 8, now()),
-	(20, "/img/comoda-jungle-preta.avif", 8, now()),
-	(21, "/img/mesa-aurora-branca.jpg", 9, now()),
-	(22, "/img/mesa-aurora-preta.jpg", 9, now()),
-	(23, "/img/balanco-lover-bege.webp", 10, now()),
-	(24, "/img/balanco-lover-amarelo.webp", 10, now()),
-	(25, "/img/armario-armando-branco.jpg", 11, now()),
-	(26, "/img/armario-armando-bege.webp", 11, now()),
-	(27, "/img/armario-armando-preto.webp", 11, now());
+	(1, "/img/sofa-pleno-preto.png", 2, now()),
+	(2, "/img/sofa-pleno-cinza.png", 2, now()),
+	(3, "/img/sofa-pleno-branco.jpg", 2, now()),
+	(4, "/img/mesa-monaco.png", 3, now()),
+	(5, "/img/mesa.jpg", 3, now()),
+	(6, "/img/mesa-aspen.png", 4, now()),
+	(7, "/img/mesa.png", 4, now()),
+	(8, "/img/mesa-bio.png", 5, now()),
+	(9, "/img/mesa.jpg", 5, now()),
+	(10, "/img/mesa.png", 5, now()),
+	(11, "/img/mesa-dora.png", 6, now()),
+	(12, "/img/mesa.jpg", 6, now()),
+	(13, "/img/mesa-nature-bege.jpg", 7, now()),
+	(14, "/img/mesa-nature-branca.jpg", 7, now()),
+	(15, "/img/mesa-nature-amarela.jpg", 7, now()),
+	(16, "/img/comoda-jungle-bege.avif", 8, now()),
+	(17, "/img/comoda-jungle-preta.avif", 8, now()),
+	(18, "/img/mesa-aurora-branca.jpg", 9, now()),
+	(19, "/img/mesa-aurora-preta.jpg", 9, now()),
+	(20, "/img/armario-armando-branco.jpg", 1, now()),
+	(21, "/img/armario-armando-bege.webp", 1, now()),
+	(22, "/img/armario-armando-preto.webp", 1, now());
 
 INSERT INTO estados (id, nome) VALUES 
 	(1, 'AP'),
