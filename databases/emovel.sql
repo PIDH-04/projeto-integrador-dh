@@ -109,6 +109,7 @@ create table pedidos(
     clientes_id int not null,
     preco decimal(6,2) not null,
     formas_de_pagamento_id int not null,
+    status varchar(20) not null default 'realizado',
     pagoAt timestamp null,
     createdAt timestamp null,
     deletedAt timestamp null,
