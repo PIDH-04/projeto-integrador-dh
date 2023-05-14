@@ -27,11 +27,13 @@ const {
   criarProduto,
   adicionarImagensAoProduto,
 } = require("../services/ProdutosServices");
+const { listaTodosOsPedidos } = require('../services/PedidosServices')
 const { checaSenha, listaClientes } = require("../services/ClientesServices");
 const bcrypt = require("bcrypt");
 const fs = require("fs");
 const { validationResult } = require("express-validator");
 const { Administradores } = require("../databases/models");
+const statusPedidos = require('../databases/statusPedidos.json')
 
 const AdminController = {
   showLogin: (req, res) => {
@@ -76,8 +78,10 @@ const AdminController = {
     const feedbackDelete = req.query.delete;
     res.render("adminProdutos", { produtos, feedbackDelete });
   },
-  showPedidos: (req, res) => {
-    res.render("adminPedidos");
+  showPedidos: async (req, res) => {
+    const pedidos = await listaTodosOsPedidos()
+    console.log(pedidos)
+    res.render("adminPedidos", {statusPedidos, pedidos});
   },
   showCriarProduto: async (req, res) => {
     const categorias = await listarCategorias();

@@ -17,6 +17,16 @@ async function criaPedido(infoPedido){
     }
 }
 
+async function listaTodosOsPedidos(){
+    try{
+        const pedidos = await Pedidos.findAll({include: 'clientes'})
+        return pedidos
+    }catch(e){
+        throw new Error(e)
+    }
+}
+
 module.exports = {
-    criaPedido
+    criaPedido,
+    listaTodosOsPedidos
 }
