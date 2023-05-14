@@ -1,12 +1,12 @@
 window.addEventListener("load", () => {
   const formNovoEndereco = document.getElementById("form-novo-endereco");
-  // const formSelectEndereco = document.getElementById("form-select-endereco");
-  // const selectEndereco = formSelectEndereco.querySelector("select");
+  const formSelectEndereco = document.getElementById("form-select-endereco");
+  const selectEndereco = formSelectEndereco.querySelector("select");
   const cepInput = document.getElementById("cep");
   const campoErrosNovoEndereco = document.getElementById("erros-novo-endereco");
-  // const campoErroSelecioneEndereco = document.getElementById(
-  //   "erro-selecione-endereco"
-  // );
+  const campoErroSelecioneEndereco = document.getElementById(
+    "erro-selecione-endereco"
+  );
   let cepFormatado = "";
 
   async function buscaCep(cep) {
@@ -29,7 +29,7 @@ window.addEventListener("load", () => {
 
   function preencheCamposEndereco(informacoes) {
     const { bairro, localidade, logradouro, uf } = informacoes;
-    document.getElementById("endereco").value = logradouro;
+    document.getElementById("logradouro").value = logradouro;
     document.getElementById("bairro").value = bairro;
     document.getElementById("cidade").value = localidade;
     document.getElementById("estado").value = uf;
@@ -72,27 +72,25 @@ window.addEventListener("load", () => {
   }
 
   function onFormSubmit(evento) {
-    evento.preventDefault();
     campoErrosNovoEndereco.innerHTML = "";
     campoErrosNovoEndereco.style.display = "none";
     const camposInvalidos = validaCampos(this.elements);
-
+    
     if (camposInvalidos.length > 0) {
+      evento.preventDefault();
       mostraErrosNaTela(camposInvalidos);
-    } else {
-      window.location.href = "/checkoutPagamento";
-    }
+    } 
   }
 
-  // function onSelectEnderecoSubmit(evento) {
-  //   evento.preventDefault();
-  //   if (selectEndereco.value == "") {
-  //     campoErroSelecioneEndereco.style.display = "block";
-  //     campoErroSelecioneEndereco.innerHTML = `<li>Selecione um endereço para continuar</li>`;
-  //   } else {
-  //     window.location.href = "/checkoutPagamento";
-  //   }
-  // }
+  function onSelectEnderecoSubmit(evento) {
+    evento.preventDefault();
+    if (selectEndereco.value == "") {
+      campoErroSelecioneEndereco.style.display = "block";
+      campoErroSelecioneEndereco.innerHTML = `<li>Selecione um endereço para continuar</li>`;
+    } else {
+      window.location.href = `/checkoutPagamento/${selectEndereco.value}`;
+    }
+  }
 
   function onCepKeyup(evento) {
     // Adiciona mascara de input
@@ -111,7 +109,7 @@ window.addEventListener("load", () => {
 
   formNovoEndereco.addEventListener("submit", onFormSubmit);
   // selectEndereco.addEventListener("click", onClickSelectEndereco);
-  // formSelectEndereco.addEventListener("submit", onSelectEnderecoSubmit);
+  formSelectEndereco.addEventListener("submit", onSelectEnderecoSubmit);
   cepInput.addEventListener("blur", onPreenchimentoCep);
   cepInput.addEventListener("keyup", onCepKeyup);
 });

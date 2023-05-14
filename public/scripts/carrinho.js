@@ -18,7 +18,7 @@ window.addEventListener("load", () => {
     produtoContainer.classList.add("produto");
     produtoContainer.innerHTML = `
               <div class="img-container">
-                <a href="/produto">
+                <a href="/produto/${produto.id}">
                   <img
                       src="${produto.img}"
                       alt="${produto.nome}"
@@ -26,7 +26,7 @@ window.addEventListener("load", () => {
                 </a>
               </div>
               <div class="produto-info">
-                <a href="/produto">
+                <a href="/produto/${produto.id}">
                   <h2>${produto.nome}</h2>
                 </a>
                 <p class="variacao">Tampo madeira</p>
@@ -43,8 +43,8 @@ window.addEventListener("load", () => {
       style: "currency",
       currency: "BRL",
     });
-    subtotalContainer.innerText = `R$ ${somaFormatada}`;
-    totalContainer.innerText = `R$ ${somaFormatada}`;
+    subtotalContainer.innerText = `${somaFormatada}`;
+    totalContainer.innerText = `${somaFormatada}`;
   }
 
   function atualizaQuantidadeHeader() {

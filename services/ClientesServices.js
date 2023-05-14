@@ -1,5 +1,5 @@
 const bcrypt = require("bcrypt");
-const { Clientes } = require('../databases/models');
+const { Clientes, Enderecos } = require('../databases/models');
 const fs = require('fs');
 const path = require('path');
 
@@ -12,8 +12,7 @@ async function listaClientes() {
 
 //mostra cliente especifico
 async function buscaCliente(email) {
-  const cliente = Clientes.findOne({ where: { email: email } });
-
+  const cliente = await Clientes.findOne({ where: { email: email } });
   return cliente;
 }
 
@@ -53,11 +52,39 @@ async function editarCliente(idCliente, novasInfos) {
   await cliente.update(novasInfos);
 }
 
+async function listaEnderecos(idCliente){
+  try{
+    const enderecos = await Enderecos.findAll({where: {clientes_id: idCliente}})
+    return enderecos
+  }catch(e){
+    throw new Error(e)
+  }
+}
+
+async function adicionaEndereco(idCliente, informacoesEndereco){
+  try{
+    let cep = informacoesEndereco.cep
+    cep = cep.replace('-', '')
+    const endereco = {
+      ...informacoesEndereco,
+      clientes_id: idCliente,
+      cep,
+    }
+
+    const novoEndereco = await Enderecos.create(endereco)
+    return novoEndereco
+  }catch(e){
+    throw new Error(e)
+  }
+}
+
 module.exports = {
   listaClientes,
   criarCliente,
   deletarCliente,
   buscaCliente,
   checaSenha,
-  editarCliente
+  editarCliente,
+  listaEnderecos,
+  adicionaEndereco
 };

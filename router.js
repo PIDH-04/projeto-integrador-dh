@@ -9,6 +9,7 @@ const checaAutenticacaoAdmin = require('./middlewares/checaAutenticacaoAdmin');
 const checaAutenticacaoUsuario = require('./middlewares/checaAutenticacaoUsuario');
 const validacoesExpress = require('./helpers/validacoesExpress');
 const gravarAcessoProduto = require('./middlewares/gravarAcessoProduto');
+const PedidosController = require('./controllers/PedidosController');
 
 const router = express.Router()
 
@@ -32,7 +33,7 @@ router.post('/login', ClientesController.login);
 
 router.get('/login/email', ClientesController.loginEmail);
 
-router.get('/checkoutpagamento', checaAutenticacaoUsuario, ClientesController.checkoutPagamento);
+router.get('/checkoutpagamento/:idEndereco?', checaAutenticacaoUsuario, ClientesController.checkoutPagamento);
 
 router.get("/checkoutDeEndereco", checaAutenticacaoUsuario, ClientesController.checkoutEndereco);
 
@@ -45,6 +46,8 @@ router.get("/cadastro", ClientesController.showCadastro);
 router.post("/cadastro",ClientesController.criarCadastro);
 router.get("/painelUsuario", checaAutenticacaoUsuario, ClientesController.showPainelUsuario);
 // router.get("/statusDePedidos", ClientesController.showstatusDePedido);
+router.post('/clientes/endereco/criar', checaAutenticacaoUsuario, ClientesController.criaEndereco)
+router.post('/pedidos/criar', checaAutenticacaoUsuario, PedidosController.criar)
 
 
 // Admin Routers

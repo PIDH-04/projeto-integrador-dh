@@ -52,7 +52,7 @@ window.addEventListener("load", () => {
                         </a>
                     </div>
                     <div class="produto-info">
-                        <a href="/produto">
+                        <a href="/produto/${produto.id}">
                             <h5>${produto.nome}</h5>
                         </a>
                         <p class="variacao">Tampo madeira</p>

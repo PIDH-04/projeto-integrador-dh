@@ -32,6 +32,12 @@ const CadastroController = {
     if (!senhaCorreta) return res.redirect(`/cadastro?${queryParamsErro}`)
 
     req.session.clienteLogado = true
+    req.session.cliente = {
+      id: cliente.id,
+      nome: cliente.nome,
+      email: cliente.email
+    }
+    
 
     const enderecoSolicitado = target ? target : '/'
     res.redirect(enderecoSolicitado)
@@ -46,15 +52,18 @@ const CadastroController = {
   },
   checkoutEndereco: async (req, res) => {
     // Mostrar categorias para header e footer
+    const idUsuario = req.session.cliente.id
     const categorias = await CategoriasServices.listarCategorias();
-
-    return res.render('checkoutEndereco', { categorias });
+    const enderecos = await ClientesServices.listaEnderecos(idUsuario)
+    return res.render('checkoutEndereco', { categorias, enderecos });
   },
+
   checkoutPagamento: async (req, res) => {
     // Mostrar categorias para header e footer
     const categorias = await CategoriasServices.listarCategorias();
-
-    return res.render('checkoutPagamento', { categorias });
+    const enderecoSelecionado = req.params.idEndereco
+    const frete = 0
+    return res.render('checkoutPagamento', { categorias, pagamento: {cartao: 1}, endereco: enderecoSelecionado, frete });
   },
   showPainelUsuario: async (req, res) => {
     // Mostrar categorias para header e footer
@@ -77,6 +86,19 @@ const CadastroController = {
     await ClientesServices.criarCliente(cliente);
 
     return res.redirect("/cadastro?msg=facaOLogin");
+  },
+  criaEndereco: async (req, res) => {
+    try{
+      const idUsuario = req.session.cliente.id
+      const novoEndereco = await ClientesServices.adicionaEndereco(idUsuario, req.body)
+      console.log(novoEndereco)
+
+      return res.redirect(`/checkoutpagamento/${novoEndereco.id}`);
+
+    }catch(e){
+      console.log(e)
+      return res.redirect('/')
+    }
   }
 }
 
