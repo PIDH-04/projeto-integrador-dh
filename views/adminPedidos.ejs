@@ -45,11 +45,12 @@
             <th>E-mail cliente</th>
             <th>Status</th>
             <th>Ações</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <% locals.pedidos.forEach(pedido => { %>
+          <% locals.pedidos.forEach(pedido => { %>
+            <tr>
               <td><%= pedido.id %></td>
               <td>
                 <% const data = new Date(pedido.createdAt) %>
@@ -73,9 +74,12 @@
                     </select>
                     <button>Salvar</button>
                   </form>
-                  <% }) %>
                 </td>
-          </tr>
+                <td>
+                  <a href="/admin/pedidos/<%=pedido.id %>">Ver mais</a>
+                </td> 
+              </tr>
+            <% }) %>
         </tbody>
       </table>
     </main>

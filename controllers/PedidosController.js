@@ -36,6 +36,9 @@ const PedidosController = {
             console.log(e)
             return res.redirect('/admin/pedidos?atualizado=false')
         }
+    },
+    showDetalhes: (req, res) => {
+        return res.render('detalhePedido')
     }
 }
 
