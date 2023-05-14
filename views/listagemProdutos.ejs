@@ -43,7 +43,7 @@
           <div class="produtos-container">
             <!-- <div class="ordenacao-container">
                 <p>Ordenar por:</p>
-                <div name="ordenacao"><% console.log(area) %>
+                <div name="ordenacao">
                   <a id="menorpreco" href="/categorias/<%= categoria.id %>/menor">Menor preço</a>
                   <a id="maiorpreco" href="/categorias/<%= categoria.id %>/menor">Maior preço</a>
                   <a id="novidades" href="/categorias/<%= categoria.id %>/novidades">Novidades</a>
@@ -54,7 +54,7 @@
 
             <div class="produtos">
               <% for (const p of produtos) { %>
-                <div class="produto">
+                <div class="produto" >
                   <a href="/produto/<%= p.id %>">
                     <div class="img-container">
                       <img class="imagem-produto" src="<%= p.imagens[0].caminho %>" alt="<%= p.nome %>" />
@@ -68,7 +68,7 @@
 
                     </div>
                   </a>
-                  <button class="comprar botao-secundario add-cart">
+                  <button data-idProduto="<%= p.id %>" class="comprar botao-secundario add-cart">
                     Adicionar ao carrinho
                   </button>
                 </div>

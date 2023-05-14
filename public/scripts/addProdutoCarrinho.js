@@ -17,7 +17,7 @@ window.addEventListener("load", () => {
       preco: produto.querySelector(".preco-produto").innerText,
       quantidade:
         seletorQuantidade !== null ? parseInt(seletorQuantidade.value) : 1,
-      id: index,
+      id: addCarrinhoBtn[index].dataset.idproduto,
     };
 
     return produtoFormatado;
@@ -28,8 +28,8 @@ window.addEventListener("load", () => {
     quantidadeDeProdutos.innerText = produtosNoCarrinho.length;
   }
 
-  function onClickAddCarrinho(index, estaNoCarrinho) {
-    if (estaNoCarrinho == false) {
+  function onClickAddCarrinho(index, estaNoCarrinho, produto) {
+    if (produto == undefined) {
       formataBotaoJaAdd(addCarrinhoBtn[index]);
       const produto = formataProduto(produtos[index], index);
       produtosNoCarrinho.push(produto);
@@ -40,30 +40,37 @@ window.addEventListener("load", () => {
     if (window.location.pathname.includes("/produto")) {
       return (window.location.href = "/carrinho");
     }
+    console.log('funciona')
   }
 
   function formataBotaoJaAdd(produto) {
     produto.style.backgroundColor = "gray";
     produto.style.color = "white";
-    produto.innerText = "Produto no carrinho";
+
+    if (window.location.pathname.includes("/produto")) {
+      produto.innerText = "Produto no carrinho, seguir para pagamento";
+    }else {
+      produto.innerText = "Produto no carrinho";
+
+    }
   }
 
   function aoCarregarPagina() {
     atualizaQuantidadeHeader();
+    console.log(addCarrinhoBtn[0].dataset.idproduto)
     for (let i = 0; i < addCarrinhoBtn.length; i++) {
-      const estaNoCarrinho =
-        produtosNoCarrinho.findIndex((p) => p.id == i) == -1 ? false : true;
-      if (estaNoCarrinho == true) {
-        formataBotaoJaAdd(addCarrinhoBtn[i]);
+        const produto = produtosNoCarrinho.find((p) => p.id == addCarrinhoBtn[i].dataset.idproduto)
+        if (produto !== undefined) {
+          formataBotaoJaAdd(addCarrinhoBtn[i]);
+        }
+        addCarrinhoBtn[i].addEventListener(
+          "click",
+          () => {
+            onClickAddCarrinho(i, produtos[i], produto);
+          },
+          { once: true }
+        );
       }
-      addCarrinhoBtn[i].addEventListener(
-        "click",
-        () => {
-          onClickAddCarrinho(i, estaNoCarrinho);
-        },
-        { once: true }
-      );
-    }
   }
 
   aoCarregarPagina();
