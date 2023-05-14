@@ -33,7 +33,7 @@
       </a>
       <div class="Categoria" href="/categorias/:categorias">Categorias
         <ul id="categorias">
-          <% for(let i = 1; i < categorias.length; i++) { %>
+          <% for(let i=1; i < categorias.length; i++) { %>
             <li><a href="/categorias/<%= categorias[i].id %>">
                 <%= categorias[i].nome %>
               </a></li>
@@ -47,8 +47,7 @@
         <img class="lupa" src="/img/lupa.png" alt="" />
         <form method="get" action="/busca"></form>
         <input name="busca" id="busca" type="search" placeholder="Buscar...." />
-        
-      </form>
+        </form>
       </li>
       <li class="painelusuario">
         <a href="/painelUsuario">Minha conta</a>
@@ -61,4 +60,18 @@
       </li>
     </div>
   </nav>
+  <div class="resultado-busca">
+    <% if (pesquisados !== ''){ %>
+    <% pesquisados.forEach((produto)=> { %>
+      <ul>
+        <li>
+          <%= produto.nome %>
+        </li>
+        <div class="imagemPesquisa">
+          <img src="<%= produto.imagens[0].caminho %>" href="/produto/<%= produto.id %>">
+        </div>
+      </ul>
+      <% }) %>
+      <% } %>
+  </div>
 </header>
