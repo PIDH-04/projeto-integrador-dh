@@ -1,8 +1,10 @@
 const Sequelize = require('sequelize');
+const { Op } = require('sequelize');
 const { Produtos } = require('../databases/models');
 const { Areas } = require('../databases/models');
 const { Visitas } = require('../databases/models');
 const { Imagens } = require('../databases/models');
+const { Pedidos } = require('../databases/models');
 
 //listar todos os produtos
 async function listarProdutos() {
@@ -93,7 +95,7 @@ async function listarAreas(idArea) {
 
 //listar 3 produtos mais acessados
 async function produtosMaisAcessados() {
-  const acesso = Visitas.findAll({
+  const acesso = await Visitas.findAll({
     attributes: ['produtos_id', [Sequelize.fn('COUNT', 'produtos_id'), 'visitas']],
     include: [{
       model: Produtos,
@@ -110,6 +112,83 @@ async function produtosMaisAcessados() {
   })
 
   return acesso
+}
+
+//listar pedidos entregues
+async function produtosDePedidosEntregues(idCliente) {
+  const produtos = await Produtos.findAll({
+      include: [{
+        model: Pedidos,
+        as: "pedidos",
+        where: {
+          clientes_id: idCliente,
+          entregueAt: { [Op.not]: null }
+        }
+    }, {
+          model: Imagens,
+          as:"imagens",
+          attributes: ['caminho']
+    }]
+  });
+  return produtos;
+}
+
+//listar pedidos em andamento
+async function produtosDePedidosEmAndamento(idCliente) {
+  const produtos = await Produtos.findAll({
+      include: [{
+        model: Pedidos,
+        as: "pedidos",
+        where: {
+          clientes_id: idCliente,
+          entregueAt: null
+        }
+    }, {
+          model: Imagens,
+          as: "imagens",
+          attributes: ['caminho']
+    }]
+  });
+  return produtos;
+}
+
+//listar todos os pedidos do cliente
+async function produtosDeTodosOsPedidos(idCliente) {
+  const produtos = await Produtos.findAll({
+      include: [{
+        model: Pedidos,
+        as: "pedidos",
+        where: {
+          clientes_id: idCliente
+        }
+    }, {
+          model: Imagens,
+          as: "imagens",
+          attributes: ['caminho']
+    }]
+  });
+  return produtos;
+}
+
+//Pesquisa produtos na busca do header
+async function pesquisar(pesquisa) {
+  if(pesquisa ==''){
+    console.log('nenhuma pesquisa no header')
+  }else{
+    const produtos = await Produtos.findAll({
+    where: {
+      nome: {
+        [Op.like]: `%${pesquisa}%`
+      }}, 
+      include: [{
+        model: Imagens,
+        as: 'imagens',
+        attributes: ['caminho']
+      }]
+  });
+
+  return produtos
+  }
 }
 
 //cria produto
@@ -147,6 +226,10 @@ module.exports = {
   listarAreas,
   ordenarProdutos,
   produtosMaisAcessados,
+  produtosDePedidosEntregues,
+  produtosDePedidosEmAndamento,
+  produtosDeTodosOsPedidos,
+  pesquisar,
   mostrarProdutoId,
   excluirProdutoId,
   listarProdutosFiltrados
