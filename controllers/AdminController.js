@@ -80,8 +80,9 @@ const AdminController = {
   },
   showPedidos: async (req, res) => {
     const pedidos = await listaTodosOsPedidos()
+    const feedbackEdicao = req.query.atualizado
     console.log(pedidos)
-    res.render("adminPedidos", {statusPedidos, pedidos});
+    res.render("adminPedidos", {statusPedidos, pedidos, feedbackEdicao});
   },
   showCriarProduto: async (req, res) => {
     const categorias = await listarCategorias();

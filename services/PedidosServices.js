@@ -26,7 +26,16 @@ async function listaTodosOsPedidos(){
     }
 }
 
+async function atualizaStatusPedido(id, status){
+    try{
+        await Pedidos.update({status: status}, {where: {id: id}})
+    }catch(e){
+        throw new Error(e)
+    }
+}
+
 module.exports = {
     criaPedido,
-    listaTodosOsPedidos
+    listaTodosOsPedidos,
+    atualizaStatusPedido
 }

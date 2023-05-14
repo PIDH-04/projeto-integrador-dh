@@ -31,6 +31,11 @@
           Pesquisar
         </button>
       </form>
+      <% if(locals.feedbackEdicao !== undefined){ %>
+        <div class="<%= locals.feedbackEdicao == 'true' ? 'sucesso' : 'erros' %>">
+          <%= locals.feedbackEdicao == 'true' ? 'Pedido atualizado' : 'Erro ao atualizar pedido' %>
+        </div>
+      <% } %>
       <table>
         <thead>
           <tr>
@@ -58,18 +63,18 @@
               <td><%= pedido.clientes.nome %></td>
               <td><%= pedido.clientes.email %></td>
               <td><%= pedido.status %></td>
-            <% }) %>
-            <td class="mudar-status-container">
-              <form action="" class="mudar-status">
-                <select>
-                  <option disabled selected>Alterar Status</option>
-                  <% locals.statusPedidos.forEach(status => { %>
-                    <option value="<%=status.status %>"><%=status.status %></option>
-                  <% }); %>
-                </select>
-                <button>Salvar</button>
-              </form>
-            </td>
+              <td class="mudar-status-container">
+                <form action="/admin/pedidos/alterar-status/<%= pedido.id %>?_method=PUT" method="POST" class="mudar-status">
+                  <select name="status">
+                    <option disabled selected>Alterar Status</option>
+                    <% locals.statusPedidos.forEach(status => { %>
+                      <option value="<%=status.status %>"><%=status.status %></option>
+                      <% }); %>
+                    </select>
+                    <button>Salvar</button>
+                  </form>
+                  <% }) %>
+                </td>
           </tr>
         </tbody>
       </table>

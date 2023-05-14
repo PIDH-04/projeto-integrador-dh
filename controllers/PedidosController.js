@@ -1,5 +1,5 @@
 const calculaSomaPrecos = require('../helpers/calculaSomaPrecos')
-const { criaPedido } = require('../services/PedidosServices')
+const { criaPedido, atualizaStatusPedido } = require('../services/PedidosServices')
 
 const PedidosController = {
     criar: async (req, res) => {
@@ -24,6 +24,17 @@ const PedidosController = {
         }catch(e){
             console.log(e)
             return res.redirect(`/checkoutPagamento/${pagamento}`)
+        }
+    },
+    alteraStatus: async (req, res) => {
+        try{
+            const { idPedido } = req.params
+            const { status } = req.body
+            await atualizaStatusPedido(idPedido, status)
+            return res.redirect('/admin/pedidos?atualizado=true')
+        }catch(e){
+            console.log(e)
+            return res.redirect('/admin/pedidos?atualizado=false')
         }
     }
 }

@@ -80,6 +80,7 @@ router.post('/admin/banners/criar', checaAutenticacaoAdmin, uploadBanner.single(
 router.delete('/admin/banners/:id/delete', checaAutenticacaoAdmin, AdminController.removerBanner)
 router.get('/admin/banners/:id/editar', checaAutenticacaoAdmin, AdminController.showEditarBanner)
 router.put('/admin/banners/:id/editar', checaAutenticacaoAdmin, uploadBanner.single('img'), AdminController.editarBanner)
+router.put('/admin/pedidos/alterar-status/:idPedido', checaAutenticacaoAdmin, PedidosController.alteraStatus)
 
 // Exportar o roteador
 module.exports = router;
