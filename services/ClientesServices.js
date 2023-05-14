@@ -1,7 +1,26 @@
 const bcrypt = require("bcrypt");
 const { Clientes } = require('../databases/models');
+const { Pedidos } = require('../databases/models');
 const fs = require('fs');
 const path = require('path');
+
+//Listar pedidos entre datas
+async function buscarPedidosEntreDatas(dataInicial, dataFinal) {
+  const pedidos = await Pedidos.findAll({
+    where: {
+      createdAt: {
+        [Op.between]: [dataInicial, dataFinal],
+      },
+      attributes: ['id', 'createdAt', 'entregueAt', 'pagoAt']   
+    },include: [{
+        model: Clientes,
+        as: 'clientes',
+        attributes: ['nome', 'email']
+      }]
+  });
+
+  return pedidos;
+}
 
 //listar clientes
 async function listaClientes() {
@@ -10,9 +29,16 @@ async function listaClientes() {
   return clientes;
 }
 
-//mostra cliente especifico
+//mostra cliente especifico por email
 async function buscaCliente(email) {
-  const cliente = Clientes.findAll({ where: { email: email } });
+  const cliente = await Clientes.findOne({ where: { email: email } });
+
+  return cliente;
+}
+
+//mostra cliente especifico por id
+async function buscaClienteId(idCliente) {
+  const cliente = await Clientes.findByPk(idCliente);
 
   return cliente;
 }
@@ -55,9 +81,11 @@ async function editarCliente(idCliente, novasInfos) {
 
 module.exports = {
   listaClientes,
+  buscarPedidosEntreDatas,
   criarCliente,
   deletarCliente,
   buscaCliente,
+  buscaClienteId,
   checaSenha,
   editarCliente
 };
