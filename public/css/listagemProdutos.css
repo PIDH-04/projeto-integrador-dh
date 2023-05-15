@@ -265,7 +265,7 @@ main {
 
 @media (max-width: 800px) {
   .banner-categoria {
-    margin-top: 0;
+    margin-top: 18%;
     padding: 15px;
   }
 
@@ -275,6 +275,26 @@ main {
 
   .banner-categoria .icone-container {
     display: none;
+  }
+
+  form.card-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 50%;
+    padding-left: 20px;
+  }
+
+  .produtos-container .produtos {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    column-gap: 5%;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner-categoria {
+    margin-top: 9%;
   }
 }
 
@@ -286,11 +306,26 @@ main {
   .produtos-container button.botao-primario {
     width: 100%;
   }
+
+  .banner-categoria {
+    margin-top: 10%;
+  }
+}
+
+@media (max-width: 420px) {
+  .filtros-container {
+    display: none;
+  }
+
+  .banner-categoria {
+    margin-top: 14%;
+  }
 }
 
 footer {
   background: var(--cor-secundaria);
 }
+
 
 footer nav li a {
   text-decoration: none;

@@ -13,7 +13,7 @@
 
     #elementos-cabeçalho {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         padding: 10px;
         width: 90%;
@@ -103,7 +103,7 @@
 
     #elementos-cabeçalho {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         padding: 10px;
         width: 90%;
@@ -199,7 +199,7 @@
         width: 80%;
         background-color: var(--cor-secundaria);
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         list-style: none;
         font-family: var(--font-paragrafo);
         text-decoration: none;
@@ -452,7 +452,6 @@
         z-index: 99;
         position: fixed;
         height: 5%;
-
         justify-content: center;
     }
 
