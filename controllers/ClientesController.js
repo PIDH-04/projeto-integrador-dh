@@ -77,10 +77,14 @@ const CadastroController = {
     const categorias = await CategoriasServices.listarCategorias();
     //pesquisa header
     const pesquisa = req.query.busca
+    //pega id da url
+    const idCliente = req.params.idCliente
+    //Pega cliente por id
+    const cliente = ClientesServices.buscaClienteId(idCliente);
     //Mostrar produtos e categorias de resposta da pesquisa
     const pesquisados = await ProdutosServices.pesquisar(pesquisa);
 
-    return res.render('painelUsuario', { categorias, pesquisados })
+    return res.render('painelUsuario', { categorias, pesquisados, cliente })
   },
   showstatusDePedido: async (req, res) => {
     // Mostrar categorias para header e footer
