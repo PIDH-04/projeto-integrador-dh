@@ -7,7 +7,9 @@
     <%- include("partials/topoPg") %>
     <main class="">
       <h1>Pedido <%= locals.pedido.id %></h1>
-      <a href="/admin/pedidos" class="retornar-pagina">
+      <a href="<%= locals.veioDePedidosDeCliente
+               ? `/admin/pedidos/usuarios/${locals.pedido.clientes_id}` : 
+               '/admin/pedidos'%>" class="retornar-pagina">
         <img src="/img/voltar.svg" />
         Voltar para pedidos
       </a>
@@ -60,7 +62,7 @@
             <p class="informacao">R$ <%= locals.pedido.preco %></p>         
           </div>
           <div class="alterar-status">
-            <form action="/admin/pedidos/alterar-status/<%= locals.pedido.id %>?detalhe=true&_method=PUT" method="POST" class="mudar-status">
+            <form action="/admin/pedidos/alterar-status/<%= locals.pedido.id %>?detalhe=true&cliente=true&_method=PUT" method="POST" class="mudar-status">
               <select name="status">
                 <option disabled selected>Alterar Status</option>
                 <% locals.statusPedidos.forEach(status => { %>

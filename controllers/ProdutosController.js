@@ -12,8 +12,9 @@ const ProdutosControllers = {
     //Mostrar produto do id da url
     const produto = await ProdutosServices.mostrarProdutoId(idProduto);
     //produto.descricao = produto.descricao.replace('\r\n', " <br> ")
+    const usuarioLogado = req.session.clienteLogado
 
-    return res.render('produto', { categorias, produto });
+    return res.render('produto', { categorias, produto, usuarioLogado });
   },
   listagem: async (req, res) => {
     // Mostrar categorias para header e footer
@@ -25,6 +26,7 @@ const ProdutosControllers = {
     //Alterar a categoria mostrada no banner da pagina
     const categoria = await CategoriasServices.mostrarCategoriaId(idCategoria);
     //categoria.descricao = categoria.descricao.replace('\r\n', " <br> ")
+    const usuarioLogado = req.session.clienteLogado
 
     //Pegar parametro da url(idArea)
     const idArea = req.params.idArea;
@@ -35,7 +37,7 @@ const ProdutosControllers = {
     //Alterar produtos para aparecer apenas os que constam a categoria e area indicada na url
     const produtos = await ProdutosServices.listarProdutosFiltrados(idCategoria, idArea/* , ordenacao */);
 
-    return res.render('listagemProdutos', { categorias, produtos, categoria/* , area  */ });
+    return res.render('listagemProdutos', { categorias, produtos, categoria/* , area  */, usuarioLogado });
   },
   showCarrinho: async (req, res) => {
     // Mostrar categorias para header e footer
@@ -44,8 +46,9 @@ const ProdutosControllers = {
     const pesquisa = req.query.busca
     //Listrar produtos
     const produtos = await ProdutosServices.listarProdutos();
+    const usuarioLogado = req.session.clienteLogado
 
-    return res.render('carrinho', { categorias, produtos });
+    return res.render('carrinho', { categorias, produtos, usuarioLogado });
   },
   showBusca: async (req, res) => {
     // Mostrar categorias para header e footer
@@ -54,8 +57,9 @@ const ProdutosControllers = {
     const pesquisa = req.query.busca
     //Mostrar produtos e categorias de resposta da pesquisa
     const produtos = await ProdutosServices.pesquisar(pesquisa);
+    const usuarioLogado = req.session.clienteLogado
 
-    return res.render('buscaHeader', { categorias, produtos });
+    return res.render('buscaHeader', { categorias, produtos, usuarioLogado });
   }
 };
 

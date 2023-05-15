@@ -7,9 +7,10 @@ body.admin-container .busca-container {
 body.admin-container .busca-container a {
   margin: initial;
   width: 200px;
-  margin-top: 20px;
+  /* margin-top: 20px; */
   background-color: var(--cor-secundaria);
   color: #000;
+  margin-bottom: 30px;
 }
 
 body.admin-container .busca-container.banner a {
@@ -39,6 +40,10 @@ body.admin-container .acoes-container {
   gap: 20px;
   align-items: stretch;
   height: 100%;
+}
+
+body.admin-container .ver-produto{
+  color: var(--cor-texto-primaria)
 }
 
 body.admin-container .acoes-container .delete-btn,

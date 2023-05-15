@@ -48,6 +48,9 @@ router.get("/painelUsuario",  checaAutenticacaoUsuario,  ClientesController.show
 router.get("/statusDePedidos/:idCliente",  checaAutenticacaoUsuario,  ClientesController.showstatusDePedido);
 router.post('/clientes/endereco/criar', checaAutenticacaoUsuario, ClientesController.criaEndereco)
 router.post('/pedidos/criar', checaAutenticacaoUsuario, PedidosController.criar)
+router.put('/clientes/atualizar/:idCliente', checaAutenticacaoUsuario, ClientesController.atualizaCliente)
+router.get('/clientes/sair', checaAutenticacaoUsuario, ClientesController.logoutCliente)
+
 
 
 // Admin Routers
@@ -81,7 +84,8 @@ router.delete('/admin/banners/:id/delete', checaAutenticacaoAdmin, AdminControll
 router.get('/admin/banners/:id/editar', checaAutenticacaoAdmin, AdminController.showEditarBanner)
 router.put('/admin/banners/:id/editar', checaAutenticacaoAdmin, uploadBanner.single('img'), AdminController.editarBanner)
 router.put('/admin/pedidos/alterar-status/:idPedido', checaAutenticacaoAdmin, PedidosController.alteraStatus)
-router.get('/admin/pedidos/:idPedido', PedidosController.showDetalhes)
+router.get('/admin/pedidos/:idPedido', checaAutenticacaoAdmin, PedidosController.showDetalhes)
+router.get('/admin/pedidos/usuarios/:idCliente', checaAutenticacaoAdmin, PedidosController.showPedidosDeUsuario)
 
 // Exportar o roteador
 module.exports = router;

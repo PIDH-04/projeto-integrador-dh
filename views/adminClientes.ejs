@@ -7,7 +7,7 @@
     <main class="">
       <h1>Clientes</h1>
       <form class="clientes-form-container">
-        <label for="busca-cliente">Buscar por cliente</label>
+        <!-- <label for="busca-cliente">Buscar por cliente</label>
         <div>
           <input
             type="text"
@@ -19,7 +19,7 @@
             <img src="/img/pesquisar.png" alt="Pesquisar" />
             Pesquisar
           </button>
-        </div>
+        </div> -->
       </form>
       <table>
         <thead>
@@ -38,7 +38,7 @@
               <td><%= cliente.nome %></td>
               <td><%= cliente.email %></td>
               <td>
-                <a class="botao-secundario" href="#"> Ver pedidos </a>
+                <a class="botao-secundario" href="/admin/pedidos/usuarios/<%= cliente.id %>"> Ver pedidos </a>
               </td>
             </tr>
            <% } %> 

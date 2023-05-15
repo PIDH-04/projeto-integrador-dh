@@ -1,101 +1,68 @@
-header {
-    position: relative;
-    z-index: 2;
+.status-pedido-container {
+    margin-bottom: 80px;
 }
 
-.pedidos {
-    display: flex;
-    height: 36vh;
-    flex-direction: column;
+.status-pedido-container .voltar a {
+  margin: 15px 0;
+  display: block;
+  margin-bottom: 40px;
+  color: var(--cor-texto-secundaria);
 }
 
-.painel {
-    position: relative;
-    width: fit-content;
-    height: fit-content;
-    background-color: white;
-    transition: width 0.3s ease;
+.status-pedido-container .pedido {
+  border-radius: 8px;
+  padding: 30px
 }
 
-.painel.active {
-    width: 90%;
-    display: flex;
-    justify-content: flex-start;
+.status-pedido-container .pedido + .pedido {
+    margin-top: 30px;
 }
 
-.painel.active~.painel {
-    width: 10%;
+.status-pedido-container .linha-pedido {
+  margin-bottom: 15px;
 }
 
-#titulo {
-    background-color: #f2f2f2;
-    margin: 8px;
-    cursor: pointer;
-    height: fit-content;
-    width: fit-content;
-    min-width: 240px;
-    padding: 20px;
-    position: relative;
-    z-index: 1;
+.status-pedido-container .pedido p {
+  display: inline;
 }
 
-.conteudoPedido {
-    padding: 20px;
-    padding-top: 5%;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+.status-pedido-container .pedido .titulo-campo {
+  font-weight: bold;
+  display: inline;
+  margin-right: 8px;
 }
 
-.painel.active #titulo {
-    height: fit-content;
-    width: fit-content;
+.status-pedido-container .produtos-pedido h4 {
+  margin-top: 30px;
+  margin-bottom: 20px;
 }
 
-.painel.active .conteudoPedido {
-    opacity: 1;
-    padding-left: 40%;
-    height: fit-content;
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    background-color: white;
+.status-pedido-container .produtos-pedido .produto {
+  display: flex;
+  text-decoration: none;
+  color: var(--cor-texto-primaria);
+  padding: 10px 0;
 }
 
-.painel.active .conteudoPedido .produtoPedido {
-    display: flex;
+.status-pedido-container .produtos-pedido .produto + .produto {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.painel.active .conteudoPedido .produtoPedido .conteudoPedido .descricaoPedido {
-    display: flex;
-    flex-direction: column;
+.status-pedido-container .produtos-pedido .produto .infos-produto {
+    width: 80%;
 }
 
-.painel.active .conteudoPedido #imagem-produto {
-    width: 40%;
-    height: 200px;
+.status-pedido-container .produtos-pedido .produto:hover {
+  opacity: 0.8;
 }
 
-.painel.active .conteudoPedido #imagem-produto img {
-    width: 90%;
-    height: 90%;
-    object-fit: contain;
-  }
+.status-pedido-container .produtos-pedido .produto .img-container {
+  width: 64px;
+  height: 64px;
+}
 
-  footer {
-    margin-top: 80vh;
-    width: 100%;
-  }
-
-  footer .copyright {
-    background-color: var(--cor-secundaria);
-    text-align: center;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  }
+.status-pedido-container .produtos-pedido .produto .img-container img {
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+}

@@ -21,7 +21,21 @@
           </li>
           <!-- <li><a href="/">Sobre</a></li> -->
           <li><a href="/carrinho">Carrinho</a></li>
-          <li><a href="/painelUsuario">Minha conta</a></li>
+          <!-- <li><a href="/painelUsuario">Minha conta</a></li> -->
+          <% if(usuarioLogado) {%>
+            <li class="painelusuario">
+              <a href="/painelUsuario">Minha conta</a>
+            </li>
+            </li>
+              <li class="painelusuario">
+                <a href="/clientes/sair">Sair</a>
+              </li>
+              <% } %>
+              <% if(!usuarioLogado) {%>
+                <li class="painelusuario">
+                  <a href="/cadastro">Acessar conta</a>
+                </li>
+                  <% } %>
         </ul>
       </nav>
     </ul>
@@ -49,15 +63,25 @@
         <input name="busca" id="busca" type="search" placeholder="Buscar...." />
         </form>
       </li>
+      <li>
+      <a class='icone-carrinho' href="/carrinho">
+        <img class="sacola" src="/img/sacola-gray.svg" alt="" />
+        <span id="span">0</span>
+      </a>
+      <% if(usuarioLogado) {%>
       <li class="painelusuario">
         <a href="/painelUsuario">Minha conta</a>
       </li>
-      <li>
-        <a href="/carrinho">
-          <img class="sacola" src="/img/sacola-gray.svg" alt="" />
-          <span id="span">0</span>
-        </a>
       </li>
+        <li class="painelusuario">
+          <a href="/clientes/sair">Sair</a>
+        </li>
+        <% } %>
+        <% if(!usuarioLogado) {%>
+          <li class="painelusuario">
+            <a href="/cadastro">Acessar conta</a>
+          </li>
+            <% } %>
     </div>
   </nav>
 </header>

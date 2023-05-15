@@ -1,6 +1,8 @@
 const CategoriasServices = require('../services/CategoriasServices');
 const ClientesServices = require('../services/ClientesServices');
+const { listarPedidosDeUsuarioComProdutos } = require('../services/PedidosServices');
 const ProdutosServices = require('../services/ProdutosServices');
+const bcrypt = require('bcrypt')
 
 const CadastroController = {
   showCadastro: async (req, res) => {
@@ -8,17 +10,20 @@ const CadastroController = {
     // Mostrar categorias para header e footer
     const categorias = await CategoriasServices.listarCategorias();
     //pesquisa header
+    const usuarioLogado = req.session.clienteLogado
+    const feedbackErro = req.query.erroCadastro
     const pesquisa = req.query.busca
 
-    return res.render('cadastro', { categorias, target, erro });
+    return res.render('cadastro', { categorias, target, erro, usuarioLogado, feedbackErro });
   },
   finalizacaoCompra: async (req, res) => {
     // Mostrar categorias para header e footer
     const categorias = await CategoriasServices.listarCategorias();
     //pesquisa header
     const pesquisa = req.query.busca
+    const usuarioLogado = req.session.clienteLogado
 
-    return res.render('finalizacaoCompra', { categorias });
+    return res.render('finalizacaoCompra', { categorias, usuarioLogado });
   },
   showLogin: (req, res) => {
     return res.render('login');
@@ -51,6 +56,10 @@ const CadastroController = {
     req.session.destroy()
     res.redirect('/admin')
   },
+  logoutCliente: (req, res) => {
+    req.session.destroy()
+    res.redirect('/cadastro')
+  },
   loginEmail: (req, res) => {
     return res.render('loginEmail');
   },
@@ -60,8 +69,10 @@ const CadastroController = {
     const categorias = await CategoriasServices.listarCategorias();
     const enderecos = await ClientesServices.listaEnderecos(idUsuario)    //pesquisa header
     const pesquisa = req.query.busca
+    const usuarioLogado = req.session.clienteLogado
+    
 
-    return res.render('checkoutEndereco', { categorias, enderecos });
+    return res.render('checkoutEndereco', { categorias, enderecos, usuarioLogado });
   },
 
   checkoutPagamento: async (req, res) => {
@@ -70,8 +81,10 @@ const CadastroController = {
     const enderecoSelecionado = req.params.idEndereco
     const frete = 0    //pesquisa header
     const pesquisa = req.query.busca
+    const usuarioLogado = req.session.clienteLogado
 
-    return res.render('checkoutPagamento', { categorias, pagamento: {cartao: 1}, endereco: enderecoSelecionado, frete });
+
+    return res.render('checkoutPagamento', { categorias, pagamento: {cartao: 1}, endereco: enderecoSelecionado, frete, usuarioLogado });
   },
   showPainelUsuario: async (req, res) => {
     // Mostrar categorias para header e footer
@@ -81,8 +94,10 @@ const CadastroController = {
     //pega id da url
     const idCliente = req.params.idCliente
     const cliente = req.session.cliente
+    const feedbackAtualizacao = req.query.atualizado
+    const usuarioLogado = req.session.clienteLogado
 
-    return res.render('painelUsuario', { categorias, cliente })
+    return res.render('painelUsuario', { categorias, cliente, feedbackAtualizacao, usuarioLogado })
   },
   showstatusDePedido: async (req, res) => {
     // Mostrar categorias para header e footer
@@ -92,24 +107,36 @@ const CadastroController = {
     // Pegando paramentro da url(idCliente)
     const idCliente = req.params.idCliente;
     const cliente = req.session.cliente
-    // Mostra pedidos entregues
-    const entregues = await ProdutosServices.produtosDePedidosEntregues(idCliente);
-    // Mostra todos os pedidos
-    const todos = await ProdutosServices.produtosDeTodosOsPedidos(idCliente);
-    // Mostra os pedidos em andamento
-    const andamento = await ProdutosServices.produtosDePedidosEmAndamento(idCliente);
+    const pedidos = await listarPedidosDeUsuarioComProdutos(idCliente);
+    const usuarioLogado = req.session.clienteLogado
 
-    return res.render('statusDePedido', { categorias, cliente, entregues, todos, andamento })
+    return res.render('statusDePedido', { categorias, pedidos, cliente: cliente.nome, usuarioLogado  })
   },
   criarCadastro: async (req, res) => {
-    const cliente = {
-      nome: req.body.nome,
-      email: req.body.email,
-      senha: req.body.senha
-    }
-    await ClientesServices.criarCliente(cliente);
+    try{
+      const cliente = {
+        nome: req.body.nome,
+        email: req.body.email,
+        senha: req.body.senha
+      }
+      
+      const clienteCadastro = await ClientesServices.criarCliente(cliente);
+  
+      req.session.clienteLogado = true
+      req.session.cliente = {
+        id: cliente.id,
+        nome: cliente.nome,
+        email: cliente.email
+      }
+  
+      req.session.clienteLogado = true
+      req.session.cliente = clienteCadastro
+  
+     return res.redirect("/");
 
-    return res.redirect("/cadastro?msg=facaOLogin");
+    }catch(e){
+      return res.redirect('/cadastro?erroCadastro=true')
+    }
   },
   criaEndereco: async (req, res) => {
     try{
@@ -122,6 +149,26 @@ const CadastroController = {
     }catch(e){
       console.log(e)
       return res.redirect('/')
+    }
+  },
+  atualizaCliente: async (req, res) => {
+    const { idCliente } = req.params
+    const { nome, senha } = req.body
+    try{
+
+      if(!senha){
+        await ClientesServices.editarCliente(idCliente, {nome} )
+      }else{
+        const senhaCriptografada = bcrypt.hashSync(senha, 8)
+        await ClientesServices.editarCliente(idCliente, {nome, senha: senhaCriptografada} )
+      }
+
+      req.session.cliente.nome = nome
+      return res.redirect('/painelUsuario?atualizado=true')
+
+    }catch(e){
+      console.log(e)
+      return res.redirect('/painelUsuario?atualizado=false')
     }
   }
 }

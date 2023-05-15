@@ -11,7 +11,6 @@
       <a href="/carrinho">Voltar para carrinho</a>
       <div class="flex-container">
         <section class="enderecos-container">
-          <% if(locals.enderecos && locals.enderecos.length > 0){ %>
             <section class="master-section">
             <h3>Endereços usados anteriormente</h3>
             <ul class="erros" id="erro-selecione-endereco"></ul>
@@ -35,7 +34,6 @@
               </button>
             </form>
           </section>
-            <% } %>
           <section class="master-section-novo">
             <h3>Adicione um novo endereço</h3>
             <ul class="erros" id="erros-novo-endereco"></ul>

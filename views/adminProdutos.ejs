@@ -9,7 +9,7 @@
       <h1>Produtos</h1>
       <div class="busca-container">
         <form>
-          <label for="busca-cliente">Busca Produto</label>
+          <!-- <label for="busca-cliente">Busca Produto</label>
           <div>
             <input
               type="text"
@@ -21,7 +21,7 @@
               <img src="/img/pesquisar.png" alt="Pesquisar" />
               Pesquisar
             </button>
-          </div>
+          </div> -->
         </form>
 
         <a href="/admin/produtos/criar" class="botao-secundario"
@@ -55,11 +55,11 @@
               </div>
             </td>
             <td>
-              <a href="/produto/<%= produto.slug %>" target="_blank"> <%= produto.nome %> </a>
+              <a class="ver-produto" href="/produto/<%= produto.id %>" target="_blank"> <%= produto.nome %> </a>
             </td>
             <td><%= produto.id %></td>
-            <td><%= produto.categoria %></td>
-            <td><%= produto.preco.toLocaleString('pt-BR', {style: 'currency',
+            <td><%= produto.categorias.nome %></td>
+            <td>R$ <%= produto.preco.toLocaleString('pt-BR', {style: 'currency',
               currency: 'BRL'}) %></td>
             <td class="acoes-container">
               <a

@@ -16,6 +16,11 @@
           <!-- <div class="errors" id="div-errors"> -->
           <!-- <ul class="ulErroDiv"></ul> -->
           <!-- </div> -->
+          <% if(locals.feedbackErro){ %>
+            <ul class="erros erro-backend" id="ulErros">
+              <li>Erro ao criar cadastro, tente novamente mais tarde</li>
+            </ul>
+          <% } %>
           <ul class="erros" id="ulErros">
             <!-- <li>teste</li>
             <li>teste1</li>

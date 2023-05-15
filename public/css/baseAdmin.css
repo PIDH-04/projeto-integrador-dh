@@ -85,4 +85,6 @@ body.admin-container .retornar-pagina img{
   font-size: 0.9rem;
   color: white;
   text-decoration: none;
+  margin: 0 20px;
+  display: inline-block;
 }

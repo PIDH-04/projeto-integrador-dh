@@ -8,7 +8,7 @@
     <main class="">
       <h1>Pedidos</h1>
       <form class="pedidos-form-container">
-        <label for="data-inicial">
+        <!-- <label for="data-inicial">
           Data inicial
           <input
             class="data-seletor"
@@ -29,7 +29,7 @@
         <button type="submit">
           <img src="/img/pesquisar.png" alt="Pesquisar" />
           Pesquisar
-        </button>
+        </button> -->
       </form>
       <% if(locals.feedbackEdicao !== undefined){ %>
         <div class="<%= locals.feedbackEdicao == 'true' ? 'sucesso' : 'erros' %>">
@@ -44,7 +44,9 @@
             <th>Cliente</th>
             <th>E-mail cliente</th>
             <th>Status</th>
+            <% if(locals.showAcoes){ %>
             <th>Ações</th>
+            <% } %>
             <th></th>
           </tr>
         </thead>
@@ -64,6 +66,8 @@
               <td><%= pedido.clientes.nome %></td>
               <td><%= pedido.clientes.email %></td>
               <td><%= pedido.status %></td>
+
+              <% if(locals.showAcoes){ %>
               <td class="mudar-status-container">
                 <form action="/admin/pedidos/alterar-status/<%= pedido.id %>?_method=PUT" method="POST" class="mudar-status">
                   <select name="status">
@@ -75,8 +79,9 @@
                     <button>Salvar</button>
                   </form>
                 </td>
+               <% } %>
                 <td>
-                  <a class="ver-mais-pedidos" href="/admin/pedidos/<%=pedido.id %>">Ver mais</a>
+                  <a class="ver-mais-pedidos" href="/admin/pedidos/<%=pedido.id %><%=locals.clientePedidos && `?cliente=true`%>">Ver mais</a>
                 </td> 
               </tr>
             <% }) %>

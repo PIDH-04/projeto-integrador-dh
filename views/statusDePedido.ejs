@@ -1,85 +1,68 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<%- include("partials/head", {css: ["statusDePedido.css"], titulo: "Status de Pedidos E-móvel" }) %>
+  <%- include("partials/head", {css: ["statusDePedido.css"], titulo: "Status de Pedidos E-móvel" }) %>
 
   <body>
-    <%- include("partials/header") %>
-      <%- include("partials/topoPg") %>
+    <%- include("partials/header") %> <%- include("partials/topoPg") %>
 
+    <main class="status-pedido-container">
+      <h1>Pedidos de <%= cliente %></h1>
+      <p class="voltar"><a href="/painelUsuario">Voltar para painel de usuário</a></p>
 
-        <main>
-          <h1>Status de Pedidos de <%= cliente.nome %>
-          </h1>
-          <div class="pedidos">
-            <div class="painel" id="entregues">
-              <h2 class="titulo1" id="titulo">Entregues &#x25B6;</h2>
-              <div class="conteudoPedido">
-                <% for (const e of entregues) { %>
-                  <div class="produtoPedido">
-                    <div id="imagem-produto">
-                      <img class="imagem" src="<%= e.imagens[0].caminho %>" alt="" />
-                    </div>
-                    <div class="descricaoPedido">
-                      <p>
-                        <%= e.nome %>
-                      </p>
-                      <p>R$<%= e.preco %></p>
-                      <% if (e && e.entregueAt) { %>
-                        <p>Entregue em <%= new Date(e.entregueAt).toLocaleString() %></p>
-                      <% } %>
-                    </div>
-                  </div>
-                  <% } %>
-              </div>
+      <% locals.pedidos.forEach(p => { %>
+        <div class="pedido container-dropshadow">
+          <div class="dados-pedido">
+            <div class="linha-pedido">
+              <p class="titulo-campo">ID:</p>
+              <p><%= p.id %></p>
             </div>
-            <div class="painel" id="andamento">
-              <h2 class="titulo2" id="titulo">Em andamento &#x25B6;</h2>
-              <div class="conteudoPedido">
-                <% for (const a of andamento) { %>
-                  <div class="produtoPedido">
-                    <div id="imagem-produto">
-                      <img class="imagem" src="<%= a.imagens[0].caminho %>" alt="" />
-                    </div>
-                    <div class="descricaoPedido">
-                      <p>
-                        <%= a.nome %>
-                      </p>
-                      <p>R$<%= a.preco %></p>
-                      <% if (a && a.createdAt) { %>
-                        <p>Pedido realizado em <%= new Date(a.createdAt).toLocaleString() %></p>
-                      <% } %>                      
-                    </div>
-                  </div>
-                  <% } %>
-              </div>
+            <div class="linha-pedido">
+              <p class="titulo-campo">Data do pedido:</p>
+              <p>
+                <% const data = new Date(p.createdAt) %>
+                <% const dia = data.getDate() %>
+                <% const mes = data.getMonth() %>
+                <% const ano = data.getFullYear() %>
+                <% const diaFormatado = dia < 10 ? `0${dia}` : dia  %>
+                <% const mesFormatado = mes < 10 ? `0${mes}` : mes  %>
+                <%= `${diaFormatado}/${mesFormatado}/${ano}`  %>
+                </p>
             </div>
-            <div class="painel" id="todos">
-              <h2 class="titulo3" id="titulo">Todos &#x25B6;</h2>
-              <div class="conteudoPedido">
-                <% for (const t of todos) { %>
-                  <div class="produtoPedido">
-                    <div id="imagem-produto">
-                      <img class="imagem" src="<%= t.imagens[0].caminho %>" alt="" />
-                    </div>
-                    <div class="descricaoPedido">
-                      <p>
-                        <%= t.nome %>
-                      </p>
-                      <p>R$<%= t.preco %></p>
-                      <% if (t && t.createdAt) { %>
-                        <p>Pedido realizado em <%= new Date(t.createdAt).toLocaleString() %></p>
-                      <% } %>
-                      
-                    </div>
-                  </div>
-                  <% } %>
-              </div>
+            <div class="linha-pedido">
+              <p class="titulo-campo">Valor:</p>
+              <p>R$ <%= p.preco %></p>
+            </div>
+            <div class="linha-pedido">
+              <p class="titulo-campo">Status:</p>
+              <p><%= p.status %></p>
             </div>
           </div>
-        </main>
+          <div class="produtos-pedido">
+            <h4>Produtos</h4>
+            <% p.produtos.forEach(produto => { %>
+              <a href="/produto/<%=produto.id %>" class="produto">
+                <div class="img-container">
+                  <img src="<%= produto.imagens[0].caminho %>" />
+                </div>
+                <div class="infos-produto">
+                  <div class="linha-pedido">
+                    <p class="titulo-campo">Nome:</p>
+                    <p><%= produto.nome %></p>
+                  </div>
+                  <div class="linha-pedido">
+                    <p class="titulo-campo">Preço Unitário:</p>
+                    <p>R$ <%= produto.preco %></p>
+                  </div>
+                </div>
+              </a>
+            <% }) %>
+          </div>
+        </div>
+      <% }) %>
 
-        <%- include("partials/footer") %>
-          <script src="/scripts/statusDePedido.js"></script>
+    </main>
+
+    <%- include("partials/footer") %>
+    <script src="/scripts/statusDePedido.js"></script>
   </body>
-
 </html>
