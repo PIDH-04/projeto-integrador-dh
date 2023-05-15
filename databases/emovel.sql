@@ -15,8 +15,9 @@ create table administradores (
 create table banners (
 	id int not null primary key auto_increment,
     caminho varchar(256) not null,
-    descricao text not null,
-    link varchar(255) not null,
+    descricao text null,
+    link varchar(255) null,
+    nome varchar(255) not null,
     createdAt timestamp not null,
     updatedAt timestamp null,
     deletedAt timestamp null
@@ -108,6 +109,7 @@ create table pedidos(
     clientes_id int not null,
     preco decimal(6,2) not null,
     formas_de_pagamento_id int not null,
+    status varchar(20) not null default 'realizado',
     pagoAt timestamp null,
     createdAt timestamp null,
     deletedAt timestamp null,
@@ -253,8 +255,8 @@ INSERT INTO formas_de_pagamento (id, nome) VALUES
 	(4, "cartão de débito");
     
     
-INSERT INTO enderecos (id, clientes_id, bairro, logradouro, numero, cep, createdAt) VALUES
-    (1, 1, "parecida", "Rua Juju Ferreira", 100, "90100000", now());
+INSERT INTO enderecos (id, clientes_id, bairro, logradouro, numero, cep, createdAt, cidade) VALUES
+    (1, 1, "parecida", "Rua Juju Ferreira", 100, "90100000", now(), 'São Paulo');
     
 INSERT INTO pedidos (id, enderecos_id, clientes_id, formas_de_pagamento_id, preco, createdAt, entregueAt) VALUES (1, 1, 1, 2, 800.00, 1684084748000, now()),(2, 1, 1, 2, 1000.00, now(), null);
 
@@ -268,7 +270,7 @@ INSERT INTO visitas (id, produtos_id, createdAt) VALUES
 	(2, 5, now()),
 	(3, 8, now());
 
-insert into banners (id, caminho, descricao, createdAt) values (1, '/img/banner1.jpeg', 'Cadeiras em promoção!', now());
+insert into banners (id, caminho, descricao, nome, createdAt) values (1, '/img/banner1.jpeg', 'Cadeiras em promoção!', 'Cadeiras em promocao', now());
 
 
 -- Consultas

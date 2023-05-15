@@ -16,10 +16,10 @@
         <h2>Dados do Usuário</h2>
       </div>
 
-      <% if(feedbackEdicao !== undefined){ %>
+      <% if(locals.feedbackEdicao !== undefined){ %>
 
-        <div class="<%= feedbackEdicao == 'true' ? 'sucesso' : 'erros' %>">
-          <%= feedbackEdicao == 'true' ? 'Usuário salvo' : 'Erro ao salvar usuário, tente novamente mais tarde' %>
+        <div class="<%= locals.feedbackEdicao == 'true' ? 'sucesso' : 'erros' %>">
+          <%= locals.feedbackEdicao == 'true' ? 'Usuário salvo' : 'Erro ao salvar usuário, tente novamente mais tarde' %>
         </div>
 
       <% } %>
@@ -33,7 +33,10 @@
               name="nome"
               id="nome"
               placeholder="Nome do usuário"
+              value="<%= locals.infoPassada && locals.infoPassada.nome %>"
+              required
             />
+            <p class="erro-valor" id="erro-nome"></p>
 
             <label for="email">E-mail</label>
             <input
@@ -41,8 +44,16 @@
               name="email"
               id="email"
               placeholder="Novo produto"
+              value="<%= locals.infoPassada && locals.infoPassada.email %>"
+              required
             />
+
+            <% if (locals.uniqueEmailError) { %>
+              <p class="erro-valor">Email já cadastrado</p>
+            <% } %>
+            <p class="erro-valor" id="erro-email"></p>
           </div>
+
 
           <div>
             
@@ -52,20 +63,24 @@
               name="senha"
               id="senha"
               placeholder="Adiciona nova senha"
+              required
             />
+            <p class="erro-valor" id="erro-senha"></p>
             
             <label for="confirma-senha">Confirmar nova senha</label>
             <input
               type="password"
               name="confirma-senha"
-              id="confirma-senha"
+              id="confirmaSenha"
               placeholder="Confirme a nova senha"
+              required
             />
+            <p class="erro-valor" id="erro-confirma-senha"></p>
         </div>
         </div>
         <button class="botao-secundario" type="submit" form="novo-produto-form">Salvar</button>
       </form>
     </main>
-    <script src="/scripts/adminProduto.js"></script>
+    <script src="/scripts/adminAddUsuario.js"></script>
   </body>
 </html>

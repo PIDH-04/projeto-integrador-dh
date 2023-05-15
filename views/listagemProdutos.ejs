@@ -54,7 +54,7 @@
 
             <div class="produtos">
               <% for (const p of produtos) { %>
-                <div class="produto">
+                <div class="produto" >
                   <a href="/produto/<%= p.id %>">
                     <div class="img-container">
                       <img class="imagem-produto" src="<%= p.imagens[0].caminho %>" alt="<%= p.nome %>" />
@@ -68,7 +68,7 @@
 
                     </div>
                   </a>
-                  <button class="comprar botao-secundario add-cart">
+                  <button data-idProduto="<%= p.id %>" class="comprar botao-secundario add-cart">
                     Adicionar ao carrinho
                   </button>
                 </div>

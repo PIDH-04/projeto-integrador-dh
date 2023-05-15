@@ -31,7 +31,7 @@
 
       <% if(feedbackDelete !== undefined){ %>
         <div class="<%= feedbackDelete == 'true' ? 'sucesso' : 'erros' %>">
-          <%= feedbackDelete == 'true' ? 'Produto deletado com sucesso' : 'Erro ao deletar o produto' %>
+          <%= feedbackDelete == 'true' ? 'Categoria deletada com sucesso' : 'Erro ao deletar a categoria' %>
         </div>
       <% } %>
 
@@ -40,7 +40,6 @@
           <tr>
             <th>ID</th>
             <th>Nome da Categoria</th>
-            <th>Slug</th>
             <th>Ações</th>
           </tr>
         </thead>
@@ -49,7 +48,6 @@
             <tr>
               <td><%= categoria.id %></td>
               <td><%= categoria.nome %></td>
-              <td><%= categoria.slug %></td>
               <td class="acoes-container">
                 <a
                   class="botao-secundario"
@@ -57,9 +55,12 @@
                 >
                   <img src="/img/editar.svg" alt="del" />
                 </a>
-                <form action="/admin/categorias/<%= categoria.id %>/delete?_method=DELETE" method="POST">
-                  <button><img src="/img/remover.svg" alt="del" type="submit" /></button>
-                </form>
+                <div class='delete-btn'>
+                  <img src="/img/remover.svg" alt="del" type="submit" />
+                </div>
+                <%- include("partials/deleteModal", {
+                  action: `/admin/categorias/${categoria.id}/delete?_method=DELETE`}) 
+                %>
               </td>
             </tr>
             <% } %>
@@ -67,5 +68,6 @@
         </tbody>
       </table>
     </main>
+    <script src="/scripts/deleteModal.js"></script>
   </body>
 </html>

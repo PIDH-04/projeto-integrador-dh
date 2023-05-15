@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <%- include("partials/adminHead", {css: ["baseAdmin.css",
+  "produtosAdmin.css"], titulo: "Produtos Admin | E-móvel"}) %>
+  <body class="admin-container">
+    <%- include("partials/adminHeader") %>
+    <%- include("partials/topoPg") %>
+    <main class="">
+      <h1>Banners</h1>
+      <div class="busca-container banner">
+        <!-- <form>
+          <label for="busca-cliente">Busca Produto</label>
+          <div>
+            <input
+              type="text"
+              name="busca-produto"
+              id="busca-produto"
+              placeholder="Digite o nome do produto"
+            />
+            <button type="submit">
+              <img src="/img/pesquisar.png" alt="Pesquisar" />
+              Pesquisar
+            </button>
+          </div>
+        </form> -->
+
+        <a href="/admin/banners/criar" class="botao-secundario"
+          >Adicionar Banner</a
+        >
+      </div>
+
+      <% if(feedbackDelete !== undefined){ %>
+        <div class="<%= feedbackDelete == 'true' ? 'sucesso' : 'erros' %>">
+          <%= feedbackDelete == 'true' ? 'Banner deletado com sucesso' : 'Erro ao deletar o produto' %>
+        </div>
+      <% } %>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Banner</th>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Data de criação</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% banners.forEach(banner => { %>
+              <tr>
+                <td>
+                  <div class="img-produto-container banner">
+                    <img src="<%= banner.caminho %>" alt="<%= banner.nome %>" />
+                  </div>
+                </td>
+                <td>
+                  <%= banner.id %>
+                </td>
+                <td><%= banner.nome %></td>
+                <td>
+                  <% const data = new Date(banner.createdAt) %>
+                  <% const dia = data.getDate() %>
+                  <% const mes = data.getMonth() %>
+                  <% const ano = data.getFullYear() %>
+                  <% const diaFormatado = dia < 10 ? `0${dia}` : dia  %>
+                  <% const mesFormatado = mes < 10 ? `0${mes}` : mes  %>
+                  <%= `${diaFormatado}/${mesFormatado}/${ano}`  %>
+                </td>
+                <td class="acoes-container">
+                  <a
+                    class="botao-secundario"
+                    href="/admin/banners/<%= banner.id %>/editar"
+                  >
+                    <img src="/img/editar.svg" alt="del" />
+                  </a>
+                  <div class='delete-btn'>
+                    <img src="/img/remover.svg" alt="del" type="submit" />
+                  </div>
+                  <%- include("partials/deleteModal", {
+                    action: `/admin/banners/${banner.id}/delete?_method=DELETE`}) 
+                  %>
+                </td>
+              </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </main>
+    <script src="/scripts/deleteModal.js"></script>
+  </body>
+</html>

@@ -7,14 +7,6 @@
     <main>
       <div id="container-a">
         <h1>Painel do Usuário</h1>
-        <!-- <img class="imglogin" src="/img/<%= usuario.img %>" alt="img<%= usuario.nome %>" />
-        <br />
-        <form id="form" class="botao-primario">
-          <label class="alterar-img">
-            Alterar
-            <input type="file" name="foto" />
-          </label> -->
-
           <div class="no-erros" id="div-errors">
             <ul></ul>
           </div>
@@ -48,7 +40,7 @@
           id="Endereço" class="form-control" required />
         <button class="botao-secundario">Alterar</button>
         <h2>Meus Pedidos</h2>
-        <a href="http://localhost:3000/statusDePedidos">
+        <a href="http://localhost:3000/statusDePedidos/<%=cliente.id %>">
           <button class="botao-secundario2">Ir para Pedidos</button>
         </a>
       </div>

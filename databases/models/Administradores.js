@@ -25,7 +25,8 @@ module.exports = (sequelize, DataTypes) => {
         },
         {
             tableName: 'administradores',
-            timestamps: true
+            timestamps: true,
+            paranoid: true
         }
     )
 

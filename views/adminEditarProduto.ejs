@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <%- include("partials/adminHead", {css: ["baseAdmin.css",
-  "adminAddProduto.css"], titulo: "Editar Produto | E-móvel"}) %>
+  "adminAddProduto.css", "deleteModal.css"], titulo: "Editar Produto | E-móvel"}) %>
   <body class="admin-container">
     <%- include("partials/adminHeader") %>
     <%- include("partials/topoPg") %>
@@ -45,18 +45,18 @@
                   name="largura"
                   id="largura"
                   placeholder="90"
-                  value="<%= produto.medidas.largura %>"
+                  value="<%= produto.largura %>"
                 />
             </div>
 
             <div>
-              <label>Comprimento</label>
+              <label>profundidade</label>
                 <input
                   type="text"
-                  name="comprimento"
-                  id="comprimento"
+                  name="profundidade"
+                  id="profundidade"
                   placeholder="90"
-                  value="<%= produto.medidas.comprimento %>"
+                  value="<%= produto.profundidade %>"
                 />
             </div>
 
@@ -67,8 +67,15 @@
                   name="altura"
                   id="altura"
                   placeholder="90"
-                  value="<%= produto.medidas.altura %>"
+                  value="<%= produto.altura %>"
                 />
+            </div>
+            <div>
+              <label for="peso">Peso (em kg)</label>
+              <input type="text" name="peso" id="peso" placeholder="80" value="<%= locals.produto && locals.produto.peso ? locals.produto.peso : '' %>"/>
+              <% if (locals.erros && locals.erros.peso) { %>
+              <p class="erro-valor"><%= erros.peso.msg %></p>
+              <% } %>
             </div>
 
           </div>
@@ -92,32 +99,35 @@
 
           <div>
             <div class="imagem-container">
-              <img id="preview-img" src="<%= produto.img[0] %>" />
+              <img id="preview-img" src="<%= produto.imagens[0].caminho  %>" />
             </div>
             <label class="imagem-produto-btn" for="img"
               >Selecionar imagens do produto</label
             >
             <input type="file" name="img" id="img" id="imagem-produto" multiple />
             <div class="imgs-produto">
-              <% for(let img of produto.img){ %>
-                <img src="<%= img %>" />
+              <% for(let img of produto.imagens){ %>
+                <div class="miniatura-img-produto" data-img-id="<%= img.id %>">
+                  <span class="remover-img" >X</span>
+                  <img src="<%= img.caminho %>" />
+                </div>
               <% } %>  
             </div>
             <label>Selecione a Categoria do produto</label>
-            <select name="categoria">
+            <select name="categorias_id">
               <option disabled>Selecione uma categoria</option>
               <% for(let categoria of categorias){ %>
-                <option value="<%= categoria.slug %>"
-                  <%= produto.categoria == categoria.slug ? "selected" : null %>>
+                <option value="<%= categoria.id %>"
+                  <%= categoria.id == produto.categorias_id ? "selected" : null %>>
                   <%= categoria.nome %>
                 </option>
               <% } %>
             </select>
             <label>Selecione a Área do produto</label>
-            <select name="area">
+            <select name="areas_id">
               <option disabled>Selecione uma área</option>
-              <option value="interna" <%= produto.area == "interna" ? "selected" : null %> >Área Interna</option>
-              <option value="externa" <%= produto.area == "externa" ? "selected" : null %>>Área Externa</option>
+              <option value="1" <%= produto.area == "1" ? "selected" : null %> >Área Interna</option>
+              <option value="2" <%= produto.area == "2" ? "selected" : null %>>Área Externa</option>
             </select>
           </div>
         </div>
@@ -126,11 +136,15 @@
       
       <div class="container-botoes">
         <button class="botao-secundario" type="submit" form="novo-produto-form">Salvar</button>
-        <form action="/admin/produtos/<%= produto.id %>/delete?_method=DELETE" method="POST" id="delete-form">
-            <button class="botao-secundario apagar" id="delete-btn" type="submit">Apagar produto</button>
-        </form>
+        <button class='delete-btn botao-secundario'>
+          Remover
+        </button>
+        <%- include("partials/deleteModal", {
+          action: `/admin/produtos/${produto.id}/delete?_method=DELETE`}) 
+        %>
       </div>
     </main>
     <script src="/scripts/adminProduto.js"></script>
+    <script src="/scripts/deleteModal.js"></script>
   </body>
 </html>

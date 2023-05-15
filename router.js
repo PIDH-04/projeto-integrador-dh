@@ -9,11 +9,13 @@ const checaAutenticacaoAdmin = require('./middlewares/checaAutenticacaoAdmin');
 const checaAutenticacaoUsuario = require('./middlewares/checaAutenticacaoUsuario');
 const validacoesExpress = require('./helpers/validacoesExpress');
 const gravarAcessoProduto = require('./middlewares/gravarAcessoProduto');
+const PedidosController = require('./controllers/PedidosController');
 
 const router = express.Router()
 
 // Configuração Multer
 const upload = multer({dest: 'public/img/produtos'})
+const uploadBanner = multer({dest: 'public/img/banners'})
 
 // Definir rotas
 router.get("/master", (req, res) => {
@@ -31,7 +33,7 @@ router.post('/login', ClientesController.login);
 
 router.get('/login/email', ClientesController.loginEmail);
 
-router.get('/checkoutpagamento', checaAutenticacaoUsuario, ClientesController.checkoutPagamento);
+router.get('/checkoutpagamento/:idEndereco?', checaAutenticacaoUsuario, ClientesController.checkoutPagamento);
 
 router.get("/checkoutDeEndereco", checaAutenticacaoUsuario, ClientesController.checkoutEndereco);
 
@@ -44,6 +46,8 @@ router.get("/cadastro", ClientesController.showCadastro);
 router.post("/cadastro",ClientesController.criarCadastro);
 router.get("/painelUsuario", checaAutenticacaoUsuario, ClientesController.showPainelUsuario);
 router.get("/statusDePedidos/:idCliente", checaAutenticacaoUsuario, ClientesController.showstatusDePedido);
+router.post('/clientes/endereco/criar', checaAutenticacaoUsuario, ClientesController.criaEndereco)
+router.post('/pedidos/criar', checaAutenticacaoUsuario, PedidosController.criar)
 
 
 // Admin Routers
@@ -70,6 +74,14 @@ router.put('/admin/usuarios/:id/editar', checaAutenticacaoAdmin, AdminController
 router.delete('/admin/usuarios/:id/delete', checaAutenticacaoAdmin, AdminController.removeUsuario)
 router.get('/admin/usuarios/criar', checaAutenticacaoAdmin, AdminController.showCriaUsuario)
 router.post('/admin/usuarios/criar', checaAutenticacaoAdmin, AdminController.gravarUsuario)
+router.get('/admin/banners', checaAutenticacaoAdmin, AdminController.showBanners)
+router.get('/admin/banners/criar', checaAutenticacaoAdmin, AdminController.showCriarBanner)
+router.post('/admin/banners/criar', checaAutenticacaoAdmin, uploadBanner.single('img'), validacoesExpress.criacaoBanner, AdminController.gravarBanner)
+router.delete('/admin/banners/:id/delete', checaAutenticacaoAdmin, AdminController.removerBanner)
+router.get('/admin/banners/:id/editar', checaAutenticacaoAdmin, AdminController.showEditarBanner)
+router.put('/admin/banners/:id/editar', checaAutenticacaoAdmin, uploadBanner.single('img'), AdminController.editarBanner)
+router.put('/admin/pedidos/alterar-status/:idPedido', checaAutenticacaoAdmin, PedidosController.alteraStatus)
+router.get('/admin/pedidos/:idPedido', PedidosController.showDetalhes)
 
 // Exportar o roteador
 module.exports = router;

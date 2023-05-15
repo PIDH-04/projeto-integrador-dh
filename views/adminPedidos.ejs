@@ -31,6 +31,11 @@
           Pesquisar
         </button>
       </form>
+      <% if(locals.feedbackEdicao !== undefined){ %>
+        <div class="<%= locals.feedbackEdicao == 'true' ? 'sucesso' : 'erros' %>">
+          <%= locals.feedbackEdicao == 'true' ? 'Pedido atualizado' : 'Erro ao atualizar pedido' %>
+        </div>
+      <% } %>
       <table>
         <thead>
           <tr>
@@ -40,69 +45,41 @@
             <th>E-mail cliente</th>
             <th>Status</th>
             <th>Ações</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>00001</td>
-            <td>10/02/2023</td>
-            <td>Alberto da Silva</td>
-            <td>alberto.silva@gmail.com</td>
-            <td>Entregue</td>
-            <td class="mudar-status-container">
-              <form action="" class="mudar-status">
-                <select>
-                  <option disabled selected>Alterar Status</option>
-                  <option value="realizado">Realizado</option>
-                  <option value="preparo">Em Preparo</option>
-                  <option value="transporte">Em transporte</option>
-                  <option value="entregue">Entregue</option>
-                  <option value="cancelado">Cancelado</option>
-                </select>
-                <button>Salvar</button>
-              </form>
-            </td>
-          </tr>
-          <tr>
-            <td>00001</td>
-            <td>10/02/2023</td>
-            <td>Alberto da Silva</td>
-            <td>alberto.silva@gmail.com</td>
-            <td>Entregue</td>
-            <td class="mudar-status-container">
-              <form action="" class="mudar-status">
-                <select>
-                  <option disabled selected>Alterar Status</option>
-                  <option value="realizado">Realizado</option>
-                  <option value="preparo">Em Preparo</option>
-                  <option value="transporte">Em transporte</option>
-                  <option value="entregue">Entregue</option>
-                  <option value="cancelado">Cancelado</option>
-                </select>
-                <button>Salvar</button>
-              </form>
-            </td>
-          </tr>
-          <tr>
-            <td>00001</td>
-            <td>10/02/2023</td>
-            <td>Alberto da Silva</td>
-            <td>alberto.silva@gmail.com</td>
-            <td>Entregue</td>
-            <td class="mudar-status-container">
-              <form action="" class="mudar-status">
-                <select>
-                  <option disabled selected>Alterar Status</option>
-                  <option value="realizado">Realizado</option>
-                  <option value="preparo">Em Preparo</option>
-                  <option value="transporte">Em transporte</option>
-                  <option value="entregue">Entregue</option>
-                  <option value="cancelado">Cancelado</option>
-                </select>
-                <button>Salvar</button>
-              </form>
-            </td>
-          </tr>
+          <% locals.pedidos.forEach(pedido => { %>
+            <tr>
+              <td><%= pedido.id %></td>
+              <td>
+                <% const data = new Date(pedido.createdAt) %>
+                <% const dia = data.getDate() %>
+                <% const mes = data.getMonth() %>
+                <% const ano = data.getFullYear() %>
+                <% const diaFormatado = dia < 10 ? `0${dia}` : dia  %>
+                <% const mesFormatado = mes < 10 ? `0${mes}` : mes  %>
+                <%= `${diaFormatado}/${mesFormatado}/${ano}`  %>
+                </td>
+              <td><%= pedido.clientes.nome %></td>
+              <td><%= pedido.clientes.email %></td>
+              <td><%= pedido.status %></td>
+              <td class="mudar-status-container">
+                <form action="/admin/pedidos/alterar-status/<%= pedido.id %>?_method=PUT" method="POST" class="mudar-status">
+                  <select name="status">
+                    <option disabled selected>Alterar Status</option>
+                    <% locals.statusPedidos.forEach(status => { %>
+                      <option value="<%=status.status %>"><%=status.status %></option>
+                      <% }); %>
+                    </select>
+                    <button>Salvar</button>
+                  </form>
+                </td>
+                <td>
+                  <a class="ver-mais-pedidos" href="/admin/pedidos/<%=pedido.id %>">Ver mais</a>
+                </td> 
+              </tr>
+            <% }) %>
         </tbody>
       </table>
     </main>

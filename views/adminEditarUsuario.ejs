@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <%- include("partials/adminHead", {css: ["baseAdmin.css",
-  "adminAddProduto.css", "adminAddUsuario.css"], titulo: "Editar Usuario | E-móvel"}) %>
+  "adminAddProduto.css", "adminAddUsuario.css", "deleteModal.css"], titulo: "Editar Usuario | E-móvel"}) %>
   <body class="admin-container">
     <%- include("partials/adminHeader") %>
     <%- include("partials/topoPg") %>
@@ -35,14 +35,16 @@
               placeholder="Nome do usuário"
               value="<%= usuario.nome %>"
             />
+            <p class="erro-valor" id="erro-nome"></p>
 
-            <label for="email">E-mail</label>
+            <label for="email">E-mail (não é possível altera-lo)</label>
             <input
               type="email"
               name="email"
               id="email"
               placeholder="Novo produto"
               value="<%= usuario.email %>"
+              disabled
             />
           </div>
 
@@ -55,14 +57,16 @@
               id="senha"
               placeholder="Adiciona nova senha"
             />
+            <p class="erro-valor" id="erro-senha"></p>
             
             <label for="confirma-senha">Confirmar nova senha</label>
             <input
               type="password"
               name="confirma-senha"
-              id="confirma-senha"
+              id="confirmaSenha"
               placeholder="Confirme a nova senha"
             />
+            <p class="erro-valor" id="erro-confirma-senha"></p>
         </div>
         </div>
       </form>
@@ -70,11 +74,15 @@
       
       <div class="container-botoes">
         <button class="botao-secundario" type="submit" form="novo-produto-form">Salvar</button>
-        <form action="/admin/usuarios/<%= usuario.id %>/delete?_method=DELETE" method="POST" id="delete-form">
-            <button class="botao-secundario apagar" id="delete-btn" type="submit">Apagar usuário</button>
-        </form>
+        <button class='delete-btn botao-secundario'>
+          Remover
+        </button>
+        <%- include("partials/deleteModal", {
+          action: `/admin/usuarios/${usuario.id}/delete?_method=DELETE`}) 
+        %>
       </div>
     </main>
-    <script src="/scripts/adminProduto.js"></script>
+    <script src="/scripts/deleteModal.js"></script>
+    <script src="/scripts/adminEditarUsuario.js"></script>
   </body>
 </html>

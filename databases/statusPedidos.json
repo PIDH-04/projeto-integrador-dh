@@ -1,0 +1,22 @@
+[
+    {   
+        "id": 1,
+        "status": "realizado"
+    },
+    {   
+        "id": 2,
+        "status": "em preparo"
+    },
+    {   
+        "id": 3,
+        "status": "em transporte"
+    },
+    {   
+        "id": 4,
+        "status": "entregue"
+    },
+    {   
+        "id": 5,
+        "status": "cancelado"
+    }
+]
