@@ -1,55 +1,79 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<%- include("partials/head", {css: ["painelUsuario.css"], titulo: "Painel do Usuário E-móvel" }) %>
-
-  <%- include("partials/header") %>
-  <%- include("partials/topoPg") %>
-    <main>
-      <div id="container-a">
-        <h1>Painel do Usuário</h1>
-          <div class="no-erros" id="div-errors">
-            <ul></ul>
-          </div>
-          <span class="success">Seus dados foram atualizados</span>
-          <!-- <small>Error message</small> -->
-          <br>
-          <label for="Nome">
-            Seu Nome
-            <input type="text" placeholder="Digite seu Nome" value="<%= cliente.nome %>" name="nome" id="nome"
-              class="form-control" required />
-          </label>
-          <label for="E-mail">
-            E-mail
-            <input type="email" value="<%= cliente.email %>" name="Email" id="email" class="form-control" required />
-          </label>
-          <label for="Digite sua Senha">
-            Alterar senha
-            <input type="password" placeholder="Nova senha" name="senha" id="password" class="form-control" required />
-          </label>
-          <label for="Digite sua Senha">
-            Confirme nova senha
-            <input type="password" placeholder="Digite novamente" name="senha2" id="password2" class="form-control"
-              required />
-          </label>
-          <button class="botao-secundario">Alterar dados</button>
-        </form>
+  <%- include("partials/head", {css: ["painelUsuario.css"], titulo: "Painel do Usuário E-móvel" }) %> <%- include("partials/header") %> <%-
+  include("partials/topoPg") %>
+  <main>
+    <div id="container-a">
+      <h1>Painel do Usuário</h1>
+      <div class="no-erros" id="div-errors">
+        <ul></ul>
       </div>
-      <div id="container-b">
-        <!-- <h2>Endereço de Entrega</h2>
+      <% if(locals.feedbackAtualizacao){ %>
+      <span class="success">Seus dados foram atualizados</span>
+      <% } %>
+      <!-- <small>Error message</small> -->
+      <br />
+      <form id="form-dados" action="/clientes/atualizar/<%= cliente.id %>?_method=PUT" method="POST">
+        <label for="Nome">
+          Seu Nome
+          <input
+            type="text"
+            placeholder="Digite seu Nome"
+            value="<%= cliente.nome %>"
+            name="nome"
+            id="nome"
+            class="form-control"
+            required
+          />
+        </label>
+        <label for="E-mail">
+          E-mail
+          <input
+            type="email"
+            value="<%= cliente.email %>"
+            name="Email"
+            id="email"
+            class="form-control"
+            disabled
+          />
+        </label>
+        <label for="Digite sua Senha">
+          Alterar senha
+          <input
+            type="password"
+            placeholder="Nova senha"
+            name="senha"
+            id="password"
+            class="form-control"
+          />
+        </label>
+        <label for="Digite sua Senha">
+          Confirme nova senha
+          <input
+            type="password"
+            placeholder="Digite novamente"
+            name="senha2"
+            id="password2"
+            class="form-control"
+          />
+        </label>
+        <button class="botao-secundario">Alterar dados</button>
+      </form>
+    </div>
+    <div id="container-b">
+      <!-- <h2>Endereço de Entrega</h2>
         <input type="text" placeholder="Rua itú 79, Vila Mariana, cep 123-036/São Paulo SP" name="Endereço"
           id="Endereço" class="form-control" required />
         <button class="botao-secundario">Alterar</button> -->
-        <h2>Meus Pedidos</h2>
-        <a href="http://localhost:3000/statusDePedidos/<%= cliente.id %>">
-          <button class="botao-secundario2">Ir para Pedidos</button>
-        </a>
-      </div>
-      <!-- </form> -->
-    </main>
-    <!-- <footer>
+      <h2>Meus Pedidos</h2>
+      <a href="http://localhost:3000/statusDePedidos/<%= cliente.id %>">
+        <button class="botao-secundario2">Ir para Pedidos</button>
+      </a>
+    </div>
+    <!-- </form> -->
+  </main>
+  <!-- <footer>
     <!</footer> -->
-    <%- include("partials/footer.ejs") %>
-      <script src="/scripts/painelIndex.js"></script>
-      </body>
-
+  <script src="/scripts/painelIndex.js"></script>
+  <%- include("partials/footer.ejs") %>
 </html>

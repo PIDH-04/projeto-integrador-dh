@@ -54,7 +54,11 @@
  #container-b {
      width: 38%;
      height: 200px;
-     margin-top: 100px
+     margin-top: 60px;
+ }
+
+ #container-b a{
+    cursor: pointer;
  }
 
 
@@ -74,8 +78,14 @@
      margin-top: 20px;
      font-weight: bold;
      border-radius: 10px;
+    cursor: pointer;
 
  }
+
+ #container-b .botao-secundario2:hover {
+    opacity: 0.8;
+
+}
 
  #container-a .botao-secundario {
      width: 100%;
@@ -88,6 +98,8 @@
      width: 100%;
      margin-bottom: 20px;
      border-radius: 10px;
+     border: 1px solid var(--cor-texto-secundaria);
+     margin-top: 10px;
 
 
  }
@@ -158,11 +170,12 @@
 
 
  span.success{
-    display: none;
+    display: block;
     background-color: var(--cor-sucesso);
     width: 100%;
     padding: 20px;
-    margin-bottom: 20px;
+
+    margin-top: 20px;
     color: #fff;
     font-size: 0.9rem;
  }

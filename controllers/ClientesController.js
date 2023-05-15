@@ -2,6 +2,7 @@ const CategoriasServices = require('../services/CategoriasServices');
 const ClientesServices = require('../services/ClientesServices');
 const { listarPedidosDeUsuarioComProdutos } = require('../services/PedidosServices');
 const ProdutosServices = require('../services/ProdutosServices');
+const bcrypt = require('bcrypt')
 
 const CadastroController = {
   showCadastro: async (req, res) => {
@@ -82,8 +83,9 @@ const CadastroController = {
     //pega id da url
     const idCliente = req.params.idCliente
     const cliente = req.session.cliente
+    const feedbackAtualizacao = req.query.atualizado
 
-    return res.render('painelUsuario', { categorias, cliente })
+    return res.render('painelUsuario', { categorias, cliente, feedbackAtualizacao })
   },
   showstatusDePedido: async (req, res) => {
     // Mostrar categorias para header e footer
@@ -117,6 +119,26 @@ const CadastroController = {
     }catch(e){
       console.log(e)
       return res.redirect('/')
+    }
+  },
+  atualizaCliente: async (req, res) => {
+    const { idCliente } = req.params
+    const { nome, senha } = req.body
+    try{
+
+      if(!senha){
+        await ClientesServices.editarCliente(idCliente, {nome} )
+      }else{
+        const senhaCriptografada = bcrypt.hashSync(senha, 8)
+        await ClientesServices.editarCliente(idCliente, {nome, senha: senhaCriptografada} )
+      }
+
+      req.session.cliente.nome = nome
+      return res.redirect('/painelUsuario?atualizado=true')
+
+    }catch(e){
+      console.log(e)
+      return res.redirect('/painelUsuario?atualizado=false')
     }
   }
 }

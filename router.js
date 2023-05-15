@@ -48,6 +48,8 @@ router.get("/painelUsuario",  checaAutenticacaoUsuario,  ClientesController.show
 router.get("/statusDePedidos/:idCliente",  checaAutenticacaoUsuario,  ClientesController.showstatusDePedido);
 router.post('/clientes/endereco/criar', checaAutenticacaoUsuario, ClientesController.criaEndereco)
 router.post('/pedidos/criar', checaAutenticacaoUsuario, PedidosController.criar)
+router.put('/clientes/atualizar/:idCliente', checaAutenticacaoUsuario, ClientesController.atualizaCliente)
+
 
 
 // Admin Routers
