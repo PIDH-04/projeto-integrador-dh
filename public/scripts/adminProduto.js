@@ -13,7 +13,6 @@ window.addEventListener('load', () => {
                     const src = URL.createObjectURL(e.target.files[i]);
                     imgsContainer.innerHTML += `
                         <div class="miniatura-img-produto">
-                            <span class="remover-img">X</span>
                             <img src="${src}" />
                         </div>
                   `
