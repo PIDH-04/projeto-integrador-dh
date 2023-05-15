@@ -7,9 +7,10 @@ body.admin-container .busca-container {
 body.admin-container .busca-container a {
   margin: initial;
   width: 200px;
-  margin-top: 20px;
+  /* margin-top: 20px; */
   background-color: var(--cor-secundaria);
   color: #000;
+  margin-bottom: 30px;
 }
 
 body.admin-container .busca-container.banner a {
