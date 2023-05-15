@@ -1,5 +1,5 @@
 const calculaSomaPrecos = require('../helpers/calculaSomaPrecos')
-const { criaPedido, atualizaStatusPedido, detalhaPedido } = require('../services/PedidosServices')
+const { criaPedido, atualizaStatusPedido, detalhaPedido, listaPedidosDeUsuario } = require('../services/PedidosServices')
 const statusPedidos = require('../databases/statusPedidos.json')
 
 const PedidosController = {
@@ -30,7 +30,7 @@ const PedidosController = {
     alteraStatus: async (req, res) => {
         try{
             const { idPedido } = req.params
-            const { status } = req.body
+            const { status, cliente } = req.body
             const { detalhe } = req.query
             await atualizaStatusPedido(idPedido, status)
 
@@ -49,13 +49,25 @@ const PedidosController = {
         try{
             const  { idPedido } = req.params
             const feedbackEdicao = req.query.atualizado
+            const veioDePedidosDeCliente = req.query.cliente
             console.log(feedbackEdicao)
             const pedido = await detalhaPedido(idPedido)
-            return res.render('detalhePedido', { pedido, statusPedidos, feedbackEdicao })
+            return res.render('detalhePedido', { pedido, statusPedidos, feedbackEdicao, veioDePedidosDeCliente })
             
         }catch(e){
             console.log(e)
             return res.render('detalhePedido')
+        }
+    },
+    showPedidosDeUsuario: async (req, res) => {
+        try{
+            const { idCliente } = req.params
+            const pedidos = await listaPedidosDeUsuario(idCliente)
+            
+            return res.render('adminPedidos', {pedidos, statusPedidos, showAcoes: false, clientePedidos: true})
+        }catch(e){
+            console.log(e)
+            return res.redirect('/admin/pedidos')
         }
     }
 }

@@ -81,7 +81,8 @@ router.delete('/admin/banners/:id/delete', checaAutenticacaoAdmin, AdminControll
 router.get('/admin/banners/:id/editar', checaAutenticacaoAdmin, AdminController.showEditarBanner)
 router.put('/admin/banners/:id/editar', checaAutenticacaoAdmin, uploadBanner.single('img'), AdminController.editarBanner)
 router.put('/admin/pedidos/alterar-status/:idPedido', checaAutenticacaoAdmin, PedidosController.alteraStatus)
-router.get('/admin/pedidos/:idPedido', PedidosController.showDetalhes)
+router.get('/admin/pedidos/:idPedido', checaAutenticacaoAdmin, PedidosController.showDetalhes)
+router.get('/admin/pedidos/usuarios/:idCliente', checaAutenticacaoAdmin, PedidosController.showPedidosDeUsuario)
 
 // Exportar o roteador
 module.exports = router;

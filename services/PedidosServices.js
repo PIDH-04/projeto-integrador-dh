@@ -36,9 +36,18 @@ async function atualizaStatusPedido(id, status){
 
 async function detalhaPedido(id){
     try{
-        const produto = await Pedidos.findByPk(id, {include: ['produtos', 'clientes', 'formas_de_pagamento', 'enderecos']})
-        return produto
+        const pedido = await Pedidos.findByPk(id, {include: ['produtos', 'clientes', 'formas_de_pagamento', 'enderecos']})
+        return pedido
 
+    }catch(e){
+        throw new Error(e)
+    }
+}
+
+async function listaPedidosDeUsuario(id){
+    try{
+        const pedidos = await Pedidos.findAll({where: {clientes_id: id}, include: 'clientes'})
+        return pedidos
     }catch(e){
         throw new Error(e)
     }
@@ -48,5 +57,6 @@ module.exports = {
     criaPedido,
     listaTodosOsPedidos,
     atualizaStatusPedido,
-    detalhaPedido
+    detalhaPedido,
+    listaPedidosDeUsuario
 }
