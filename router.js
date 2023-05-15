@@ -41,7 +41,7 @@ router.get("/produto/:idProduto", gravarAcessoProduto, ProdutosController.show);
 
 router.get("/categorias/:idCategoria?/:idArea?/:ordenacao?", ProdutosController.listagem);
 // o '?' torna o parametro dispensavel, podendo acessar o url '/categorias'
-
+router.get("/busca/:idArea?", ProdutosController.showBusca);
 router.get("/cadastro", ClientesController.showCadastro);
 router.post("/cadastro",ClientesController.criarCadastro);
 router.get("/painelUsuario",  checaAutenticacaoUsuario,  ClientesController.showPainelUsuario);

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("partials/head", {css: ["listagemProdutos.css"], titulo: "listagem-busca_E-móvel" }) %>
+
+  <body>
+    <%- include("partials/header") %>
+      <%- include("partials/topoPg") %>
+        <div class="banner-categoria">
+          <div class="titulo-container">
+            <h2>Resultados de busca</h2>
+            <p>Veja o resultado da sua busca por produtos abaixo.</p>
+          </div>
+
+          <div class="icone-container">
+            <img src="/img/mesa-icone.svg" />
+          </div>
+        </div>
+
+        <main>
+          <!-- <div class="filtros-container">
+            <div class="header">
+              <h4>Filtros</h4>
+              <p id="limpafiltro">Limpar filtros</p>
+            </div>
+            <form class="card-area">
+              <span>
+                <input name="areainterna" id="areainterna" type="checkbox" />
+                <label for="areainterna">Area Interna</label>
+              </span>
+
+              <span>
+                <input name="areaexterna" id="areaexterna" type="checkbox" />
+                <label for="areaexterna">Area Externa</label>
+              </span>
+            </form>
+          </div> -->
+
+          <div class="produtos-container">
+            <div class="produtos">
+              <% for (const p of produtos) { %>
+                <div class="produto" >
+                  <a href="/produto/<%= p.id %>">
+                    <div class="img-container">
+                      <img class="imagem-produto" src="<%= p.imagens[0].caminho %>" alt="<%= p.nome %>" />
+                    </div>
+                    <div class="informacoes-container">
+                      <h3 class="titulo-produto">
+                        <%= p.nome %>
+                      </h3>
+                      <!-- <p class="variacao-produto">Tampo em madeira</p> -->
+                      <p class="preco-produto">R$ <%= p.preco %></p>
+
+                    </div>
+                  </a>
+                  <button data-idProduto="<%= p.id %>" class="comprar botao-secundario add-cart">
+                    Adicionar ao carrinho
+                  </button>
+                </div>
+                <% } %>
+            </div>
+
+            <!-- <div class="botao-container">
+              <button class="carregar-mais botao-primario">
+                Ver mais produtos
+              </button>
+            </div> -->
+          </div>
+        </main>
+        <%- include("partials/footer.ejs") %>
+        <script src="/scripts/filtrosArea.js"></script>
+          <script src="/scripts/addProdutoCarrinho.js"></script>
+  </body>
+
+</html>
