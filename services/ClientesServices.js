@@ -32,8 +32,17 @@ async function listaClientes() {
 //mostra cliente especifico por email
 async function buscaCliente(email) {
   const cliente = await Clientes.findOne({ where: { email: email } });
+
   return cliente;
 }
+
+//mostra cliente especifico por id
+async function buscaClienteId(idCliente) {
+  const cliente = await Clientes.findByPk(idCliente);
+
+  return cliente;
+}
+
 
 //criar cliente
 async function criarCliente(infosCliente) {

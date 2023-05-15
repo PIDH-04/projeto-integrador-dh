@@ -88,8 +88,9 @@ const CadastroController = {
     const pesquisa = req.query.busca
     //Mostrar produtos e categorias de resposta da pesquisa
     const pesquisados = await ProdutosServices.pesquisar(pesquisa);
+    const cliente = req.session.cliente
 
-    return res.render('painelUsuario', { categorias, pesquisados })
+    return res.render('painelUsuario', { categorias, pesquisados,  cliente})
   },
   showstatusDePedido: async (req, res) => {
     // Mostrar categorias para header e footer
