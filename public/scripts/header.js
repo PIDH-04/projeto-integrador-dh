@@ -33,20 +33,13 @@ window.onload = function () {
 
 window.addEventListener('load', function () {
   const termo = document.getElementById('busca');
-  const divBusca = document.querySelector('.resultado-busca');
-  const displayValue = localStorage.getItem('divBuscaDisplay');
   const query = location.search
 
-  if(query !== '' && displayValue !== null){
-    divBusca.style.display = displayValue;
+  if(query !== ''){
+    console.log('pegou')
   }else{
-    divBusca.style.display = 'none';
+    console.log('ta sem busca')
   }
-
-  termo.addEventListener('click', function () {
-    divBusca.style.display = 'flex';
-    localStorage.setItem('divBuscaDisplay', 'flex');
-  })
 
   termo.addEventListener('input', function () {
     const query = termo.value;
@@ -56,10 +49,10 @@ window.addEventListener('load', function () {
   });
 
   termo.addEventListener('keydown', async (event) => {
+    const query = termo.value;
     if (event.key === 'Enter') {
-      localStorage.setItem('divBuscaDisplay', 'flex');
-      location.reload();
-
+      let url = window.location.origin + "/busca" + "?busca=" + query
+      window.location.href = url;
     }
   });
 })

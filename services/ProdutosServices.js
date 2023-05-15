@@ -194,6 +194,36 @@ async function pesquisar(pesquisa) {
   }
 }
 
+/* //Pesquisa produtos na busca do header
+async function pesquisar(pesquisa, idArea) {
+  let filtro = {};
+  if(pesquisa !== ''){
+    filtro.include = [
+      {
+      model: Produtos,
+      where: {
+      nome: {
+        [Op.like]: `%${pesquisa}%`
+      }}, 
+      include: ["imagens"]}];
+
+      if (idArea !== undefined) {
+        filtro.include = [
+          {
+            model: Areas,
+            where: { id: idArea },
+            as: "areas",
+          },
+          "imagens",
+        ];
+      }
+      
+  };
+  const produtosFiltrados = await Produtos.findAll(filtro);
+
+  return produtosFiltrados;
+  } */
+
 //Busca produto por nome
 async function buscaProdutoNome(nomeProduto){
   const produto = await Produtos.findOne({
