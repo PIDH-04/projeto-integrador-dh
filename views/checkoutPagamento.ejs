@@ -17,7 +17,7 @@
             class="reservada"
             id="Form-Cartao"
             method="POST"
-            action=""
+            action="/pedidos/criar?pagamento=<%= locals.pagamento.cartao %>&idEndereco=<%= locals.endereco %>"
             enctype=""
           >
             <div class="campos">
@@ -90,6 +90,7 @@
                   <input type="checkbox" />
                 </label>
               </div> -->
+              <input type="hidden" id="produtos" name="produtos" />
               <button class="botao-secundario" type="submit">
                 Pagar com Cartao
               </button>
@@ -105,7 +106,7 @@
             </div>
             <div class="resumo frete">
               <p>Frete</p>
-              <p class="valor">R$ 900,00</p>
+              <p class="valor">R$ <%= locals.frete %></p>
             </div>
             <div class="resumo total">
               <p>Total</p>

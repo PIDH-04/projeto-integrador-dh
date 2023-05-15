@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <%- include("partials/adminHead", {css: ["baseAdmin.css",
+  "adminAddProduto.css"], titulo: "Nova Categoria | E-móvel"}) %>
+  <body class="admin-container">
+    <%- include("partials/adminHeader") %>
+    <%- include("partials/topoPg") %>
+    <main class="">
+      <h1>Novo Banner</h1>
+      <a href="/admin/banners" class="retornar-pagina">
+        <img src="/img/voltar.svg" />
+        Voltar para banners
+      </a>
+
+      <div class="header-produto">
+        <h2>Dados do Banner</h2>
+      </div>
+
+      <% if(locals.feedbackEdicao !== undefined){ %>
+
+        <div class="<%= locals.feedbackEdicao == 'true' ? 'sucesso' : 'erros' %>">
+          <%= locals.feedbackEdicao == 'true' ? 'Categoria salva' : 'Erro ao salvar a categoria, tente novamente mais tarde' %>
+        </div>
+
+      <% } %>
+
+      <form action="/admin/banners/criar" method="POST" id="novo-produto-form" enctype="multipart/form-data">
+        <div class="duas-colunas">
+          <div>
+            <label for="nome">Nome do banner</label>
+            <input
+              type="text"
+              name="nome"
+              id="nome"
+              placeholder="Novo banner"
+              value="<%= locals.infosBanner && locals.infosBanner.nome %>"
+            />
+            <p class="erro-valor erro-nome"></p>
+
+            <% if (locals.erros && locals.erros.nome) { %>
+              <p class="erro-valor"><%= erros.nome.msg %></p>
+            <% } %>
+
+            <label for="descricao">Texto do banner</label>
+            <textarea
+              name="descricao"
+              id="descricao"
+              placeholder="Este texto aparecerá por cima do banner"
+            ><%= locals.infosBanner && locals.infosBanner.texto %></textarea>
+
+            <label for="link">Link do banner</label>
+            <input
+              type="text"
+              name="link"
+              id="link"
+              placeholder="https://emovel.com.br/cadeiras"
+              value="<%= locals.infosBanner && locals.infosBanner.link %>"
+            />
+          </div>
+
+          <div>
+            <div class="imagem-container">
+              <img 
+                id="preview-img" 
+                src="<%= locals.infosBanner && locals.infosBanner.img ? locals.infosBanner.img : '/img/sem-imagem.svg' %>" />
+            </div>
+            <label class="imagem-produto-btn" for="img"
+              >Selecionar banner</label
+            >
+            <input type="file" name="img" id="img" id="imagem-produto" 
+              value="<%= locals.infosBanner && locals.infosBanner.img %>"
+            />
+
+            <p class="erro-valor erro-img"></p>
+
+            <% if (locals.erros && locals.erros.imagem) { %>
+              <p class="erro-valor"><%= erros.imagem.msg %></p>
+            <% } %>
+
+          </div>
+        </div>
+        <button class="botao-secundario" type="submit" form="novo-produto-form">Salvar</button>
+      </form>
+    </main>
+    <script src="/scripts/adminProduto.js"></script>
+    <script src="/scripts/adminEditarBanner.js"></script>
+  </body>
+</html>

@@ -21,7 +21,14 @@ async function mostrarCategoriaId(idCategoria) {
 
 //criar categoria
 async function criaCategoria(infosCategoria) {
-  let categoriaNova = await Categorias.create(infosCategoria);
+  try{
+    const categoriaCriada = await Categorias.create(infosCategoria);
+    return categoriaCriada
+
+  }catch(e){
+    console.log(e)
+    throw new Error('Não foi possível criar a categoria')
+  }
 }
 
 //deleta categoria
@@ -32,7 +39,6 @@ async function deletaCategoria(idCategoria) {
   if (categoriaParaRemover == 0) {
     throw new Error("Categoria inexistente");
   }
-
 }
 
 //edita categoria

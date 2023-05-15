@@ -29,9 +29,15 @@
         >
       </div>
 
-      <% if(feedbackDelete !== undefined){ %>
-        <div class="<%= feedbackDelete == 'true' ? 'sucesso' : 'erros' %>">
-          <%= feedbackDelete == 'true' ? 'Produto deletado com sucesso' : 'Erro ao deletar o produto' %>
+      <% if(locals.feedbackDelete !== undefined){ %>
+        <div class="<%= locals.feedbackDelete == 'true' ? 'sucesso' : 'erros' %>">
+          <%= locals.feedbackDelete == 'true' ? 'Usuário removido com sucesso' : 'Erro ao remover o Usuário' %>
+        </div>
+      <% } %>
+
+      <% if(locals.feedbackCriacao !== undefined){ %>
+        <div class="<%= locals.feedbackCriacao == 'true' ? 'sucesso' : 'erros' %>">
+          <%= locals.feedbackCriacao == 'false' && 'Erro ao criar usuario' %>
         </div>
       <% } %>
 
@@ -57,14 +63,19 @@
               >
                 <img src="/img/editar.svg" alt="del" />
               </a>
-              <form action="/admin/usuarios/<%= usuario.id %>/delete?_method=DELETE" method="POST">
-                <button><img src="/img/remover.svg" alt="del" type="submit" /></button>
-              </form>
+              <div class='delete-btn'>
+                <img src="/img/remover.svg" alt="del" type="submit" />
+              </div>
+              <%- include("partials/deleteModal", {
+                action: `/admin/usuarios/${usuario.id}/delete?_method=DELETE`}) 
+              %>
+              
             </td>
           </tr>
           <% } %>
         </tbody>
       </table>
     </main>
+    <script src="/scripts/deleteModal.js"></script>
   </body>
 </html>

@@ -1,7 +1,7 @@
-const { Administradores} = require('../databases/models');
 const administradores = require("../databases/Administradores.json");
 const fs = require("fs");
-const bcrypt = require('bcrypt')
+const bcrypt = require("bcrypt");
+const { Administradores, Banners } = require("../databases/models");
 
 function buscaAdmin(email) {
   const administrador = administradores.find((adm) => adm.email == email);
@@ -31,8 +31,8 @@ function salvaAdmin(id, novasInfos) {
   if (indexUsuario !== -1) {
     administradores[indexUsuario] = {
       id: administradores[indexUsuario].id,
-      ...novasInfos
-    }
+      ...novasInfos,
+    };
 
     fs.writeFileSync(
       "./databases/Administradores.json",
@@ -44,47 +44,78 @@ function salvaAdmin(id, novasInfos) {
   }
 }
 
-function removeAdmin(id){
+async function removeAdmin(id) {
+  const usuarioDeletado = await Administradores.destroy({ where: { id: id } });
 
-  if(administradores.length == 1){
-    return false
+  if (usuarioDeletado) {
   }
-
-  const indexUsuario = administradores.findIndex(admin => admin.id == id)
-  if(indexUsuario != -1){
-    const usuarioRemovido = administradores.splice(indexUsuario, 1)
-    fs.writeFileSync(
-      "./databases/Administradores.json",
-      JSON.stringify(administradores, null, 4)
-    );
-
-    return true
-
-  } else{
-    return false
-  }
-
 }
 
-function gravaAdmin(informacoes){
-  const id = administradores[administradores.length - 1].id + 1
+async function gravaAdmin(informacoes) {
+  try{
+    const senha = bcrypt.hashSync(informacoes.senha, 8);
+    const novoAdmin = await Administradores.create({
+      nome: informacoes.nome,
+      email: informacoes.email,
+      senha,
+    });
+    
+    return novoAdmin.id
 
-  const novoUsuario = {
-    id,
-    nome: informacoes.nome,
-    email: informacoes.email,
-    senha: bcrypt.hashSync(informacoes.senha, 8)
+  }catch(e){
+    console.log(e)
+    throw new Error(e.errors[0].message)
   }
+}
 
-  administradores.push(novoUsuario)
+async function listaBanners() {
+  const banners = await Banners.findAll();
+  return banners;
+}
 
-  fs.writeFileSync(
-    "./databases/Administradores.json",
-    JSON.stringify(administradores, null, 4)
-  );
+async function salvaBanner(infosBanner) {
+  const descricao = infosBanner.descricao !== "" ? infosBanner.descricao : null;
+  const link = infosBanner.link !== "" ? infosBanner.link : null;
 
-  return id
+  const novoBanner = await Banners.create({
+    nome: infosBanner.nome,
+    caminho: infosBanner.img,
+    descricao,
+    link,
+  });
 
+  return novoBanner;
+}
+
+async function removeBanner(id) {
+  try {
+    await Banners.destroy({ where: { id: id } });
+    return true;
+  } catch (e) {
+    throw new Error("Não foi possível remover o banner");
+  }
+}
+
+async function detalhaBanner(id) {
+  try {
+    const banner = await Banners.findByPk(id);
+    if (!banner) {
+      throw new Error("Não foi possível encontrar o banner");
+    }
+
+    return banner;
+  } catch (e) {
+    throw new Error("Não foi possível encontrar o banner");
+  }
+}
+
+async function editaBanner(id, novasInfos) {
+  try {
+    const bannerEditado = await Banners.update(novasInfos, { where: { id: id } });
+    return bannerEditado;
+  } catch (e) {
+    throw new Error(e);
+  }
 }
 
 module.exports = {
@@ -93,5 +124,10 @@ module.exports = {
   listaUsuariosAdmin,
   salvaAdmin,
   removeAdmin,
-  gravaAdmin
+  gravaAdmin,
+  salvaBanner,
+  listaBanners,
+  removeBanner,
+  detalhaBanner,
+  editaBanner,
 };

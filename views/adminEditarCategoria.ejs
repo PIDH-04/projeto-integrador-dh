@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <%- include("partials/adminHead", {css: ["baseAdmin.css",
-  "adminAddProduto.css"], titulo: "Editar Categoria | E-móvel"}) %>
+  "adminAddProduto.css", "deleteModal.css"], titulo: "Editar Categoria | E-móvel"}) %>
   <body class="admin-container">
     <%- include("partials/adminHeader") %>
     <%- include("partials/topoPg") %>
@@ -34,36 +34,49 @@
               id="nome"
               placeholder="Novo produto"
               value="<%= categoria.nome %>"
+              required
             />
+            <p class="erro-valor erro-nome"></p>
+
 
             <label for="descricao">Descrição</label>
             <textarea
               name="descricao"
               id="descricao"
               placeholder="Descreva sua categoria"
+              required
             ><%= categoria.descricao %></textarea>
+            <p class="erro-valor erro-descricao"></p>
           </div>
 
           <div>
             <div class="imagem-container">
-              <img id="preview-img" src="<%= categoria.icone %>" />
+              <img id="preview-img" src="<%= categoria.caminho %>" />
             </div>
             <label class="imagem-produto-btn" for="img"
               >Selecionar ícone da categoria</label
             >
             <input type="file" name="img" id="img" id="imagem-produto" />
           </div>
+          <p class="erro-valor erro-img"></p>
+
+
         </div>
       </form>
 
       
       <div class="container-botoes">
         <button class="botao-secundario" type="submit" form="novo-produto-form">Salvar</button>
-        <form action="/admin/categorias/<%= categoria.id %>/delete?_method=DELETE" method="POST" id="delete-form">
-            <button class="botao-secundario apagar" id="delete-btn" type="submit">Apagar categoria</button>
-        </form>
+        <button class='delete-btn botao-secundario'>
+          Remover
+        </button>
+        <%- include("partials/deleteModal", {
+          action: `/admin/categorias/${categoria.id}/delete?_method=DELETE`}) 
+        %>
       </div>
     </main>
     <script src="/scripts/adminProduto.js"></script>
+    <script src="/scripts/deleteModal.js"></script>
+    <script src="/scripts/adminEditarCategoria.js"></script>
   </body>
 </html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <%- include("partials/adminHead", {css: ["baseAdmin.css",
+  "adminAddProduto.css", "deleteModal.css"], titulo: "Editar banner | E-móvel"}) %>
+  <body class="admin-container">
+    <%- include("partials/adminHeader") %>
+    <%- include("partials/topoPg") %>
+    <main class="">
+      <h1><%= locals.infosBanner.nome %></h1>
+      <a href="/admin/banners" class="retornar-pagina">
+        <img src="/img/voltar.svg" />
+        Voltar para banners
+      </a>
+
+      <div class="header-produto">
+        <h2>Dados do Banner</h2>
+      </div>
+
+      <% if(locals.feedbackEdicao !== undefined){ %>
+
+        <div class="<%= locals.feedbackEdicao == 'true' ? 'sucesso' : 'erros' %>">
+          <%= locals.feedbackEdicao == 'true' ? 'Banner salvo' : 'Erro ao salvar o banner, tente novamente mais tarde' %>
+        </div>
+
+      <% } %>
+
+      <form action="/admin/banners/<%= infosBanner.id %>/editar?_method=PUT" method="POST" id="novo-produto-form" enctype="multipart/form-data">
+        <div class="duas-colunas">
+          <div>
+            <label for="nome">Nome do banner</label>
+            <input
+              type="text"
+              name="nome"
+              id="nome"
+              placeholder="Novo banner"
+              value="<%= locals.infosBanner && locals.infosBanner.nome %>"
+            />
+            <p class="erro-valor erro-nome"></p>
+
+            <label for="descricao">Texto do banner</label>
+            <textarea
+              name="descricao"
+              id="descricao"
+              placeholder="Este texto aparecerá por cima do banner"
+            ><%= locals.infosBanner && locals.infosBanner.descricao %></textarea>
+
+            <label for="link">Link do banner</label>
+            <input
+              type="text"
+              name="link"
+              id="link"
+              placeholder="https://emovel.com.br/cadeiras"
+              value="<%= locals.infosBanner && locals.infosBanner.link %>"
+            />
+          </div>
+
+          <div>
+            <div class="imagem-container">
+              <img 
+                id="preview-img" 
+                src="<%= locals.infosBanner && locals.infosBanner.caminho ? locals.infosBanner.caminho : '/img/sem-imagem.svg' %>" />
+            </div>
+            <label class="imagem-produto-btn" for="img"
+              >Selecionar banner</label
+            >
+            <input type="file" name="img" id="img" id="imagem-produto" 
+              value="<%= locals.infosBanner && locals.infosBanner.img %>"
+            />
+
+            <p class="erro-valor erro-img"></p>
+
+            <% if (locals.erros && locals.erros.imagem) { %>
+              <p class="erro-valor"><%= erros.imagem.msg %></p>
+            <% } %>
+
+          </div>
+        </div>
+      </form>
+
+        <div class="container-botoes">
+          <button class="botao-secundario" type="submit" form="novo-produto-form">Salvar</button>
+          <button class='delete-btn botao-secundario'>
+            Remover
+          </button>
+          <%- include("partials/deleteModal", {
+            action: `/admin/banners/${infosBanner.id}/delete?_method=DELETE`}) 
+          %>
+        </div>
+    </main>
+    <script src="/scripts/adminProduto.js"></script>
+    <script src="/scripts/adminEditarBanner.js"></script>
+    <script src="/scripts/deleteModal.js"></script>
+  </body>
+</html>

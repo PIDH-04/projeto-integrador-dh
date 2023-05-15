@@ -4,16 +4,14 @@ window.addEventListener('load', function () {
     let divErrors = document.getElementById('div-errors');
     let ulErrors = document.querySelector('#div-errors ul');
     let fieldNumero = document.getElementById('Numero')
+    let produtos = document.getElementById('produtos')
 
     reservationform.addEventListener('submit', function (event) {
-        event.preventDefault();
-
         divErrors.classList.add('no-errors');
         ulErrors.innerHTML = '' 
 
         let errorsMessagens = [];
         errorsMessagens.length = 0
-
 
         let fieldName = document.getElementById("nome")
 
@@ -61,9 +59,10 @@ window.addEventListener('load', function () {
             for (let i = 0; i < errorsMessagens.length; i++) {
                 ulErrors.innerHTML += '<li>' + errorsMessagens[i] + '</li>'
             }
-        } else{
-            window.location.href = "/finalizacao-compra";
         }
+
+        const produtosNoCarrinho = localStorage.getItem('produtos')
+        produtos.value = produtosNoCarrinho
     })
 })
 

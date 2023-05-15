@@ -35,11 +35,17 @@ const CadastroController = {
 
     if (!cliente) return res.redirect(`/cadastro?${queryParamsErro}`)
 
-    const senhaCorreta = await ClientesServices.checaSenha(cliente, senha)
+    const senhaCorreta = ClientesServices.checaSenha(cliente, senha)
 
     if (!senhaCorreta) return res.redirect(`/cadastro?${queryParamsErro}`)
 
     req.session.clienteLogado = true
+    req.session.cliente = {
+      id: cliente.id,
+      nome: cliente.nome,
+      email: cliente.email
+    }
+    
 
     const enderecoSolicitado = target ? target : '/'
     res.redirect(enderecoSolicitado)
@@ -54,23 +60,26 @@ const CadastroController = {
   },
   checkoutEndereco: async (req, res) => {
     // Mostrar categorias para header e footer
+    const idUsuario = req.session.cliente.id
     const categorias = await CategoriasServices.listarCategorias();
-    //pesquisa header
+    const enderecos = await ClientesServices.listaEnderecos(idUsuario)    //pesquisa header
     const pesquisa = req.query.busca
     //Mostrar produtos e categorias de resposta da pesquisa
     const pesquisados = await ProdutosServices.pesquisar(pesquisa);
 
-    return res.render('checkoutEndereco', { categorias, pesquisados });
+    return res.render('checkoutEndereco', { categorias, enderecos, pesquisados });
   },
+
   checkoutPagamento: async (req, res) => {
     // Mostrar categorias para header e footer
     const categorias = await CategoriasServices.listarCategorias();
-    //pesquisa header
+    const enderecoSelecionado = req.params.idEndereco
+    const frete = 0    //pesquisa header
     const pesquisa = req.query.busca
     //Mostrar produtos e categorias de resposta da pesquisa
     const pesquisados = await ProdutosServices.pesquisar(pesquisa);
 
-    return res.render('checkoutPagamento', { categorias, pesquisados });
+    return res.render('checkoutPagamento', { categorias, pagamento: {cartao: 1}, endereco: enderecoSelecionado, frete, pesquisados });
   },
   showPainelUsuario: async (req, res) => {
     // Mostrar categorias para header e footer
@@ -79,10 +88,9 @@ const CadastroController = {
     const pesquisa = req.query.busca
     //pega id da url
     const idCliente = req.params.idCliente
-    //Pega cliente por id
-    const cliente = ClientesServices.buscaClienteId(idCliente);
     //Mostrar produtos e categorias de resposta da pesquisa
     const pesquisados = await ProdutosServices.pesquisar(pesquisa);
+    const cliente = req.session.cliente
 
     return res.render('painelUsuario', { categorias, pesquisados, cliente })
   },
@@ -115,6 +123,19 @@ const CadastroController = {
     await ClientesServices.criarCliente(cliente);
 
     return res.redirect("/cadastro?msg=facaOLogin");
+  },
+  criaEndereco: async (req, res) => {
+    try{
+      const idUsuario = req.session.cliente.id
+      const novoEndereco = await ClientesServices.adicionaEndereco(idUsuario, req.body)
+      console.log(novoEndereco)
+
+      return res.redirect(`/checkoutpagamento/${novoEndereco.id}`);
+
+    }catch(e){
+      console.log(e)
+      return res.redirect('/')
+    }
   }
 }
 

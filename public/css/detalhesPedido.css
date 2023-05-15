@@ -1,0 +1,75 @@
+div.sucesso{
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+.pagina-detalhes-container{
+    display: flex;
+    gap: 50px;
+    justify-content: space-between;
+}
+
+.pagina-detalhes-container .coluna {
+    width: 45%;
+    padding-bottom: 50px;
+}
+
+.pagina-detalhes-container .coluna h2{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.pagina-detalhes-container .coluna  .header-produto{
+    width: 100%;
+}
+
+.pagina-detalhes-container .coluna .linha-detalhes{
+    display: block;
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+
+.pagina-detalhes-container .coluna .linha-detalhes p{
+    display: block;
+    width: 100%;
+}
+
+.pagina-detalhes-container .coluna .linha-detalhes p.titulo{
+    font-weight: bold;
+}
+
+.pagina-detalhes-container .coluna .linha-detalhes p.informacao{
+    font-size: 0.9rem;
+}
+
+.pagina-detalhes-container .coluna .produto{
+    display: block;
+}
+
+.pagina-detalhes-container .coluna .produto + .produto{
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.pagina-detalhes-container .mudar-status{
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    margin-bottom: 0;
+    padding: 10px;
+}
+
+.pagina-detalhes-container .alterar-status select{
+    border-radius: 8px;
+    padding:10px;
+    background-color: #FFF;
+    border: 1px solid var(--cor-principal);
+    width: 80%;
+    cursor: pointer;
+}
+
+.pagina-detalhes-container .alterar-status button{
+    flex-grow: 1;
+    justify-content: center;
+    
+}

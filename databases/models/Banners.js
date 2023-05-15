@@ -15,16 +15,19 @@ module.exports = (sequelize, DataTypes) => {
             },
             descricao:{
                 type: DataTypes.TEXT,
-                allowNull: false
             },
             link:{
+                type: DataTypes.STRING(255),
+            },
+            nome: {
                 type: DataTypes.STRING(255),
                 allowNull: false
             }
         },
         {
             tableName: "banners",
-            timestamps: true
+            timestamps: true,
+            paranoid: true
         }
     )
 

@@ -16,6 +16,11 @@ module.exports = (sequelize, DataTypes) => {
                 type: DataTypes.INTEGER,
                 allowNull: false
             },
+            status: {
+                type: DataTypes.STRING,
+                allowNull: false,
+                defaultValue: 'realizado'
+            },
             formas_de_pagamento_id:{
                 type: DataTypes.INTEGER,
                 allowNull: false

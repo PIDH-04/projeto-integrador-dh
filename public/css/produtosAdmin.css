@@ -12,8 +12,24 @@ body.admin-container .busca-container a {
   color: #000;
 }
 
+body.admin-container .busca-container.banner a {
+  margin-left: auto;
+  width: 200px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  background-color: var(--cor-secundaria);
+  color: #000;
+}
+
 body.admin-container .img-produto-container img {
-  width: 45px;
+  max-width: 45px;
+  max-height: 30px;
+  margin: 0 auto;
+}
+
+body.admin-container .img-produto-container.banner img {
+  width: 85px;
+  max-width: initial;
   margin: 0 auto;
 }
 
@@ -25,7 +41,7 @@ body.admin-container .acoes-container {
   height: 100%;
 }
 
-body.admin-container .acoes-container button,
+body.admin-container .acoes-container .delete-btn,
 body.admin-container .acoes-container a {
   width: 40px;
   height: 40px;
@@ -50,14 +66,66 @@ body.admin-container .acoes-container form{
   width: auto;
 }
 
-body.admin-container .acoes-container form button{
+body.admin-container .acoes-container .delete-btn{
   padding: 10px;
 }
 
-body.admin-container .acoes-container button {
+body.admin-container .acoes-container .delete-btn {
   background-color: #cd0808;
 }
 
-body.admin-container .acoes-container button:hover {
+body.admin-container .acoes-container .delete-btn:hover {
+  opacity: 0.8;
+}
+
+body.admin-container .acoes-container .modal{
+  position: fixed;
+  width: 100%;
+  background-color: rgba(0,0,0,0.4);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+body.admin-container .acoes-container .modal.-active{
+  display: flex;
+}
+
+body.admin-container .acoes-container .modal > div{
+  background-color: #fff;
+  display: block;
+  padding:24px;
+  border-radius: 8px;
+}
+
+body.admin-container .acoes-container .modal > div h3{
+  text-align: left;
+  margin-bottom: 16px;
+}
+
+body.admin-container .acoes-container .modal > div .modal-btns{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 24px;
+  gap: 24px;
+}
+
+body.admin-container .acoes-container .modal > div .modal-btns button{
+  background-color: #cd0808;
+  font-weight: bold;
+  color: #fff;
+}
+
+body.admin-container .acoes-container .modal > div .modal-btns span{
+  font-size: 14px;
+  cursor: pointer;
+}
+
+body.admin-container .acoes-container .modal > div .modal-btns span:hover{
   opacity: 0.8;
 }
