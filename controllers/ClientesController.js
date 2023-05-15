@@ -9,20 +9,16 @@ const CadastroController = {
     const categorias = await CategoriasServices.listarCategorias();
     //pesquisa header
     const pesquisa = req.query.busca
-    //Mostrar produtos e categorias de resposta da pesquisa
-    const pesquisados = await ProdutosServices.pesquisar(pesquisa);
 
-    return res.render('cadastro', { categorias, target, erro, pesquisados });
+    return res.render('cadastro', { categorias, target, erro });
   },
   finalizacaoCompra: async (req, res) => {
     // Mostrar categorias para header e footer
     const categorias = await CategoriasServices.listarCategorias();
     //pesquisa header
     const pesquisa = req.query.busca
-    //Mostrar produtos e categorias de resposta da pesquisa
-    const pesquisados = await ProdutosServices.pesquisar(pesquisa);
 
-    return res.render('finalizacaoCompra', { categorias, pesquisados });
+    return res.render('finalizacaoCompra', { categorias });
   },
   showLogin: (req, res) => {
     return res.render('login');
@@ -64,10 +60,8 @@ const CadastroController = {
     const categorias = await CategoriasServices.listarCategorias();
     const enderecos = await ClientesServices.listaEnderecos(idUsuario)    //pesquisa header
     const pesquisa = req.query.busca
-    //Mostrar produtos e categorias de resposta da pesquisa
-    const pesquisados = await ProdutosServices.pesquisar(pesquisa);
 
-    return res.render('checkoutEndereco', { categorias, enderecos, pesquisados });
+    return res.render('checkoutEndereco', { categorias, enderecos });
   },
 
   checkoutPagamento: async (req, res) => {
@@ -76,10 +70,8 @@ const CadastroController = {
     const enderecoSelecionado = req.params.idEndereco
     const frete = 0    //pesquisa header
     const pesquisa = req.query.busca
-    //Mostrar produtos e categorias de resposta da pesquisa
-    const pesquisados = await ProdutosServices.pesquisar(pesquisa);
 
-    return res.render('checkoutPagamento', { categorias, pagamento: {cartao: 1}, endereco: enderecoSelecionado, frete, pesquisados });
+    return res.render('checkoutPagamento', { categorias, pagamento: {cartao: 1}, endereco: enderecoSelecionado, frete });
   },
   showPainelUsuario: async (req, res) => {
     // Mostrar categorias para header e footer
@@ -88,19 +80,15 @@ const CadastroController = {
     const pesquisa = req.query.busca
     //pega id da url
     const idCliente = req.params.idCliente
-    //Mostrar produtos e categorias de resposta da pesquisa
-    const pesquisados = await ProdutosServices.pesquisar(pesquisa);
     const cliente = req.session.cliente
 
-    return res.render('painelUsuario', { categorias, pesquisados, cliente })
+    return res.render('painelUsuario', { categorias, cliente })
   },
   showstatusDePedido: async (req, res) => {
     // Mostrar categorias para header e footer
     const categorias = await CategoriasServices.listarCategorias();
     //pesquisa header
     const pesquisa = req.query.busca
-    //Mostrar produtos e categorias de resposta da pesquisa
-    const pesquisados = await ProdutosServices.pesquisar(pesquisa);
     // Pegando paramentro da url(idCliente)
     const idCliente = req.params.idCliente;
     const cliente = req.session.cliente
@@ -111,7 +99,7 @@ const CadastroController = {
     // Mostra os pedidos em andamento
     const andamento = await ProdutosServices.produtosDePedidosEmAndamento(idCliente);
 
-    return res.render('statusDePedido', { categorias, cliente, entregues, todos, andamento, pesquisados })
+    return res.render('statusDePedido', { categorias, cliente, entregues, todos, andamento })
   },
   criarCadastro: async (req, res) => {
     const cliente = {
