@@ -220,6 +220,9 @@
     display: flex;
     flex-direction: row;
   }
+  .categorias .icone-container .icone{
+    overflow: hidden;
+  }
 
   .categorias h2 {
     text-align: center;
