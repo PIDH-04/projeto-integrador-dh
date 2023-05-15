@@ -274,6 +274,11 @@ div.card-produto-carrinho span {
   display: none;
 }
 
+.erros.erro-backend{
+  display: block;
+  margin-bottom: 30px;
+}
+
 .erros li {
   list-style: none;
   line-height: 2rem;

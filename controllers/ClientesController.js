@@ -11,10 +11,10 @@ const CadastroController = {
     const categorias = await CategoriasServices.listarCategorias();
     //pesquisa header
     const usuarioLogado = req.session.clienteLogado
-
+    const feedbackErro = req.query.erroCadastro
     const pesquisa = req.query.busca
 
-    return res.render('cadastro', { categorias, target, erro, usuarioLogado });
+    return res.render('cadastro', { categorias, target, erro, usuarioLogado, feedbackErro });
   },
   finalizacaoCompra: async (req, res) => {
     // Mostrar categorias para header e footer
@@ -113,14 +113,30 @@ const CadastroController = {
     return res.render('statusDePedido', { categorias, pedidos, cliente: cliente.nome, usuarioLogado  })
   },
   criarCadastro: async (req, res) => {
-    const cliente = {
-      nome: req.body.nome,
-      email: req.body.email,
-      senha: req.body.senha
-    }
-    await ClientesServices.criarCliente(cliente);
+    try{
+      const cliente = {
+        nome: req.body.nome,
+        email: req.body.email,
+        senha: req.body.senha
+      }
+      
+      const clienteCadastro = await ClientesServices.criarCliente(cliente);
+  
+      req.session.clienteLogado = true
+      req.session.cliente = {
+        id: cliente.id,
+        nome: cliente.nome,
+        email: cliente.email
+      }
+  
+      req.session.clienteLogado = true
+      req.session.cliente = clienteCadastro
+  
+     return res.redirect("/");
 
-    return res.redirect("/cadastro?msg=facaOLogin");
+    }catch(e){
+      return res.redirect('/cadastro?erroCadastro=true')
+    }
   },
   criaEndereco: async (req, res) => {
     try{
