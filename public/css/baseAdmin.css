@@ -77,3 +77,12 @@ body.admin-container .retornar-pagina{
 body.admin-container .retornar-pagina img{
   width: 12px;
 }
+
+.ver-mais-pedidos{
+  background-color: var(--cor-principal);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: white;
+  text-decoration: none;
+}

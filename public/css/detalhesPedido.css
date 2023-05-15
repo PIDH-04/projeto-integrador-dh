@@ -1,3 +1,8 @@
+div.sucesso{
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
 .pagina-detalhes-container{
     display: flex;
     gap: 50px;
@@ -6,6 +11,7 @@
 
 .pagina-detalhes-container .coluna {
     width: 45%;
+    padding-bottom: 50px;
 }
 
 .pagina-detalhes-container .coluna h2{
@@ -38,14 +44,10 @@
 
 .pagina-detalhes-container .coluna .produto{
     display: block;
-    padding-top: 20px;
-}
-
-.pagina-detalhes-container .coluna .produto .linha-detalhes{
-    margin-bottom: 10px;
 }
 
 .pagina-detalhes-container .coluna .produto + .produto{
+    padding-top: 20px;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
@@ -53,7 +55,6 @@
     display: flex;
     width: 100%;
     gap: 10px;
-    /* justify-content: center; */
     margin-bottom: 0;
     padding: 10px;
 }

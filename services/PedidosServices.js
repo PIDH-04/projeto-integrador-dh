@@ -34,8 +34,19 @@ async function atualizaStatusPedido(id, status){
     }
 }
 
+async function detalhaPedido(id){
+    try{
+        const produto = await Pedidos.findByPk(id, {include: ['produtos', 'clientes', 'formas_de_pagamento', 'enderecos']})
+        return produto
+
+    }catch(e){
+        throw new Error(e)
+    }
+}
+
 module.exports = {
     criaPedido,
     listaTodosOsPedidos,
-    atualizaStatusPedido
+    atualizaStatusPedido,
+    detalhaPedido
 }

@@ -1,47 +1,71 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <%- include("partials/adminHead", {css: ["baseAdmin.css",
-  "adminAddProduto.css", "adminAddUsuario.css", "detalhesPedido.css"], titulo: "Pedido 0001 | E-móvel"}) %>
+  "adminAddProduto.css", "adminAddUsuario.css", "detalhesPedido.css"], titulo: `Pedido ${pedido.id} | E-móvel`}) %>
   <body class="admin-container">
     <%- include("partials/adminHeader") %>
     <%- include("partials/topoPg") %>
     <main class="">
-      <h1>Pedido 0001</h1>
+      <h1>Pedido <%= locals.pedido.id %></h1>
       <a href="/admin/pedidos" class="retornar-pagina">
         <img src="/img/voltar.svg" />
         Voltar para pedidos
       </a>
 
+      
+      <% if(locals.feedbackEdicao !== undefined){ %>
+        <div class="<%= locals.feedbackEdicao == 'true' ? 'sucesso' : 'erros' %>">
+          <%= locals.feedbackEdicao == 'true' ? 'Status do pedido atualizado' : 'Erro ao atualizar status, tente novamente mais tarde' %>
+        </div>
+      <% } %>
       <div class="pagina-detalhes-container">
         <section class="coluna">
           <div class="header-produto">
             <h2>Dados do Pedido</h2>
           </div>
           <div class="linha-detalhes">
-               <p class="titulo">Data do pedido</p>         
-               <p class="informacao">10/10/2023</p>         
+            <p class="titulo">ID</p>         
+            <p class="informacao"><%= locals.pedido.id %></p>
+          </div>
+          <div class="linha-detalhes">
+            <p class="titulo">Data do pedido</p>
+            <% const data = new Date(locals.pedido.createdAt) %>
+            <% const dia = data.getDate() %>
+            <% const mes = data.getMonth() %>
+            <% const ano = data.getFullYear() %>
+            <% const diaFormatado = dia < 10 ? `0${dia}` : dia  %>
+            <% const mesFormatado = mes < 10 ? `0${mes}` : mes  %>
+            <p class="informacao"><%= `${diaFormatado}/${mesFormatado}/${ano}`%></p>         
           </div>
           <div class="linha-detalhes">
             <p class="titulo">Status do pedido</p>         
-            <p class="informacao">Entregue</p>         
+            <p class="informacao"><%= locals.pedido.status %></p>         
           </div>
           <div class="linha-detalhes">
-            <p class="titulo">Data de entrega</p>         
-            <p class="informacao">10/10/2023</p>         
+            <p class="titulo">Data de entrega</p>
+              <% const dataEntrega = new Date(locals.pedido.createdAt) %>
+              <% const diaEntrega = dataEntrega.getDate() %>
+              <% const mesEntrega = dataEntrega.getMonth() %>
+              <% const anoEntrega = dataEntrega.getFullYear() %>
+              <% const diaFormatadoEntrega = diaEntrega < 10 ? `0${diaEntrega}` : dia  %>
+              <% const mesFormatadoEntrega = mes < 10 ? `0${mesEntrega}` : mesEntrega  %>         
+            <p class="informacao"><%= `${diaFormatadoEntrega}/${mesFormatadoEntrega}/${anoEntrega}`%></p>         
           </div>
           <div class="linha-detalhes">
             <p class="titulo">Forma de Pagamento</p>         
-            <p class="informacao">Cartão de Crédito</p>         
+            <p class="informacao"><%= locals.pedido.formas_de_pagamento.nome %></p>         
           </div>
           <div class="linha-detalhes">
             <p class="titulo">Valor total</p>         
-            <p class="informacao">R$ 900,00</p>         
+            <p class="informacao">R$ <%= locals.pedido.preco %></p>         
           </div>
           <div class="alterar-status">
-            <form action="/admin/pedidos/alterar-status/1?_method=PUT" method="POST" class="mudar-status">
+            <form action="/admin/pedidos/alterar-status/<%= locals.pedido.id %>?detalhe=true&_method=PUT" method="POST" class="mudar-status">
               <select name="status">
                 <option disabled selected>Alterar Status</option>
-                <option value="teste">Oba</option>
+                <% locals.statusPedidos.forEach(status => { %>
+                  <option value="<%=status.status %>"><%=status.status %></option>
+                  <% }); %>
               </select>
               <button>Salvar</button>
             </form> 
@@ -51,11 +75,20 @@
           </div>
           <div class="linha-detalhes">
             <p class="titulo">Nome do cliente</p>         
-            <p class="informacao">Polentina</p>         
+            <p class="informacao"><%= locals.pedido.clientes.nome %></p>         
           </div>
           <div class="linha-detalhes">
             <p class="titulo">Endereço de entrega</p>         
-            <p class="informacao">Rua das Flores 500, Parque Estadual, São Paulo - SP</p>         
+            <p class="informacao">
+              <%= locals.pedido.enderecos.logradouro %> 
+              <%= locals.pedido.enderecos.numero %> 
+              <%= locals.pedido.enderecos.complemento %>,
+              <%= locals.pedido.enderecos.cidade %>
+              <%= locals.pedido.enderecos.cep %></p>         
+          </div>
+          <div class="linha-detalhes">
+            <p class="titulo">CEP</p>         
+            <p class="informacao"><%= locals.pedido.enderecos.cep %></p>         
           </div>
           <div class="linha-detalhes">
             <p class="titulo">E-mail do cliente</p>         
@@ -68,105 +101,26 @@
           <div class="header-produto">
             <h2>Produtos</h2>
           </div>
-
-          <div class="produto">
-            <div class="linha-detalhes">
-              <p class="titulo">ID</p>         
-              <p class="informacao">0001</p>
+          <% locals.pedido.produtos.forEach(p => { %>
+            <div class="produto">
+              <div class="linha-detalhes">
+                <p class="titulo">ID</p>         
+                <p class="informacao"><%= p.id %></p>
+              </div>
+              <div class="linha-detalhes">
+                <p class="titulo">Nome</p>         
+                <p class="informacao"><%= p.nome %></p>  
+              </div>
+              <div class="linha-detalhes">
+                <p class="titulo">Preço</p>         
+                <p class="informacao">R$ <%= p.preco %></p>  
+              </div>
             </div>
-            <div class="linha-detalhes">
-              <p class="titulo">Nome</p>         
-              <p class="informacao">Mesa de jantar Bio</p>  
-            </div>
-            <div class="linha-detalhes">
-              <p class="titulo">Preço</p>         
-              <p class="informacao">R$ 400,00</p>  
-            </div>
-          </div>
-
-          <div class="produto">
-            <div class="linha-detalhes">
-              <p class="titulo">ID</p>         
-              <p class="informacao">0001</p>
-            </div>
-            <div class="linha-detalhes">
-              <p class="titulo">Nome</p>         
-              <p class="informacao">Mesa de jantar Bio</p>  
-            </div>
-            <div class="linha-detalhes">
-              <p class="titulo">Preço</p>         
-              <p class="informacao">R$ 400,00</p>  
-            </div>
-          </div>
-
+         <% }) %>
         </section>
 
       </div>
 
-      <!-- <% if(locals.feedbackEdicao !== undefined){ %>
-
-        <div class="<%= locals.feedbackEdicao == 'true' ? 'sucesso' : 'erros' %>">
-          <%= locals.feedbackEdicao == 'true' ? 'Usuário salvo' : 'Erro ao salvar usuário, tente novamente mais tarde' %>
-        </div>
-
-      <% } %>
-
-      <form action="/admin/usuarios/criar" method="POST" id="novo-produto-form">
-        <div class="duas-colunas add-usuario">
-          <div>
-            <label for="nome">Nome do Usuário</label>
-            <input
-              type="text"
-              name="nome"
-              id="nome"
-              placeholder="Nome do usuário"
-              value="<%= locals.infoPassada && locals.infoPassada.nome %>"
-              required
-            />
-            <p class="erro-valor" id="erro-nome"></p>
-
-            <label for="email">E-mail</label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Novo produto"
-              value="<%= locals.infoPassada && locals.infoPassada.email %>"
-              required
-            />
-
-            <% if (locals.uniqueEmailError) { %>
-              <p class="erro-valor">Email já cadastrado</p>
-            <% } %>
-            <p class="erro-valor" id="erro-email"></p>
-          </div>
-
-
-          <div>
-            
-            <label for="senha">Nova Senha</label>
-            <input
-              type="password"
-              name="senha"
-              id="senha"
-              placeholder="Adiciona nova senha"
-              required
-            />
-            <p class="erro-valor" id="erro-senha"></p>
-            
-            <label for="confirma-senha">Confirmar nova senha</label>
-            <input
-              type="password"
-              name="confirma-senha"
-              id="confirmaSenha"
-              placeholder="Confirme a nova senha"
-              required
-            />
-            <p class="erro-valor" id="erro-confirma-senha"></p>
-        </div>
-        </div>
-        <button class="botao-secundario" type="submit" form="novo-produto-form">Salvar</button>
-      </form> -->
     </main>
     <script src="/scripts/adminAddUsuario.js"></script>
   </body>
