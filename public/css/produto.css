@@ -48,6 +48,8 @@ html {
 
 .modal div>.img-container img {
   width: 100%;
+  height: 100%;
+  object-fit: contain;
   display: block;
 }
 
@@ -106,16 +108,20 @@ main.produto-container {
 }
 
 .produto-container .img-container .img-vitrine {
-  object-fit: cover;
+  /* object-fit: cover;
   min-height: 160px;
   min-width: 170px;
   max-height: 100%;
-  max-width: 100%;
+  max-width: 100%; */
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+
 }
 
 .produto-container .img-container img {
   width: fit-content;
-  height: fit-content;
+  /* height: fit-content; */
 }
 
 .produto-container .img-container .botoes-container {
