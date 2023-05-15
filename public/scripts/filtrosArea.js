@@ -1,4 +1,3 @@
-window.addEventListener('load', function () {
   let areaexterna = document.querySelector('#areaexterna');
   let areainterna = document.querySelector('#areainterna');
   let idCategoria = document.querySelector('#idCategoria');
@@ -86,5 +85,4 @@ window.addEventListener('load', function () {
   limpafiltro.addEventListener('click', function () {
     window.location.href = urlBase;
   })
-})
 
