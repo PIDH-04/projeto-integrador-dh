@@ -66,13 +66,13 @@ footer nav {
   font-size: 15px;
 }
 
-footer nav li {
+footer nav a {
   list-style: none;
   margin-bottom: 15px;
   color: var(--cor-texto-secundaria);
 }
 
-footer nav li a {
+footer nav a {
   text-decoration: none;
   color: var(--cor-texto-secundaria);
 }
@@ -85,11 +85,11 @@ footer nav ul.categoria-principal {
   column-gap: 100px;
 }
 
-footer nav ul li {
+footer nav ul a {
   color: var(--cor-texto-primaria);
 }
 
-footer nav li a:hover {
+footer nav a:hover {
   opacity: 0.6;
 }
 
