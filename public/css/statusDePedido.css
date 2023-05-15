@@ -1,37 +1,101 @@
-header .superior3 {
-    margin-bottom: 0;
-    line-height: initial;
+header {
+    position: relative;
+    z-index: 2;
 }
 
-header .inferior2 {
-    line-height: initial;
+.pedidos {
+    display: flex;
+    height: 36vh;
+    flex-direction: column;
 }
 
-header .inferior2 input {
-    padding: 10px 0;
-    font-size: 12px;
-}
-#div1 {
-    margin-top: 70px;
-    display: inline-block;
-}
-
-footer {
-    line-height: initial
+.painel {
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    background-color: white;
+    transition: width 0.3s ease;
 }
 
-footer .copyright p {
-    margin-bottom: 0;
+.painel.active {
+    width: 90%;
+    display: flex;
+    justify-content: flex-start;
 }
 
-@media (max-width: 450px) {
-    main {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    main {
-        margin-bottom: 30px;
-    }
+.painel.active~.painel {
+    width: 10%;
 }
+
+#titulo {
+    background-color: #f2f2f2;
+    margin: 8px;
+    cursor: pointer;
+    height: fit-content;
+    width: fit-content;
+    min-width: 240px;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.conteudoPedido {
+    padding: 20px;
+    padding-top: 5%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.painel.active #titulo {
+    height: fit-content;
+    width: fit-content;
+}
+
+.painel.active .conteudoPedido {
+    opacity: 1;
+    padding-left: 40%;
+    height: fit-content;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+.painel.active .conteudoPedido .produtoPedido {
+    display: flex;
+}
+
+.painel.active .conteudoPedido .produtoPedido .conteudoPedido .descricaoPedido {
+    display: flex;
+    flex-direction: column;
+}
+
+.painel.active .conteudoPedido #imagem-produto {
+    width: 40%;
+    height: 200px;
+}
+
+.painel.active .conteudoPedido #imagem-produto img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+  }
+
+  footer {
+    margin-top: 80vh;
+    width: 100%;
+  }
+
+  footer .copyright {
+    background-color: var(--cor-secundaria);
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
