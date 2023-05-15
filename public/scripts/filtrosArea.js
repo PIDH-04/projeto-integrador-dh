@@ -3,9 +3,9 @@ window.addEventListener('load', function () {
   let areainterna = document.querySelector('#areainterna');
   let idCategoria = document.querySelector('#idCategoria');
   let limpafiltro = document.querySelector('#limpafiltro');
-  let menorpreco = document.querySelector('#menorpreco');
+  /* let menorpreco = document.querySelector('#menorpreco');
   let maiorpreco = document.querySelector('#maiorpreco');
-  let novidades = document.querySelector('#novidades');
+  let novidades = document.querySelector('#novidades'); */
   /* console.log(idCategoria.dataset.idcategoria) */
   let urlBase = window.location.origin + "/categorias/" + idCategoria.dataset.idcategoria;
 
@@ -51,7 +51,7 @@ window.addEventListener('load', function () {
     }
   })
  */
-  novidades.addEventListener('click', function(){
+ /*  novidades.addEventListener('click', function(){
     if(areaexterna.checked = true){
       let url = urlBase + "/2" + "/novidades";
       window.location.href = url;
@@ -63,7 +63,7 @@ window.addEventListener('load', function () {
       let url = urlBase + "/novidades";
       window.location.href = url;
     }
-  })
+  }) */
 
   areaexterna.addEventListener('change', function () {
     if (this.checked = true) {
