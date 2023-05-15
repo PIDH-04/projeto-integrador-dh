@@ -8,7 +8,7 @@ const { Pedidos } = require('../databases/models');
 
 //listar todos os produtos
 async function listarProdutos() {
-  const produtos = Produtos.findAll({ include: "imagens" });
+  const produtos = Produtos.findAll({ include: ["imagens", 'categorias'] });
   return produtos;
 }
 

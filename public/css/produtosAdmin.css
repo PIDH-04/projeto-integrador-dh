@@ -41,6 +41,10 @@ body.admin-container .acoes-container {
   height: 100%;
 }
 
+body.admin-container .ver-produto{
+  color: var(--cor-texto-primaria)
+}
+
 body.admin-container .acoes-container .delete-btn,
 body.admin-container .acoes-container a {
   width: 40px;
