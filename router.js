@@ -49,6 +49,7 @@ router.get("/statusDePedidos/:idCliente",  checaAutenticacaoUsuario,  ClientesCo
 router.post('/clientes/endereco/criar', checaAutenticacaoUsuario, ClientesController.criaEndereco)
 router.post('/pedidos/criar', checaAutenticacaoUsuario, PedidosController.criar)
 router.put('/clientes/atualizar/:idCliente', checaAutenticacaoUsuario, ClientesController.atualizaCliente)
+router.get('/clientes/sair', checaAutenticacaoUsuario, ClientesController.logoutCliente)
 
 
 

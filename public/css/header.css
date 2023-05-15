@@ -18,6 +18,7 @@
         padding: 10px;
         width: 90%;
         height: 100%;
+        gap: 60px;
     }
 
     #note {
@@ -580,6 +581,8 @@
         justify-content: center;
         width: 30%;
         min-width: 250px;
+        /* flex-grow: 1; */
+        width: 50%;
     }
 
     .lupa {
@@ -587,6 +590,10 @@
         min-width: 25px;
         max-height: 40px;
         min-height: 25px;
+    }
+
+    #elementos-branco .icone-carrinho{
+        margin-right: 15px;
     }
 
     #elementos-branco #busca {
@@ -598,6 +605,7 @@
         margin-right: 5%;
         border-bottom: 1px solid var(--cor-texto-primaria);
         outline: none;
+        border-radius: 0;
     }
 
     #elementos-branco #busca::placeholder {

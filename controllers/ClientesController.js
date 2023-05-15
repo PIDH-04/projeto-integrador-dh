@@ -10,17 +10,20 @@ const CadastroController = {
     // Mostrar categorias para header e footer
     const categorias = await CategoriasServices.listarCategorias();
     //pesquisa header
+    const usuarioLogado = req.session.clienteLogado
+
     const pesquisa = req.query.busca
 
-    return res.render('cadastro', { categorias, target, erro });
+    return res.render('cadastro', { categorias, target, erro, usuarioLogado });
   },
   finalizacaoCompra: async (req, res) => {
     // Mostrar categorias para header e footer
     const categorias = await CategoriasServices.listarCategorias();
     //pesquisa header
     const pesquisa = req.query.busca
+    const usuarioLogado = req.session.clienteLogado
 
-    return res.render('finalizacaoCompra', { categorias });
+    return res.render('finalizacaoCompra', { categorias, usuarioLogado });
   },
   showLogin: (req, res) => {
     return res.render('login');
@@ -53,6 +56,10 @@ const CadastroController = {
     req.session.destroy()
     res.redirect('/admin')
   },
+  logoutCliente: (req, res) => {
+    req.session.destroy()
+    res.redirect('/cadastro')
+  },
   loginEmail: (req, res) => {
     return res.render('loginEmail');
   },
@@ -62,8 +69,10 @@ const CadastroController = {
     const categorias = await CategoriasServices.listarCategorias();
     const enderecos = await ClientesServices.listaEnderecos(idUsuario)    //pesquisa header
     const pesquisa = req.query.busca
+    const usuarioLogado = req.session.clienteLogado
+    
 
-    return res.render('checkoutEndereco', { categorias, enderecos });
+    return res.render('checkoutEndereco', { categorias, enderecos, usuarioLogado });
   },
 
   checkoutPagamento: async (req, res) => {
@@ -72,8 +81,10 @@ const CadastroController = {
     const enderecoSelecionado = req.params.idEndereco
     const frete = 0    //pesquisa header
     const pesquisa = req.query.busca
+    const usuarioLogado = req.session.clienteLogado
 
-    return res.render('checkoutPagamento', { categorias, pagamento: {cartao: 1}, endereco: enderecoSelecionado, frete });
+
+    return res.render('checkoutPagamento', { categorias, pagamento: {cartao: 1}, endereco: enderecoSelecionado, frete, usuarioLogado });
   },
   showPainelUsuario: async (req, res) => {
     // Mostrar categorias para header e footer
@@ -84,8 +95,9 @@ const CadastroController = {
     const idCliente = req.params.idCliente
     const cliente = req.session.cliente
     const feedbackAtualizacao = req.query.atualizado
+    const usuarioLogado = req.session.clienteLogado
 
-    return res.render('painelUsuario', { categorias, cliente, feedbackAtualizacao })
+    return res.render('painelUsuario', { categorias, cliente, feedbackAtualizacao, usuarioLogado })
   },
   showstatusDePedido: async (req, res) => {
     // Mostrar categorias para header e footer
@@ -96,7 +108,9 @@ const CadastroController = {
     const idCliente = req.params.idCliente;
     const cliente = req.session.cliente
     const pedidos = await listarPedidosDeUsuarioComProdutos(idCliente);
-    return res.render('statusDePedido', { categorias, pedidos, cliente: cliente.nome  })
+    const usuarioLogado = req.session.clienteLogado
+
+    return res.render('statusDePedido', { categorias, pedidos, cliente: cliente.nome, usuarioLogado  })
   },
   criarCadastro: async (req, res) => {
     const cliente = {
