@@ -103,8 +103,7 @@ const CadastroController = {
     const pesquisados = await ProdutosServices.pesquisar(pesquisa);
     // Pegando paramentro da url(idCliente)
     const idCliente = req.params.idCliente;
-    // Mostra cliente
-    const cliente = await ClientesServices.buscaClienteId(idCliente);
+    const cliente = req.session.cliente
     // Mostra pedidos entregues
     const entregues = await ProdutosServices.produtosDePedidosEntregues(idCliente);
     // Mostra todos os pedidos
