@@ -1,4 +1,4 @@
-const { Pedidos, Pedidos_has_produtos } = require('../databases/models')
+const { Pedidos, Pedidos_has_produtos, Produtos, Imagens } = require('../databases/models')
 
 async function criaPedido(infoPedido){
     try{
@@ -53,10 +53,28 @@ async function listaPedidosDeUsuario(id){
     }
 }
 
+async function listarPedidosDeUsuarioComProdutos(id){
+    try{
+        const pedidos = await Pedidos.findAll({where: {clientes_id: id}, 
+            include: ['clientes', {
+            model: Produtos,
+            as: "produtos",
+            include: [{
+                model: Imagens,
+                as: "imagens",
+            }]
+        }]})
+        return pedidos
+    }catch(e){
+        throw new Error(e)
+    }
+}
+
 module.exports = {
     criaPedido,
     listaTodosOsPedidos,
     atualizaStatusPedido,
     detalhaPedido,
-    listaPedidosDeUsuario
+    listaPedidosDeUsuario,
+    listarPedidosDeUsuarioComProdutos
 }

@@ -1,5 +1,6 @@
 const CategoriasServices = require('../services/CategoriasServices');
 const ClientesServices = require('../services/ClientesServices');
+const { listarPedidosDeUsuarioComProdutos } = require('../services/PedidosServices');
 const ProdutosServices = require('../services/ProdutosServices');
 
 const CadastroController = {
@@ -92,14 +93,8 @@ const CadastroController = {
     // Pegando paramentro da url(idCliente)
     const idCliente = req.params.idCliente;
     const cliente = req.session.cliente
-    // Mostra pedidos entregues
-    const entregues = await ProdutosServices.produtosDePedidosEntregues(idCliente);
-    // Mostra todos os pedidos
-    const todos = await ProdutosServices.produtosDeTodosOsPedidos(idCliente);
-    // Mostra os pedidos em andamento
-    const andamento = await ProdutosServices.produtosDePedidosEmAndamento(idCliente);
-
-    return res.render('statusDePedido', { categorias, cliente, entregues, todos, andamento })
+    const pedidos = await listarPedidosDeUsuarioComProdutos(idCliente);
+    return res.render('statusDePedido', { categorias, pedidos, cliente: cliente.nome  })
   },
   criarCadastro: async (req, res) => {
     const cliente = {
