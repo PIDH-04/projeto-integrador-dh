@@ -194,6 +194,15 @@ async function pesquisar(pesquisa) {
   }
 }
 
+//Busca produto por nome
+async function buscaProdutoNome(nomeProduto){
+  const produto = await Produtos.findOne({
+    where:{nome:nomeProduto}
+  })
+
+  return produto
+}
+
 //cria produto
 async function criarProduto(infosProduto, imagens) {
   try {
@@ -259,6 +268,7 @@ module.exports = {
   editarProduto,
   listarProdutos,
   listarAreas,
+  buscaProdutoNome,
   ordenarProdutos,
   produtosMaisAcessados,
   produtosDePedidosEntregues,
